@@ -373,7 +373,18 @@
   <entry>
     <title>hexo博客测试</title>
     <url>/2024/06/10/test/</url>
-    <content><![CDATA[<h2 id="图片测试"><a href="#图片测试" class="headerlink" title="图片测试"></a>图片测试</h2><ul>
+    <content><![CDATA[<h2 id="测试播放音乐"><a href="#测试播放音乐" class="headerlink" title="测试播放音乐"></a>测试播放音乐</h2>
+    <div id="aplayer-vjaWWYug" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
+    ></div>
+
+
+    <div id="aplayer-vmtHTVco" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
+    ></div>
+
+
+<ul>
 <li>md开头的格式可以参考此，细节可以看此文档<a href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li>
 <li>注意:top-img: 图片格式是地址，可以导入网站的地址。</li>
 <li>相关图片上传必备网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a></li>
