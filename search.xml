@@ -373,7 +373,7 @@
   <entry>
     <title>hexo博客测试</title>
     <url>/2024/06/10/test/</url>
-    <content><![CDATA[<h2 id="测试播放音乐"><a href="#测试播放音乐" class="headerlink" title="测试播放音乐"></a>测试播放音乐</h2><ul>
+    <content><![CDATA[<ul>
 <li>md开头的格式可以参考此，细节可以看此文档<a href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li>
 <li>注意:top-img: 图片格式是地址，可以导入网站的地址。</li>
 <li>相关图片上传必备网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a></li>
@@ -441,7 +441,7 @@
 <li><p>主页的html在文件.deploy_git&#x2F;index.html里面，要更改文字的话在这里更改。</p>
 </li>
 </ul>
-<p>待改进部分： 添加评论功能、统计访问人数自己看不见、添加音乐和视频插件。</p>
+<p>待改进部分： 统计访问人数自己看不见、添加视频插件。</p>
 ]]></content>
       <tags>
         <tag>test</tag>
