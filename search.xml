@@ -1,96 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo博客测试</title>
-    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h2><p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img1.png"></p>
-<ul>
-<li>我通过picgo图床实现图片上传，只需要在md文件里面插入-图片，然后就会自动把插入的文件上传到oss上面，要取消的时候就点击文件-偏好设置-上传服务设定-将picgo换成无即可。</li>
-</ul>
-<p>用绝对路径和相对路径插入的图片只会在本地显示，如果想在网站上显示就需要用ImgURL、图片上传的方式链接图片</p>
-<h2 id="测试系列文章"><a href="#测试系列文章" class="headerlink" title="测试系列文章"></a>测试系列文章</h2><ol><li><a href="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" title="hexo博客创建">hexo博客创建</a></li><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" title="hexo博客测试">hexo博客测试</a></li></ol>
-
-
-
-<p>注意：hexo会自动给分级标题编号，不需要自己添加</p>
-<ul>
-<li>md开头的格式可以参考此，细节可以看此文档<a href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li>
-<li>注意:top-img: 图片格式是地址，可以导入网站的地址。</li>
-<li>相关图片上传必备网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a></li>
-<li>使用，将图片上传到这里，然后点击Image URL 复制地址即可远程连接</li>
-</ul>
-<h2 id="banner设置"><a href="#banner设置" class="headerlink" title="banner设置"></a>banner设置</h2><ul>
-<li><p>网站上方的“标签””分类“”清单“对应blog&#x2F;source&#x2F;英文名&#x2F;index.md 具体写法见</p>
-</li>
-<li><p>友情链接可以自定义：方法见<a href="https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></p>
-</li>
-<li><p>导航栏设置：在_config.butterfly.yml 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class&#x3D; “ 复制这里的内容” 替代即可。</p>
-</li>
-</ul>
-<h2 id="文章设置"><a href="#文章设置" class="headerlink" title="文章设置"></a>文章设置</h2><ul>
-<li><p>當主題配置文件中的 highlight_shrink 設為false時，可在front-matter添加highlight_shrink: true來單獨配置文章收縮代碼框。我这里默认是展开所有代码，需要的时候就在md文件开头添加这句话即可。</p>
-</li>
-<li><p>tab演示</p>
-</li>
-</ul>
-<div class="tabs" id="test1"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="test1-1">test1 1</button><button type="button" class="tab " data-href="test1-2">test1 2</button><button type="button" class="tab " data-href="test1-3">test1 3</button></ul><div class="tab-contents"><div class="tab-item-content active" id="test1-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content" id="test1-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content" id="test1-3"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-
-
-<ul>
-<li>按钮button设置</li>
-<li><a class="btn-beautify [color] [style] [layout] [position] [size]" href="/%5Burl%5D" 
-  title="[text]"><i class="[icon]"></i><span>[text]</span></a></li>
-<li>[url]         : 鏈接</li>
-<li>[text]        : 按鈕文字</li>
-<li>[icon]        : [可選] 圖標</li>
-<li>[color]       : [可選] 按鈕背景顔色 （默認style時） 按鈕字體和邊框顔色(outline時) default&#x2F;blue&#x2F;pink&#x2F;red&#x2F;purple&#x2F;orange&#x2F;green</li>
-<li>[style]       : [可選] 按鈕樣式 默認實心 outline&#x2F;留空</li>
-<li>[layout]      : [可選] 按鈕佈局 默認為line   block&#x2F;留空</li>
-<li>[position]    : [可選] 按鈕位置 前提是設置了layout為block 默認為左邊  center&#x2F;right&#x2F;留空</li>
-<li>[size]        : [可選] 按鈕大小  larger&#x2F;留空</li>
-</ul>
-<div class="btn-center">
-<a class="btn-beautify outline larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline blue larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline pink larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline red larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline purple larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline orange larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline green larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-</div>
-
-<ul>
-<li><p>文字高亮</p>
-</li>
-<li><mark class="hl-label color">text</mark>  ,颜色可选default/blue/pink/red/purple/orange/green
-<mark class="hl-label red">红色</mark> 
-</li>
-<li><p>系列文章</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br><span class="line">//在文章的 front-matter 上添加參數 series，並給與一個標識</span><br><span class="line">//使用此標簽外掛，會把相同標識的文章以列表的形式展示</span><br></pre></td></tr></table></figure>
-
-</li>
-<li><p>其他（如渲染乐谱\链接等可以看<a href="https://butterfly.js.org/posts/4aa8abbe/#flink%EF%BC%89">https://butterfly.js.org/posts/4aa8abbe/#flink）</a></p>
-</li>
-<li><p>主页的html在文件.deploy_git&#x2F;index.html里面，要更改文字的话在这里更改。</p>
-</li>
-</ul>
-<p>待改进部分： 统计访问人数自己看不见、添加视频插件。</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++学习 _外国资源_</title>
     <url>/2024/06/10/C++%E5%AD%A6%E4%B9%A0_%E5%A4%96%E5%9B%BD%E8%B5%84%E6%BA%90/</url>
     <content><![CDATA[<h2 id="一、专有名词"><a href="#一、专有名词" class="headerlink" title="一、专有名词"></a>一、专有名词</h2><p>计算机专业英语|英语是学习计算机的重要工具</p>
@@ -380,6 +290,96 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo博客测试</title>
+    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h2><p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img1.png"></p>
+<ul>
+<li>我通过picgo图床实现图片上传，只需要在md文件里面插入-图片，然后就会自动把插入的文件上传到oss上面，要取消的时候就点击文件-偏好设置-上传服务设定-将picgo换成无即可。</li>
+</ul>
+<p>用绝对路径和相对路径插入的图片只会在本地显示，如果想在网站上显示就需要用ImgURL、图片上传的方式链接图片</p>
+<h2 id="测试系列文章"><a href="#测试系列文章" class="headerlink" title="测试系列文章"></a>测试系列文章</h2><ol><li><a href="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" title="hexo博客创建">hexo博客创建</a></li><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" title="hexo博客测试">hexo博客测试</a></li></ol>
+
+
+
+<p>注意：hexo会自动给分级标题编号，不需要自己添加</p>
+<ul>
+<li>md开头的格式可以参考此，细节可以看此文档<a href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li>
+<li>注意:top-img: 图片格式是地址，可以导入网站的地址。</li>
+<li>相关图片上传必备网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a></li>
+<li>使用，将图片上传到这里，然后点击Image URL 复制地址即可远程连接</li>
+</ul>
+<h2 id="banner设置"><a href="#banner设置" class="headerlink" title="banner设置"></a>banner设置</h2><ul>
+<li><p>网站上方的“标签””分类“”清单“对应blog&#x2F;source&#x2F;英文名&#x2F;index.md 具体写法见</p>
+</li>
+<li><p>友情链接可以自定义：方法见<a href="https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></p>
+</li>
+<li><p>导航栏设置：在_config.butterfly.yml 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class&#x3D; “ 复制这里的内容” 替代即可。</p>
+</li>
+</ul>
+<h2 id="文章设置"><a href="#文章设置" class="headerlink" title="文章设置"></a>文章设置</h2><ul>
+<li><p>當主題配置文件中的 highlight_shrink 設為false時，可在front-matter添加highlight_shrink: true來單獨配置文章收縮代碼框。我这里默认是展开所有代码，需要的时候就在md文件开头添加这句话即可。</p>
+</li>
+<li><p>tab演示</p>
+</li>
+</ul>
+<div class="tabs" id="test1"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="test1-1">test1 1</button><button type="button" class="tab " data-href="test1-2">test1 2</button><button type="button" class="tab " data-href="test1-3">test1 3</button></ul><div class="tab-contents"><div class="tab-item-content active" id="test1-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content" id="test1-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content" id="test1-3"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+
+<ul>
+<li>按钮button设置</li>
+<li><a class="btn-beautify [color] [style] [layout] [position] [size]" href="/%5Burl%5D" 
+  title="[text]"><i class="[icon]"></i><span>[text]</span></a></li>
+<li>[url]         : 鏈接</li>
+<li>[text]        : 按鈕文字</li>
+<li>[icon]        : [可選] 圖標</li>
+<li>[color]       : [可選] 按鈕背景顔色 （默認style時） 按鈕字體和邊框顔色(outline時) default&#x2F;blue&#x2F;pink&#x2F;red&#x2F;purple&#x2F;orange&#x2F;green</li>
+<li>[style]       : [可選] 按鈕樣式 默認實心 outline&#x2F;留空</li>
+<li>[layout]      : [可選] 按鈕佈局 默認為line   block&#x2F;留空</li>
+<li>[position]    : [可選] 按鈕位置 前提是設置了layout為block 默認為左邊  center&#x2F;right&#x2F;留空</li>
+<li>[size]        : [可選] 按鈕大小  larger&#x2F;留空</li>
+</ul>
+<div class="btn-center">
+<a class="btn-beautify outline larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline blue larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline pink larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline red larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline purple larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline orange larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline green larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+</div>
+
+<ul>
+<li><p>文字高亮</p>
+</li>
+<li><mark class="hl-label color">text</mark>  ,颜色可选default/blue/pink/red/purple/orange/green
+<mark class="hl-label red">红色</mark> 
+</li>
+<li><p>系列文章</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br><span class="line">//在文章的 front-matter 上添加參數 series，並給與一個標識</span><br><span class="line">//使用此標簽外掛，會把相同標識的文章以列表的形式展示</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>其他（如渲染乐谱\链接等可以看<a href="https://butterfly.js.org/posts/4aa8abbe/#flink%EF%BC%89">https://butterfly.js.org/posts/4aa8abbe/#flink）</a></p>
+</li>
+<li><p>主页的html在文件.deploy_git&#x2F;index.html里面，要更改文字的话在这里更改。</p>
+</li>
+</ul>
+<p>待改进部分： 统计访问人数自己看不见、添加视频插件。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客创建</title>
     <url>/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Hexo 是一个由Nodejs驱动的博客框架，支持 Markdown、一键部署、插件和多种模板引擎。Hexo 可以让你轻松创建、管理和部署你的个人或团队博客。本文基于个人的实践经验，<strong>以Windows为主要开发环境</strong>，旨在让那些对博客搭建感兴趣但碍于困难的朋友能搭建起基本的博客框架。</p>
@@ -391,77 +391,123 @@
 <li>默认电脑下载了git和注册了github。没有注册github和下载git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&from_spmid=main.space-search.0.0&is_story_h5=false&mid=ueF2Y5ca46qLJ+0TtsIVXA==&p=2&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&share_source=COPY&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1718194497&unique_k=7ayW8ON&up_id=456828781&vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
 <li>默认会“科学上网”，不会的可以参考此大佬的教程<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a>，可以在他的博客中搜索”搭建个人博客“   <a href="https://starlike-daydream.github.io/Cesteo.github.io/">Ceasteo’s Blog</a>。按照此大佬的方法也可以实现简单的hexo博客创建。<strong>注意大佬文档中的淘宝镜像已经失效,请换成<a href="https://registry.npmmirror.com/">https://registry.npmmirror.com</a></strong></li>
 </ul>
-<h2 id="相关资料下载"><a href="#相关资料下载" class="headerlink" title="相关资料下载"></a>相关资料下载</h2><p>1.<a href="https://nodejs.cn/">Node.js 中文网 (nodejs.cn)</a>安装，进去后点击下载安装，选择长期支持版（LTS）即可</p>
+<h2 id="相关资料下载"><a href="#相关资料下载" class="headerlink" title="相关资料下载"></a>相关资料下载</h2><ol>
+<li><a href="https://nodejs.cn/">Node.js 中文网 (nodejs.cn)</a>安装，进去后点击下载安装，选择长期支持版（LTS）即可</li>
+</ol>
 <p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-imgb001.png"></p>
-<p>2.安装cnpm并配置淘宝镜像</p>
+<ol start="2">
+<li>安装cnpm并配置淘宝镜像</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-imgb002.png"></p>
 <blockquote>
 <p><strong>注意</strong>：后面代码中我打&#x2F;&#x2F;并且后面跟着文字的（比如&#x2F;&#x2F;这里是初始化)都是<strong>注释</strong>，<strong>不要写在终端里面</strong></p>
 </blockquote>
-<p>3.测试cnpm是否安装  </p>
+<ol start="3">
+<li>测试cnpm是否安装</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cnpm -v   </span><br></pre></td></tr></table></figure>
 
 <p><strong>v</strong>：version 版本的意思</p>
-<p>4.安装hexo博客框架</p>
+<ol start="4">
+<li>安装hexo博客框架</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-<p>5.测试hexo博客框架是否安装 </p>
+<ol start="5">
+<li>测试hexo博客框架是否安装</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
 
 <h2 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h2><blockquote>
 <p>后续可以通过blog文件(<strong>shift+鼠标右键-在终端中打开</strong>）直接进入终端，也可以用Visual Studio Code将此文件打开并创建终端（建议使用vscode，后续博客维护很方便）。</p>
 </blockquote>
-<p>6.在空文件夹（我这里事先创建并将其命名为temp)中初始化hexo博客框架,然后通过cd指令进入此目录。</p>
+<ol start="6">
+<li>在空文件夹（我这里事先创建并将其命名为temp)中初始化hexo博客框架,然后通过cd指令进入此目录。</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//示例：cd .\Desktop\temp\</span><br><span class="line">hexo init</span><br><span class="line">//如果报错的话就输入cnpm install 然后再输入hexo s即可</span><br></pre></td></tr></table></figure>
 
-<p>7.启动博客  start   用来预览修改后的博客 按ctrl+c即可停止运行。</p>
+<ol start="7">
+<li>启动博客  start   用来预览修改后的博客 按ctrl+c即可停止运行。</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
-<p>8.清除博客内容</p>
+<ol start="8">
+<li>清除博客内容</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean  //或者hexo c</span><br></pre></td></tr></table></figure>
 
-<p>9.生成博客内容</p>
+<ol start="9">
+<li>生成博客内容</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
 
 <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p><strong>我这里只讲解部署到github的思路</strong>，部署到其他平台或者服务器请自行查询有关资料。没有注册github和git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&from_spmid=main.space-search.0.0&is_story_h5=false&mid=ueF2Y5ca46qLJ+0TtsIVXA==&p=2&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&share_source=COPY&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1718194497&unique_k=7ayW8ON&up_id=456828781&vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></p>
-<p>10.github创建仓库,注意格式严格为    你的github用户名.github.io 并复制SSH的clone地址，我这里以Tom为例</p>
+<ol start="10">
+<li>github创建仓库,注意格式严格为    你的github用户名.github.io 并复制SSH的clone地址，我这里以Tom为例</li>
+</ol>
 <p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-imgb003.png"></p>
 <p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-imgb004.png"></p>
-<p>11.安装部署插件</p>
+<ol start="11">
+<li>安装部署插件</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
 
-<p>12.修改_config.yml文件</p>
+<ol start="12">
+<li>修改_config.yml文件</li>
+</ol>
 <p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-imgb006.png"></p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">//一般是最后一行。</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">粘贴你10步复制的地址。</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
-<p>13.部署到github</p>
+<ol start="13">
+<li>部署到github</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
-<p>14.13步后有的会提示输入github账号密码，没有就跳过14和15步</p>
-<p>15.分别输入用户名与密码。</p>
+<ol start="14">
+<li><p>13步后有的会提示输入github账号密码，没有就跳过14和15步</p>
+</li>
+<li><p>分别输入用户名与密码。</p>
+</li>
+</ol>
 <p>输入密码之后报错并<strong>提醒你github已经停止使用密码登录</strong>，需要用密钥或者是ssh，这里我采用ssh的方式。</p>
-<p>16.初始化用户名与邮箱(“yourname”和”youremail“改成你之前注册github设置的)</p>
+<ol start="16">
+<li>初始化用户名与邮箱(“yourname”和”youremail“改成你之前注册github设置的)</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot; //（注意user.name/email和英文双引号&quot;之间要有一个空格）</span><br><span class="line">git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
 
-<p>17.确认是否设置成功</p>
+<ol start="17">
+<li>确认是否设置成功</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//用户名与邮箱</span><br><span class="line">git config --global user.name</span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
 
-<p>18.下载github部署插件</p>
+<ol start="18">
+<li>下载github部署插件</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
-<p>19.本地生成密钥</p>
+<ol start="19">
+<li>本地生成密钥</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;（这里改为16步你设置的邮箱）</span><br></pre></td></tr></table></figure>
 
-<p>20.获取你生成的密钥，并复制返回的结果</p>
+<ol start="20">
+<li>获取你生成的密钥，并复制返回的结果</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 
-<p>21.<strong>登录github</strong>, 点击头像——settings——点击SSH and GPG keys-再点击New SSH key,自己取一个标题,然后将复制的密钥粘贴到”key”文本框内并提交（Add SSH key)。</p>
-<p>22.验证：</p>
+<ol start="21">
+<li><p><strong>登录github</strong>, 点击头像——settings——点击SSH and GPG keys-再点击New SSH key,自己取一个标题,然后将复制的密钥粘贴到”key”文本框内并提交（Add SSH key)。</p>
+</li>
+<li><p>验证：</p>
+</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
-<p>23.再次提交</p>
+<ol start="23">
+<li>再次提交</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
 <ol start="24">
