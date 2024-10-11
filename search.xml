@@ -726,152 +726,245 @@
 <p>而谓语代表的是广义的动作&#x2F;发生了什么事,谓语的核心在于谓语动词。提醒：谓语≠谓语动词,谓语是除主语之外的，而谓语动词只是一个动词。</p>
 <p>所以要学好语法先从动词开始。</p>
 <h1 id="动词-verbs"><a href="#动词-verbs" class="headerlink" title="动词(verbs)"></a>动词(verbs)</h1><h2 id="动词的三大本领"><a href="#动词的三大本领" class="headerlink" title="动词的三大本领"></a>动词的三大本领</h2><p>1.表示动作的时间<br>2.表示动作的状态<br>3.表示动作的假设，情感等</p>
-<ul>
-<li><p>动词在五大句型中的作用</p>
-<ol>
-<li>可以独立完成的动作(主语+不及物动词)                             <code>例：I sleep</code></li>
-<li>有一个动作的承受者(主语+单及物动词(monotransitive verbs)+宾语(object)） <code>例：I like you</code></li>
-<li>有两个动作承受者(主+双及物动词(ditransitive verbs)+间接宾语+直接宾语） <code>例：I will teach you English</code> 这里的you是间接宾语、English是直接宾语</li>
-<li>只有一个动作承受者,但是需要补充(主语+复杂及物动词+宾语+补语(complement） <code>例：I think you smart</code></li>
-<li>非动作（主语+系动词(link verbs)+(主语)补语&#x2F;表语）<code>例：he looks smart.</code>将smart赋予给主语，再加上系动词的部分意义。</li>
-</ol>
-<p>  💡五大句型区分关键在于动词之后需要几个对象才能表达完整意思</p>
-</li>
-</ul>
+<p><strong>动词在五大句型中的作用</strong></p>
+<table>
+<thead>
+<tr>
+<th>作用</th>
+<th>形式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>可以独立完成的动作(主语+不及物动词)</td>
+<td>主语+不及物动词</td>
+<td>I sleep</td>
+</tr>
+<tr>
+<td>有一个动作的承受者</td>
+<td>(主语+单及物动词(monotransitive verbs)+宾语(object)</td>
+<td>I like you</td>
+</tr>
+<tr>
+<td>有两个动作承受者</td>
+<td>主+双及物动词(ditransitive verbs)+间接宾语+直接宾语</td>
+<td>I will teach you English.这里的you是间接宾语、English是直接宾语</td>
+</tr>
+<tr>
+<td>只有一个动作承受者,但是需要补充</td>
+<td>主语+复杂及物动词+宾语+补语(complement)</td>
+<td>I think you smart</td>
+</tr>
+<tr>
+<td>非动作</td>
+<td>主语+系动词(link verbs)+(主语)补语&#x2F;表语</td>
+<td>he looks smart.将smart赋予给主语，再加上系动词的部分意义。</td>
+</tr>
+</tbody></table>
+<p>💡五大句型区分关键在于动词之后需要几个对象才能表达完整意思</p>
 <p>示意图如下链接</p>
 <p><a href="https://excalidraw.com/#json=EPYWVxBRbpHWPXNyDKCQu,mEJeMsJkQ5EpGjxdN-aCiQ">https://excalidraw.com/#json=EPYWVxBRbpHWPXNyDKCQu,mEJeMsJkQ5EpGjxdN-aCiQ</a></p>
-<ul>
-<li>动词的分类<ul>
-<li>一般分类<ol>
-<li>实义动词  <code>ex:eat</code></li>
-<li>系动词 <code>ex:be</code></li>
-<li>助动词 辅助构成谓语动词 <code>ex:have</code></li>
-<li>情态动词 <code>ex:must</code></li>
-<li>非谓语动词（不定式、过去分词、现在分词、动名词）<code>ex:running</code></li>
-</ol>
-</li>
-<li>按动作承受者分<ol>
-<li>及物动词  <code>ex:eat vt.吃</code></li>
-<li>不及物动词  <code>ex:run vi.跑</code></li>
-</ol>
-</li>
-<li>按状态动作分<ol>
-<li>动作动词：<code>例如：eat</code></li>
-<li>状态动词：<code>例如：feel v.感觉 并没有明显的动作</code></li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
+<p><strong>动词分类</strong></p>
+<div class="tabs" id="ex1"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex1-1">一般分类</button><button type="button" class="tab " data-href="ex1-2">按动作承受者分类</button><button type="button" class="tab " data-href="ex1-3">按状态动作分类</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex1-1"><table>
+<thead>
+<tr>
+<th>词性</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>实义动词</td>
+<td>eat</td>
+</tr>
+<tr>
+<td>系动词</td>
+<td>be</td>
+</tr>
+<tr>
+<td>助动词 辅助构成谓语动词</td>
+<td>have</td>
+</tr>
+<tr>
+<td>情态动词</td>
+<td>must</td>
+</tr>
+<tr>
+<td>非谓语动词（不定式、过去分词、现在分词、动名词）</td>
+<td>running</td>
+</tr>
+</tbody></table></div><div class="tab-item-content" id="ex1-2"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>及物动词</td>
+<td>eat vt.吃</td>
+</tr>
+<tr>
+<td>不及物动词</td>
+<td>run vi.跑</td>
+</tr>
+</tbody></table></div><div class="tab-item-content" id="ex1-3"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>动作动词</td>
+<td>eat</td>
+</tr>
+<tr>
+<td>状态动词</td>
+<td>feel v.感觉 并没有明显的动作</td>
+</tr>
+</tbody></table></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
 <h2 id="动词时态"><a href="#动词时态" class="headerlink" title="动词时态"></a>动词时态</h2><p>时态：时间+状态。前者表明动作发生的时间(过去，现在，将来和过去将来),后者表明动作发生的状态(进行时、完成时、完成进行时、一般时)。<br>四种动词时间与四种时态排列组合就会产生16种时态。</p>
 <p>完成状态的理解在于强调“影响”，比如<code>I have eaten breakfast.</code> 暗示在过去的某个时间到现在(have的时间)我已经吃了早饭，暗示我还不饿。</p>
-<ul>
-<li><p>现在类</p>
-<p>  注：这里的一般现在严格来说是<strong>现在一般</strong>时，只是位置变换，望周知，后面同理。</p>
-<ol>
-<li>一般现在：（含义：表达事实|表达习惯|表达预计发生的事)<ol>
-<li>+动词原形 <code>ex:I eat carrots.</code> </li>
-<li>+动词原形+第三人称单数   <code>ex:she eats carrots.</code><br> 误区：一般现在不代表现在正在做，<code>I eat carrots.</code> 意思是我吃胡萝卜.<em>一般代表的是一种默认，或者是未指明</em></li>
-<li>事实陈述:<code>ex:The sun rise in the east</code> 习惯:<code>ex:I play basketball我打篮球(隐含我有打篮球的习惯)</code> 预计发生的事: <code>ex:The bus leaves at 8.PM tonight.</code></li>
-</ol>
-</li>
-<li>现在进行：助动词be的变位+动词现在分词<ol>
-<li>助动词<ol>
-<li>系动词 am,is,are……</li>
-<li>作助动词，构成时态</li>
-</ol>
-</li>
-<li>动词现在分词<ol>
-<li>通常：+ing</li>
-<li>特殊：变化+ing→不规则变化很多都是为了发音而妥协的。<code>ex:I am lying != I am lieing</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>现在完成：助动词have的变位+动词过去分词<ol>
-<li>Have<ol>
-<li>实义动词：有</li>
-<li>助动词构成时态： <code>ex:The rabbit has eaten a carrot.</code></li>
-</ol>
-</li>
-<li>动词过去分词<ol>
-<li>通常：+ed</li>
-<li>特殊：变化+ed|不规则变化</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>现在完成进行：现在完成+进行时&#x3D;&#x3D;have的变位+been+动词现在分词.意思是已经做了，而且还要继续做  。<code>ex:I have been eating carrot.</code></li>
-</ol>
-<p>  💡时态都是在现在类基础上将时间往前(或后)推移，对应时间更改谓语动词即可。</p>
-</li>
-</ul>
+<h3 id="现在类"><a href="#现在类" class="headerlink" title="现在类"></a>现在类</h3><div class="tabs" id="ex2"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex2-1">一般现在</button><button type="button" class="tab " data-href="ex2-2">现在进行</button><button type="button" class="tab " data-href="ex2-3">现在完成</button><button type="button" class="tab " data-href="ex2-4">现在完成进行</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex2-1"><p><strong>含义：表达事实|表达习惯|表达预计发生的事</strong></p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>例子</th>
+<th>扩展解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+动词原形</td>
+<td>I eat carrots.</td>
+<td></td>
+</tr>
+<tr>
+<td>+动词原形+第三人称单数</td>
+<td>she eats carrots.</td>
+<td>误区：一般现在不代表现在正在做，I eat carrots. 意思是我吃胡萝卜.<em>一般代表的是一种默认，或者是未指明</em></td>
+</tr>
+<tr>
+<td>事实陈述</td>
+<td>The sun rise in the east 习惯:I play basketball我打篮球(隐含我有打篮球的习惯) 预计发生的事: The bus leaves at 8.PM tonight.</td>
+<td></td>
+</tr>
+</tbody></table></div><div class="tab-item-content" id="ex2-2"><p><strong>助动词be的变位+动词现在分词</strong></p>
+<table>
+<thead>
+<tr>
+<th>词性</th>
+<th>形式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>助动词</td>
+<td>1. 系动词 am,is,are…… 2. 作助动词，构成时态</td>
+</tr>
+<tr>
+<td>动词现在分词</td>
+<td>1. 通常：+ing 2. 特殊：变化+ing→不规则变化很多都是为了发音而妥协的。<code>ex:I am lying != I am lieing</code></td>
+</tr>
+</tbody></table></div><div class="tab-item-content" id="ex2-3"><p><strong>助动词have的变位+动词过去分词</strong></p>
+<table>
+<thead>
+<tr>
+<th>词性</th>
+<th>形式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Have</td>
+<td>1. 实义动词：有 2. 助动词构成时态</td>
+<td>2. The rabbit has eaten a carrot.</td>
+</tr>
+<tr>
+<td>动词过去分词</td>
+<td>1. 通常：+ed 2. 特殊：变化+ed|不规则变化</td>
+<td></td>
+</tr>
+</tbody></table></div><div class="tab-item-content" id="ex2-4"><p><strong>现在完成+进行时&#x3D;&#x3D;have的变位+been+动词现在分词.意思是已经做了，而且还要继续做  。</strong> 例子：I have been eating carrot.</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+<p>💡时态都是在现在类基础上将时间往前(或后)推移，对应时间更改谓语动词即可。</p>
 <hr>
-<ul>
-<li><p>过去类</p>
-<p>  💡本质就是现在类的助动词(或者情态动词、动词等)变换时间(比如have变成had,is变成was,may变成might)</p>
-<ol>
-<li>一般过去：<ol>
-<li>过去式(规则的一般+ed)</li>
-<li>不规则变化(不用刻意记，用来写的并不多)</li>
-</ol>
-</li>
-<li>过去进行：助动词be的变位+动词现在分词<ol>
-<li>注意be的变位不再是现在时态的只变人称，还要变为相应的时态。<em>即be变成对应的人称过去式</em>   <code>ex:she was watching TV</code></li>
-<li>区别：现在完成vs一般过去|前者强调的是动作完成了吗，后者强调的是动作有没有发生|前者的例句I have gone to beijing.(我已经去了北京（暗示没回来）），后者的例句I went to beijing.(我去过北京（暗示回来了））</li>
-</ol>
-</li>
-<li>过去完成：同理，是助动词have的变位(只有had)+动词过去分词</li>
-<li>过去完成进行：had+been+动词的现在分词</li>
-</ol>
-<p>  不规则动词列表：在 本电脑根目录下obsidian内附件集&#x2F;英语&#x2F;文档&#x2F;不规则变化.pdf</p>
-<p>  <a href="%25E4%25B8%258D%25E8%25A7%2584%25E5%2588%2599%25E5%258F%2598%25E5%258C%2596.pdf">不规则变化.pdf</a></p>
-</li>
-</ul>
+<h3 id="过去类"><a href="#过去类" class="headerlink" title="过去类"></a>过去类</h3><p>💡本质就是现在类的助动词(或者情态动词、动词等)变换时间(比如have变成had,is变成was,may变成might)</p>
+<div class="tabs" id="ex3"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex3-1">一般过去</button><button type="button" class="tab " data-href="ex3-2">过去进行</button><button type="button" class="tab " data-href="ex3-3">过去完成</button><button type="button" class="tab " data-href="ex3-4">过去完成进行</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex3-1"><table>
+<thead>
+<tr>
+<th>形式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>过去式(规则的一般+ed)</td>
+<td>look-&gt;looked</td>
+</tr>
+<tr>
+<td>不规则变化(不用刻意记，用来写的并不多)</td>
+<td>come-&gt;came</td>
+</tr>
+</tbody></table></div><div class="tab-item-content" id="ex3-2"><p><strong>助动词be的变位+动词现在分词</strong></p>
+<table>
+<thead>
+<tr>
+<th>解释</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>注意be的变位不再是现在时态的只变人称，还要变为相应的时态。<em>即be变成对应的人称过去式</em></td>
+<td>she was watching TV</td>
+</tr>
+<tr>
+<td>区别：现在完成vs一般过去 前者强调的是动作完成了吗，后者强调的是动作有没有发生。</td>
+<td>前者的例句I have gone to Beijing.(我已经去了北京（暗示没回来）），后者的例句I went to Beijing.(我去过北京（暗示回来了））</td>
+</tr>
+</tbody></table></div><div class="tab-item-content" id="ex3-3"><p><strong>同理，见现在完成部分，是助动词have的变位(只有had)+动词过去分词</strong></p></div><div class="tab-item-content" id="ex3-4"><p><strong>had+been+动词的现在分词</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+<p>不规则动词列表：在 本电脑根目录下obsidian内附件集&#x2F;英语&#x2F;文档&#x2F;不规则变化.pdf。读者可以点击此链接<a href="https://www.yingyutu.com/">英语兔 (yingyutu.com)</a> 在英语兔公众号下载对应笔记。</p>
 <hr>
-<ul>
-<li>将来类<ol>
-<li>一般将来:一般用于非常确定会发生的事。<ol>
-<li>will(或者是shall)+动词原形</li>
-<li>助动词be的变位+going+to+动词原形<ol>
-<li>原样</li>
-<li>省去going <code>ex:you are to eat a carrot</code></li>
-<li>用about代替going <code>ex:I am about to chat with him.</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>将来进行：will+be+动词的现在分词（在将来的某一个时间段，某个动作正在进行） <code>ex:I will be eating a carrot for lunch tomorrow from 1PM to 3PM</code></li>
-<li>将来完成：will+have+动词的过去分词  <code>ex:If suddenly you forget me.Do not look for me,for I shall already have forgotten you.</code></li>
-<li>将来完成进行时：will+have+been+动词的现在分词 <code>ex:I will have been eating carrots for 2 hours by 3PM tomorrow</code><br>  这里要表达的意思就是：我确定明天下午三点钟时，我不但已经吃了俩钟头胡萝卜(也就是从明天下午1点开始吃)而且还要继续吃.</li>
-</ol>
-</li>
-</ul>
+<h3 id="将来类"><a href="#将来类" class="headerlink" title="将来类"></a>将来类</h3><div class="tabs" id="ex4"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex4-1">一般将来</button><button type="button" class="tab " data-href="ex4-2">将来进行</button><button type="button" class="tab " data-href="ex4-3">将来完成</button><button type="button" class="tab " data-href="ex4-4">将来完成进行时</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex4-1"><p><strong>一般用于非常确定会发生的事</strong></p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>will(或者是shall)+动词原形</td>
+<td>I will eat a carrot.</td>
+</tr>
+<tr>
+<td>助动词be的变位+going+to+动词原形</td>
+<td>1. 原样：I am going to take a shower. 2. 省去going：you are to eat a carrot 3. 用about代替going：I am about to chat with him.</td>
+</tr>
+</tbody></table></div><div class="tab-item-content" id="ex4-2"><p><strong>will+be+动词的现在分词（在将来的某一个时间段，某个动作正在进行）</strong>  例如：I will be eating a carrot for lunch tomorrow from 1PM to 3PM</p></div><div class="tab-item-content" id="ex4-3"><p><strong>will+have+动词的过去分词</strong> 例子(以下用<strong>ex</strong>表示)：If suddenly you forget me.Do not look for me,for I shall already have forgotten you.</p></div><div class="tab-item-content" id="ex4-4"><p><strong>will+have+been+动词的现在分词</strong> ex:I will have been eating carrots for 2 hours by 3 PM tomorrow.这里要表达的意思就是：我确定明天下午三点钟时，我不但已经吃了俩钟头胡萝卜(也就是从明天下午1点开始吃)而且还要继续吃.</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
 <hr>
-<ul>
-<li><p>过去将来类</p>
-<p>  过去将来可能是现在的过去，也可能是现在的未来。</p>
-<ol>
-<li><p>过去将来一般:would+动词原形|或者是助动词be的变位+going to。</p>
-<ol>
-<li>Would<ol>
-<li>Will的过去式</li>
-<li>虚拟语气，表达和事实相反。</li>
-</ol>
-</li>
-</ol>
-<p> <code>ex:I said I would eat a carrot for lunch.</code> 我之前就说过我会午饭吃胡萝卜(午饭时间对于之前我说那句话的时间来说是在将来，但至于现在午饭时间有没有到，不得而知）
- </p>
-</li>
-<li><p>过去将来进行：同理，在将来进行时前面+would</p>
-</li>
-<li><p>过去将来完成：同理，在将来完成时前面+would</p>
-</li>
-<li><p>过去将来完成进行：同理，在将来完成进行前面+would。<code>中文举例：在这之前，张三说下个月的某一天，你一定会看到我犯完罪，而且还会一直犯下去</code> 在这之前表示过去，说下个月的某一天表明是将来，结合就是过去将来(时间),而犯完罪而且犯下去表明动作已经完成，而且会继续执行，表明动作的状态是完成进行，前后结合，就是过去将来完成进行时态。<code>ex:l said I would have been eating lunch for 2 hours by 1PM tomorrow/yesterday.</code>我（之前）说我明天&#x2F;昨天下午1点前会已经吃了俩钟头中饭(我之前说我会明天&#x2F;昨天下午1点时在吃中饭这个过程中,之前吃了2小时,之后还会继续吃)</p>
-</li>
-</ol>
-</li>
-</ul>
+<h3 id="过去将来类"><a href="#过去将来类" class="headerlink" title="过去将来类"></a>过去将来类</h3><p><em>过去将来可能是现在的过去，也可能是现在的未来。</em></p>
+<div class="tabs" id="ex5"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex5-1">过去将来一般</button><button type="button" class="tab " data-href="ex5-2">过去将来进行</button><button type="button" class="tab " data-href="ex5-3">过去将来完成</button><button type="button" class="tab " data-href="ex5-4">过去将来完成进行</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex5-1"><p><strong>would+动词原形|或者是助动词be的变位+going to。</strong></p>
+<table>
+<thead>
+<tr>
+<th>would形式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Will的过去式</td>
+<td>I would eat a carrot.</td>
+</tr>
+<tr>
+<td>虚拟语气，表达和事实相反。</td>
+<td>I said I would eat a carrot for lunch. 我之前就说过我会午饭吃胡萝卜(午饭时间对于之前我说那句话的时间来说是在将来，但至于现在午饭时间有没有到，不得而知）</td>
+</tr>
+</tbody></table></div><div class="tab-item-content" id="ex5-2"><p><strong>同理，在将来进行时前面+would</strong> </p></div><div class="tab-item-content" id="ex5-3"><p><strong>同理，在将来完成时前面+would</strong> </p></div><div class="tab-item-content" id="ex5-4"><p><strong>同理，在将来完成进行前面+would。</strong></p>
+<p>中文举例：在这之前，张三说下个月的某一天，你一定会看到我犯完罪，而且还会一直犯下去 在这之前表示过去，说下个月的某一天表明是将来，结合就是过去将来(时间),而犯完罪而且犯下去表明动作已经完成，而且会继续执行，表明动作的状态是完成进行，前后结合，就是过去将来完成进行时态。ex:l said I would have been eating lunch for 2 hours by 1PM tomorrow&#x2F;yesterday.我（之前）说我明天&#x2F;昨天下午1点前会已经吃了俩钟头中饭(我之前说我会明天&#x2F;昨天下午1点时在吃中饭这个过程中,之前吃了2小时,之后还会继续吃)</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+<hr>
 <h2 id="动词语气-mood"><a href="#动词语气-mood" class="headerlink" title="动词语气(mood)"></a>动词语气(mood)</h2><p>概念：表示动作的假设，情感等。</p>
 <p>难点：虚拟语气。</p>
 <ul>
@@ -958,71 +1051,132 @@
 <p><code>ex:I am a talking student.</code>这里的talking不被时态、人称所限制，没有动词的本领，也就是变成了非谓语动词</p>
 <hr>
 <p>谓语动词是句子的核心，也就是说，在一个简单句子中谓语动词只能有一个（在有并列关系的时候可以有多个谓语动词），但是非谓语动词不限个数。</p>
-<p>非谓语动词分类</p>
-<ul>
-<li><p>动词不定式：to+动词原形。表示将要发生的动作</p>
-<ol>
-<li>特殊情况to可以省略：make\help\let……一感二听三让四看半帮助。<ol>
-<li>不定式作主语<br> <code>To eat a carrot every day is good for the rabbit.</code></li>
-<li>不定式作宾语：如<code>The rabbit likes to eat carrots.</code></li>
-<li>不定式作宾语补足语：如<code>The rabbit expected the wolf to eat a carrot.</code>强调动作已经发生（全过程）</li>
-<li>不定式作定语：<code>The rabbit has a lot of carrots to eat.</code> 这里的to eat修饰的是carrots。</li>
-<li>不定式作状语：<ol>
-<li>表原因：<code>I was surprised to get a thumbs-up.</code></li>
-<li>表目的：<code>I will do anything to get a thumbs-up.</code></li>
-<li>表结果：<code>I got enough thumbs-up to make another video.</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>高级不定式:to+动词原形(”状态”)<ol>
-<li><code>ex:to be eating a carrot\\to have been eating a carrot</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>动名词：动词原形+ing，本质是名词–主动、进行</p>
-<ol>
-<li>作主语：<code>Eating carrots is healthy for the rabbit</code></li>
-<li>作宾语 :   <code>the rabbit likes eating carrots.</code> </li>
-<li>作表语：<code>The rabbit&#39;s hobby is growing carrots.</code></li>
-<li>作定语：<code>a sleeping pill</code> 表示名词的性质、功能或者用途。&#x3D;&#x3D; a pill for sleeping</li>
-</ol>
-</li>
-<li><p>固定搭配（不定式与动名词的使用范围）</p>
+<p><strong>非谓语动词分类</strong></p>
+<h3 id="动词不定式"><a href="#动词不定式" class="headerlink" title="动词不定式"></a>动词不定式</h3><table>
+<thead>
+<tr>
+<th>主要类型(形式)</th>
+<th>形式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. 特殊情况to可以省略：make\help\let……一感二听三让四看半帮助。</td>
+<td>不定式作主语</td>
+<td>To eat a carrot every day is good for the rabbit.</td>
+</tr>
+<tr>
+<td></td>
+<td>不定式作直接宾语</td>
+<td>The rabbit likes to eat carrots.</td>
+</tr>
+<tr>
+<td></td>
+<td>不定式作间接宾语</td>
+<td>The rabbit expected the wolf to eat a carrot.强调动作已经发生（全过程）</td>
+</tr>
+<tr>
+<td></td>
+<td>不定式作宾补</td>
+<td>The rabbit has a lot of carrots to eat.这里的to eat修饰的是carrots。</td>
+</tr>
+<tr>
+<td></td>
+<td>不定式作宾语</td>
+<td>1. 表原因：<code>I was surprised to get a thumbs-up.</code> 2. 表目的：<code>I will do anything to get a thumbs-up.</code> 3. 表结果：<code>I got enough thumbs-up to make another video.</code></td>
+</tr>
+<tr>
+<td>2. 高级不定式:to+动词原形(”状态”)</td>
+<td>\</td>
+<td>To be eating a carrot\To have been eating a carrot</td>
+</tr>
+</tbody></table>
+<h3 id="动名词"><a href="#动名词" class="headerlink" title="动名词"></a>动名词</h3><p><strong>动词原形+ing，本质是名词–主动、进行</strong></p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>作主语</td>
+<td>Eating carrots is healthy for the rabbit</td>
+</tr>
+<tr>
+<td>作宾语</td>
+<td>the rabbit likes eating carrots.</td>
+</tr>
+<tr>
+<td>作表语</td>
+<td>The rabbit’s hobby is growing carrots.</td>
+</tr>
+<tr>
+<td>作定语</td>
+<td>a sleeping pill 表示名词的性质、功能或者用途。&#x3D;&#x3D; a pill for sleeping</td>
+</tr>
+</tbody></table>
+<p>需要注意的是，虽然理论上任何动词不定式和动名词可以充当另一个动词的宾语，但是实际上不是，如enjoy不能用不定式充当宾语等。同样，也有些动词不能直接接动名词，而是要借助介词，比如  <code>ex:The rabbit is looking forward to eating carrots</code> 这里的to是介词而不是不定式的to。</p>
+<h3 id="固定搭配"><a href="#固定搭配" class="headerlink" title="固定搭配"></a>固定搭配</h3><p><strong>不定式与动名词的使用范围</strong></p>
 <ol>
 <li>如stop to do&#x2F;doing,forget to do&#x2F;doing,remenber to do&#x2F;doing……，前者指怎样(停止、记得……)去做某事（还没做），后者指怎样去做某事（已经做了）</li>
-<li>感到用ed，令人ing.</li>
+<li>感到用ed，令人ing.如interested与interesting</li>
 </ol>
-</li>
-<li><p>现在分词：本质是形容词–主动、进行</p>
-<ol>
-<li>作表语：<code>the rabbit is charming</code>(很多的形容词实际上就是现在分词）</li>
-<li>作宾补：<code>The wolf saw the rabbit eating a carrot.</code>强调动作进行的状态。即狼看到兔子正在吃</li>
-<li>作状语：<code>Not knowing what to eat,the rabbit skipped lunch.</code>（可以表示原因、时间、伴随等关系）</li>
-<li>作定语：<code>a sleeping rabbit</code> 表明兔子的状态是睡觉，但是不同于动名词作定语。</li>
-</ol>
-</li>
-<li><p>过去分词：暗含被动关系，不表示过去时间。</p>
-<ol>
-<li>作后置定语：<code>The carrot cake eaten by the rabbit is delicious</code></li>
-<li>作表语：<code>The rabbit is interested in growing carrots.</code></li>
-<li>作宾补：<code>The rabbit found his carrot stolen.</code></li>
-<li>作状语：<ol>
-<li>表地点：<code>ex:Seen from the hill,the carrot field looks beautiful.</code> </li>
-<li>表原因：<code>ex:Born in a rabbit family,the rabbit has been growing carrots all his life.</code> </li>
-<li>表条件：<code>ex:Given another chance,the rabbit would go to the wolf&#39;s party.</code></li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
+<h3 id="现在分词"><a href="#现在分词" class="headerlink" title="现在分词"></a>现在分词</h3><p><strong>本质是形容词–主动、进行</strong></p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>作表语</td>
+<td>the rabbit is charming  很多的形容词实际上就是现在分词</td>
+</tr>
+<tr>
+<td>作宾补</td>
+<td>The wolf saw the rabbit eating a carrot.强调动作进行的状态。即狼看到兔子正在吃</td>
+</tr>
+<tr>
+<td>作状语</td>
+<td>Not knowing what to eat,the rabbit skipped lunch. 可以表示原因、时间、伴随等关系</td>
+</tr>
+<tr>
+<td>作定语</td>
+<td>a sleeping rabbit. 表明兔子的状态是睡觉，但是不同于动名词作定语。</td>
+</tr>
+</tbody></table>
+<h3 id="过去分词"><a href="#过去分词" class="headerlink" title="过去分词"></a>过去分词</h3><p><strong>暗含被动关系，不表示过去时间</strong></p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>作后置定语</td>
+<td>The carrot cake eaten by the rabbit is delicious</td>
+</tr>
+<tr>
+<td>作表语</td>
+<td>The rabbit is interested in growing carrots.</td>
+</tr>
+<tr>
+<td>作宾补</td>
+<td>The rabbit found his carrot stolen.</td>
+</tr>
+<tr>
+<td>作状语</td>
+<td>1. 表地点：ex:Seen from the hill,the carrot field looks beautiful.  2. 表原因：ex:Born in a rabbit family,the rabbit has been growing carrots all his life. 3. 表条件：ex:Given another chance,the rabbit would go to the wolf’s party.&#96;</td>
+</tr>
+</tbody></table>
 <p>判断谓语使用现在分词还是过去分词，看主语是主动还是被动完成动作。<code>ex:seen from the hill,the carrot field looks beautiful</code> 田是“被看”，所以使用过去分词</p>
-<p>需要注意的是，虽然理论上任何动词不定式和动名词可以充当另一个动词的宾语，但是实际上不是，如enjoy不能用不定式充当宾语等。同样，也有些动词不能直接接动名词，而是要借助介词，比如  <code>ex:The rabbit is looking forward to eating carrots</code> 这里的to是介词而不是不定式的to。</p>
 <hr>
-<p>特例：独立主格：<code>ex:The work finished,the rabbit went home.</code>这里went是谓语动词，finished是非谓语动词(过去分词)，修饰work.</p>
+<p>特例：独立主格：ex:The work finished,the rabbit went home.这里went是谓语动词，finished是非谓语动词(过去分词)，修饰work.</p>
 <hr>
-<h3 id="独立主格"><a href="#独立主格" class="headerlink" title="独立主格"></a>独立主格</h3><p>我们来看下这个句子<code>because he was invited by the wolf,the rabbit decided to go to the party.</code> 如果用过去分词来表示(因为这里表原因而且是被动)，则变为<code>Invited by the wolf,the rabbit decided to go to the party</code>。</p>
+<h3 id="扩展：独立主格"><a href="#扩展：独立主格" class="headerlink" title="扩展：独立主格"></a>扩展：独立主格</h3><p>我们来看下这个句子<code>because he was invited by the wolf,the rabbit decided to go to the party.</code> 如果用过去分词来表示(因为这里表原因而且是被动)，则变为<code>Invited by the wolf,the rabbit decided to go to the party</code>。</p>
 <p>但如果是主动关系呢？</p>
 <p>我们来看一下这个句子<code>because the wolf invited him,the rabbit decided to go to the party.</code> 这是一个完整的句子，如果我们要将前面的句子简化。则改为<code>The wolf inviting him,the rabbit decided to go to the party.</code><br>The rabbit句子是句子的主干，前面句子表示原因，invite这个动作由the wolf发出，所以是主动关系-使用现在分词。The wolf是前面句子的逻辑主语，也就是独立主语后面不能用动词原形。</p>
 <p>独立主格的结构：名词|代词+be动词的现在分词being，然后再把being省掉。<br>例如：<code>The rabbit came in,carrot （being） in hand</code><br>特殊独立主格：with+宾语+宾语补足语<br><code>With the work finished,the rabbit went home.</code> ⇒ the work finished,the rabbit went home.</p>
@@ -1089,16 +1243,14 @@
 </ol>
 </li>
 <li><ol start="3">
-<li>半助动词：</li>
-<li>be able to   表示能力，可以表示将来的能力</li>
-</ol>
-<pre><code>`I&#39;ll be able to reach school on time`
-特别注意的是，was/were able to 表示成功做成
-`I was able to reach school on time because I left home early.`
-</code></pre>
-<ol start="2">
-<li>be going to| be about to |be to ：表示将要做某事，第一个表示计划做某事，第二个是马上做某事，第三个是被命令做某事  <code>ex:I am going to eat dinner at 6PM today.</code></li>
-<li>had better ：最好做，缩写是’d better  <code>ex:you&#39;d better listen to me.</code></li>
+<li><p>半助动词：</p>
+</li>
+<li><p>be able to   表示能力，可以表示将来的能力 I’ll be able to reach school on time 特别注意的是，was&#x2F;were able to 表示成功做成，I was able to reach school on time because I left home early.</p>
+</li>
+<li><p>be going to| be about to |be to ：表示将要做某事，第一个表示计划做某事，第二个是马上做某事，第三个是被命令做某事  <code>ex:I am going to eat dinner at 6PM today.</code></p>
+</li>
+<li><p>had better ：最好做，缩写是’d better  <code>ex:you&#39;d better listen to me.</code></p>
+</li>
 </ol>
 </li>
 </ul>
