@@ -1,96 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo博客测试</title>
-    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h2><p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img1.png"></p>
-<ul>
-<li>我通过picgo图床实现图片上传，只需要在md文件里面插入-图片，然后就会自动把插入的文件上传到oss上面，要取消的时候就点击文件-偏好设置-上传服务设定-将picgo换成无即可。</li>
-</ul>
-<p>用绝对路径和相对路径插入的图片只会在本地显示，如果想在网站上显示就需要用ImgURL、图片上传的方式链接图片</p>
-<h2 id="测试系列文章"><a href="#测试系列文章" class="headerlink" title="测试系列文章"></a>测试系列文章</h2><ol><li><a href="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" title="hexo博客创建">hexo博客创建</a></li><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" title="hexo博客测试">hexo博客测试</a></li></ol>
-
-
-
-<p>注意：hexo会自动给分级标题编号，不需要自己添加</p>
-<ul>
-<li>md开头的格式可以参考此，细节可以看此文档<a href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li>
-<li>注意:top-img: 图片格式是地址，可以导入网站的地址。</li>
-<li>相关图片上传必备网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a></li>
-<li>使用，将图片上传到这里，然后点击Image URL 复制地址即可远程连接</li>
-</ul>
-<h2 id="banner设置"><a href="#banner设置" class="headerlink" title="banner设置"></a>banner设置</h2><ul>
-<li><p>网站上方的“标签””分类“”清单“对应blog&#x2F;source&#x2F;英文名&#x2F;index.md 具体写法见</p>
-</li>
-<li><p>友情链接可以自定义：方法见<a href="https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></p>
-</li>
-<li><p>导航栏设置：在_config.butterfly.yml 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class&#x3D; “ 复制这里的内容” 替代即可。</p>
-</li>
-</ul>
-<h2 id="文章设置"><a href="#文章设置" class="headerlink" title="文章设置"></a>文章设置</h2><ul>
-<li><p>當主題配置文件中的 highlight_shrink 設為false時，可在front-matter添加highlight_shrink: true來單獨配置文章收縮代碼框。我这里默认是展开所有代码，需要的时候就在md文件开头添加这句话即可。</p>
-</li>
-<li><p>tab演示</p>
-</li>
-</ul>
-<div class="tabs" id="test1"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="test1-1">test1 1</button><button type="button" class="tab " data-href="test1-2">test1 2</button><button type="button" class="tab " data-href="test1-3">test1 3</button></ul><div class="tab-contents"><div class="tab-item-content active" id="test1-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content" id="test1-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content" id="test1-3"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-
-
-<ul>
-<li>按钮button设置</li>
-<li><a class="btn-beautify [color] [style] [layout] [position] [size]" href="/%5Burl%5D" 
-  title="[text]"><i class="[icon]"></i><span>[text]</span></a></li>
-<li>[url]         : 鏈接</li>
-<li>[text]        : 按鈕文字</li>
-<li>[icon]        : [可選] 圖標</li>
-<li>[color]       : [可選] 按鈕背景顔色 （默認style時） 按鈕字體和邊框顔色(outline時) default&#x2F;blue&#x2F;pink&#x2F;red&#x2F;purple&#x2F;orange&#x2F;green</li>
-<li>[style]       : [可選] 按鈕樣式 默認實心 outline&#x2F;留空</li>
-<li>[layout]      : [可選] 按鈕佈局 默認為line   block&#x2F;留空</li>
-<li>[position]    : [可選] 按鈕位置 前提是設置了layout為block 默認為左邊  center&#x2F;right&#x2F;留空</li>
-<li>[size]        : [可選] 按鈕大小  larger&#x2F;留空</li>
-</ul>
-<div class="btn-center">
-<a class="btn-beautify outline larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline blue larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline pink larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline red larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline purple larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline orange larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline green larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-</div>
-
-<ul>
-<li><p>文字高亮</p>
-</li>
-<li><mark class="hl-label color">text</mark>  ,颜色可选default/blue/pink/red/purple/orange/green
-<mark class="hl-label red">红色</mark> 
-</li>
-<li><p>系列文章</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br><span class="line">//在文章的 front-matter 上添加參數 series，並給與一個標識</span><br><span class="line">//使用此標簽外掛，會把相同標識的文章以列表的形式展示</span><br></pre></td></tr></table></figure>
-
-</li>
-<li><p>其他（如渲染乐谱\链接等可以看<a href="https://butterfly.js.org/posts/4aa8abbe/#flink%EF%BC%89">https://butterfly.js.org/posts/4aa8abbe/#flink）</a></p>
-</li>
-<li><p>主页的html在文件.deploy_git&#x2F;index.html里面，要更改文字的话在这里更改。</p>
-</li>
-</ul>
-<p>待改进部分： 统计访问人数自己看不见、添加视频插件。</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客创建</title>
     <url>/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Hexo 是一个由Nodejs驱动的博客框架，支持 Markdown、一键部署、插件和多种模板引擎。Hexo 可以让你轻松创建、管理和部署你的个人或团队博客。本文基于个人的实践经验，<strong>以Windows为主要开发环境</strong>，旨在让那些对博客搭建感兴趣但碍于困难的朋友能搭建起基本的博客框架。</p>
@@ -270,6 +180,7 @@
 </blockquote>
 <p>虽然主菜单栏里面可以分成多个子菜单，但是似乎每一个子菜单只能放一个md文件，所以<u>建议此md文件作为某一类型的东西的索引来呈现。</u></p>
 <p>所有的博客md文件都需要放在_post文件夹里面，其他地方大多只能放索引md文件。</p>
+<p>建议修改的使用经常使用Hexo s命令，修改无误之后再提交。</p>
 <p><strong>To be continue……</strong></p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>本篇文章主要侧重于基础的hexo博客搭建，至于进阶的hexo主题搭建和插件安装，限于笔者能力难以展开，有兴趣的读者可以去官方文档找对应的资料，按照作者的文档去安装。</p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><strong>官方网站</strong>：<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></p>
@@ -282,40 +193,6 @@
       </categories>
       <tags>
         <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析工具superset安装和使用(version:0.381)</title>
-    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
-</blockquote>
-<ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料<ul>
-<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h1><ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
-</ol>
-<h1 id="superset使用指南"><a href="#superset使用指南" class="headerlink" title="superset使用指南"></a>superset使用指南</h1><p>待更新……</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
@@ -715,6 +592,130 @@
       </categories>
       <tags>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客测试</title>
+    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h2><p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img1.png"></p>
+<ul>
+<li>我通过picgo图床实现图片上传，只需要在md文件里面插入-图片，然后就会自动把插入的文件上传到oss上面，要取消的时候就点击文件-偏好设置-上传服务设定-将picgo换成无即可。</li>
+</ul>
+<p>用绝对路径和相对路径插入的图片只会在本地显示，如果想在网站上显示就需要用ImgURL、图片上传的方式链接图片</p>
+<h2 id="测试系列文章"><a href="#测试系列文章" class="headerlink" title="测试系列文章"></a>测试系列文章</h2><ol><li><a href="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" title="hexo博客创建">hexo博客创建</a></li><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" title="hexo博客测试">hexo博客测试</a></li></ol>
+
+
+
+<p>注意：hexo会自动给分级标题编号，不需要自己添加</p>
+<ul>
+<li>md开头的格式可以参考此，细节可以看此文档<a href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li>
+<li>注意:top-img: 图片格式是地址，可以导入网站的地址。</li>
+<li>相关图片上传必备网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a></li>
+<li>使用，将图片上传到这里，然后点击Image URL 复制地址即可远程连接</li>
+</ul>
+<h2 id="banner设置"><a href="#banner设置" class="headerlink" title="banner设置"></a>banner设置</h2><ul>
+<li><p>网站上方的“标签””分类“”清单“对应blog&#x2F;source&#x2F;英文名&#x2F;index.md 具体写法见</p>
+</li>
+<li><p>友情链接可以自定义：方法见<a href="https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></p>
+</li>
+<li><p>导航栏设置：在_config.butterfly.yml 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class&#x3D; “ 复制这里的内容” 替代即可。</p>
+</li>
+</ul>
+<h2 id="文章设置"><a href="#文章设置" class="headerlink" title="文章设置"></a>文章设置</h2><ul>
+<li><p>當主題配置文件中的 highlight_shrink 設為false時，可在front-matter添加highlight_shrink: true來單獨配置文章收縮代碼框。我这里默认是展开所有代码，需要的时候就在md文件开头添加这句话即可。</p>
+</li>
+<li><p>tab演示</p>
+</li>
+</ul>
+<div class="tabs" id="test1"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="test1-1">test1 1</button><button type="button" class="tab " data-href="test1-2">test1 2</button><button type="button" class="tab " data-href="test1-3">test1 3</button></ul><div class="tab-contents"><div class="tab-item-content active" id="test1-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content" id="test1-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content" id="test1-3"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+
+<ul>
+<li>按钮button设置</li>
+<li><a class="btn-beautify [color] [style] [layout] [position] [size]" href="/%5Burl%5D" 
+  title="[text]"><i class="[icon]"></i><span>[text]</span></a></li>
+<li>[url]         : 鏈接</li>
+<li>[text]        : 按鈕文字</li>
+<li>[icon]        : [可選] 圖標</li>
+<li>[color]       : [可選] 按鈕背景顔色 （默認style時） 按鈕字體和邊框顔色(outline時) default&#x2F;blue&#x2F;pink&#x2F;red&#x2F;purple&#x2F;orange&#x2F;green</li>
+<li>[style]       : [可選] 按鈕樣式 默認實心 outline&#x2F;留空</li>
+<li>[layout]      : [可選] 按鈕佈局 默認為line   block&#x2F;留空</li>
+<li>[position]    : [可選] 按鈕位置 前提是設置了layout為block 默認為左邊  center&#x2F;right&#x2F;留空</li>
+<li>[size]        : [可選] 按鈕大小  larger&#x2F;留空</li>
+</ul>
+<div class="btn-center">
+<a class="btn-beautify outline larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline blue larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline pink larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline red larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline purple larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline orange larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline green larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+</div>
+
+<ul>
+<li><p>文字高亮</p>
+</li>
+<li><mark class="hl-label color">text</mark>  ,颜色可选default/blue/pink/red/purple/orange/green
+<mark class="hl-label red">红色</mark> 
+</li>
+<li><p>系列文章</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br><span class="line">//在文章的 front-matter 上添加參數 series，並給與一個標識</span><br><span class="line">//使用此標簽外掛，會把相同標識的文章以列表的形式展示</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>其他（如渲染乐谱\链接等可以看<a href="https://butterfly.js.org/posts/4aa8abbe/#flink%EF%BC%89">https://butterfly.js.org/posts/4aa8abbe/#flink）</a></p>
+</li>
+<li><p>主页的html在文件.deploy_git&#x2F;index.html里面，要更改文字的话在这里更改。</p>
+</li>
+</ul>
+<p>待改进部分： 统计访问人数自己看不见、添加视频插件。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析工具superset安装和使用(version:0.381)</title>
+    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+</blockquote>
+<ul>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料<ul>
+<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h1><ol>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
+</ol>
+<h1 id="superset使用指南"><a href="#superset使用指南" class="headerlink" title="superset使用指南"></a>superset使用指南</h1><p>待更新……</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
@@ -1187,38 +1188,40 @@
 </blockquote>
 <p><code>ex:the rabbit will eat a rabbit.</code> 谓语动词本身无法表达“将来”的时间，所以需要借助will来构成“将来时”。</p>
 <p>在很多语法书中将情态动词与助动词单独分类，但实际上情态动词也是起辅助作用，“不能”单独做谓语动词，所以本质上情态动词还是助动词。这里我就将两者作为一类</p>
-<ul>
-<li>助动词分类<ol>
-<li>基本：be、do、have</li>
-</ol>
-<ul>
-<li><ol start="2">
-<li>情态动词</li>
-<li>can&#x2F;could： <ol>
-<li>前者是有能力，后者是过去有能力，现在有没有不知道 <code>ex:I can  kill a wolf</code></li>
-<li>前后都可以表示请求、许可，后者更加委婉。 <code>ex:Could i borrow your book?</code></li>
-<li>前后都表示可能性，后者表示对过去的推测&#x2F;现在的可能性  <code>ex:Angthing can happen.</code></li>
+<h3 id="助动词分类"><a href="#助动词分类" class="headerlink" title="助动词分类"></a>助动词分类</h3><div class="tabs" id="ex6"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex6-1">1.基本</button><button type="button" class="tab " data-href="ex6-2">2.情态动词</button><button type="button" class="tab " data-href="ex6-3">3.半助动词</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex6-1"><p><strong>be、do、have</strong></p></div><div class="tab-item-content" id="ex6-2"><ol>
+<li><p>can&#x2F;could： </p>
+<ol>
+<li><p>前者是有能力，后者是过去有能力，现在有没有不知道 <code>ex:I can  kill a wolf</code></p>
+</li>
+<li><p>前后都可以表示请求、许可，后者更加委婉。 <code>ex:Could i borrow your book?</code></p>
+</li>
+<li><p>前后都表示可能性，后者表示对过去的推测&#x2F;现在的可能性  <code>ex:Angthing can happen.</code></p>
+</li>
 </ol>
 </li>
-<li>may&#x2F;might：<ol>
+<li><p>may&#x2F;might：</p>
+<ol>
 <li>表示请求或者许可，后者更礼貌  <code>ex:May I borrow your book?</code></li>
 <li>表示可能性，后者的可能性更小 <code>ex:He may be at home.</code></li>
 <li>表示祝愿 <code>ex:May you succeed!</code> 这种情况不使用might</li>
 </ol>
 </li>
-<li>must<ol>
+<li><p>must</p>
+<ol>
 <li>表示必须  <code>ex:you must do your homework.</code></li>
 <li>表示禁止must not 意思是必须不、绝对不，否定的意思更强烈  <code>ex:you must not smoke here</code></li>
 <li>表示推测，而且是肯定的推测  <code>ex:The light is on.The rabbit must be at home.</code></li>
 </ol>
 </li>
-<li>will&#x2F;would：<ol>
+<li><p>will&#x2F;would：</p>
+<ol>
 <li>构成将来时 <code>ex:I will have breakfast.</code></li>
 <li>表示请求，后者更加委婉 <code>ex:Would you give me a cup of coffee?</code></li>
 <li>表推测，假设，后者的不确定性更大建议 <code>ex:Ask him,He will konw.</code></li>
 </ol>
 </li>
-<li>shall&#x2F;should：<ol>
+<li><p>shall&#x2F;should：</p>
+<ol>
 <li>shall可以构成将来时  <code>ex:I shall be there at 9AM.</code></li>
 <li>shall表示请求或者征求意见  <code>ex:Shall we go to the movie?</code></li>
 <li>表示警告，命令  <code>ex:You shall not pass!</code></li>
@@ -1228,39 +1231,52 @@
 <li>虚拟语气  <code>ex:If it should rain tomorrow,I wouldn&#39;t go.</code></li>
 </ol>
 </li>
-<li>ought to：应该，语气比should更强烈  <code>ex:We ought to finish it first.</code></li>
-<li>dare&#x2F;dared ：<ol>
+<li><p>ought to：应该，语气比should更强烈  <code>ex:We ought to finish it first.</code></p>
+</li>
+<li><p>dare&#x2F;dared ：</p>
+<ol>
 <li>实意动词：敢，冒险</li>
 <li>情态动词：敢   <code>ex:How dare you.</code></li>
 </ol>
 </li>
-<li>need：<ol>
+<li><p>need：</p>
+<ol>
 <li>需要 </li>
 <li>既可以作实义动词，也可以作情态动词 <code>ex:Students need study.</code> &#x3D;&#x3D; <code>ex:Student need to study.</code>  前面的need是情态动词，后面的是实义动词</li>
 </ol>
 </li>
-<li>used to：表过去的动作，往往是习惯或者是重复的动作，</li>
-</ol>
+<li><p>used to：表过去的动作，往往是习惯或者是重复的动作，</p>
 </li>
-<li><ol start="3">
-<li><p>半助动词：</p>
-</li>
-<li><p>be able to   表示能力，可以表示将来的能力 I’ll be able to reach school on time 特别注意的是，was&#x2F;were able to 表示成功做成，I was able to reach school on time because I left home early.</p>
-</li>
-<li><p>be going to| be about to |be to ：表示将要做某事，第一个表示计划做某事，第二个是马上做某事，第三个是被命令做某事  <code>ex:I am going to eat dinner at 6PM today.</code></p>
-</li>
-<li><p>had better ：最好做，缩写是’d better  <code>ex:you&#39;d better listen to me.</code></p>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
+</ol></div><div class="tab-item-content" id="ex6-3"><table>
+<thead>
+<tr>
+<th>形式</th>
+<th>含义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>be able to</td>
+<td>表示能力，可以表示将来的能力|特别注意的是，was&#x2F;were able to 表示成功做成</td>
+<td>I’ll be able to reach school on time|I was able to reach school on time because I left home early.</td>
+</tr>
+<tr>
+<td>be going to|be about to|be to</td>
+<td>表示将要做某事，第一个表示计划做某事，第二个是马上做某事，第三个是被命令做某事</td>
+<td>I am going to eat dinner at 6 PM today.</td>
+</tr>
+<tr>
+<td>had better</td>
+<td>最好做，缩写是’d better</td>
+<td>you’d better listen to me.</td>
+</tr>
+</tbody></table></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
 <h2 id="系动词"><a href="#系动词" class="headerlink" title="系动词"></a>系动词</h2><p>定义：相当于C语言中的赋值符号&#x3D;，将后者赋予前者</p>
 <p>如：I am a rabbit 就是将rabbit赋予给我，即我&#x3D;rabbit。某某起来的系动词(<code>ex:he looks handsome</code>)与此相同，只不过在翻译的时候增加了系动词的意思。</p>
 <h2 id="使役动词"><a href="#使役动词" class="headerlink" title="使役动词"></a>使役动词</h2><p>定义：意思是使、让、令的词语，语法结构：使役动词+宾语+宾语补足语</p>
-<ul>
-<li>常见的使役动词<ol>
+<p><strong>常见的使役动词</strong></p>
+<ol>
 <li>make：<ol>
 <li>make+动词原形（其实是省去 to的不定式）： <code>ex:Employer make his employee work once again.</code></li>
 <li>形容词 如：<code>the cattot made the wolf full</code></li>
@@ -1270,8 +1286,6 @@
 <li>have：have +动词原形（给某人、物&#x2F;责任做) 如：<code>I will have the wolf wash the dishes</code>  | have + 动词过去分词 表示让某人做某事</li>
 <li>get：get +不定式（说服&#x2F;鼓励……做……)  <code>I&#39;ll get the wolf to clean the kitchen.</code>|get +过去分词    <code>ex:I got my nails done.</code></li>
 </ol>
-</li>
-</ul>
 <h1 id="从句"><a href="#从句" class="headerlink" title="从句"></a>从句</h1><p>举个例子，我看见兔子吃了胡萝卜，这里主语是“我”，谓语动词是”看见“，那宾语是什么？是”兔子吃了胡萝卜“这件事，这件事本身单独看是完整的句子，这种句子充当句子成分的就叫做从句。英语为 <code>ex:I saw that the rabbit ate a carrot.</code> 这里I saw 为主句，that及其之后的是从句。</p>
 <p>句子分类</p>
 <ol>
@@ -1281,19 +1295,16 @@
 </ol>
 <p>在句子中，每一个句子成分都可以由句子充当，比如主语被句子充当就变成主句从句。分成三大类就是名词从句、形容词从句、副词从句。</p>
 <p><em>如何理解中式造句与英式造句之间的差异？</em>比如这句话“一根我买来的胡萝卜”，在中文中用形容词(定语)+名词的方式，无论定语有多长，而在英语中是在在被修饰的词之后(先行词)+与他有关系的词(关系词)+句子补充说明，这里就是 <code>ex:a carrot that I bought.</code>  即中文中定语都是前置的，而英语中定语大部分都是后置的。也就是说，在用英语造句的时候，可以先将对应的中文拆句，比如“一只几个月前开始在B站上传视频专门教英语的讨人喜爱的兔子”，核心主干是“一只兔子”，而“几个月前”“开始在B站上传视频”“专门教英语的”“讨人喜爱的”全都是定语，可以将其放在关系词后面，再按照一定的顺序进行调整。</p>
-<h2 id="关系词"><a href="#关系词" class="headerlink" title="关系词"></a>关系词</h2><ul>
-<li>分类<ol>
+<h2 id="关系词"><a href="#关系词" class="headerlink" title="关系词"></a>关系词</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ol>
 <li>关系代词：代指前面的部分 <code>ex:The rabbit is eating a carrot that I bought.</code> 可以看到，后面的句子作陈述句的时候是<code>ex:I bought a carrot.</code>,然后用that 代指 a carrot ,再将关系代词提前，则变为<code>ex:that I bought.</code> 常见的还有who\whom\which\whose .<ol>
 <li>that与which的区别:  当先行词是唯一的时候使用that，而先行词多选一的时候使用which. <code>ex:the only rabbit that ate a carrot.</code>  <code>ex:The rabbit ate a carrot which I bought.</code> 言下之意就是这里有多个胡萝卜，但这个兔子只吃了我买的那个。</li>
 </ol>
 </li>
 <li>关系副词: 前面的部分在从句中充当副词 <code>ex:This was the place where the rabbit ate the carrot.</code> 当然也可以用关系代词替代，<code>ex:This was the place at which the rabbit ate the carrot.</code> 由此可得，关系副词&#x3D;介词+which</li>
 </ol>
-</li>
-</ul>
 <h2 id="形容词性从句"><a href="#形容词性从句" class="headerlink" title="形容词性从句"></a>形容词性从句</h2><hr>
 <h3 id="限定性形容词从句与非限定形容词从句"><a href="#限定性形容词从句与非限定形容词从句" class="headerlink" title="限定性形容词从句与非限定形容词从句"></a>限定性形容词从句与非限定形容词从句</h3><p><code>ex:The rabbit is eating a carrot that I bought.</code> 这里that句限定了carrot的范围&#x2F;性质 而<code>ex:The rabbit ate the carrot,which was on the table.</code> 这里的which更多起到代词的作用，并没有限定的作用。</p>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ol>
+<h3 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h3><ol>
 <li>非限定性形容词从句作插入语  <code>ex:My head,which is big,is useful when it rains.</code> </li>
 <li>非限定性形容词从句指代整句话  <code>ex:The rabbit ate the carrot,which was not surprising.</code> 这里的which指代The rabbit ate the carrot.</li>
 </ol>
@@ -1320,32 +1331,72 @@
 <h3 id="5-宾语补语从句"><a href="#5-宾语补语从句" class="headerlink" title="5. 宾语补语从句"></a>5. 宾语补语从句</h3><p><code>ex:My education made me who I am today.</code> </p>
 <h2 id="副词从句"><a href="#副词从句" class="headerlink" title="副词从句"></a>副词从句</h2><hr>
 <p>副词从句充当句子中状语的部分，所以也成为状语从句</p>
-<ul>
-<li>分类<ol>
-<li>表时间<ol>
-<li>在…前 <code>ex:The rabbit ate a carrot at home before the wolf stopped by.</code> The到before之前是主句，the wolf到by是从句。如果要将从句提前需要断句。<code>ex:Before the wolf stopped by,the rabbit ate a carrot at home.</code> </li>
-<li>在……时：引导词可以用when\while\as。when表示突然，while表示时间段，as表示同时。<code>ex:I ate a carrot as I made the video.</code></li>
-<li>在……之后：引导词after.<code>ex:The rabbit ate a carrot after the wolf stopped by.</code></li>
-<li>从之前某一段时间点开始算：引导词since。<code>ex:The rabbit has shared three carrots since the wolf stopped by.</code> </li>
-<li>直到之后的某一时间点：引导词until.<code>ex:The student waited until the bus came.</code></li>
-<li>一……就……：引导词as soon as.<code>ex:The rabbit will eat a carrot as soon as the wolf leaves.</code></li>
-<li>下次：引导词the next time. <code>ex:The rabbit will share the biggest carrot the next time the wolf stops by.</code></li>
-</ol>
+<h3 id="分类-2"><a href="#分类-2" class="headerlink" title="分类"></a>分类</h3><ol>
+<li><p>表时间</p>
+<table>
+<thead>
+<tr>
+<th>含义</th>
+<th>引导词</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>在…前</td>
+<td>before</td>
+<td>The rabbit ate a carrot at home before the wolf stopped by. The到before之前是主句，the wolf到by是从句。如果要将从句提前需要断句Before the wolf stopped by,the rabbit ate a carrot at home.</td>
+</tr>
+<tr>
+<td>在……时</td>
+<td>when\while\as.when表示突然，while表示时间段，as表示同时</td>
+<td>I ate a carrot as I made the video.</td>
+</tr>
+<tr>
+<td>在……之后</td>
+<td>after</td>
+<td>The rabbit ate a carrot after the wolf stopped by.</td>
+</tr>
+<tr>
+<td>从之前某一段时间点开始算</td>
+<td>since</td>
+<td>The rabbit has shared three carrots since the wolf stopped by.</td>
+</tr>
+<tr>
+<td>直到之后的某一时间点</td>
+<td>until</td>
+<td>The student waited until the bus came.</td>
+</tr>
+<tr>
+<td>一……就……</td>
+<td>as soon as</td>
+<td>The rabbit will eat a carrot as soon as the wolf leaves.</td>
+</tr>
+<tr>
+<td>下次</td>
+<td>the next time</td>
+<td>The rabbit will share the biggest carrot the next time the wolf stops by.</td>
+</tr>
+</tbody></table>
 </li>
-<li>表地点(如：在…地方) 引导词：where+“强调形式”(wherever,anywhere……) <code>ex:The rabbit will go wherever he can find a carrot.</code></li>
-<li>表条件(如：如果…) <code>ex:If the rabbit sees a carrot,he will eat it.</code> 遵循“主将从现” ，从句(if引导的句子)的假设是不确定的，不能用will，所以用一般现在时态，而一旦假设成立，那么一定某件事发生，这种确定的发生用一般将来时态。即条件句比主句落后一个时间段。其他的引导词如unless,provided,as long as,in case 等</li>
-<li>表让步(如：虽然。。但是。…) <code>ex:Even if I see a carrot,I will not eat it.</code> 同样的还是有thought\although\no matter</li>
-<li>表方式(如：就好像…)  <code>ex:I feel good as if I had just eaten a carrot.</code> </li>
-<li>表比较(如：比。…) <code>ex:He is smarter than I (am).</code> 其实就等效于口语化的 <code>ex:He is smarter than me.</code> 同样比较的词有as……as,the more…… the more.</li>
-<li>表原因(如：因为所以。…) <code>ex:The rabbit ate the carrot because he was hungry.</code> 不能用because和so搭配是因为because用来构成复杂句，so用来构成复合句，两者混用会导致句子结构混乱，同理还有though和but.同样的词还有since\as，不过这两个词构成的副词从句一般放在主句前。</li>
-<li>表目的（如：为了…) <code>ex:In order that I could finish the video in time,I pulled an all-nighter.</code> 同样的词还有so that.so that既能表示目的也能表示结果，在翻译的时候要注意这一点。</li>
-<li>表结果(如：所以…)  <code>ex:I ate a lot of carrots for lunch so that I wasn&#39;t hungry at all in the afternoon.</code> 同样的词还有so,such that,such后面要接名词。</li>
-</ol>
+<li><p>表地点(如：在…地方) 引导词：where+“强调形式”(wherever,anywhere……) <code>ex:The rabbit will go wherever he can find a carrot.</code></p>
 </li>
-</ul>
+<li><p>表条件(如：如果…) <code>ex:If the rabbit sees a carrot,he will eat it.</code> 遵循“主将从现” ，从句(if引导的句子)的假设是不确定的，不能用will，所以用一般现在时态，而一旦假设成立，那么一定某件事发生，这种确定的发生用一般将来时态。即条件句比主句落后一个时间段。其他的引导词如unless,provided,as long as,in case 等</p>
+</li>
+<li><p>表让步(如：虽然。。但是。…) <code>ex:Even if I see a carrot,I will not eat it.</code> 同样的还是有thought\although\no matter</p>
+</li>
+<li><p>表方式(如：就好像…)  <code>ex:I feel good as if I had just eaten a carrot.</code> </p>
+</li>
+<li><p>表比较(如：比。…) <code>ex:He is smarter than I (am).</code> 其实就等效于口语化的 <code>ex:He is smarter than me.</code> 同样比较的词有as……as,the more…… the more.</p>
+</li>
+<li><p>表原因(如：因为所以。…) <code>ex:The rabbit ate the carrot because he was hungry.</code> 不能用because和so搭配是因为because用来构成复杂句，so用来构成复合句，两者混用会导致句子结构混乱，同理还有though和but.同样的词还有since\as，不过这两个词构成的副词从句一般放在主句前。</p>
+</li>
+<li><p>表目的（如：为了…) <code>ex:In order that I could finish the video in time,I pulled an all-nighter.</code> 同样的词还有so that.so that既能表示目的也能表示结果，在翻译的时候要注意这一点。</p>
+</li>
+<li><p>表结果(如：所以…)  <code>ex:I ate a lot of carrots for lunch so that I wasn&#39;t hungry at all in the afternoon.</code> 同样的词还有so,such that,such后面要接名词。</p>
+</li>
+</ol>
 <h1 id="非动词"><a href="#非动词" class="headerlink" title="非动词"></a>非动词</h1><hr>
-<h2 id="冠词"><a href="#冠词" class="headerlink" title="冠词"></a>冠词</h2><ul>
-<li>分类<ol>
+<h2 id="冠词"><a href="#冠词" class="headerlink" title="冠词"></a>冠词</h2><h3 id="分类-3"><a href="#分类-3" class="headerlink" title="分类"></a>分类</h3><ol>
 <li>不定冠词：使用范围：判断音素**(即首音标而不是字母**)发音是元音还是辅音 如 a university&#x2F;an hour<ol>
 <li>意思：<ol>
 <li>泛指:<code>ex:I saw a rabbit.</code>(我看到只兔子-指某一只）</li>
@@ -1384,106 +1435,346 @@
 </ol>
 </li>
 </ol>
+<div class="tabs" id="ex7"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex7-1">1.不定冠词</button><button type="button" class="tab " data-href="ex7-2">2.定冠词</button><button type="button" class="tab " data-href="ex7-3">3.零冠词</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex7-1"><p><strong>使用范围：判断音素(即首音标而不是字母)发音是元音还是辅音 如 a university&#x2F;an hour</strong></p>
+<p><strong>意思分类如下</strong></p>
+<table>
+<thead>
+<tr>
+<th>含义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>泛指</td>
+<td>I saw a rabbit.(我看到只兔子-指某一只）</td>
+</tr>
+<tr>
+<td>某一类（看语境去理解）</td>
+<td>最好是用相关名词的复数 A rabbit is smarter than a wolf. 这里的意思是兔子比狼聪明</td>
+</tr>
+<tr>
+<td>表示数字1</td>
+<td>I gave you a hundred carrots.</td>
+</tr>
+<tr>
+<td>表示每</td>
+<td>I give you a hundred carrots a day.</td>
+</tr>
+<tr>
+<td>主谓一致</td>
+<td>a teacher and video creator.这里老师和创作者都是指同一个人。如果是a teacher and a video creator. 这里指的是两个人。</td>
+</tr>
+<tr>
+<td>固定搭配</td>
+<td>as a result\have a good time……</td>
+</tr>
+</tbody></table></div><div class="tab-item-content" id="ex7-2"><p><em><strong>The</strong></em> </p>
+<ol>
+<li><p>发音</p>
+<ol>
+<li>两个发音：在辅音音素前读[ðə]比如：the book 那书，the desk 那桌子，the table 那桌子。</li>
+<li>在元音音素前读[ði]。比如：the apple 那苹果，the ant 那蚂蚁，the elephant 那大象。</li>
+</ol>
 </li>
-</ul>
+<li><p>意思</p>
+<table>
+<thead>
+<tr>
+<th>作用</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>特指</td>
+<td>The school</td>
+</tr>
+<tr>
+<td>再次提到的人或者事物</td>
+<td>I saw a rabbit.The rabbit ran fast.</td>
+</tr>
+<tr>
+<td>用在序数词和形容词的最高级前(某种意义上也是特指)</td>
+<td>The first rabbit.</td>
+</tr>
+<tr>
+<td>独一无二的名词</td>
+<td>The sun,the Great Wall.</td>
+</tr>
+<tr>
+<td>泛指</td>
+<td>play the piano. 如果这里the用a则侧重强调弹钢琴的动作。</td>
+</tr>
+<tr>
+<td>固定表达</td>
+<td>all the time.</td>
+</tr>
+<tr>
+<td>The +adj表示一类人</td>
+<td>the rich should help the poor.</td>
+</tr>
+</tbody></table>
+</li>
+</ol></div><div class="tab-item-content" id="ex7-3"><ol>
+<li>复数泛指  <code>ex:Rabbits are smart.</code> 这样更好体现某一类事物</li>
+<li>表示概念  <code>ex:Summer is hot.Winter is cold.</code> 这里表达的是“夏季”这一季节概念</li>
+<li>专有名词 <code>ex:Washington DC.</code></li>
+<li>固定表达：如play +球类&#x2F;棋类&#x2F;非西洋乐器 play+the+西洋乐器</li>
+</ol></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+
+
 <hr>
 <h2 id="介词"><a href="#介词" class="headerlink" title="介词"></a>介词</h2><p><strong>概念</strong>：本意是前置词prepositon ,补充信息的作用。</p>
-<ul>
-<li>常见介词分类<ol>
+<h3 id="常见介词分类"><a href="#常见介词分类" class="headerlink" title="常见介词分类"></a>常见介词分类</h3><ol>
 <li>简单介词：in\on\with…… 分别具有<strong>多重含义</strong>，所以翻译会与中文不同，所以不要想着找到所有意思的中文与之对应，最好在语境中去理解与记忆。</li>
 <li>短语介词：According to……</li>
 <li>合成介词：into……</li>
 <li>分词介词：provided\including……</li>
 </ol>
-</li>
-<li>介词的本源与引申<ol>
+<h3 id="介词的本源与引申"><a href="#介词的本源与引申" class="headerlink" title="介词的本源与引申"></a>介词的本源与引申</h3><ol>
 <li>About——on the outside of 在 的外面——引申为关于、大约、针对、具有某种特性、到处。<code>ex:There are about 2 carrots.</code></li>
 <li>on——在 之上：有一面确定，所以是较小的范围（“相对的”）<code>ex:Dinner is on me.</code></li>
 <li>beyond——在 之外：<code>ex:It&#39;s beyond me.</code></li>
 <li>in——在 之内：一般是在一堆东西之间，大范围  <code>ex:dressed in white.In English.</code></li>
 <li>At:在一个“点”上.<code>ex:At the corner.At shop.</code></li>
-<li>区别：从in到at范围(可以是时间也可以是空间)逐渐变小，<em>但这个范围是相对的</em><ol>
-<li>in一般表示在某某之中，也就是说明在一个大范围之内。in a year\month\week。但morning比day小为什么能用in？因为这里morning表达的是时间段，相对的”大范围“，所以使用in。</li>
-<li>on表示在……之上，有一面确定，所以是较小的范围 on that day</li>
-<li>at在一个“点”上 at 8 o’clock</li>
-<li>应用:<code>Walking in the street</code> 表达在整条街道上移动。<code>Some trash on the street</code> 表达街道表面有垃圾。<code>I am at C street and B street.</code> 表达在两条街道的交界带。</li>
+<li>区别：从in到at范围(可以是时间也可以是空间)逐渐变小，<em>但这个范围是相对的</em></li>
 </ol>
-</li>
-</ol>
-</li>
-<li>常见介词的用法<ol>
+<table>
+<thead>
+<tr>
+<th>区别</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>in一般表示在某某之中，也就是说明在一个大范围之内&#x2F;但morning比day小为什么能用in？因为这里morning表达的是时间段，相对的”大范围“，所以使用in。</td>
+<td>in a year\month\week。</td>
+</tr>
+<tr>
+<td>on表示在……之上，有一面确定，所以是较小的范围</td>
+<td>on that day</td>
+</tr>
+<tr>
+<td>at在一个“点”上,这个点是抽象的点，可以是时间的点也可以是地点的点。</td>
+<td>at 8 o’clock</td>
+</tr>
+<tr>
+<td>应用含义不同。</td>
+<td>Walking in the street.表达在整条街道上移动。Some trash on the street表达街道表面有垃圾。I am at C street and B street. 表达在两条街道的交界带。</td>
+</tr>
+</tbody></table>
+<h3 id="常见介词的用法"><a href="#常见介词的用法" class="headerlink" title="常见介词的用法"></a>常见介词的用法</h3><ol>
 <li>in：在内部 <code>ex:In the country.</code> 以……方式</li>
 <li>on：在上面、与物体有接触 <code>ex:on the table.</code>   <code>ex:we talked on the phone.</code></li>
 <li>at：在某处  <code>ex:at bus station.</code></li>
 <li>over:在 上方（可以接触，可以不接触）、覆盖、越过上空|有动态   <code>ex:The plane flew over the mountain.</code></li>
 <li>above：在 上方（高于平面）</li>
 </ol>
-</li>
-<li>常用其他介词<ol>
-<li>under：在 下方，与over相对，一般在正下方</li>
-<li>below：与above相对。 <code>ex:The rabbit dived below the surface of the water.</code></li>
-<li>near：在 周边</li>
-<li>By|beside：在 旁边：——引申为不超过 边界|不迟于 前    <code>ex:There is a hotel by/beside the river.</code></li>
-<li>Next to：靠近，紧挨着  <code>ex:The rabbit sat next to the wolf.</code></li>
-<li>across：（从表面）穿过 </li>
-<li>through：（从内部）穿过|通过某种方式  <code>ex:go through the tunnel.</code></li>
-<li>past：经过，路过</li>
-<li>In front of|in the front of：在……的前面，后者是在内部的前面</li>
-<li>before：在……之前</li>
-<li>Between……and ：两者之间</li>
-<li>among：三者之间</li>
-<li>Round|around：环绕 <code>ex:trees around the field.</code></li>
-<li>along：沿着</li>
-<li>to：朝着</li>
-<li>Toward|towards:朝着 的方向  <code>ex:walk toward home.</code></li>
-<li>onto：到 上面   <code>ex:the rabbit jumped onto the table.</code></li>
-<li>into：到 里面  </li>
-<li>Out of :从里面出来</li>
-<li>Opposite:在 对面   <code>ex:our school is opposite my house.</code></li>
-<li>against：与 相反；倚靠    <code>ex:The rabbit was leaning against the tree.</code></li>
-<li>Up:沿 向上  </li>
-<li>down：沿 向下</li>
-<li>off：离 有一定距离   <code>ex:New zealand lies off the eastern coast of Australia.</code></li>
-<li>until：直到</li>
-<li>during：持续；在 期间  <code>ex:during the past 2 days.</code></li>
-<li>for：因为 ；因 持续；以 价钱   <code>ex:I bought these books for 100 Yuan.</code></li>
-<li>since：自从</li>
-<li>From to :从 到 <code>ex:from 9:00 to 10:00.</code></li>
-<li>by：通过|后接度量标准  <code>ex:I go to school by car.</code>  <code>ex:They get paid by the hour.</code></li>
-<li>with：用 ；和 一起； 的原因是  <code>ex:The rabbit is shaking with cold.</code></li>
-<li>Because|because of：前接从句后接名词  <code>ex:The rabbit didn&#39;t go out because of the rain.</code>   同样后接名词的还有Due to|owing to|on account of</li>
-<li>of：此外的、附加的  <code>ex:He thought of something important.</code></li>
-<li>besides：除了 还  <code>ex:I like many things besides carrots.</code></li>
-<li>except：除了   <code>ex:Everyone went to the party except the rabbit.</code></li>
-<li>Except for：往往用来对之间的内容进行反驳。<code>ex:The party is great except for the loud music.</code></li>
-<li>……</li>
-</ol>
-</li>
-</ul>
-<aside>
-💡
-
-<p>尽可能由本源引申扩展义，在具体的语境中理解和记忆，不需要死记。</p>
-</aside>
-
-<ul>
-<li><p>介词短语</p>
-<p>  由介词+宾语组成的短语，可以充当句子成分</p>
+<h3 id="常用其他介词"><a href="#常用其他介词" class="headerlink" title="常用其他介词"></a>常用其他介词</h3><table>
+<thead>
+<tr>
+<th>形式</th>
+<th>含义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>under</td>
+<td>在……下方，与over相对，一般在正下方</td>
+<td>under the tree</td>
+</tr>
+<tr>
+<td>below</td>
+<td>与above相对</td>
+<td>The rabbit dived below the surface of the water.</td>
+</tr>
+<tr>
+<td>near</td>
+<td>在……周边</td>
+<td>The school is near the hospital</td>
+</tr>
+<tr>
+<td>by&#x2F;beside</td>
+<td>在……旁边：——引申为不超过 边界&#x2F;不迟于 前</td>
+<td>There is a hotel by&#x2F;beside the river.</td>
+</tr>
+<tr>
+<td>next to</td>
+<td>靠近，紧挨着</td>
+<td>The rabbit sat next to the wolf.</td>
+</tr>
+<tr>
+<td>across</td>
+<td>（从表面）穿过</td>
+<td>Walk across the sidewalk</td>
+</tr>
+<tr>
+<td>through</td>
+<td>（从内部）穿过&#x2F;通过某种方式</td>
+<td>go through the tunnel.</td>
+</tr>
+<tr>
+<td>past</td>
+<td>经过，路过</td>
+<td>Passing through a small area</td>
+</tr>
+<tr>
+<td>in front of&#x2F;in the front of</td>
+<td>在……的前面，后者是在内部的前面</td>
+<td>The driver is at the front of the car</td>
+</tr>
+<tr>
+<td>before</td>
+<td>在……之前</td>
+<td>Someone has been here before me</td>
+</tr>
+<tr>
+<td>between……and</td>
+<td>两者之间</td>
+<td>Between the father and the mother are their children</td>
+</tr>
+<tr>
+<td>among</td>
+<td>三者之间或三者以上</td>
+<td>He divided the country among his sons</td>
+</tr>
+<tr>
+<td>round&#x2F;around</td>
+<td>环绕</td>
+<td>trees around the field.</td>
+</tr>
+<tr>
+<td>along</td>
+<td>沿着</td>
+<td>we walk along the beach</td>
+</tr>
+<tr>
+<td>to</td>
+<td>朝着</td>
+<td>we are going to town on the bus,okay?</td>
+</tr>
+<tr>
+<td>toward&#x2F;towards</td>
+<td>朝着……的方向</td>
+<td>walk toward home.</td>
+</tr>
+<tr>
+<td>onto</td>
+<td>到……上面</td>
+<td>the rabbit jumped onto the table.</td>
+</tr>
+<tr>
+<td>into</td>
+<td>到……里面</td>
+<td>let’s go into the garden</td>
+</tr>
+<tr>
+<td>out of</td>
+<td>从里面出来</td>
+<td>an apple rolled out of the bag</td>
+</tr>
+<tr>
+<td>opposite</td>
+<td>在……对面</td>
+<td>our school is opposite my house.</td>
+</tr>
+<tr>
+<td>against</td>
+<td>与……相反；倚靠</td>
+<td>The rabbit was leaning against the tree.</td>
+</tr>
+<tr>
+<td>up</td>
+<td>沿……向上</td>
+<td>put those books up on the top shelf</td>
+</tr>
+<tr>
+<td>down</td>
+<td>沿……向下</td>
+<td>Is this lift going down</td>
+</tr>
+<tr>
+<td>off</td>
+<td>离……有一定距离</td>
+<td>New Zealand lies off the eastern coast of Australia.</td>
+</tr>
+<tr>
+<td>until</td>
+<td>直到</td>
+<td>we did not eat until past midnight</td>
+</tr>
+<tr>
+<td>during</td>
+<td>持续；在……期间</td>
+<td>during the past 2 days.</td>
+</tr>
+<tr>
+<td>for</td>
+<td>因为 ；因 持续；以 价钱</td>
+<td>I bought these books for 100 Yuan.</td>
+</tr>
+<tr>
+<td>since</td>
+<td>自从</td>
+<td>I’ve long since forgotten anything I ever learned</td>
+</tr>
+<tr>
+<td>from to</td>
+<td>从……到……</td>
+<td>from 9:00 to 10:00.</td>
+</tr>
+<tr>
+<td>by</td>
+<td>通过&#x2F;后接度量标准</td>
+<td>I go to school by car. &#x2F;They get paid by the hour.</td>
+</tr>
+<tr>
+<td>with</td>
+<td>用 ；和 一起；……的原因是</td>
+<td>The rabbit is shaking with cold.</td>
+</tr>
+<tr>
+<td>because&#x2F;because of</td>
+<td>前接从句后接名词&#x2F;同样后接名词的还有Due to&#x2F;owing to&#x2F;on account of</td>
+<td>The rabbit didn’t go out because of the rain.</td>
+</tr>
+<tr>
+<td>of</td>
+<td>此外的、附加的</td>
+<td>He thought of something important.</td>
+</tr>
+<tr>
+<td>besides</td>
+<td>除了……还</td>
+<td>I like many things besides carrots.</td>
+</tr>
+<tr>
+<td>except</td>
+<td>除了</td>
+<td>Everyone went to the party except the rabbit.</td>
+</tr>
+<tr>
+<td>except for</td>
+<td>往往用来对之间的内容进行反驳</td>
+<td>The party is great except for the loud music.</td>
+</tr>
+<tr>
+<td>……</td>
+<td>……</td>
+<td>……</td>
+</tr>
+</tbody></table>
+<p>💡尽可能由本源引申扩展义，在具体的语境中理解和记忆，不需要死记。</p>
+<h3 id="介词短语"><a href="#介词短语" class="headerlink" title="介词短语"></a>介词短语</h3><p>由介词+宾语组成的短语，可以充当句子成分</p>
 <ol>
 <li>Between 10 and 11 is a good time for me. 作主语</li>
 <li>The meeting is at 2 o’clock.作表语</li>
 <li>This is the key to the house.作定语</li>
 <li>……</li>
 </ol>
-</li>
-<li><p>短语动词</p>
-<p>  由动词+介词构成一个新的动词。比如check out ,make out……。大多数是固定搭配需要记忆。</p>
-</li>
-</ul>
+<h3 id="短语动词"><a href="#短语动词" class="headerlink" title="短语动词"></a>短语动词</h3><p>由动词+介词构成一个新的动词。比如check out ,make out……。大多数是固定搭配需要记忆。</p>
 <hr>
-<h2 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h2><ul>
-<li><p>名词的分类</p>
-<ol>
+<h2 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h2><h3 id="名词的分类"><a href="#名词的分类" class="headerlink" title="名词的分类"></a>名词的分类</h3><ol>
 <li>普通名词与专有名词（首字母大写）：如人名Mike，国家China</li>
 <li>由单数和复数分：可数名词与不可数名词<ol>
 <li>如集合名词：team,可以作单数也可以作复数，不过意思分别为团队、队伍，也就是集合名词的含义会随着单复数而变化。</li>
@@ -1493,14 +1784,8 @@
 </ol>
 </li>
 </ol>
-  <aside>
-  💡
-  
-<p>  名词的单复数不在于名词本身，而是在于名词在不同的语境中要表达什么意思，然后选择是单数还是复数。如 a glass of water 可数的是杯子而不是水，所以表达复数是two glasses of water.</p>
-  </aside>
-  </li>
-<li><p>名词的所有格</p>
-<ol>
+<p>💡名词的单复数不在于名词本身，而是在于名词在不同的语境中要表达什么意思，然后选择是单数还是复数。如 a glass of water 可数的是杯子而不是水，所以表达复数是two glasses of water.</p>
+<h3 id="名词的所有格"><a href="#名词的所有格" class="headerlink" title="名词的所有格"></a>名词的所有格</h3><ol>
 <li>‘s:表示从属关系，如Mike’s hand 。如果其主格是复数就打’即可。比如parents’ kids.    <ol>
 <li>表示修饰、特性：</li>
 <li>并列<strong>共有</strong>的情况下最后一个加所有格：Tom and Jerry’s room</li>
@@ -1509,11 +1794,8 @@
 <li>of:a room of school⇒the school’s room</li>
 <li>双重所有格：I am a friend of Mike’s.用Mike’s修饰friend.即Mike的朋友有很多，我只是他其中的一个。</li>
 </ol>
-</li>
-</ul>
 <h2 id="代词"><a href="#代词" class="headerlink" title="代词"></a>代词</h2><p>定义：就是用一个词代替之前说过的词，更多是用于简化和避免重复。</p>
-<ul>
-<li>分类<ol>
+<h3 id="分类-4"><a href="#分类-4" class="headerlink" title="分类"></a>分类</h3><ol>
 <li>人称代词：<ol>
 <li>人称代词的“格”：主格或者宾格，即代词在不同的格会有不同的变化。注意 <code>ex:you and I.</code>等一般习惯把对方放前面，“我”放在后面</li>
 <li>人称代词的表格搜一下就能找到，不过比较简单。</li>
@@ -1540,13 +1822,9 @@
 <li>连接代词：whom,whichever,what whatever,whoever……在从句中就变成连接代词  <code>ex:From whom did the rabbit get the carrots?</code> <code>ex:What he said isn&#39;t true.</code></li>
 <li>关系代词：who\whom\whose\which\that\as:<code>ex:The rabbit whose ears are long ate a carrot.</code></li>
 </ol>
-</li>
-</ul>
 <hr>
 <h2 id="数词"><a href="#数词" class="headerlink" title="数词"></a>数词</h2><p>分为基数词和序数词</p>
-<ul>
-<li><p>基数词</p>
-<ol>
+<h3 id="基数词"><a href="#基数词" class="headerlink" title="基数词"></a>基数词</h3><ol>
 <li>1-10：不解释，已经刻在DNA里面了 11：eleven 12:twelve 13:thirteen 14: +teen(后缀） 20、30……: twen +ty(后缀）</li>
 <li>几十+几：twenty-one</li>
 <li>百：two hundred ,余数用and连接：three hunred and five(305)</li>
@@ -1558,9 +1836,7 @@
 </ol>
 </li>
 </ol>
-</li>
-<li><p>序数词</p>
-<p>  一般的基数词+th 20—-90(整十数)：基数词把y改写为ie+th。如thirtieth<br>  缩写：阿拉伯数字+st|nd|rd.<br>  对于任意一个序数词，整十整百位基数词，个位变序数词，如<code>ex:twenty-second.</code> 如果序数词充当句子成分，一般要在前面+the。</p>
+<h3 id="序数词"><a href="#序数词" class="headerlink" title="序数词"></a>序数词</h3><p>一般的基数词+th 20—-90(整十数)：基数词把y改写为ie+th。如thirtieth<br>缩写：阿拉伯数字+st|nd|rd.<br>对于任意一个序数词，整十整百位基数词，个位变序数词，如<code>ex:twenty-second.</code> 如果序数词充当句子成分，一般要在前面+the。</p>
 <ol>
 <li>分数：One third 三分之一 a quarter 四分之一 two and one third 2的三分之一次方</li>
 <li>小数：one point three four 1.34，加了point就是小数,左边就是实数部分，右边就是小数部分。</li>
@@ -1583,12 +1859,8 @@
 </ol>
 </li>
 </ol>
-</li>
-</ul>
 <hr>
-<h2 id="形容词"><a href="#形容词" class="headerlink" title="形容词"></a>形容词</h2><ul>
-<li><p>定语用法</p>
-<ol>
+<h2 id="形容词"><a href="#形容词" class="headerlink" title="形容词"></a>形容词</h2><h3 id="定语用法"><a href="#定语用法" class="headerlink" title="定语用法"></a>定语用法</h3><ol>
 <li>前置定语：<code>a hungry rabbit</code><ol>
 <li>形容词的顺序：限定词(冠词，物主代词等) +(主观)特征+尺寸+形状+新旧+颜色+来源+材料+用途 如：<code>a beautiful big round new black Chinese wooden table</code> <em>美小圆旧黄，中国木书房</em></li>
 </ol>
@@ -1601,18 +1873,14 @@
 <li>补语：如make+宾语+宾补 <code>ex:carrots make rabbits happy.</code></li>
 <li>状语：<code>The rabbit came home,tired and hungry.</code></li>
 </ol>
-</li>
-<li><p>形容词的构成</p>
-<p>  很多中间带有“-”往往就是这样的合成词，这样的合成词大多构成形容词。个人感觉能用从句就不用这种合成构词，避免犯错。</p>
+<h3 id="形容词的构成"><a href="#形容词的构成" class="headerlink" title="形容词的构成"></a>形容词的构成</h3><p>很多中间带有“-”往往就是这样的合成词，这样的合成词大多构成形容词。个人感觉能用从句就不用这种合成构词，避免犯错。</p>
 <ol>
 <li>形容词+形容词&#x2F;现在分词&#x2F;过去分词：<code>a red-hot coal</code> </li>
 <li>副词+形容词&#x2F;现在分词&#x2F;过去分词:<code>hard-working</code> </li>
 <li>形容词&#x2F;数词+名词:<code>kind-hearted</code> 等效于<code>ex:a man whose heart is kind.</code></li>
 <li>名词+形容词&#x2F;现在分词&#x2F;过去分词:<code>a snow-white rabbit</code></li>
 </ol>
-</li>
-<li><p>比较级与最高级</p>
-<ol>
+<h3 id="比较级与最高级"><a href="#比较级与最高级" class="headerlink" title="比较级与最高级"></a>比较级与最高级</h3><ol>
 <li>一般：单词末尾+er|+est，有些特殊的要改写y为i再+er\est.</li>
 <li>特殊：重读闭音节：双写辅音字母+er\est  <code>ex:bigger</code>;多音节和部分双音节词前面加上more|most；不规则变化：记！</li>
 <li>比……更 ：<code>This carrot is three times bigger than that one</code>.three times 表示的是倍数，后面的比较级+than才是主要结构。</li>
@@ -1621,26 +1889,21 @@
 <li>越……，就越……：the+比较级（原因）+补充内容，the+比较级（结果）+补充内容。<code>The more carrots the rabbit eats,the smarter he will become.</code></li>
 <li>最高级一般前面+the： <code>ex:Magic mirror on the wall,who is the fairest one of all?</code></li>
 </ol>
-</li>
-</ul>
 <hr>
 <h2 id="副词"><a href="#副词" class="headerlink" title="副词"></a>副词</h2><p>adj+adv：pretty|fast   大多数副词都是在形容词后面+ly，少部分去e+ly。注意有些词变为副词后词义改变较大。如largely.</p>
-<ul>
-<li>副词的修饰作用<ol>
+<h3 id="副词的修饰作用"><a href="#副词的修饰作用" class="headerlink" title="副词的修饰作用"></a>副词的修饰作用</h3><ol>
 <li>副词修饰动词：<code>ex:this rabbit runs fast</code></li>
 <li>副词修饰形容词和副词：<code>ex:this rabbit runs very fast;I am doning very well</code></li>
 <li>副词修饰名词：<code>ex:this rabbit here runs very fast.</code></li>
 <li>副词修饰句子：<code>ex:Obviously,this rabbit here runs very fast.</code></li>
 <li>特殊：有些副词既可以当形容词也可以当副词，形容词变为副词是一般+ly（当然有不规则变化）</li>
 </ol>
-</li>
-<li>副词的作用<ol>
+<h3 id="副词的作用"><a href="#副词的作用" class="headerlink" title="副词的作用"></a>副词的作用</h3><ol>
 <li>状语：<code>ex:This is a very fast rabbit.</code></li>
 <li>表语：一般只在be后面. <code>ex:the wolf is abroad.</code></li>
 <li>宾补：<code>let me out</code></li>
 </ol>
-</li>
-<li>副词的分类<ol>
+<h3 id="副词的分类"><a href="#副词的分类" class="headerlink" title="副词的分类"></a>副词的分类</h3><ol>
 <li>方式副词：一般可以放在任意位置，<code>ex:Suddenly,the driver turned left.</code></li>
 <li>程度副词：一般谓语修饰的形容词或者副词之前。<code>ex:He speaks very well</code></li>
 <li>地点副词：<code>ex:The rabbit eats carrots indoors/outdoors.</code>一般在句尾,表强调的时候可以位于句首。</li>
@@ -1651,40 +1914,29 @@
 <li>关系副词：和从句有关，<code>ex:That was the day when the rabbit ate the carrot for the first time.</code></li>
 <li>句子副词：<code>ex:Obviously,this rabbit here runs very fast</code></li>
 </ol>
-</li>
-</ul>
 <hr>
-<h2 id="连词"><a href="#连词" class="headerlink" title="连词"></a>连词</h2><ul>
-<li><p>并列连词</p>
-<p>  并列连词：前后单词（或者短语或者句子）关系是平等的</p>
-<p>  如：<code>and</code> <code>ex:The rabbit not only teaches English but also makes videos</code> <code>ex:Neither the rabbit nor the wolf likes apples.</code> 遵循就近原则</p>
+<h2 id="连词"><a href="#连词" class="headerlink" title="连词"></a>连词</h2><h3 id="并列连词"><a href="#并列连词" class="headerlink" title="并列连词"></a>并列连词</h3><p>并列连词：前后单词（或者短语或者句子）关系是平等的</p>
+<p>如：<code>and</code> <code>ex:The rabbit not only teaches English but also makes videos</code> <code>ex:Neither the rabbit nor the wolf likes apples.</code> 遵循就近原则</p>
 <ol>
 <li>选择关系：<code>What does the rabbit like?Apples or carrots? | Hurry up,or/or else/otherwise you&#39;ll be late.</code></li>
 <li>转折关系：虽然但是 but yet  <code>The rabbit cooked some carrots,yet he didn&#39;t eat any.</code> </li>
 <li>因果关系：<code>The rabbit is busy,so he won&#39;t go to the party tonight.</code>还有for、therefore等</li>
 </ol>
-</li>
-<li><p>从属连词</p>
-<ol>
+<h3 id="从属连词"><a href="#从属连词" class="headerlink" title="从属连词"></a>从属连词</h3><ol>
 <li>引导名词性从句:<code>That the rabbit ate the carrot was obvious.</code></li>
 <li>引导状语从句：when|while|as|before|after|until|since……具体示例看从句部分</li>
 </ol>
-</li>
-</ul>
 <hr>
 <h2 id="叹词与限定词"><a href="#叹词与限定词" class="headerlink" title="叹词与限定词"></a>叹词与限定词</h2><p>负责表达情感的声音、单词、词组。</p>
 <p>这一部分主要用于日常口语，对书面语影响不大。oh oh my God等就已经足够用了。</p>
 <p>限定词：就是用于限定的词，这个属于词性定义，对语法影响不大。</p>
-<ul>
-<li><p>按位置划分</p>
+<p><strong>按位置划分</strong></p>
 <ol>
 <li>前位限定词：某些不定代词；倍数词；分数词…</li>
 <li>中位限定词：冠词；物主代词；某些不定代词…</li>
 <li>后位限定词：基数词；序数词；量词…</li>
 </ol>
-<p>  <code>ex:half(前位) my(中位) carrots.</code></p>
-</li>
-</ul>
+<p><code>ex:half(前位) my(中位) carrots.</code> </p>
 <hr>
 <h1 id="构词法-重点"><a href="#构词法-重点" class="headerlink" title="构词法(重点)"></a>构词法(重点)</h1><h2 id="一、派生"><a href="#一、派生" class="headerlink" title="一、派生"></a>一、派生</h2><p>前缀+词根(核心、主要意思)+词缀(可改变词性)&#x3D;单词(当然也可以三者排列组合)<br>注意：不是所有的词都和这三种成分有关，有些词根等表示的意思与通常的意思无关。用构词快速背记单词和认出单词，但还是要背，只是通过此规律能够减少压力。</p>
 <ul>
@@ -1727,21 +1979,18 @@
 <h2 id="六、转换"><a href="#六、转换" class="headerlink" title="六、转换"></a>六、转换</h2><p>即一个单词具有不同的词性，比如fall和education。</p>
 <hr>
 <h1 id="语法现象"><a href="#语法现象" class="headerlink" title="语法现象"></a>语法现象</h1><h2 id="被动"><a href="#被动" class="headerlink" title="被动"></a>被动</h2><p>这里涉及到语态，即主动语态和被动语态，前者强调动作的执行者，后者强调动作的承受者。</p>
-<ul>
-<li>分类<ol>
+<p><strong>分类</strong></p>
+<ol>
 <li>主+谓+宾：变被动为be+动词过去分词：<code>The rabbit eat a carrot.=&gt;The carrot is eaten by the rabbit.</code>  一般被动后面by+动作执行者，可加可不加。</li>
 <li>主+谓+宾+宾：<code>The carrot was given to the wolf by the rabbit.</code>&#x3D;<code>The wolf was given the carrot by the rabbit.</code>  原句为The rabbit gave the wolf the carrot.</li>
 <li>主+谓+宾+宾补：<code>The rabbit was invited to the party by the wolf.</code> 对于如make这样的动词，主动改为被动时必须加to  <code>ex:The rabbit made the wolf (to) laugh.=&gt;The wolf was made to laugh by the rabbit.</code> </li>
 <li>主+系+表：一般不能被动 如 <code>I am smart</code></li>
 <li>对于谓语是不及物动词：不存在动作的承受者，所以没有被动一说，如<code>the rabbit sleeps</code></li>
 </ol>
-</li>
-</ul>
 <hr>
 <h2 id="倒装"><a href="#倒装" class="headerlink" title="倒装"></a>倒装</h2><p>倒装，即将谓语动词提前。主要分为完全倒装(谓语动词完全在主语前)和部分倒装(仅助动词提前)</p>
 <p>也就是说，如果要写倒装句，最好是先写主动句然后再倒装。</p>
-<ul>
-<li>分类<ol>
+<h3 id="分类-5"><a href="#分类-5" class="headerlink" title="分类"></a>分类</h3><ol>
 <li>完全倒装：谓语动词完全在主语前<ol>
 <li>副词\介词短语在句首的倒装<ol>
 <li>地点副词在句首：<code>ex:There goes the last bus=The last bus goes.</code> 这样强调谓语动词</li>
@@ -1768,12 +2017,10 @@
 </ol>
 </li>
 </ol>
-</li>
-</ul>
 <hr>
 <h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>口语强调：重读即可; 语气词强调：见前面的叹词部分。书面强调：黑体字，大小写。</p>
-<ul>
-<li>常见的强调<ol>
+<p><strong>常见的强调</strong></p>
+<ol>
 <li>really、very、just、ever……用附加词突出强调  <code>ex:Rabbits really like carrots.</code></li>
 <li>重复说某一个词：  <code>ex:listen to me,listen to me,very very carefully.</code></li>
 <li>助动词：<code>ex:Rabbits do like carrots!</code></li>
@@ -1782,8 +2029,6 @@
 <li>感叹句：<code>ex:How big the carrot is!</code></li>
 <li>固定句式：it +be+that……句式:<code>ex:It is the rabbit who/that will eat the carrot</code> 要强调的东西放在it is和that 之间 判断强调句也是看去掉it’s who\that 是否构成完整的句子。</li>
 </ol>
-</li>
-</ul>
 <hr>
 <h2 id="省略"><a href="#省略" class="headerlink" title="省略"></a>省略</h2><ul>
 <li>省略冠词<ol>
@@ -1841,8 +2086,7 @@
 </ul>
 <hr>
 <h2 id="英语标点"><a href="#英语标点" class="headerlink" title="英语标点"></a>英语标点</h2><p>本段主要侧重于书面语的书写规范。</p>
-<ul>
-<li>分类<ul>
+<h3 id="分类-6"><a href="#分类-6" class="headerlink" title="分类"></a>分类</h3><ul>
 <li><p>逗号：断句</p>
 <ol>
 <li>断句：<code>ex:Let&#39;s eat,the wolf.</code></li>
@@ -1887,12 +2131,11 @@
 <p>  英文的省略号只有三个点，而且居下 <code>ex:To be continued...</code></p>
 </li>
 </ul>
-</li>
-</ul>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
 <li>【英语语法精讲合集 (全面, 通俗, 有趣 | 从零打造系统语法体系)】<a href="https://www.bilibili.com/video/BV1XY411J7aG?p=29&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1XY411J7aG?p=29&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
 <li><a href="https://excalidraw.com/#:~:text=Excalidraw%20is%20a%20virtual%20collaborative%20whiteboard%20tool%20that">Excalidraw绘图网站</a></li>
-<li><a href="https://www.yingyutu.com/">英语兔 (yingyutu.com)</a> 其实是微信公众号不是网站:sweat_smile:</li>
+<li><a href="https://www.yingyutu.com/">英语兔 (yingyutu.com)</a> 其实是微信公众号不是网站</li>
+<li><a href="https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/">免费的剑桥英语词典和同义词词典 (cambridge.org)</a></li>
 </ol>
 ]]></content>
       <categories>
