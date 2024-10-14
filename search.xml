@@ -8,7 +8,9 @@
 </blockquote>
 <ol>
 <li>butterfly主题从4.13.0更新到5.0.0版本</li>
-<li>优化了底栏图片显示</li>
+<li>首页添加了磁贴</li>
+<li>更新了留言板-在“菜单栏”-“清单”下。</li>
+<li>优化了搜索功能</li>
 </ol></div><div class="tab-item-content"></div><div class="tab-item-content"><h2 id="hexo框架更新"><a href="#hexo框架更新" class="headerlink" title="hexo框架更新"></a>hexo框架更新</h2><p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
 <p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
 <h2 id="butterfly主题更新"><a href="#butterfly主题更新" class="headerlink" title="butterfly主题更新"></a>butterfly主题更新</h2><blockquote>
@@ -16,7 +18,8 @@
 </blockquote>
 <p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
 <p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
-<p>如果不行，就在你的博客&#x2F;themes&#x2F;butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<p>如果不行，就在你的博客&#x2F;themes&#x2F;butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
+<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
 
 
 
