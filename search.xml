@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo博客测试</title>
+    <title>hexo博客测试与更新</title>
     <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h2><p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img1.png"></p>
+    <content><![CDATA[<h2 id="hexo博客更新和待更新计划"><a href="#hexo博客更新和待更新计划" class="headerlink" title="hexo博客更新和待更新计划"></a>hexo博客更新和待更新计划</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">待更新内容</button><button type="button" class="tab">更新方法</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
+<p>以下更新内容都是从最后一次更新开始的</p>
+</blockquote>
+<ol>
+<li>butterfly主题从4.13.0更新到5.0.0版本</li>
+<li>优化了底栏图片显示</li>
+</ol></div><div class="tab-item-content"></div><div class="tab-item-content"><h2 id="hexo框架更新"><a href="#hexo框架更新" class="headerlink" title="hexo框架更新"></a>hexo框架更新</h2><p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
+<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
+<h2 id="butterfly主题更新"><a href="#butterfly主题更新" class="headerlink" title="butterfly主题更新"></a>butterfly主题更新</h2><blockquote>
+<p>更新前记得留下blog快照</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
+<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
+<p>如果不行，就在你的博客&#x2F;themes&#x2F;butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+
+
+
+
+<h2 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h2><p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img1.png"></p>
 <ul>
 <li>我通过picgo图床实现图片上传，只需要在md文件里面插入-图片，然后就会自动把插入的文件上传到oss上面，要取消的时候就点击文件-偏好设置-上传服务设定-将picgo换成无即可。</li>
 </ul>
 <p>用绝对路径和相对路径插入的图片只会在本地显示，如果想在网站上显示就需要用ImgURL、图片上传的方式链接图片</p>
-<h2 id="测试系列文章"><a href="#测试系列文章" class="headerlink" title="测试系列文章"></a>测试系列文章</h2><ol><li><a href="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" title="hexo博客创建">hexo博客创建</a></li><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" title="hexo博客测试">hexo博客测试</a></li></ol>
+<h2 id="测试系列文章"><a href="#测试系列文章" class="headerlink" title="测试系列文章"></a>测试系列文章</h2><ol class="series-items"><li><a href="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" title="hexo博客创建">hexo博客创建</a></li><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" title="hexo博客测试与更新">hexo博客测试与更新</a></li></ol>
 
 
 
@@ -33,13 +52,12 @@
 <li><p>tab演示</p>
 </li>
 </ul>
-<div class="tabs" id="test1"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="test1-1">test1 1</button><button type="button" class="tab " data-href="test1-2">test1 2</button><button type="button" class="tab " data-href="test1-3">test1 3</button></ul><div class="tab-contents"><div class="tab-item-content active" id="test1-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content" id="test1-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content" id="test1-3"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
 
 
 <ul>
 <li>按钮button设置</li>
-<li><a class="btn-beautify [color] [style] [layout] [position] [size]" href="/%5Burl%5D" 
-  title="[text]"><i class="[icon]"></i><span>[text]</span></a></li>
+<li><a class="btn-beautify [color] [style] [layout] [position] [size]" href="/%5Burl%5D" title="[text]"><i class="[icon]"></i><span>[text]</span></a></li>
 <li>[url]         : 鏈接</li>
 <li>[text]        : 按鈕文字</li>
 <li>[icon]        : [可選] 圖標</li>
@@ -50,27 +68,20 @@
 <li>[size]        : [可選] 按鈕大小  larger&#x2F;留空</li>
 </ul>
 <div class="btn-center">
-<a class="btn-beautify outline larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline blue larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline pink larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline red larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline purple larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline orange larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline green larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline blue larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline pink larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline red larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline purple larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline orange larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline green larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
 </div>
 
 <ul>
 <li><p>文字高亮</p>
 </li>
-<li><mark class="hl-label color">text</mark>  ,颜色可选default/blue/pink/red/purple/orange/green
-<mark class="hl-label red">红色</mark> 
+<li><mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
+<mark class="hl-label red">红色</mark>
 </li>
 <li><p>系列文章</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br><span class="line">//在文章的 front-matter 上添加參數 series，並給與一個標識</span><br><span class="line">//使用此標簽外掛，會把相同標識的文章以列表的形式展示</span><br></pre></td></tr></table></figure>
@@ -87,6 +98,40 @@
       </categories>
       <tags>
         <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析工具superset安装和使用(version:0.381)</title>
+    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+</blockquote>
+<ul>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料<ul>
+<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h1><ol>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
+</ol>
+<h1 id="superset使用指南"><a href="#superset使用指南" class="headerlink" title="superset使用指南"></a>superset使用指南</h1><p>待更新……</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
@@ -672,7 +717,7 @@
 
 
 <p>看到这里,你会有一个问题,为什么要用写作来形容代码的编写过程呢?对以中文为母语的人可能难以理解,但是对于以英语为母语的人早已习以为常,甚至达到了“美国人刚出生就会写代码”的程度.对他们来说,写代码就是写英语作文,无非是语法更严格,字数变更少,语句更加讲逻辑,对我们来说就是在“写天书”.这里想说的是,将写代码看做是写英语作文,可以<strong>有效提高写代码的逻辑性</strong>,而且,一旦你认为自己写的是一篇作文,要传阅给所有人看,你就会不自觉“美化”你的作文(代码),<strong>在无形之中,你对自己写的作文(代码)提高了要求</strong>。我以写作为例,更多的是想让你感受一下<strong>保安三问定律</strong>在写代码方面的作用和按照一定的规则写代码的好处,毕竟代码就是语句,多行代码构成段落,多个段落构成故事,<strong>故事都有起因经过结果,保安定律就是为了回答这三者究竟是什么，规则限定我们写故事写在哪，怎样写易读性更强</strong>。也许自己的故事有缺陷,也许编程能力有限,但总是能引导我们走向文章的结尾,给老师(编译器)和他人一个满意的答卷.</p>
-<ol><li><a href="/2024/06/25/%E3%80%8A%E9%AB%98%E8%B4%A8%E9%87%8FC%E3%80%81C++%E3%80%8B%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" title="《高质量C、C++》笔记整理">《高质量C、C++》笔记整理</a></li></ol>
+<ol class="series-items"><li><a href="/2024/06/25/%E3%80%8A%E9%AB%98%E8%B4%A8%E9%87%8FC%E3%80%81C++%E3%80%8B%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" title="《高质量C、C++》笔记整理">《高质量C、C++》笔记整理</a></li></ol>
 
 
 
@@ -686,40 +731,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析工具superset安装和使用(version:0.381)</title>
-    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
-</blockquote>
-<ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料<ul>
-<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h1><ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
-</ol>
-<h1 id="superset使用指南"><a href="#superset使用指南" class="headerlink" title="superset使用指南"></a>superset使用指南</h1><p>待更新……</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
@@ -1189,7 +1200,7 @@
 <p>示意图如下链接</p>
 <p><a href="https://excalidraw.com/#json=EPYWVxBRbpHWPXNyDKCQu,mEJeMsJkQ5EpGjxdN-aCiQ">https://excalidraw.com/#json=EPYWVxBRbpHWPXNyDKCQu,mEJeMsJkQ5EpGjxdN-aCiQ</a></p>
 <p><strong>动词分类</strong></p>
-<div class="tabs" id="ex1"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex1-1">一般分类</button><button type="button" class="tab " data-href="ex1-2">按动作承受者分类</button><button type="button" class="tab " data-href="ex1-3">按状态动作分类</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex1-1"><table>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">一般分类</button><button type="button" class="tab">按动作承受者分类</button><button type="button" class="tab">按状态动作分类</button></div><div class="tab-contents"><div class="tab-item-content active"><table>
 <thead>
 <tr>
 <th>词性</th>
@@ -1216,7 +1227,7 @@
 <td>非谓语动词)不定式、过去分词、现在分词、动名词)</td>
 <td>running</td>
 </tr>
-</tbody></table></div><div class="tab-item-content" id="ex1-2"><table>
+</tbody></table></div><div class="tab-item-content"><table>
 <thead>
 <tr>
 <th>类型</th>
@@ -1231,7 +1242,7 @@
 <td>不及物动词</td>
 <td>run vi.跑</td>
 </tr>
-</tbody></table></div><div class="tab-item-content" id="ex1-3"><table>
+</tbody></table></div><div class="tab-item-content"><table>
 <thead>
 <tr>
 <th>类型</th>
@@ -1250,7 +1261,7 @@
 
 <h2 id="动词时态"><a href="#动词时态" class="headerlink" title="动词时态"></a>动词时态</h2><p><strong>时态：时间+状态</strong>。前者表明动作发生的时间(过去，现在，将来和过去将来),后者表明动作发生的状态(进行时、完成时、完成进行时、一般时)。<br>四种动词时间与四种时态排列组合就会产生16种时态。</p>
 <p>完成状态的<strong>理解在于强调“影响”</strong>，比如<code>I have eaten breakfast.</code> 暗示在过去的某个时间到现在(have的时间)我已经吃了早饭，暗示我还不饿。</p>
-<h3 id="现在类"><a href="#现在类" class="headerlink" title="现在类"></a>现在类</h3><div class="tabs" id="ex2"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex2-1">一般现在</button><button type="button" class="tab " data-href="ex2-2">现在进行</button><button type="button" class="tab " data-href="ex2-3">现在完成</button><button type="button" class="tab " data-href="ex2-4">现在完成进行</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex2-1"><blockquote>
+<h3 id="现在类"><a href="#现在类" class="headerlink" title="现在类"></a>现在类</h3><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">一般现在</button><button type="button" class="tab">现在进行</button><button type="button" class="tab">现在完成</button><button type="button" class="tab">现在完成进行</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
 <p>这里的一般现在严格来说是现在一般时，只是顺序颠倒了一下，后面同理。</p>
 </blockquote>
 <p><strong>含义：表达事实|表达习惯|表达预计发生的事</strong></p>
@@ -1274,7 +1285,7 @@
 <td>The sun rise in the east 习惯:I play basketball我打篮球(隐含我有打篮球的习惯) 预计发生的事: The bus leaves at 8 PM tonight.</td>
 </tr>
 </tbody></table>
-<p>误区：一般现在不代表现在正在做，I eat carrots. 意思是我吃胡萝卜.<em>一般代表的是一种默认，或者是未指明</em></p></div><div class="tab-item-content" id="ex2-2"><p><strong>助动词be的变位+动词现在分词</strong></p>
+<p>误区：一般现在不代表现在正在做，I eat carrots. 意思是我吃胡萝卜.<em>一般代表的是一种默认，或者是未指明</em></p></div><div class="tab-item-content"><p><strong>助动词be的变位+动词现在分词</strong></p>
 <table>
 <thead>
 <tr>
@@ -1290,7 +1301,7 @@
 <td>动词现在分词</td>
 <td>1. 通常：+ing 2. 特殊：变化+ing→不规则变化很多都是为了发音而妥协的。I am lying !&#x3D; I am lieing</td>
 </tr>
-</tbody></table></div><div class="tab-item-content" id="ex2-3"><p><strong>助动词have的变位+动词过去分词</strong></p>
+</tbody></table></div><div class="tab-item-content"><p><strong>助动词have的变位+动词过去分词</strong></p>
 <table>
 <thead>
 <tr>
@@ -1309,12 +1320,12 @@
 <td>1. 通常：+ed 2. 特殊：变化+ed&#x2F;不规则变化</td>
 <td>look-&gt;looked&#x2F;eat-&gt;ate</td>
 </tr>
-</tbody></table></div><div class="tab-item-content" id="ex2-4"><p><strong>现在完成+进行时&#x3D;&#x3D;have的变位+been+动词现在分词.意思是已经做了，而且还要继续做  。</strong> 例子：I have been eating carrot.</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+</tbody></table></div><div class="tab-item-content"><p><strong>现在完成+进行时&#x3D;&#x3D;have的变位+been+动词现在分词.意思是已经做了，而且还要继续做  。</strong> 例子：I have been eating carrot.</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
 
 <p>💡时态都是在现在类基础上将时间往前(或后)推移，对应时间更改谓语动词即可。</p>
 <hr>
 <h3 id="过去类"><a href="#过去类" class="headerlink" title="过去类"></a>过去类</h3><p>💡本质就是现在类的助动词(或者情态动词、动词等)变换时间(比如have变成had,is变成was,may变成might)</p>
-<div class="tabs" id="ex3"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex3-1">一般过去</button><button type="button" class="tab " data-href="ex3-2">过去进行</button><button type="button" class="tab " data-href="ex3-3">过去完成</button><button type="button" class="tab " data-href="ex3-4">过去完成进行</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex3-1"><table>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">一般过去</button><button type="button" class="tab">过去进行</button><button type="button" class="tab">过去完成</button><button type="button" class="tab">过去完成进行</button></div><div class="tab-contents"><div class="tab-item-content active"><table>
 <thead>
 <tr>
 <th>形式</th>
@@ -1329,7 +1340,7 @@
 <td>不规则变化(不用刻意记，用来写的并不多)</td>
 <td>come-&gt;came</td>
 </tr>
-</tbody></table></div><div class="tab-item-content" id="ex3-2"><p><strong>助动词be的变位+动词现在分词</strong></p>
+</tbody></table></div><div class="tab-item-content"><p><strong>助动词be的变位+动词现在分词</strong></p>
 <table>
 <thead>
 <tr>
@@ -1345,11 +1356,11 @@
 <td>区别：现在完成vs一般过去 前者强调的是动作完成了吗，后者强调的是动作有没有发生。</td>
 <td>前者的例句I have gone to Beijing.(我已经去了北京(暗示没回来))，后者的例句I went to Beijing.(我去过北京)暗示回来了))</td>
 </tr>
-</tbody></table></div><div class="tab-item-content" id="ex3-3"><p><strong>同理，见现在完成部分，是助动词have的变位(只有had)+动词过去分词</strong></p></div><div class="tab-item-content" id="ex3-4"><p><strong>had+been+动词的现在分词</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+</tbody></table></div><div class="tab-item-content"><p><strong>同理，见现在完成部分，是助动词have的变位(只有had)+动词过去分词</strong></p></div><div class="tab-item-content"><p><strong>had+been+动词的现在分词</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
 
 <p>不规则动词列表：在 本电脑根目录下obsidian内附件集&#x2F;英语&#x2F;文档&#x2F;不规则变化.pdf。读者可以点击此链接<a href="https://www.yingyutu.com/">英语兔 (yingyutu.com)</a> 在英语兔公众号下载对应笔记。</p>
 <hr>
-<h3 id="将来类"><a href="#将来类" class="headerlink" title="将来类"></a>将来类</h3><div class="tabs" id="ex4"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex4-1">一般将来</button><button type="button" class="tab " data-href="ex4-2">将来进行</button><button type="button" class="tab " data-href="ex4-3">将来完成</button><button type="button" class="tab " data-href="ex4-4">将来完成进行时</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex4-1"><p><strong>一般用于非常确定会发生的事</strong></p>
+<h3 id="将来类"><a href="#将来类" class="headerlink" title="将来类"></a>将来类</h3><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">一般将来</button><button type="button" class="tab">将来进行</button><button type="button" class="tab">将来完成</button><button type="button" class="tab">将来完成进行时</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>一般用于非常确定会发生的事</strong></p>
 <table>
 <thead>
 <tr>
@@ -1365,11 +1376,11 @@
 <td>助动词be的变位+going+to+动词原形</td>
 <td>1. 原样：I am going to take a shower. 2. 省去going：you are to eat a carrot 3. 用about代替going：I am about to chat with him.</td>
 </tr>
-</tbody></table></div><div class="tab-item-content" id="ex4-2"><p><strong>will+be+动词的现在分词)在将来的某一个时间段，某个动作正在进行)</strong>  例如：I will be eating a carrot for lunch tomorrow from 1 PM to 3 PM</p></div><div class="tab-item-content" id="ex4-3"><p><strong>will+have+动词的过去分词</strong> 例子(以下用<strong>ex</strong>表示)：If suddenly you forget me. Do not look for me,for I shall already have forgotten you.</p></div><div class="tab-item-content" id="ex4-4"><p><strong>will+have+been+动词的现在分词</strong> ex:I will have been eating carrots for 2 hours by 3 PM tomorrow.这里要表达的意思就是：我确定明天下午三点钟时，我不但已经吃了俩钟头胡萝卜(也就是从明天下午1点开始吃)而且还要继续吃.</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+</tbody></table></div><div class="tab-item-content"><p><strong>will+be+动词的现在分词)在将来的某一个时间段，某个动作正在进行)</strong>  例如：I will be eating a carrot for lunch tomorrow from 1 PM to 3 PM</p></div><div class="tab-item-content"><p><strong>will+have+动词的过去分词</strong> 例子(以下用<strong>ex</strong>表示)：If suddenly you forget me. Do not look for me,for I shall already have forgotten you.</p></div><div class="tab-item-content"><p><strong>will+have+been+动词的现在分词</strong> ex:I will have been eating carrots for 2 hours by 3 PM tomorrow.这里要表达的意思就是：我确定明天下午三点钟时，我不但已经吃了俩钟头胡萝卜(也就是从明天下午1点开始吃)而且还要继续吃.</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
 
 <hr>
 <h3 id="过去将来类"><a href="#过去将来类" class="headerlink" title="过去将来类"></a>过去将来类</h3><p><em>过去将来可能是现在的过去，也可能是现在的未来。</em></p>
-<div class="tabs" id="ex5"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex5-1">过去将来一般</button><button type="button" class="tab " data-href="ex5-2">过去将来进行</button><button type="button" class="tab " data-href="ex5-3">过去将来完成</button><button type="button" class="tab " data-href="ex5-4">过去将来完成进行</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex5-1"><p><strong>would+动词原形|或者是助动词be的变位+going to。</strong></p>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">过去将来一般</button><button type="button" class="tab">过去将来进行</button><button type="button" class="tab">过去将来完成</button><button type="button" class="tab">过去将来完成进行</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>would+动词原形|或者是助动词be的变位+going to。</strong></p>
 <table>
 <thead>
 <tr>
@@ -1385,7 +1396,7 @@
 <td>虚拟语气，表达和事实相反。</td>
 <td>I said I would eat a carrot for lunch. 我之前就说过我会午饭吃胡萝卜，而午饭时间对于之前我说那句话的时间来说是在将来，但至于现在午饭时间有没有到，不得而知</td>
 </tr>
-</tbody></table></div><div class="tab-item-content" id="ex5-2"><p><strong>同理，在将来进行时前面+would</strong> </p></div><div class="tab-item-content" id="ex5-3"><p><strong>同理，在将来完成时前面+would</strong> </p></div><div class="tab-item-content" id="ex5-4"><p><strong>同理，在将来完成进行前面+would。</strong></p>
+</tbody></table></div><div class="tab-item-content"><p><strong>同理，在将来进行时前面+would</strong> </p></div><div class="tab-item-content"><p><strong>同理，在将来完成时前面+would</strong> </p></div><div class="tab-item-content"><p><strong>同理，在将来完成进行前面+would。</strong></p>
 <p>中文举例：在这之前，张三说下个月的某一天，你一定会看到我犯完罪，而且还会一直犯下去 在这之前表示过去，说下个月的某一天表明是将来，结合就是过去将来(时间),而犯完罪而且犯下去表明动作已经完成，而且会继续执行，表明动作的状态是完成进行，前后结合，就是过去将来完成进行时态。ex:l said I would have been eating lunch for 2 hours by 1 PM tomorrow&#x2F;yesterday.我)之前)说我明天&#x2F;昨天下午1点前会已经吃了俩钟头中饭(我之前说我会明天&#x2F;昨天下午1点时在吃中饭这个过程中,之前吃了2小时,之后还会继续吃)</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
 
 <hr>
@@ -1609,7 +1620,7 @@
 </blockquote>
 <p><code>ex:the rabbit will eat a rabbit.</code> 谓语动词本身无法表达“将来”的时间，所以需要借助will来构成“将来时”。</p>
 <p>在很多语法书中将情态动词与助动词单独分类，但实际上<strong>情态动词也是起辅助作用，“不能”单独做谓语动词</strong>，所以本质上情态动词还是助动词。这里我就将两者作为一类</p>
-<h3 id="助动词分类"><a href="#助动词分类" class="headerlink" title="助动词分类"></a>助动词分类</h3><div class="tabs" id="ex6"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex6-1">1.基本</button><button type="button" class="tab " data-href="ex6-2">2.情态动词</button><button type="button" class="tab " data-href="ex6-3">3.半助动词</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex6-1"><p><strong>be、do、have</strong></p></div><div class="tab-item-content" id="ex6-2"><ol>
+<h3 id="助动词分类"><a href="#助动词分类" class="headerlink" title="助动词分类"></a>助动词分类</h3><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">1.基本</button><button type="button" class="tab">2.情态动词</button><button type="button" class="tab">3.半助动词</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>be、do、have</strong></p></div><div class="tab-item-content"><ol>
 <li><p>can&#x2F;could： </p>
 <ol>
 <li><p>前者是有能力，后者是过去有能力，现在有没有不知道 <code>ex:I can  kill a wolf</code></p>
@@ -1668,7 +1679,7 @@
 </li>
 <li><p>used to：表过去的动作，往往是习惯或者是重复的动作，</p>
 </li>
-</ol></div><div class="tab-item-content" id="ex6-3"><table>
+</ol></div><div class="tab-item-content"><table>
 <thead>
 <tr>
 <th>形式</th>
@@ -1814,7 +1825,7 @@
 </li>
 </ol>
 <h1 id="非动词"><a href="#非动词" class="headerlink" title="非动词"></a>非动词</h1><h2 id="冠词"><a href="#冠词" class="headerlink" title="冠词"></a>冠词</h2><p>分类如下</p>
-<div class="tabs" id="ex7"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="ex7-1">1.不定冠词</button><button type="button" class="tab " data-href="ex7-2">2.定冠词</button><button type="button" class="tab " data-href="ex7-3">3.零冠词</button></ul><div class="tab-contents"><div class="tab-item-content active" id="ex7-1"><p><strong>使用范围：判断音素(即首音标而不是字母)发音是元音还是辅音 如 a university&#x2F;an hour</strong></p>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">1.不定冠词</button><button type="button" class="tab">2.定冠词</button><button type="button" class="tab">3.零冠词</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>使用范围：判断音素(即首音标而不是字母)发音是元音还是辅音 如 a university&#x2F;an hour</strong></p>
 <p><strong>意思分类如下</strong></p>
 <table>
 <thead>
@@ -1847,7 +1858,7 @@
 <td>固定搭配</td>
 <td>as a result\have a good time……</td>
 </tr>
-</tbody></table></div><div class="tab-item-content" id="ex7-2"><p><em><strong>The</strong></em> </p>
+</tbody></table></div><div class="tab-item-content"><p><em><strong>The</strong></em> </p>
 <ol>
 <li><p>发音</p>
 <ol>
@@ -1893,7 +1904,7 @@
 </tr>
 </tbody></table>
 </li>
-</ol></div><div class="tab-item-content" id="ex7-3"><ol>
+</ol></div><div class="tab-item-content"><ol>
 <li>复数泛指  <code>ex:Rabbits are smart.</code> 这样更好体现某一类事物</li>
 <li>表示概念  <code>ex:Summer is hot.Winter is cold.</code> 这里表达的是“夏季”这一季节概念</li>
 <li>专有名词 <code>ex:Washington DC.</code></li>
