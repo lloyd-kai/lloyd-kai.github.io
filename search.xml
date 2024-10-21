@@ -1,6 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo博客测试与更新</title>
+    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="hexo博客更新和待更新计划"><a href="#hexo博客更新和待更新计划" class="headerlink" title="hexo博客更新和待更新计划"></a>hexo博客更新和待更新计划</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
+<p>以下更新内容都是从最后一次更新开始的</p>
+</blockquote>
+<ol>
+<li>butterfly主题从4.13.0更新到5.0.0版本</li>
+<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
+<li>更新了留言板</li>
+<li>优化了搜索功能</li>
+<li>禁止B站视频自动播放</li>
+<li>更新了主页“关于”部分</li>
+<li>修复了几处笔误的问题</li>
+</ol></div><div class="tab-item-content"><ol>
+<li>子菜单展示内容(比如展示图表)；方法：将子菜单里面的index.md当做普通的md文件，通过基本的markdown语言和butterfly专有语法实现效果，建议写成总领式的文章或者展示页面。</li>
+<li>添加一下赞助墙</li>
+<li>更新算法相关博客并添加数学动画视频或者是算法演示动画。</li>
+</ol></div><div class="tab-item-content"><h2 id="hexo框架更新"><a href="#hexo框架更新" class="headerlink" title="hexo框架更新"></a>hexo框架更新</h2><p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
+<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
+<h2 id="butterfly主题更新"><a href="#butterfly主题更新" class="headerlink" title="butterfly主题更新"></a>butterfly主题更新</h2><blockquote>
+<p>更新前记得留下blog快照</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
+<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
+<p>如果不行，就在你的博客&#x2F;themes&#x2F;butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
+<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+<h2 id="个人hexo博客更新讲解"><a href="#个人hexo博客更新讲解" class="headerlink" title="个人hexo博客更新讲解"></a>个人hexo博客更新讲解</h2><p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
+<p>示例代码如下</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
+
+<p>评论功能：</p>
+<ol>
+<li>我设置文章自动放开评论功能，就不需要在开头写<code>comments: true</code> 这行代码了。</li>
+<li>我设置的是twikoo静态评论控制，搭建教程可以参考如下链接<a href="https://blog.hihahoo.com/archives/fc6989f5.html#1-twikoo%E9%83%A8%E7%BD%B2">Hexo主题butterfly集成评论功能（twikoo） | Hihahoo：想你所想 做你所做</a></li>
+</ol>
+<p>文章置顶功能：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考链接<a href="https://liangshenglei.github.io/2023/03/06/Butterfly%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/index.html">Butterfly 主题的详细配置 | 梁圣磊の博客 (liangshenglei.github.io)</a></p>
+<p>文章加密功能：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">https://polar-bear.eu.org/2023/07/21/ce-shi/</a> 也许以后添加。</p>
+<p>磁贴功能：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
+<h2 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h2><p>阿里云图片测试</p>
+<p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img1.png"></p>
+<p>本地图片测试</p>
+<p><img src="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/C__Users_kai98_Pictures_%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87_post-img1.png"></p>
+<p><strong>图片上传方法</strong></p>
+<ol>
+<li><p>通过picgo图床实现图片上传，只需要在md文件里面插入-图片，然后就会自动把插入的文件上传到oss上面，要取消的时候就点击文件-偏好设置-上传服务设定-将picgo换成无即可。</p>
+</li>
+<li><p>参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在_post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用，<strong>博主因为部署的原因主要使用此方法</strong></p>
+</li>
+<li><p>如果zeabur图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。参考教程<a href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法_hexo 文章插入图片失败-CSDN博客</a> 。</p>
+<ol>
+<li>还有一种方法是可以试一下不适用images 的插件，改为使用img的插件，全称是npm install hexo-asset-img –save，亲测有用。记得把插件目录下的images删了。这个问题是hexo版本更新导致的。可以尝试一下。</li>
+</ol>
+</li>
+<li><p>也可以使用其他的图床网站上传图片，然后点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。</p>
+</li>
+</ol>
+<h2 id="测试系列文章"><a href="#测试系列文章" class="headerlink" title="测试系列文章"></a>测试系列文章</h2><ol class="series-items"><li><a href="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" title="hexo博客创建">hexo博客创建</a></li><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" title="hexo博客测试与更新">hexo博客测试与更新</a></li></ol>
+
+
+
+<p>注意：hexo会自动给分级标题编号，不需要自己添加</p>
+<ul>
+<li>md开头的格式可以参考此，细节可以看此文档<a href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li>
+<li>注意:top-img: 图片格式是地址，可以导入网站的地址。</li>
+<li>相关图片上传必备网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a></li>
+<li>使用，将图片上传到这里，然后点击Image URL 复制地址即可远程连接</li>
+</ul>
+<h2 id="banner设置"><a href="#banner设置" class="headerlink" title="banner设置"></a>banner设置</h2><ul>
+<li><p>网站上方的“标签””分类“”清单“对应blog&#x2F;source&#x2F;英文名&#x2F;index.md 具体写法见</p>
+</li>
+<li><p>友情链接可以自定义：方法见<a href="https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></p>
+</li>
+<li><p>导航栏设置：在_config.butterfly.yml 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class&#x3D; “ 复制这里的内容” 替代即可。</p>
+</li>
+</ul>
+<h2 id="文章设置"><a href="#文章设置" class="headerlink" title="文章设置"></a>文章设置</h2><ul>
+<li><p>當主題配置文件中的 highlight_shrink 設為false時，可在front-matter添加highlight_shrink: true來單獨配置文章收縮代碼框。我这里默认是展开所有代码，需要的时候就在md文件开头添加这句话即可。</p>
+</li>
+<li><p>tab演示</p>
+</li>
+</ul>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+
+<ul>
+<li>按钮button设置</li>
+<li><a class="btn-beautify [color] [style] [layout] [position] [size]" href="/%5Burl%5D" title="[text]"><i class="[icon]"></i><span>[text]</span></a></li>
+<li>[url]         : 鏈接</li>
+<li>[text]        : 按鈕文字</li>
+<li>[icon]        : [可選] 圖標</li>
+<li>[color]       : [可選] 按鈕背景顔色 （默認style時） 按鈕字體和邊框顔色(outline時) default&#x2F;blue&#x2F;pink&#x2F;red&#x2F;purple&#x2F;orange&#x2F;green</li>
+<li>[style]       : [可選] 按鈕樣式 默認實心 outline&#x2F;留空</li>
+<li>[layout]      : [可選] 按鈕佈局 默認為line   block&#x2F;留空</li>
+<li>[position]    : [可選] 按鈕位置 前提是設置了layout為block 默認為左邊  center&#x2F;right&#x2F;留空</li>
+<li>[size]        : [可選] 按鈕大小  larger&#x2F;留空</li>
+</ul>
+<div class="btn-center">
+<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline blue larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline pink larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline red larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline purple larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline orange larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline green larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+</div>
+
+<ul>
+<li><p>文字高亮</p>
+</li>
+<li><mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
+<mark class="hl-label red">红色</mark>
+</li>
+<li><p>系列文章</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br><span class="line">//在文章的 front-matter 上添加參數 series，並給與一個標識</span><br><span class="line">//使用此標簽外掛，會把相同標識的文章以列表的形式展示</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>其他（如渲染乐谱\链接等可以看<a href="https://butterfly.js.org/posts/4aa8abbe/#flink%EF%BC%89">https://butterfly.js.org/posts/4aa8abbe/#flink）</a></p>
+</li>
+<li><p>主页的html在文件.deploy_git&#x2F;index.html里面，要更改文字的话在这里更改。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>测试</tag>
+        <tag>教程</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客创建</title>
     <url>/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Hexo 是一个由Nodejs驱动的博客框架，支持 Markdown、一键部署、插件和多种模板引擎。Hexo 可以让你轻松创建、管理和部署你的个人或团队博客。本文基于个人的实践经验，<strong>以Windows为主要开发环境</strong>，旨在让那些对博客搭建感兴趣但碍于困难的朋友能搭建起基本的博客框架。</p>
@@ -194,175 +328,6 @@
         <tag>blog</tag>
         <tag>教程</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客测试与更新</title>
-    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="hexo博客更新和待更新计划"><a href="#hexo博客更新和待更新计划" class="headerlink" title="hexo博客更新和待更新计划"></a>hexo博客更新和待更新计划</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
-<p>以下更新内容都是从最后一次更新开始的</p>
-</blockquote>
-<ol>
-<li>butterfly主题从4.13.0更新到5.0.0版本</li>
-<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
-<li>更新了留言板</li>
-<li>优化了搜索功能</li>
-<li>禁止B站视频自动播放</li>
-<li>更新了主页“关于”部分</li>
-<li>修复了几处笔误的问题</li>
-</ol></div><div class="tab-item-content"><ol>
-<li>子菜单展示内容(比如展示图表)；方法：将子菜单里面的index.md当做普通的md文件，通过基本的markdown语言和butterfly专有语法实现效果，建议写成总领式的文章或者展示页面。</li>
-<li>添加一下赞助墙</li>
-<li>更新算法相关博客并添加数学动画视频或者是算法演示动画。</li>
-</ol></div><div class="tab-item-content"><h2 id="hexo框架更新"><a href="#hexo框架更新" class="headerlink" title="hexo框架更新"></a>hexo框架更新</h2><p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
-<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
-<h2 id="butterfly主题更新"><a href="#butterfly主题更新" class="headerlink" title="butterfly主题更新"></a>butterfly主题更新</h2><blockquote>
-<p>更新前记得留下blog快照</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
-<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
-<p>如果不行，就在你的博客&#x2F;themes&#x2F;butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
-<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-
-<h2 id="个人hexo博客更新讲解"><a href="#个人hexo博客更新讲解" class="headerlink" title="个人hexo博客更新讲解"></a>个人hexo博客更新讲解</h2><p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
-<p>示例代码如下</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
-
-<p>评论功能：</p>
-<ol>
-<li>我设置文章自动放开评论功能，就不需要在开头写<code>comments: true</code> 这行代码了。</li>
-<li>我设置的是twikoo静态评论控制，搭建教程可以参考如下链接<a href="https://blog.hihahoo.com/archives/fc6989f5.html#1-twikoo%E9%83%A8%E7%BD%B2">Hexo主题butterfly集成评论功能（twikoo） | Hihahoo：想你所想 做你所做</a></li>
-</ol>
-<p>文章置顶功能：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考链接<a href="https://liangshenglei.github.io/2023/03/06/Butterfly%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/index.html">Butterfly 主题的详细配置 | 梁圣磊の博客 (liangshenglei.github.io)</a></p>
-<p>文章加密功能：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">https://polar-bear.eu.org/2023/07/21/ce-shi/</a> 也许以后添加。</p>
-<p>磁贴功能：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
-<h2 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h2><p>阿里云图片测试</p>
-<p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img1.png"></p>
-<p>本地图片测试</p>
-<p><img src="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/C__Users_kai98_Pictures_%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87_post-img1.png"></p>
-<p><strong>图片上传方法</strong></p>
-<ol>
-<li><p>通过picgo图床实现图片上传，只需要在md文件里面插入-图片，然后就会自动把插入的文件上传到oss上面，要取消的时候就点击文件-偏好设置-上传服务设定-将picgo换成无即可。</p>
-</li>
-<li><p>参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在_post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用，<strong>博主因为部署的原因主要使用此方法</strong></p>
-</li>
-<li><p>如果zeabur图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。参考教程<a href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法_hexo 文章插入图片失败-CSDN博客</a> 。</p>
-<ol>
-<li>还有一种方法是可以试一下不适用images 的插件，改为使用img的插件，全称是npm install hexo-asset-img –save，亲测有用。记得把插件目录下的images删了。这个问题是hexo版本更新导致的。可以尝试一下。</li>
-</ol>
-</li>
-<li><p>也可以使用其他的图床网站上传图片，然后点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。</p>
-</li>
-</ol>
-<h2 id="测试系列文章"><a href="#测试系列文章" class="headerlink" title="测试系列文章"></a>测试系列文章</h2><ol class="series-items"><li><a href="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" title="hexo博客创建">hexo博客创建</a></li><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" title="hexo博客测试与更新">hexo博客测试与更新</a></li></ol>
-
-
-
-<p>注意：hexo会自动给分级标题编号，不需要自己添加</p>
-<ul>
-<li>md开头的格式可以参考此，细节可以看此文档<a href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li>
-<li>注意:top-img: 图片格式是地址，可以导入网站的地址。</li>
-<li>相关图片上传必备网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a></li>
-<li>使用，将图片上传到这里，然后点击Image URL 复制地址即可远程连接</li>
-</ul>
-<h2 id="banner设置"><a href="#banner设置" class="headerlink" title="banner设置"></a>banner设置</h2><ul>
-<li><p>网站上方的“标签””分类“”清单“对应blog&#x2F;source&#x2F;英文名&#x2F;index.md 具体写法见</p>
-</li>
-<li><p>友情链接可以自定义：方法见<a href="https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></p>
-</li>
-<li><p>导航栏设置：在_config.butterfly.yml 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class&#x3D; “ 复制这里的内容” 替代即可。</p>
-</li>
-</ul>
-<h2 id="文章设置"><a href="#文章设置" class="headerlink" title="文章设置"></a>文章设置</h2><ul>
-<li><p>當主題配置文件中的 highlight_shrink 設為false時，可在front-matter添加highlight_shrink: true來單獨配置文章收縮代碼框。我这里默认是展开所有代码，需要的时候就在md文件开头添加这句话即可。</p>
-</li>
-<li><p>tab演示</p>
-</li>
-</ul>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-
-
-<ul>
-<li>按钮button设置</li>
-<li><a class="btn-beautify [color] [style] [layout] [position] [size]" href="/%5Burl%5D" title="[text]"><i class="[icon]"></i><span>[text]</span></a></li>
-<li>[url]         : 鏈接</li>
-<li>[text]        : 按鈕文字</li>
-<li>[icon]        : [可選] 圖標</li>
-<li>[color]       : [可選] 按鈕背景顔色 （默認style時） 按鈕字體和邊框顔色(outline時) default&#x2F;blue&#x2F;pink&#x2F;red&#x2F;purple&#x2F;orange&#x2F;green</li>
-<li>[style]       : [可選] 按鈕樣式 默認實心 outline&#x2F;留空</li>
-<li>[layout]      : [可選] 按鈕佈局 默認為line   block&#x2F;留空</li>
-<li>[position]    : [可選] 按鈕位置 前提是設置了layout為block 默認為左邊  center&#x2F;right&#x2F;留空</li>
-<li>[size]        : [可選] 按鈕大小  larger&#x2F;留空</li>
-</ul>
-<div class="btn-center">
-<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline blue larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline pink larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline red larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline purple larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline orange larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline green larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-</div>
-
-<ul>
-<li><p>文字高亮</p>
-</li>
-<li><mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
-<mark class="hl-label red">红色</mark>
-</li>
-<li><p>系列文章</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br><span class="line">//在文章的 front-matter 上添加參數 series，並給與一個標識</span><br><span class="line">//使用此標簽外掛，會把相同標識的文章以列表的形式展示</span><br></pre></td></tr></table></figure>
-
-</li>
-<li><p>其他（如渲染乐谱\链接等可以看<a href="https://butterfly.js.org/posts/4aa8abbe/#flink%EF%BC%89">https://butterfly.js.org/posts/4aa8abbe/#flink）</a></p>
-</li>
-<li><p>主页的html在文件.deploy_git&#x2F;index.html里面，要更改文字的话在这里更改。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>教程</tag>
-        <tag>hexo</tag>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析工具superset安装和使用(version:0.381)</title>
-    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
-</blockquote>
-<ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料<ul>
-<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h1><ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
-</ol>
-<h1 id="superset使用指南"><a href="#superset使用指南" class="headerlink" title="superset使用指南"></a>superset使用指南</h1><p>待更新……</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -763,6 +728,41 @@
       <tags>
         <tag>C</tag>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析工具superset安装和使用(version:0.381)</title>
+    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+</blockquote>
+<ul>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料<ul>
+<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h1><ol>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
+</ol>
+<h1 id="superset使用指南"><a href="#superset使用指南" class="headerlink" title="superset使用指南"></a>superset使用指南</h1><p>待更新……</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
