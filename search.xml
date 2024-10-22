@@ -1,147 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo博客测试与更新</title>
-    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="hexo博客更新和待更新计划"><a href="#hexo博客更新和待更新计划" class="headerlink" title="hexo博客更新和待更新计划"></a>hexo博客更新和待更新计划</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
-<p>以下更新内容都是从最后一次更新开始的</p>
-</blockquote>
-<ol>
-<li>butterfly主题从4.13.0更新到5.0.0版本</li>
-<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
-<li>更新了留言板</li>
-<li>优化了搜索功能</li>
-<li>禁止B站视频自动播放</li>
-<li>更新了主页“关于”部分</li>
-<li>修复了几处笔误的问题</li>
-<li>优化了评论功能的选择</li>
-</ol></div><div class="tab-item-content"><ol>
-<li>子菜单展示内容(比如展示图表)；方法：将子菜单里面的index.md当做普通的md文件，通过基本的markdown语言和butterfly专有语法实现效果，建议写成总领式的文章或者展示页面。</li>
-<li>添加一下赞助墙</li>
-<li>更新算法相关博客并添加数学动画视频或者是算法演示动画。</li>
-</ol></div><div class="tab-item-content"><h2 id="hexo框架更新"><a href="#hexo框架更新" class="headerlink" title="hexo框架更新"></a>hexo框架更新</h2><p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
-<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
-<h2 id="butterfly主题更新"><a href="#butterfly主题更新" class="headerlink" title="butterfly主题更新"></a>butterfly主题更新</h2><blockquote>
-<p>更新前记得留下blog快照</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
-<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
-<p>如果不行，就在你的博客&#x2F;themes&#x2F;butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
-<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-
-<h2 id="个人hexo博客更新讲解"><a href="#个人hexo博客更新讲解" class="headerlink" title="个人hexo博客更新讲解"></a>个人hexo博客更新讲解</h2><p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
-<p>示例代码如下</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
-
-<p>评论功能：</p>
-<ol>
-<li>我设置文章自动放开评论功能，就不需要在开头写<code>comments: true</code> 这行代码了。</li>
-<li>我设置的是twikoo静态评论控制，搭建教程可以参考如下链接<a href="https://blog.hihahoo.com/archives/fc6989f5.html#1-twikoo%E9%83%A8%E7%BD%B2">Hexo主题butterfly集成评论功能（twikoo） | Hihahoo：想你所想 做你所做</a></li>
+    <title>Linux学习笔记</title>
+    <url>/posts/b30ceb9f.html</url>
+    <content><![CDATA[<h1 id="学前提醒"><a href="#学前提醒" class="headerlink" title="学前提醒"></a>学前提醒</h1><ol>
+<li>自然：不要死记Linux命令，先敲一遍，以后在学习和工作中练习就足够了，需要的时候就查命令手册</li>
+<li>Centos系统在2024年已停止更新，后续可以考虑学一下ubuntu。</li>
 </ol>
-<p>文章置顶功能：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考链接<a href="https://liangshenglei.github.io/2023/03/06/Butterfly%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/index.html">Butterfly 主题的详细配置 | 梁圣磊の博客 (liangshenglei.github.io)</a></p>
-<p>文章加密功能：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">https://polar-bear.eu.org/2023/07/21/ce-shi/</a> 也许以后添加。</p>
-<p>磁贴功能：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
-<h2 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h2><p>阿里云图片测试</p>
-<p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img1.png"></p>
-<p>本地图片测试</p>
-<p><img src="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/C__Users_kai98_Pictures_%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87_post-img1.png"></p>
-<p><strong>图片上传方法</strong></p>
-<ol>
-<li><p>通过picgo图床实现图片上传，只需要在md文件里面插入-图片，然后就会自动把插入的文件上传到oss上面，要取消的时候就点击文件-偏好设置-上传服务设定-将picgo换成无即可。</p>
+<h1 id="初识Linux"><a href="#初识Linux" class="headerlink" title="初识Linux"></a>初识Linux</h1><ol>
+<li><p>什么是Linux？即服务器操作系统的一种。<strong>操作系统就是第一层软件</strong>，作为用户和计算机硬件之间的桥梁，调度和管理计算机硬件进行工作。对于前后端开发人员、运维测试人员、大数据等都是必学的内容</p>
 </li>
-<li><p>参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在_post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用，<strong>博主因为部署的原因主要使用此方法</strong></p>
+<li><p>Linux的组成：由Linux系统<strong>内核</strong>+系统级应用<strong>程序</strong>(简单理解成系统自带的软件，比如文件管理，图片查看等)组成，其他的软件都叫第三方应用程序。</p>
 </li>
-<li><p>如果zeabur图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。参考教程<a href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法_hexo 文章插入图片失败-CSDN博客</a> 。</p>
-<ol>
-<li>还有一种方法是可以试一下不适用images 的插件，改为使用img的插件，全称是npm install hexo-asset-img –save，亲测有用。记得把插件目录下的images删了。这个问题是hexo版本更新导致的。可以尝试一下。</li>
-</ol>
-</li>
-<li><p>也可以使用其他的图床网站上传图片，然后点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。</p>
+<li><p>Linux发行版：任何人都可以获得并修改内核，并且自行集成系统级程序，提供了内核+系统级程序的完整封装，称之为Linux发行版。常见的ubuntu和redhat等就是Linux的发行版。所以也<strong>不要纠结学哪一个，学会了一个，其他的都会触类旁通了</strong>。</p>
 </li>
 </ol>
-<h2 id="测试系列文章"><a href="#测试系列文章" class="headerlink" title="测试系列文章"></a>测试系列文章</h2><ol class="series-items"><li><a href="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" title="hexo博客创建">hexo博客创建</a></li><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" title="hexo博客测试与更新">hexo博客测试与更新</a></li></ol>
-
-
-
-<p>注意：hexo会自动给分级标题编号，不需要自己添加</p>
+<h2 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h2><p>即借助虚拟化技术，我们可以在系统中，通过软件模拟计算机硬件，并给虚拟硬件安装真实的操作系统。</p>
+<p>学习Linux可以选择使用虚拟软件，比如VMware，或者是买一个云服务器。</p>
+<p>Windows网络连接(网络适配器)查看方法<code>win+R</code> 输入<code>ncpa.cpl</code> 查看是否有VMnet1和VMnet8的网卡，有了虚拟机才能连上网。</p>
+<h2 id="扩展：WSL"><a href="#扩展：WSL" class="headerlink" title="扩展：WSL"></a>扩展：WSL</h2><p>就是Windows Subsystem for Linux，没错，Windows系统可以得到Linux系统环境，不过目前的主流还是用虚拟软件。</p>
+<p>方法：(Windows 11)在开始中搜索-“启用或者关闭Windows功能”-“适用于Linux的Windows子系统 ”打勾，“虚拟机平台”打勾并重启，然后在应用商店里面搜索对应的Linux发行版下载即可。</p>
+<h1 id="Linux入门"><a href="#Linux入门" class="headerlink" title="Linux入门"></a>Linux入门</h1><p>学习Linux需要掌握<strong>命令</strong>来操作系统，图形化页面很少使用。图形化界面易于理解，但是命令行效率更高。</p>
+<p>那么在哪里敲命令行呢？VMware里面可以，但是不方便。建议使用Xshell或者是FinalShell软件，这里我用的是Xshell。</p>
+<p>通过命令<code>ipaddr</code> 查看虚拟机的IP地址，然后填写到Xshell的新对话中。</p>
+<p>Linux<strong>注意事项</strong></p>
+<ol>
+<li><strong>快照</strong>：建议关机之后保存，开机情况下会比较卡。</li>
+</ol>
+<h1 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h1><h2 id="Linux目录"><a href="#Linux目录" class="headerlink" title="Linux目录"></a>Linux目录</h2><p><strong>一切皆文件</strong>：指的是Linux会将一切对象映射成文件。Linux中最重要的就是目录，以后从事相关工作要背主目录-<strong>因为在生产环境中是没有图形化界面的，只有控制台。</strong>对于其他目录要了解其英文单词和实际用途。</p>
+<p>图片演示</p>
+<p><img src="/posts/b30ceb9f.htm/20221027214128.png" alt="20221027214128"></p>
 <ul>
-<li>md开头的格式可以参考此，细节可以看此文档<a href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li>
-<li>注意:top-img: 图片格式是地址，可以导入网站的地址。</li>
-<li>相关图片上传必备网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a></li>
-<li>使用，将图片上传到这里，然后点击Image URL 复制地址即可远程连接</li>
+<li><code>/</code>，根目录是最顶级的目录了，也就是说<code>~</code>是<code>/</code>的子目录</li>
+<li>Linux有且只有一个顶级目录：<code>/</code></li>
+<li>路径描述的层次关系同样适用<code>/</code>来表示:比如&#x2F;usr&#x2F;bin&#x2F;hello.py,第一个&#x2F;是根目录，其他的是层级关系。</li>
 </ul>
-<h2 id="banner设置"><a href="#banner设置" class="headerlink" title="banner设置"></a>banner设置</h2><ul>
-<li><p>网站上方的“标签””分类“”清单“对应blog&#x2F;source&#x2F;英文名&#x2F;index.md 具体写法见</p>
-</li>
-<li><p>友情链接可以自定义：方法见<a href="https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></p>
-</li>
-<li><p>导航栏设置：在_config.butterfly.yml 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class&#x3D; “ 复制这里的内容” 替代即可。</p>
-</li>
-</ul>
-<h2 id="文章设置"><a href="#文章设置" class="headerlink" title="文章设置"></a>文章设置</h2><ul>
-<li><p>當主題配置文件中的 highlight_shrink 設為false時，可在front-matter添加highlight_shrink: true來單獨配置文章收縮代碼框。我这里默认是展开所有代码，需要的时候就在md文件开头添加这句话即可。</p>
-</li>
-<li><p>tab演示</p>
-</li>
-</ul>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-
-
+<p>命令：就是Linux程序，以字符的方式与计算机交流。</p>
+<p>命令讲解：无论是什么命令，用于什么用途，在Linux中，命令有其通用的格式<br>command [-options] [parameter]</p>
 <ul>
-<li>按钮button设置</li>
-<li><a class="btn-beautify [color] [style] [layout] [position] [size]" href="/%5Burl%5D" title="[text]"><i class="[icon]"></i><span>[text]</span></a></li>
-<li>[url]         : 鏈接</li>
-<li>[text]        : 按鈕文字</li>
-<li>[icon]        : [可選] 圖標</li>
-<li>[color]       : [可選] 按鈕背景顔色 （默認style時） 按鈕字體和邊框顔色(outline時) default&#x2F;blue&#x2F;pink&#x2F;red&#x2F;purple&#x2F;orange&#x2F;green</li>
-<li>[style]       : [可選] 按鈕樣式 默認實心 outline&#x2F;留空</li>
-<li>[layout]      : [可選] 按鈕佈局 默認為line   block&#x2F;留空</li>
-<li>[position]    : [可選] 按鈕位置 前提是設置了layout為block 默認為左邊  center&#x2F;right&#x2F;留空</li>
-<li>[size]        : [可選] 按鈕大小  larger&#x2F;留空</li>
+<li>command:命令本身</li>
+<li>-options:[可选，非必填]命令的一些选项，可以通过选项控制命令的行为细节</li>
+<li>parameter:[可选，非必填]命令的参数，多数用于命令的指向目标等. 语法中的[],表示可选的意思</li>
 </ul>
-<div class="btn-center">
-<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline blue larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline pink larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline red larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline purple larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline orange larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify outline green larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-</div>
-
+<p>比如<code>ls -l /home/hello</code> ls是命令，-l是选项，&#x2F;home&#x2F;hello是参数，意思是以列表的形式，展示&#x2F;home&#x2F;hello 目录的内容。</p>
+<h2 id="目录切换命令"><a href="#目录切换命令" class="headerlink" title="目录切换命令"></a>目录切换命令</h2><h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3><p>功能：列出文件夹信息</p>
+<p>语法：<code>ls [-l -h -a] [参数]</code></p>
 <ul>
-<li><p>文字高亮</p>
+<li>参数：被查看的文件夹，不提供参数，表示查看当前工作目录</li>
+<li>-l，以列表(list)形式查看</li>
+<li>-h，配合-l，以更加人性化的方式显示文件大小</li>
+<li>-a，表示all的意思，即显示所有文件，包括隐藏文件(在Linux中以<code>.</code>开头的，均是隐藏的)</li>
+</ul>
+<p>演示如下</p>
+<p><img src="/posts/b30ceb9f.htm/001.png" alt="001"></p>
+<p>注意：当前登录用户的HOME目录作为当前工作目录，所以ls命令列出的是HOME目录的内容</p>
+<p>HOME目录：每个操作用户在Linux系统的个人账户目录，路径在：&#x2F;home&#x2F;用户名</p>
+<p>普通用户的HOME目录，默认在：<code>/home/用户名</code>，而root用户的HOME目录，在：<code>/root</code></p>
+<p>语法中的选项是可以组合使用的，比如学习的-和-l可以组合应用,比如<code>ls -la</code></p>
+<p><img src="/posts/b30ceb9f.htm/002.png" alt="002"></p>
+<h3 id="cd-change-directory-命令"><a href="#cd-change-directory-命令" class="headerlink" title="cd(change directory) 命令"></a>cd(change directory) 命令</h3><p>功能：切换工作目录</p>
+<p>语法：<code>cd [linux路径]</code></p>
+<p>参数：目标目录，要切换去的地方，不提供默认切换到<strong>当前登录用户HOME目录</strong> </p>
+<h3 id="pwd-print-work-directory"><a href="#pwd-print-work-directory" class="headerlink" title="pwd(print work directory)"></a>pwd(print work directory)</h3><p>功能：展示当前所在的工作目录</p>
+<p>语法:<code>pwd</code></p>
+<p><img src="/posts/b30ceb9f.htm/003.png" alt="003"></p>
+<p><strong>相对路径与绝对路径</strong></p>
+<ul>
+<li><p>相对路径，&#x3D;&#x3D;非&#x3D;&#x3D;<code>/</code>开头的称之为相对路径：相对路径表示以<code>当前目录</code>作为起点，去描述路径，如<code>test/a.txt</code>，表示当前工作目录内的test文件夹内的a.txt文件</p>
 </li>
-<li><mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
-<mark class="hl-label red">红色</mark>
-</li>
-<li><p>系列文章</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br><span class="line">//在文章的 front-matter 上添加參數 series，並給與一個標識</span><br><span class="line">//使用此標簽外掛，會把相同標識的文章以列表的形式展示</span><br></pre></td></tr></table></figure>
-
-</li>
-<li><p>其他（如渲染乐谱\链接等可以看<a href="https://butterfly.js.org/posts/4aa8abbe/#flink%EF%BC%89">https://butterfly.js.org/posts/4aa8abbe/#flink）</a></p>
-</li>
-<li><p>主页的html在文件.deploy_git&#x2F;index.html里面，要更改文字的话在这里更改。</p>
+<li><p>绝对路径，&#x3D;&#x3D;以&#x3D;&#x3D;<code>/</code>开头的称之为绝对路径：绝对路径从<code>根</code>开始描述路径</p>
 </li>
 </ul>
+<p><strong>特殊路径符</strong></p>
+<ul>
+<li><code>.</code>，表示当前，比如.&#x2F;a.txt，表示当前文件夹内的<code>a.txt</code>文件</li>
+<li><code>..</code>，表示上级目录，比如<code>../</code>表示上级目录，<code>../../</code>表示上级的上级目录</li>
+<li><code>~</code>，表示用户的HOME目录，比如<code>cd ~</code>，即可切回用户HOME目录</li>
+</ul>
+<h2 id="创建目录mkdir命令"><a href="#创建目录mkdir命令" class="headerlink" title="创建目录mkdir命令"></a>创建目录mkdir命令</h2><p>英语：make directory</p>
+<p>功能：创建文件夹</p>
+<p>语法：<code>mkdir [-p] 参数</code></p>
+<ul>
+<li>参数：被创建文件夹的路径</li>
+<li>选项：-p，可选，表示创建前置路径，比如你输入<code>mkdir -p /usr/test/work</code> 但是test文件夹没有创建，那么<code>-p</code>会帮助创建一个test的文件夹，然后再创建work文件夹</li>
+<li>此图第一个d表示这是一个文件夹，后面的与<strong>权限</strong>有关</li>
+</ul>
+<p><img src="/posts/b30ceb9f.htm/004.png" alt="004"></p>
+<h2 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h2><h3 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h3><p>功能：创建文件，注意要<strong>添加后缀</strong></p>
+<p>语法：<code>touch 参数</code> 参数：被创建的文件路径</p>
+<h3 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h3><p>功能：查看文件内容</p>
+<p>语法：<code>cat 参数</code> 参数：被查看的文件路径</p>
+<h3 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h3><p>功能：查看文件，可以支持翻页查看</p>
+<p>语法：<code>more 参数</code> 参数：被查看的文件路径</p>
+<p>在查看过程中：按<code>空格</code>键翻页 <code>q</code>退出查看 读者可以试试<code>more /etc/services</code> etc(法语et cetera,表示<strong>以及其他内容</strong>)</p>
+<h3 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h3><p>命令行输入：<code>clear</code> 或者是ctrl+l</p>
+<p><em><strong>To be continued</strong></em>……</p>
+<h1 id="软件在Linux上的安装部署"><a href="#软件在Linux上的安装部署" class="headerlink" title="软件在Linux上的安装部署"></a>软件在Linux上的安装部署</h1><p>考虑到不同的人群使用Linux的开发方向不同，我这里只选择MySQL、Redis和NGINX的安装，其他的读者可以看本文目录下“参考”中的参考视频和教程，有选择地去学习。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><strong>软件资源</strong></p>
+<ol>
+<li>Xshell：<a href="https://www.xshell.com/zh/free-for-home-school/">家庭&#x2F;学校免费 - NetSarang Website (xshell.com)</a></li>
+<li>Linux相关发行版：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos-vault/">清华大学开源软件镜像站</a></li>
+</ol>
+<p><strong>参考视频和教程</strong></p>
+<ol>
+<li><a href="https://blog.csdn.net/weixin_74195551/article/details/127288338">安装虚拟机（VMware）保姆级教程（附安装包）</a></li>
+<li><a href="https://www.bilibili.com/video/BV1Sv411r7vd?vd_source=bb8dacb993f11c0e39f8147c98a2894c">【小白入门 通俗易懂】韩顺平 一周学会Linux</a> ,注意韩顺平老师的视频是2021年的，视频中有些网站已经失效，请自行Google或百度查找。</li>
+<li><a href="https://www.bilibili.com/video/BV1n84y1i7td?p=3&vd_source=bb8dacb993f11c0e39f8147c98a2894c">黑马程序员新版Linux零基础快速入门到精通，全涵盖linux系统知识、常用软件环境部署、Shell脚本、云平台实践、大数据集群项目实战等</a></li>
+</ol>
+<p><strong>参考书籍和资料</strong></p>
+<ol>
+<li><a href="https://www.linuxcool.com/">Linux命令大全(手册) – 真正好用的Linux命令在线查询网站</a> 这个是学Linux必备的，相比某度、CSDN更加简洁，但是如果要更加细节的解释可能还是要依靠CSDN或者Google等搜索引擎。</li>
+</ol>
 ]]></content>
       <categories>
-        <category>blog</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>blog</tag>
-        <tag>测试</tag>
-        <tag>教程</tag>
-        <tag>hexo</tag>
+        <tag>Linux</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
     <title>hexo博客创建</title>
-    <url>/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+    <url>/posts/ac8fcf9d.html</url>
     <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Hexo 是一个由Nodejs驱动的博客框架，支持 Markdown、一键部署、插件和多种模板引擎。Hexo 可以让你轻松创建、管理和部署你的个人或团队博客。本文基于个人的实践经验，<strong>以Windows为主要开发环境</strong>，旨在让那些对博客搭建感兴趣但碍于困难的朋友能搭建起基本的博客框架。</p>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="课前提醒——主要是针对非程序员"><a href="#课前提醒——主要是针对非程序员" class="headerlink" title="课前提醒——主要是针对非程序员"></a>课前提醒——主要是针对非程序员</h2><p><strong>大部分的操作、代码输入</strong>都是在<strong>Windows</strong>系统<strong>终端</strong>中执行的。</p>
 <p><strong>方法</strong>：点击开始-搜索“终端”-打开，或者在任意文件夹中“右键”-“在终端中打开”。会出现黑色的框。后续大部分代码都是在这“黑框”中输入且执行的。</p>
-<p><img src="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/1.png"></p>
+<p><img src="/posts/ac8fcf9d.htm/1.png"></p>
 <ul>
 <li>代码块没有标明代码语言的都是在Windows终端中运行的。mac系统和linux系统相关指令请查询有关资料</li>
 <li>默认电脑下载了git和注册了github。没有注册github和下载git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&from_spmid=main.space-search.0.0&is_story_h5=false&mid=ueF2Y5ca46qLJ+0TtsIVXA==&p=2&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&share_source=COPY&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1718194497&unique_k=7ayW8ON&up_id=456828781&vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
@@ -150,13 +135,13 @@
 <h2 id="相关资料下载"><a href="#相关资料下载" class="headerlink" title="相关资料下载"></a>相关资料下载</h2><ol>
 <li><a href="https://nodejs.cn/">Node.js 中文网 (nodejs.cn)</a>安装，进去后点击下载安装，选择长期支持版（LTS）即可</li>
 </ol>
-<p><img src="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/2.png"></p>
+<p><img src="/posts/ac8fcf9d.htm/2.png"></p>
 <ol start="2">
 <li>安装cnpm并配置淘宝镜像</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/3.png"></p>
+<p><img src="/posts/ac8fcf9d.htm/3.png"></p>
 <blockquote>
 <p><strong>注意</strong>：后面代码中我打&#x2F;&#x2F;并且后面跟着文字的（比如&#x2F;&#x2F;这里是初始化)都是<strong>注释</strong>，<strong>不要写在终端里面</strong></p>
 </blockquote>
@@ -203,7 +188,7 @@
 <ol start="10">
 <li>github创建仓库,注意格式严格为    你的github用户名.github.io 并复制SSH的clone地址，我这里以Tom为例</li>
 </ol>
-<p><img src="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/4.png"></p>
+<p><img src="/posts/ac8fcf9d.htm/4.png"></p>
 <ol start="11">
 <li>安装部署插件</li>
 </ol>
@@ -212,7 +197,7 @@
 <ol start="12">
 <li>修改_config.yml文件</li>
 </ol>
-<p><img src="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/5.png"></p>
+<p><img src="/posts/ac8fcf9d.htm/5.png"></p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">//一般是最后一行。</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">粘贴你10步复制的地址。</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
 <ol start="13">
@@ -332,128 +317,43 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux学习笔记</title>
-    <url>/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="学前提醒"><a href="#学前提醒" class="headerlink" title="学前提醒"></a>学前提醒</h1><ol>
-<li>自然：不要死记Linux命令，先敲一遍，以后在学习和工作中练习就足够了，需要的时候就查命令手册</li>
-<li>Centos系统在2024年已停止更新，后续可以考虑学一下ubuntu。</li>
-</ol>
-<h1 id="初识Linux"><a href="#初识Linux" class="headerlink" title="初识Linux"></a>初识Linux</h1><ol>
-<li><p>什么是Linux？即服务器操作系统的一种。<strong>操作系统就是第一层软件</strong>，作为用户和计算机硬件之间的桥梁，调度和管理计算机硬件进行工作。对于前后端开发人员、运维测试人员、大数据等都是必学的内容</p>
-</li>
-<li><p>Linux的组成：由Linux系统<strong>内核</strong>+系统级应用<strong>程序</strong>(简单理解成系统自带的软件，比如文件管理，图片查看等)组成，其他的软件都叫第三方应用程序。</p>
-</li>
-<li><p>Linux发行版：任何人都可以获得并修改内核，并且自行集成系统级程序，提供了内核+系统级程序的完整封装，称之为Linux发行版。常见的ubuntu和redhat等就是Linux的发行版。所以也<strong>不要纠结学哪一个，学会了一个，其他的都会触类旁通了</strong>。</p>
-</li>
-</ol>
-<h2 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h2><p>即借助虚拟化技术，我们可以在系统中，通过软件模拟计算机硬件，并给虚拟硬件安装真实的操作系统。</p>
-<p>学习Linux可以选择使用虚拟软件，比如VMware，或者是买一个云服务器。</p>
-<p>Windows网络连接(网络适配器)查看方法<code>win+R</code> 输入<code>ncpa.cpl</code> 查看是否有VMnet1和VMnet8的网卡，有了虚拟机才能连上网。</p>
-<h2 id="扩展：WSL"><a href="#扩展：WSL" class="headerlink" title="扩展：WSL"></a>扩展：WSL</h2><p>就是Windows Subsystem for Linux，没错，Windows系统可以得到Linux系统环境，不过目前的主流还是用虚拟软件。</p>
-<p>方法：(Windows 11)在开始中搜索-“启用或者关闭Windows功能”-“适用于Linux的Windows子系统 ”打勾，“虚拟机平台”打勾并重启，然后在应用商店里面搜索对应的Linux发行版下载即可。</p>
-<h1 id="Linux入门"><a href="#Linux入门" class="headerlink" title="Linux入门"></a>Linux入门</h1><p>学习Linux需要掌握<strong>命令</strong>来操作系统，图形化页面很少使用。图形化界面易于理解，但是命令行效率更高。</p>
-<p>那么在哪里敲命令行呢？VMware里面可以，但是不方便。建议使用Xshell或者是FinalShell软件，这里我用的是Xshell。</p>
-<p>通过命令<code>ipaddr</code> 查看虚拟机的IP地址，然后填写到Xshell的新对话中。</p>
-<p>Linux<strong>注意事项</strong></p>
-<ol>
-<li><strong>快照</strong>：建议关机之后保存，开机情况下会比较卡。</li>
-</ol>
-<h1 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h1><h2 id="Linux目录"><a href="#Linux目录" class="headerlink" title="Linux目录"></a>Linux目录</h2><p><strong>一切皆文件</strong>：指的是Linux会将一切对象映射成文件。Linux中最重要的就是目录，以后从事相关工作要背主目录-<strong>因为在生产环境中是没有图形化界面的，只有控制台。</strong>对于其他目录要了解其英文单词和实际用途。</p>
-<p>图片演示</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20221027214128.png" alt="20221027214128"></p>
+    <title>数据分析工具superset安装和使用(version:0.381)</title>
+    <url>/posts/3c22a82e.html</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+</blockquote>
 <ul>
-<li><code>/</code>，根目录是最顶级的目录了，也就是说<code>~</code>是<code>/</code>的子目录</li>
-<li>Linux有且只有一个顶级目录：<code>/</code></li>
-<li>路径描述的层次关系同样适用<code>/</code>来表示:比如&#x2F;usr&#x2F;bin&#x2F;hello.py,第一个&#x2F;是根目录，其他的是层级关系。</li>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料<ul>
+<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
 </ul>
-<p>命令：就是Linux程序，以字符的方式与计算机交流。</p>
-<p>命令讲解：无论是什么命令，用于什么用途，在Linux中，命令有其通用的格式<br>command [-options] [parameter]</p>
-<ul>
-<li>command:命令本身</li>
-<li>-options:[可选，非必填]命令的一些选项，可以通过选项控制命令的行为细节</li>
-<li>parameter:[可选，非必填]命令的参数，多数用于命令的指向目标等. 语法中的[],表示可选的意思</li>
-</ul>
-<p>比如<code>ls -l /home/hello</code> ls是命令，-l是选项，&#x2F;home&#x2F;hello是参数，意思是以列表的形式，展示&#x2F;home&#x2F;hello 目录的内容。</p>
-<h2 id="目录切换命令"><a href="#目录切换命令" class="headerlink" title="目录切换命令"></a>目录切换命令</h2><h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3><p>功能：列出文件夹信息</p>
-<p>语法：<code>ls [-l -h -a] [参数]</code></p>
-<ul>
-<li>参数：被查看的文件夹，不提供参数，表示查看当前工作目录</li>
-<li>-l，以列表(list)形式查看</li>
-<li>-h，配合-l，以更加人性化的方式显示文件大小</li>
-<li>-a，表示all的意思，即显示所有文件，包括隐藏文件(在Linux中以<code>.</code>开头的，均是隐藏的)</li>
-</ul>
-<p>演示如下</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/001.png" alt="001"></p>
-<p>注意：当前登录用户的HOME目录作为当前工作目录，所以ls命令列出的是HOME目录的内容</p>
-<p>HOME目录：每个操作用户在Linux系统的个人账户目录，路径在：&#x2F;home&#x2F;用户名</p>
-<p>普通用户的HOME目录，默认在：<code>/home/用户名</code>，而root用户的HOME目录，在：<code>/root</code></p>
-<p>语法中的选项是可以组合使用的，比如学习的-和-l可以组合应用,比如<code>ls -la</code></p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/002.png" alt="002"></p>
-<h3 id="cd-change-directory-命令"><a href="#cd-change-directory-命令" class="headerlink" title="cd(change directory) 命令"></a>cd(change directory) 命令</h3><p>功能：切换工作目录</p>
-<p>语法：<code>cd [linux路径]</code></p>
-<p>参数：目标目录，要切换去的地方，不提供默认切换到<strong>当前登录用户HOME目录</strong> </p>
-<h3 id="pwd-print-work-directory"><a href="#pwd-print-work-directory" class="headerlink" title="pwd(print work directory)"></a>pwd(print work directory)</h3><p>功能：展示当前所在的工作目录</p>
-<p>语法:<code>pwd</code></p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/003.png" alt="003"></p>
-<p><strong>相对路径与绝对路径</strong></p>
-<ul>
-<li><p>相对路径，&#x3D;&#x3D;非&#x3D;&#x3D;<code>/</code>开头的称之为相对路径：相对路径表示以<code>当前目录</code>作为起点，去描述路径，如<code>test/a.txt</code>，表示当前工作目录内的test文件夹内的a.txt文件</p>
-</li>
-<li><p>绝对路径，&#x3D;&#x3D;以&#x3D;&#x3D;<code>/</code>开头的称之为绝对路径：绝对路径从<code>根</code>开始描述路径</p>
 </li>
 </ul>
-<p><strong>特殊路径符</strong></p>
-<ul>
-<li><code>.</code>，表示当前，比如.&#x2F;a.txt，表示当前文件夹内的<code>a.txt</code>文件</li>
-<li><code>..</code>，表示上级目录，比如<code>../</code>表示上级目录，<code>../../</code>表示上级的上级目录</li>
-<li><code>~</code>，表示用户的HOME目录，比如<code>cd ~</code>，即可切回用户HOME目录</li>
-</ul>
-<h2 id="创建目录mkdir命令"><a href="#创建目录mkdir命令" class="headerlink" title="创建目录mkdir命令"></a>创建目录mkdir命令</h2><p>英语：make directory</p>
-<p>功能：创建文件夹</p>
-<p>语法：<code>mkdir [-p] 参数</code></p>
-<ul>
-<li>参数：被创建文件夹的路径</li>
-<li>选项：-p，可选，表示创建前置路径，比如你输入<code>mkdir -p /usr/test/work</code> 但是test文件夹没有创建，那么<code>-p</code>会帮助创建一个test的文件夹，然后再创建work文件夹</li>
-<li>此图第一个d表示这是一个文件夹，后面的与<strong>权限</strong>有关</li>
-</ul>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/004.png" alt="004"></p>
-<h2 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h2><h3 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h3><p>功能：创建文件，注意要<strong>添加后缀</strong></p>
-<p>语法：<code>touch 参数</code> 参数：被创建的文件路径</p>
-<h3 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h3><p>功能：查看文件内容</p>
-<p>语法：<code>cat 参数</code> 参数：被查看的文件路径</p>
-<h3 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h3><p>功能：查看文件，可以支持翻页查看</p>
-<p>语法：<code>more 参数</code> 参数：被查看的文件路径</p>
-<p>在查看过程中：按<code>空格</code>键翻页 <code>q</code>退出查看 读者可以试试<code>more /etc/services</code> etc(法语et cetera,表示<strong>以及其他内容</strong>)</p>
-<h3 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h3><p>命令行输入：<code>clear</code> 或者是ctrl+l</p>
-<p><em><strong>To be continued</strong></em>……</p>
-<h1 id="软件在Linux上的安装部署"><a href="#软件在Linux上的安装部署" class="headerlink" title="软件在Linux上的安装部署"></a>软件在Linux上的安装部署</h1><p>考虑到不同的人群使用Linux的开发方向不同，我这里只选择MySQL、Redis和NGINX的安装，其他的读者可以看本文目录下“参考”中的参考视频和教程，有选择地去学习。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><strong>软件资源</strong></p>
-<ol>
-<li>Xshell：<a href="https://www.xshell.com/zh/free-for-home-school/">家庭&#x2F;学校免费 - NetSarang Website (xshell.com)</a></li>
-<li>Linux相关发行版：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos-vault/">清华大学开源软件镜像站</a></li>
+<h1 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h1><ol>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
 </ol>
-<p><strong>参考视频和教程</strong></p>
-<ol>
-<li><a href="https://blog.csdn.net/weixin_74195551/article/details/127288338">安装虚拟机（VMware）保姆级教程（附安装包）</a></li>
-<li><a href="https://www.bilibili.com/video/BV1Sv411r7vd?vd_source=bb8dacb993f11c0e39f8147c98a2894c">【小白入门 通俗易懂】韩顺平 一周学会Linux</a> ,注意韩顺平老师的视频是2021年的，视频中有些网站已经失效，请自行Google或百度查找。</li>
-<li><a href="https://www.bilibili.com/video/BV1n84y1i7td?p=3&vd_source=bb8dacb993f11c0e39f8147c98a2894c">黑马程序员新版Linux零基础快速入门到精通，全涵盖linux系统知识、常用软件环境部署、Shell脚本、云平台实践、大数据集群项目实战等</a></li>
-</ol>
-<p><strong>参考书籍和资料</strong></p>
-<ol>
-<li><a href="https://www.linuxcool.com/">Linux命令大全(手册) – 真正好用的Linux命令在线查询网站</a> 这个是学Linux必备的，相比某度、CSDN更加简洁，但是如果要更加细节的解释可能还是要依靠CSDN或者Google等搜索引擎。</li>
-</ol>
+<h1 id="superset使用指南"><a href="#superset使用指南" class="headerlink" title="superset使用指南"></a>superset使用指南</h1><p>待更新……</p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>大数据</category>
       </categories>
       <tags>
         <tag>Linux</tag>
-        <tag>服务器</tag>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
     <title>《高质量C、C++》笔记整理</title>
-    <url>/2024/06/25/%E3%80%8A%E9%AB%98%E8%B4%A8%E9%87%8FC%E3%80%81C++%E3%80%8B%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</url>
+    <url>/posts/5ce5f15f.html</url>
     <content><![CDATA[<blockquote>
 <p>本文章会随着编程能力的提高和思维的扩展不断更新,目前是1.0版本    2024&#x2F;6&#x2F;25</p>
 </blockquote>
@@ -834,7 +734,7 @@
 
 
 <p>看到这里,你会有一个问题,为什么要用写作来形容代码的编写过程呢?对以中文为母语的人可能难以理解,但是对于以英语为母语的人早已习以为常,甚至达到了“美国人刚出生就会写代码”的程度.对他们来说,写代码就是写英语作文,无非是语法更严格,字数变更少,语句更加讲逻辑,对我们来说就是在“写天书”.这里想说的是,将写代码看做是写英语作文,可以<strong>有效提高写代码的逻辑性</strong>,而且,一旦你认为自己写的是一篇作文,要传阅给所有人看,你就会不自觉“美化”你的作文(代码),<strong>在无形之中,你对自己写的作文(代码)提高了要求</strong>。我以写作为例,更多的是想让你感受一下<strong>保安三问定律</strong>在写代码方面的作用和按照一定的规则写代码的好处,毕竟代码就是语句,多行代码构成段落,多个段落构成故事,<strong>故事都有起因经过结果,保安定律就是为了回答这三者究竟是什么，规则限定我们写故事写在哪，怎样写易读性更强</strong>。也许自己的故事有缺陷,也许编程能力有限,但总是能引导我们走向文章的结尾,给老师(编译器)和他人一个满意的答卷.</p>
-<ol class="series-items"><li><a href="/2024/06/25/%E3%80%8A%E9%AB%98%E8%B4%A8%E9%87%8FC%E3%80%81C++%E3%80%8B%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" title="《高质量C、C++》笔记整理">《高质量C、C++》笔记整理</a></li></ol>
+<ol class="series-items"><li><a href="/posts/5ce5f15f.html" title="《高质量C、C++》笔记整理">《高质量C、C++》笔记整理</a></li></ol>
 
 
 
@@ -852,8 +752,143 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo博客测试与更新</title>
+    <url>/posts/e67b306f.html</url>
+    <content><![CDATA[<h2 id="hexo博客更新和待更新计划"><a href="#hexo博客更新和待更新计划" class="headerlink" title="hexo博客更新和待更新计划"></a>hexo博客更新和待更新计划</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
+<p>以下更新内容都是从最后一次更新开始的</p>
+</blockquote>
+<ol>
+<li>butterfly主题从4.13.0更新到5.0.0版本</li>
+<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
+<li>更新了留言板</li>
+<li>优化了搜索功能</li>
+<li>禁止B站视频自动播放</li>
+<li>更新了主页“关于”部分</li>
+<li>修复了几处笔误的问题</li>
+<li>优化了评论功能的选择</li>
+</ol></div><div class="tab-item-content"><ol>
+<li>子菜单展示内容(比如展示图表)；方法：将子菜单里面的index.md当做普通的md文件，通过基本的markdown语言和butterfly专有语法实现效果，建议写成总领式的文章或者展示页面。</li>
+<li>添加一下赞助墙</li>
+<li>更新算法相关博客并添加数学动画视频或者是算法演示动画。</li>
+</ol></div><div class="tab-item-content"><h2 id="hexo框架更新"><a href="#hexo框架更新" class="headerlink" title="hexo框架更新"></a>hexo框架更新</h2><p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
+<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
+<h2 id="butterfly主题更新"><a href="#butterfly主题更新" class="headerlink" title="butterfly主题更新"></a>butterfly主题更新</h2><blockquote>
+<p>更新前记得留下blog快照</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
+<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
+<p>如果不行，就在你的博客&#x2F;themes&#x2F;butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
+<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+<h2 id="个人hexo博客更新讲解"><a href="#个人hexo博客更新讲解" class="headerlink" title="个人hexo博客更新讲解"></a>个人hexo博客更新讲解</h2><p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
+<p>示例代码如下</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
+
+<p>评论功能：</p>
+<ol>
+<li>我设置文章自动放开评论功能，就不需要在开头写<code>comments: true</code> 这行代码了。</li>
+<li>我设置的是twikoo静态评论控制，搭建教程可以参考如下链接<a href="https://blog.hihahoo.com/archives/fc6989f5.html#1-twikoo%E9%83%A8%E7%BD%B2">Hexo主题butterfly集成评论功能（twikoo） | Hihahoo：想你所想 做你所做</a></li>
+</ol>
+<p>文章置顶功能：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考链接<a href="https://liangshenglei.github.io/2023/03/06/Butterfly%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/index.html">Butterfly 主题的详细配置 | 梁圣磊の博客 (liangshenglei.github.io)</a></p>
+<p>文章加密功能：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">https://polar-bear.eu.org/2023/07/21/ce-shi/</a> 也许以后添加。</p>
+<p>磁贴功能：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
+<h2 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h2><p>阿里云图片测试</p>
+<p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img1.png"></p>
+<p>本地图片测试</p>
+<p><img src="/posts/e67b306f.htm/C__Users_kai98_Pictures_%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87_post-img1.png"></p>
+<p><strong>图片上传方法</strong></p>
+<ol>
+<li><p>通过picgo图床实现图片上传，只需要在md文件里面插入-图片，然后就会自动把插入的文件上传到oss上面，要取消的时候就点击文件-偏好设置-上传服务设定-将picgo换成无即可。</p>
+</li>
+<li><p>参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在_post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用，<strong>博主因为部署的原因主要使用此方法</strong></p>
+</li>
+<li><p>如果zeabur图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。参考教程<a href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法_hexo 文章插入图片失败-CSDN博客</a> 。</p>
+<ol>
+<li>还有一种方法是可以试一下不适用images 的插件，改为使用img的插件，全称是npm install hexo-asset-img –save，亲测有用。记得把插件目录下的images删了。这个问题是hexo版本更新导致的。可以尝试一下。</li>
+</ol>
+</li>
+<li><p>也可以使用其他的图床网站上传图片，然后点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。</p>
+</li>
+</ol>
+<h2 id="测试系列文章"><a href="#测试系列文章" class="headerlink" title="测试系列文章"></a>测试系列文章</h2><ol class="series-items"><li><a href="/posts/ac8fcf9d.html" title="hexo博客创建">hexo博客创建</a></li><li><a href="/posts/e67b306f.html" title="hexo博客测试与更新">hexo博客测试与更新</a></li></ol>
+
+
+
+<p>注意：hexo会自动给分级标题编号，不需要自己添加</p>
+<ul>
+<li>md开头的格式可以参考此，细节可以看此文档<a href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li>
+<li>注意:top-img: 图片格式是地址，可以导入网站的地址。</li>
+<li>相关图片上传必备网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a></li>
+<li>使用，将图片上传到这里，然后点击Image URL 复制地址即可远程连接</li>
+</ul>
+<h2 id="banner设置"><a href="#banner设置" class="headerlink" title="banner设置"></a>banner设置</h2><ul>
+<li><p>网站上方的“标签””分类“”清单“对应blog&#x2F;source&#x2F;英文名&#x2F;index.md 具体写法见</p>
+</li>
+<li><p>友情链接可以自定义：方法见<a href="https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></p>
+</li>
+<li><p>导航栏设置：在_config.butterfly.yml 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class&#x3D; “ 复制这里的内容” 替代即可。</p>
+</li>
+</ul>
+<h2 id="文章设置"><a href="#文章设置" class="headerlink" title="文章设置"></a>文章设置</h2><ul>
+<li><p>當主題配置文件中的 highlight_shrink 設為false時，可在front-matter添加highlight_shrink: true來單獨配置文章收縮代碼框。我这里默认是展开所有代码，需要的时候就在md文件开头添加这句话即可。</p>
+</li>
+<li><p>tab演示</p>
+</li>
+</ul>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+
+<ul>
+<li>按钮button设置</li>
+<li><a class="btn-beautify [color] [style] [layout] [position] [size]" href="/%5Burl%5D" title="[text]"><i class="[icon]"></i><span>[text]</span></a></li>
+<li>[url]         : 鏈接</li>
+<li>[text]        : 按鈕文字</li>
+<li>[icon]        : [可選] 圖標</li>
+<li>[color]       : [可選] 按鈕背景顔色 （默認style時） 按鈕字體和邊框顔色(outline時) default&#x2F;blue&#x2F;pink&#x2F;red&#x2F;purple&#x2F;orange&#x2F;green</li>
+<li>[style]       : [可選] 按鈕樣式 默認實心 outline&#x2F;留空</li>
+<li>[layout]      : [可選] 按鈕佈局 默認為line   block&#x2F;留空</li>
+<li>[position]    : [可選] 按鈕位置 前提是設置了layout為block 默認為左邊  center&#x2F;right&#x2F;留空</li>
+<li>[size]        : [可選] 按鈕大小  larger&#x2F;留空</li>
+</ul>
+<div class="btn-center">
+<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline blue larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline pink larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline red larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline purple larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline orange larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify outline green larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+</div>
+
+<ul>
+<li><p>文字高亮</p>
+</li>
+<li><mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
+<mark class="hl-label red">红色</mark>
+</li>
+<li><p>系列文章</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br><span class="line">//在文章的 front-matter 上添加參數 series，並給與一個標識</span><br><span class="line">//使用此標簽外掛，會把相同標識的文章以列表的形式展示</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>其他（如渲染乐谱\链接等可以看<a href="https://butterfly.js.org/posts/4aa8abbe/#flink%EF%BC%89">https://butterfly.js.org/posts/4aa8abbe/#flink）</a></p>
+</li>
+<li><p>主页的html在文件.deploy_git&#x2F;index.html里面，要更改文字的话在这里更改。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>教程</tag>
+        <tag>hexo</tag>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>英语口语(英语兔版)</title>
-    <url>/2024/10/13/%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD(%E8%8B%B1%E8%AF%AD%E5%85%94%E7%89%88)/</url>
+    <url>/posts/fbb5af65.html</url>
     <content><![CDATA[<h1 id="英语口语"><a href="#英语口语" class="headerlink" title="英语口语"></a>英语口语</h1><p>💡不要用中文去替代英文中独有的，但是中文中缺失的音。</p>
 <h1 id="三种常用的音标"><a href="#三种常用的音标" class="headerlink" title="三种常用的音标"></a>三种常用的音标</h1><p>国际音标(IPA):</p>
 <p>KK音标：主要是美式音标，方便美式英语的注音。</p>
@@ -1242,15 +1277,15 @@
 <p>以下图都是从英语兔公众号下载而来</p>
 </blockquote>
 <p>辅音字母</p>
-<p><img src="/2024/10/13/%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD(%E8%8B%B1%E8%AF%AD%E5%85%94%E7%89%88)/1.png" alt="1"></p>
+<p><img src="/posts/fbb5af65.htm/1.png" alt="1"></p>
 <p>元音字母</p>
 <p><strong>单个元音字母在重读开音节里读元音字母本身的读音</strong></p>
-<p><img src="/2024/10/13/%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD(%E8%8B%B1%E8%AF%AD%E5%85%94%E7%89%88)/2.png" alt="2"></p>
+<p><img src="/posts/fbb5af65.htm/2.png" alt="2"></p>
 <p><strong>单个元音字母在相对开音节里读元音字母本身的读音</strong> 比如bate</p>
 <h2 id="字母组合"><a href="#字母组合" class="headerlink" title="字母组合"></a>字母组合</h2><p>辅音组合</p>
-<p><img src="/2024/10/13/%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD(%E8%8B%B1%E8%AF%AD%E5%85%94%E7%89%88)/3.png" alt="3"></p>
+<p><img src="/posts/fbb5af65.htm/3.png" alt="3"></p>
 <p>元音组合</p>
-<p><img src="/2024/10/13/%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD(%E8%8B%B1%E8%AF%AD%E5%85%94%E7%89%88)/4.png" alt="4"></p>
+<p><img src="/posts/fbb5af65.htm/4.png" alt="4"></p>
 <p>以上这些只是技巧向，真正要学好英语口语还是要大量的输入与输出。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
 <li><a href="https://www.jiwake.com/yinbiaofayin/">英语音标发音表-英语48个音标在线读 (jiwake.com)</a></li>
@@ -1268,43 +1303,8 @@
       </tags>
   </entry>
   <entry>
-    <title>数据分析工具superset安装和使用(version:0.381)</title>
-    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
-</blockquote>
-<ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料<ul>
-<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h1><ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
-</ol>
-<h1 id="superset使用指南"><a href="#superset使用指南" class="headerlink" title="superset使用指南"></a>superset使用指南</h1><p>待更新……</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>大数据</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>英语语法(英语兔版)</title>
-    <url>/2024/10/11/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/</url>
+    <url>/posts/7142b5c3.html</url>
     <content><![CDATA[<h1 id="英语语法综述"><a href="#英语语法综述" class="headerlink" title="英语语法综述"></a>英语语法综述</h1><p>💡语法的目的在于造句，而英语句子的核心在于动词</p>
 <p>英语中所有的句子都可以视为是简单句的组合，而简单句基本上都服从一个模板：<strong>什么+怎么样</strong>。</p>
 <p>这两个代表不同的句子成分(clause elements)，前者代表主语(subject),后者代表谓语(predicate)，即主语+谓语</p>
