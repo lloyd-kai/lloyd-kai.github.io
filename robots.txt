@@ -1,0 +1,6 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://lloyd-kai.github.io/sitemap.xml
+Sitemap: https://lloyd-kai.github.io/baidusitemap.xml
