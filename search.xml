@@ -1,126 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Linux学习笔记</title>
-    <url>/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="学前提醒"><a href="#学前提醒" class="headerlink" title="学前提醒"></a>学前提醒</h1><ol>
-<li>自然：不要死记Linux命令，先敲一遍，以后在学习和工作中练习就足够了，需要的时候就查命令手册</li>
-<li>Centos系统在2024年已停止更新，后续可以考虑学一下ubuntu。</li>
-</ol>
-<h1 id="初识Linux"><a href="#初识Linux" class="headerlink" title="初识Linux"></a>初识Linux</h1><ol>
-<li><p>什么是Linux？即服务器操作系统的一种。<strong>操作系统就是第一层软件</strong>，作为用户和计算机硬件之间的桥梁，调度和管理计算机硬件进行工作。对于前后端开发人员、运维测试人员、大数据等都是必学的内容</p>
-</li>
-<li><p>Linux的组成：由Linux系统<strong>内核</strong>+系统级应用<strong>程序</strong>(简单理解成系统自带的软件，比如文件管理，图片查看等)组成，其他的软件都叫第三方应用程序。</p>
-</li>
-<li><p>Linux发行版：任何人都可以获得并修改内核，并且自行集成系统级程序，提供了内核+系统级程序的完整封装，称之为Linux发行版。常见的ubuntu和redhat等就是Linux的发行版。所以也<strong>不要纠结学哪一个，学会了一个，其他的都会触类旁通了</strong>。</p>
-</li>
-</ol>
-<h2 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h2><p>即借助虚拟化技术，我们可以在系统中，通过软件模拟计算机硬件，并给虚拟硬件安装真实的操作系统。</p>
-<p>学习Linux可以选择使用虚拟软件，比如VMware，或者是买一个云服务器。</p>
-<p>Windows网络连接(网络适配器)查看方法<code>win+R</code> 输入<code>ncpa.cpl</code> 查看是否有VMnet1和VMnet8的网卡，有了虚拟机才能连上网。</p>
-<h2 id="扩展：WSL"><a href="#扩展：WSL" class="headerlink" title="扩展：WSL"></a>扩展：WSL</h2><p>就是Windows Subsystem for Linux，没错，Windows系统可以得到Linux系统环境，不过目前的主流还是用虚拟软件。</p>
-<p>方法：(Windows 11)在开始中搜索-“启用或者关闭Windows功能”-“适用于Linux的Windows子系统 ”打勾，“虚拟机平台”打勾并重启，然后在应用商店里面搜索对应的Linux发行版下载即可。</p>
-<h1 id="Linux入门"><a href="#Linux入门" class="headerlink" title="Linux入门"></a>Linux入门</h1><p>学习Linux需要掌握<strong>命令</strong>来操作系统，图形化页面很少使用。图形化界面易于理解，但是命令行效率更高。</p>
-<p>那么在哪里敲命令行呢？VMware里面可以，但是不方便。建议使用Xshell或者是FinalShell软件，这里我用的是Xshell。</p>
-<p>通过命令<code>ipaddr</code> 查看虚拟机的IP地址，然后填写到Xshell的新对话中。</p>
-<p>Linux<strong>注意事项</strong></p>
-<ol>
-<li><strong>快照</strong>：建议关机之后保存，开机情况下会比较卡。</li>
-</ol>
-<h1 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h1><h2 id="Linux目录"><a href="#Linux目录" class="headerlink" title="Linux目录"></a>Linux目录</h2><p><strong>一切皆文件</strong>：指的是Linux会将一切对象映射成文件。Linux中最重要的就是目录，以后从事相关工作要背主目录-<strong>因为在生产环境中是没有图形化界面的，只有控制台。</strong>对于其他目录要了解其英文单词和实际用途。</p>
-<p>图片演示</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20221027214128.png" alt="20221027214128"></p>
-<ul>
-<li><code>/</code>，根目录是最顶级的目录了，也就是说<code>~</code>是<code>/</code>的子目录</li>
-<li>Linux有且只有一个顶级目录：<code>/</code></li>
-<li>路径描述的层次关系同样适用<code>/</code>来表示:比如&#x2F;usr&#x2F;bin&#x2F;hello.py,第一个&#x2F;是根目录，其他的是层级关系。</li>
-</ul>
-<p>命令：就是Linux程序，以字符的方式与计算机交流。</p>
-<p>命令讲解：无论是什么命令，用于什么用途，在Linux中，命令有其通用的格式<br>command [-options] [parameter]</p>
-<ul>
-<li>command:命令本身</li>
-<li>-options:[可选，非必填]命令的一些选项，可以通过选项控制命令的行为细节</li>
-<li>parameter:[可选，非必填]命令的参数，多数用于命令的指向目标等. 语法中的[],表示可选的意思</li>
-</ul>
-<p>比如<code>ls -l /home/hello</code> ls是命令，-l是选项，&#x2F;home&#x2F;hello是参数，意思是以列表的形式，展示&#x2F;home&#x2F;hello 目录的内容。</p>
-<h2 id="目录切换命令"><a href="#目录切换命令" class="headerlink" title="目录切换命令"></a>目录切换命令</h2><h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3><p>功能：列出文件夹信息</p>
-<p>语法：<code>ls [-l -h -a] [参数]</code></p>
-<ul>
-<li>参数：被查看的文件夹，不提供参数，表示查看当前工作目录</li>
-<li>-l，以列表(list)形式查看</li>
-<li>-h，配合-l，以更加人性化的方式显示文件大小</li>
-<li>-a，表示all的意思，即显示所有文件，包括隐藏文件(在Linux中以<code>.</code>开头的，均是隐藏的)</li>
-</ul>
-<p>演示如下</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/001.png" alt="001"></p>
-<p>注意：当前登录用户的HOME目录作为当前工作目录，所以ls命令列出的是HOME目录的内容</p>
-<p>HOME目录：每个操作用户在Linux系统的个人账户目录，路径在：&#x2F;home&#x2F;用户名</p>
-<p>普通用户的HOME目录，默认在：<code>/home/用户名</code>，而root用户的HOME目录，在：<code>/root</code></p>
-<p>语法中的选项是可以组合使用的，比如学习的-和-l可以组合应用,比如<code>ls -la</code></p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/002.png" alt="002"></p>
-<h3 id="cd-change-directory-命令"><a href="#cd-change-directory-命令" class="headerlink" title="cd(change directory) 命令"></a>cd(change directory) 命令</h3><p>功能：切换工作目录</p>
-<p>语法：<code>cd [linux路径]</code></p>
-<p>参数：目标目录，要切换去的地方，不提供默认切换到<strong>当前登录用户HOME目录</strong> </p>
-<h3 id="pwd-print-work-directory"><a href="#pwd-print-work-directory" class="headerlink" title="pwd(print work directory)"></a>pwd(print work directory)</h3><p>功能：展示当前所在的工作目录</p>
-<p>语法:<code>pwd</code></p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/003.png" alt="003"></p>
-<p><strong>相对路径与绝对路径</strong></p>
-<ul>
-<li><p>相对路径，&#x3D;&#x3D;非&#x3D;&#x3D;<code>/</code>开头的称之为相对路径：相对路径表示以<code>当前目录</code>作为起点，去描述路径，如<code>test/a.txt</code>，表示当前工作目录内的test文件夹内的a.txt文件</p>
-</li>
-<li><p>绝对路径，&#x3D;&#x3D;以&#x3D;&#x3D;<code>/</code>开头的称之为绝对路径：绝对路径从<code>根</code>开始描述路径</p>
-</li>
-</ul>
-<p><strong>特殊路径符</strong></p>
-<ul>
-<li><code>.</code>，表示当前，比如.&#x2F;a.txt，表示当前文件夹内的<code>a.txt</code>文件</li>
-<li><code>..</code>，表示上级目录，比如<code>../</code>表示上级目录，<code>../../</code>表示上级的上级目录</li>
-<li><code>~</code>，表示用户的HOME目录，比如<code>cd ~</code>，即可切回用户HOME目录</li>
-</ul>
-<h2 id="创建目录mkdir命令"><a href="#创建目录mkdir命令" class="headerlink" title="创建目录mkdir命令"></a>创建目录mkdir命令</h2><p>英语：make directory</p>
-<p>功能：创建文件夹</p>
-<p>语法：<code>mkdir [-p] 参数</code></p>
-<ul>
-<li>参数：被创建文件夹的路径</li>
-<li>选项：-p，可选，表示创建前置路径，比如你输入<code>mkdir -p /usr/test/work</code> 但是test文件夹没有创建，那么<code>-p</code>会帮助创建一个test的文件夹，然后再创建work文件夹</li>
-<li>此图第一个d表示这是一个文件夹，后面的与<strong>权限</strong>有关</li>
-</ul>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/004.png" alt="004"></p>
-<h2 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h2><h3 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h3><p>功能：创建文件，注意要<strong>添加后缀</strong></p>
-<p>语法：<code>touch 参数</code> 参数：被创建的文件路径</p>
-<h3 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h3><p>功能：查看文件内容</p>
-<p>语法：<code>cat 参数</code> 参数：被查看的文件路径</p>
-<h3 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h3><p>功能：查看文件，可以支持翻页查看</p>
-<p>语法：<code>more 参数</code> 参数：被查看的文件路径</p>
-<p>在查看过程中：按<code>空格</code>键翻页 <code>q</code>退出查看 读者可以试试<code>more /etc/services</code> etc(法语et cetera,表示<strong>以及其他内容</strong>)</p>
-<h3 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h3><p>命令行输入：<code>clear</code> 或者是ctrl+l</p>
-<p><em><strong>To be continued</strong></em>……</p>
-<h1 id="软件在Linux上的安装部署"><a href="#软件在Linux上的安装部署" class="headerlink" title="软件在Linux上的安装部署"></a>软件在Linux上的安装部署</h1><p>考虑到不同的人群使用Linux的开发方向不同，我这里只选择MySQL、Redis和NGINX的安装，其他的读者可以看本文目录下“参考”中的参考视频和教程，有选择地去学习。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><strong>软件资源</strong></p>
-<ol>
-<li>Xshell：<a href="https://www.xshell.com/zh/free-for-home-school/">家庭&#x2F;学校免费 - NetSarang Website (xshell.com)</a></li>
-<li>Linux相关发行版：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos-vault/">清华大学开源软件镜像站</a></li>
-</ol>
-<p><strong>参考视频和教程</strong></p>
-<ol>
-<li><a href="https://blog.csdn.net/weixin_74195551/article/details/127288338">安装虚拟机（VMware）保姆级教程（附安装包）</a></li>
-<li><a href="https://www.bilibili.com/video/BV1Sv411r7vd?vd_source=bb8dacb993f11c0e39f8147c98a2894c">【小白入门 通俗易懂】韩顺平 一周学会Linux</a> ,注意韩顺平老师的视频是2021年的，视频中有些网站已经失效，请自行Google或百度查找。</li>
-<li><a href="https://www.bilibili.com/video/BV1n84y1i7td?p=3&vd_source=bb8dacb993f11c0e39f8147c98a2894c">黑马程序员新版Linux零基础快速入门到精通，全涵盖linux系统知识、常用软件环境部署、Shell脚本、云平台实践、大数据集群项目实战等</a></li>
-</ol>
-<p><strong>参考书籍和资料</strong></p>
-<ol>
-<li><a href="https://www.linuxcool.com/">Linux命令大全(手册) – 真正好用的Linux命令在线查询网站</a> 这个是学Linux必备的，相比某度、CSDN更加简洁，但是如果要更加细节的解释可能还是要依靠CSDN或者Google等搜索引擎。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客测试与更新</title>
     <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<h2 id="hexo博客更新和待更新计划"><a href="#hexo博客更新和待更新计划" class="headerlink" title="hexo博客更新和待更新计划"></a>hexo博客更新和待更新计划</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
@@ -449,6 +329,126 @@
         <tag>blog</tag>
         <tag>教程</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux学习笔记</title>
+    <url>/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="学前提醒"><a href="#学前提醒" class="headerlink" title="学前提醒"></a>学前提醒</h1><ol>
+<li>自然：不要死记Linux命令，先敲一遍，以后在学习和工作中练习就足够了，需要的时候就查命令手册</li>
+<li>Centos系统在2024年已停止更新，后续可以考虑学一下ubuntu。</li>
+</ol>
+<h1 id="初识Linux"><a href="#初识Linux" class="headerlink" title="初识Linux"></a>初识Linux</h1><ol>
+<li><p>什么是Linux？即服务器操作系统的一种。<strong>操作系统就是第一层软件</strong>，作为用户和计算机硬件之间的桥梁，调度和管理计算机硬件进行工作。对于前后端开发人员、运维测试人员、大数据等都是必学的内容</p>
+</li>
+<li><p>Linux的组成：由Linux系统<strong>内核</strong>+系统级应用<strong>程序</strong>(简单理解成系统自带的软件，比如文件管理，图片查看等)组成，其他的软件都叫第三方应用程序。</p>
+</li>
+<li><p>Linux发行版：任何人都可以获得并修改内核，并且自行集成系统级程序，提供了内核+系统级程序的完整封装，称之为Linux发行版。常见的ubuntu和redhat等就是Linux的发行版。所以也<strong>不要纠结学哪一个，学会了一个，其他的都会触类旁通了</strong>。</p>
+</li>
+</ol>
+<h2 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h2><p>即借助虚拟化技术，我们可以在系统中，通过软件模拟计算机硬件，并给虚拟硬件安装真实的操作系统。</p>
+<p>学习Linux可以选择使用虚拟软件，比如VMware，或者是买一个云服务器。</p>
+<p>Windows网络连接(网络适配器)查看方法<code>win+R</code> 输入<code>ncpa.cpl</code> 查看是否有VMnet1和VMnet8的网卡，有了虚拟机才能连上网。</p>
+<h2 id="扩展：WSL"><a href="#扩展：WSL" class="headerlink" title="扩展：WSL"></a>扩展：WSL</h2><p>就是Windows Subsystem for Linux，没错，Windows系统可以得到Linux系统环境，不过目前的主流还是用虚拟软件。</p>
+<p>方法：(Windows 11)在开始中搜索-“启用或者关闭Windows功能”-“适用于Linux的Windows子系统 ”打勾，“虚拟机平台”打勾并重启，然后在应用商店里面搜索对应的Linux发行版下载即可。</p>
+<h1 id="Linux入门"><a href="#Linux入门" class="headerlink" title="Linux入门"></a>Linux入门</h1><p>学习Linux需要掌握<strong>命令</strong>来操作系统，图形化页面很少使用。图形化界面易于理解，但是命令行效率更高。</p>
+<p>那么在哪里敲命令行呢？VMware里面可以，但是不方便。建议使用Xshell或者是FinalShell软件，这里我用的是Xshell。</p>
+<p>通过命令<code>ipaddr</code> 查看虚拟机的IP地址，然后填写到Xshell的新对话中。</p>
+<p>Linux<strong>注意事项</strong></p>
+<ol>
+<li><strong>快照</strong>：建议关机之后保存，开机情况下会比较卡。</li>
+</ol>
+<h1 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h1><h2 id="Linux目录"><a href="#Linux目录" class="headerlink" title="Linux目录"></a>Linux目录</h2><p><strong>一切皆文件</strong>：指的是Linux会将一切对象映射成文件。Linux中最重要的就是目录，以后从事相关工作要背主目录-<strong>因为在生产环境中是没有图形化界面的，只有控制台。</strong>对于其他目录要了解其英文单词和实际用途。</p>
+<p>图片演示</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20221027214128.png" alt="20221027214128"></p>
+<ul>
+<li><code>/</code>，根目录是最顶级的目录了，也就是说<code>~</code>是<code>/</code>的子目录</li>
+<li>Linux有且只有一个顶级目录：<code>/</code></li>
+<li>路径描述的层次关系同样适用<code>/</code>来表示:比如&#x2F;usr&#x2F;bin&#x2F;hello.py,第一个&#x2F;是根目录，其他的是层级关系。</li>
+</ul>
+<p>命令：就是Linux程序，以字符的方式与计算机交流。</p>
+<p>命令讲解：无论是什么命令，用于什么用途，在Linux中，命令有其通用的格式<br>command [-options] [parameter]</p>
+<ul>
+<li>command:命令本身</li>
+<li>-options:[可选，非必填]命令的一些选项，可以通过选项控制命令的行为细节</li>
+<li>parameter:[可选，非必填]命令的参数，多数用于命令的指向目标等. 语法中的[],表示可选的意思</li>
+</ul>
+<p>比如<code>ls -l /home/hello</code> ls是命令，-l是选项，&#x2F;home&#x2F;hello是参数，意思是以列表的形式，展示&#x2F;home&#x2F;hello 目录的内容。</p>
+<h2 id="目录切换命令"><a href="#目录切换命令" class="headerlink" title="目录切换命令"></a>目录切换命令</h2><h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3><p>功能：列出文件夹信息</p>
+<p>语法：<code>ls [-l -h -a] [参数]</code></p>
+<ul>
+<li>参数：被查看的文件夹，不提供参数，表示查看当前工作目录</li>
+<li>-l，以列表(list)形式查看</li>
+<li>-h，配合-l，以更加人性化的方式显示文件大小</li>
+<li>-a，表示all的意思，即显示所有文件，包括隐藏文件(在Linux中以<code>.</code>开头的，均是隐藏的)</li>
+</ul>
+<p>演示如下</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/001.png" alt="001"></p>
+<p>注意：当前登录用户的HOME目录作为当前工作目录，所以ls命令列出的是HOME目录的内容</p>
+<p>HOME目录：每个操作用户在Linux系统的个人账户目录，路径在：&#x2F;home&#x2F;用户名</p>
+<p>普通用户的HOME目录，默认在：<code>/home/用户名</code>，而root用户的HOME目录，在：<code>/root</code></p>
+<p>语法中的选项是可以组合使用的，比如学习的-和-l可以组合应用,比如<code>ls -la</code></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/002.png" alt="002"></p>
+<h3 id="cd-change-directory-命令"><a href="#cd-change-directory-命令" class="headerlink" title="cd(change directory) 命令"></a>cd(change directory) 命令</h3><p>功能：切换工作目录</p>
+<p>语法：<code>cd [linux路径]</code></p>
+<p>参数：目标目录，要切换去的地方，不提供默认切换到<strong>当前登录用户HOME目录</strong> </p>
+<h3 id="pwd-print-work-directory"><a href="#pwd-print-work-directory" class="headerlink" title="pwd(print work directory)"></a>pwd(print work directory)</h3><p>功能：展示当前所在的工作目录</p>
+<p>语法:<code>pwd</code></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/003.png" alt="003"></p>
+<p><strong>相对路径与绝对路径</strong></p>
+<ul>
+<li><p>相对路径，&#x3D;&#x3D;非&#x3D;&#x3D;<code>/</code>开头的称之为相对路径：相对路径表示以<code>当前目录</code>作为起点，去描述路径，如<code>test/a.txt</code>，表示当前工作目录内的test文件夹内的a.txt文件</p>
+</li>
+<li><p>绝对路径，&#x3D;&#x3D;以&#x3D;&#x3D;<code>/</code>开头的称之为绝对路径：绝对路径从<code>根</code>开始描述路径</p>
+</li>
+</ul>
+<p><strong>特殊路径符</strong></p>
+<ul>
+<li><code>.</code>，表示当前，比如.&#x2F;a.txt，表示当前文件夹内的<code>a.txt</code>文件</li>
+<li><code>..</code>，表示上级目录，比如<code>../</code>表示上级目录，<code>../../</code>表示上级的上级目录</li>
+<li><code>~</code>，表示用户的HOME目录，比如<code>cd ~</code>，即可切回用户HOME目录</li>
+</ul>
+<h2 id="创建目录mkdir命令"><a href="#创建目录mkdir命令" class="headerlink" title="创建目录mkdir命令"></a>创建目录mkdir命令</h2><p>英语：make directory</p>
+<p>功能：创建文件夹</p>
+<p>语法：<code>mkdir [-p] 参数</code></p>
+<ul>
+<li>参数：被创建文件夹的路径</li>
+<li>选项：-p，可选，表示创建前置路径，比如你输入<code>mkdir -p /usr/test/work</code> 但是test文件夹没有创建，那么<code>-p</code>会帮助创建一个test的文件夹，然后再创建work文件夹</li>
+<li>此图第一个d表示这是一个文件夹，后面的与<strong>权限</strong>有关</li>
+</ul>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/004.png" alt="004"></p>
+<h2 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h2><h3 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h3><p>功能：创建文件，注意要<strong>添加后缀</strong></p>
+<p>语法：<code>touch 参数</code> 参数：被创建的文件路径</p>
+<h3 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h3><p>功能：查看文件内容</p>
+<p>语法：<code>cat 参数</code> 参数：被查看的文件路径</p>
+<h3 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h3><p>功能：查看文件，可以支持翻页查看</p>
+<p>语法：<code>more 参数</code> 参数：被查看的文件路径</p>
+<p>在查看过程中：按<code>空格</code>键翻页 <code>q</code>退出查看 读者可以试试<code>more /etc/services</code> etc(法语et cetera,表示<strong>以及其他内容</strong>)</p>
+<h3 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h3><p>命令行输入：<code>clear</code> 或者是ctrl+l</p>
+<p><em><strong>To be continued</strong></em>……</p>
+<h1 id="软件在Linux上的安装部署"><a href="#软件在Linux上的安装部署" class="headerlink" title="软件在Linux上的安装部署"></a>软件在Linux上的安装部署</h1><p>考虑到不同的人群使用Linux的开发方向不同，我这里只选择MySQL、Redis和NGINX的安装，其他的读者可以看本文目录下“参考”中的参考视频和教程，有选择地去学习。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><strong>软件资源</strong></p>
+<ol>
+<li>Xshell：<a href="https://www.xshell.com/zh/free-for-home-school/">家庭&#x2F;学校免费 - NetSarang Website (xshell.com)</a></li>
+<li>Linux相关发行版：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/centos-vault/">清华大学开源软件镜像站</a></li>
+</ol>
+<p><strong>参考视频和教程</strong></p>
+<ol>
+<li><a href="https://blog.csdn.net/weixin_74195551/article/details/127288338">安装虚拟机（VMware）保姆级教程（附安装包）</a></li>
+<li><a href="https://www.bilibili.com/video/BV1Sv411r7vd?vd_source=bb8dacb993f11c0e39f8147c98a2894c">【小白入门 通俗易懂】韩顺平 一周学会Linux</a> ,注意韩顺平老师的视频是2021年的，视频中有些网站已经失效，请自行Google或百度查找。</li>
+<li><a href="https://www.bilibili.com/video/BV1n84y1i7td?p=3&vd_source=bb8dacb993f11c0e39f8147c98a2894c">黑马程序员新版Linux零基础快速入门到精通，全涵盖linux系统知识、常用软件环境部署、Shell脚本、云平台实践、大数据集群项目实战等</a></li>
+</ol>
+<p><strong>参考书籍和资料</strong></p>
+<ol>
+<li><a href="https://www.linuxcool.com/">Linux命令大全(手册) – 真正好用的Linux命令在线查询网站</a> 这个是学Linux必备的，相比某度、CSDN更加简洁，但是如果要更加细节的解释可能还是要依靠CSDN或者Google等搜索引擎。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -849,41 +849,6 @@
       <tags>
         <tag>C</tag>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析工具superset安装和使用(version:0.381)</title>
-    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
-</blockquote>
-<ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料<ul>
-<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h1><ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
-</ol>
-<h1 id="superset使用指南"><a href="#superset使用指南" class="headerlink" title="superset使用指南"></a>superset使用指南</h1><p>待更新……</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
@@ -1300,6 +1265,41 @@
       </categories>
       <tags>
         <tag>English</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析工具superset安装和使用(version:0.381)</title>
+    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+</blockquote>
+<ul>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料<ul>
+<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h1><ol>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
+</ol>
+<h1 id="superset使用指南"><a href="#superset使用指南" class="headerlink" title="superset使用指南"></a>superset使用指南</h1><p>待更新……</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
