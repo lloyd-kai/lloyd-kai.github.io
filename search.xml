@@ -1,273 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo博客测试与更新</title>
-    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="hexo博客更新和待更新计划"><a href="#hexo博客更新和待更新计划" class="headerlink" title="hexo博客更新和待更新计划"></a>hexo博客更新和待更新计划</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
-<p>以下更新内容都是从最后一次更新开始的</p>
-</blockquote>
-<ol>
-<li>butterfly主题从4.13.0更新到5.0.0版本</li>
-<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
-<li>更新了留言板</li>
-<li>优化了搜索功能</li>
-<li>禁止B站视频自动播放</li>
-<li>更新了主页“关于”部分</li>
-<li>修复了几处笔误的问题</li>
-<li>优化了评论功能的选择</li>
-<li>添加了站点工具(谷歌与必应)，优化了文章的描述部分</li>
-</ol></div><div class="tab-item-content"><ol>
-<li>子菜单展示内容；方法：通过基本的markdown语言和butterfly专有语法-标签外挂实现效果，建议写成总领式的文章或者展示页面。可以参考此博客<a href="https://blog.guole.fun/posts/butterfly-custom/#%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E8%BD%AE%E6%92%AD%E6%A8%A1%E5%9D%97">我的Blog美化日记——Hexo+Butterfly | Guo Le’s Blog</a> 里面的“volantis”部分</li>
-<li>添加一下赞助墙</li>
-<li>更新算法相关博客并添加数学动画视频或者是算法演示动画</li>
-<li>优化网页底部内容</li>
-<li>学习并在博客中添加图表(如chart、echart等)</li>
-<li>优化valine评论——比如文字提醒(使用QQ邮箱评论，可以自动获取qq头像为评论头像)。</li>
-</ol></div><div class="tab-item-content"><h2 id="hexo框架更新"><a href="#hexo框架更新" class="headerlink" title="hexo框架更新"></a>hexo框架更新</h2><p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
-<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
-<h2 id="butterfly主题更新"><a href="#butterfly主题更新" class="headerlink" title="butterfly主题更新"></a>butterfly主题更新</h2><blockquote>
-<p>更新前记得留下blog快照</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
-<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
-<p>如果不行，就在你的博客&#x2F;themes&#x2F;butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
-<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-
-<h2 id="个人hexo博客更新讲解"><a href="#个人hexo博客更新讲解" class="headerlink" title="个人hexo博客更新讲解"></a>个人hexo博客更新讲解</h2><p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
-<p>示例代码如下</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
-
-<p>评论功能：</p>
-<ol>
-<li>我设置文章自动放开评论功能，就不需要在开头写<code>comments: true</code> 这行代码了。</li>
-<li>我设置的是twikoo静态评论控制，搭建教程可以参考如下链接<a href="https://blog.hihahoo.com/archives/fc6989f5.html#1-twikoo%E9%83%A8%E7%BD%B2">Hexo主题butterfly集成评论功能（twikoo） | Hihahoo：想你所想 做你所做</a></li>
-</ol>
-<p>文章置顶功能：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考链接<a href="https://liangshenglei.github.io/2023/03/06/Butterfly%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/index.html">Butterfly 主题的详细配置 | 梁圣磊の博客 (liangshenglei.github.io)</a></p>
-<p>文章加密功能：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">https://polar-bear.eu.org/2023/07/21/ce-shi/</a> 也许以后添加。</p>
-<p>磁贴功能：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
-<h2 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h2><p>阿里云图片测试</p>
-<p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img1.png"></p>
-<p>本地图片测试</p>
-<p><img src="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/C__Users_kai98_Pictures_%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87_post-img1.png"></p>
-<p><strong>图片上传方法</strong></p>
-<p>top_img: <a href="https://github.com/lloyd-kai/lloyd-kai.github.io/blob/master/img/main.png?raw=true">https://github.com/lloyd-kai/lloyd-kai.github.io/blob/master/img/main.png?raw=true</a></p>
-<ol>
-<li><p>通过picgo图床实现图片上传，只需要在md文件里面插入-图片，然后就会自动把插入的文件上传到oss上面，要取消的时候就点击文件-偏好设置-上传服务设定-将picgo换成无即可。</p>
-</li>
-<li><p>参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在_post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用，<strong>博主因为部署的原因主要使用此方法</strong></p>
-</li>
-<li><p>如果zeabur图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。参考教程<a href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法_hexo 文章插入图片失败-CSDN博客</a> 。</p>
-<ol>
-<li>还有一种方法是可以试一下不适用images 的插件，改为使用img的插件，全称是npm install hexo-asset-img –save，亲测有用。记得把插件目录下的images删了。这个问题是hexo版本更新导致的。可以尝试一下。</li>
-</ol>
-</li>
-<li><p>也可以使用其他的图床网站上传图片，然后点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。</p>
-</li>
-</ol>
-<h2 id="测试系列文章"><a href="#测试系列文章" class="headerlink" title="测试系列文章"></a>测试系列文章</h2><ol class="series-items"><li><a href="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" title="hexo博客创建">hexo博客创建</a></li><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" title="hexo博客测试与更新">hexo博客测试与更新</a></li></ol>
-
-
-
-<p>注意：hexo会自动给分级标题编号，不需要自己添加</p>
-<ul>
-<li>md开头的格式可以参考此，细节可以看此文档<a href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li>
-<li>注意:top-img: 图片格式是地址，可以导入网站的地址。</li>
-<li>相关图片上传必备网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a></li>
-<li>使用，将图片上传到这里，然后点击Image URL 复制地址即可远程连接</li>
-</ul>
-<h2 id="banner测试"><a href="#banner测试" class="headerlink" title="banner测试"></a>banner测试</h2><ul>
-<li><p>网站上方的“标签””分类“”清单“对应blog&#x2F;source&#x2F;英文名&#x2F;index.md 具体写法见</p>
-</li>
-<li><p>友情链接可以自定义：方法见<a href="https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></p>
-</li>
-<li><p>导航栏设置：在_config.butterfly.yml 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class&#x3D; “ 复制这里的内容” 替代即可。</p>
-</li>
-</ul>
-<h2 id="文章测试"><a href="#文章测试" class="headerlink" title="文章测试"></a>文章测试</h2><ul>
-<li>當主題配置文件中的 highlight_shrink 設為false時，可在front-matter添加highlight_shrink: true來單獨配置文章收縮代碼框。我这里默认是展开所有代码，需要的时候就在md文件开头添加这句话即可。</li>
-</ul>
-<h2 id="标签外挂测试"><a href="#标签外挂测试" class="headerlink" title="标签外挂测试"></a>标签外挂测试</h2><blockquote>
-<p>本以下基于hexo+butterfly的主题，其他的主题请读者自行查阅有关资料</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文檔(四) 標簽外挂 | Butterfly</a></p>
-<p>参考教程：<a href="https://liangshenglei.github.io/2023/02/27/Markdown%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/#referto_[1]">Markdown 外挂标签 | 梁圣磊の博客</a></p>
-<ol>
-<li>Note (Bootstrap Callout)</li>
-</ol>
-<p>个人使用，感觉比较适合知识的分层结构，比如我博客里面的《英语语法(英语兔版)》</p>
-<ol start="2">
-<li>tag-hide</li>
-</ol>
-<p>个人感觉比较适合于问答类型或者是部分内容较多，需要的时候再展开的文章内容。测试如下</p>
-<p><strong>Block测试</strong></p>
-<p>查看答案</p>
-<div class="hide-block"><button type="button" class="hide-button" style>查看答案
-    </button><div class="hide-content"><p>答案就在你心中</p>
-</div></div>
-
-<p><strong>Toggle测试</strong></p>
-<details class="toggle"><summary class="toggle-button" style>Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
-<p>git clone -b master <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes&#x2F;Butterfly</p>
-<p>如果想要安裝比較新的 dev 分支，可以</p>
-<p>git clone -b dev <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes&#x2F;Butterfly</p>
-</div></details>
-
-<p><strong>Mermaid测试</strong></p>
-<p>这是和图表有关的标签，可以画流程图，时序图等</p>
-<p>注意要先写<code>&#123;% mermaid %&#125; &#123;% endmermaid %&#125;</code> 然后就在这两个标签内写相关代码。</p>
-<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
-  
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop HealthCheck
-        John-&gt;&gt;John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
-    John--&gt;&gt;Alice: Great!
-    John-&gt;&gt;Bob: How about you?
-    Bob--&gt;&gt;John: Jolly good!
-
-  </pre></div>
-
-<p><strong>Flink测试</strong></p>
-<p>就是和链接相关的测试</p>
-<div class="flink"><div class="flink-name">友情鏈接</div><div class="flink-desc">那些人，那些事</div><div class="flink-list">
-      <div class="flink-list-item">
-        <a href="https://jerryc.me/" title="JerryC" target="_blank">
-          <div class="flink-item-icon">
-            <img class="no-lightbox" src="https://jerryc.me/img/avatar.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="JerryC">
-          </div>
-          <div class="flink-item-name">JerryC</div>
-          <div class="flink-item-desc" title="今日事,今日畢">今日事,今日畢</div>
-        </a>
-      </div>
-      <div class="flink-list-item">
-        <a href="https://hexo.io/zh-tw/" title="Hexo" target="_blank">
-          <div class="flink-item-icon">
-            <img class="no-lightbox" src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="Hexo">
-          </div>
-          <div class="flink-item-name">Hexo</div>
-          <div class="flink-item-desc" title="快速、簡單且強大的網誌框架">快速、簡單且強大的網誌框架</div>
-        </a>
-      </div></div><div class="flink-name">網站</div><div class="flink-desc">值得推薦的網站</div><div class="flink-list">
-      <div class="flink-list-item">
-        <a href="https://www.youtube.com/" title="Youtube" target="_blank">
-          <div class="flink-item-icon">
-            <img class="no-lightbox" src="https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="Youtube">
-          </div>
-          <div class="flink-item-name">Youtube</div>
-          <div class="flink-item-desc" title="視頻網站">視頻網站</div>
-        </a>
-      </div>
-      <div class="flink-list-item">
-        <a href="https://www.weibo.com/" title="Weibo" target="_blank">
-          <div class="flink-item-icon">
-            <img class="no-lightbox" src="https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="Weibo">
-          </div>
-          <div class="flink-item-name">Weibo</div>
-          <div class="flink-item-desc" title="中國最大社交分享平台">中國最大社交分享平台</div>
-        </a>
-      </div>
-      <div class="flink-list-item">
-        <a href="https://twitter.com/" title="Twitter" target="_blank">
-          <div class="flink-item-icon">
-            <img class="no-lightbox" src="https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="Twitter">
-          </div>
-          <div class="flink-item-name">Twitter</div>
-          <div class="flink-item-desc" title="社交分享平台">社交分享平台</div>
-        </a>
-      </div></div></div>
-
-<p><strong>乐谱测试</strong></p>
-<div class="abc-music-sheet">X:1
-T:alternate heads
-M:C
-L:1/8
-U:n=!style=normal!
-K:C treble style=rhythm
-&quot;Am&quot; BBBB B2 B&gt;B | &quot;Dm&quot; B2 B/B/B &quot;C&quot; B4 |&quot;Am&quot; B2 nGnB B2 nGnA | &quot;Dm&quot; nDB/B/ nDB/B/ &quot;C&quot; nCB/B/ nCB/B/ |B8| B0 B0 B0 B0 |]
-%%text This translates to:
-[M:C][K:style=normal]
-[A,EAce][A,EAce][A,EAce][A,EAce] [A,EAce]2 [A,EAce]&gt;[A,EAce] |[DAdf]2 [DAdf]/[DAdf]/[DAdf] [CEGce]4 |[A,EAce]2 GA [A,EAce] GA |D[DAdf]/[DAdf]/ D[DAdf]/[DAdf]/ C [CEGce]/[CEGce]/ C[CEGce]/[CEGce]/ |[CEGce]8 | [CEGce]2 [CEGce]2 [CEGce]2 [CEGce]2 |]
-GAB2 !style=harmonic![gb]4|GAB2 [K: style=harmonic]gbgb|
-[K: style=x]
-C/A,/ C/C/E C/zz2|
-w:Rock-y did-nt like that</div>
-
-<p><strong>测试图表插件</strong></p>
-<div id="posts-calendar" class="js-pjax"></div>
-
-<p><strong>测试chart插件</strong> 可以考虑优先学这个chart图表，Mermaid和Echart后续有需要的时候再学。</p>
-<div style="width: 90%;margin: 0 auto">
-    <canvas id="chart9559" style="height: 300px"></canvas>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-<script type="text/javascript">
-    var ctx = document.getElementById('chart9559').getContext('2d');
-    var options = {
-  type: 'bar',
-  data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [{
-      label: 'First Dataset',
-      data: [65, 59, 80, 81, 56, 55, 40],
-      fill: false,
-      backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(255, 159, 64, 0.5)', 'rgba(255, 205, 86, 0.5)', 'rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(153, 102, 255, 0.5)', 'rgba(201, 203, 207, 0.5)'],
-      borderColor: ['rgb(255, 99, 132)', 'rgb(255, 159, 64)', 'rgb(255, 205, 86)', 'rgb(75, 192, 192)', 'rgb(54, 162, 235)', 'rgb(153, 102, 255)', 'rgb(201, 203, 207)'],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true
-        }
-      }]
-    }
-  }
-};
-    new Chart(ctx, options);
-</script>
-
-
-
-
-
-
-<p><strong>tab演示</strong> </p>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-
-<p><strong>按钮button测试</strong></p>
-<div class="btn-center">
-<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-</div>
-
-<p><strong>文字高亮</strong></p>
-<mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
-<mark class="hl-label red">红色</mark>
-
-<p><strong>系列文章</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br><span class="line">//在文章的 front-matter 上添加參數 series，並給與一個標識</span><br><span class="line">//使用此標簽外掛，會把相同標識的文章以列表的形式展示</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>测试</tag>
-        <tag>教程</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux学习笔记</title>
     <url>/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="学前提醒"><a href="#学前提醒" class="headerlink" title="学前提醒"></a>学前提醒</h1><ol>
@@ -669,6 +402,273 @@ w:Rock-y did-nt like that</div>
       <tags>
         <tag>Linux</tag>
         <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客测试与更新</title>
+    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="hexo博客更新和待更新计划"><a href="#hexo博客更新和待更新计划" class="headerlink" title="hexo博客更新和待更新计划"></a>hexo博客更新和待更新计划</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
+<p>以下更新内容都是从最后一次更新开始的</p>
+</blockquote>
+<ol>
+<li>butterfly主题从4.13.0更新到5.0.0版本</li>
+<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
+<li>更新了留言板</li>
+<li>优化了搜索功能</li>
+<li>禁止B站视频自动播放</li>
+<li>更新了主页“关于”部分</li>
+<li>修复了几处笔误的问题</li>
+<li>优化了评论功能的选择</li>
+<li>添加了站点工具(谷歌与必应)，优化了文章的描述部分</li>
+</ol></div><div class="tab-item-content"><ol>
+<li>子菜单展示内容；方法：通过基本的markdown语言和butterfly专有语法-标签外挂实现效果，建议写成总领式的文章或者展示页面。可以参考此博客<a href="https://blog.guole.fun/posts/butterfly-custom/#%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E8%BD%AE%E6%92%AD%E6%A8%A1%E5%9D%97">我的Blog美化日记——Hexo+Butterfly | Guo Le’s Blog</a> 里面的“volantis”部分</li>
+<li>添加一下赞助墙</li>
+<li>更新算法相关博客并添加数学动画视频或者是算法演示动画</li>
+<li>优化网页底部内容</li>
+<li>学习并在博客中添加图表(如chart、echart等)</li>
+<li>优化valine评论——比如文字提醒(使用QQ邮箱评论，可以自动获取qq头像为评论头像)。</li>
+</ol></div><div class="tab-item-content"><h2 id="hexo框架更新"><a href="#hexo框架更新" class="headerlink" title="hexo框架更新"></a>hexo框架更新</h2><p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
+<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
+<h2 id="butterfly主题更新"><a href="#butterfly主题更新" class="headerlink" title="butterfly主题更新"></a>butterfly主题更新</h2><blockquote>
+<p>更新前记得留下blog快照</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
+<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
+<p>如果不行，就在你的博客&#x2F;themes&#x2F;butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
+<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+<h2 id="个人hexo博客更新讲解"><a href="#个人hexo博客更新讲解" class="headerlink" title="个人hexo博客更新讲解"></a>个人hexo博客更新讲解</h2><p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
+<p>示例代码如下</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
+
+<p>评论功能：</p>
+<ol>
+<li>我设置文章自动放开评论功能，就不需要在开头写<code>comments: true</code> 这行代码了。</li>
+<li>我设置的是twikoo静态评论控制，搭建教程可以参考如下链接<a href="https://blog.hihahoo.com/archives/fc6989f5.html#1-twikoo%E9%83%A8%E7%BD%B2">Hexo主题butterfly集成评论功能（twikoo） | Hihahoo：想你所想 做你所做</a></li>
+</ol>
+<p>文章置顶功能：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考链接<a href="https://liangshenglei.github.io/2023/03/06/Butterfly%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/index.html">Butterfly 主题的详细配置 | 梁圣磊の博客 (liangshenglei.github.io)</a></p>
+<p>文章加密功能：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">https://polar-bear.eu.org/2023/07/21/ce-shi/</a> 也许以后添加。</p>
+<p>磁贴功能：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
+<h2 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h2><p>阿里云图片测试</p>
+<p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img1.png"></p>
+<p>本地图片测试</p>
+<p><img src="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/C__Users_kai98_Pictures_%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87_post-img1.png"></p>
+<p><strong>图片上传方法</strong></p>
+<p>top_img: <a href="https://github.com/lloyd-kai/lloyd-kai.github.io/blob/master/img/main.png?raw=true">https://github.com/lloyd-kai/lloyd-kai.github.io/blob/master/img/main.png?raw=true</a></p>
+<ol>
+<li><p>通过picgo图床实现图片上传，只需要在md文件里面插入-图片，然后就会自动把插入的文件上传到oss上面，要取消的时候就点击文件-偏好设置-上传服务设定-将picgo换成无即可。</p>
+</li>
+<li><p>参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在_post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用，<strong>博主因为部署的原因主要使用此方法</strong></p>
+</li>
+<li><p>如果zeabur图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。参考教程<a href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法_hexo 文章插入图片失败-CSDN博客</a> 。</p>
+<ol>
+<li>还有一种方法是可以试一下不适用images 的插件，改为使用img的插件，全称是npm install hexo-asset-img –save，亲测有用。记得把插件目录下的images删了。这个问题是hexo版本更新导致的。可以尝试一下。</li>
+</ol>
+</li>
+<li><p>也可以使用其他的图床网站上传图片，然后点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。</p>
+</li>
+</ol>
+<h2 id="测试系列文章"><a href="#测试系列文章" class="headerlink" title="测试系列文章"></a>测试系列文章</h2><ol class="series-items"><li><a href="/2024/06/12/hexo%E5%9F%BA%E7%A1%80_%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" title="hexo博客创建">hexo博客创建</a></li><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" title="hexo博客测试与更新">hexo博客测试与更新</a></li></ol>
+
+
+
+<p>注意：hexo会自动给分级标题编号，不需要自己添加</p>
+<ul>
+<li>md开头的格式可以参考此，细节可以看此文档<a href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li>
+<li>注意:top-img: 图片格式是地址，可以导入网站的地址。</li>
+<li>相关图片上传必备网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a></li>
+<li>使用，将图片上传到这里，然后点击Image URL 复制地址即可远程连接</li>
+</ul>
+<h2 id="banner测试"><a href="#banner测试" class="headerlink" title="banner测试"></a>banner测试</h2><ul>
+<li><p>网站上方的“标签””分类“”清单“对应blog&#x2F;source&#x2F;英文名&#x2F;index.md 具体写法见</p>
+</li>
+<li><p>友情链接可以自定义：方法见<a href="https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></p>
+</li>
+<li><p>导航栏设置：在_config.butterfly.yml 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class&#x3D; “ 复制这里的内容” 替代即可。</p>
+</li>
+</ul>
+<h2 id="文章测试"><a href="#文章测试" class="headerlink" title="文章测试"></a>文章测试</h2><ul>
+<li>當主題配置文件中的 highlight_shrink 設為false時，可在front-matter添加highlight_shrink: true來單獨配置文章收縮代碼框。我这里默认是展开所有代码，需要的时候就在md文件开头添加这句话即可。</li>
+</ul>
+<h2 id="标签外挂测试"><a href="#标签外挂测试" class="headerlink" title="标签外挂测试"></a>标签外挂测试</h2><blockquote>
+<p>本以下基于hexo+butterfly的主题，其他的主题请读者自行查阅有关资料</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文檔(四) 標簽外挂 | Butterfly</a></p>
+<p>参考教程：<a href="https://liangshenglei.github.io/2023/02/27/Markdown%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/#referto_[1]">Markdown 外挂标签 | 梁圣磊の博客</a></p>
+<ol>
+<li>Note (Bootstrap Callout)</li>
+</ol>
+<p>个人使用，感觉比较适合知识的分层结构，比如我博客里面的《英语语法(英语兔版)》</p>
+<ol start="2">
+<li>tag-hide</li>
+</ol>
+<p>个人感觉比较适合于问答类型或者是部分内容较多，需要的时候再展开的文章内容。测试如下</p>
+<p><strong>Block测试</strong></p>
+<p>查看答案</p>
+<div class="hide-block"><button type="button" class="hide-button" style>查看答案
+    </button><div class="hide-content"><p>答案就在你心中</p>
+</div></div>
+
+<p><strong>Toggle测试</strong></p>
+<details class="toggle"><summary class="toggle-button" style>Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
+<p>git clone -b master <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes&#x2F;Butterfly</p>
+<p>如果想要安裝比較新的 dev 分支，可以</p>
+<p>git clone -b dev <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes&#x2F;Butterfly</p>
+</div></details>
+
+<p><strong>Mermaid测试</strong></p>
+<p>这是和图表有关的标签，可以画流程图，时序图等</p>
+<p>注意要先写<code>&#123;% mermaid %&#125; &#123;% endmermaid %&#125;</code> 然后就在这两个标签内写相关代码。</p>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop HealthCheck
+        John-&gt;&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
+    John--&gt;&gt;Alice: Great!
+    John-&gt;&gt;Bob: How about you?
+    Bob--&gt;&gt;John: Jolly good!
+
+  </pre></div>
+
+<p><strong>Flink测试</strong></p>
+<p>就是和链接相关的测试</p>
+<div class="flink"><div class="flink-name">友情鏈接</div><div class="flink-desc">那些人，那些事</div><div class="flink-list">
+      <div class="flink-list-item">
+        <a href="https://jerryc.me/" title="JerryC" target="_blank">
+          <div class="flink-item-icon">
+            <img class="no-lightbox" src="https://jerryc.me/img/avatar.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="JerryC">
+          </div>
+          <div class="flink-item-name">JerryC</div>
+          <div class="flink-item-desc" title="今日事,今日畢">今日事,今日畢</div>
+        </a>
+      </div>
+      <div class="flink-list-item">
+        <a href="https://hexo.io/zh-tw/" title="Hexo" target="_blank">
+          <div class="flink-item-icon">
+            <img class="no-lightbox" src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="Hexo">
+          </div>
+          <div class="flink-item-name">Hexo</div>
+          <div class="flink-item-desc" title="快速、簡單且強大的網誌框架">快速、簡單且強大的網誌框架</div>
+        </a>
+      </div></div><div class="flink-name">網站</div><div class="flink-desc">值得推薦的網站</div><div class="flink-list">
+      <div class="flink-list-item">
+        <a href="https://www.youtube.com/" title="Youtube" target="_blank">
+          <div class="flink-item-icon">
+            <img class="no-lightbox" src="https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="Youtube">
+          </div>
+          <div class="flink-item-name">Youtube</div>
+          <div class="flink-item-desc" title="視頻網站">視頻網站</div>
+        </a>
+      </div>
+      <div class="flink-list-item">
+        <a href="https://www.weibo.com/" title="Weibo" target="_blank">
+          <div class="flink-item-icon">
+            <img class="no-lightbox" src="https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="Weibo">
+          </div>
+          <div class="flink-item-name">Weibo</div>
+          <div class="flink-item-desc" title="中國最大社交分享平台">中國最大社交分享平台</div>
+        </a>
+      </div>
+      <div class="flink-list-item">
+        <a href="https://twitter.com/" title="Twitter" target="_blank">
+          <div class="flink-item-icon">
+            <img class="no-lightbox" src="https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="Twitter">
+          </div>
+          <div class="flink-item-name">Twitter</div>
+          <div class="flink-item-desc" title="社交分享平台">社交分享平台</div>
+        </a>
+      </div></div></div>
+
+<p><strong>乐谱测试</strong></p>
+<div class="abc-music-sheet">X:1
+T:alternate heads
+M:C
+L:1/8
+U:n=!style=normal!
+K:C treble style=rhythm
+&quot;Am&quot; BBBB B2 B&gt;B | &quot;Dm&quot; B2 B/B/B &quot;C&quot; B4 |&quot;Am&quot; B2 nGnB B2 nGnA | &quot;Dm&quot; nDB/B/ nDB/B/ &quot;C&quot; nCB/B/ nCB/B/ |B8| B0 B0 B0 B0 |]
+%%text This translates to:
+[M:C][K:style=normal]
+[A,EAce][A,EAce][A,EAce][A,EAce] [A,EAce]2 [A,EAce]&gt;[A,EAce] |[DAdf]2 [DAdf]/[DAdf]/[DAdf] [CEGce]4 |[A,EAce]2 GA [A,EAce] GA |D[DAdf]/[DAdf]/ D[DAdf]/[DAdf]/ C [CEGce]/[CEGce]/ C[CEGce]/[CEGce]/ |[CEGce]8 | [CEGce]2 [CEGce]2 [CEGce]2 [CEGce]2 |]
+GAB2 !style=harmonic![gb]4|GAB2 [K: style=harmonic]gbgb|
+[K: style=x]
+C/A,/ C/C/E C/zz2|
+w:Rock-y did-nt like that</div>
+
+<p><strong>测试图表插件</strong></p>
+<div id="posts-calendar" class="js-pjax"></div>
+
+<p><strong>测试chart插件</strong> 可以考虑优先学这个chart图表，Mermaid和Echart后续有需要的时候再学。</p>
+<div style="width: 90%;margin: 0 auto">
+    <canvas id="chart1931" style="height: 300px"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById('chart1931').getContext('2d');
+    var options = {
+  type: 'bar',
+  data: {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [{
+      label: 'First Dataset',
+      data: [65, 59, 80, 81, 56, 55, 40],
+      fill: false,
+      backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(255, 159, 64, 0.5)', 'rgba(255, 205, 86, 0.5)', 'rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(153, 102, 255, 0.5)', 'rgba(201, 203, 207, 0.5)'],
+      borderColor: ['rgb(255, 99, 132)', 'rgb(255, 159, 64)', 'rgb(255, 205, 86)', 'rgb(75, 192, 192)', 'rgb(54, 162, 235)', 'rgb(153, 102, 255)', 'rgb(201, 203, 207)'],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+};
+    new Chart(ctx, options);
+</script>
+
+
+
+
+
+
+<p><strong>tab演示</strong> </p>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+<p><strong>按钮button测试</strong></p>
+<div class="btn-center">
+<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+</div>
+
+<p><strong>文字高亮</strong></p>
+<mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
+<mark class="hl-label red">红色</mark>
+
+<p><strong>系列文章</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br><span class="line">//在文章的 front-matter 上添加參數 series，並給與一個標識</span><br><span class="line">//使用此標簽外掛，會把相同標識的文章以列表的形式展示</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>测试</tag>
+        <tag>教程</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
