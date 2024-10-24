@@ -375,7 +375,89 @@
 </tr>
 </tbody></table>
 <p><code>vim 文件名</code> 没有就会创建</p>
-<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>ctrl+c:强制停止命令运行</p>
+<h1 id="权限控制"><a href="#权限控制" class="headerlink" title="权限控制"></a>权限控制</h1><p>Linux采用多用户的管理模式进行权限管理，而拥有最大权限的账户名为root;而普通用户的权限，一般在其HOME目录内是不受限的，出了HOME目录，一般普通用户仅有只读和执行权限，无修改权限</p>
+<p>切换用户命令：<code>su [-] [用户名]</code>  或者ctrl+d退回到上一个用户</p>
+<p>为了避免长期使用root导致系统损坏，可以使用<code>sudo</code>命令为普通的命令授权。</p>
+<p>语法：<code>sudo 其他命令</code> 需要为普通用户配置sudo认证。</p>
+<p><strong>sudo认证方法</strong></p>
+<ol>
+<li><p>切换到root用户，执行visudo命令，打开&#x2F;etc&#x2F;sudoers</p>
+</li>
+<li><p>文件最后添加<code>用户名 ALL=(ALL)   NOPASSWD:ALL</code> 最后退出并保存</p>
+</li>
+</ol>
+<p><strong>用户与用户组</strong></p>
+<p>不同的用户可以加入多个组中，用组来管理用户。</p>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><p>创建用户组：<code>groupadd 用户组名</code> 删除用户组: <code>groupdel 用户组名</code></p>
+<ul>
+<li><p>创建用户<br><code>useradd [-g-d]</code> 用户名:-g指定用户的组，不指定-g,会创建同名组并自动加入，指定-g需要组已经存在，如已存在同名组，必须使用-g;-d指定用户HOME路径，不指定，HOME目录默认在：&#x2F;home&#x2F;用户名</p>
+</li>
+<li><p>删除用户<br><code>userdel [-r]</code> ：用户名:-r，删除用户的HOME目录。不使用-r删除用户时，HOME目录保留</p>
+</li>
+<li><p>查看用户所属组<br><code>id [用户名]</code>：用户名，被查看的用户，如果不提供则查看自身</p>
+</li>
+<li><p>修改用户所属组<br><code>usermod -aG</code>： 用户组用户名，将指定用户加入指定用户组</p>
+</li>
+<li><p>查看系统中的用户<code>getent passwd</code></p>
+<p>如图所示</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/009.png" alt="009"></p>
+<p>信息格式为：用户名：密码(X):用户ID:组ID:描述信息（无用）：HOME目录：执行终端(默认bash）可以使用<code>getent group</code>查看系统中有哪些组</p>
+</li>
+<li><p>查看系统所有变量 <code>env</code>.</p>
+</li>
+</ul>
+<h2 id="权限信息"><a href="#权限信息" class="headerlink" title="权限信息"></a>权限信息</h2><p>如图所示</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/010.png" alt="010"></p>
+<p>序号1表示文件和文件夹的权限控制信息，序号2表示文件和文件夹所属的用户和用户组。</p>
+<p>权限讲解如下图</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/011.png" alt="011"></p>
+<p>r\w\x分别代表可读、可写、可执行。 </p>
+<h3 id="chmod命令"><a href="#chmod命令" class="headerlink" title="chmod命令"></a>chmod命令</h3><p>语法：<code>chmod [-R] 权限 参数</code> </p>
+<p>权限：比如755，表示：<code>rwxr-x--x</code> 示例<code>chmod</code></p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>无任何权限，即–</td>
+</tr>
+<tr>
+<td>1</td>
+<td>仅有x权限，即–x</td>
+</tr>
+<tr>
+<td>2</td>
+<td>仅有w权限，即-w-</td>
+</tr>
+<tr>
+<td>3</td>
+<td>有w和x权限，即-wx</td>
+</tr>
+<tr>
+<td>4</td>
+<td>仅有r权限，即r–</td>
+</tr>
+<tr>
+<td>5</td>
+<td>有r和x权限，即r-x</td>
+</tr>
+<tr>
+<td>6</td>
+<td>有r和w权限，即rw-</td>
+</tr>
+<tr>
+<td>7</td>
+<td>有全部权限，即rwx</td>
+</tr>
+</tbody></table>
+<p>参数：被修改的文件和文件夹</p>
+<p>-R:设置文件夹和其内容全部一样生效。</p>
+<p>示例：<code>chmod u=rwx,g=rx,o=x hello.txt</code> 将文件的权限修改为<code>rwxr-x--x</code> u表示user的权限，g表示组的权限，o表示其他(other)的权限</p>
+<h3 id="chown命令"><a href="#chown命令" class="headerlink" title="chown命令"></a>chown命令</h3><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>ctrl+c:强制停止命令运行</p>
 <p>键盘上下键：查看历史命令</p>
 <p>ctrl+l:清屏</p>
 <p><em><strong>To be continued</strong></em>……</p>
@@ -611,11 +693,11 @@ w:Rock-y did-nt like that</div>
 
 <p><strong>测试chart插件</strong> 可以考虑优先学这个chart图表，Mermaid和Echart后续有需要的时候再学。</p>
 <div style="width: 90%;margin: 0 auto">
-    <canvas id="chart7747" style="height: 300px"></canvas>
+    <canvas id="chart4813" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart7747').getContext('2d');
+    var ctx = document.getElementById('chart4813').getContext('2d');
     var options = {
   type: 'bar',
   data: {
@@ -675,6 +757,41 @@ w:Rock-y did-nt like that</div>
         <tag>测试</tag>
         <tag>教程</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析工具superset安装和使用(version:0.381)</title>
+    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+</blockquote>
+<ul>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料<ul>
+<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h1><ol>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
+</ol>
+<h1 id="superset使用指南"><a href="#superset使用指南" class="headerlink" title="superset使用指南"></a>superset使用指南</h1><p>待更新……</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
@@ -1271,41 +1388,6 @@ w:Rock-y did-nt like that</div>
       <tags>
         <tag>C</tag>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析工具superset安装和使用(version:0.381)</title>
-    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
-</blockquote>
-<ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料<ul>
-<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h1><ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
-</ol>
-<h1 id="superset使用指南"><a href="#superset使用指南" class="headerlink" title="superset使用指南"></a>superset使用指南</h1><p>待更新……</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
