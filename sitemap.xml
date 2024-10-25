@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://lloyd-kai.github.io/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</loc>
+    <loc>http://lloyd-kai.github.io/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     
-    <lastmod>2024-10-24</lastmod>
+    <lastmod>2024-10-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://lloyd-kai.github.io/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</loc>
     
     <lastmod>2024-10-24</lastmod>
     
@@ -173,28 +173,7 @@
 
   
   <url>
-    <loc>http://lloyd-kai.github.io/tags/Linux/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://lloyd-kai.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://lloyd-kai.github.io/tags/blog/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://lloyd-kai.github.io/tags/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2024-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -215,14 +194,21 @@
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/tags/C/</loc>
+    <loc>http://lloyd-kai.github.io/tags/Linux/</loc>
     <lastmod>2024-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/tags/C/</loc>
+    <loc>http://lloyd-kai.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2024-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://lloyd-kai.github.io/tags/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2024-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -242,14 +228,21 @@
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>http://lloyd-kai.github.io/categories/Linux/</loc>
+    <loc>http://lloyd-kai.github.io/tags/C/</loc>
     <lastmod>2024-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
+  
+  <url>
+    <loc>http://lloyd-kai.github.io/tags/C/</loc>
+    <lastmod>2024-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
   
   <url>
     <loc>http://lloyd-kai.github.io/categories/blog/</loc>
@@ -259,7 +252,7 @@
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/categories/C/</loc>
+    <loc>http://lloyd-kai.github.io/categories/Linux/</loc>
     <lastmod>2024-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -274,6 +267,13 @@
   
   <url>
     <loc>http://lloyd-kai.github.io/categories/computer/</loc>
+    <lastmod>2024-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://lloyd-kai.github.io/categories/C/</loc>
     <lastmod>2024-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
