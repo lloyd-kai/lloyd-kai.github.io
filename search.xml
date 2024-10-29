@@ -884,6 +884,211 @@ command [-options] [parameter]</p>
       </tags>
   </entry>
   <entry>
+    <title>hexo博客系列(三)博客写作指南</title>
+    <url>/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1>简介</h1>
+<p>在撰写博客的过程中，内容至关重要但不是唯一重要的因素，排版、图片、交互体验等视觉设计也同样需要关注。一个设计精美、易于阅读的博客会吸引更多读者，提升用户体验。本文将为你提供一套完整的 markdown 博客创作指南，从实战的角度帮助你写出既有深度又美观的博客文章。</p>
+<h1>准备工具</h1>
+<h2 id="写作工具">写作工具</h2>
+<p>个人比较推崇<strong>Typora</strong>这种简洁的支持<strong>markdown</strong>格式的编辑器，相比之下，obsidian的布局不利于专注于写作，notion的自定义布局和数据库这两大突出优势在markdown格式下会有损失，vscode依赖于插件。</p>
+<p>总之就是一句话:</p>
+<blockquote>
+<p>能让你心无旁骛地去写的编辑器就是最好的</p>
+</blockquote>
+<h2 id="博客引擎">博客引擎</h2>
+<p>本文基于hexo+butterfly的主题进行博客创作，但读者无须担心，博客创作更多的在于<strong>文章结构</strong>、<strong>词句修辞</strong>、<strong>排版和可读性</strong>方面下功夫，其他方面依赖博客引擎和前端特性的并不多，读者可以在CSDN、博客园、掘金社区等其他地方同样可以撰写和托管博客。</p>
+<h1>博客撰写讲解</h1>
+<h2 id="目录结构">目录结构</h2>
+<p>好的目录结构要梳理文章逻辑，如果是<strong>新闻热点点评类</strong>，就要能讲清楚事件发生的时间地点人物，发生原因及其分析，结论、启示或者经验教训；如果是<strong>技术分享类</strong>，就要说明技术的应用范围，原理，怎样配置技术所需的环境，阐明使用技术的效果等。这方面主要靠读者多看技术大佬的博客、优秀的公众号推文等，看他们的目录是如何区分的，只要能达到<strong>行云流水</strong>的效果就行，不需要在分级、格式方面过于讲究。</p>
+<p>可供参考的文章结构：大部分都是<strong>总-分-总</strong>结构</p>
+<ul>
+<li>提出问题-&gt;分析问题-&gt;解决问题-&gt;总结经验，技术问题分享。</li>
+<li>背景-&gt;思考-&gt;尝试-&gt;遇到的困难-&gt;解决方案-&gt;最后结果，问题分享</li>
+<li>摘要-&gt;简介-&gt;分支主题-&gt;总结，一般技术分享。</li>
+<li>是什么-原理-背景&gt;解决了什么问题-&gt;基本操作-&gt;同类对比-&gt;总结 ，适合新技术分享</li>
+</ul>
+<p>参考的目录结构如下，以markdown格式的代码块展示,这里<code>//</code>及其后面的内容代表注释</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 简介    </span></span><br><span class="line"><span class="section"># 一、准备工作 //一些环境配置，安装等，或者是解决问题的背景等</span></span><br><span class="line"><span class="section">## 1.centos安装  //以数字的形式合理分级，建议标题的层级不要超过四层</span></span><br><span class="line"><span class="section">## 2.idea解包</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 二、基本用法 //对于技术文章就像是语法书，对于问题就是发现问题，分析问题，</span></span><br><span class="line"><span class="section">## 1. 对页面的操作</span></span><br><span class="line"><span class="section">## 2. 1 初始化浏览器对象</span></span><br><span class="line"><span class="section">## 2. 2</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 三、高阶用法  //或者是多个解决方案</span></span><br><span class="line"><span class="section"># 总结  //对技术或者过程的总结，建议不要太长</span></span><br><span class="line"><span class="section"># 参考  //把你写作过程中参考的资料，或者是推荐的链接放在这里，便于读者后续学习</span></span><br><span class="line"><span class="section"># 开源协议  //如果使用的是hexo或者其他博客网站，撰写博客的时候会自动生成，不需要自己写</span></span><br></pre></td></tr></table></figure>
+<h3 id="标题">标题</h3>
+<p>取标题要注意几点</p>
+<ol>
+<li><strong>简洁直观</strong>：不仅仅是利于搜索引擎优化，更多的是便于读者和自己，读者可以通过标题判断博客的信息对于自己是否有效，作者可以根据标题了解自己博客的侧重方面。<strong>不要被国内电商式的标题所蒙蔽</strong>(比如“爆肝……”“震惊，百大up主齐聚一堂竟然是为……”)，虽然能带来流量，但是作者不太建议，这种标题就显得作者没有真才实学，只能靠眼球吸引读者，</li>
+<li><strong>关键词</strong>：标题一定要包含文章的高频词或者是重点词语，比如如果你写的是有关MySQL的学习知识分享，那么关键字就是“MySQL”，可能有“教程”等其他关键词，再用适当的句子结构(问句、陈述句等)将其组合为标题。比如组合为”MySQL学习指南(一)“</li>
+</ol>
+<p><strong>特殊</strong>:所有<strong>系列文章</strong>(比如MySQL学习笔记)的标题要一致，<strong>相关的</strong>可以不一致。标题+XX:XX为数字，不满两位用0替代;比如mysql01;标题+(序数词):比如mysql学习(一)</p>
+<h3 id="简介">简介</h3>
+<p>文章的标题和简要介绍一下文章，要解决的是什么问题</p>
+<p><strong>示例</strong>：Selenium是广泛使用的模拟浏览器运行的库，它是一个用于Web应用程序测试的工具。 Selenium测试直接运行在浏览器中，就像真正的用户在操作一样，并且支持大多数现代 Web 浏览器。下面就进入正式的学习阶段。</p>
+<h3 id="文章主体">文章主体</h3>
+<p>以下主要侧重于排版。</p>
+<ol>
+<li>段落：建议不要太长，最好保持在300字以内</li>
+<li>字体效果：用黑体强调重要词汇，用斜体或者下划线强调重要段落</li>
+<li>列表：恰当使用无序和有序列表，对于超过10个点的列表建议使用markdown里面的表格</li>
+<li>图片：如果图片能便于读者理解，减少文字量，可以使用。</li>
+<li>代码块：建议默认收起或者收缩，需要的时候读者点击即可全部展开。指明代码块对应的编程语言，不是的话要提前说明</li>
+<li>分割线：建议用在两个一级标题或者是两段长段落之间。</li>
+</ol>
+<p>注意事项</p>
+<ol>
+<li>所有的代码至少要在自己的电脑上或者对应的运行环境上运行，否则不写</li>
+<li>不易理解或者抽象的地方要用图解释，可以是GIF动图制作也可以是chartjs、echart等，注意不要泄漏私人信息。</li>
+<li>模棱两可或者自己不懂的不要轻易写，写的话注意叠甲。</li>
+</ol>
+<h2 id="超文本内容">超文本内容</h2>
+<p>这一部分主要涉及前端的特性，属于是锦上添花的内容，即使没有也不是特别影响文章的质量，就算《资本论》只有文字，也无可争议是最伟大的鸿篇巨著之一。</p>
+<p>常用的类型有：图片、动画(gif等)、视频、音频、表情、标签外挂、图标、链接等。</p>
+<h3 id="图表">图表</h3>
+<ol>
+<li><a href="https://excalidraw.com/">Excalidraw</a>：手绘风格的开源工具，适合绘制思维导图、流程图等。</li>
+</ol>
+<p><img src="/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/excalidraw.png" alt="excalidraw"></p>
+<ol start="2">
+<li><a href="https://mermaid.nodejs.cn/">Mermaid 中文网</a>：基于 Markdown 的流程图工具，可以生成流程图、时序图等。或者也可以使用<a href="https://app.diagrams.net/">draw.io</a>。主要侧重于计算机方面的知识图表，常用于UML统一建模语言。</li>
+</ol>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop HealthCheck
+        John-&gt;&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
+    John--&gt;&gt;Alice: Great!
+    John-&gt;&gt;Bob: How about you?
+    Bob--&gt;&gt;John: Jolly good!
+
+  </pre></div>
+<ol start="3">
+<li><a href="https://chartjs.cn/docs/latest/">Chart.js 中文网</a>：是一个用于创建动态图表的 JavaScript 库，适合做一些比较复杂的数据分析图。</li>
+</ol>
+<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
+            <pre class="chartjs-src" hidden>{
+    &quot;type&quot;: &quot;pie&quot;,
+    &quot;data&quot;: {
+        &quot;labels&quot;: [
+            &quot;编程&quot;,
+            &quot;音乐&quot;,
+            &quot;阅读&quot;,
+            &quot;游戏&quot;,
+            &quot;健身&quot;,
+            &quot;旅游&quot;
+        ],
+        &quot;datasets&quot;: [
+            {
+                &quot;label&quot;: &quot;喜爱指数&quot;,
+                &quot;data&quot;: [
+                    30,
+                    24,
+                    19,
+                    14,
+                    9,
+                    4
+                ],
+                &quot;backgroundColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.5)&quot;,
+                        &quot;rgba(54, 162, 235, 0.5)&quot;,
+                        &quot;rgba(255, 206, 86, 0.5)&quot;,
+                        &quot;rgba(75, 192, 192, 0.5)&quot;,
+                        &quot;rgba(153, 102, 255, 0.5)&quot;,
+                        &quot;rgba(255, 159, 64, 0.5)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.2)&quot;,
+                        &quot;rgba(54, 162, 235, 0.2)&quot;,
+                        &quot;rgba(255, 206, 86, 0.2)&quot;,
+                        &quot;rgba(75, 192, 192, 0.2)&quot;,
+                        &quot;rgba(153, 102, 255, 0.2)&quot;,
+                        &quot;rgba(255, 159, 64, 0.2)&quot;
+                    ]
+                },
+                &quot;borderColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ]
+                }
+            }
+        ]
+    },
+    &quot;options&quot;: {
+        &quot;plugins&quot;: {
+            &quot;legend&quot;: {
+                &quot;labels&quot;: {
+                    &quot;color&quot;: {
+                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
+                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
+                    }
+                }
+            }
+        }
+    }
+}
+</pre>
+            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
+我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
+在此过程中也解决了无数的小谜团。<br>
+<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
+I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
+Countless small mysteries are also solved in the process.</span></p></div>
+          </div>
+<h3 id="视频">视频</h3>
+<ol>
+<li>B站引用：打开网页版的bilibili，点击要分享的视频-“分享”-“嵌入代码”，然后粘贴到markdown文件内即可</li>
+<li>本地图片：to be continue</li>
+</ol>
+<h3 id="公式">公式</h3>
+<p>建议使用katex，或者是markdown本地的公式嵌入。</p>
+<p>参考教程<a href="https://freeopen.github.io/mathjax/">Markdown 数学公式指导手册 | Freeopen</a></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sin^2(\theta) + \cos^2(\theta) = 1
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1219em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8719em;"><span style="top:-3.1208em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">cos</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></p>
+<h3 id="表情符号">表情符号</h3>
+<ol>
+<li><a href="https://www.lddgo.net/common/emoticons">在线颜文字大全</a> ：与markdown兼容，基本不会有不显示等问题</li>
+<li><a href="https://www.emojiall.com/zh-hans/categories/A">表情包</a> ：注意typora的表情(格式为<code>:表情</code>)无法在hexo显示，所以只能用图片替代表情</li>
+<li><a href="https://fontawesome.com/v4/icons/">图标</a>：适当的图标可以让人记忆犹新，见图思义。</li>
+</ol>
+<h3 id="交互式的组件">交互式的组件</h3>
+<p>比如butterfly中的button、图床等，由于不同的博客引擎涉及的组件不同，这里就不展开。建议读者不要舍本逐末，过度美化而忽视文章的内容。</p>
+<h2 id="总结与参考">总结与参考</h2>
+<ul>
+<li>
+<p>用一段话给文章内容作总结。</p>
+</li>
+<li>
+<p><strong>参考</strong>要注明来源，比如链接、转载出处，注意定期更新以防失效。</p>
+</li>
+</ul>
+<h1>参考</h1>
+<ul>
+<li><a href="https://www.cnblogs.com/returntmp/p/17591866.html">【全方位解析】如何写好技术文章 - ReturnTmp - 博客园</a></li>
+<li><a href="https://qlad.github.io/how-blogging/">如何写一篇优秀的博客 · qlAD 的技术笔记</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客系列(一)测试与更新</title>
     <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/</url>
     <content><![CDATA[<h1>hexo博客更新和待更新计划</h1>
@@ -1150,214 +1355,435 @@ Countless small mysteries are also solved in the process.</span></p></div>
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>测试</tag>
         <tag>教程</tag>
+        <tag>测试</tag>
         <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
-    <title>hexo博客系列(三)博客写作指南</title>
-    <url>/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1>简介</h1>
-<p>在撰写博客的过程中，内容至关重要但不是唯一重要的因素，排版、图片、交互体验等视觉设计也同样需要关注。一个设计精美、易于阅读的博客会吸引更多读者，提升用户体验。本文将为你提供一套完整的 markdown 博客创作指南，从实战的角度帮助你写出既有深度又美观的博客文章。</p>
-<h1>准备工具</h1>
-<h2 id="写作工具">写作工具</h2>
-<p>个人比较推崇<strong>Typora</strong>这种简洁的支持<strong>markdown</strong>格式的编辑器，相比之下，obsidian的布局不利于专注于写作，notion的自定义布局和数据库这两大突出优势在markdown格式下会有损失，vscode依赖于插件。</p>
-<p>总之就是一句话:</p>
-<blockquote>
-<p>能让你心无旁骛地去写的编辑器就是最好的</p>
+    <title>《高质量C、C++》笔记整理</title>
+    <url>/2024/06/25/%E3%80%8A%E9%AB%98%E8%B4%A8%E9%87%8FC%E3%80%81C++%E3%80%8B%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<blockquote>
+<p>本文章会随着编程能力的提高和思维的扩展不断更新,目前是1.0版本    2024/6/25</p>
 </blockquote>
-<h2 id="博客引擎">博客引擎</h2>
-<p>本文基于hexo+butterfly的主题进行博客创作，但读者无须担心，博客创作更多的在于<strong>文章结构</strong>、<strong>词句修辞</strong>、<strong>排版和可读性</strong>方面下功夫，其他方面依赖博客引擎和前端特性的并不多，读者可以在CSDN、博客园、掘金社区等其他地方同样可以撰写和托管博客。</p>
-<h1>博客撰写讲解</h1>
-<h2 id="目录结构">目录结构</h2>
-<p>好的目录结构要梳理文章逻辑，如果是<strong>新闻热点点评类</strong>，就要能讲清楚事件发生的时间地点人物，发生原因及其分析，结论、启示或者经验教训；如果是<strong>技术分享类</strong>，就要说明技术的应用范围，原理，怎样配置技术所需的环境，阐明使用技术的效果等。这方面主要靠读者多看技术大佬的博客、优秀的公众号推文等，看他们的目录是如何区分的，只要能达到<strong>行云流水</strong>的效果就行，不需要在分级、格式方面过于讲究。</p>
-<p>可供参考的文章结构：大部分都是<strong>总-分-总</strong>结构</p>
+<h1>简介</h1>
+<p>本书以高质量编写C/C++代码为主题，在代码风格等方面列举了常见的规则和示例，旨在帮助读者写出风格统一的、可读性强的、易于维护的代码。</p>
+<h1>代码风格</h1>
+<blockquote>
+<p>什么是优秀的、高质量的代码?</p>
+</blockquote>
 <ul>
-<li>提出问题-&gt;分析问题-&gt;解决问题-&gt;总结经验，技术问题分享。</li>
-<li>背景-&gt;思考-&gt;尝试-&gt;遇到的困难-&gt;解决方案-&gt;最后结果，问题分享</li>
-<li>摘要-&gt;简介-&gt;分支主题-&gt;总结，一般技术分享。</li>
-<li>是什么-原理-背景&gt;解决了什么问题-&gt;基本操作-&gt;同类对比-&gt;总结 ，适合新技术分享</li>
+<li>优秀的编程风格</li>
+<li>有出错处理</li>
+<li>算法复杂度分析</li>
 </ul>
-<p>参考的目录结构如下，以markdown格式的代码块展示,这里<code>//</code>及其后面的内容代表注释</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 简介    </span></span><br><span class="line"><span class="section"># 一、准备工作 //一些环境配置，安装等，或者是解决问题的背景等</span></span><br><span class="line"><span class="section">## 1.centos安装  //以数字的形式合理分级，建议标题的层级不要超过四层</span></span><br><span class="line"><span class="section">## 2.idea解包</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 二、基本用法 //对于技术文章就像是语法书，对于问题就是发现问题，分析问题，</span></span><br><span class="line"><span class="section">## 1. 对页面的操作</span></span><br><span class="line"><span class="section">## 2. 1 初始化浏览器对象</span></span><br><span class="line"><span class="section">## 2. 2</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 三、高阶用法  //或者是多个解决方案</span></span><br><span class="line"><span class="section"># 总结  //对技术或者过程的总结，建议不要太长</span></span><br><span class="line"><span class="section"># 参考  //把你写作过程中参考的资料，或者是推荐的链接放在这里，便于读者后续学习</span></span><br><span class="line"><span class="section"># 开源协议  //如果使用的是hexo或者其他博客网站，撰写博客的时候会自动生成，不需要自己写</span></span><br></pre></td></tr></table></figure>
-<h3 id="标题">标题</h3>
-<p>取标题要注意几点</p>
-<ol>
-<li><strong>简洁直观</strong>：不仅仅是利于搜索引擎优化，更多的是便于读者和自己，读者可以通过标题判断博客的信息对于自己是否有效，作者可以根据标题了解自己博客的侧重方面。<strong>不要被国内电商式的标题所蒙蔽</strong>(比如“爆肝……”“震惊，百大up主齐聚一堂竟然是为……”)，虽然能带来流量，但是作者不太建议，这种标题就显得作者没有真才实学，只能靠眼球吸引读者，</li>
-<li><strong>关键词</strong>：标题一定要包含文章的高频词或者是重点词语，比如如果你写的是有关MySQL的学习知识分享，那么关键字就是“MySQL”，可能有“教程”等其他关键词，再用适当的句子结构(问句、陈述句等)将其组合为标题。比如组合为”MySQL学习指南(一)“</li>
-</ol>
-<p><strong>特殊</strong>:所有<strong>系列文章</strong>(比如MySQL学习笔记)的标题要一致，<strong>相关的</strong>可以不一致。标题+XX:XX为数字，不满两位用0替代;比如mysql01;标题+(序数词):比如mysql学习(一)</p>
-<h3 id="简介">简介</h3>
-<p>文章的标题和简要介绍一下文章，要解决的是什么问题</p>
-<p><strong>示例</strong>：Selenium是广泛使用的模拟浏览器运行的库，它是一个用于Web应用程序测试的工具。 Selenium测试直接运行在浏览器中，就像真正的用户在操作一样，并且支持大多数现代 Web 浏览器。下面就进入正式的学习阶段。</p>
-<h3 id="文章主体">文章主体</h3>
-<p>以下主要侧重于排版。</p>
-<ol>
-<li>段落：建议不要太长，最好保持在300字以内</li>
-<li>字体效果：用黑体强调重要词汇，用斜体或者下划线强调重要段落</li>
-<li>列表：恰当使用无序和有序列表，对于超过10个点的列表建议使用markdown里面的表格</li>
-<li>图片：如果图片能便于读者理解，减少文字量，可以使用。</li>
-<li>代码块：建议默认收起或者收缩，需要的时候读者点击即可全部展开。指明代码块对应的编程语言，不是的话要提前说明</li>
-<li>分割线：建议用在两个一级标题或者是两段长段落之间。</li>
-</ol>
-<p>注意事项</p>
-<ol>
-<li>所有的代码至少要在自己的电脑上或者对应的运行环境上运行，否则不写</li>
-<li>不易理解或者抽象的地方要用图解释，可以是GIF动图制作也可以是chartjs、echart等，注意不要泄漏私人信息。</li>
-<li>模棱两可或者自己不懂的不要轻易写，写的话注意叠甲。</li>
-</ol>
-<h2 id="超文本内容">超文本内容</h2>
-<p>这一部分主要涉及前端的特性，属于是锦上添花的内容，即使没有也不是特别影响文章的质量，就算《资本论》只有文字，也无可争议是最伟大的鸿篇巨著之一。</p>
-<p>常用的类型有：图片、动画(gif等)、视频、音频、表情、标签外挂、图标、链接等。</p>
-<h3 id="图表">图表</h3>
-<ol>
-<li><a href="https://excalidraw.com/">Excalidraw</a>：手绘风格的开源工具，适合绘制思维导图、流程图等。</li>
-</ol>
-<p><img src="/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/excalidraw.png" alt="excalidraw"></p>
-<ol start="2">
-<li><a href="https://mermaid.nodejs.cn/">Mermaid 中文网</a>：基于 Markdown 的流程图工具，可以生成流程图、时序图等。或者也可以使用<a href="https://app.diagrams.net/">draw.io</a>。主要侧重于计算机方面的知识图表，常用于UML统一建模语言。</li>
-</ol>
-<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
-  
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop HealthCheck
-        John-&gt;&gt;John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
-    John--&gt;&gt;Alice: Great!
-    John-&gt;&gt;Bob: How about you?
-    Bob--&gt;&gt;John: Jolly good!
-
-  </pre></div>
-<ol start="3">
-<li><a href="https://chartjs.cn/docs/latest/">Chart.js 中文网</a>：是一个用于创建动态图表的 JavaScript 库，适合做一些比较复杂的数据分析图。</li>
-</ol>
-<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
-            <pre class="chartjs-src" hidden>{
-    &quot;type&quot;: &quot;pie&quot;,
-    &quot;data&quot;: {
-        &quot;labels&quot;: [
-            &quot;编程&quot;,
-            &quot;音乐&quot;,
-            &quot;阅读&quot;,
-            &quot;游戏&quot;,
-            &quot;健身&quot;,
-            &quot;旅游&quot;
-        ],
-        &quot;datasets&quot;: [
-            {
-                &quot;label&quot;: &quot;喜爱指数&quot;,
-                &quot;data&quot;: [
-                    30,
-                    24,
-                    19,
-                    14,
-                    9,
-                    4
-                ],
-                &quot;backgroundColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.5)&quot;,
-                        &quot;rgba(54, 162, 235, 0.5)&quot;,
-                        &quot;rgba(255, 206, 86, 0.5)&quot;,
-                        &quot;rgba(75, 192, 192, 0.5)&quot;,
-                        &quot;rgba(153, 102, 255, 0.5)&quot;,
-                        &quot;rgba(255, 159, 64, 0.5)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.2)&quot;,
-                        &quot;rgba(54, 162, 235, 0.2)&quot;,
-                        &quot;rgba(255, 206, 86, 0.2)&quot;,
-                        &quot;rgba(75, 192, 192, 0.2)&quot;,
-                        &quot;rgba(153, 102, 255, 0.2)&quot;,
-                        &quot;rgba(255, 159, 64, 0.2)&quot;
-                    ]
-                },
-                &quot;borderColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ]
-                }
-            }
-        ]
-    },
-    &quot;options&quot;: {
-        &quot;plugins&quot;: {
-            &quot;legend&quot;: {
-                &quot;labels&quot;: {
-                    &quot;color&quot;: {
-                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
-                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
-                    }
-                }
-            }
-        }
-    }
-}
-</pre>
-            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
-我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
-在此过程中也解决了无数的小谜团。<br>
-<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
-I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
-Countless small mysteries are also solved in the process.</span></p></div>
-          </div>
-<h3 id="视频">视频</h3>
-<ol>
-<li>B站引用：打开网页版的bilibili，点击要分享的视频-“分享”-“嵌入代码”，然后粘贴到markdown文件内即可</li>
-<li>本地图片：to be continue</li>
-</ol>
-<h3 id="公式">公式</h3>
-<p>建议使用katex，或者是markdown本地的公式嵌入。</p>
-<p>参考教程<a href="https://freeopen.github.io/mathjax/">Markdown 数学公式指导手册 | Freeopen</a></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sin^2(\theta) + \cos^2(\theta) = 1
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1219em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8719em;"><span style="top:-3.1208em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">cos</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></p>
-<h3 id="表情符号">表情符号</h3>
-<ol>
-<li><a href="https://www.lddgo.net/common/emoticons">在线颜文字大全</a> ：与markdown兼容，基本不会有不显示等问题</li>
-<li><a href="https://www.emojiall.com/zh-hans/categories/A">表情包</a> ：注意typora的表情(格式为<code>:表情</code>)无法在hexo显示，所以只能用图片替代表情</li>
-<li><a href="https://fontawesome.com/v4/icons/">图标</a>：适当的图标可以让人记忆犹新，见图思义。</li>
-</ol>
-<h3 id="交互式的组件">交互式的组件</h3>
-<p>比如butterfly中的button、图床等，由于不同的博客引擎涉及的组件不同，这里就不展开。建议读者不要舍本逐末，过度美化而忽视文章的内容。</p>
-<h2 id="总结与参考">总结与参考</h2>
+<h2 id="文章结构">文章结构</h2>
+<h3 id="版权与版本的声明">版权与版本的声明</h3>
+<p><strong>版权和版本的声明</strong>:<br>
+位于<strong>头文件</strong>(.h)和<strong>定义文件</strong>(.cpp或者.c)的开头,主要内容有：</p>
 <ul>
-<li>
-<p>用一段话给文章内容作总结。</p>
-</li>
-<li>
-<p><strong>参考</strong>要注明来源，比如链接、转载出处，注意定期更新以防失效。</p>
-</li>
+<li>版权信息.</li>
+<li>文件名称,标识符,摘要.</li>
+<li>当前版本号,作者/修改者,完成日期.</li>
+<li>版本历史信息.</li>
 </ul>
-<h1>参考</h1>
+<p><strong>示例1-1</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* Copyright(c)200l,上海贝尔有限公司网络应用事业部</span></span><br><span class="line"><span class="comment">* All rights reserved.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 文件名称：filename.h</span></span><br><span class="line"><span class="comment">* 文件标识：见配置管理计划书</span></span><br><span class="line"><span class="comment">* 摘　要：简要描述本文件的内容</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 当前版本：1.1</span></span><br><span class="line"><span class="comment">* 作者：输入作者(或修改者)名字</span></span><br><span class="line"><span class="comment">*完成日期：2001年7月20日</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 取代版本：1.0</span></span><br><span class="line"><span class="comment">＊原作者：输入原作者(或修改者)名字</span></span><br><span class="line"><span class="comment">* 完成日期：2001年5月10日</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="头文件的结构">头文件的结构</h3>
 <ul>
-<li><a href="https://www.cnblogs.com/returntmp/p/17591866.html">【全方位解析】如何写好技术文章 - ReturnTmp - 博客园</a></li>
-<li><a href="https://qlad.github.io/how-blogging/">如何写一篇优秀的博客 · qlAD 的技术笔记</a></li>
+<li>头文件开头处的版权和版本声明(参见示例1-1).</li>
+<li>预处理块.</li>
+<li>函数和类结构声明等.</li>
+</ul>
+<p><strong>规则</strong>;</p>
+<ol>
+<li>&lt;&gt;导入标准库的头文件,“” 导入非标准库的头文件</li>
+<li>头文件只存放<strong>声明</strong>而不放<strong>定义</strong></li>
+</ol>
+<p><strong>示例1-2</strong> 使用ifndef</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//假设头文件名称为graphics.h</span></span><br><span class="line"><span class="comment">//版权和版本声明见示例1-1,此处省略.</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> GRAPHICS_H ∥防止graphics.h被重复引用</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> GRAPHICS_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span> ∥引用标准库的头文件</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;myheader.h&quot;</span> ∥引用非标准库的头文件</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Functionl</span><span class="params">()</span></span>;<span class="comment">//全局函数声明</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Box</span> <span class="comment">//类结构声明</span></span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p>特点：能跨平台,但是编译时间较长,而且一旦宏名重复就会“不知所措“</p>
+<p><strong>示例1-2</strong>  使用#pragma once</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Windows.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>特点：编译时间短,但是难以跨平台.</p>
+<h3 id="定义文件的结构">定义文件的结构</h3>
+<ul>
+<li>定义文件开头处的版权和版本声明(参见示例1-1).</li>
+<li>对一些头文件的引用.</li>
+<li>程序的实现体(包括数据和代码).<br>
+假设定义文件的名称为graphics.cpp,定义文件的结构参见示例1-3.</li>
+</ul>
+<p><strong>示例1-3</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//版权和版本声明见示例1-1,此处省略.</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span>“graphics.h”∥引用头文件</span></span><br><span class="line">……</span><br><span class="line"><span class="comment">//全局函数的实现体</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Functionl</span><span class="params">(…)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">……</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//类成员函数的实现体</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Box::Draw</span><span class="params">(…)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="目录结构">目录结构</h3>
+<p>如果一个软件的头文件数目比较多(如超过十个),通常应将头文件和定义文件分别保存于不同的目录,以便于维护.例如可将头文件保存于include目录,将定义文件保存于source目录(可以是多级目录).</p>
+<h2 id="程序的版式">程序的版式</h2>
+<h3 id="空行">空行</h3>
+<p><strong>适当留空行保持呼吸感</strong></p>
+<p><strong>规则</strong>:</p>
+<ul>
+<li>在每个类声明之后、每个函数定义结束之后都要加空行.</li>
+<li>在一个函数体内,逻揖上密切相关的语句之间不加空行,其它地方应加空行分隔.参见示例2-1</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//逻辑连续,不空行</span></span><br><span class="line"><span class="type">int</span> ii = <span class="number">3</span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;typeid(int)=&quot;</span> &lt;&lt; <span class="built_in">typeid</span>(<span class="type">int</span>).<span class="built_in">name</span>() &lt;&lt; endl,</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;typeid(ii)=&quot;</span> &lt;&lt; <span class="built_in">typeid</span>(ii).<span class="built_in">name</span>() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义函数,前后逻辑不相连,空行</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">power</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码行">代码行</h3>
+<p><strong>规则</strong></p>
+<ul>
+<li><strong>一行代码只做一件事情</strong>,如只定义一个变量,或只写一条语句.这样的代码容易阅读,并且方便于写注释.</li>
+<li>if、for、while、do等语句自占一行,执行语句不得紧跟其后.<strong>不论执行语句有多少都要加{}</strong>.这样可以防止书写失误.</li>
+<li>尽可能<strong>定义变量的同时初始化该变量</strong>.</li>
+</ul>
+<blockquote>
+<p><strong>总而言之一句话,不要一行就写完</strong></p>
+</blockquote>
+<p><strong>示例2-2</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在定义变量的同时初始化变量</span></span><br><span class="line"><span class="type">int</span> width = <span class="number">10</span>;<span class="comment">//宽度</span></span><br><span class="line"><span class="type">int</span> height = <span class="number">20</span>;<span class="comment">//高度</span></span><br><span class="line"><span class="type">int</span> depth = <span class="number">30</span>;<span class="comment">//深度</span></span><br><span class="line"><span class="comment">//不要写成int width,height,depth;</span></span><br><span class="line"></span><br><span class="line">x  = a +b;</span><br><span class="line">y = c + d;</span><br><span class="line">z = e - f;</span><br><span class="line"><span class="comment">//不要一行就写完</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (width &lt; height)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">dosomething</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不要写成 if() dosomething</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (initialization;condition;update)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">dosomething</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//空行</span></span><br><span class="line"><span class="built_in">other</span>();</span><br></pre></td></tr></table></figure>
+<h3 id="代码行内的空格">代码行内的空格</h3>
+<ul>
+<li>关键字之后要留空格.象const、virtual、inline、case等关键字之后至少要留一个空格(不留空格一般会报错),否则无法辨析关键字.<strong>象if、for、while等关键字之后应留一个空格</strong>再跟左括号‘(’,以突出关键字.</li>
+<li><strong>函数名之后不要留空格</strong></li>
+<li>‘(’向后紧跟,<strong>‘)’、‘,’、’‘;’向前紧跟</strong>,紧跟处不留空格.</li>
+<li>‘,’之后要留空格,如Function(x,y,z).如果‘;’不是一行的结束符号,其后要留空格,如for(initialization; condition; update).</li>
+<li>赋值操作符、比较操作符、算术操作符、逻辑操作符、位域操作符,如“=”、“+=”“&gt;=”、“&lt;=”、“+”、“*”、“%”、“&amp;&amp;”、“‖”、“&lt;”,“Λ”等二元操作符的前后应当加空格.(在VS等编译器会自动格式化,但是也要养成良好的习惯)</li>
+<li>一元操作符如“”！“~”、“++”、“–”、“&amp;”(地址运算符)等前后不加空格.</li>
+<li>象“[]”、“.”、“-&gt;”这类操作符前后不加空格.</li>
+<li>对于表达式比较长的for语句和if语句,为了紧凑起见可以适当地去掉一些空格,如for(i=0;i&lt;10;i++)和if(a&lt;=b)&amp;&amp;(c&lt;=d)</li>
+</ul>
+<p>也就是说：<strong>在有大量操作符或者是关键字的情况下留空格避免过于紧凑</strong>.对于需要紧凑的符号就不要留空(比如&amp;,this等)</p>
+<p><strong>示例</strong> 以下皆为优良代码风格</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">Funcl</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y,<span class="type">int</span> z)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (year &gt;= <span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>((a&gt;=b) &amp;&amp; (c&lt;=d))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)</span><br><span class="line"></span><br><span class="line">x = a &lt; b ? a : b;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> *x = &amp;y;</span><br><span class="line"></span><br><span class="line">array[<span class="number">5</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">a.<span class="built_in">Function</span>();</span><br></pre></td></tr></table></figure>
+<h3 id="对齐">对齐</h3>
+<p><strong>规则简单来说就是{}单独占一行并且同一级的要对齐</strong>.</p>
+<p><strong>示例</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; name &lt;&lt; <span class="string">&quot;will make America great again&quot;</span>&lt;&lt; i &lt;&lt; endl;</span><br><span class="line">		<span class="built_in">Sleep</span>(<span class="number">1000</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="长行拆分">长行拆分</h3>
+<ul>
+<li>一行最多70-80字</li>
+<li>拆分时将操作符放在首位,要缩进排版</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ((very_longer_variablel &gt;very_longer_variablel2)</span><br><span class="line">	&amp;&amp;(very_longer_variable3 &lt;very_longer_variablel4)</span><br><span class="line">	&amp;(very_longer_variable5 &lt;very_longer_variablel6))</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">dosomething</span>(first_name,</span><br><span class="line">		    last_name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="修饰符的位置">修饰符的位置</h3>
+<p>主要是解决多个变量定义时的歧义问题</p>
+<p>规则:*与&amp;紧靠变量名</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *name;</span><br><span class="line"><span class="type">int</span> *x,y;<span class="comment">//y不会误解为指针</span></span><br><span class="line"><span class="type">int</span>* x,y;<span class="comment">//y有可能被误解为指针.</span></span><br></pre></td></tr></table></figure>
+<h3 id="注释">注释</h3>
+<p><strong>规则</strong></p>
+<ul>
+<li>一行用//,多行用/ * * /</li>
+<li>注释不是文档,需要的时候才加上</li>
+<li>边写代码边注释,注意更新</li>
+<li>注释要写在所解释的代码的上方或者右方</li>
+<li>较长的代码要在结尾处指明是谁的结束.</li>
+</ul>
+<p><strong>示例</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">while</span> ()</span><br><span class="line">	&#125;<span class="comment">//end of while</span></span><br><span class="line">	</span><br><span class="line">&#125;<span class="comment">//end of if</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 函数介绍：</span></span><br><span class="line"><span class="comment">* 输入参数：</span></span><br><span class="line"><span class="comment">* 输出参数：</span></span><br><span class="line"><span class="comment">* 返回值</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="类的版式">类的版式</h3>
+<p>类的版式主要有关心结构的“以数据为中心”风格和“以行为为中心“风格,这里提倡**“以行为为中心“风格**,毕竟在大部分情况下我们只关心怎样使用,有什么功能,而不会在乎里面是什么.</p>
+<p>一句话：<strong>将public类型的函数放在前面,将private的数据放在后面</strong>.</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Funcl</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Func2</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">int</span> i,j:</span><br><span class="line">	<span class="type">float</span> x,y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="命名">命名</h2>
+<p>在实际工作中以<strong>企业的开发手册</strong>为主</p>
+<p><strong>规则</strong></p>
+<ul>
+<li>不要用拼音,不用写完整英文翻译,也不要用中式英语命名</li>
+<li>统一命名风格,要么驼峰命名法,要么匈牙利命名法,不要混着用.这里采用驼峰命名法
+<ul>
+<li>扩展：驼峰命名法:</li>
+<li><strong>变量</strong>一般用<strong>小驼峰法</strong>标识.驼峰法的意思是：除第一个单词之外,其他单词首字母大写</li>
+<li>大驼峰法把<strong>第一个单词的首字母也大写</strong>了.常用于类名,函数名,属性,命名空间</li>
+</ul>
+</li>
+<li>少用易混淆的标识符,比如x与X,o与0</li>
+<li>变量的名字(&quot;名词“或者”形容词+名词“)</li>
+<li>全局函数的名字(“动词“或者&quot;动词+名词”),类中的函数命名(“动词”),因为&quot;自带&quot;名词.</li>
+<li>可以用反义词组表示具有相反意义的变量或者函数(如set与get)</li>
+<li>避免数字编号;比如num1;</li>
+</ul>
+<p><strong>Windows命名规则</strong></p>
+<ul>
+<li>常量全大写,下划线分割单词.如int  MAX_NUM = 100;</li>
+<li>静态变量加s_前缀,全局变量加g_前缀,类成员加m_前缀  如int static s_num = 100;</li>
+<li>对于不同库的变量可以添加反映库特性的前缀,如openGL,用gl_做前缀</li>
+</ul>
+<h3 id="表达式和基本语句">表达式和基本语句</h3>
+<h3 id="运算符的优先级-复合表达式">运算符的优先级 &amp;&amp; 复合表达式</h3>
+<p><strong>规则</strong></p>
+<ul>
+<li>适当用括号表示运算顺序</li>
+<li>不要写复杂、多用途的表达式,除非你是出面试题的考官.比如<code>d = (a=b+c++)+r;</code></li>
+</ul>
+<h3 id="if语句">if语句</h3>
+<p>规则</p>
+<ul>
+<li>不要将布尔值或者是0,1值直接进行比较. 比如能写<code>if(flag)</code> 就不要写 <code>if(flag == true)</code> 写<code>if(value == 0)</code> 就不要写<code>if(value == false)</code> 虽然false和0值相等,但是类型不同</li>
+<li>浮点数不要用<code>==</code> <code>!=</code> 比较.因为浮点数精度问题</li>
+<li>指针一般和NULL比较,或者和nullptr(C++11特性)比较</li>
+<li>建议比较的时候将确定的数放在 == 之前,防止错写成=而无法发觉.</li>
+</ul>
+<p><strong>示例</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="number">10</span> == a)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;a=10&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//如果你写成=会自动给你报错,防止出事</span></span><br><span class="line"><span class="keyword">if</span>(<span class="number">10</span> = a)</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="循环语句的效率">循环语句的效率</h3>
+<p>规则</p>
+<ul>
+<li>建议将最长的循环放在内层,减少CPU跨切循环层的次数</li>
+<li>逻辑判断最好在循环外面</li>
+</ul>
+<p>示例</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//不用for循环里面每次都判断条件,提高了效率</span></span><br><span class="line"><span class="keyword">if</span> (condition)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;N;i++)</span><br><span class="line">		<span class="built_in">DoSomething</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;N;i++)</span><br><span class="line">		<span class="built_in">DoOtherthing</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="for循环与switch多分支">for循环与switch多分支</h3>
+<p>规则</p>
+<ul>
+<li>不要轻易在for里面改变循环变量</li>
+<li>for循环控制变量取值采用前闭后开的方法.能写<code>for (int i = 0;i &lt; 5;i++)</code>  就不要写`for (int i = 0;i &lt;=4;i++)</li>
+<li>每个case都要写break防止case击穿.保留default语句</li>
+</ul>
+<h3 id="goto">goto</h3>
+<ul>
+<li>慎用goto,用的好能跳出重重封锁(比如嵌套循环),用不好就万劫不复</li>
+</ul>
+<h2 id="常量">常量</h2>
+<p>使用常量的好处在于<strong>一劳永逸,见文知意</strong></p>
+<p>规则</p>
+<ul>
+<li>用常量表示多次出现的数字或者字符串</li>
+<li>建议用const代替#define,方便调试.</li>
+<li>公开的常量放在头文件中,不公开的放在定义文件中</li>
+<li>常量之间有关联的用常量代替而不是用数字</li>
+</ul>
+<p><strong>示例</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAX 100 <span class="comment">/*C语言的宏常量*/</span></span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MAX = <span class="number">100</span>; <span class="comment">//C++语言的const常量</span></span><br><span class="line"><span class="type">const</span> <span class="type">float</span> PI = <span class="number">3.14159</span>; <span class="comment">//C++语言的const常量</span></span><br><span class="line"><span class="type">const</span> string NAME = <span class="string">&quot;Lloyd&quot;</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> NUN = MAX * <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>类中设计常量</strong><br>
+不能直接用const,建议使用<strong>枚举</strong></p>
+<p><strong>示例</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">enum</span>&#123;SIZE1=<span class="number">100</span>,SIZE2=<span class="number">200</span>&#125;;<span class="comment">//枚举常量</span></span><br><span class="line">	<span class="type">int</span> array_fir[SIZE1];</span><br><span class="line">	<span class="type">int</span> array_sec[SIZE1];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="函数设计">函数设计</h2>
+<h3 id="规则">规则</h3>
+<p>形参名</p>
+<ul>
+<li>形参名要写完整不要省,没有就用void</li>
+<li>形参的顺序要合理(比如source与destination,除数与被除数)</li>
+<li>如果传参是值的话建议用const&amp;,省去复制、构造与析构的过程</li>
+<li>形参最好不要超过5个,而且参数最好有确定的类型与数目.</li>
+</ul>
+<p>返回值</p>
+<ul>
+<li>任何函数都要有类型,不返回就用void</li>
+<li>函数名与返回值在语义方面不要冲突.比如别用getInt这种名字返回char型</li>
+<li>对于赋值函数,使用“引用传递”返回对象;对于操作函数,使用“值传递”的方式返回对象.也就是根据实际情况选择<strong>值传递或者引用传递</strong></li>
+</ul>
+<p>函数</p>
+<ul>
+<li>函数入口要检查-使用断言assert</li>
+<li>函数出口要检查return
+<ul>
+<li>不能返回指向“栈内存”的“指针”或者“引用”</li>
+<li>清楚返回的是什么</li>
+<li>如果返回的是对象可以直接写 “创建对象并返回” 如: return Entity(s1);  这在效率上比 Entity temp(s1); return temp;要高得多.</li>
+</ul>
+</li>
+<li>函数功能单一、短小精悍、避免记忆、出错处理要清晰</li>
+</ul>
+<p><strong>断言</strong></p>
+<ul>
+<li>一般用于<strong>捕捉非法情况</strong>而不是错误情况</li>
+<li>防错设计</li>
+</ul>
+<p>比较——引用与指针</p>
+<ul>
+<li>引用是取别名,指针是地址</li>
+<li>引用被创建的时候必须初始化(如<code>string&amp; name = m_Name;</code></li>
+<li>引用不能为空;并且引用初始化之后不能改变引用的关系.</li>
+</ul>
+<h2 id="内存管理">内存管理</h2>
+<p>规则</p>
+<ul>
+<li>用malloc或new申请内存之后,应该立即检查指针值是否为NULL.防止使用指针值为NULL的内存.</li>
+<li>不要忘记为数组和动态内存赋初值.防止将未被初始化的内存作为右值使用.</li>
+<li>避免数组或指针的下标越界,特别要当心发生“多1”或者“少1”操作.</li>
+<li>动态内存的申请与释放必须配对,防止内存泄漏.</li>
+<li><strong>用free或delete释放了内存之后,立即将指针设置为NULL,防止产生“野指针”</strong>.</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> *p = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">	<span class="built_in">assert</span>(p!=<span class="literal">NULL</span>);</span><br><span class="line">	*p = <span class="number">100</span>;</span><br><span class="line">	<span class="built_in">free</span>(p);</span><br><span class="line">	<span class="type">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">	p = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="内容复制与比较">内容复制与比较</h3>
+<p>规则</p>
+<ul>
+<li>数组与字符串等不能轻易用== 判断相等(因为== 只比较值而没有比较地址),除非重载了运算符</li>
+<li>当数组作为函数的参数进行传递时,数组自动退化成同类型的指针</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[] = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line"><span class="type">char</span> b[<span class="number">10</span>];</span><br><span class="line"><span class="built_in">strcpy</span>(b, a);<span class="comment">//不能用b = a;</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">strcmp</span>(b, a) == <span class="number">0</span>) &#123;&#125;;<span class="comment">// 不能用if(b = a)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//指针</span></span><br><span class="line"><span class="type">int</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> *a = &amp;num;</span><br><span class="line"><span class="type">int</span> len = <span class="built_in">strlen</span>(a);</span><br><span class="line"><span class="type">char</span>* p = (<span class="type">char</span>*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">char</span>) * (len + <span class="number">1</span>));</span><br><span class="line"><span class="built_in">strcpy</span>(p, a);</span><br><span class="line"><span class="comment">//不要用p=a;</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">strcmp</span>(p, a) == <span class="number">0</span>) <span class="comment">// 不要用if(p = a)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Fuction</span><span class="params">(<span class="type">char</span> a[<span class="number">100</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout&lt;&lt;<span class="built_in">sizeof</span>(a)&lt;&lt;endl;<span class="comment">//结果是4而不是100</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>free 与delete</p>
+<ul>
+<li>这“两大护法”并没有把指针干掉,而是释放内存,地址还在(&quot;一屋传三代,人走屋还在_(:з」∠)“)</li>
+</ul>
+<p>指针的问题</p>
+<ul>
+<li>指针消亡了,并不表示它所指的内存会被自动释放.</li>
+<li>内存被释放了,并不表示指针会消亡或者成了NULL指针.</li>
+</ul>
+<p>C中的malloc/free与C++中的new/delete</p>
+<ul>
+<li>new和delete会自动调用构造或者析构函数(如果有的话),而malloc与free没有</li>
+<li>C语言只有malloc与free.</li>
+</ul>
+<h3 id="内存耗尽问题">内存耗尽问题</h3>
+<p>虽然对于32位及以上的系统很难将内存耗尽,但是也需要做好报错处理(不能因为国力强盛就不修长城)</p>
+<p>处理方法</p>
+<ul>
+<li>如果申请的内存为空,用return或者exit(1)终止</li>
+<li>或者自定义处理函数 比如try catch</li>
+</ul>
+<h3 id="函数讲解">函数讲解</h3>
+<p><strong>malloc</strong><br>
+函数原型为:<br>
+<code>void * malloc(size_t size);</code><br>
+讲解</p>
+<ul>
+<li>void* 是泛指针,如果要调用的时候要将其显示转换</li>
+<li>size是内存大小,一般用sizeof求出</li>
+</ul>
+<p>使用示例<br>
+<code>int *p = (int*)malloc(sizeof(int)*length);</code></p>
+<p><strong>free</strong><br>
+函数原型为<br>
+<code>void free(void * memblock)</code></p>
+<p><strong>new</strong><br>
+new内置了sizeof、类型转换、类型安全检查等功能,建议多使用</p>
+<p><strong>delete</strong><br>
+不要漏掉[]<br>
+举例</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">delete</span> []objects;<span class="comment">//正确</span></span><br><span class="line"><span class="keyword">delete</span> objects;<span class="comment">//错误,只删除了objects[0],漏掉了其他</span></span><br></pre></td></tr></table></figure>
+<p><strong>心得</strong></p>
+<blockquote>
+<ol>
+<li>越是害怕,越是要勇敢面对它(特指指针),战胜恐惧的最好方法就是面对恐惧,加油,奥利给</li>
+<li>犯错不可怕,走过万千路,天堑变通途.</li>
+</ol>
+</blockquote>
+<h2 id="C-高级特性">C++高级特性</h2>
+<p><strong>重载与覆盖(overload and override)</strong></p>
+<p>特征</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>范围</th>
+<th>函数名</th>
+<th>参数</th>
+<th>是否有virtual关键字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重载</td>
+<td>在同一个类中</td>
+<td>相同</td>
+<td>不同</td>
+<td>可有可无</td>
+</tr>
+<tr>
+<td>覆盖</td>
+<td>在基类与派生类中</td>
+<td>相同</td>
+<td>相同</td>
+<td>必须有</td>
+</tr>
+</tbody>
+</table>
+<p>示例</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream.h&gt;</span></span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Base</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;cout &lt;<span class="string">&quot;Base:f(int)&quot;</span>&lt;&lt;x &lt;endl;<span class="comment">//f被重载</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(<span class="type">float</span> x)</span></span>&#123;cout &lt;<span class="string">&quot;Base:f(float)&quot;</span>&lt;&lt;x &lt;endl;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">g</span><span class="params">(<span class="type">void</span>)</span></span>&#123;cout &lt;<span class="string">&quot;Base:g(void)&quot;</span>&lt;&lt;endl;</span><br><span class="line">&#125;:</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span> : <span class="keyword">public</span> Base</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">g</span><span class="params">(<span class="type">void</span>)</span></span>&#123;cout &lt;<span class="string">&quot;Derived:g(void)&quot;</span>&lt;&lt;endl;&#125;<span class="comment">//派生类覆盖原来基类的g函数,一旦后面通过派生类调用g函数,统一都是重写后的函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>错误高发区：隐藏</strong><br>
+简单来说就是想通过派生类调用基类的函数却发现调用的都是派生类的函数,导致编译失败,在以下情况下会发生</p>
+<ul>
+<li>派生类的函数与基类的函数同名,但是参数不同</li>
+<li>派生类的函数与基类的函数同名,参数相同,但是基类函数没有virtual</li>
+</ul>
+<p><strong>参数的缺省值</strong><br>
+缺省值就是默认值(<strong>default</strong>),中文翻译不准确,尽可能使用英文.</p>
+<p>规则</p>
+<ul>
+<li>参数的default值只能出现在函数的声明中</li>
+<li>default值从后往前写</li>
+</ul>
+<p>运算符重载</p>
+<p><strong>函数内联</strong>(inline)<br>
+函数内联具有宏效率,又有效解决了宏无法调试和安全性的问题.<strong>建议在C++中使用内联取代宏</strong>(assert除外)</p>
+<p><strong>使用说明</strong></p>
+<ul>
+<li>inline必须必须<strong>和函数定义体放在一起</strong>才能使函数成为内联函数.</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">add</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; x,<span class="type">const</span> <span class="type">int</span>&amp; y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x+y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>特别的：虽然在类中定义的函数自动变成内联函数,但是一般不会在类中定义函数,如果需要内联记得在定义处加上inline.</li>
+<li>内联是<strong>用空间换时间</strong></li>
+</ul>
+<h2 id="类的构造函数、析构函数和赋值函数">类的构造函数、析构函数和赋值函数</h2>
+<p>简单示例</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">String</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">String</span>(<span class="type">const</span> <span class="type">char</span> *str = <span class="literal">NULL</span>);<span class="comment">//普通构造函数</span></span><br><span class="line">	<span class="built_in">String</span>(<span class="type">const</span> String &amp;other);/拷贝构造函数</span><br><span class="line">	~<span class="built_in">String</span> (<span class="type">void</span>);<span class="comment">//析构函数</span></span><br><span class="line">	String &amp; operate =(<span class="type">const</span> String &amp;other);<span class="comment">//赋值函数 其实是重载=</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">char</span> *m_data;<span class="comment">//用于保存字符串</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="类的继承与组合">类的继承与组合</h2>
+<p>简单讲解对象(object)、类(class)和实例(instance)的关系<br>
+对象就是“房子”,类就是设计房子的“蓝图”,对象是类的一个实例,根据“蓝图”可以盖很多的“房子”.<br>
+所谓<strong>面向对象编程</strong>,就是设计“图纸”.</p>
+<p><strong>继承的规则</strong></p>
+<ul>
+<li>不相关的两个类不要继承(“公若不弃,愿拜为义父”doge)</li>
+<li>在逻辑上B是A的一种,并且A的所有属性和功能都对A有意义,就允许B继承A.比如虽然鸵鸟是鸟,但是“飞”的功能对鸵鸟是多余的,这种情况下最好不要继承与鸟</li>
+</ul>
+<p><strong>组合的规则</strong></p>
+<ul>
+<li>若在逻辑上A是B的“一部分”(a part of),则不允许B从A派生,而是要用A和其它东西组合出B.比如电池、屏幕和芯片是手机的一部分,就用这些类组合起来生成手机类,而不是让手机“<strong>拜电池等为义父</strong>”</li>
+</ul>
+<p>示例</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Cell</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">charge</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Screen</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Look</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Chip</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Run</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//手机类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Phone</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">charge</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Look</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Rum</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	Cell m_cell;</span><br><span class="line">	Screen m_screen;</span><br><span class="line">	Chip m_chip;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="编程经验">编程经验</h2>
+<h3 id="常用const">常用const</h3>
+<p>注意</p>
+<ul>
+<li>const只能修饰输入参数</li>
+<li>对于值传递的参数无需使用const修饰</li>
+<li>对于非内部数据类型(就是C|C++标准库之外的类型)的输入参数.可以使用<strong>const 类型&amp;</strong> 的方式在提高效率的同时不改变参数内容.
+<ul>
+<li>比如int确实没必要使用const int &amp;.,内部数据类型没有构造与析构,复制也很快,不需要多此一举</li>
+</ul>
+</li>
+<li>函数返回值如果是值传递,不需要用const修饰</li>
+<li>不修改成员属性的函数都要加const</li>
+</ul>
+<h1>个人思考</h1>
+<p>写代码就像是写作文,理论上只要表达意思正确(也就是程序能运行并达到理想效果),什么首行缩进、分段都不影响文章的质量,但是作文是要修改的(程序要维护),是要给人看的(别人要使用你的程序),此时语句(代码)就是交流的主要工具,语句的逻辑是什么?怎样表达就能让对方理解?怎样吸引读者阅读你的文章?怎样减少语病与错误?这是我们在写作文的时候经常思考的问题,编程也是一样.</p>
+<p>接下来就从写好一篇文章开始讲解代码是什么.首先,写作者的名字,这就引出了“<strong>版权和版本</strong>“的声明,表明作品是你写的,作品处于哪个阶段.然后,给人物取名字,一般老师会让学生用什么典雅的古文等方法给人物取名,不过在计算机这里就不适用了,要简洁直白,能叫&quot;many&quot;就不要用&quot;quite a number of&quot;,又不是给英语作文凑字数(doge)</p>
+<p>然后就要开始准备工作了,如果我们写的是人物传记,就要交代人物名字及其相关信息(声明及初始化变量),比如“廉颇者,赵之良将也”,声明一个Person类的变量名为“廉颇”,并将“赵国”“良将”作为参数构造了一个Person的实例对象——人.有的还会在正文之前写时间地点等,比如“元丰六年,余左迁……”(出自《琵琶行》)就是定义(define)”今年“为”元丰六年“,以后所有的”今年“都会被”元丰六年“等效代替.</p>
+<p>以下以《廉颇蔺相如列传》第一段为例.</p>
+<p>接下来我用“保安三问”(<strong>你是谁?你去哪?你干嘛?</strong>)来讲解如何写代码.</p>
+<p>“廉颇者,赵之良将也”.首先,<strong>第一问“廉颇是谁?”</strong> ,我们需要给廉颇一个定义,是人是神还是鬼,是符号还是具体的事物?理论上都可以,但是从复用的角度和理解的角度来看,用“人”更加通俗易懂,即定义成“人”类(class)或者是结构体,这里以面向对象为主要编程思想,采用”类“来构造一个”人“. 然后,声明和定义一个“人”类,由于高质量编程的需要,最好将声明与定义放在不同的文件里面,类比图书放在不同的类别,都是为了后续减少维护成本.但是构造类的过程中有一点问题,类里面应该放点什么东西呢?我的建议是,随着”故事“的展开不断更新”人“类,毕竟人是会成长的,想要一开始一劳永逸只会顾此失彼.</p>
+<p><strong>第二问“廉颇去哪?”</strong> 一般来说,所有的代码都直接或者间接在main函数里面.这里的“廉颇”也不例外.</p>
+<p><strong>第三问”廉颇干嘛?“</strong> 第一句没有交代廉颇的行为,但是交代了廉颇的”特性“(属性),这就提醒”人“类可以”更新“了,比如添加”国籍(nationality)“、”地位(status)“属性并公开(双料特工可以不公开doge),不过又有问题了,这些属性应该是哪一种变量呢?string、int还是class呢?我的建议是,在日常生活中常以文字出现的用字符串(char[] string等),以数字出现的(比如成绩)用整型(比如int)或者浮点型(比如double).不过仅作参考,<strong>合适的才是最好的</strong>.好了,现在我们给“人”类添加了nationality和status属性,但是我们要“构造”一个“廉颇”啊,不能只把“廉颇”的特性给女娲却不告诉她怎样“玩泥巴”吧,也就是<strong>声明并定义有参构造</strong>(教女娲如何用泥巴塑造廉颇),怎样定义呢?“廉颇”要什么,就给女娲什么,廉颇要名字、要身份、要国籍,就给他名字(m_name = name;).现在,“人”类的基本蓝图已经有了,也告诉女娲怎样“捏一个人类“了,接下来就要将廉颇的特性传递给构造函数了.如下,成功创建了”廉颇“.用cout输出一下其特性,完美.</p>
+<p>廉颇有了,要<strong>干什么</strong>呢?伐齐！这是一个动作,可以用一个<strong>函数</strong>来表示,那么函数应该是类中的函数还是外面的函数呢(<strong>保安第二问</strong>)?我的建议是,看谁复用性更强,毕竟人都喜欢偷懒,这里用类中的函数,毕竟之后蔺相如”人“也要”攻打“齐国.对于类的定义与实现,也是同理的<strong>保安三问</strong>,是什么?在哪里?干什么?是什么——返回什么类型,要什么参数,名字是什么;在哪里——函数声明与定义在哪里;干什么——实现了什么功能.<strong>不停追问自己,然后不断完善代码</strong>.<strong>伐</strong>字实现了,又到”齐“了,看起来好像是string,又感觉可以是class,用什么比较好呢?我的建议是,从宏观看”齐“的”地位“,即”齐“出现频率高不高,包含的东西多不多,以此配位,从全文来看,”齐“明显是高频词汇,应该重视,string不配修饰”齐“,那就用类(class)吧.同理<strong>保安三问</strong>创建”国家(country)“类.添加防御力(m_defenseValue)和名字(name)属性等.</p>
+<p>下一句是“大破之”是结果,但是<strong>过程</strong>是什么呢?也就是结果的“因”是什么呢?这里实现的方法就见仁见智了,可以通过数值的比较,可以是特定的属性触发,甚至可以随机判定输赢,这里就用游戏中常用的“数值”来比较,用判断语句(if)判定.另一个结果是”拜为上卿,以勇气闻於诸侯“,这里强调的属性是”上卿“”闻(出名的意思)“看”人“类中有没有,有一个status,但是没有”出名“的属性,可以添加一个,<strong>根据保安三问定律</strong>,<strong>取</strong>”出名“的属性为int,名字是m_fame,用数值代表出名程度.然后在if中添加结果(将m_fame的值提升,将m_status的值改变),最后根据m_fame的值输出语句.至此,程序完结.</p>
+<p><strong>示例如下</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在Person.h中</span></span><br><span class="line"><span class="comment">//定义“人”类.</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Country.h&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	string m_nationality;<span class="comment">//国籍</span></span><br><span class="line">	<span class="type">int</span> m_ability = <span class="number">1</span>;<span class="comment">//能力值 范围1-5 越大能力越强</span></span><br><span class="line">	string m_name;<span class="comment">//名字</span></span><br><span class="line">	string m_status;<span class="comment">//地位</span></span><br><span class="line">	<span class="type">int</span> fame = <span class="number">1</span>;<span class="comment">//名声 范围1-5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//构造</span></span><br><span class="line">	<span class="built_in">Person</span>(<span class="type">void</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//有参构造</span></span><br><span class="line">	<span class="built_in">Person</span>(string name, string nationality, <span class="type">int</span> ability, string status);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//攻击函数</span></span><br><span class="line">	<span class="function"><span class="type">bool</span> <span class="title">Attack</span><span class="params">(Country nation)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//析构</span></span><br><span class="line">	~<span class="built_in">Person</span>(<span class="type">void</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在Person.cpp文件中(也就是实现类中)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Person.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Person::<span class="built_in">Person</span>(string name, string nationality, <span class="type">int</span> ability,string status)</span><br><span class="line">&#123;</span><br><span class="line">	m_name = name;</span><br><span class="line">	m_nationality = nationality;</span><br><span class="line">	m_ability = ability;</span><br><span class="line">	m_status = status;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person::<span class="built_in">Person</span>(<span class="type">void</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person::~<span class="built_in">Person</span>(<span class="type">void</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Person::Attack</span><span class="params">(Country nation)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_ability&gt; nation.m_defenseValue)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>“赵惠文王十六年”<br>
+<code>int to_year = 16;</code></p>
+<p>“廉颇为赵将伐齐”</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在Country.h 文件中</span></span><br><span class="line"><span class="comment">//定义国家类</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Country</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span> m_defenseValue = <span class="number">1</span>;<span class="comment">//国家防御力</span></span><br><span class="line">	string m_name;<span class="comment">//国家名字</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Country</span>(<span class="type">void</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">Country</span>(string name, <span class="type">int</span> defenseValue);</span><br><span class="line"></span><br><span class="line">	~<span class="built_in">Country</span>(<span class="type">void</span>);</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在Country.cpp</span></span><br><span class="line"><span class="comment">//国家类实现</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Person.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Person::<span class="built_in">Person</span>(string name, string nationality, <span class="type">int</span> ability,string status)</span><br><span class="line">&#123;</span><br><span class="line">	m_name = name;</span><br><span class="line">	m_nationality = nationality;</span><br><span class="line">	m_ability = ability;</span><br><span class="line">	m_status = status;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person::<span class="built_in">Person</span>(<span class="type">void</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person::~<span class="built_in">Person</span>(<span class="type">void</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Person::Attack</span><span class="params">(Country nation)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_ability&gt; nation.m_defenseValue)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>“大破之,取阳晋,拜为上将,以勇气闻於诸侯”</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在main.cpp文件里面</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Person.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Country.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义函数库</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//创建“廉颇”与“蔺相如”</span></span><br><span class="line">	<span class="function">Person <span class="title">LianPo</span><span class="params">(<span class="string">&quot;廉颇&quot;</span>, <span class="string">&quot;Zhao&quot;</span>, <span class="number">5</span>,<span class="string">&quot;良将&quot;</span>)</span></span>;</span><br><span class="line">	<span class="function">Person <span class="title">LiXiangRu</span><span class="params">(<span class="string">&quot;蔺相如&quot;</span>, <span class="string">&quot;Zhao&quot;</span>, <span class="number">5</span>, <span class="string">&quot;舍人&quot;</span>)</span></span>;</span><br><span class="line">	<span class="comment">//输出“廉颇”的基本信息</span></span><br><span class="line">	cout &lt;&lt; LianPo.m_name &lt;&lt; <span class="string">&quot;者,&quot;</span> &lt;&lt; LianPo.m_nationality &lt;&lt; <span class="string">&quot;之&quot;</span> &lt;&lt; LianPo.m_status &lt;&lt; <span class="string">&quot;也&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//创建齐国</span></span><br><span class="line">	<span class="function">Country <span class="title">Qi</span><span class="params">(<span class="string">&quot;qi&quot;</span>, <span class="number">3</span>)</span></span>;</span><br><span class="line">	<span class="comment">//赵惠王十六年</span></span><br><span class="line">	<span class="type">int</span> to_year = <span class="number">16</span>;</span><br><span class="line">	<span class="comment">//廉颇为赵将伐齐</span></span><br><span class="line">	<span class="type">bool</span> ret = LianPo.<span class="built_in">Attack</span>(Qi);</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; LianPo.m_name &lt;&lt; <span class="string">&quot;对&quot;</span> &lt;&lt; Qi.m_name &lt;&lt; <span class="string">&quot;发起攻击&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//判断讨伐是否成功</span></span><br><span class="line">	<span class="keyword">if</span> (ret)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;大破之&quot;</span> &lt;&lt; endl;</span><br><span class="line">		LianPo.m_status = <span class="string">&quot;上卿&quot;</span>;</span><br><span class="line">		cout &lt;&lt; LianPo.m_name &lt;&lt; <span class="string">&quot;被拜为&quot;</span> &lt;&lt; LianPo.m_status &lt;&lt; endl;</span><br><span class="line">		LianPo.fame = <span class="number">4</span>;</span><br><span class="line">		<span class="comment">//判断名声等级</span></span><br><span class="line">		<span class="keyword">if</span> (LianPo.fame &gt;= <span class="number">4</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;以勇气闻於诸侯&quot;</span> &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看到这里,你会有一个问题,为什么要用写作来形容代码的编写过程呢?对以中文为母语的人可能难以理解,但是对于以英语为母语的人早已习以为常,甚至达到了“美国人刚出生就会写代码”的程度.对他们来说,写代码就是写英语作文,无非是语法更严格,字数变更少,语句更加讲逻辑,对我们来说就是在“写天书”.这里想说的是,将写代码看做是写英语作文,可以<strong>有效提高写代码的逻辑性</strong>,而且,一旦你认为自己写的是一篇作文,要传阅给所有人看,你就会不自觉“美化”你的作文(代码),<strong>在无形之中,你对自己写的作文(代码)提高了要求</strong>。我以写作为例,更多的是想让你感受一下<strong>保安三问定律</strong>在写代码方面的作用和按照一定的规则写代码的好处,毕竟代码就是语句,多行代码构成段落,多个段落构成故事,<strong>故事都有起因经过结果,保安定律就是为了回答这三者究竟是什么，规则限定我们写故事写在哪，怎样写易读性更强</strong>。也许自己的故事有缺陷,也许编程能力有限,但总是能引导我们走向文章的结尾,给老师(编译器)和他人一个满意的答卷.</p>
+<ol class="series-items"><li><a href="/2024/06/25/%E3%80%8A%E9%AB%98%E8%B4%A8%E9%87%8FC%E3%80%81C++%E3%80%8B%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" title="《高质量C、C++》笔记整理">《高质量C、C++》笔记整理</a></li></ol>
+<h1>参考资料</h1>
+<ul>
+<li>《高质量C、C++》 林锐</li>
+<li>《C++ Prime Plus(第六版)》</li>
 </ul>
 ]]></content>
       <categories>
-        <category>blog</category>
+        <category>C++</category>
       </categories>
       <tags>
-        <tag>blog</tag>
-        <tag>教程</tag>
+        <tag>C</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -1617,7 +2043,10 @@ Countless small mysteries are also solved in the process.</span></p></div>
 <p>对于非英语专业或者是语言研究的人来说，我们只需要在学习音标的是能认出这是属于哪一类的音标即可，音标终究是用来帮助发音的。</p>
 <h1>全部音标发音</h1>
 <p>视频如下。</p>
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" width="785.8" height="523" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true"></iframe>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
+    </iframe>
+</div>
 <h1>发音讲解</h1>
 <p><strong>以元音和辅音分</strong>：</p>
 <p>元音：就是在发音时不受阻碍(如嘴唇张开，但还是会受到舌头的影响)发出的音。辅音与元音相反。注意这里的舌位指的是舌头在发音时隆起的最高点，舌头太高，舌位就高。</p>
@@ -2053,432 +2482,6 @@ Countless small mysteries are also solved in the process.</span></p></div>
       </categories>
       <tags>
         <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《高质量C、C++》笔记整理</title>
-    <url>/2024/06/25/%E3%80%8A%E9%AB%98%E8%B4%A8%E9%87%8FC%E3%80%81C++%E3%80%8B%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<blockquote>
-<p>本文章会随着编程能力的提高和思维的扩展不断更新,目前是1.0版本    2024/6/25</p>
-</blockquote>
-<h1>简介</h1>
-<p>本书以高质量编写C/C++代码为主题，在代码风格等方面列举了常见的规则和示例，旨在帮助读者写出风格统一的、可读性强的、易于维护的代码。</p>
-<h1>代码风格</h1>
-<blockquote>
-<p>什么是优秀的、高质量的代码?</p>
-</blockquote>
-<ul>
-<li>优秀的编程风格</li>
-<li>有出错处理</li>
-<li>算法复杂度分析</li>
-</ul>
-<h2 id="文章结构">文章结构</h2>
-<h3 id="版权与版本的声明">版权与版本的声明</h3>
-<p><strong>版权和版本的声明</strong>:<br>
-位于<strong>头文件</strong>(.h)和<strong>定义文件</strong>(.cpp或者.c)的开头,主要内容有：</p>
-<ul>
-<li>版权信息.</li>
-<li>文件名称,标识符,摘要.</li>
-<li>当前版本号,作者/修改者,完成日期.</li>
-<li>版本历史信息.</li>
-</ul>
-<p><strong>示例1-1</strong>：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* Copyright(c)200l,上海贝尔有限公司网络应用事业部</span></span><br><span class="line"><span class="comment">* All rights reserved.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 文件名称：filename.h</span></span><br><span class="line"><span class="comment">* 文件标识：见配置管理计划书</span></span><br><span class="line"><span class="comment">* 摘　要：简要描述本文件的内容</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 当前版本：1.1</span></span><br><span class="line"><span class="comment">* 作者：输入作者(或修改者)名字</span></span><br><span class="line"><span class="comment">*完成日期：2001年7月20日</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 取代版本：1.0</span></span><br><span class="line"><span class="comment">＊原作者：输入原作者(或修改者)名字</span></span><br><span class="line"><span class="comment">* 完成日期：2001年5月10日</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h3 id="头文件的结构">头文件的结构</h3>
-<ul>
-<li>头文件开头处的版权和版本声明(参见示例1-1).</li>
-<li>预处理块.</li>
-<li>函数和类结构声明等.</li>
-</ul>
-<p><strong>规则</strong>;</p>
-<ol>
-<li>&lt;&gt;导入标准库的头文件,“” 导入非标准库的头文件</li>
-<li>头文件只存放<strong>声明</strong>而不放<strong>定义</strong></li>
-</ol>
-<p><strong>示例1-2</strong> 使用ifndef</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//假设头文件名称为graphics.h</span></span><br><span class="line"><span class="comment">//版权和版本声明见示例1-1,此处省略.</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> GRAPHICS_H ∥防止graphics.h被重复引用</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> GRAPHICS_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span> ∥引用标准库的头文件</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;myheader.h&quot;</span> ∥引用非标准库的头文件</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Functionl</span><span class="params">()</span></span>;<span class="comment">//全局函数声明</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Box</span> <span class="comment">//类结构声明</span></span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-<p>特点：能跨平台,但是编译时间较长,而且一旦宏名重复就会“不知所措“</p>
-<p><strong>示例1-2</strong>  使用#pragma once</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Windows.h&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>特点：编译时间短,但是难以跨平台.</p>
-<h3 id="定义文件的结构">定义文件的结构</h3>
-<ul>
-<li>定义文件开头处的版权和版本声明(参见示例1-1).</li>
-<li>对一些头文件的引用.</li>
-<li>程序的实现体(包括数据和代码).<br>
-假设定义文件的名称为graphics.cpp,定义文件的结构参见示例1-3.</li>
-</ul>
-<p><strong>示例1-3</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//版权和版本声明见示例1-1,此处省略.</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span>“graphics.h”∥引用头文件</span></span><br><span class="line">……</span><br><span class="line"><span class="comment">//全局函数的实现体</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Functionl</span><span class="params">(…)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">……</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//类成员函数的实现体</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Box::Draw</span><span class="params">(…)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="目录结构">目录结构</h3>
-<p>如果一个软件的头文件数目比较多(如超过十个),通常应将头文件和定义文件分别保存于不同的目录,以便于维护.例如可将头文件保存于include目录,将定义文件保存于source目录(可以是多级目录).</p>
-<h2 id="程序的版式">程序的版式</h2>
-<h3 id="空行">空行</h3>
-<p><strong>适当留空行保持呼吸感</strong></p>
-<p><strong>规则</strong>:</p>
-<ul>
-<li>在每个类声明之后、每个函数定义结束之后都要加空行.</li>
-<li>在一个函数体内,逻揖上密切相关的语句之间不加空行,其它地方应加空行分隔.参见示例2-1</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//逻辑连续,不空行</span></span><br><span class="line"><span class="type">int</span> ii = <span class="number">3</span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;typeid(int)=&quot;</span> &lt;&lt; <span class="built_in">typeid</span>(<span class="type">int</span>).<span class="built_in">name</span>() &lt;&lt; endl,</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;typeid(ii)=&quot;</span> &lt;&lt; <span class="built_in">typeid</span>(ii).<span class="built_in">name</span>() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义函数,前后逻辑不相连,空行</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">power</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="代码行">代码行</h3>
-<p><strong>规则</strong></p>
-<ul>
-<li><strong>一行代码只做一件事情</strong>,如只定义一个变量,或只写一条语句.这样的代码容易阅读,并且方便于写注释.</li>
-<li>if、for、while、do等语句自占一行,执行语句不得紧跟其后.<strong>不论执行语句有多少都要加{}</strong>.这样可以防止书写失误.</li>
-<li>尽可能<strong>定义变量的同时初始化该变量</strong>.</li>
-</ul>
-<blockquote>
-<p><strong>总而言之一句话,不要一行就写完</strong></p>
-</blockquote>
-<p><strong>示例2-2</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在定义变量的同时初始化变量</span></span><br><span class="line"><span class="type">int</span> width = <span class="number">10</span>;<span class="comment">//宽度</span></span><br><span class="line"><span class="type">int</span> height = <span class="number">20</span>;<span class="comment">//高度</span></span><br><span class="line"><span class="type">int</span> depth = <span class="number">30</span>;<span class="comment">//深度</span></span><br><span class="line"><span class="comment">//不要写成int width,height,depth;</span></span><br><span class="line"></span><br><span class="line">x  = a +b;</span><br><span class="line">y = c + d;</span><br><span class="line">z = e - f;</span><br><span class="line"><span class="comment">//不要一行就写完</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (width &lt; height)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">dosomething</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不要写成 if() dosomething</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (initialization;condition;update)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">dosomething</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//空行</span></span><br><span class="line"><span class="built_in">other</span>();</span><br></pre></td></tr></table></figure>
-<h3 id="代码行内的空格">代码行内的空格</h3>
-<ul>
-<li>关键字之后要留空格.象const、virtual、inline、case等关键字之后至少要留一个空格(不留空格一般会报错),否则无法辨析关键字.<strong>象if、for、while等关键字之后应留一个空格</strong>再跟左括号‘(’,以突出关键字.</li>
-<li><strong>函数名之后不要留空格</strong></li>
-<li>‘(’向后紧跟,<strong>‘)’、‘,’、’‘;’向前紧跟</strong>,紧跟处不留空格.</li>
-<li>‘,’之后要留空格,如Function(x,y,z).如果‘;’不是一行的结束符号,其后要留空格,如for(initialization; condition; update).</li>
-<li>赋值操作符、比较操作符、算术操作符、逻辑操作符、位域操作符,如“=”、“+=”“&gt;=”、“&lt;=”、“+”、“*”、“%”、“&amp;&amp;”、“‖”、“&lt;”,“Λ”等二元操作符的前后应当加空格.(在VS等编译器会自动格式化,但是也要养成良好的习惯)</li>
-<li>一元操作符如“”！“~”、“++”、“–”、“&amp;”(地址运算符)等前后不加空格.</li>
-<li>象“[]”、“.”、“-&gt;”这类操作符前后不加空格.</li>
-<li>对于表达式比较长的for语句和if语句,为了紧凑起见可以适当地去掉一些空格,如for(i=0;i&lt;10;i++)和if(a&lt;=b)&amp;&amp;(c&lt;=d)</li>
-</ul>
-<p>也就是说：<strong>在有大量操作符或者是关键字的情况下留空格避免过于紧凑</strong>.对于需要紧凑的符号就不要留空(比如&amp;,this等)</p>
-<p><strong>示例</strong> 以下皆为优良代码风格</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">Funcl</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y,<span class="type">int</span> z)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (year &gt;= <span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>((a&gt;=b) &amp;&amp; (c&lt;=d))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)</span><br><span class="line"></span><br><span class="line">x = a &lt; b ? a : b;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> *x = &amp;y;</span><br><span class="line"></span><br><span class="line">array[<span class="number">5</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">a.<span class="built_in">Function</span>();</span><br></pre></td></tr></table></figure>
-<h3 id="对齐">对齐</h3>
-<p><strong>规则简单来说就是{}单独占一行并且同一级的要对齐</strong>.</p>
-<p><strong>示例</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; name &lt;&lt; <span class="string">&quot;will make America great again&quot;</span>&lt;&lt; i &lt;&lt; endl;</span><br><span class="line">		<span class="built_in">Sleep</span>(<span class="number">1000</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="长行拆分">长行拆分</h3>
-<ul>
-<li>一行最多70-80字</li>
-<li>拆分时将操作符放在首位,要缩进排版</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ((very_longer_variablel &gt;very_longer_variablel2)</span><br><span class="line">	&amp;&amp;(very_longer_variable3 &lt;very_longer_variablel4)</span><br><span class="line">	&amp;(very_longer_variable5 &lt;very_longer_variablel6))</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">dosomething</span>(first_name,</span><br><span class="line">		    last_name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="修饰符的位置">修饰符的位置</h3>
-<p>主要是解决多个变量定义时的歧义问题</p>
-<p>规则:*与&amp;紧靠变量名</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *name;</span><br><span class="line"><span class="type">int</span> *x,y;<span class="comment">//y不会误解为指针</span></span><br><span class="line"><span class="type">int</span>* x,y;<span class="comment">//y有可能被误解为指针.</span></span><br></pre></td></tr></table></figure>
-<h3 id="注释">注释</h3>
-<p><strong>规则</strong></p>
-<ul>
-<li>一行用//,多行用/ * * /</li>
-<li>注释不是文档,需要的时候才加上</li>
-<li>边写代码边注释,注意更新</li>
-<li>注释要写在所解释的代码的上方或者右方</li>
-<li>较长的代码要在结尾处指明是谁的结束.</li>
-</ul>
-<p><strong>示例</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">while</span> ()</span><br><span class="line">	&#125;<span class="comment">//end of while</span></span><br><span class="line">	</span><br><span class="line">&#125;<span class="comment">//end of if</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 函数介绍：</span></span><br><span class="line"><span class="comment">* 输入参数：</span></span><br><span class="line"><span class="comment">* 输出参数：</span></span><br><span class="line"><span class="comment">* 返回值</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h3 id="类的版式">类的版式</h3>
-<p>类的版式主要有关心结构的“以数据为中心”风格和“以行为为中心“风格,这里提倡**“以行为为中心“风格**,毕竟在大部分情况下我们只关心怎样使用,有什么功能,而不会在乎里面是什么.</p>
-<p>一句话：<strong>将public类型的函数放在前面,将private的数据放在后面</strong>.</p>
-<p><strong>示例</strong>：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Funcl</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Func2</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">int</span> i,j:</span><br><span class="line">	<span class="type">float</span> x,y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="命名">命名</h2>
-<p>在实际工作中以<strong>企业的开发手册</strong>为主</p>
-<p><strong>规则</strong></p>
-<ul>
-<li>不要用拼音,不用写完整英文翻译,也不要用中式英语命名</li>
-<li>统一命名风格,要么驼峰命名法,要么匈牙利命名法,不要混着用.这里采用驼峰命名法
-<ul>
-<li>扩展：驼峰命名法:</li>
-<li><strong>变量</strong>一般用<strong>小驼峰法</strong>标识.驼峰法的意思是：除第一个单词之外,其他单词首字母大写</li>
-<li>大驼峰法把<strong>第一个单词的首字母也大写</strong>了.常用于类名,函数名,属性,命名空间</li>
-</ul>
-</li>
-<li>少用易混淆的标识符,比如x与X,o与0</li>
-<li>变量的名字(&quot;名词“或者”形容词+名词“)</li>
-<li>全局函数的名字(“动词“或者&quot;动词+名词”),类中的函数命名(“动词”),因为&quot;自带&quot;名词.</li>
-<li>可以用反义词组表示具有相反意义的变量或者函数(如set与get)</li>
-<li>避免数字编号;比如num1;</li>
-</ul>
-<p><strong>Windows命名规则</strong></p>
-<ul>
-<li>常量全大写,下划线分割单词.如int  MAX_NUM = 100;</li>
-<li>静态变量加s_前缀,全局变量加g_前缀,类成员加m_前缀  如int static s_num = 100;</li>
-<li>对于不同库的变量可以添加反映库特性的前缀,如openGL,用gl_做前缀</li>
-</ul>
-<h3 id="表达式和基本语句">表达式和基本语句</h3>
-<h3 id="运算符的优先级-复合表达式">运算符的优先级 &amp;&amp; 复合表达式</h3>
-<p><strong>规则</strong></p>
-<ul>
-<li>适当用括号表示运算顺序</li>
-<li>不要写复杂、多用途的表达式,除非你是出面试题的考官.比如<code>d = (a=b+c++)+r;</code></li>
-</ul>
-<h3 id="if语句">if语句</h3>
-<p>规则</p>
-<ul>
-<li>不要将布尔值或者是0,1值直接进行比较. 比如能写<code>if(flag)</code> 就不要写 <code>if(flag == true)</code> 写<code>if(value == 0)</code> 就不要写<code>if(value == false)</code> 虽然false和0值相等,但是类型不同</li>
-<li>浮点数不要用<code>==</code> <code>!=</code> 比较.因为浮点数精度问题</li>
-<li>指针一般和NULL比较,或者和nullptr(C++11特性)比较</li>
-<li>建议比较的时候将确定的数放在 == 之前,防止错写成=而无法发觉.</li>
-</ul>
-<p><strong>示例</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="number">10</span> == a)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;a=10&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//如果你写成=会自动给你报错,防止出事</span></span><br><span class="line"><span class="keyword">if</span>(<span class="number">10</span> = a)</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="循环语句的效率">循环语句的效率</h3>
-<p>规则</p>
-<ul>
-<li>建议将最长的循环放在内层,减少CPU跨切循环层的次数</li>
-<li>逻辑判断最好在循环外面</li>
-</ul>
-<p>示例</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//不用for循环里面每次都判断条件,提高了效率</span></span><br><span class="line"><span class="keyword">if</span> (condition)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;N;i++)</span><br><span class="line">		<span class="built_in">DoSomething</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;N;i++)</span><br><span class="line">		<span class="built_in">DoOtherthing</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="for循环与switch多分支">for循环与switch多分支</h3>
-<p>规则</p>
-<ul>
-<li>不要轻易在for里面改变循环变量</li>
-<li>for循环控制变量取值采用前闭后开的方法.能写<code>for (int i = 0;i &lt; 5;i++)</code>  就不要写`for (int i = 0;i &lt;=4;i++)</li>
-<li>每个case都要写break防止case击穿.保留default语句</li>
-</ul>
-<h3 id="goto">goto</h3>
-<ul>
-<li>慎用goto,用的好能跳出重重封锁(比如嵌套循环),用不好就万劫不复</li>
-</ul>
-<h2 id="常量">常量</h2>
-<p>使用常量的好处在于<strong>一劳永逸,见文知意</strong></p>
-<p>规则</p>
-<ul>
-<li>用常量表示多次出现的数字或者字符串</li>
-<li>建议用const代替#define,方便调试.</li>
-<li>公开的常量放在头文件中,不公开的放在定义文件中</li>
-<li>常量之间有关联的用常量代替而不是用数字</li>
-</ul>
-<p><strong>示例</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAX 100 <span class="comment">/*C语言的宏常量*/</span></span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MAX = <span class="number">100</span>; <span class="comment">//C++语言的const常量</span></span><br><span class="line"><span class="type">const</span> <span class="type">float</span> PI = <span class="number">3.14159</span>; <span class="comment">//C++语言的const常量</span></span><br><span class="line"><span class="type">const</span> string NAME = <span class="string">&quot;Lloyd&quot;</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> NUN = MAX * <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
-<p><strong>类中设计常量</strong><br>
-不能直接用const,建议使用<strong>枚举</strong></p>
-<p><strong>示例</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">enum</span>&#123;SIZE1=<span class="number">100</span>,SIZE2=<span class="number">200</span>&#125;;<span class="comment">//枚举常量</span></span><br><span class="line">	<span class="type">int</span> array_fir[SIZE1];</span><br><span class="line">	<span class="type">int</span> array_sec[SIZE1];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="函数设计">函数设计</h2>
-<h3 id="规则">规则</h3>
-<p>形参名</p>
-<ul>
-<li>形参名要写完整不要省,没有就用void</li>
-<li>形参的顺序要合理(比如source与destination,除数与被除数)</li>
-<li>如果传参是值的话建议用const&amp;,省去复制、构造与析构的过程</li>
-<li>形参最好不要超过5个,而且参数最好有确定的类型与数目.</li>
-</ul>
-<p>返回值</p>
-<ul>
-<li>任何函数都要有类型,不返回就用void</li>
-<li>函数名与返回值在语义方面不要冲突.比如别用getInt这种名字返回char型</li>
-<li>对于赋值函数,使用“引用传递”返回对象;对于操作函数,使用“值传递”的方式返回对象.也就是根据实际情况选择<strong>值传递或者引用传递</strong></li>
-</ul>
-<p>函数</p>
-<ul>
-<li>函数入口要检查-使用断言assert</li>
-<li>函数出口要检查return
-<ul>
-<li>不能返回指向“栈内存”的“指针”或者“引用”</li>
-<li>清楚返回的是什么</li>
-<li>如果返回的是对象可以直接写 “创建对象并返回” 如: return Entity(s1);  这在效率上比 Entity temp(s1); return temp;要高得多.</li>
-</ul>
-</li>
-<li>函数功能单一、短小精悍、避免记忆、出错处理要清晰</li>
-</ul>
-<p><strong>断言</strong></p>
-<ul>
-<li>一般用于<strong>捕捉非法情况</strong>而不是错误情况</li>
-<li>防错设计</li>
-</ul>
-<p>比较——引用与指针</p>
-<ul>
-<li>引用是取别名,指针是地址</li>
-<li>引用被创建的时候必须初始化(如<code>string&amp; name = m_Name;</code></li>
-<li>引用不能为空;并且引用初始化之后不能改变引用的关系.</li>
-</ul>
-<h2 id="内存管理">内存管理</h2>
-<p>规则</p>
-<ul>
-<li>用malloc或new申请内存之后,应该立即检查指针值是否为NULL.防止使用指针值为NULL的内存.</li>
-<li>不要忘记为数组和动态内存赋初值.防止将未被初始化的内存作为右值使用.</li>
-<li>避免数组或指针的下标越界,特别要当心发生“多1”或者“少1”操作.</li>
-<li>动态内存的申请与释放必须配对,防止内存泄漏.</li>
-<li><strong>用free或delete释放了内存之后,立即将指针设置为NULL,防止产生“野指针”</strong>.</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> *p = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">	<span class="built_in">assert</span>(p!=<span class="literal">NULL</span>);</span><br><span class="line">	*p = <span class="number">100</span>;</span><br><span class="line">	<span class="built_in">free</span>(p);</span><br><span class="line">	<span class="type">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">	p = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="内容复制与比较">内容复制与比较</h3>
-<p>规则</p>
-<ul>
-<li>数组与字符串等不能轻易用== 判断相等(因为== 只比较值而没有比较地址),除非重载了运算符</li>
-<li>当数组作为函数的参数进行传递时,数组自动退化成同类型的指针</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[] = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line"><span class="type">char</span> b[<span class="number">10</span>];</span><br><span class="line"><span class="built_in">strcpy</span>(b, a);<span class="comment">//不能用b = a;</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">strcmp</span>(b, a) == <span class="number">0</span>) &#123;&#125;;<span class="comment">// 不能用if(b = a)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//指针</span></span><br><span class="line"><span class="type">int</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> *a = &amp;num;</span><br><span class="line"><span class="type">int</span> len = <span class="built_in">strlen</span>(a);</span><br><span class="line"><span class="type">char</span>* p = (<span class="type">char</span>*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">char</span>) * (len + <span class="number">1</span>));</span><br><span class="line"><span class="built_in">strcpy</span>(p, a);</span><br><span class="line"><span class="comment">//不要用p=a;</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">strcmp</span>(p, a) == <span class="number">0</span>) <span class="comment">// 不要用if(p = a)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Fuction</span><span class="params">(<span class="type">char</span> a[<span class="number">100</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout&lt;&lt;<span class="built_in">sizeof</span>(a)&lt;&lt;endl;<span class="comment">//结果是4而不是100</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>free 与delete</p>
-<ul>
-<li>这“两大护法”并没有把指针干掉,而是释放内存,地址还在(&quot;一屋传三代,人走屋还在_(:з」∠)“)</li>
-</ul>
-<p>指针的问题</p>
-<ul>
-<li>指针消亡了,并不表示它所指的内存会被自动释放.</li>
-<li>内存被释放了,并不表示指针会消亡或者成了NULL指针.</li>
-</ul>
-<p>C中的malloc/free与C++中的new/delete</p>
-<ul>
-<li>new和delete会自动调用构造或者析构函数(如果有的话),而malloc与free没有</li>
-<li>C语言只有malloc与free.</li>
-</ul>
-<h3 id="内存耗尽问题">内存耗尽问题</h3>
-<p>虽然对于32位及以上的系统很难将内存耗尽,但是也需要做好报错处理(不能因为国力强盛就不修长城)</p>
-<p>处理方法</p>
-<ul>
-<li>如果申请的内存为空,用return或者exit(1)终止</li>
-<li>或者自定义处理函数 比如try catch</li>
-</ul>
-<h3 id="函数讲解">函数讲解</h3>
-<p><strong>malloc</strong><br>
-函数原型为:<br>
-<code>void * malloc(size_t size);</code><br>
-讲解</p>
-<ul>
-<li>void* 是泛指针,如果要调用的时候要将其显示转换</li>
-<li>size是内存大小,一般用sizeof求出</li>
-</ul>
-<p>使用示例<br>
-<code>int *p = (int*)malloc(sizeof(int)*length);</code></p>
-<p><strong>free</strong><br>
-函数原型为<br>
-<code>void free(void * memblock)</code></p>
-<p><strong>new</strong><br>
-new内置了sizeof、类型转换、类型安全检查等功能,建议多使用</p>
-<p><strong>delete</strong><br>
-不要漏掉[]<br>
-举例</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">delete</span> []objects;<span class="comment">//正确</span></span><br><span class="line"><span class="keyword">delete</span> objects;<span class="comment">//错误,只删除了objects[0],漏掉了其他</span></span><br></pre></td></tr></table></figure>
-<p><strong>心得</strong></p>
-<blockquote>
-<ol>
-<li>越是害怕,越是要勇敢面对它(特指指针),战胜恐惧的最好方法就是面对恐惧,加油,奥利给</li>
-<li>犯错不可怕,走过万千路,天堑变通途.</li>
-</ol>
-</blockquote>
-<h2 id="C-高级特性">C++高级特性</h2>
-<p><strong>重载与覆盖(overload and override)</strong></p>
-<p>特征</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>范围</th>
-<th>函数名</th>
-<th>参数</th>
-<th>是否有virtual关键字</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>重载</td>
-<td>在同一个类中</td>
-<td>相同</td>
-<td>不同</td>
-<td>可有可无</td>
-</tr>
-<tr>
-<td>覆盖</td>
-<td>在基类与派生类中</td>
-<td>相同</td>
-<td>相同</td>
-<td>必须有</td>
-</tr>
-</tbody>
-</table>
-<p>示例</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream.h&gt;</span></span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Base</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;cout &lt;<span class="string">&quot;Base:f(int)&quot;</span>&lt;&lt;x &lt;endl;<span class="comment">//f被重载</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(<span class="type">float</span> x)</span></span>&#123;cout &lt;<span class="string">&quot;Base:f(float)&quot;</span>&lt;&lt;x &lt;endl;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">g</span><span class="params">(<span class="type">void</span>)</span></span>&#123;cout &lt;<span class="string">&quot;Base:g(void)&quot;</span>&lt;&lt;endl;</span><br><span class="line">&#125;:</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span> : <span class="keyword">public</span> Base</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">g</span><span class="params">(<span class="type">void</span>)</span></span>&#123;cout &lt;<span class="string">&quot;Derived:g(void)&quot;</span>&lt;&lt;endl;&#125;<span class="comment">//派生类覆盖原来基类的g函数,一旦后面通过派生类调用g函数,统一都是重写后的函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>错误高发区：隐藏</strong><br>
-简单来说就是想通过派生类调用基类的函数却发现调用的都是派生类的函数,导致编译失败,在以下情况下会发生</p>
-<ul>
-<li>派生类的函数与基类的函数同名,但是参数不同</li>
-<li>派生类的函数与基类的函数同名,参数相同,但是基类函数没有virtual</li>
-</ul>
-<p><strong>参数的缺省值</strong><br>
-缺省值就是默认值(<strong>default</strong>),中文翻译不准确,尽可能使用英文.</p>
-<p>规则</p>
-<ul>
-<li>参数的default值只能出现在函数的声明中</li>
-<li>default值从后往前写</li>
-</ul>
-<p>运算符重载</p>
-<p><strong>函数内联</strong>(inline)<br>
-函数内联具有宏效率,又有效解决了宏无法调试和安全性的问题.<strong>建议在C++中使用内联取代宏</strong>(assert除外)</p>
-<p><strong>使用说明</strong></p>
-<ul>
-<li>inline必须必须<strong>和函数定义体放在一起</strong>才能使函数成为内联函数.</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">add</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; x,<span class="type">const</span> <span class="type">int</span>&amp; y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x+y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>特别的：虽然在类中定义的函数自动变成内联函数,但是一般不会在类中定义函数,如果需要内联记得在定义处加上inline.</li>
-<li>内联是<strong>用空间换时间</strong></li>
-</ul>
-<h2 id="类的构造函数、析构函数和赋值函数">类的构造函数、析构函数和赋值函数</h2>
-<p>简单示例</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">String</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">String</span>(<span class="type">const</span> <span class="type">char</span> *str = <span class="literal">NULL</span>);<span class="comment">//普通构造函数</span></span><br><span class="line">	<span class="built_in">String</span>(<span class="type">const</span> String &amp;other);/拷贝构造函数</span><br><span class="line">	~<span class="built_in">String</span> (<span class="type">void</span>);<span class="comment">//析构函数</span></span><br><span class="line">	String &amp; operate =(<span class="type">const</span> String &amp;other);<span class="comment">//赋值函数 其实是重载=</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">char</span> *m_data;<span class="comment">//用于保存字符串</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="类的继承与组合">类的继承与组合</h2>
-<p>简单讲解对象(object)、类(class)和实例(instance)的关系<br>
-对象就是“房子”,类就是设计房子的“蓝图”,对象是类的一个实例,根据“蓝图”可以盖很多的“房子”.<br>
-所谓<strong>面向对象编程</strong>,就是设计“图纸”.</p>
-<p><strong>继承的规则</strong></p>
-<ul>
-<li>不相关的两个类不要继承(“公若不弃,愿拜为义父”doge)</li>
-<li>在逻辑上B是A的一种,并且A的所有属性和功能都对A有意义,就允许B继承A.比如虽然鸵鸟是鸟,但是“飞”的功能对鸵鸟是多余的,这种情况下最好不要继承与鸟</li>
-</ul>
-<p><strong>组合的规则</strong></p>
-<ul>
-<li>若在逻辑上A是B的“一部分”(a part of),则不允许B从A派生,而是要用A和其它东西组合出B.比如电池、屏幕和芯片是手机的一部分,就用这些类组合起来生成手机类,而不是让手机“<strong>拜电池等为义父</strong>”</li>
-</ul>
-<p>示例</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Cell</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">charge</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Screen</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Look</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Chip</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Run</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//手机类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Phone</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">charge</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Look</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Rum</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	Cell m_cell;</span><br><span class="line">	Screen m_screen;</span><br><span class="line">	Chip m_chip;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="编程经验">编程经验</h2>
-<h3 id="常用const">常用const</h3>
-<p>注意</p>
-<ul>
-<li>const只能修饰输入参数</li>
-<li>对于值传递的参数无需使用const修饰</li>
-<li>对于非内部数据类型(就是C|C++标准库之外的类型)的输入参数.可以使用<strong>const 类型&amp;</strong> 的方式在提高效率的同时不改变参数内容.
-<ul>
-<li>比如int确实没必要使用const int &amp;.,内部数据类型没有构造与析构,复制也很快,不需要多此一举</li>
-</ul>
-</li>
-<li>函数返回值如果是值传递,不需要用const修饰</li>
-<li>不修改成员属性的函数都要加const</li>
-</ul>
-<h1>个人思考</h1>
-<p>写代码就像是写作文,理论上只要表达意思正确(也就是程序能运行并达到理想效果),什么首行缩进、分段都不影响文章的质量,但是作文是要修改的(程序要维护),是要给人看的(别人要使用你的程序),此时语句(代码)就是交流的主要工具,语句的逻辑是什么?怎样表达就能让对方理解?怎样吸引读者阅读你的文章?怎样减少语病与错误?这是我们在写作文的时候经常思考的问题,编程也是一样.</p>
-<p>接下来就从写好一篇文章开始讲解代码是什么.首先,写作者的名字,这就引出了“<strong>版权和版本</strong>“的声明,表明作品是你写的,作品处于哪个阶段.然后,给人物取名字,一般老师会让学生用什么典雅的古文等方法给人物取名,不过在计算机这里就不适用了,要简洁直白,能叫&quot;many&quot;就不要用&quot;quite a number of&quot;,又不是给英语作文凑字数(doge)</p>
-<p>然后就要开始准备工作了,如果我们写的是人物传记,就要交代人物名字及其相关信息(声明及初始化变量),比如“廉颇者,赵之良将也”,声明一个Person类的变量名为“廉颇”,并将“赵国”“良将”作为参数构造了一个Person的实例对象——人.有的还会在正文之前写时间地点等,比如“元丰六年,余左迁……”(出自《琵琶行》)就是定义(define)”今年“为”元丰六年“,以后所有的”今年“都会被”元丰六年“等效代替.</p>
-<p>以下以《廉颇蔺相如列传》第一段为例.</p>
-<p>接下来我用“保安三问”(<strong>你是谁?你去哪?你干嘛?</strong>)来讲解如何写代码.</p>
-<p>“廉颇者,赵之良将也”.首先,<strong>第一问“廉颇是谁?”</strong> ,我们需要给廉颇一个定义,是人是神还是鬼,是符号还是具体的事物?理论上都可以,但是从复用的角度和理解的角度来看,用“人”更加通俗易懂,即定义成“人”类(class)或者是结构体,这里以面向对象为主要编程思想,采用”类“来构造一个”人“. 然后,声明和定义一个“人”类,由于高质量编程的需要,最好将声明与定义放在不同的文件里面,类比图书放在不同的类别,都是为了后续减少维护成本.但是构造类的过程中有一点问题,类里面应该放点什么东西呢?我的建议是,随着”故事“的展开不断更新”人“类,毕竟人是会成长的,想要一开始一劳永逸只会顾此失彼.</p>
-<p><strong>第二问“廉颇去哪?”</strong> 一般来说,所有的代码都直接或者间接在main函数里面.这里的“廉颇”也不例外.</p>
-<p><strong>第三问”廉颇干嘛?“</strong> 第一句没有交代廉颇的行为,但是交代了廉颇的”特性“(属性),这就提醒”人“类可以”更新“了,比如添加”国籍(nationality)“、”地位(status)“属性并公开(双料特工可以不公开doge),不过又有问题了,这些属性应该是哪一种变量呢?string、int还是class呢?我的建议是,在日常生活中常以文字出现的用字符串(char[] string等),以数字出现的(比如成绩)用整型(比如int)或者浮点型(比如double).不过仅作参考,<strong>合适的才是最好的</strong>.好了,现在我们给“人”类添加了nationality和status属性,但是我们要“构造”一个“廉颇”啊,不能只把“廉颇”的特性给女娲却不告诉她怎样“玩泥巴”吧,也就是<strong>声明并定义有参构造</strong>(教女娲如何用泥巴塑造廉颇),怎样定义呢?“廉颇”要什么,就给女娲什么,廉颇要名字、要身份、要国籍,就给他名字(m_name = name;).现在,“人”类的基本蓝图已经有了,也告诉女娲怎样“捏一个人类“了,接下来就要将廉颇的特性传递给构造函数了.如下,成功创建了”廉颇“.用cout输出一下其特性,完美.</p>
-<p>廉颇有了,要<strong>干什么</strong>呢?伐齐！这是一个动作,可以用一个<strong>函数</strong>来表示,那么函数应该是类中的函数还是外面的函数呢(<strong>保安第二问</strong>)?我的建议是,看谁复用性更强,毕竟人都喜欢偷懒,这里用类中的函数,毕竟之后蔺相如”人“也要”攻打“齐国.对于类的定义与实现,也是同理的<strong>保安三问</strong>,是什么?在哪里?干什么?是什么——返回什么类型,要什么参数,名字是什么;在哪里——函数声明与定义在哪里;干什么——实现了什么功能.<strong>不停追问自己,然后不断完善代码</strong>.<strong>伐</strong>字实现了,又到”齐“了,看起来好像是string,又感觉可以是class,用什么比较好呢?我的建议是,从宏观看”齐“的”地位“,即”齐“出现频率高不高,包含的东西多不多,以此配位,从全文来看,”齐“明显是高频词汇,应该重视,string不配修饰”齐“,那就用类(class)吧.同理<strong>保安三问</strong>创建”国家(country)“类.添加防御力(m_defenseValue)和名字(name)属性等.</p>
-<p>下一句是“大破之”是结果,但是<strong>过程</strong>是什么呢?也就是结果的“因”是什么呢?这里实现的方法就见仁见智了,可以通过数值的比较,可以是特定的属性触发,甚至可以随机判定输赢,这里就用游戏中常用的“数值”来比较,用判断语句(if)判定.另一个结果是”拜为上卿,以勇气闻於诸侯“,这里强调的属性是”上卿“”闻(出名的意思)“看”人“类中有没有,有一个status,但是没有”出名“的属性,可以添加一个,<strong>根据保安三问定律</strong>,<strong>取</strong>”出名“的属性为int,名字是m_fame,用数值代表出名程度.然后在if中添加结果(将m_fame的值提升,将m_status的值改变),最后根据m_fame的值输出语句.至此,程序完结.</p>
-<p><strong>示例如下</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在Person.h中</span></span><br><span class="line"><span class="comment">//定义“人”类.</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Country.h&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	string m_nationality;<span class="comment">//国籍</span></span><br><span class="line">	<span class="type">int</span> m_ability = <span class="number">1</span>;<span class="comment">//能力值 范围1-5 越大能力越强</span></span><br><span class="line">	string m_name;<span class="comment">//名字</span></span><br><span class="line">	string m_status;<span class="comment">//地位</span></span><br><span class="line">	<span class="type">int</span> fame = <span class="number">1</span>;<span class="comment">//名声 范围1-5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//构造</span></span><br><span class="line">	<span class="built_in">Person</span>(<span class="type">void</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//有参构造</span></span><br><span class="line">	<span class="built_in">Person</span>(string name, string nationality, <span class="type">int</span> ability, string status);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//攻击函数</span></span><br><span class="line">	<span class="function"><span class="type">bool</span> <span class="title">Attack</span><span class="params">(Country nation)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//析构</span></span><br><span class="line">	~<span class="built_in">Person</span>(<span class="type">void</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在Person.cpp文件中(也就是实现类中)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Person.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Person::<span class="built_in">Person</span>(string name, string nationality, <span class="type">int</span> ability,string status)</span><br><span class="line">&#123;</span><br><span class="line">	m_name = name;</span><br><span class="line">	m_nationality = nationality;</span><br><span class="line">	m_ability = ability;</span><br><span class="line">	m_status = status;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person::<span class="built_in">Person</span>(<span class="type">void</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person::~<span class="built_in">Person</span>(<span class="type">void</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Person::Attack</span><span class="params">(Country nation)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_ability&gt; nation.m_defenseValue)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>“赵惠文王十六年”<br>
-<code>int to_year = 16;</code></p>
-<p>“廉颇为赵将伐齐”</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在Country.h 文件中</span></span><br><span class="line"><span class="comment">//定义国家类</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Country</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span> m_defenseValue = <span class="number">1</span>;<span class="comment">//国家防御力</span></span><br><span class="line">	string m_name;<span class="comment">//国家名字</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Country</span>(<span class="type">void</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">Country</span>(string name, <span class="type">int</span> defenseValue);</span><br><span class="line"></span><br><span class="line">	~<span class="built_in">Country</span>(<span class="type">void</span>);</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在Country.cpp</span></span><br><span class="line"><span class="comment">//国家类实现</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Person.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Person::<span class="built_in">Person</span>(string name, string nationality, <span class="type">int</span> ability,string status)</span><br><span class="line">&#123;</span><br><span class="line">	m_name = name;</span><br><span class="line">	m_nationality = nationality;</span><br><span class="line">	m_ability = ability;</span><br><span class="line">	m_status = status;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person::<span class="built_in">Person</span>(<span class="type">void</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person::~<span class="built_in">Person</span>(<span class="type">void</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Person::Attack</span><span class="params">(Country nation)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m_ability&gt; nation.m_defenseValue)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>“大破之,取阳晋,拜为上将,以勇气闻於诸侯”</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在main.cpp文件里面</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Person.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Country.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义函数库</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//创建“廉颇”与“蔺相如”</span></span><br><span class="line">	<span class="function">Person <span class="title">LianPo</span><span class="params">(<span class="string">&quot;廉颇&quot;</span>, <span class="string">&quot;Zhao&quot;</span>, <span class="number">5</span>,<span class="string">&quot;良将&quot;</span>)</span></span>;</span><br><span class="line">	<span class="function">Person <span class="title">LiXiangRu</span><span class="params">(<span class="string">&quot;蔺相如&quot;</span>, <span class="string">&quot;Zhao&quot;</span>, <span class="number">5</span>, <span class="string">&quot;舍人&quot;</span>)</span></span>;</span><br><span class="line">	<span class="comment">//输出“廉颇”的基本信息</span></span><br><span class="line">	cout &lt;&lt; LianPo.m_name &lt;&lt; <span class="string">&quot;者,&quot;</span> &lt;&lt; LianPo.m_nationality &lt;&lt; <span class="string">&quot;之&quot;</span> &lt;&lt; LianPo.m_status &lt;&lt; <span class="string">&quot;也&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//创建齐国</span></span><br><span class="line">	<span class="function">Country <span class="title">Qi</span><span class="params">(<span class="string">&quot;qi&quot;</span>, <span class="number">3</span>)</span></span>;</span><br><span class="line">	<span class="comment">//赵惠王十六年</span></span><br><span class="line">	<span class="type">int</span> to_year = <span class="number">16</span>;</span><br><span class="line">	<span class="comment">//廉颇为赵将伐齐</span></span><br><span class="line">	<span class="type">bool</span> ret = LianPo.<span class="built_in">Attack</span>(Qi);</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; LianPo.m_name &lt;&lt; <span class="string">&quot;对&quot;</span> &lt;&lt; Qi.m_name &lt;&lt; <span class="string">&quot;发起攻击&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//判断讨伐是否成功</span></span><br><span class="line">	<span class="keyword">if</span> (ret)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;大破之&quot;</span> &lt;&lt; endl;</span><br><span class="line">		LianPo.m_status = <span class="string">&quot;上卿&quot;</span>;</span><br><span class="line">		cout &lt;&lt; LianPo.m_name &lt;&lt; <span class="string">&quot;被拜为&quot;</span> &lt;&lt; LianPo.m_status &lt;&lt; endl;</span><br><span class="line">		LianPo.fame = <span class="number">4</span>;</span><br><span class="line">		<span class="comment">//判断名声等级</span></span><br><span class="line">		<span class="keyword">if</span> (LianPo.fame &gt;= <span class="number">4</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;以勇气闻於诸侯&quot;</span> &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>看到这里,你会有一个问题,为什么要用写作来形容代码的编写过程呢?对以中文为母语的人可能难以理解,但是对于以英语为母语的人早已习以为常,甚至达到了“美国人刚出生就会写代码”的程度.对他们来说,写代码就是写英语作文,无非是语法更严格,字数变更少,语句更加讲逻辑,对我们来说就是在“写天书”.这里想说的是,将写代码看做是写英语作文,可以<strong>有效提高写代码的逻辑性</strong>,而且,一旦你认为自己写的是一篇作文,要传阅给所有人看,你就会不自觉“美化”你的作文(代码),<strong>在无形之中,你对自己写的作文(代码)提高了要求</strong>。我以写作为例,更多的是想让你感受一下<strong>保安三问定律</strong>在写代码方面的作用和按照一定的规则写代码的好处,毕竟代码就是语句,多行代码构成段落,多个段落构成故事,<strong>故事都有起因经过结果,保安定律就是为了回答这三者究竟是什么，规则限定我们写故事写在哪，怎样写易读性更强</strong>。也许自己的故事有缺陷,也许编程能力有限,但总是能引导我们走向文章的结尾,给老师(编译器)和他人一个满意的答卷.</p>
-<ol class="series-items"><li><a href="/2024/06/25/%E3%80%8A%E9%AB%98%E8%B4%A8%E9%87%8FC%E3%80%81C++%E3%80%8B%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" title="《高质量C、C++》笔记整理">《高质量C、C++》笔记整理</a></li></ol>
-<h1>参考资料</h1>
-<ul>
-<li>《高质量C、C++》 林锐</li>
-<li>《C++ Prime Plus(第六版)》</li>
-</ul>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
