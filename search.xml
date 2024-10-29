@@ -1,6 +1,284 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo博客系列(一)测试与更新</title>
+    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<h1>hexo博客更新和待更新计划</h1>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法与经验</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
+<p>以下更新内容都是从最后一次更新开始的</p>
+</blockquote>
+<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2024</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-29</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>修复了手机端视频溢出显示部分的问题</li>
+<li>修改了几处笔误和显示问题。</li>
+<li>优化了所有博客的参考部分</li>
+</ol>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-26</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>butterfly主题从5.0.0更新到5.1.0版本</li>
+<li>优化了chart插件</li>
+<li>更新了一篇新博客</li>
+</ol>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-10</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>butterfly主题从4.13.0更新到5.0.0版本</li>
+<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
+<li>更新了留言板</li>
+<li>优化了搜索功能</li>
+<li>禁止B站视频自动播放</li>
+<li>更新了主页“关于”部分</li>
+<li>修复了几处笔误的问题</li>
+<li>优化了评论功能的选择</li>
+<li>添加了站点工具(谷歌与必应)，优化了文章的描述部分</li>
+<li>优化一下图片无法放大查看的问题</li>
+</ol>
+</div></div></div></div><div class="tab-item-content"><ol>
+<li>子菜单展示内容；方法：通过基本的markdown语言和butterfly专有语法-标签外挂实现效果，建议写成总领式的文章或者展示页面。可以参考此博客<a href="https://blog.guole.fun/posts/butterfly-custom/#%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E8%BD%AE%E6%92%AD%E6%A8%A1%E5%9D%97">我的Blog美化日记——Hexo+Butterfly | Guo Le’s Blog</a> 里面的“volantis”部分，和这个<a href="https://www.huangshiqing.website/2022/11/03/HexoTagPlugins/">Hexo Built-in Tag Plugins (Hexo内置标签外挂) | Ofra Serendipity</a></li>
+<li>添加一下赞助墙</li>
+<li>更新算法相关博客并添加数学动画视频或者是算法演示动画</li>
+<li>学习并在博客中添加图表-对于本网站以chartjs的图表为主，涉及UML就用Mermaid,对于精致的图表(比如数据分析)才会用Echart.</li>
+<li>如果zeabur部署失效，可以考虑netlify、<a href="https://www.21cloudbox.com">https://www.21cloudbox.com</a>、码云等托管平台。</li>
+</ol></div><div class="tab-item-content"><h2 id="debug经验">debug经验</h2>
+<p>目前由于butterfly的版本更新，导致以前的部分功能失效，建议<strong>先看官方文档，将对应过时的代码注释或者去除，没有的代码添加</strong>，然后再<strong>根据</strong>F12检查对应的板块，<strong>用前端的知识去搜查问题发生的地点和原因</strong>，然后再纠错。</p>
+<h2 id="hexo框架更新">hexo框架更新</h2>
+<p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
+<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
+<h2 id="butterfly主题更新">butterfly主题更新</h2>
+<blockquote>
+<p>更新前记得留下blog快照</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
+<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
+<p>如果不行，就在你的博客/themes/butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
+<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h2 id="个人hexo博客更新讲解">个人hexo博客更新讲解</h2>
+<p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
+<p>示例代码如下</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
+<p><strong>评论功能</strong>：我设置的是twikoo静态评论控制+Valine评论，搭建教程可以参考如下链接<a href="https://blog.hihahoo.com/archives/fc6989f5.html#1-twikoo%E9%83%A8%E7%BD%B2">Hexo主题butterfly集成评论功能（twikoo） | Hihahoo：想你所想 做你所做</a></p>
+<p><strong>文章置顶功能</strong>：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考链接<a href="https://liangshenglei.github.io/2023/03/06/Butterfly%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/index.html">Butterfly 主题的详细配置 | 梁圣磊の博客 (liangshenglei.github.io)</a></p>
+<p><strong>文章加密功能</strong>：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">https://polar-bear.eu.org/2023/07/21/ce-shi/</a> 也许以后添加。</p>
+<p><strong>博客撰写</strong>：</p>
+<ol>
+<li>hexo会自动给分级标题编号，不需要自己添加</li>
+<li><u>不要给标点符号加标签或者是特性</u>，容易出现显示问题。</li>
+</ol>
+<p><strong>磁贴功能</strong>：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
+<p><strong>同步问题</strong>：在zeabur的部署大概会间隔一天左右才会同步上。</p>
+<p><strong>图片方面</strong></p>
+<ul>
+<li>
+<p>方法1：通过picgo图床实现图片上传。参考【Typora+PicGo+阿里云OSS实现云笔记|Typora上传图片】<a href="https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></p>
+</li>
+<li>
+<p>方法2-本地上传图片：参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用，<strong>博主因为部署的原因主要使用此方法</strong>_ 。如果部署到zeabur的博客图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。参考教程<a href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法_hexo 文章插入图片失败-CSDN博客</a> 。</p>
+</li>
+<li>
+<p>方法3：使用其他的图床网站如<a href="https://smms.app/">SMMS</a>。上传图片后，点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。</p>
+</li>
+</ul>
+<p><strong>导航栏设置</strong>：在<code>_config.butterfly.yml</code> 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class= &quot; 复制这里的内容&quot; 替代即可。</p>
+<p><strong>系列文章</strong>：在文章的 front-matter 上添加参数 series，并给予一個标签</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br></pre></td></tr></table></figure>
+<h1>测试</h1>
+<h2 id="测试图片">测试图片</h2>
+<p><strong>阿里云图片测试</strong></p>
+<p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-06-02%20221147.png" alt="屏幕截图 2024-06-02 221147"></p>
+<p><strong>本地图片测试</strong></p>
+<p><img src="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/C__Users_kai98_Pictures_%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87_post-img1.png" alt="Godot游戏引擎"></p>
+<p><strong>标签外挂测试图片</strong></p>
+<div class="gallery-container" data-type="data" data-button>
+      <div class="gallery-items">[{"url":"https://s2.loli.net/2024/06/14/4RrcPzbG3fsqyC6.png","alt":"3.png"}]</div>
+    </div>
+<p><strong>图床图片测试</strong></p>
+<p><img src="https://s2.loli.net/2024/10/24/MQ6gGn4LtBDyduJ.png" alt="苍之彼方的四重奏.png"></p>
+<h2 id="测试系列文章">测试系列文章</h2>
+<ol class="series-items"><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/" title="hexo博客系列(一)测试与更新">hexo博客系列(一)测试与更新</a></li><li><a href="/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/" title="hexo博客系列(三)博客写作指南">hexo博客系列(三)博客写作指南</a></li><li><a href="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/" title="hexo博客系列(二)博客创建指南">hexo博客系列(二)博客创建指南</a></li></ol>
+<h2 id="标签外挂测试">标签外挂测试</h2>
+<blockquote>
+<p>本以下基于hexo+butterfly的主题，其他的主题请读者自行查阅有关资料</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文檔(四) 標簽外挂 | Butterfly</a></p>
+<p>参考教程：<a href="https://liangshenglei.github.io/2023/02/27/Markdown%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/#referto_%5B1%5D">Markdown 外挂标签 | 梁圣磊の博客</a></p>
+<ol>
+<li>Note (Bootstrap Callout)</li>
+</ol>
+<p>个人使用，感觉比较适合知识的分层结构，比如我博客里面的《英语语法(英语兔版)》</p>
+<ol start="2">
+<li>tag-hide</li>
+</ol>
+<p>个人感觉比较适合于问答类型或者是部分内容较多，需要的时候再展开的文章内容。测试如下</p>
+<p><strong>Block测试</strong></p>
+<p>查看答案</p>
+<div class="hide-block"><button type="button" class="hide-button" style>查看答案
+    </button><div class="hide-content"><p>答案就在你心中</p>
+</div></div>
+<p><strong>Toggle测试</strong></p>
+<details class="toggle"><summary class="toggle-button" style>Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
+<p>git clone -b master <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes/Butterfly</p>
+<p>如果想要安裝比較新的 dev 分支，可以</p>
+<p>git clone -b dev <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes/Butterfly</p>
+</div></details>
+<p><strong>Mermaid测试</strong></p>
+<p>这是和图表有关的标签，可以画流程图，时序图等</p>
+<p>注意要先写<code>&#123;% mermaid %&#125; &#123;% endmermaid %&#125;</code> 然后就在这两个标签内写相关代码。</p>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop HealthCheck
+        John-&gt;&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
+    John--&gt;&gt;Alice: Great!
+    John-&gt;&gt;Bob: How about you?
+    Bob--&gt;&gt;John: Jolly good!
+
+  </pre></div>
+<p><strong>Flink测试</strong></p>
+<p>就是和链接相关的测试</p>
+<div class="flink"><div class="flink-name">友情鏈接</div><div class="flink-desc">那些人，那些事</div><div class="flink-list">
+      <div class="flink-list-item">
+        <a href="https://jerryc.me/" title="JerryC" target="_blank">
+          <div class="flink-item-icon">
+            <img class="no-lightbox" src="https://jerryc.me/img/avatar.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="JerryC">
+          </div>
+          <div class="flink-item-name">JerryC</div>
+          <div class="flink-item-desc" title="今日事,今日畢">今日事,今日畢</div>
+        </a>
+      </div>
+      <div class="flink-list-item">
+        <a href="https://hexo.io/zh-tw/" title="Hexo" target="_blank">
+          <div class="flink-item-icon">
+            <img class="no-lightbox" src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="Hexo">
+          </div>
+          <div class="flink-item-name">Hexo</div>
+          <div class="flink-item-desc" title="快速、簡單且強大的網誌框架">快速、簡單且強大的網誌框架</div>
+        </a>
+      </div></div></div>
+<p><strong>乐谱测试</strong></p>
+<div class="abc-music-sheet">X:1
+T:alternate heads
+M:C
+L:1/8
+U:n=!style=normal!
+K:C treble style=rhythm
+&quot;Am&quot; BBBB B2 B&gt;B | &quot;Dm&quot; B2 B/B/B &quot;C&quot; B4 |&quot;Am&quot; B2 nGnB B2 nGnA | &quot;Dm&quot; nDB/B/ nDB/B/ &quot;C&quot; nCB/B/ nCB/B/ |B8| B0 B0 B0 B0 |]
+%%text This translates to:
+[M:C][K:style=normal]
+[A,EAce][A,EAce][A,EAce][A,EAce] [A,EAce]2 [A,EAce]&gt;[A,EAce] |[DAdf]2 [DAdf]/[DAdf]/[DAdf] [CEGce]4 |[A,EAce]2 GA [A,EAce] GA |D[DAdf]/[DAdf]/ D[DAdf]/[DAdf]/ C [CEGce]/[CEGce]/ C[CEGce]/[CEGce]/ |[CEGce]8 | [CEGce]2 [CEGce]2 [CEGce]2 [CEGce]2 |]
+GAB2 !style=harmonic![gb]4|GAB2 [K: style=harmonic]gbgb|
+[K: style=x]
+C/A,/ C/C/E C/zz2|
+w:Rock-y did-nt like that</div>
+<p><strong>测试自带的chartjs</strong>——可以实现动态效果，建议使用。</p>
+<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
+            <pre class="chartjs-src" hidden>{
+    &quot;type&quot;: &quot;pie&quot;,
+    &quot;data&quot;: {
+        &quot;labels&quot;: [
+            &quot;编程&quot;,
+            &quot;音乐&quot;,
+            &quot;阅读&quot;,
+            &quot;游戏&quot;,
+            &quot;健身&quot;,
+            &quot;旅游&quot;
+        ],
+        &quot;datasets&quot;: [
+            {
+                &quot;label&quot;: &quot;喜爱指数&quot;,
+                &quot;data&quot;: [
+                    30,
+                    24,
+                    19,
+                    14,
+                    9,
+                    4
+                ],
+                &quot;backgroundColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.5)&quot;,
+                        &quot;rgba(54, 162, 235, 0.5)&quot;,
+                        &quot;rgba(255, 206, 86, 0.5)&quot;,
+                        &quot;rgba(75, 192, 192, 0.5)&quot;,
+                        &quot;rgba(153, 102, 255, 0.5)&quot;,
+                        &quot;rgba(255, 159, 64, 0.5)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.2)&quot;,
+                        &quot;rgba(54, 162, 235, 0.2)&quot;,
+                        &quot;rgba(255, 206, 86, 0.2)&quot;,
+                        &quot;rgba(75, 192, 192, 0.2)&quot;,
+                        &quot;rgba(153, 102, 255, 0.2)&quot;,
+                        &quot;rgba(255, 159, 64, 0.2)&quot;
+                    ]
+                },
+                &quot;borderColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ]
+                }
+            }
+        ]
+    },
+    &quot;options&quot;: {
+        &quot;plugins&quot;: {
+            &quot;legend&quot;: {
+                &quot;labels&quot;: {
+                    &quot;color&quot;: {
+                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
+                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
+                    }
+                }
+            }
+        }
+    }
+}
+</pre>
+            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
+我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
+在此过程中也解决了无数的小谜团。<br>
+<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
+I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
+Countless small mysteries are also solved in the process.</span></p></div>
+          </div>
+<p><strong>tab演示</strong></p>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<p><strong>按钮button测试</strong></p>
+<div class="btn-center">
+<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+</div>
+<p><strong>文字高亮</strong></p>
+<mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
+<mark class="hl-label red">红色</mark>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>测试</tag>
+        <tag>教程</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux学习笔记(一)</title>
     <url>/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1>学前提醒</h1>
@@ -35,7 +313,7 @@
 <h1>Linux基础命令</h1>
 <p>💡以下的指令本质上都是可执行的二进制文件。</p>
 <h2 id="Linux目录结构">Linux目录结构</h2>
-<p><strong>一切皆文件</strong>：指的是Linux会将一切对象映射成文件。Linux中最重要的就是目录，以后从事相关工作要背主目录-**因为在生产环境中是没有图形化界面的，只有控制台。**对于其他目录要了解其英文单词和实际用途。</p>
+<p><strong>一切皆文件</strong>：指的是Linux会将一切对象映射成文件。Linux中最重要的就是目录，以后从事相关工作要背主目录。<strong>因为在生产环境中是没有图形化界面的，只有控制台</strong>。对于其他目录要了解其英文单词和实际用途。</p>
 <p>图片演示</p>
 <p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20221027214128.png" alt="20221027214128"></p>
 <ul>
@@ -80,10 +358,10 @@ command [-options] [parameter]</p>
 <p><strong>相对路径与绝对路径</strong></p>
 <ul>
 <li>
-<p>相对路径，==非==<code>/</code>开头的称之为相对路径：相对路径表示以<code>当前目录</code>作为起点，去描述路径，如<code>test/a.txt</code>，表示当前工作目录内的test文件夹内的a.txt文件</p>
+<p>相对路径，<strong>非</strong><code>/</code>开头的称之为相对路径：相对路径表示以<code>当前目录</code>作为起点，去描述路径，如<code>test/a.txt</code>，表示当前工作目录内的test文件夹内的a.txt文件</p>
 </li>
 <li>
-<p>绝对路径，==以==<code>/</code>开头的称之为绝对路径：绝对路径从<code>根</code>开始描述路径</p>
+<p>绝对路径，<strong>以</strong><code>/</code>开头的称之为绝对路径：绝对路径从<code>根</code>开始描述路径</p>
 </li>
 </ul>
 <p><strong>特殊路径符</strong></p>
@@ -884,6 +1162,214 @@ command [-options] [parameter]</p>
       </tags>
   </entry>
   <entry>
+    <title>hexo博客系列(二)博客创建指南</title>
+    <url>/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1>简介</h1>
+<p>Hexo 是一个由Nodejs驱动的博客框架，支持 Markdown、一键部署、插件和多种模板引擎。Hexo 可以让你轻松创建、管理和部署你的个人或团队博客。本文基于个人的实践经验，<strong>以Windows为主要开发环境</strong>，旨在让那些对博客搭建感兴趣但碍于困难的朋友能搭建起基本的博客框架。</p>
+<h1>准备工作</h1>
+<h2 id="课前提醒——主要是针对非程序员">课前提醒——主要是针对非程序员</h2>
+<p><strong>大部分的操作、代码输入</strong>都是在<strong>Windows</strong>系统<strong>终端</strong>中执行的。</p>
+<p><strong>方法</strong>：点击开始-搜索“终端”-打开，或者在任意文件夹中“右键”-“在终端中打开”。会出现黑色的框。后续大部分代码都是在这“黑框”中输入且执行的。</p>
+<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/1.png" alt></p>
+<ul>
+<li>代码块没有标明代码语言的都是在Windows终端中运行的。mac系统和linux系统相关指令请查询有关资料</li>
+<li>默认电脑下载了git和注册了github。没有注册github和下载git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
+<li>默认会“科学上网”，不会的可以参考此大佬的教程<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a>，可以在他的博客中搜索&quot;搭建个人博客“   <a href="https://starlike-daydream.github.io/Cesteo.github.io/">Ceasteo’s Blog</a>。按照此大佬的方法也可以实现简单的hexo博客创建。<strong>注意大佬文档中的淘宝镜像已经失效,请换成<a href="https://registry.npmmirror.com">https://registry.npmmirror.com</a></strong></li>
+</ul>
+<h2 id="相关资料下载">相关资料下载</h2>
+<ol>
+<li><a href="https://nodejs.cn/">Node.js 中文网 (nodejs.cn)</a>安装，进去后点击下载安装，选择长期支持版（LTS）即可</li>
+</ol>
+<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/2.png" alt></p>
+<ol start="2">
+<li>安装cnpm并配置淘宝镜像</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/3.png" alt></p>
+<blockquote>
+<p><strong>注意</strong>：后面代码中我打//并且后面跟着文字的（比如//这里是初始化)都是<strong>注释</strong>，<strong>不要写在终端里面</strong></p>
+</blockquote>
+<ol start="3">
+<li>测试cnpm是否安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cnpm -v   </span><br></pre></td></tr></table></figure>
+<p><strong>v</strong>：version 版本的意思</p>
+<ol start="4">
+<li>安装hexo博客框架</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>测试hexo博客框架是否安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+<h2 id="初始化博客">初始化博客</h2>
+<blockquote>
+<p>后续可以通过blog文件(<strong>shift+鼠标右键-在终端中打开</strong>）直接进入终端，也可以用Visual Studio Code将此文件打开并创建终端（建议使用vscode，后续博客维护很方便）。</p>
+</blockquote>
+<ol start="6">
+<li>在空文件夹（我这里事先创建并将其命名为temp)中初始化hexo博客框架,然后通过cd指令进入此目录。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//示例：cd .\Desktop\temp\</span><br><span class="line">hexo init</span><br><span class="line">//如果报错的话就输入cnpm install 然后再输入hexo s即可</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>启动博客  start   用来预览修改后的博客 按ctrl+c即可停止运行。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>清除博客内容</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean  //或者hexo cl</span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li>生成博客内容</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<h2 id="部署">部署</h2>
+<p><strong>我这里只讲解部署到github的思路</strong>，部署到其他平台或者服务器请自行查询有关资料。没有注册github和git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></p>
+<ol start="10">
+<li>github创建仓库,注意格式严格为    <a href="http://xn--github-on9im33ani7aou3bged.github.io">你的github用户名.github.io</a> 并复制SSH的clone地址，我这里以Tom为例</li>
+</ol>
+<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/4.png" alt></p>
+<ol start="11">
+<li>安装部署插件</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<ol start="12">
+<li>修改_config.yml文件</li>
+</ol>
+<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/5.png" alt></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">//一般是最后一行。</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">粘贴你10步复制的地址。</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<ol start="13">
+<li>部署到github</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<ol start="14">
+<li>
+<p>13步后有的会提示输入github账号密码，没有就跳过14和15步</p>
+</li>
+<li>
+<p>分别输入用户名与密码。</p>
+</li>
+</ol>
+<p>输入密码之后报错并<strong>提醒你github已经停止使用密码登录</strong>，需要用密钥或者是ssh，这里我采用ssh的方式。</p>
+<ol start="16">
+<li>初始化用户名与邮箱(“yourname”和”youremail“改成你之前注册github设置的)</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot; //（注意user.name/email和英文双引号&quot;之间要有一个空格）</span><br><span class="line">git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
+<ol start="17">
+<li>确认是否设置成功</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//用户名与邮箱</span><br><span class="line">git config --global user.name</span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
+<ol start="18">
+<li>下载github部署插件</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<ol start="19">
+<li>本地生成密钥</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;（这里改为16步你设置的邮箱）</span><br></pre></td></tr></table></figure>
+<ol start="20">
+<li>获取你生成的密钥，并复制返回的结果</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<ol start="21">
+<li>
+<p><strong>登录github</strong>, 点击头像——settings——点击SSH and GPG keys-再点击New SSH key,自己取一个标题,然后将复制的密钥粘贴到&quot;key&quot;文本框内并提交（Add SSH key)。</p>
+</li>
+<li>
+<p>验证：</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<ol start="23">
+<li>再次提交</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<ol start="24">
+<li>运行并检验是否成功</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s   //或者在浏览器URL栏输入“你的github用户名.github.io”，验证是否已经部署。</span><br></pre></td></tr></table></figure>
+<p>至此你已经成功部署一个简单的hexo博客，恭喜你我的朋友(^o^)/~，<strong>但这只是伟大征程的第一步，这是结束也是开始</strong>……</p>
+<h1>博客维护</h1>
+<h2 id="基础指令">基础指令</h2>
+<p>主题、文章修改之后要重新生成并部署。<br>
+简单讲解：</p>
+<ol>
+<li><code>hexo cl</code> 将之前上传的清除</li>
+<li><code>hexo g</code> 生成框架</li>
+<li><code>hexo s</code> 将其打开在主机上</li>
+<li><code>hexo d</code> 提交到github上</li>
+</ol>
+<blockquote>
+<p>总结：<strong>最重要的是第2,4个代码（部分插件使用需要第一个代码，这样通过你的用户名.github.io打开的博客才会更改。</strong></p>
+</blockquote>
+<h2 id="md文件">md文件</h2>
+<p><strong>命令行创建md文件</strong><br>
+<code>hexo n &quot;博客文章名&quot;</code>， <strong>必须先进入到文件中才能使用</strong>，会自动在 你所创建的文件夹\source_posts\博客文件名.md  路径下创建一个md文件。</p>
+<p><strong>md文件保存位置</strong><br>
+一般就在/_ posts 文件下创建md文件即可（或者把md文件移动到这里），要在开头加上如下语句即可.<strong>注意冒号后面要留空格</strong></p>
+<p><strong>示例格式如下</strong></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;! -- 这里是html的注释 写的时候不要添加 - - &gt;</span><br><span class="line">title: 我的第一篇博客文章</span><br><span class="line">date: 2024-06-01  19:10:34</span><br><span class="line">tags: C++</span><br><span class="line">no<span class="emphasis">_valine: true&lt;!- - 关闭评论- - &gt;</span></span><br><span class="line"><span class="emphasis">comments: 是否开启评论(true or false)</span></span><br><span class="line"><span class="emphasis">top: &lt;!- - 文章置顶true- - &gt;</span></span><br><span class="line"><span class="emphasis">no_</span>word<span class="emphasis">_count: true&lt;!- -关闭字数统计- - &gt;</span></span><br><span class="line"><span class="emphasis">password: &lt;! - -如果加密，这里填写密码 - - &gt;</span></span><br><span class="line"><span class="emphasis">reward: true&lt;!- - 当前文章是否开启打赏 - - &gt;</span></span><br><span class="line"><span class="emphasis">copyright: true&lt;!- - 当前文章是否开启版权声明 - - &gt;</span></span><br><span class="line"><span class="emphasis">categories: &lt;! - -如下，分类2是分类1的子分类- - &gt;</span></span><br><span class="line"><span class="emphasis">- [分类1，子分类1]</span></span><br><span class="line"><span class="emphasis">- [分类1，子分类2]</span></span><br><span class="line"><span class="emphasis">- [分类2]</span></span><br><span class="line"><span class="emphasis">tags: </span></span><br><span class="line"><span class="emphasis">- 标签1</span></span><br><span class="line"><span class="emphasis">- 标签2</span></span><br></pre></td></tr></table></figure>
+<h2 id="插件下载与使用">插件下载与使用</h2>
+<p><strong>提醒：少即是多, 避免华而不实。</strong></p>
+<p>打开官方文档<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a>，点击插件，点击中意的插件，按照作者的教程去配置插件</p>
+<p><strong>举例</strong><br>
+<strong>DPlayer插件</strong></p>
+<p><strong>播放代码</strong><br>
+<code>&#123;% dplayer "url=" "pic=" "theme=#FADFA3" "autoplay=false" "mutex=true" %&#125;</code></p>
+<p><strong>示例</strong><br>
+打开对应视频资源网页版（这里以b站为例），鼠标移动到分享-“嵌入代码”，将代码复制到md文件里面，如果需要调整大小，可添加<code>height=450 width=600</code> ,根据需要调整即可</p>
+<h2 id="主题的下载与使用">主题的下载与使用</h2>
+<p><strong>安装思路同插件</strong><br>
+注意在themes界面中可以点击“visit preview site”预览主题。</p>
+<ol>
+<li>看作者介绍如何安装，一步步安装  ，复杂一点的主题还有一系列插件安装</li>
+<li>打开根目录下的_config.yml  将theme: 以前的主题 改为 theme: 现在的主题</li>
+<li>后续的改动都是要基于作者文档。熟悉前端开发的朋友可以用“<strong>检查</strong>“了解作者网页的结构，然后自行修改</li>
+</ol>
+<p><strong>推荐主题</strong>：</p>
+<ul>
+<li>极简风格：
+<ul>
+<li>yilia-plus：<a href="https://github.com/JoeyBling/hexo-theme-yilia-plus">一个简洁优雅的hexo主题</a></li>
+</ul>
+</li>
+<li>优雅又实用：
+<ul>
+<li>butterfly：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安裝文檔(一) 快速開始 | Butterfly</a></li>
+<li>matery：<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">hexo-theme-matery/README_CN.md</a></li>
+</ul>
+</li>
+</ul>
+<h1>Hexo进阶-butterfly主题安装及其定制化</h1>
+<blockquote>
+<p>我目前安装的是5.1.0版本的。</p>
+</blockquote>
+<p>虽然主菜单栏里面可以分成多个子菜单，但是似乎每一个子菜单只能放一个md文件，所以<u>建议此md文件作为某一类型的东西的索引来呈现。</u></p>
+<p>所有的博客md文件都需要放在_post文件夹里面，其他地方大多只能放索引md文件。<strong>建议使用</strong><code>hexo n post 标题名</code> ,这样就会<strong>自动将对应的文件夹也生成</strong>。</p>
+<p>建议修改的使用经常使用Hexo s命令，修改无误之后再提交。</p>
+<p><strong>To be continue……</strong></p>
+<hr>
+<h1>总结</h1>
+<p>本篇文章主要侧重于基础的hexo博客搭建，至于进阶的hexo主题搭建和插件安装，限于笔者能力难以展开，有兴趣的读者可以去官方文档找对应的资料，按照作者的文档去安装。</p>
+<h1>结束语</h1>
+<p>有的朋友会说这也太难了吧，确实对于零基础的小白配置一个复杂的博客主题绝非易事，但是我想用王安石的一句话共勉想要变得更强、超越自我的朋友。<br>
+<strong>“而世之奇伟、瑰怪、非常之观，常在于险远，而人之所罕之焉，故非有志者不能之也。”</strong></p>
+<h1>参考资料</h1>
+<ol>
+<li><strong>官方网站</strong>：<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></li>
+<li><strong>其他人的教程</strong>：<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a></li>
+<li>git和github<strong>下载和使用</strong>：<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>教程</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客系列(三)博客写作指南</title>
     <url>/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h1>简介</h1>
@@ -1049,9 +1535,12 @@ Countless small mysteries are also solved in the process.</span></p></div>
           </div>
 <h3 id="视频">视频</h3>
 <ol>
-<li>B站引用：打开网页版的bilibili，点击要分享的视频-“分享”-“嵌入代码”，然后粘贴到markdown文件内即可</li>
-<li>本地图片：to be continue</li>
+<li>B站引用：打开网页版的bilibili，点击要分享的视频-“分享”-“嵌入代码”，然后粘贴到markdown文件内即可。参考如下</li>
 </ol>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
+    </iframe>
+</div>
 <h3 id="公式">公式</h3>
 <p>建议使用katex，或者是markdown本地的公式嵌入。</p>
 <p>参考教程<a href="https://freeopen.github.io/mathjax/">Markdown 数学公式指导手册 | Freeopen</a></p>
@@ -1075,10 +1564,10 @@ Countless small mysteries are also solved in the process.</span></p></div>
 </li>
 </ul>
 <h1>参考</h1>
-<ul>
+<ol>
 <li><a href="https://www.cnblogs.com/returntmp/p/17591866.html">【全方位解析】如何写好技术文章 - ReturnTmp - 博客园</a></li>
 <li><a href="https://qlad.github.io/how-blogging/">如何写一篇优秀的博客 · qlAD 的技术笔记</a></li>
-</ul>
+</ol>
 ]]></content>
       <categories>
         <category>blog</category>
@@ -1086,278 +1575,6 @@ Countless small mysteries are also solved in the process.</span></p></div>
       <tags>
         <tag>blog</tag>
         <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客系列(一)测试与更新</title>
-    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/</url>
-    <content><![CDATA[<h1>hexo博客更新和待更新计划</h1>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法与经验</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
-<p>以下更新内容都是从最后一次更新开始的</p>
-</blockquote>
-<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2024</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-26</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>butterfly主题从5.0.0更新到5.1.0版本</li>
-<li>优化了chart插件</li>
-<li>更新了一篇新博客</li>
-</ol>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-10</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>butterfly主题从4.13.0更新到5.0.0版本</li>
-<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
-<li>更新了留言板</li>
-<li>优化了搜索功能</li>
-<li>禁止B站视频自动播放</li>
-<li>更新了主页“关于”部分</li>
-<li>修复了几处笔误的问题</li>
-<li>优化了评论功能的选择</li>
-<li>添加了站点工具(谷歌与必应)，优化了文章的描述部分</li>
-<li>优化一下图片无法放大查看的问题</li>
-</ol>
-</div></div></div></div><div class="tab-item-content"><ol>
-<li>子菜单展示内容；方法：通过基本的markdown语言和butterfly专有语法-标签外挂实现效果，建议写成总领式的文章或者展示页面。可以参考此博客<a href="https://blog.guole.fun/posts/butterfly-custom/#%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E8%BD%AE%E6%92%AD%E6%A8%A1%E5%9D%97">我的Blog美化日记——Hexo+Butterfly | Guo Le’s Blog</a> 里面的“volantis”部分，和这个<a href="https://www.huangshiqing.website/2022/11/03/HexoTagPlugins/">Hexo Built-in Tag Plugins (Hexo内置标签外挂) | Ofra Serendipity</a></li>
-<li>添加一下赞助墙</li>
-<li>更新算法相关博客并添加数学动画视频或者是算法演示动画</li>
-<li>学习并在博客中添加图表-对于本网站以chartjs的图表为主，涉及UML就用Mermaid,对于精致的图表(比如数据分析)才会用Echart.</li>
-<li>如果zeabur部署失效，可以考虑netlify、<a href="https://www.21cloudbox.com">https://www.21cloudbox.com</a>、码云等托管平台。</li>
-</ol></div><div class="tab-item-content"><h2 id="debug经验">debug经验</h2>
-<p>目前由于butterfly的版本更新，导致以前的部分功能失效，建议<strong>先看官方文档，将对应过时的代码注释或者去除，没有的代码添加</strong>，然后再<strong>根据</strong>F12检查对应的板块，<strong>用前端的知识去搜查问题发生的地点和原因</strong>，然后再纠错。</p>
-<h2 id="hexo框架更新">hexo框架更新</h2>
-<p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
-<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
-<h2 id="butterfly主题更新">butterfly主题更新</h2>
-<blockquote>
-<p>更新前记得留下blog快照</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
-<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
-<p>如果不行，就在你的博客/themes/butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
-<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-<h2 id="个人hexo博客更新讲解">个人hexo博客更新讲解</h2>
-<p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
-<p>示例代码如下</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
-<p><strong>评论功能</strong>：我设置的是twikoo静态评论控制+Valine评论，搭建教程可以参考如下链接<a href="https://blog.hihahoo.com/archives/fc6989f5.html#1-twikoo%E9%83%A8%E7%BD%B2">Hexo主题butterfly集成评论功能（twikoo） | Hihahoo：想你所想 做你所做</a></p>
-<p><strong>文章置顶功能</strong>：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考链接<a href="https://liangshenglei.github.io/2023/03/06/Butterfly%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/index.html">Butterfly 主题的详细配置 | 梁圣磊の博客 (liangshenglei.github.io)</a></p>
-<p><strong>文章加密功能</strong>：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">https://polar-bear.eu.org/2023/07/21/ce-shi/</a> 也许以后添加。</p>
-<p><strong>博客撰写</strong>：</p>
-<ol>
-<li>hexo会自动给分级标题编号，不需要自己添加</li>
-<li></li>
-</ol>
-<p><strong>磁贴功能</strong>：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
-<p><strong>同步问题</strong>：在zeabur的部署大概会间隔一天左右才会同步上。</p>
-<p><strong>图片方面</strong></p>
-<ul>
-<li>
-<p>方法1：通过picgo图床实现图片上传。参考【Typora+PicGo+阿里云OSS实现云笔记|Typora上传图片】<a href="https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></p>
-</li>
-<li>
-<p>方法2-本地上传图片：参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用，<strong>博主因为部署的原因主要使用此方法</strong>_ 。如果部署到zeabur的博客图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。参考教程<a href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法_hexo 文章插入图片失败-CSDN博客</a> 。</p>
-</li>
-<li>
-<p>方法3：使用其他的图床网站如<a href="https://smms.app/">SMMS</a>。上传图片后，点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。</p>
-</li>
-</ul>
-<p><strong>导航栏设置</strong>：在<code>_config.butterfly.yml</code> 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class= &quot; 复制这里的内容&quot; 替代即可。</p>
-<p><strong>系列文章</strong>：在文章的 front-matter 上添加参数 series，并给予一個标签</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br></pre></td></tr></table></figure>
-<h1>测试</h1>
-<h2 id="测试图片">测试图片</h2>
-<p><strong>阿里云图片测试</strong></p>
-<p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-06-02%20221147.png" alt="屏幕截图 2024-06-02 221147"></p>
-<p><strong>本地图片测试</strong></p>
-<p><img src="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/C__Users_kai98_Pictures_%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87_post-img1.png" alt="Godot游戏引擎"></p>
-<p><strong>标签外挂测试图片</strong></p>
-<div class="gallery-container" data-type="data" data-button>
-      <div class="gallery-items">[{"url":"https://s2.loli.net/2024/06/14/4RrcPzbG3fsqyC6.png","alt":"3.png"}]</div>
-    </div>
-<p><strong>图床图片测试</strong></p>
-<p><img src="https://s2.loli.net/2024/10/24/MQ6gGn4LtBDyduJ.png" alt="苍之彼方的四重奏.png"></p>
-<h2 id="测试系列文章">测试系列文章</h2>
-<ol class="series-items"><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/" title="hexo博客系列(一)测试与更新">hexo博客系列(一)测试与更新</a></li><li><a href="/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/" title="hexo博客系列(三)博客写作指南">hexo博客系列(三)博客写作指南</a></li><li><a href="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/" title="hexo博客系列(二)博客创建指南">hexo博客系列(二)博客创建指南</a></li></ol>
-<h2 id="标签外挂测试">标签外挂测试</h2>
-<blockquote>
-<p>本以下基于hexo+butterfly的主题，其他的主题请读者自行查阅有关资料</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文檔(四) 標簽外挂 | Butterfly</a></p>
-<p>参考教程：<a href="https://liangshenglei.github.io/2023/02/27/Markdown%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/#referto_%5B1%5D">Markdown 外挂标签 | 梁圣磊の博客</a></p>
-<ol>
-<li>Note (Bootstrap Callout)</li>
-</ol>
-<p>个人使用，感觉比较适合知识的分层结构，比如我博客里面的《英语语法(英语兔版)》</p>
-<ol start="2">
-<li>tag-hide</li>
-</ol>
-<p>个人感觉比较适合于问答类型或者是部分内容较多，需要的时候再展开的文章内容。测试如下</p>
-<p><strong>Block测试</strong></p>
-<p>查看答案</p>
-<div class="hide-block"><button type="button" class="hide-button" style>查看答案
-    </button><div class="hide-content"><p>答案就在你心中</p>
-</div></div>
-<p><strong>Toggle测试</strong></p>
-<details class="toggle"><summary class="toggle-button" style>Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
-<p>git clone -b master <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes/Butterfly</p>
-<p>如果想要安裝比較新的 dev 分支，可以</p>
-<p>git clone -b dev <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes/Butterfly</p>
-</div></details>
-<p><strong>Mermaid测试</strong></p>
-<p>这是和图表有关的标签，可以画流程图，时序图等</p>
-<p>注意要先写<code>&#123;% mermaid %&#125; &#123;% endmermaid %&#125;</code> 然后就在这两个标签内写相关代码。</p>
-<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
-  
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop HealthCheck
-        John-&gt;&gt;John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
-    John--&gt;&gt;Alice: Great!
-    John-&gt;&gt;Bob: How about you?
-    Bob--&gt;&gt;John: Jolly good!
-
-  </pre></div>
-<p><strong>Flink测试</strong></p>
-<p>就是和链接相关的测试</p>
-<div class="flink"><div class="flink-name">友情鏈接</div><div class="flink-desc">那些人，那些事</div><div class="flink-list">
-      <div class="flink-list-item">
-        <a href="https://jerryc.me/" title="JerryC" target="_blank">
-          <div class="flink-item-icon">
-            <img class="no-lightbox" src="https://jerryc.me/img/avatar.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="JerryC">
-          </div>
-          <div class="flink-item-name">JerryC</div>
-          <div class="flink-item-desc" title="今日事,今日畢">今日事,今日畢</div>
-        </a>
-      </div>
-      <div class="flink-list-item">
-        <a href="https://hexo.io/zh-tw/" title="Hexo" target="_blank">
-          <div class="flink-item-icon">
-            <img class="no-lightbox" src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="Hexo">
-          </div>
-          <div class="flink-item-name">Hexo</div>
-          <div class="flink-item-desc" title="快速、簡單且強大的網誌框架">快速、簡單且強大的網誌框架</div>
-        </a>
-      </div></div></div>
-<p><strong>乐谱测试</strong></p>
-<div class="abc-music-sheet">X:1
-T:alternate heads
-M:C
-L:1/8
-U:n=!style=normal!
-K:C treble style=rhythm
-&quot;Am&quot; BBBB B2 B&gt;B | &quot;Dm&quot; B2 B/B/B &quot;C&quot; B4 |&quot;Am&quot; B2 nGnB B2 nGnA | &quot;Dm&quot; nDB/B/ nDB/B/ &quot;C&quot; nCB/B/ nCB/B/ |B8| B0 B0 B0 B0 |]
-%%text This translates to:
-[M:C][K:style=normal]
-[A,EAce][A,EAce][A,EAce][A,EAce] [A,EAce]2 [A,EAce]&gt;[A,EAce] |[DAdf]2 [DAdf]/[DAdf]/[DAdf] [CEGce]4 |[A,EAce]2 GA [A,EAce] GA |D[DAdf]/[DAdf]/ D[DAdf]/[DAdf]/ C [CEGce]/[CEGce]/ C[CEGce]/[CEGce]/ |[CEGce]8 | [CEGce]2 [CEGce]2 [CEGce]2 [CEGce]2 |]
-GAB2 !style=harmonic![gb]4|GAB2 [K: style=harmonic]gbgb|
-[K: style=x]
-C/A,/ C/C/E C/zz2|
-w:Rock-y did-nt like that</div>
-<p><strong>测试自带的chartjs</strong>——可以实现动态效果，建议使用。</p>
-<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
-            <pre class="chartjs-src" hidden>{
-    &quot;type&quot;: &quot;pie&quot;,
-    &quot;data&quot;: {
-        &quot;labels&quot;: [
-            &quot;编程&quot;,
-            &quot;音乐&quot;,
-            &quot;阅读&quot;,
-            &quot;游戏&quot;,
-            &quot;健身&quot;,
-            &quot;旅游&quot;
-        ],
-        &quot;datasets&quot;: [
-            {
-                &quot;label&quot;: &quot;喜爱指数&quot;,
-                &quot;data&quot;: [
-                    30,
-                    24,
-                    19,
-                    14,
-                    9,
-                    4
-                ],
-                &quot;backgroundColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.5)&quot;,
-                        &quot;rgba(54, 162, 235, 0.5)&quot;,
-                        &quot;rgba(255, 206, 86, 0.5)&quot;,
-                        &quot;rgba(75, 192, 192, 0.5)&quot;,
-                        &quot;rgba(153, 102, 255, 0.5)&quot;,
-                        &quot;rgba(255, 159, 64, 0.5)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.2)&quot;,
-                        &quot;rgba(54, 162, 235, 0.2)&quot;,
-                        &quot;rgba(255, 206, 86, 0.2)&quot;,
-                        &quot;rgba(75, 192, 192, 0.2)&quot;,
-                        &quot;rgba(153, 102, 255, 0.2)&quot;,
-                        &quot;rgba(255, 159, 64, 0.2)&quot;
-                    ]
-                },
-                &quot;borderColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ]
-                }
-            }
-        ]
-    },
-    &quot;options&quot;: {
-        &quot;plugins&quot;: {
-            &quot;legend&quot;: {
-                &quot;labels&quot;: {
-                    &quot;color&quot;: {
-                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
-                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
-                    }
-                }
-            }
-        }
-    }
-}
-</pre>
-            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
-我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
-在此过程中也解决了无数的小谜团。<br>
-<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
-I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
-Countless small mysteries are also solved in the process.</span></p></div>
-          </div>
-<p><strong>tab演示</strong></p>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-<p><strong>按钮button测试</strong></p>
-<div class="btn-center">
-<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-</div>
-<p><strong>文字高亮</strong></p>
-<mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
-<mark class="hl-label red">红色</mark>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>教程</tag>
-        <tag>测试</tag>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1787,211 +2004,6 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
       </tags>
   </entry>
   <entry>
-    <title>hexo博客系列(二)博客创建指南</title>
-    <url>/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1>简介</h1>
-<p>Hexo 是一个由Nodejs驱动的博客框架，支持 Markdown、一键部署、插件和多种模板引擎。Hexo 可以让你轻松创建、管理和部署你的个人或团队博客。本文基于个人的实践经验，<strong>以Windows为主要开发环境</strong>，旨在让那些对博客搭建感兴趣但碍于困难的朋友能搭建起基本的博客框架。</p>
-<h1>准备工作</h1>
-<h2 id="课前提醒——主要是针对非程序员">课前提醒——主要是针对非程序员</h2>
-<p><strong>大部分的操作、代码输入</strong>都是在<strong>Windows</strong>系统<strong>终端</strong>中执行的。</p>
-<p><strong>方法</strong>：点击开始-搜索“终端”-打开，或者在任意文件夹中“右键”-“在终端中打开”。会出现黑色的框。后续大部分代码都是在这“黑框”中输入且执行的。</p>
-<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/1.png" alt></p>
-<ul>
-<li>代码块没有标明代码语言的都是在Windows终端中运行的。mac系统和linux系统相关指令请查询有关资料</li>
-<li>默认电脑下载了git和注册了github。没有注册github和下载git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
-<li>默认会“科学上网”，不会的可以参考此大佬的教程<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a>，可以在他的博客中搜索&quot;搭建个人博客“   <a href="https://starlike-daydream.github.io/Cesteo.github.io/">Ceasteo’s Blog</a>。按照此大佬的方法也可以实现简单的hexo博客创建。<strong>注意大佬文档中的淘宝镜像已经失效,请换成<a href="https://registry.npmmirror.com">https://registry.npmmirror.com</a></strong></li>
-</ul>
-<h2 id="相关资料下载">相关资料下载</h2>
-<ol>
-<li><a href="https://nodejs.cn/">Node.js 中文网 (nodejs.cn)</a>安装，进去后点击下载安装，选择长期支持版（LTS）即可</li>
-</ol>
-<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/2.png" alt></p>
-<ol start="2">
-<li>安装cnpm并配置淘宝镜像</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/3.png" alt></p>
-<blockquote>
-<p><strong>注意</strong>：后面代码中我打//并且后面跟着文字的（比如//这里是初始化)都是<strong>注释</strong>，<strong>不要写在终端里面</strong></p>
-</blockquote>
-<ol start="3">
-<li>测试cnpm是否安装</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cnpm -v   </span><br></pre></td></tr></table></figure>
-<p><strong>v</strong>：version 版本的意思</p>
-<ol start="4">
-<li>安装hexo博客框架</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>测试hexo博客框架是否安装</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-<h2 id="初始化博客">初始化博客</h2>
-<blockquote>
-<p>后续可以通过blog文件(<strong>shift+鼠标右键-在终端中打开</strong>）直接进入终端，也可以用Visual Studio Code将此文件打开并创建终端（建议使用vscode，后续博客维护很方便）。</p>
-</blockquote>
-<ol start="6">
-<li>在空文件夹（我这里事先创建并将其命名为temp)中初始化hexo博客框架,然后通过cd指令进入此目录。</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//示例：cd .\Desktop\temp\</span><br><span class="line">hexo init</span><br><span class="line">//如果报错的话就输入cnpm install 然后再输入hexo s即可</span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>启动博客  start   用来预览修改后的博客 按ctrl+c即可停止运行。</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>清除博客内容</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean  //或者hexo cl</span><br></pre></td></tr></table></figure>
-<ol start="9">
-<li>生成博客内容</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<h2 id="部署">部署</h2>
-<p><strong>我这里只讲解部署到github的思路</strong>，部署到其他平台或者服务器请自行查询有关资料。没有注册github和git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></p>
-<ol start="10">
-<li>github创建仓库,注意格式严格为    <a href="http://xn--github-on9im33ani7aou3bged.github.io">你的github用户名.github.io</a> 并复制SSH的clone地址，我这里以Tom为例</li>
-</ol>
-<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/4.png" alt></p>
-<ol start="11">
-<li>安装部署插件</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-<ol start="12">
-<li>修改_config.yml文件</li>
-</ol>
-<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/5.png" alt></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">//一般是最后一行。</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">粘贴你10步复制的地址。</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<ol start="13">
-<li>部署到github</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<ol start="14">
-<li>
-<p>13步后有的会提示输入github账号密码，没有就跳过14和15步</p>
-</li>
-<li>
-<p>分别输入用户名与密码。</p>
-</li>
-</ol>
-<p>输入密码之后报错并<strong>提醒你github已经停止使用密码登录</strong>，需要用密钥或者是ssh，这里我采用ssh的方式。</p>
-<ol start="16">
-<li>初始化用户名与邮箱(“yourname”和”youremail“改成你之前注册github设置的)</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot; //（注意user.name/email和英文双引号&quot;之间要有一个空格）</span><br><span class="line">git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
-<ol start="17">
-<li>确认是否设置成功</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//用户名与邮箱</span><br><span class="line">git config --global user.name</span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
-<ol start="18">
-<li>下载github部署插件</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<ol start="19">
-<li>本地生成密钥</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;（这里改为16步你设置的邮箱）</span><br></pre></td></tr></table></figure>
-<ol start="20">
-<li>获取你生成的密钥，并复制返回的结果</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-<ol start="21">
-<li>
-<p><strong>登录github</strong>, 点击头像——settings——点击SSH and GPG keys-再点击New SSH key,自己取一个标题,然后将复制的密钥粘贴到&quot;key&quot;文本框内并提交（Add SSH key)。</p>
-</li>
-<li>
-<p>验证：</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<ol start="23">
-<li>再次提交</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<ol start="24">
-<li>运行并检验是否成功</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s   //或者在浏览器URL栏输入“你的github用户名.github.io”，验证是否已经部署。</span><br></pre></td></tr></table></figure>
-<p>至此你已经成功部署一个简单的hexo博客，恭喜你我的朋友(^o^)/~，<strong>但这只是伟大征程的第一步，这是结束也是开始</strong>……</p>
-<h1>博客维护</h1>
-<h2 id="基础指令">基础指令</h2>
-<p>主题、文章修改之后要重新生成并部署。<br>
-简单讲解：</p>
-<ol>
-<li><code>hexo cl</code> 将之前上传的清除</li>
-<li><code>hexo g</code> 生成框架</li>
-<li><code>hexo s</code> 将其打开在主机上</li>
-<li><code>hexo d</code> 提交到github上</li>
-</ol>
-<blockquote>
-<p>总结：<strong>最重要的是第2,4个代码（部分插件使用需要第一个代码，这样通过你的用户名.github.io打开的博客才会更改。</strong></p>
-</blockquote>
-<h2 id="md文件">md文件</h2>
-<p><strong>命令行创建md文件</strong><br>
-<code>hexo n &quot;博客文章名&quot;</code>， <strong>必须先进入到文件中才能使用</strong>，会自动在 你所创建的文件夹\source_posts\博客文件名.md  路径下创建一个md文件。</p>
-<p><strong>md文件保存位置</strong><br>
-一般就在/_ posts 文件下创建md文件即可（或者把md文件移动到这里），要在开头加上如下语句即可.<strong>注意冒号后面要留空格</strong></p>
-<p><strong>示例格式如下</strong></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;! -- 这里是html的注释 写的时候不要添加 - - &gt;</span><br><span class="line">title: 我的第一篇博客文章</span><br><span class="line">date: 2024-06-01  19:10:34</span><br><span class="line">tags: C++</span><br><span class="line">no<span class="emphasis">_valine: true&lt;!- - 关闭评论- - &gt;</span></span><br><span class="line"><span class="emphasis">comments: 是否开启评论(true or false)</span></span><br><span class="line"><span class="emphasis">top: &lt;!- - 文章置顶true- - &gt;</span></span><br><span class="line"><span class="emphasis">no_</span>word<span class="emphasis">_count: true&lt;!- -关闭字数统计- - &gt;</span></span><br><span class="line"><span class="emphasis">password: &lt;! - -如果加密，这里填写密码 - - &gt;</span></span><br><span class="line"><span class="emphasis">reward: true&lt;!- - 当前文章是否开启打赏 - - &gt;</span></span><br><span class="line"><span class="emphasis">copyright: true&lt;!- - 当前文章是否开启版权声明 - - &gt;</span></span><br><span class="line"><span class="emphasis">categories: &lt;! - -如下，分类2是分类1的子分类- - &gt;</span></span><br><span class="line"><span class="emphasis">- [分类1，子分类1]</span></span><br><span class="line"><span class="emphasis">- [分类1，子分类2]</span></span><br><span class="line"><span class="emphasis">- [分类2]</span></span><br><span class="line"><span class="emphasis">tags: </span></span><br><span class="line"><span class="emphasis">- 标签1</span></span><br><span class="line"><span class="emphasis">- 标签2</span></span><br></pre></td></tr></table></figure>
-<h2 id="插件下载与使用">插件下载与使用</h2>
-<p><strong>提醒：少即是多, 避免华而不实。</strong></p>
-<p>打开官方文档<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a>，点击插件，点击中意的插件，按照作者的教程去配置插件</p>
-<p><strong>举例</strong><br>
-<strong>DPlayer插件</strong></p>
-<p><strong>播放代码</strong><br>
-<code>&#123;% dplayer "url=" "pic=" "theme=#FADFA3" "autoplay=false" "mutex=true" %&#125;</code></p>
-<p><strong>示例</strong><br>
-打开对应视频资源网页版（这里以b站为例），鼠标移动到分享-“嵌入代码”，将代码复制到md文件里面，如果需要调整大小，可添加<code>height=450 width=600</code> ,根据需要调整即可</p>
-<h2 id="主题的下载与使用">主题的下载与使用</h2>
-<p><strong>安装思路同插件</strong><br>
-注意在themes界面中可以点击“visit preview site”预览主题。</p>
-<ol>
-<li>看作者介绍如何安装，一步步安装  ，复杂一点的主题还有一系列插件安装</li>
-<li>打开根目录下的_config.yml  将theme: 以前的主题 改为 theme: 现在的主题</li>
-<li>后续的改动都是要基于作者文档。熟悉前端开发的朋友可以用“<strong>检查</strong>“了解作者网页的结构，然后自行修改</li>
-</ol>
-<p><strong>推荐主题</strong>：</p>
-<ul>
-<li>极简风格：
-<ul>
-<li>yilia-plus：<a href="https://github.com/JoeyBling/hexo-theme-yilia-plus">一个简洁优雅的hexo主题</a></li>
-</ul>
-</li>
-<li>优雅又实用：
-<ul>
-<li>butterfly：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安裝文檔(一) 快速開始 | Butterfly</a></li>
-<li>matery：<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">hexo-theme-matery/README_CN.md</a></li>
-</ul>
-</li>
-</ul>
-<h1>Hexo进阶-butterfly主题安装及其定制化</h1>
-<blockquote>
-<p>我目前安装的是4.13版本的，最新版本是5.20。后续升级</p>
-</blockquote>
-<p>虽然主菜单栏里面可以分成多个子菜单，但是似乎每一个子菜单只能放一个md文件，所以<u>建议此md文件作为某一类型的东西的索引来呈现。</u></p>
-<p>所有的博客md文件都需要放在_post文件夹里面，其他地方大多只能放索引md文件。</p>
-<p>建议修改的使用经常使用Hexo s命令，修改无误之后再提交。</p>
-<p><strong>To be continue……</strong></p>
-<h1>总结</h1>
-<p>本篇文章主要侧重于基础的hexo博客搭建，至于进阶的hexo主题搭建和插件安装，限于笔者能力难以展开，有兴趣的读者可以去官方文档找对应的资料，按照作者的文档去安装。</p>
-<h1>参考资料</h1>
-<p><strong>官方网站</strong>：<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></p>
-<p><strong>其他人的教程</strong>：<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a></p>
-<p>git和github<strong>下载和使用</strong>：<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></p>
-<h1>结束语</h1>
-<p>有的朋友会说这也太难了吧，确实对于零基础的小白配置一个复杂的博客主题绝非易事，但是我想用王安石的一句话共勉想要变得更强、超越自我的朋友。<br>
-<strong>“而世之奇伟、瑰怪、非常之观，常在于险远，而人之所罕之焉，故非有志者不能之也。”</strong></p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>教程</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据分析工具superset安装和使用(version:0.381)</title>
     <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
     <content><![CDATA[<h1>简介</h1>
@@ -2217,7 +2229,7 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
 <li>在<strong>美式英语</strong>中，元音之间的字母t(尤其是非重读音节中)，读作<strong>闪音</strong>，国际音标:[ɾ]，舌尖在上牙齿上方硬腭处，阻挡气流,轻轻—弹比如: water, better, little，听起来很像发出了/d/ 的声音。在标准英音中仍读作正常t: water, better, little。</li>
 <li>在<strong>美式英语</strong>中，鼻音/n/之前的t往往读作<strong>喉塞音</strong>，国际音标:[ʔ]，声门阻住气流，像是把声音&quot;卡在喉咙&quot;里一样比如: certain, important, button，在标准英音中仍读作正常t : certain, important, button</li>
 <li>在<strong>美式英语</strong>中，鼻音/n/之后的t往往基本听不见，比如: winter≈winner， interview≈innerview，甚至有的词中, t前后都有鼻音，比如: mountain，在标准英音中仍读作正常t: winter, interview, mountain</li>
-<li>/ d/是浊辅音，声带振动。在美音中，/d /和/t/一样会有<strong>闪音</strong>的读法: metal≈medal**，**鼻音也会影响/d/的读音: abandon.</li>
+<li>/ d/是浊辅音，声带振动。在美音中，/d /和/t/一样会有<strong>闪音</strong>的读法: metal约等于medal，鼻音也会影响/d/的读音: abandon.</li>
 </ol>
 <ul>
 <li><strong>/k/ /g/</strong></li>
@@ -2291,7 +2303,7 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
 <p>舌端往上抬向硬腭，与元音/i:/的舌位相似，但是更高一些。气流从舌面和硬腭之间通过，产生摩擦出声，声带振动。/j/往往听上去像元音/i:/或/ɪ/，所以又被称作半元音。但是/j/的舌端和硬腭靠得更近，有摩擦的感觉。</p>
 <ol>
 <li><strong>/j/的省略：<strong>在</strong>美式英语</strong>中,有些辅音(如/t/，/d/，/n/)后的/j/经常被<strong>省略</strong>，这个被称作yod-dropping(yod就是/j/)</li>
-<li>**/j/的融合：**和之前的辅音经常&quot;合在一起读&quot;,这个被称作yod-coalescence，在口语中(尤其是英音口语中)常见, &quot;标准&quot;英语一般尽量避免。有的词中,yod-coalescence已成为标准音，如: educate /'edʒukeɪt/、issue / 'ɪʃu:/ 、azure /'æʒə/</li>
+<li><strong>/j/的融合</strong>：和之前的辅音经常&quot;合在一起读&quot;,这个被称作yod-coalescence，在口语中(尤其是英音口语中)常见, &quot;标准&quot;英语一般尽量避免。有的词中,yod-coalescence已成为标准音，如: educate /'edʒukeɪt/、issue / 'ɪʃu:/ 、azure /'æʒə/</li>
 <li>yod-coalescence也适用于单词之间，比如:Nice to meet you! Would you do it?</li>
 </ol>
 <ul>
@@ -2357,7 +2369,7 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
 </li>
 <li>互相同化：
 <ol>
-<li>融合发音:/s/+/j/ = **/ʃ/ ;**例如:God bless you;/z/+/j/ =  <strong>/ʒ/</strong>;例如as you wish;/t/+/j/ = <strong>/tʃ/</strong> ;例如Nice to me you;/d/+/j/ = <strong>/dʒ/</strong>;例如Did you do it?</li>
+<li>融合发音:/s/+/j/ = <strong>/ʃ/</strong>;例如:God bless you;/z/+/j/ =  <strong>/ʒ/</strong>;例如as you wish;/t/+/j/ = <strong>/tʃ/</strong> ;例如Nice to me you;/d/+/j/ = <strong>/dʒ/</strong>;例如Did you do it?</li>
 <li>辅音延长：当前面一个音和后面一个音是同一个音时。只发一个音(这里的音是指<strong>音标</strong>不是字母)，但是要延长：如fish shop.这里前后都是sh</li>
 </ol>
 </li>
@@ -2518,7 +2530,7 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
 </tr>
 <tr>
 <td>有一个动作的承受者</td>
-<td>(主语+单及物动词(monotransitive verbs)+宾语(object)</td>
+<td>主语+单及物动词(monotransitive verbs)+宾语(object)</td>
 <td>I like you</td>
 </tr>
 <tr>
@@ -3241,19 +3253,19 @@ The rabbit句子是句子的主干，前面句子表示原因，invite这个动�
 <p>表条件(如：如果…) <code>ex:If the rabbit sees a carrot,he will eat it.</code> 遵循“主将从现” ，从句(if引导的句子)的假设是不确定的，不能用will，所以用一般现在时态，而一旦假设成立，那么一定某件事发生，这种确定的发生用一般将来时态。<strong>即条件句比主句落后一个时间段</strong>。其他的引导词如unless,provided,as long as,in case 等</p>
 </li>
 <li>
-<p>表让步(如：虽然。。但是。…) <code>ex:Even if I see a carrot,I will not eat it.</code> 同样的还是有thought\although\no matter</p>
+<p>表让步(如：虽然…但是…) <code>ex:Even if I see a carrot,I will not eat it.</code> 同样的还是有thought\although\no matter</p>
 </li>
 <li>
 <p>表方式(如：就好像…)  <code>ex:I feel good as if I had just eaten a carrot.</code></p>
 </li>
 <li>
-<p>表比较(如：比。…) <code>ex:He is smarter than I (am).</code> 其实就等效于口语化的 <code>ex:He is smarter than me.</code> 同样比较的词有as……as,the more…… the more.</p>
+<p>表比较(如：比…) <code>ex:He is smarter than I (am).</code> 其实就等效于口语化的 <code>ex:He is smarter than me.</code> 同样比较的词有as……as,the more…… the more.</p>
 </li>
 <li>
-<p>表原因(如：因为所以。…) <code>ex:The rabbit ate the carrot because he was hungry.</code> 不能用because和so搭配是因为because用来构成复杂句，so用来构成复合句，两者混用会导致句子结构混乱，同理还有though和but.同样的词还有since\as，不过这两个词构成的副词从句一般放在主句前。</p>
+<p>表原因(如：因为所以…) <code>ex:The rabbit ate the carrot because he was hungry.</code> 不能用because和so搭配是因为because用来构成复杂句，so用来构成复合句，两者混用会导致句子结构混乱，同理还有though和but.同样的词还有since\as，不过这两个词构成的副词从句一般放在主句前。</p>
 </li>
 <li>
-<p>表目的)如：为了…) <code>ex:In order that I could finish the video in time,I pulled an all-nighter.</code> 同样的词还有so <a href="http://that.so">that.so</a> that既能表示目的也能表示结果，在翻译的时候要注意这一点。</p>
+<p>表目的)如：为了…) <code>ex:In order that I could finish the video in time,I pulled an all-nighter.</code> 同样的词还有so that。so that既能表示目的也能表示结果，在翻译的时候要注意这一点。</p>
 </li>
 <li>
 <p>表结果(如：所以…)  <code>ex:I ate a lot of carrots for lunch so that I wasn't hungry at all in the afternoon.</code> 同样的词还有so,such that,such后面要接名词。</p>
