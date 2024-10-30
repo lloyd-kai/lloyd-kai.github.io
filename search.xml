@@ -884,306 +884,6 @@ command [-options] [parameter]</p>
       </tags>
   </entry>
   <entry>
-    <title>MySQL学习笔记(一)</title>
-    <url>/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/</url>
-    <content><![CDATA[<h1>专有名词扩展</h1>
-<p><strong>英语是了解计算机的重要工具</strong></p>
-<table>
-<thead>
-<tr>
-<th>英语</th>
-<th>中文（计算机行话，不涉及一般含义）</th>
-<th>简写</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>database</td>
-<td>数据库</td>
-<td>DB</td>
-</tr>
-<tr>
-<td>database management system</td>
-<td>数据库管理系统</td>
-<td>DBMS</td>
-</tr>
-<tr>
-<td>data definition languages</td>
-<td>数据定义语言</td>
-<td>DDL</td>
-</tr>
-<tr>
-<td>data manipulation languages</td>
-<td>数据操作语言</td>
-<td>DML</td>
-</tr>
-<tr>
-<td>data control languages</td>
-<td>数据控制语言</td>
-<td>DCL</td>
-</tr>
-<tr>
-<td>Data Query Language</td>
-<td>数据查询语言，用来查询数据库中表的记录</td>
-<td>DQL</td>
-</tr>
-<tr>
-<td>alias</td>
-<td>别名</td>
-<td>as</td>
-</tr>
-<tr>
-<td>structured query language</td>
-<td>操作关系型数据库的编程语言</td>
-<td>SQL</td>
-</tr>
-</tbody>
-</table>
-<h1>准备工作</h1>
-<blockquote>
-<p>本博客所使用的是Mysql8.0的版本，参考教程<a href="https://www.w3school.com.cn/">w3school 在线教程</a></p>
-</blockquote>
-<h2 id="下载">下载</h2>
-<p>读者可以参考下方链接的视频安装mysql，这里不再赘述</p>
-<p><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=2&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">黑马程序员</a></p>
-<h2 id="数据库基本操作">数据库基本操作</h2>
-<h2 id="启动MySQL">启动MySQL</h2>
-<p>打开方式有如下三种</p>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">命令行</button><button type="button" class="tab">系统控制</button><button type="button" class="tab">开机自启动</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>通过命令行的方式打开(Windows11)</strong></p>
-<ol>
-<li>按<code>win+r</code>键，在弹出的窗口内输入cmd</li>
-<li>再按ctrl+shift+enter以管理员的方式运行</li>
-<li>输入<code>net start MySQL服务名(例如本机是mysql80)</code></li>
-<li>停止Mysql命令：<code>net stop mysql80</code></li>
-</ol>
-<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/001.png" alt="001"></p></div><div class="tab-item-content"><ol>
-<li>按<code>win+r</code>键，在弹出的窗口内输入cmd</li>
-<li>输入services.msc打开服务，找到对应的mysql，右键启动即可</li>
-</ol></div><div class="tab-item-content"><p>按<code>win+x</code>键，选择“任务管理器”，在左侧栏点击“服务”，搜索mysql，然后鼠标右键点击“<strong>打开服务</strong>”(或者按照系统控制的方法打开服务也行)，然后找到mysql右键-“属性”，点开“启动类型”并选择自动，点击应用并确定即可实现开机自启动。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-<h2 id="MySQL连接方式">MySQL连接方式</h2>
-<blockquote>
-<p>对于第一次使用MySQL的读者，一开始是没有密码的，打开MySQL之后在mysql界面输入 ALTER USER ‘root’@‘localhost’ IDENTIFIED BY ‘自己设置的密码’;即可自行设置</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>方式</th>
-<th>效果</th>
-<th>难度</th>
-<th>连接操作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MySQL 8.0 Command Line Client</td>
-<td>和命令行一样，可视性不是特别强</td>
-<td>低，安装MySQL自带的</td>
-<td>开始界面搜索MySQL 8.0 Command Line Client，然后输入密码即可</td>
-</tr>
-<tr>
-<td><strong>Windows命令行</strong></td>
-<td>命令行，无需多言</td>
-<td>中，需要在系统属性里的PATH里面配置环境变量(就是<code>你的MySQL路径\bin</code>)</td>
-<td>打开命令行之后输入<code>mysql -u用户名 -p密码</code>      或者<code>mysql -u root -p </code>  加密输入密码防止泄露</td>
-</tr>
-</tbody>
-</table>
-<p>Windows命令行打开示例图</p>
-<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/002.png" alt="002"></p>
-<hr>
-<h1>MySQL基础篇</h1>
-<p><strong>SQL语言</strong></p>
-<p>无论是MySQL，还是oracle等其他的数据库，都遵守一定的SQL通用语法，特点如下</p>
-<ol>
-<li><strong>不区分大小写</strong>，但<u>建议关键字大写</u></li>
-<li>注释：<code>#</code>或者是<code>--</code>是MySQL特有的，<code>/**/</code>是多行注释</li>
-<li>以分号结尾</li>
-</ol>
-<h2 id="DDL">DDL</h2>
-<h3 id="数据库操作">数据库操作</h3>
-<blockquote>
-<p>以下我使用图形化工具IDEA展示效果，读者可以使用datagrip、Tomcat等图形化工具进行操作学习</p>
-</blockquote>
-<ol>
-<li>查询所有数据库</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/003.png" alt="003"></p>
-<p>因为我之间创建过一些数据库，所以会有读者没有的数据库，不必在意。</p>
-<ol start="2">
-<li>查询当前数据库</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select database();</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>创建数据库</li>
-</ol>
-<p>语法：<code>create database [ if not exists ] 数据库名 [ default charset 字符集 ] [ collate 排序规则 ] ;  </code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 由于mysql中不能创建两个名称相同的数据库，可以使用if语句事先判断是否存在同名的数据库</span><br><span class="line">create database if not exists test1;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>删除数据库</li>
-</ol>
-<p>语法：<code>drop database [ if exists ] 数据库名 ;  </code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">drop database test3;</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>切换数据库</li>
-</ol>
-<p>语法：<code>use 数据库名</code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use test1;</span><br></pre></td></tr></table></figure>
-<h3 id="表操作">表操作</h3>
-<ol>
-<li>展示当前数据库中所有的表</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>查看表结构</li>
-</ol>
-<p>语法：<code>desc 表名</code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">desc emps;</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/006.png" alt="006"></p>
-<ol start="3">
-<li>查询指定表的建表语句</li>
-</ol>
-<p>语法：<code>show create table 表名</code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">show create table emps;</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/005.png" alt="005"></p>
-<ol start="4">
-<li>创建表</li>
-</ol>
-<p>语法如下：注意[…]为可选函数，最后一个字段后面没有逗号</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE 表名(</span><br><span class="line">	字段1 字段1类型 [ COMMENT 字段1注释 ],</span><br><span class="line">	字段2 字段2类型 [COMMENT 字段2注释 ],</span><br><span class="line">	字段3 字段3类型 [COMMENT 字段3注释 ],</span><br><span class="line">	......</span><br><span class="line">	字段n 字段n类型 [COMMENT 字段n注释 ]</span><br><span class="line">) [ COMMENT 表注释 ] ;</span><br></pre></td></tr></table></figure>
-<p>示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create table tb_user(id int comment &#x27;编号&#x27;,name varchar(50) comment &#x27;姓名&#x27;,age int comment &#x27;年龄&#x27;,gender varchar(1) comment &#x27;性别&#x27;) comment &#x27;用户表&#x27;;</span><br></pre></td></tr></table></figure>
-<h4 id="数据类型">数据类型</h4>
-<p>基本上和其他编程语言大致相同，主要分为三类，数值类型、字符串类型、日期时间类型。</p>
-<p><strong>数值类型</strong></p>
-<p>补一下表格</p>
-<p><strong>字符串类型</strong></p>
-<p>表格</p>
-<p><strong>日期类型</strong></p>
-<p>表格</p>
-<p>示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 案例-设置员工表</span><br><span class="line"># 1.编号（纯数字）</span><br><span class="line"># 2.员工工号(字符串类型，长度不超过10位)</span><br><span class="line"># 3.员工姓名(字符串类型，长度不超过10位)</span><br><span class="line"># 4.性别(男/女，存储一个汉字)</span><br><span class="line"># 5.年龄(正常人年龄，不可能存储负数)</span><br><span class="line"># 6.身份证号(二代身份证号均为18位，身份证中有x这样的字符)</span><br><span class="line"># 7.入职时间（取值年月日即可）</span><br><span class="line">create table emp(</span><br><span class="line">    id int comment &#x27;编号&#x27;,</span><br><span class="line">    workno varchar(10) comment &#x27;工号&#x27;,</span><br><span class="line">    name varchar(10) comment &#x27;姓名&#x27;,</span><br><span class="line">    gender char(1) comment &#x27;性别&#x27;,</span><br><span class="line">    age tinyint unsigned comment &#x27;年龄&#x27;,</span><br><span class="line">    idcard char(18) comment &#x27;身份证号&#x27;,</span><br><span class="line">    entrydate date comment &#x27;入职时间&#x27;</span><br><span class="line">)comment &#x27;员工表&#x27;;</span><br></pre></td></tr></table></figure>
-<h4 id="增删查改">增删查改</h4>
-<ol>
-<li>添加字段</li>
-</ol>
-<p>语法：<code>ALTER TABLE 表名 ADD 字段名 类型 (长度) [ COMMENT 注释 ] [ 约束 ];  </code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table emp add nickname varchar(20) comment &#x27;昵称&#x27;;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>修改数据类型</li>
-</ol>
-<p>语法：<code>ALTER TABLE 表名 MODIFY 字段名 新数据类型 (长度);  </code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table emp change nickname username varchar(30) comment &#x27;用户名&#x27;;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>修改字段和字段类型</li>
-</ol>
-<p>语法：<code>ALTER TABLE 表名 CHANGE 旧字段名 新字段名 类型 (长度) [ COMMENT 注释 ] [ 约束 ];</code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER TABLE emp CHANGE nickname username varchar(30) COMMENT &#x27;昵称&#x27;;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>删除字段</li>
-</ol>
-<p>语法：<code>ALTER TABLE 表名 DROP 字段名;  </code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table emp drop username;</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/008.png" alt="008"></p>
-<ol start="5">
-<li>修改表名</li>
-</ol>
-<p>语法：<code>ALTER TABLE 表名 RENAME TO 新表名  </code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table emp rename to employee;</span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>删除表</li>
-</ol>
-<p>语法：<code>DROP TABLE [ IF EXISTS ] 表名;  </code>;<br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 只有表名存在的时候才会删除该表</span><br><span class="line">drop table if exists tb_user;</span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>删除并重新创建表</li>
-</ol>
-<p>语法：<code>TRUNCATE TABLE 表名;  </code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 删除并创建该表,这样就实现了数据清空但保留表结构的效果</span><br><span class="line">truncate table employee;</span><br></pre></td></tr></table></figure>
-<h2 id="DML">DML</h2>
-<p><strong>增删查改数据</strong></p>
-<ol>
-<li>给指定字段添加数据</li>
-</ol>
-<p>语法：<code>INSERT INTO 表名 (字段名1, 字段名2, ...) VALUES (值1, 值2, ...);  </code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">insert into employee(id, workno, name, gender, age, idcard, entrydate) VALUES(1,&#x27;1&#x27;,&#x27;itcast&#x27;,&#x27;男&#x27;,10,&#x27;123456789012345678&#x27;,&#x27;2000-11-01&#x27;);</span><br></pre></td></tr></table></figure>
-<p>数据查询如下</p>
-<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/009.png" alt="009"></p>
-<p>如果是要给全部字段添加数据，就无需写字段名</p>
-<ol start="2">
-<li>批量添加</li>
-</ol>
-<p>语法：<code>INSERT INTO 表名 (字段名1, 字段名2, ...) VALUES (值1, 值2, ...), (值1, 值2, ...), (值1, 值2, ...) ;  </code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">insert into employee values(3,&#x27;3&#x27;,&#x27;韦一笑&#x27;,&#x27;男&#x27;,38,&#x27;123456789012345670&#x27;,&#x27;2005-01-01&#x27;),(4,&#x27;4&#x27;,&#x27;赵敏&#x27;,&#x27;女&#x27;,18,&#x27;123456789012345670&#x27;,&#x27;2005-01-01&#x27;);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意</p>
-<ol>
-<li>插入数据时指定的字段顺序需要与值的顺序是一一对应的</li>
-<li>字符串和日期类型要在引号中</li>
-<li>数据应在规定范围内</li>
-</ol>
-</blockquote>
-<ol start="3">
-<li>修改数据</li>
-</ol>
-<p>语法：<code>UPDATE 表名 SET 字段名1 = 值1 , 字段名2 = 值2 , .... [ WHERE 条件 ] ;  </code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 修改数据 where句起到的是限定作用,不写就是所有的都修改</span><br><span class="line">update employee set name = &#x27;itheima&#x27;,gender = &#x27;女&#x27; where id = 1;</span><br><span class="line"># 将所有员工的入职时期设置为同一个时期</span><br><span class="line">update employee set entrydate  = &#x27;2003-01-01&#x27;;</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/011.png" alt="011"></p>
-<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/012.png" alt="012"></p>
-<blockquote>
-<p>如果修改数据没有where语句，默认修改所有数据</p>
-</blockquote>
-<ol start="4">
-<li>删除数据</li>
-</ol>
-<p>语法：<code>DELETE FROM 表名 [ WHERE 条件 ]   ;</code><br>
-示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">delete from employee where gender = &#x27;女&#x27;;</span><br><span class="line"># 相当于删除所有数据</span><br><span class="line">delete from employee; </span><br></pre></td></tr></table></figure>
-<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/013.png" alt="013"></p>
-<blockquote>
-<p>delete语句不能删除某一个字段的值，需要使用update将该字段设置为null</p>
-</blockquote>
-<h2 id="DQL">DQL</h2>
-<blockquote>
-<p>数据查询语言</p>
-</blockquote>
-<p><u><strong>to be continued</strong></u></p>
-<h1>参考</h1>
-<p><strong>视频教程</strong></p>
-<ol>
-<li><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=2&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">黑马程序员</a></li>
-<li><a href="https://www.bilibili.com/video/BV1iq4y1u7vj?vd_source=bb8dacb993f11c0e39f8147c98a2894c">尚硅谷</a></li>
-</ol>
-<p><strong>笔记参考</strong></p>
-<ol>
-<li><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=2&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">黑马程序员</a>：在官网上点击免费教程-“搜索mysql”，下载对应文件</li>
-<li><a href="https://jimhackking.github.io/%E8%BF%90%E7%BB%B4/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">MySQL学习笔记 | 智云知识</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客系列(一)测试与更新</title>
     <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/</url>
     <content><![CDATA[<h1>hexo博客更新和待更新计划</h1>
@@ -1455,10 +1155,310 @@ Countless small mysteries are also solved in the process.</span></p></div>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>blog</tag>
         <tag>测试</tag>
+        <tag>教程</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL学习笔记(一)</title>
+    <url>/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/</url>
+    <content><![CDATA[<h1>专有名词扩展</h1>
+<p><strong>英语是了解计算机的重要工具</strong></p>
+<table>
+<thead>
+<tr>
+<th>英语</th>
+<th>中文（计算机行话，不涉及一般含义）</th>
+<th>简写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>database</td>
+<td>数据库</td>
+<td>DB</td>
+</tr>
+<tr>
+<td>database management system</td>
+<td>数据库管理系统</td>
+<td>DBMS</td>
+</tr>
+<tr>
+<td>data definition languages</td>
+<td>数据定义语言</td>
+<td>DDL</td>
+</tr>
+<tr>
+<td>data manipulation languages</td>
+<td>数据操作语言</td>
+<td>DML</td>
+</tr>
+<tr>
+<td>data control languages</td>
+<td>数据控制语言</td>
+<td>DCL</td>
+</tr>
+<tr>
+<td>Data Query Language</td>
+<td>数据查询语言，用来查询数据库中表的记录</td>
+<td>DQL</td>
+</tr>
+<tr>
+<td>alias</td>
+<td>别名</td>
+<td>as</td>
+</tr>
+<tr>
+<td>structured query language</td>
+<td>操作关系型数据库的编程语言</td>
+<td>SQL</td>
+</tr>
+</tbody>
+</table>
+<h1>准备工作</h1>
+<blockquote>
+<p>本博客所使用的是Mysql8.0的版本，参考教程<a href="https://www.w3school.com.cn/">w3school 在线教程</a></p>
+</blockquote>
+<h2 id="下载">下载</h2>
+<p>读者可以参考下方链接的视频安装mysql，这里不再赘述</p>
+<p><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=2&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">黑马程序员</a></p>
+<h2 id="数据库基本操作">数据库基本操作</h2>
+<h2 id="启动MySQL">启动MySQL</h2>
+<p>打开方式有如下三种</p>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">命令行</button><button type="button" class="tab">系统控制</button><button type="button" class="tab">开机自启动</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>通过命令行的方式打开(Windows11)</strong></p>
+<ol>
+<li>按<code>win+r</code>键，在弹出的窗口内输入cmd</li>
+<li>再按ctrl+shift+enter以管理员的方式运行</li>
+<li>输入<code>net start MySQL服务名(例如本机是mysql80)</code></li>
+<li>停止Mysql命令：<code>net stop mysql80</code></li>
+</ol>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/001.png" alt="001"></p></div><div class="tab-item-content"><ol>
+<li>按<code>win+r</code>键，在弹出的窗口内输入cmd</li>
+<li>输入services.msc打开服务，找到对应的mysql，右键启动即可</li>
+</ol></div><div class="tab-item-content"><p>按<code>win+x</code>键，选择“任务管理器”，在左侧栏点击“服务”，搜索mysql，然后鼠标右键点击“<strong>打开服务</strong>”(或者按照系统控制的方法打开服务也行)，然后找到mysql右键-“属性”，点开“启动类型”并选择自动，点击应用并确定即可实现开机自启动。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h2 id="MySQL连接方式">MySQL连接方式</h2>
+<blockquote>
+<p>对于第一次使用MySQL的读者，一开始是没有密码的，打开MySQL之后在mysql界面输入 ALTER USER ‘root’@‘localhost’ IDENTIFIED BY ‘自己设置的密码’;即可自行设置</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>效果</th>
+<th>难度</th>
+<th>连接操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MySQL 8.0 Command Line Client</td>
+<td>和命令行一样，可视性不是特别强</td>
+<td>低，安装MySQL自带的</td>
+<td>开始界面搜索MySQL 8.0 Command Line Client，然后输入密码即可</td>
+</tr>
+<tr>
+<td><strong>Windows命令行</strong></td>
+<td>命令行，无需多言</td>
+<td>中，需要在系统属性里的PATH里面配置环境变量(就是<code>你的MySQL路径\bin</code>)</td>
+<td>打开命令行之后输入<code>mysql -u用户名 -p密码</code>      或者<code>mysql -u root -p </code>  加密输入密码防止泄露</td>
+</tr>
+</tbody>
+</table>
+<p>Windows命令行打开示例图</p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/002.png" alt="002"></p>
+<hr>
+<h1>MySQL基础篇</h1>
+<p><strong>SQL语言</strong></p>
+<p>无论是MySQL，还是oracle等其他的数据库，都遵守一定的SQL通用语法，特点如下</p>
+<ol>
+<li><strong>不区分大小写</strong>，但<u>建议关键字大写</u></li>
+<li>注释：<code>#</code>或者是<code>--</code>是MySQL特有的，<code>/**/</code>是多行注释</li>
+<li>以分号结尾</li>
+</ol>
+<h2 id="DDL">DDL</h2>
+<h3 id="数据库操作">数据库操作</h3>
+<blockquote>
+<p>以下我使用图形化工具IDEA展示效果，读者可以使用datagrip、Tomcat等图形化工具进行操作学习</p>
+</blockquote>
+<ol>
+<li>查询所有数据库</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> databases;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/003.png" alt="003"></p>
+<p>因为我之间创建过一些数据库，所以会有读者没有的数据库，不必在意。</p>
+<ol start="2">
+<li>查询当前数据库</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select database();</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>创建数据库</li>
+</ol>
+<p>语法：<code>create database [ if not exists ] 数据库名 [ default charset 字符集 ] [ collate 排序规则 ] ;  </code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 由于mysql中不能创建两个名称相同的数据库，可以使用if语句事先判断是否存在同名的数据库</span><br><span class="line">create database if not exists test1;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>删除数据库</li>
+</ol>
+<p>语法：<code>drop database [ if exists ] 数据库名 ;  </code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">drop database test3;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>切换数据库</li>
+</ol>
+<p>语法：<code>use 数据库名</code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use test1;</span><br></pre></td></tr></table></figure>
+<h3 id="表操作">表操作</h3>
+<ol>
+<li>展示当前数据库中所有的表</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>查看表结构</li>
+</ol>
+<p>语法：<code>desc 表名</code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">desc emps;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/006.png" alt="006"></p>
+<ol start="3">
+<li>查询指定表的建表语句</li>
+</ol>
+<p>语法：<code>show create table 表名</code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">show create table emps;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/005.png" alt="005"></p>
+<ol start="4">
+<li>创建表</li>
+</ol>
+<p>语法如下：注意[…]为可选函数，最后一个字段后面没有逗号</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE 表名(</span><br><span class="line">	字段1 字段1类型 [ COMMENT 字段1注释 ],</span><br><span class="line">	字段2 字段2类型 [COMMENT 字段2注释 ],</span><br><span class="line">	字段3 字段3类型 [COMMENT 字段3注释 ],</span><br><span class="line">	......</span><br><span class="line">	字段n 字段n类型 [COMMENT 字段n注释 ]</span><br><span class="line">) [ COMMENT 表注释 ] ;</span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create table tb_user(id int comment &#x27;编号&#x27;,name varchar(50) comment &#x27;姓名&#x27;,age int comment &#x27;年龄&#x27;,gender varchar(1) comment &#x27;性别&#x27;) comment &#x27;用户表&#x27;;</span><br></pre></td></tr></table></figure>
+<h4 id="数据类型">数据类型</h4>
+<p>基本上和其他编程语言大致相同，主要分为三类，数值类型、字符串类型、日期时间类型。</p>
+<p><strong>数值类型</strong></p>
+<p>补一下表格</p>
+<p><strong>字符串类型</strong></p>
+<p>表格</p>
+<p><strong>日期类型</strong></p>
+<p>表格</p>
+<p>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 案例-设置员工表</span><br><span class="line"># 1.编号（纯数字）</span><br><span class="line"># 2.员工工号(字符串类型，长度不超过10位)</span><br><span class="line"># 3.员工姓名(字符串类型，长度不超过10位)</span><br><span class="line"># 4.性别(男/女，存储一个汉字)</span><br><span class="line"># 5.年龄(正常人年龄，不可能存储负数)</span><br><span class="line"># 6.身份证号(二代身份证号均为18位，身份证中有x这样的字符)</span><br><span class="line"># 7.入职时间（取值年月日即可）</span><br><span class="line">create table emp(</span><br><span class="line">    id int comment &#x27;编号&#x27;,</span><br><span class="line">    workno varchar(10) comment &#x27;工号&#x27;,</span><br><span class="line">    name varchar(10) comment &#x27;姓名&#x27;,</span><br><span class="line">    gender char(1) comment &#x27;性别&#x27;,</span><br><span class="line">    age tinyint unsigned comment &#x27;年龄&#x27;,</span><br><span class="line">    idcard char(18) comment &#x27;身份证号&#x27;,</span><br><span class="line">    entrydate date comment &#x27;入职时间&#x27;</span><br><span class="line">)comment &#x27;员工表&#x27;;</span><br></pre></td></tr></table></figure>
+<h4 id="增删查改">增删查改</h4>
+<ol>
+<li>添加字段</li>
+</ol>
+<p>语法：<code>ALTER TABLE 表名 ADD 字段名 类型 (长度) [ COMMENT 注释 ] [ 约束 ];  </code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table emp add nickname varchar(20) comment &#x27;昵称&#x27;;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>修改数据类型</li>
+</ol>
+<p>语法：<code>ALTER TABLE 表名 MODIFY 字段名 新数据类型 (长度);  </code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table emp change nickname username varchar(30) comment &#x27;用户名&#x27;;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>修改字段和字段类型</li>
+</ol>
+<p>语法：<code>ALTER TABLE 表名 CHANGE 旧字段名 新字段名 类型 (长度) [ COMMENT 注释 ] [ 约束 ];</code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER TABLE emp CHANGE nickname username varchar(30) COMMENT &#x27;昵称&#x27;;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>删除字段</li>
+</ol>
+<p>语法：<code>ALTER TABLE 表名 DROP 字段名;  </code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table emp drop username;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/008.png" alt="008"></p>
+<ol start="5">
+<li>修改表名</li>
+</ol>
+<p>语法：<code>ALTER TABLE 表名 RENAME TO 新表名  </code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table emp rename to employee;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>删除表</li>
+</ol>
+<p>语法：<code>DROP TABLE [ IF EXISTS ] 表名;  </code>;<br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 只有表名存在的时候才会删除该表</span><br><span class="line">drop table if exists tb_user;</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>删除并重新创建表</li>
+</ol>
+<p>语法：<code>TRUNCATE TABLE 表名;  </code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 删除并创建该表,这样就实现了数据清空但保留表结构的效果</span><br><span class="line">truncate table employee;</span><br></pre></td></tr></table></figure>
+<h2 id="DML">DML</h2>
+<p><strong>增删查改数据</strong></p>
+<ol>
+<li>给指定字段添加数据</li>
+</ol>
+<p>语法：<code>INSERT INTO 表名 (字段名1, 字段名2, ...) VALUES (值1, 值2, ...);  </code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">insert into employee(id, workno, name, gender, age, idcard, entrydate) VALUES(1,&#x27;1&#x27;,&#x27;itcast&#x27;,&#x27;男&#x27;,10,&#x27;123456789012345678&#x27;,&#x27;2000-11-01&#x27;);</span><br></pre></td></tr></table></figure>
+<p>数据查询如下</p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/009.png" alt="009"></p>
+<p>如果是要给全部字段添加数据，就无需写字段名</p>
+<ol start="2">
+<li>批量添加</li>
+</ol>
+<p>语法：<code>INSERT INTO 表名 (字段名1, 字段名2, ...) VALUES (值1, 值2, ...), (值1, 值2, ...), (值1, 值2, ...) ;  </code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">insert into employee values(3,&#x27;3&#x27;,&#x27;韦一笑&#x27;,&#x27;男&#x27;,38,&#x27;123456789012345670&#x27;,&#x27;2005-01-01&#x27;),(4,&#x27;4&#x27;,&#x27;赵敏&#x27;,&#x27;女&#x27;,18,&#x27;123456789012345670&#x27;,&#x27;2005-01-01&#x27;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意</p>
+<ol>
+<li>插入数据时指定的字段顺序需要与值的顺序是一一对应的</li>
+<li>字符串和日期类型要在引号中</li>
+<li>数据应在规定范围内</li>
+</ol>
+</blockquote>
+<ol start="3">
+<li>修改数据</li>
+</ol>
+<p>语法：<code>UPDATE 表名 SET 字段名1 = 值1 , 字段名2 = 值2 , .... [ WHERE 条件 ] ;  </code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 修改数据 where句起到的是限定作用,不写就是所有的都修改</span><br><span class="line">update employee set name = &#x27;itheima&#x27;,gender = &#x27;女&#x27; where id = 1;</span><br><span class="line"># 将所有员工的入职时期设置为同一个时期</span><br><span class="line">update employee set entrydate  = &#x27;2003-01-01&#x27;;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/011.png" alt="011"></p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/012.png" alt="012"></p>
+<blockquote>
+<p>如果修改数据没有where语句，默认修改所有数据</p>
+</blockquote>
+<ol start="4">
+<li>删除数据</li>
+</ol>
+<p>语法：<code>DELETE FROM 表名 [ WHERE 条件 ]   ;</code><br>
+示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">delete from employee where gender = &#x27;女&#x27;;</span><br><span class="line"># 相当于删除所有数据</span><br><span class="line">delete from employee; </span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/013.png" alt="013"></p>
+<blockquote>
+<p>delete语句不能删除某一个字段的值，需要使用update将该字段设置为null</p>
+</blockquote>
+<h2 id="DQL">DQL</h2>
+<blockquote>
+<p>数据查询语言</p>
+</blockquote>
+<p><u><strong>to be continued</strong></u></p>
+<h1>参考</h1>
+<p><strong>视频教程</strong></p>
+<ol>
+<li><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=2&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">黑马程序员</a></li>
+<li><a href="https://www.bilibili.com/video/BV1iq4y1u7vj?vd_source=bb8dacb993f11c0e39f8147c98a2894c">尚硅谷</a></li>
+</ol>
+<p><strong>笔记参考</strong></p>
+<ol>
+<li><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=2&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">黑马程序员</a>：在官网上点击免费教程-“搜索mysql”，下载对应文件</li>
+<li><a href="https://jimhackking.github.io/%E8%BF%90%E7%BB%B4/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">MySQL学习笔记 | 智云知识</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -1665,8 +1665,8 @@ Countless small mysteries are also solved in the process.</span></p></div>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>blog</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -1872,49 +1872,9 @@ Countless small mysteries are also solved in the process.</span></p></div>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>blog</tag>
+        <tag>教程</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析工具superset安装和使用(version:0.381)</title>
-    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
-    <content><![CDATA[<h1>简介</h1>
-<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
-<h1>准备工作</h1>
-<blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
-</blockquote>
-<ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料
-<ul>
-<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ul>
-</li>
-</ul>
-<h1>基本环境配置</h1>
-<ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
-</ol>
-<h1>superset使用指南</h1>
-<p>待更新……</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
@@ -2341,6 +2301,46 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
       <tags>
         <tag>C</tag>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析工具superset安装和使用(version:0.381)</title>
+    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
+    <content><![CDATA[<h1>简介</h1>
+<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<h1>准备工作</h1>
+<blockquote>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+</blockquote>
+<ul>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料
+<ul>
+<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h1>基本环境配置</h1>
+<ol>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
+</ol>
+<h1>superset使用指南</h1>
+<p>待更新……</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
