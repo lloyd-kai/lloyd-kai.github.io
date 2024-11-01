@@ -884,346 +884,17 @@ command [-options] [parameter]</p>
       </tags>
   </entry>
   <entry>
-    <title>hexo博客系列(一)测试与更新</title>
-    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/</url>
-    <content><![CDATA[<h1>hexo博客更新和待更新计划</h1>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法与经验</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
-<p>以下更新内容都是从最后一次更新开始的</p>
-</blockquote>
-<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2024</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-29</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>修复了手机端视频溢出显示部分的问题</li>
-<li>修改了几处笔误和显示问题。</li>
-<li>优化了所有博客的参考部分</li>
-</ol>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-26</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>butterfly主题从5.0.0更新到5.1.0版本</li>
-<li>优化了chart插件</li>
-<li>更新了一篇新博客</li>
-</ol>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-10</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>butterfly主题从4.13.0更新到5.0.0版本</li>
-<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
-<li>更新了留言板</li>
-<li>优化了搜索功能</li>
-<li>禁止B站视频自动播放</li>
-<li>更新了主页“关于”部分</li>
-<li>修复了几处笔误的问题</li>
-<li>优化了评论功能的选择</li>
-<li>添加了站点工具(谷歌与必应)，优化了文章的描述部分</li>
-<li>优化一下图片无法放大查看的问题</li>
-</ol>
-</div></div></div></div><div class="tab-item-content"><ol>
-<li>子菜单展示内容；方法：通过基本的markdown语言和butterfly专有语法-标签外挂实现效果，建议写成总领式的文章或者展示页面。可以参考此博客<a href="https://blog.guole.fun/posts/butterfly-custom/#%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E8%BD%AE%E6%92%AD%E6%A8%A1%E5%9D%97">我的Blog美化日记——Hexo+Butterfly | Guo Le’s Blog</a> 里面的“volantis”部分，和这个<a href="https://www.huangshiqing.website/2022/11/03/HexoTagPlugins/">Hexo Built-in Tag Plugins (Hexo内置标签外挂) | Ofra Serendipity</a></li>
-<li>添加一下赞助墙</li>
-<li>更新算法相关博客并添加数学动画视频或者是算法演示动画</li>
-<li>学习并在博客中添加图表-对于本网站以chartjs的图表为主，涉及UML就用Mermaid,对于精致的图表(比如数据分析)才会用Echart.</li>
-<li>如果zeabur部署失效，可以考虑netlify、<a href="https://www.21cloudbox.com">https://www.21cloudbox.com</a>、码云等托管平台。</li>
-</ol></div><div class="tab-item-content"><h2 id="debug经验">debug经验</h2>
-<p>目前由于butterfly的版本更新，导致以前的部分功能失效，建议<strong>先看官方文档，将对应过时的代码注释或者去除，没有的代码添加</strong>，然后再<strong>根据</strong>F12检查对应的板块，<strong>用前端的知识去搜查问题发生的地点和原因</strong>，然后再纠错。</p>
-<h2 id="hexo框架更新">hexo框架更新</h2>
-<p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
-<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
-<h2 id="butterfly主题更新">butterfly主题更新</h2>
-<blockquote>
-<p>更新前记得留下blog快照</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
-<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
-<p>如果不行，就在你的博客/themes/butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
-<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-<h2 id="个人hexo博客更新讲解">个人hexo博客更新讲解</h2>
-<p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
-<p>示例代码如下</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
-<p><strong>评论功能</strong>：我设置的是twikoo静态评论控制+Valine评论，搭建教程可以参考如下链接<a href="https://blog.hihahoo.com/archives/fc6989f5.html#1-twikoo%E9%83%A8%E7%BD%B2">Hexo主题butterfly集成评论功能（twikoo） | Hihahoo：想你所想 做你所做</a></p>
-<p><strong>文章置顶功能</strong>：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考链接<a href="https://liangshenglei.github.io/2023/03/06/Butterfly%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/index.html">Butterfly 主题的详细配置 | 梁圣磊の博客 (liangshenglei.github.io)</a></p>
-<p><strong>文章加密功能</strong>：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">https://polar-bear.eu.org/2023/07/21/ce-shi/</a> 也许以后添加。</p>
-<p><strong>博客撰写</strong>：</p>
-<ol>
-<li>hexo会自动给分级标题编号，不需要自己添加</li>
-<li><u>不要给标点符号加标签或者是特性</u>，容易出现显示问题。</li>
-</ol>
-<p><strong>磁贴功能</strong>：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
-<p><strong>同步问题</strong>：在zeabur的部署大概会间隔一天左右才会同步上。</p>
-<p><strong>图片方面</strong></p>
-<ul>
-<li>
-<p>方法1：通过picgo图床实现图片上传。参考【Typora+PicGo+阿里云OSS实现云笔记|Typora上传图片】<a href="https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></p>
-</li>
-<li>
-<p>方法2-本地上传图片：参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用，<strong>博主因为部署的原因主要使用此方法</strong>_ 。如果部署到zeabur的博客图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。参考教程<a href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法_hexo 文章插入图片失败-CSDN博客</a> 。</p>
-</li>
-<li>
-<p>方法3：使用其他的图床网站如<a href="https://smms.app/">SMMS</a>。上传图片后，点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。</p>
-</li>
-</ul>
-<p><strong>导航栏设置</strong>：在<code>_config.butterfly.yml</code> 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class= &quot; 复制这里的内容&quot; 替代即可。</p>
-<p><strong>系列文章</strong>：在文章的 front-matter 上添加参数 series，并给予一個标签</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br></pre></td></tr></table></figure>
-<h1>测试</h1>
-<h2 id="测试图片">测试图片</h2>
-<p><strong>阿里云图片测试</strong></p>
-<p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-06-02%20221147.png" alt="屏幕截图 2024-06-02 221147"></p>
-<p><strong>本地图片测试</strong></p>
-<p><img src="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/C__Users_kai98_Pictures_%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87_post-img1.png" alt="Godot游戏引擎"></p>
-<p><strong>标签外挂测试图片</strong></p>
-<div class="gallery-container" data-type="data" data-button>
-      <div class="gallery-items">[{"url":"https://s2.loli.net/2024/06/14/4RrcPzbG3fsqyC6.png","alt":"3.png"}]</div>
-    </div>
-<p><strong>图床图片测试</strong></p>
-<p><img src="https://s2.loli.net/2024/10/24/MQ6gGn4LtBDyduJ.png" alt="苍之彼方的四重奏.png"></p>
-<h2 id="测试系列文章">测试系列文章</h2>
-<ol class="series-items"><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/" title="hexo博客系列(一)测试与更新">hexo博客系列(一)测试与更新</a></li><li><a href="/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/" title="hexo博客系列(三)博客写作指南">hexo博客系列(三)博客写作指南</a></li><li><a href="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/" title="hexo博客系列(二)博客创建指南">hexo博客系列(二)博客创建指南</a></li></ol>
-<h2 id="标签外挂测试">标签外挂测试</h2>
-<blockquote>
-<p>本以下基于hexo+butterfly的主题，其他的主题请读者自行查阅有关资料</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文檔(四) 標簽外挂 | Butterfly</a></p>
-<p>参考教程：<a href="https://liangshenglei.github.io/2023/02/27/Markdown%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/#referto_%5B1%5D">Markdown 外挂标签 | 梁圣磊の博客</a></p>
-<ol>
-<li>Note (Bootstrap Callout)</li>
-</ol>
-<p>个人使用，感觉比较适合知识的分层结构，比如我博客里面的《英语语法(英语兔版)》</p>
-<ol start="2">
-<li>tag-hide</li>
-</ol>
-<p>个人感觉比较适合于问答类型或者是部分内容较多，需要的时候再展开的文章内容。测试如下</p>
-<p><strong>Block测试</strong></p>
-<p>查看答案</p>
-<div class="hide-block"><button type="button" class="hide-button" style>查看答案
-    </button><div class="hide-content"><p>答案就在你心中</p>
-</div></div>
-<p><strong>Toggle测试</strong></p>
-<details class="toggle"><summary class="toggle-button" style>Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
-<p>git clone -b master <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes/Butterfly</p>
-<p>如果想要安裝比較新的 dev 分支，可以</p>
-<p>git clone -b dev <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes/Butterfly</p>
-</div></details>
-<p><strong>Mermaid测试</strong></p>
-<p>这是和图表有关的标签，可以画流程图，时序图等</p>
-<p>注意要先写<code>&#123;% mermaid %&#125; &#123;% endmermaid %&#125;</code> 然后就在这两个标签内写相关代码。</p>
-<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
-  
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop HealthCheck
-        John-&gt;&gt;John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
-    John--&gt;&gt;Alice: Great!
-    John-&gt;&gt;Bob: How about you?
-    Bob--&gt;&gt;John: Jolly good!
-
-  </pre></div>
-<p><strong>Flink测试</strong></p>
-<p>就是和链接相关的测试</p>
-<div class="flink"><div class="flink-name">友情鏈接</div><div class="flink-desc">那些人，那些事</div><div class="flink-list">
-      <div class="flink-list-item">
-        <a href="https://jerryc.me/" title="JerryC" target="_blank">
-          <div class="flink-item-icon">
-            <img class="no-lightbox" src="https://jerryc.me/img/avatar.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="JerryC">
-          </div>
-          <div class="flink-item-name">JerryC</div>
-          <div class="flink-item-desc" title="今日事,今日畢">今日事,今日畢</div>
-        </a>
-      </div>
-      <div class="flink-list-item">
-        <a href="https://hexo.io/zh-tw/" title="Hexo" target="_blank">
-          <div class="flink-item-icon">
-            <img class="no-lightbox" src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="Hexo">
-          </div>
-          <div class="flink-item-name">Hexo</div>
-          <div class="flink-item-desc" title="快速、簡單且強大的網誌框架">快速、簡單且強大的網誌框架</div>
-        </a>
-      </div></div></div>
-<p><strong>乐谱测试</strong></p>
-<div class="abc-music-sheet">X:1
-T:alternate heads
-M:C
-L:1/8
-U:n=!style=normal!
-K:C treble style=rhythm
-&quot;Am&quot; BBBB B2 B&gt;B | &quot;Dm&quot; B2 B/B/B &quot;C&quot; B4 |&quot;Am&quot; B2 nGnB B2 nGnA | &quot;Dm&quot; nDB/B/ nDB/B/ &quot;C&quot; nCB/B/ nCB/B/ |B8| B0 B0 B0 B0 |]
-%%text This translates to:
-[M:C][K:style=normal]
-[A,EAce][A,EAce][A,EAce][A,EAce] [A,EAce]2 [A,EAce]&gt;[A,EAce] |[DAdf]2 [DAdf]/[DAdf]/[DAdf] [CEGce]4 |[A,EAce]2 GA [A,EAce] GA |D[DAdf]/[DAdf]/ D[DAdf]/[DAdf]/ C [CEGce]/[CEGce]/ C[CEGce]/[CEGce]/ |[CEGce]8 | [CEGce]2 [CEGce]2 [CEGce]2 [CEGce]2 |]
-GAB2 !style=harmonic![gb]4|GAB2 [K: style=harmonic]gbgb|
-[K: style=x]
-C/A,/ C/C/E C/zz2|
-w:Rock-y did-nt like that</div>
-<p><strong>测试自带的chartjs</strong>——可以实现动态效果，建议使用。</p>
-<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
-            <pre class="chartjs-src" hidden>{
-    &quot;type&quot;: &quot;pie&quot;,
-    &quot;data&quot;: {
-        &quot;labels&quot;: [
-            &quot;编程&quot;,
-            &quot;音乐&quot;,
-            &quot;阅读&quot;,
-            &quot;游戏&quot;,
-            &quot;健身&quot;,
-            &quot;旅游&quot;
-        ],
-        &quot;datasets&quot;: [
-            {
-                &quot;label&quot;: &quot;喜爱指数&quot;,
-                &quot;data&quot;: [
-                    30,
-                    24,
-                    19,
-                    14,
-                    9,
-                    4
-                ],
-                &quot;backgroundColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.5)&quot;,
-                        &quot;rgba(54, 162, 235, 0.5)&quot;,
-                        &quot;rgba(255, 206, 86, 0.5)&quot;,
-                        &quot;rgba(75, 192, 192, 0.5)&quot;,
-                        &quot;rgba(153, 102, 255, 0.5)&quot;,
-                        &quot;rgba(255, 159, 64, 0.5)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.2)&quot;,
-                        &quot;rgba(54, 162, 235, 0.2)&quot;,
-                        &quot;rgba(255, 206, 86, 0.2)&quot;,
-                        &quot;rgba(75, 192, 192, 0.2)&quot;,
-                        &quot;rgba(153, 102, 255, 0.2)&quot;,
-                        &quot;rgba(255, 159, 64, 0.2)&quot;
-                    ]
-                },
-                &quot;borderColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ]
-                }
-            }
-        ]
-    },
-    &quot;options&quot;: {
-        &quot;plugins&quot;: {
-            &quot;legend&quot;: {
-                &quot;labels&quot;: {
-                    &quot;color&quot;: {
-                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
-                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
-                    }
-                }
-            }
-        }
-    }
-}
-</pre>
-            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
-我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
-在此过程中也解决了无数的小谜团。<br>
-<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
-I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
-Countless small mysteries are also solved in the process.</span></p></div>
-          </div>
-<p><strong>tab演示</strong></p>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-<p><strong>按钮button测试</strong></p>
-<div class="btn-center">
-<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-</div>
-<p><strong>文字高亮</strong></p>
-<mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
-<mark class="hl-label red">红色</mark>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>测试</tag>
-        <tag>教程</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL学习笔记(一)</title>
     <url>/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/</url>
-    <content><![CDATA[<h1>专有名词扩展</h1>
-<p><strong>英语是了解计算机的重要工具</strong></p>
-<table>
-<thead>
-<tr>
-<th>英语</th>
-<th>中文（计算机行话，不涉及一般含义）</th>
-<th>简写</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>database</td>
-<td>数据库</td>
-<td>DB</td>
-</tr>
-<tr>
-<td>database management system</td>
-<td>数据库管理系统</td>
-<td>DBMS</td>
-</tr>
-<tr>
-<td>data definition languages</td>
-<td>数据定义语言</td>
-<td>DDL</td>
-</tr>
-<tr>
-<td>data manipulation languages</td>
-<td>数据操作语言</td>
-<td>DML</td>
-</tr>
-<tr>
-<td>data control languages</td>
-<td>数据控制语言</td>
-<td>DCL</td>
-</tr>
-<tr>
-<td>Data Query Language</td>
-<td>数据查询语言，用来查询数据库中表的记录</td>
-<td>DQL</td>
-</tr>
-<tr>
-<td>alias</td>
-<td>别名</td>
-<td>as</td>
-</tr>
-<tr>
-<td>structured query language</td>
-<td>操作关系型数据库的编程语言</td>
-<td>SQL</td>
-</tr>
-</tbody>
-</table>
-<h1>准备工作</h1>
+    <content><![CDATA[<h1>准备工作</h1>
 <blockquote>
-<p>本博客所使用的是Mysql8.0的版本，参考教程<a href="https://www.w3school.com.cn/">w3school 在线教程</a></p>
+<ol>
+<li>本博客所使用的是Mysql8.0的版本</li>
+<li>所有代码中的注释均使用<code>--</code>或者<code>/**/</code>以便适配不同的sql语言</li>
+</ol>
 </blockquote>
 <h2 id="下载">下载</h2>
-<p>读者可以参考下方链接的视频安装mysql，这里不再赘述</p>
-<p><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=2&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">黑马程序员</a></p>
+<p>在Windows和linux的分别写一下</p>
 <h2 id="数据库基本操作">数据库基本操作</h2>
 <h2 id="启动MySQL">启动MySQL</h2>
 <p>打开方式有如下三种</p>
@@ -1886,7 +1557,568 @@ where与having区别</p>
 </ol>
 </blockquote>
 <h2 id="函数">函数</h2>
-<p>to be continued…</p>
+<h3 id="字符串函数">字符串函数</h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CONCAT(S1,S2,…Sn)</td>
+<td>字符串拼接，将S1，S2，… Sn拼接成一个字符串</td>
+</tr>
+<tr>
+<td>LOWER(str)</td>
+<td>将字符串str全部转为小写</td>
+</tr>
+<tr>
+<td>UPPER(str)</td>
+<td>将字符串str全部转为大写</td>
+</tr>
+<tr>
+<td>LPAD(str,n,pad)</td>
+<td>左填充，用字符串pad对str的左边进行填充，达到n个字符 串长度</td>
+</tr>
+<tr>
+<td>RPAD(str,n,pad)</td>
+<td>右填充，用字符串pad对str的右边进行填充，达到n个字符 串长度</td>
+</tr>
+<tr>
+<td>TRIM(str)</td>
+<td>去掉字符串头部和尾部的空格</td>
+</tr>
+<tr>
+<td>SUBSTRING(str,start,len)</td>
+<td>返回从字符串str从start位置起的len个长度的字符串</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 字符串拼接</span></span><br><span class="line"><span class="keyword">select</span> concat(<span class="string">&#x27;hello&#x27;</span>,<span class="string">&#x27;mysql&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/033.png" alt="033"></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 大小写转换</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">lower</span>(<span class="string">&#x27;HELLO&#x27;</span>);</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">upper</span>(<span class="string">&#x27;hello&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 左填充与右填充 常用于日期、编号等的数据</span></span><br><span class="line"><span class="keyword">select</span> lpad(<span class="string">&#x27;01&#x27;</span>,<span class="number">5</span>,<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line"><span class="keyword">select</span> rpad(<span class="string">&#x27;01&#x27;</span>,<span class="number">5</span>,<span class="string">&#x27;-&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/034.png" alt="034"></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 去除空格</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">trim</span>(<span class="string">&#x27; Hello MySQL &#x27;</span>);</span><br><span class="line"><span class="comment">-- 截取字符串 注意索引从1开始</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">substring</span>(<span class="string">&#x27;hello mysql&#x27;</span>,<span class="number">1</span>,<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/035.png" alt="035"></p>
+<h3 id="数值函数">数值函数</h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CEIL(x)</td>
+<td>向上取整</td>
+</tr>
+<tr>
+<td>FLOOR(x)</td>
+<td>向下取整</td>
+</tr>
+<tr>
+<td>MOD(x,y)</td>
+<td>返回x/y的模</td>
+</tr>
+<tr>
+<td>RAND()</td>
+<td>返回0~1内的随机数</td>
+</tr>
+<tr>
+<td>ROUND(x,y)</td>
+<td>求参数x的四舍五入的值，保留y位小数</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 数值函数 就是编程语言中常见的函数</span></span><br><span class="line"><span class="comment">-- 向上取整</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">ceil</span>(<span class="number">1.1</span>);</span><br><span class="line"><span class="comment">-- 向下取整-即保留整数位</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">floor</span>(<span class="number">1.9</span>);</span><br><span class="line"><span class="comment">-- 取模</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">mod</span>(<span class="number">3</span>,<span class="number">2</span>);</span><br><span class="line"><span class="comment">-- 随机数 不写默认是0-1的数</span></span><br><span class="line"><span class="keyword">select</span> rand();</span><br><span class="line"><span class="comment">-- 四舍五入+保留小数位数</span></span><br><span class="line"><span class="keyword">select</span> round(<span class="number">2.35</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>生成一个六位数的随机验证码</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> lpad(round(rand()<span class="operator">*</span><span class="number">1000000</span>,<span class="number">0</span>),<span class="number">6</span>,<span class="string">&#x27;0&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/036.png" alt="036"></p>
+<h3 id="日期函数">日期函数</h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CURDATE()</td>
+<td>返回当前日期</td>
+</tr>
+<tr>
+<td>CURTIME()</td>
+<td>返回当前时间</td>
+</tr>
+<tr>
+<td>NOW()</td>
+<td>返回当前日期和时间</td>
+</tr>
+<tr>
+<td>YEAR(date)</td>
+<td>获取指定date的年份</td>
+</tr>
+<tr>
+<td>MONTH(date)</td>
+<td>获取指定date的月份</td>
+</tr>
+<tr>
+<td>DAY(date)</td>
+<td>获取指定date的日期</td>
+</tr>
+<tr>
+<td>DATE_ADD(date, INTERVAL expr type)</td>
+<td>返回一个日期/时间值加上一个时间间隔expr后的 时间值</td>
+</tr>
+<tr>
+<td>DATEDIFF(date1,date2)</td>
+<td>返回起始时间date1 和 结束时间date2之间的天 数</td>
+</tr>
+</tbody>
+</table>
+<p>示例</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 英语中date表示日期，time表示具体的时间</span></span><br><span class="line"><span class="comment">-- 当前日期</span></span><br><span class="line"><span class="keyword">select</span> curdate();</span><br><span class="line"><span class="comment">-- 当前时间</span></span><br><span class="line"><span class="keyword">select</span> curtime();</span><br><span class="line"><span class="comment">-- 当前日期+时间</span></span><br><span class="line"><span class="keyword">select</span> now();</span><br><span class="line"><span class="comment">-- 年月日函数</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">day</span>(now());</span><br><span class="line"><span class="comment">-- “增加”时间</span></span><br><span class="line"><span class="keyword">select</span> date_add(now(),<span class="type">interval</span> <span class="number">70</span> <span class="keyword">day</span>); # 这里的意思是在当前时间<span class="operator">+</span><span class="number">70</span>天</span><br></pre></td></tr></table></figure>
+<p><strong>两时间之差：第一个参数-第二个参数</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> datediff(<span class="string">&#x27;2021-07-21&#x27;</span>,<span class="string">&#x27;1921-07-21&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/038.png" alt="038"></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 查询所有员工的入职天数，并根据入职天数倒序排序</span></span><br><span class="line"><span class="keyword">select</span> first_name,datediff(curdate(),hire_date) <span class="keyword">as</span> <span class="string">&#x27;entrydays&#x27;</span> <span class="keyword">from</span> emps <span class="keyword">order</span> <span class="keyword">by</span> entrydays <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/039.png" alt="039"></p>
+<h3 id="流程函数">流程函数</h3>
+<blockquote>
+<p>就是高级语言中的控制函数</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IF(value , t , f)</td>
+<td>如果value为true，则返回t，否则返回 f</td>
+</tr>
+<tr>
+<td>IFNULL(value1 , value2)</td>
+<td>如果value1不为空，返回value1，否则 返回value2</td>
+</tr>
+<tr>
+<td>CASE WHEN [ val1 ] THEN [res1] … ELSE [ default ] END</td>
+<td>如果val1为true，返回res1，… 否 则返回default默认值</td>
+</tr>
+<tr>
+<td>CASE [ expr ] WHEN [ val1 ] THEN [res1] … ELSE [ default ] END</td>
+<td>如果expr的值等于val1，返回 res1，… 否则返回default默认值</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 流程控制函数 就是编程语言中的控制函数</span></span><br><span class="line"><span class="keyword">select</span> if(<span class="literal">true</span>,<span class="string">&#x27;OK&#x27;</span>,<span class="string">&#x27;error&#x27;</span>);</span><br><span class="line"><span class="comment">-- 判断是否为null</span></span><br><span class="line"><span class="keyword">select</span> ifnull(<span class="keyword">null</span>,<span class="string">&#x27;default&#x27;</span>);</span><br><span class="line"><span class="comment">-- 多选择分支</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">    name,</span><br><span class="line">    (<span class="keyword">case</span> note <span class="keyword">when</span> <span class="string">&#x27;novel&#x27;</span> <span class="keyword">then</span> <span class="string">&#x27;小说&#x27;</span> <span class="keyword">when</span> <span class="string">&#x27;drama&#x27;</span> <span class="keyword">then</span> <span class="string">&#x27;戏剧&#x27;</span> <span class="keyword">else</span> <span class="string">&#x27;其他类型&#x27;</span><span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">&#x27;图书表&#x27;</span></span><br><span class="line"><span class="keyword">from</span> books;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/040.png" alt="040"></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 案例 按照不同的工资范围给予对应员工评价</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">    first_name,</span><br><span class="line">    (<span class="keyword">case</span> <span class="keyword">when</span> salary <span class="operator">&gt;=</span><span class="number">10000</span> <span class="keyword">then</span> <span class="string">&#x27;优秀&#x27;</span> <span class="keyword">when</span> salary <span class="operator">&gt;=</span><span class="number">6000</span> <span class="keyword">then</span> <span class="string">&#x27;还行&#x27;</span> <span class="keyword">else</span> <span class="string">&#x27;加把劲&#x27;</span> <span class="keyword">end</span>) <span class="string">&#x27;工资表&#x27;</span></span><br><span class="line"><span class="keyword">from</span> emps;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/041.png" alt="041"></p>
+<h2 id="约束-constraint">约束(constraint)</h2>
+<p>概念：约束是作用于表中字段上的规则，用于限制存储在表中的数据。</p>
+<table>
+<thead>
+<tr>
+<th>约束</th>
+<th>描述</th>
+<th>关键字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>非空约束</td>
+<td>限制该字段的数据不能为null</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>唯一约束</td>
+<td>保证该字段的所有数据都是唯一、不重复的</td>
+<td>UNIQUE</td>
+</tr>
+<tr>
+<td>主键约束</td>
+<td>主键是一行数据的唯一标识，要求非空且唯一</td>
+<td>PRIMARY KEY</td>
+</tr>
+<tr>
+<td>默认约束</td>
+<td>保存数据时，如果未指定该字段的值，则采用默认值</td>
+<td>DEFAULT</td>
+</tr>
+<tr>
+<td>检查约束(8.0.16版本 之后)</td>
+<td>保证字段值满足某一个条件</td>
+<td>CHECK</td>
+</tr>
+<tr>
+<td>外键约束</td>
+<td>用来让两张表的数据之间建立连接，保证数据的一致 性和完整性</td>
+<td>FOREIGN KEY</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>在创建表过程或者已经创建均可以添加约束</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 案例</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">user</span>(</span><br><span class="line">    id <span class="type">int</span> <span class="keyword">primary</span> key auto_increment comment <span class="string">&#x27;主键&#x27;</span>,</span><br><span class="line">    name <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">unique</span> comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">    age <span class="type">int</span> <span class="keyword">check</span> ( age <span class="operator">&gt;</span> <span class="number">0</span> <span class="operator">&amp;&amp;</span> age <span class="operator">&lt;=</span><span class="number">120</span> ) comment <span class="string">&#x27;年龄&#x27;</span>,</span><br><span class="line">    status <span class="type">char</span>(<span class="number">1</span>) <span class="keyword">default</span> <span class="string">&#x27;1&#x27;</span> comment <span class="string">&#x27;状态&#x27;</span>,</span><br><span class="line">    gender <span class="type">char</span>(<span class="number">1</span>) comment <span class="string">&#x27;性别&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;用户表&#x27;</span>;</span><br><span class="line"><span class="comment">-- 插入数据 主键自增不需要添加数据</span></span><br><span class="line"><span class="comment">-- 同理可以在图形化界面添加对应的约束</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span>(name,age,status,gender) <span class="keyword">value</span> (<span class="string">&#x27;Tom1&#x27;</span>,<span class="string">&#x27;19&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;男&#x27;</span>),(<span class="string">&#x27;Tom2&#x27;</span>,<span class="string">&#x27;25&#x27;</span>,<span class="string">&#x27;0&#x27;</span>,<span class="string">&#x27;男&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span>(name,age,status,gender) <span class="keyword">value</span> (<span class="keyword">null</span>,<span class="string">&#x27;19&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;男&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>第12行代码异常执行，不符合约束的数据不会添加</p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/042.png" alt="042"></p>
+<h3 id="外键约束">外键约束</h3>
+<p>概念：用来让两张表的数据之间建立连接，从而保证数据的一致性和完整性</p>
+<ol>
+<li>添加外键</li>
+</ol>
+<p>语法</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 在创建表的时候添加</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> 表名(</span><br><span class="line">	字段名 数据类型,</span><br><span class="line">	...</span><br><span class="line">	[<span class="keyword">CONSTRAINT</span>] [外键名称] <span class="keyword">FOREIGN</span> KEY (外键字段名) <span class="keyword">REFERENCES</span> 主表 (主表列名)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 在修改表的时候添加</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> 外键名称 <span class="keyword">FOREIGN</span> KEY (外键字段名) <span class="keyword">REFERENCES</span> 主表 (主表列名) ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 让两张表的数据之间建立联系，从而保证数据一致</span></span><br><span class="line"><span class="comment">-- 具有外键的表成为子表，而关联的表称为父表</span></span><br><span class="line"><span class="comment">-- 准备数据</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> dept(</span><br><span class="line">                     id   <span class="type">int</span> auto_increment comment <span class="string">&#x27;ID&#x27;</span> <span class="keyword">primary</span> key,</span><br><span class="line">                     name <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;部门名称&#x27;</span></span><br><span class="line">)comment <span class="string">&#x27;部门表&#x27;</span>;</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept (id, name) <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">&#x27;研发部&#x27;</span>), (<span class="number">2</span>, <span class="string">&#x27;市场部&#x27;</span>),(<span class="number">3</span>, <span class="string">&#x27;财务部&#x27;</span>), (<span class="number">4</span>, <span class="string">&#x27;销售部&#x27;</span>), (<span class="number">5</span>, <span class="string">&#x27;总经办&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> emp(</span><br><span class="line">                    id  <span class="type">int</span> auto_increment comment <span class="string">&#x27;ID&#x27;</span> <span class="keyword">primary</span> key,</span><br><span class="line">                    name <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">                    age  <span class="type">int</span> comment <span class="string">&#x27;年龄&#x27;</span>,</span><br><span class="line">                    job <span class="type">varchar</span>(<span class="number">20</span>) comment <span class="string">&#x27;职位&#x27;</span>,</span><br><span class="line">                    salary <span class="type">int</span> comment <span class="string">&#x27;薪资&#x27;</span>,</span><br><span class="line">                    entrydate <span class="type">date</span> comment <span class="string">&#x27;入职时间&#x27;</span>,</span><br><span class="line">                    managerid <span class="type">int</span> comment <span class="string">&#x27;直属领导ID&#x27;</span>,</span><br><span class="line">                    dept_id <span class="type">int</span> comment <span class="string">&#x27;部门ID&#x27;</span></span><br><span class="line">)comment <span class="string">&#x27;员工表&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp (id, name, age, job,salary, entrydate, managerid, dept_id) <span class="keyword">VALUES</span></span><br><span class="line">                                                                               (<span class="number">1</span>, <span class="string">&#x27;金庸&#x27;</span>, <span class="number">66</span>, <span class="string">&#x27;总裁&#x27;</span>,<span class="number">20000</span>, <span class="string">&#x27;2000-01-01&#x27;</span>, <span class="keyword">null</span>,<span class="number">5</span>),(<span class="number">2</span>, <span class="string">&#x27;张无忌&#x27;</span>, <span class="number">20</span>, <span class="string">&#x27;项目经理&#x27;</span>,<span class="number">12500</span>, <span class="string">&#x27;2005-12-05&#x27;</span>, <span class="number">1</span>,<span class="number">1</span>),</span><br><span class="line">                                                                               (<span class="number">3</span>, <span class="string">&#x27;杨逍&#x27;</span>, <span class="number">33</span>, <span class="string">&#x27;开发&#x27;</span>, <span class="number">8400</span>,<span class="string">&#x27;2000-11-03&#x27;</span>, <span class="number">2</span>,<span class="number">1</span>),(<span class="number">4</span>, <span class="string">&#x27;韦一笑&#x27;</span>, <span class="number">48</span>, <span class="string">&#x27;开发&#x27;</span>,<span class="number">11000</span>, <span class="string">&#x27;2002-02-05&#x27;</span>, <span class="number">2</span>,<span class="number">1</span>),</span><br><span class="line">                                                                               (<span class="number">5</span>, <span class="string">&#x27;常遇春&#x27;</span>, <span class="number">43</span>, <span class="string">&#x27;开发&#x27;</span>,<span class="number">10500</span>, <span class="string">&#x27;2004-09-07&#x27;</span>, <span class="number">3</span>,<span class="number">1</span>),(<span class="number">6</span>, <span class="string">&#x27;小昭&#x27;</span>, <span class="number">19</span>, <span class="string">&#x27;程序员鼓励师&#x27;</span>,<span class="number">6600</span>, <span class="string">&#x27;2004-10-12&#x27;</span>, <span class="number">2</span>,<span class="number">1</span>);</span><br><span class="line">                                                                               </span><br><span class="line"><span class="comment">-- 添加外键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">add</span> <span class="keyword">constraint</span> fk_emp_dept_id <span class="keyword">foreign</span> key (dept_id) <span class="keyword">references</span> dept(id);</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/043.png" alt="043"></p>
+<ol start="2">
+<li>删除外键</li>
+</ol>
+<p>语法：<code>ALTER TABLE 表名 DROP FOREIGN KEY 外键名称;  </code></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 删除外键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">drop</span> <span class="keyword">foreign</span> key fk_emp_dept_id;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>删除/更新行为</li>
+</ol>
+<p>概念：添加了外键之后，再删除父表数据时产生的约束行为，我们就称为删除/更新行为<br>
+分类</p>
+<table>
+<thead>
+<tr>
+<th>行为</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NO ACTION</td>
+<td>当在父表中删除/更新对应记录时，首先检查该记录是否有对应外键，如果有则不 允许删除/更新。 (与 RESTRICT 一致) 默认行为</td>
+</tr>
+<tr>
+<td>RESTRICT</td>
+<td>当在父表中删除/更新对应记录时，首先检查该记录是否有对应外键，如果有则不 允许删除/更新。 (与 NO ACTION 一致) 默认行为</td>
+</tr>
+<tr>
+<td>CASCADE</td>
+<td>当在父表中删除/更新对应记录时，首先检查该记录是否有对应外键，如果有，则 也删除/更新外键在子表中的记录。</td>
+</tr>
+<tr>
+<td>SET NULL</td>
+<td>当在父表中删除对应记录时，首先检查该记录是否有对应外键，如果有则设置子表 中该外键值为null（这就要求该外键允许取null）。</td>
+</tr>
+<tr>
+<td>SET DEFAULT</td>
+<td>父表有变更时，子表将外键列设置成一个默认的值 (Innodb不支持)</td>
+</tr>
+</tbody>
+</table>
+<p>语法：<code>ALTER TABLE 表名 ADD CONSTRAINT 外键名称 FOREIGN KEY (外键字段) REFERENCES 主表名 (主表字段名) ON UPDATE CASCADE ON DELETE CASCADE;  </code></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 外键更新 父表更新时子表也会更新</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">add</span> <span class="keyword">constraint</span> fk_emp_dept_id <span class="keyword">foreign</span> key (dept_id) <span class="keyword">references</span> dept(id) <span class="keyword">on</span> <span class="keyword">update</span> cascade <span class="keyword">on</span> <span class="keyword">delete</span> cascade ;</span><br></pre></td></tr></table></figure>
+<h2 id="多表查询">多表查询</h2>
+<p>概念:从多张表中查询数据</p>
+<h3 id="多表关系">多表关系</h3>
+<p>分类</p>
+<ul>
+<li>一对多（多对一）</li>
+<li>多对多</li>
+<li>一对一</li>
+</ul>
+<p>示例：<strong>多对多</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 表之间的联系，一对一，一对多(多对一),多对多</span></span><br><span class="line"><span class="comment">-- 一对多(一个部门对应多个员工，一个员工对应一个部门)</span></span><br><span class="line"><span class="comment">-- 多对多(比如学生与课程)</span></span><br><span class="line"><span class="comment">-- 一对一常用于单表拆分</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 多对多演示</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">                        id <span class="type">int</span> auto_increment <span class="keyword">primary</span> key comment <span class="string">&#x27;主键ID&#x27;</span>,</span><br><span class="line">                        name <span class="type">varchar</span>(<span class="number">10</span>) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">                        <span class="keyword">no</span> <span class="type">varchar</span>(<span class="number">10</span>) comment <span class="string">&#x27;学号&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;学生表&#x27;</span>;</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span> (<span class="keyword">null</span>, <span class="string">&#x27;黛绮丝&#x27;</span>, <span class="string">&#x27;2000100101&#x27;</span>),(<span class="keyword">null</span>, <span class="string">&#x27;谢逊&#x27;</span>, <span class="string">&#x27;2000100102&#x27;</span>),(<span class="keyword">null</span>, <span class="string">&#x27;殷天正&#x27;</span>, <span class="string">&#x27;2000100103&#x27;</span>),(<span class="keyword">null</span>, <span class="string">&#x27;韦一笑&#x27;</span>, <span class="string">&#x27;2000100104&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> course(</span><br><span class="line">                       id <span class="type">int</span> auto_increment <span class="keyword">primary</span> key comment <span class="string">&#x27;主键ID&#x27;</span>,</span><br><span class="line">                       name <span class="type">varchar</span>(<span class="number">10</span>) comment <span class="string">&#x27;课程名称&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;课程表&#x27;</span>;</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> course <span class="keyword">values</span> (<span class="keyword">null</span>, <span class="string">&#x27;Java&#x27;</span>), (<span class="keyword">null</span>, <span class="string">&#x27;PHP&#x27;</span>), (<span class="keyword">null</span> , <span class="string">&#x27;MySQL&#x27;</span>) , (<span class="keyword">null</span>, <span class="string">&#x27;Hadoop&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student_course(</span><br><span class="line">                               id <span class="type">int</span> auto_increment comment <span class="string">&#x27;主键&#x27;</span> <span class="keyword">primary</span> key,</span><br><span class="line">                               studentid <span class="type">int</span> <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;学生ID&#x27;</span>,</span><br><span class="line">                               courseid  <span class="type">int</span> <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;课程ID&#x27;</span>,</span><br><span class="line">                               <span class="keyword">constraint</span> fk_courseid <span class="keyword">foreign</span> key (courseid) <span class="keyword">references</span> course (id),</span><br><span class="line">                               <span class="keyword">constraint</span> fk_studentid <span class="keyword">foreign</span> key (studentid) <span class="keyword">references</span> student (id)</span><br><span class="line">)comment <span class="string">&#x27;学生课程中间表&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/044.png" alt="044"></p>
+<p>右键表-‘图表’-‘显示可视化’</p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/045.png" alt="045"></p>
+<h3 id="多表查询-2">多表查询</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 多表查询</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> test1.emp,dept;<span class="comment">-- 这样写出来的多表查询是笛卡尔积，考过计算机二级的同学应该学过</span></span><br><span class="line"><span class="comment">-- 简单来说，就是集合A与集合B的所有组合情况,显然这不是我们想要呈现的数据</span></span><br><span class="line"><span class="comment">-- 消除笛卡尔积的方法就是让多个表以某种关系式连接起来(比如id相等)</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> test1.emp,dept <span class="keyword">where</span> emp.dept_id <span class="operator">=</span> dept.id;</span><br></pre></td></tr></table></figure>
+<p>笛卡尔积部分演示</p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/046.png" alt="046"></p>
+<p>数学图演示</p>
+<p>消除笛卡尔积之后</p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/047.png" alt="047"></p>
+<h3 id="分类">分类</h3>
+<h4 id="内连接">内连接</h4>
+<p>概念：就是求两张表的交集</p>
+<ol>
+<li>隐式内连接</li>
+</ol>
+<p>语法：<code>SELECT 字段列表 FROM 表1 , 表2 WHERE 条件 ... ;  </code></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 内、外、自连接(和集合中的概念相似)，子查询</span></span><br><span class="line"><span class="comment">-- 内连接-查找两个表之间的交集</span></span><br><span class="line"><span class="comment">-- 隐式内连接</span></span><br><span class="line"><span class="keyword">select</span> emp.name,dept.name <span class="keyword">from</span> test1.emp,dept <span class="keyword">where</span> emp.dept_id <span class="operator">=</span> dept.id;</span><br><span class="line"><span class="comment">-- 可以取别名缩短语句长度</span></span><br><span class="line"><span class="keyword">select</span> e.name,d.name <span class="keyword">from</span> emp e,dept d <span class="keyword">where</span> e.dept_id <span class="operator">=</span> d.id;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/048.png" alt="048"></p>
+<ol start="2">
+<li>显式内连接</li>
+</ol>
+<p>语法：<code>SELECT 字段列表 FROM 表1 [ INNER ] JOIN 表2 ON 连接条件 ... ;  </code></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 显示内连接,就是通过inner join实现</span></span><br><span class="line"><span class="keyword">select</span> e.name,d.name <span class="keyword">from</span> emp e <span class="keyword">inner</span> <span class="keyword">join</span> dept d <span class="keyword">on</span> e.dept_id <span class="operator">=</span> d.id;</span><br></pre></td></tr></table></figure>
+<p>效果同图048</p>
+<p><strong>表的别名语法</strong></p>
+<ol>
+<li><code>tablea as 别名1 , tableb as 别名2;</code></li>
+<li><code>tablea 别名1 , tableb 别名2; </code></li>
+</ol>
+<p>注意：一旦为表起了别名，就不能再使用表名来指定对应的字段了，此时只能够使用别名来指定字段。</p>
+<h4 id="外连接">外连接</h4>
+<p>就是两表的交集+其中一个表,比如A+AUB</p>
+<ol>
+<li>左外连接</li>
+</ol>
+<p>语法：<code>SELECT 字段列表 FROM 表1 LEFT [ OUTER ] JOIN 表2 ON 条件 ... ;  </code> 就是关键字<strong>left join</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 左外连接-相当于表1+表1与表2的交集，右连接同理</span></span><br><span class="line"><span class="keyword">select</span> e.<span class="operator">*</span>,d.name <span class="keyword">from</span> emp e <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> dept d <span class="keyword">on</span> e.dept_id <span class="operator">=</span> d.id;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/049.png" alt="049"></p>
+<ol start="2">
+<li>右外连接</li>
+</ol>
+<p>语法：<code>SELECT 字段列表 FROM 表1 RIGHT [ OUTER ] JOIN 表2 ON 条件 ... ;  </code>就是关键字<strong>right join</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 右外连接</span></span><br><span class="line"><span class="keyword">select</span> d.<span class="operator">*</span>,e.<span class="operator">*</span> <span class="keyword">from</span> emp e <span class="keyword">right</span> <span class="keyword">outer</span> <span class="keyword">join</span> dept d <span class="keyword">on</span> e.dept_id <span class="operator">=</span> d.id;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/050.png" alt="050"></p>
+<blockquote>
+<p>左右外连接理论上是可以相互替换和相互转换的，不过一般左外连接用的多。</p>
+</blockquote>
+<h4 id="自连接">自连接</h4>
+<p>将表自身看做是另一张表，然后将两表连接<br>
+语法：<code>SELECT 字段列表 FROM 表A 别名A JOIN 表A 别名B ON 条件 ... ;  </code></p>
+<p>自连接可以是内连接也可以是外连接</p>
+<p>示意图</p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/051_%E8%87%AA%E8%BF%9E%E6%8E%A5.png" alt="051_自连接"></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 其实就是把自己看做是两张表进行连接</span></span><br><span class="line"><span class="keyword">select</span> a.name,b.name <span class="keyword">from</span> emp a,emp b <span class="keyword">where</span> a.managerid <span class="operator">=</span> b.id;</span><br><span class="line"><span class="keyword">select</span> a.name,b.name <span class="keyword">from</span> emp a <span class="keyword">left</span> <span class="keyword">join</span> emp b <span class="keyword">on</span> a.managerid <span class="operator">=</span> b.id;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/052_%E8%87%AA%E8%BF%9E%E6%8E%A5.png" alt="052_自连接"></p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/053_%E5%B7%A6%E5%A4%96%E8%BF%9E%E6%8E%A5(%E8%87%AA%E8%BF%9E%E6%8E%A5).png" alt="053_左外连接(自连接)"></p>
+<blockquote>
+<p>在自连接查询时必须取别名，否则会有歧义导致无法运行</p>
+</blockquote>
+<h4 id="联合查询">联合查询</h4>
+<p>概念：就是把多次查询的结果合并起来，形成一个新的查询结果集</p>
+<p>语法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 字段列表 <span class="keyword">FROM</span> 表A ...</span><br><span class="line"><span class="keyword">UNION</span> [ <span class="keyword">ALL</span> ]</span><br><span class="line"><span class="keyword">SELECT</span> 字段列表 <span class="keyword">FROM</span> 表B ....;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>联合的表列数和字段类型必须保持一致</li>
+<li>用all会将所有的数据合在一起，而不用all就会<strong>去重</strong></li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 联合查询</span></span><br><span class="line"><span class="comment">-- 相当于将查询得到的两张表上下拼起来</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> salary <span class="operator">&gt;</span><span class="number">6000</span></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> age <span class="operator">&lt;</span> <span class="number">50</span>;</span><br><span class="line"><span class="comment">-- 如果要去重，就不写all</span></span><br><span class="line"><span class="comment">-- 注意：查询的多张表列数要一致，字段类型要保持一致</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/054_%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2_01.png" alt="054_联合查询_01"></p>
+<h4 id="子查询">子查询</h4>
+<p>概念：就是sql语句中嵌套select语句，也就是将select查询出的结果作为另一个sql语句的参数</p>
+<p>示例：<code>SELECT * FROM t1 WHERE column1 = ( SELECT column1 FROM t2 );  </code></p>
+<ol>
+<li>标量子查询（子查询结果为单个值）</li>
+</ol>
+<p>常见的操作符：<code>= &lt;&gt; &gt; &gt;= &lt; &lt;=  </code></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 子查询-又称嵌套查询</span></span><br><span class="line"><span class="comment">-- 把表看做是矩阵，就容易理解查询的结果</span></span><br><span class="line"><span class="comment">-- 标量子查询</span></span><br><span class="line"><span class="comment">-- select id from dept where name = &#x27;研发部&#x27;查询结果只有一个，称为标量子查询</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> dept_id <span class="operator">=</span> (<span class="keyword">select</span> id <span class="keyword">from</span> dept <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;总经办&#x27;</span>);</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> entrydate <span class="operator">&gt;</span> (<span class="keyword">select</span> entrydate <span class="keyword">from</span> emp <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;杨逍&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/055_%E6%A0%87%E9%87%8F%E5%AD%90%E6%9F%A5%E8%AF%A2_01.png" alt="055_标量子查询_01"></p>
+<ol start="2">
+<li>列子查询(子查询结果为一列)</li>
+</ol>
+<p>操作符</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IN</td>
+<td>在指定的集合范围之内，多选一</td>
+</tr>
+<tr>
+<td>NOT IN</td>
+<td>不在指定的集合范围之内</td>
+</tr>
+<tr>
+<td>ANY</td>
+<td>子查询返回列表中，有任意一个满足即可</td>
+</tr>
+<tr>
+<td>SOME</td>
+<td>与ANY等同，使用SOME的地方都可以使用ANY</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>子查询返回列表的所有值都必须满足</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 列查询</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> dept <span class="keyword">where</span> name  <span class="operator">=</span> <span class="string">&#x27;销售部&#x27;</span> <span class="keyword">or</span> name <span class="operator">=</span> <span class="string">&#x27;研发部&#x27;</span>;</span><br><span class="line"><span class="keyword">select</span> salary <span class="keyword">from</span> emp <span class="keyword">where</span> dept_id <span class="operator">=</span> (<span class="keyword">select</span> id <span class="keyword">from</span> dept <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;研发部&#x27;</span>);</span><br><span class="line"><span class="comment">-- 比研发部所有人工资还要高的员工信息</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> salary <span class="operator">&gt;</span> <span class="keyword">all</span> (<span class="keyword">select</span> salary <span class="keyword">from</span> emp <span class="keyword">where</span> dept_id <span class="operator">=</span> (<span class="keyword">select</span> id <span class="keyword">from</span> dept <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;研发部&#x27;</span>));</span><br><span class="line"><span class="comment">-- 比研发部任意一个人工资高的员工信息,用any和some都行</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> salary <span class="operator">&gt;</span> <span class="keyword">any</span> (<span class="keyword">select</span> salary <span class="keyword">from</span> emp <span class="keyword">where</span> dept_id <span class="operator">=</span> (<span class="keyword">select</span> id <span class="keyword">from</span> dept <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;研发部&#x27;</span>));</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/056_%E5%88%97%E5%AD%90%E6%9F%A5%E8%AF%A2_01.png" alt="056_列子查询_01"></p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/056_%E5%88%97%E5%AD%90%E6%9F%A5%E8%AF%A2_02.png" alt="056_列子查询_02"></p>
+<ol start="3">
+<li>行子查询(子查询结果为一行)</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 其实就是查询出来的多个字段作为另一个查询语句的条件</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> (salary,managerid) <span class="operator">=</span> (<span class="keyword">select</span> salary,managerid <span class="keyword">from</span> emp <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;韦一笑&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/057_%E8%A1%8C%E5%AD%90%E6%9F%A5%E8%AF%A2_01.png" alt="057_行子查询_01"></p>
+<ol start="4">
+<li>表子查询(子查询结果为多行多列)</li>
+</ol>
+<p>关键字：<strong>in</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 将查询出来的表作为范围继续查找</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> (job,salary) <span class="keyword">in</span> (<span class="keyword">select</span> job,salary <span class="keyword">from</span> emp <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;张无忌&#x27;</span> <span class="keyword">or</span> name <span class="operator">=</span> <span class="string">&#x27;韦一笑&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/058_%E8%A1%A8%E5%AD%90%E6%9F%A5%E8%AF%A2_01.png" alt="058_表子查询_01"></p>
+<h2 id="事务">事务</h2>
+<p>概念：是一组操作的集合，它是一个不可分割的工作单位，事务会把所有的操作作为一个整体一起向系统提交或撤销操作请求，即这些操作要么同时成功，要么同时失败。  常用于银行转账、贸易等。</p>
+<p>注意：<strong>默认MySQL的事务是自动提交的</strong>，也就是说，当执行完一条DML语句时，MySQL会立即隐式的提交事务。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 一组操作的集合，“同患难共享福”，</span></span><br><span class="line"><span class="comment">-- 数据准备</span></span><br><span class="line"><span class="comment">-- 数据准备</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> account(</span><br><span class="line">                        id <span class="type">int</span> auto_increment <span class="keyword">primary</span> key comment <span class="string">&#x27;主键ID&#x27;</span>,</span><br><span class="line">                        name <span class="type">varchar</span>(<span class="number">10</span>) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">                        money <span class="type">int</span> comment <span class="string">&#x27;余额&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;账户表&#x27;</span>;</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> account(id, name, money) <span class="keyword">VALUES</span> (<span class="keyword">null</span>,<span class="string">&#x27;张三&#x27;</span>,<span class="number">2000</span>),(<span class="keyword">null</span>,<span class="string">&#x27;李四&#x27;</span>,<span class="number">2000</span>);</span><br><span class="line"><span class="comment">-- 转账事务</span></span><br><span class="line"><span class="comment">-- 设置事务为自动提交 在MySQL中事务是自动提交的</span></span><br><span class="line"><span class="keyword">select</span> @<span class="variable">@autocommit</span>;</span><br><span class="line"><span class="comment">-- 设置事务为手动提交</span></span><br><span class="line"><span class="keyword">set</span> @<span class="variable">@autocommit</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="comment">-- 转账操作 (张三给李四转账1000)</span></span><br><span class="line"><span class="comment">-- 1. 查询张三账户余额</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> account <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span>;</span><br><span class="line"><span class="comment">-- 2. 将张三账户余额-1000</span></span><br><span class="line"><span class="keyword">update</span> account <span class="keyword">set</span> money <span class="operator">=</span> money <span class="operator">-</span> <span class="number">1000</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span>;</span><br><span class="line"><span class="comment">-- 3. 将李四账户余额+1000</span></span><br><span class="line"><span class="keyword">update</span> account <span class="keyword">set</span> money <span class="operator">=</span> money <span class="operator">+</span> <span class="number">1000</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;李四&#x27;</span>;</span><br><span class="line"><span class="comment">-- 提交事务</span></span><br><span class="line"><span class="comment">-- 也就是将事务放在set和commit语句之间(事务为手动提交时);</span></span><br><span class="line"><span class="keyword">commit</span>;</span><br><span class="line"><span class="comment">-- 回滚事务</span></span><br><span class="line"><span class="keyword">rollback</span>;</span><br><span class="line"><span class="comment">-- 恢复数据</span></span><br><span class="line"><span class="keyword">update</span> account <span class="keyword">set</span> money <span class="operator">=</span> <span class="number">2000</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span> <span class="keyword">or</span> name <span class="operator">=</span> <span class="string">&#x27;李四&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>事务正常运行的情况</p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/059_%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C_01.png" alt="059_事务操作_01.png"></p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/059_%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C_02.png" alt="059_事务操作_02.png"></p>
+<p>事务异常执行的情况</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 第二种创建事务的方法</span></span><br><span class="line"><span class="comment">-- 转账操作 (张三给李四转账1000)</span></span><br><span class="line"><span class="keyword">start</span> transaction ;</span><br><span class="line"><span class="comment">-- 1. 查询张三账户余额</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> account <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span>;</span><br><span class="line"><span class="comment">-- 2. 将张三账户余额-1000</span></span><br><span class="line"><span class="keyword">update</span> account <span class="keyword">set</span> money <span class="operator">=</span> money <span class="operator">-</span> <span class="number">1000</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span>;</span><br><span class="line"></span><br><span class="line">程序执行报错 ...</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 3. 将李四账户余额+1000</span></span><br><span class="line"><span class="keyword">update</span> account <span class="keyword">set</span> money <span class="operator">=</span> money <span class="operator">+</span> <span class="number">1000</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;李四&#x27;</span>;</span><br><span class="line"><span class="comment">-- 提交事务</span></span><br><span class="line"><span class="keyword">commit</span>;</span><br><span class="line"><span class="comment">-- 回滚事务</span></span><br><span class="line"><span class="keyword">rollback</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/059_%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C_03.png" alt="059_事务操作_03"></p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/059_%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C_04.png" alt="059_事务操作_04"></p>
+<h4 id="控制事务">控制事务</h4>
+<ol>
+<li>查看/设置事务的提交方式</li>
+</ol>
+<p>语法：<code>SELECT @@autocommit ;  </code> 自动提交，或者是<code>SET @@autocommit = 0 ;</code>手动提交</p>
+<ol start="2">
+<li>提交事务</li>
+</ol>
+<p>语法：<code>COMIT</code> 如果是自动提交就不需要写,如果更改为手动提交，那么后面的sql语句要想修改数据必须运行此代码。</p>
+<ol start="3">
+<li>回滚事务</li>
+</ol>
+<p>语法：<code>ROLLBACK;  </code></p>
+<ol start="4">
+<li>开启事务</li>
+</ol>
+<p>语法：<code>START TRANSACTION 或 BEGIN ;  </code></p>
+<h4 id="事务的特性">事务的特性</h4>
+<p>四大特性</p>
+<ol>
+<li>
+<p>原子性（Atomicity）：事务是不可分割的最小操作单元，要么全部成功，要么全部失败。</p>
+</li>
+<li>
+<p>一致性（Consistency）：事务完成时，必须使所有的数据都保持一致状态。</p>
+</li>
+<li>
+<p>隔离性（Isolation）：数据库系统提供的隔离机制，保证事务在不受外部并发操作影响的独立环境下运行。</p>
+</li>
+<li>
+<p>持久性（Durability）：事务一旦提交或回滚，它对数据库中的数据的改变就是永久的。</p>
+</li>
+</ol>
+<p>上述就是事务的四大特性，简称<strong>ACID</strong>。</p>
+<h4 id="并发事务问题">并发事务问题</h4>
+<ol>
+<li>脏读：一个事务读到另外一个事务还没有提交的数据</li>
+<li>不可重复读：一个事务先后读取同一条记录，但两次读取的数据不同，称之为不可重复读</li>
+<li>幻读：一个事务按照条件查询数据时，没有对应的数据行，但是在插入数据时，又发现这行数据已经存在，好像出现了 “幻影”。</li>
+</ol>
+<h4 id="事务隔离级别">事务隔离级别</h4>
+<table>
+<thead>
+<tr>
+<th>隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read uncommitted</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>Read committed</td>
+<td>×</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>Repeatable Read(默认)</td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+</tr>
+<tr>
+<td>Serializable</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>查看事务隔离级别</li>
+</ol>
+<p>语法：<code>SELECT @@TRANSACTION_ISOLATION;  </code></p>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/060_%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB_01.png" alt="060_事务隔离级别_01"></p>
+<ol start="2">
+<li>设置事务隔离级别</li>
+</ol>
+<p>语法：<code>SET [ SESSION | GLOBAL ] TRANSACTION ISOLATION LEVEL &#123; READ UNCOMMITTED |READ COMMITTED | REPEATABLE READ | SERIALIZABLE &#125;  </code></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 设置事务隔离级别</span></span><br><span class="line"><span class="keyword">set</span> session transaction isolation level read uncommitted;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/060_%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB_02.png" alt="060_事务隔离级别_02.png"></p>
+<blockquote>
+<p>事务隔离级别越高，数据越安全，但是性能越低。</p>
+</blockquote>
+<h1>专有名词扩展</h1>
+<p><strong>英语是了解计算机的重要工具</strong></p>
+<table>
+<thead>
+<tr>
+<th>英语</th>
+<th>中文（计算机行话，不涉及一般含义）</th>
+<th>简写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>database</td>
+<td>数据库</td>
+<td>DB</td>
+</tr>
+<tr>
+<td>database management system</td>
+<td>数据库管理系统</td>
+<td>DBMS</td>
+</tr>
+<tr>
+<td>data definition languages</td>
+<td>数据定义语言</td>
+<td>DDL</td>
+</tr>
+<tr>
+<td>data manipulation languages</td>
+<td>数据操作语言</td>
+<td>DML</td>
+</tr>
+<tr>
+<td>data control languages</td>
+<td>数据控制语言</td>
+<td>DCL</td>
+</tr>
+<tr>
+<td>Data Query Language</td>
+<td>数据查询语言，用来查询数据库中表的记录</td>
+<td>DQL</td>
+</tr>
+<tr>
+<td>alias</td>
+<td>别名</td>
+<td>as</td>
+</tr>
+<tr>
+<td>structured query language</td>
+<td>操作关系型数据库的编程语言</td>
+<td>SQL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>至此基础篇完结</strong></p>
+<p>学习完之后可以参考此进阶篇学习</p>
+<ol class="series-items"><li><a href="/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/" title="MySQL学习笔记(一)">MySQL学习笔记(一)</a></li></ol>
 <h1>参考</h1>
 <p><strong>视频教程</strong></p>
 <ol>
@@ -1903,215 +2135,285 @@ where与having区别</p>
         <category>MySQL</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>MySQL</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
-    <title>hexo博客系列(二)博客创建指南</title>
-    <url>/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1>简介</h1>
-<p>Hexo 是一个由Nodejs驱动的博客框架，支持 Markdown、一键部署、插件和多种模板引擎。Hexo 可以让你轻松创建、管理和部署你的个人或团队博客。本文基于个人的实践经验，<strong>以Windows为主要开发环境</strong>，旨在让那些对博客搭建感兴趣但碍于困难的朋友能搭建起基本的博客框架。</p>
-<h1>准备工作</h1>
-<h2 id="课前提醒——主要是针对非程序员">课前提醒——主要是针对非程序员</h2>
-<p><strong>大部分的操作、代码输入</strong>都是在<strong>Windows</strong>系统<strong>终端</strong>中执行的。</p>
-<p><strong>方法</strong>：点击开始-搜索“终端”-打开，或者在任意文件夹中“右键”-“在终端中打开”。会出现黑色的框。后续大部分代码都是在这“黑框”中输入且执行的。</p>
-<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/1.png" alt></p>
-<ul>
-<li>代码块没有标明代码语言的都是在Windows终端中运行的。mac系统和linux系统相关指令请查询有关资料</li>
-<li>默认电脑下载了git和注册了github。没有注册github和下载git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
-<li>默认会“科学上网”，不会的可以参考此大佬的教程<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a>，可以在他的博客中搜索&quot;搭建个人博客“   <a href="https://starlike-daydream.github.io/Cesteo.github.io/">Ceasteo’s Blog</a>。按照此大佬的方法也可以实现简单的hexo博客创建。<strong>注意大佬文档中的淘宝镜像已经失效,请换成<a href="https://registry.npmmirror.com">https://registry.npmmirror.com</a></strong></li>
-</ul>
-<h2 id="相关资料下载">相关资料下载</h2>
-<ol>
-<li><a href="https://nodejs.cn/">Node.js 中文网 (nodejs.cn)</a>安装，进去后点击下载安装，选择长期支持版（LTS）即可</li>
+    <title>hexo博客系列(一)测试与更新</title>
+    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<h1>hexo博客更新和待更新计划</h1>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法与经验</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
+<p>以下更新内容都是从最后一次更新开始的</p>
+</blockquote>
+<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2024</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-29</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>修复了手机端视频溢出显示部分的问题</li>
+<li>修改了几处笔误和显示问题。</li>
+<li>优化了所有博客的参考部分</li>
 </ol>
-<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/2.png" alt></p>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-26</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>butterfly主题从5.0.0更新到5.1.0版本</li>
+<li>优化了chart插件</li>
+<li>更新了一篇新博客</li>
+</ol>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-10</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>butterfly主题从4.13.0更新到5.0.0版本</li>
+<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
+<li>更新了留言板</li>
+<li>优化了搜索功能</li>
+<li>禁止B站视频自动播放</li>
+<li>更新了主页“关于”部分</li>
+<li>修复了几处笔误的问题</li>
+<li>优化了评论功能的选择</li>
+<li>添加了站点工具(谷歌与必应)，优化了文章的描述部分</li>
+<li>优化一下图片无法放大查看的问题</li>
+</ol>
+</div></div></div></div><div class="tab-item-content"><ol>
+<li>子菜单展示内容；方法：通过基本的markdown语言和butterfly专有语法-标签外挂实现效果，建议写成总领式的文章或者展示页面。可以参考此博客<a href="https://blog.guole.fun/posts/butterfly-custom/#%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E8%BD%AE%E6%92%AD%E6%A8%A1%E5%9D%97">我的Blog美化日记——Hexo+Butterfly | Guo Le’s Blog</a> 里面的“volantis”部分，和这个<a href="https://www.huangshiqing.website/2022/11/03/HexoTagPlugins/">Hexo Built-in Tag Plugins (Hexo内置标签外挂) | Ofra Serendipity</a></li>
+<li>添加一下赞助墙</li>
+<li>更新算法相关博客并添加数学动画视频或者是算法演示动画</li>
+<li>学习并在博客中添加图表-对于本网站以chartjs的图表为主，涉及UML就用Mermaid,对于精致的图表(比如数据分析)才会用Echart.</li>
+<li>如果zeabur部署失效，可以考虑netlify、<a href="https://www.21cloudbox.com">https://www.21cloudbox.com</a>、码云等托管平台。</li>
+</ol></div><div class="tab-item-content"><h2 id="debug经验">debug经验</h2>
+<p>目前由于butterfly的版本更新，导致以前的部分功能失效，建议<strong>先看官方文档，将对应过时的代码注释或者去除，没有的代码添加</strong>，然后再<strong>根据</strong>F12检查对应的板块，<strong>用前端的知识去搜查问题发生的地点和原因</strong>，然后再纠错。</p>
+<h2 id="hexo框架更新">hexo框架更新</h2>
+<p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
+<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
+<h2 id="butterfly主题更新">butterfly主题更新</h2>
+<blockquote>
+<p>更新前记得留下blog快照</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
+<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
+<p>如果不行，就在你的博客/themes/butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
+<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h2 id="个人hexo博客更新讲解">个人hexo博客更新讲解</h2>
+<p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
+<p>示例代码如下</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
+<p><strong>评论功能</strong>：我设置的是twikoo静态评论控制+Valine评论，搭建教程可以参考如下链接<a href="https://blog.hihahoo.com/archives/fc6989f5.html#1-twikoo%E9%83%A8%E7%BD%B2">Hexo主题butterfly集成评论功能（twikoo） | Hihahoo：想你所想 做你所做</a></p>
+<p><strong>文章置顶功能</strong>：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考链接<a href="https://liangshenglei.github.io/2023/03/06/Butterfly%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/index.html">Butterfly 主题的详细配置 | 梁圣磊の博客 (liangshenglei.github.io)</a></p>
+<p><strong>文章加密功能</strong>：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">https://polar-bear.eu.org/2023/07/21/ce-shi/</a> 也许以后添加。</p>
+<p><strong>博客撰写</strong>：</p>
+<ol>
+<li>hexo会自动给分级标题编号，不需要自己添加</li>
+<li><u>不要给标点符号加标签或者是特性</u>，容易出现显示问题。</li>
+</ol>
+<p><strong>磁贴功能</strong>：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
+<p><strong>同步问题</strong>：在zeabur的部署大概会间隔一天左右才会同步上。</p>
+<p><strong>图片方面</strong></p>
+<ul>
+<li>
+<p>方法1：通过picgo图床实现图片上传。参考【Typora+PicGo+阿里云OSS实现云笔记|Typora上传图片】<a href="https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></p>
+</li>
+<li>
+<p>方法2-本地上传图片：参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用，<strong>博主因为部署的原因主要使用此方法</strong>_ 。如果部署到zeabur的博客图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。参考教程<a href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法_hexo 文章插入图片失败-CSDN博客</a> 。</p>
+</li>
+<li>
+<p>方法3：使用其他的图床网站如<a href="https://smms.app/">SMMS</a>。上传图片后，点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。</p>
+</li>
+</ul>
+<p><strong>导航栏设置</strong>：在<code>_config.butterfly.yml</code> 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class= &quot; 复制这里的内容&quot; 替代即可。</p>
+<p><strong>系列文章</strong>：在文章的 front-matter 上添加参数 series，并给予一個标签</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br></pre></td></tr></table></figure>
+<h1>测试</h1>
+<h2 id="测试图片">测试图片</h2>
+<p><strong>阿里云图片测试</strong></p>
+<p><img src="https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-img%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-06-02%20221147.png" alt="屏幕截图 2024-06-02 221147"></p>
+<p><strong>本地图片测试</strong></p>
+<p><img src="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/C__Users_kai98_Pictures_%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87_post-img1.png" alt="Godot游戏引擎"></p>
+<p><strong>标签外挂测试图片</strong></p>
+<div class="gallery-container" data-type="data" data-button>
+      <div class="gallery-items">[{"url":"https://s2.loli.net/2024/06/14/4RrcPzbG3fsqyC6.png","alt":"3.png"}]</div>
+    </div>
+<p><strong>图床图片测试</strong></p>
+<p><img src="https://s2.loli.net/2024/10/24/MQ6gGn4LtBDyduJ.png" alt="苍之彼方的四重奏.png"></p>
+<h2 id="测试系列文章">测试系列文章</h2>
+<ol class="series-items"><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/" title="hexo博客系列(一)测试与更新">hexo博客系列(一)测试与更新</a></li><li><a href="/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/" title="hexo博客系列(三)博客写作指南">hexo博客系列(三)博客写作指南</a></li><li><a href="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/" title="hexo博客系列(二)博客创建指南">hexo博客系列(二)博客创建指南</a></li></ol>
+<h2 id="标签外挂测试">标签外挂测试</h2>
+<blockquote>
+<p>本以下基于hexo+butterfly的主题，其他的主题请读者自行查阅有关资料</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文檔(四) 標簽外挂 | Butterfly</a></p>
+<p>参考教程：<a href="https://liangshenglei.github.io/2023/02/27/Markdown%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/#referto_%5B1%5D">Markdown 外挂标签 | 梁圣磊の博客</a></p>
+<ol>
+<li>Note (Bootstrap Callout)</li>
+</ol>
+<p>个人使用，感觉比较适合知识的分层结构，比如我博客里面的《英语语法(英语兔版)》</p>
 <ol start="2">
-<li>安装cnpm并配置淘宝镜像</li>
+<li>tag-hide</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/3.png" alt></p>
-<blockquote>
-<p><strong>注意</strong>：后面代码中我打//并且后面跟着文字的（比如//这里是初始化)都是<strong>注释</strong>，<strong>不要写在终端里面</strong></p>
-</blockquote>
-<ol start="3">
-<li>测试cnpm是否安装</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm -v   </span><br></pre></td></tr></table></figure>
-<p><strong>v</strong>：version 版本的意思</p>
-<ol start="4">
-<li>安装hexo博客框架</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>测试hexo博客框架是否安装</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-<h2 id="初始化博客">初始化博客</h2>
-<blockquote>
-<p>后续可以通过blog文件(<strong>shift+鼠标右键-在终端中打开</strong>）直接进入终端，也可以用Visual Studio Code将此文件打开并创建终端（建议使用vscode，后续博客维护很方便）。</p>
-</blockquote>
-<ol start="6">
-<li>在空文件夹（我这里事先创建并将其命名为temp)中初始化hexo博客框架,然后通过cd指令进入此目录。</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">//示例：cd .\Desktop\temp\</span><br><span class="line">hexo init</span><br><span class="line">//如果报错的话就输入cnpm install 然后再输入hexo s即可</span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>启动博客  start   用来预览修改后的博客 按ctrl+c即可停止运行。</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>清除博客内容</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean  //或者hexo cl</span><br></pre></td></tr></table></figure>
-<ol start="9">
-<li>生成博客内容</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<h2 id="部署">部署</h2>
-<p><strong>我这里只讲解部署到github的思路</strong>，部署到其他平台或者服务器请自行查询有关资料。没有注册github和git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></p>
-<ol start="10">
-<li>github创建仓库,注意格式严格为    <a href="http://xn--github-on9im33ani7aou3bged.github.io">你的github用户名.github.io</a> 并复制SSH的clone地址，我这里以Tom为例</li>
-</ol>
-<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/4.png" alt></p>
-<ol start="11">
-<li>安装部署插件</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-<ol start="12">
-<li>修改_config.yml文件</li>
-</ol>
-<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/5.png" alt></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">//一般是最后一行。</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">粘贴你10步复制的地址。</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<ol start="13">
-<li>部署到github</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<ol start="14">
-<li>
-<p>13步后有的会提示输入github账号密码，没有就跳过14和15步</p>
-</li>
-<li>
-<p>分别输入用户名与密码。</p>
-</li>
-</ol>
-<p>输入密码之后报错并<strong>提醒你github已经停止使用密码登录</strong>，需要用密钥或者是ssh，这里我采用ssh的方式。</p>
-<ol start="16">
-<li>初始化用户名与邮箱(“yourname”和”youremail“改成你之前注册github设置的)</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot; //（注意user.name/email和英文双引号&quot;之间要有一个空格）</span><br><span class="line">git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
-<ol start="17">
-<li>确认是否设置成功</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">//用户名与邮箱</span><br><span class="line">git config --global user.name</span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
-<ol start="18">
-<li>下载github部署插件</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<ol start="19">
-<li>本地生成密钥</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;（这里改为16步你设置的邮箱）</span><br></pre></td></tr></table></figure>
-<ol start="20">
-<li>获取你生成的密钥，并复制返回的结果</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-<ol start="21">
-<li>
-<p><strong>登录github</strong>, 点击头像——settings——点击SSH and GPG keys-再点击New SSH key,自己取一个标题,然后将复制的密钥粘贴到&quot;key&quot;文本框内并提交（Add SSH key)。</p>
-</li>
-<li>
-<p>验证：</p>
-</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<ol start="23">
-<li>再次提交</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<ol start="24">
-<li>运行并检验是否成功</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo s   //或者在浏览器URL栏输入“你的github用户名.github.io”，验证是否已经部署。</span><br></pre></td></tr></table></figure>
-<p>至此你已经成功部署一个简单的hexo博客，恭喜你我的朋友(^o^)/~，<strong>但这只是伟大征程的第一步，这是结束也是开始</strong>……</p>
-<h1>博客维护</h1>
-<h2 id="基础指令">基础指令</h2>
-<p>主题、文章修改之后要重新生成并部署。<br>
-简单讲解：</p>
-<ol>
-<li><code>hexo cl</code> 将之前上传的清除</li>
-<li><code>hexo g</code> 生成框架</li>
-<li><code>hexo s</code> 将其打开在主机上</li>
-<li><code>hexo d</code> 提交到github上</li>
-</ol>
-<blockquote>
-<p>总结：<strong>最重要的是第2,4个代码（部分插件使用需要第一个代码，这样通过你的用户名.github.io打开的博客才会更改。</strong></p>
-</blockquote>
-<h2 id="md文件">md文件</h2>
-<p><strong>命令行创建md文件</strong><br>
-<code>hexo n &quot;博客文章名&quot;</code>， <strong>必须先进入到文件中才能使用</strong>，会自动在 你所创建的文件夹\source_posts\博客文件名.md  路径下创建一个md文件。</p>
-<p><strong>md文件保存位置</strong><br>
-一般就在/_ posts 文件下创建md文件即可（或者把md文件移动到这里），要在开头加上如下语句即可.<strong>注意冒号后面要留空格</strong></p>
-<p><strong>示例格式如下</strong></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;! -- 这里是html的注释 写的时候不要添加 - - &gt;</span><br><span class="line">title: 我的第一篇博客文章</span><br><span class="line">date: 2024-06-01  19:10:34</span><br><span class="line">tags: C++</span><br><span class="line">no<span class="emphasis">_valine: true&lt;!- - 关闭评论- - &gt;</span></span><br><span class="line"><span class="emphasis">comments: 是否开启评论(true or false)</span></span><br><span class="line"><span class="emphasis">top: &lt;!- - 文章置顶true- - &gt;</span></span><br><span class="line"><span class="emphasis">no_</span>word<span class="emphasis">_count: true&lt;!- -关闭字数统计- - &gt;</span></span><br><span class="line"><span class="emphasis">password: &lt;! - -如果加密，这里填写密码 - - &gt;</span></span><br><span class="line"><span class="emphasis">reward: true&lt;!- - 当前文章是否开启打赏 - - &gt;</span></span><br><span class="line"><span class="emphasis">copyright: true&lt;!- - 当前文章是否开启版权声明 - - &gt;</span></span><br><span class="line"><span class="emphasis">categories: &lt;! - -如下，分类2是分类1的子分类- - &gt;</span></span><br><span class="line"><span class="emphasis">- [分类1，子分类1]</span></span><br><span class="line"><span class="emphasis">- [分类1，子分类2]</span></span><br><span class="line"><span class="emphasis">- [分类2]</span></span><br><span class="line"><span class="emphasis">tags: </span></span><br><span class="line"><span class="emphasis">- 标签1</span></span><br><span class="line"><span class="emphasis">- 标签2</span></span><br></pre></td></tr></table></figure>
-<h2 id="插件下载与使用">插件下载与使用</h2>
-<p><strong>提醒：少即是多, 避免华而不实。</strong></p>
-<p>打开官方文档<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a>，点击插件，点击中意的插件，按照作者的教程去配置插件</p>
-<p><strong>举例</strong><br>
-<strong>DPlayer插件</strong></p>
-<p><strong>播放代码</strong><br>
-<code>&#123;% dplayer "url=" "pic=" "theme=#FADFA3" "autoplay=false" "mutex=true" %&#125;</code></p>
-<p><strong>示例</strong><br>
-打开对应视频资源网页版（这里以b站为例），鼠标移动到分享-“嵌入代码”，将代码复制到md文件里面，如果需要调整大小，可添加<code>height=450 width=600</code> ,根据需要调整即可</p>
-<h2 id="主题的下载与使用">主题的下载与使用</h2>
-<p><strong>安装思路同插件</strong><br>
-注意在themes界面中可以点击“visit preview site”预览主题。</p>
-<ol>
-<li>看作者介绍如何安装，一步步安装  ，复杂一点的主题还有一系列插件安装</li>
-<li>打开根目录下的_config.yml  将theme: 以前的主题 改为 theme: 现在的主题</li>
-<li>后续的改动都是要基于作者文档。熟悉前端开发的朋友可以用“<strong>检查</strong>“了解作者网页的结构，然后自行修改</li>
-</ol>
-<p><strong>推荐主题</strong>：</p>
-<ul>
-<li>极简风格：
-<ul>
-<li>yilia-plus：<a href="https://github.com/JoeyBling/hexo-theme-yilia-plus">一个简洁优雅的hexo主题</a></li>
-</ul>
-</li>
-<li>优雅又实用：
-<ul>
-<li>butterfly：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安裝文檔(一) 快速開始 | Butterfly</a></li>
-<li>matery：<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">hexo-theme-matery/README_CN.md</a></li>
-</ul>
-</li>
-</ul>
-<h1>Hexo进阶-butterfly主题安装及其定制化</h1>
-<blockquote>
-<p>我目前安装的是5.1.0版本的。</p>
-</blockquote>
-<p>虽然主菜单栏里面可以分成多个子菜单，但是似乎每一个子菜单只能放一个md文件，所以<u>建议此md文件作为某一类型的东西的索引来呈现。</u></p>
-<p>所有的博客md文件都需要放在_post文件夹里面，其他地方大多只能放索引md文件。<strong>建议使用</strong><code>hexo n post 标题名</code> ,这样就会<strong>自动将对应的文件夹也生成</strong>。</p>
-<p>建议修改的使用经常使用Hexo s命令，修改无误之后再提交。</p>
-<p><strong>To be continue……</strong></p>
-<hr>
-<h1>总结</h1>
-<p>本篇文章主要侧重于基础的hexo博客搭建，至于进阶的hexo主题搭建和插件安装，限于笔者能力难以展开，有兴趣的读者可以去官方文档找对应的资料，按照作者的文档去安装。</p>
-<h1>结束语</h1>
-<p>有的朋友会说这也太难了吧，确实对于零基础的小白配置一个复杂的博客主题绝非易事，但是我想用王安石的一句话共勉想要变得更强、超越自我的朋友。<br>
-<strong>“而世之奇伟、瑰怪、非常之观，常在于险远，而人之所罕之焉，故非有志者不能之也。”</strong></p>
-<h1>参考资料</h1>
-<ol>
-<li><strong>官方网站</strong>：<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></li>
-<li><strong>其他人的教程</strong>：<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a></li>
-<li>git和github<strong>下载和使用</strong>：<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
-</ol>
+<p>个人感觉比较适合于问答类型或者是部分内容较多，需要的时候再展开的文章内容。测试如下</p>
+<p><strong>Block测试</strong></p>
+<p>查看答案</p>
+<div class="hide-block"><button type="button" class="hide-button" style>查看答案
+    </button><div class="hide-content"><p>答案就在你心中</p>
+</div></div>
+<p><strong>Toggle测试</strong></p>
+<details class="toggle"><summary class="toggle-button" style>Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
+<p>git clone -b master <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes/Butterfly</p>
+<p>如果想要安裝比較新的 dev 分支，可以</p>
+<p>git clone -b dev <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes/Butterfly</p>
+</div></details>
+<p><strong>Mermaid测试</strong></p>
+<p>这是和图表有关的标签，可以画流程图，时序图等</p>
+<p>注意要先写<code>&#123;% mermaid %&#125; &#123;% endmermaid %&#125;</code> 然后就在这两个标签内写相关代码。</p>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop HealthCheck
+        John-&gt;&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
+    John--&gt;&gt;Alice: Great!
+    John-&gt;&gt;Bob: How about you?
+    Bob--&gt;&gt;John: Jolly good!
+
+  </pre></div>
+<p><strong>Flink测试</strong></p>
+<p>就是和链接相关的测试</p>
+<div class="flink"><div class="flink-name">友情鏈接</div><div class="flink-desc">那些人，那些事</div><div class="flink-list">
+      <div class="flink-list-item">
+        <a href="https://jerryc.me/" title="JerryC" target="_blank">
+          <div class="flink-item-icon">
+            <img class="no-lightbox" src="https://jerryc.me/img/avatar.png" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="JerryC">
+          </div>
+          <div class="flink-item-name">JerryC</div>
+          <div class="flink-item-desc" title="今日事,今日畢">今日事,今日畢</div>
+        </a>
+      </div>
+      <div class="flink-list-item">
+        <a href="https://hexo.io/zh-tw/" title="Hexo" target="_blank">
+          <div class="flink-item-icon">
+            <img class="no-lightbox" src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" onerror="this.onerror=null;this.src="/img/friend_404.gif"" alt="Hexo">
+          </div>
+          <div class="flink-item-name">Hexo</div>
+          <div class="flink-item-desc" title="快速、簡單且強大的網誌框架">快速、簡單且強大的網誌框架</div>
+        </a>
+      </div></div></div>
+<p><strong>乐谱测试</strong></p>
+<div class="abc-music-sheet">X:1
+T:alternate heads
+M:C
+L:1/8
+U:n=!style=normal!
+K:C treble style=rhythm
+&quot;Am&quot; BBBB B2 B&gt;B | &quot;Dm&quot; B2 B/B/B &quot;C&quot; B4 |&quot;Am&quot; B2 nGnB B2 nGnA | &quot;Dm&quot; nDB/B/ nDB/B/ &quot;C&quot; nCB/B/ nCB/B/ |B8| B0 B0 B0 B0 |]
+%%text This translates to:
+[M:C][K:style=normal]
+[A,EAce][A,EAce][A,EAce][A,EAce] [A,EAce]2 [A,EAce]&gt;[A,EAce] |[DAdf]2 [DAdf]/[DAdf]/[DAdf] [CEGce]4 |[A,EAce]2 GA [A,EAce] GA |D[DAdf]/[DAdf]/ D[DAdf]/[DAdf]/ C [CEGce]/[CEGce]/ C[CEGce]/[CEGce]/ |[CEGce]8 | [CEGce]2 [CEGce]2 [CEGce]2 [CEGce]2 |]
+GAB2 !style=harmonic![gb]4|GAB2 [K: style=harmonic]gbgb|
+[K: style=x]
+C/A,/ C/C/E C/zz2|
+w:Rock-y did-nt like that</div>
+<p><strong>测试自带的chartjs</strong>——可以实现动态效果，建议使用。</p>
+<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
+            <pre class="chartjs-src" hidden>{
+    &quot;type&quot;: &quot;pie&quot;,
+    &quot;data&quot;: {
+        &quot;labels&quot;: [
+            &quot;编程&quot;,
+            &quot;音乐&quot;,
+            &quot;阅读&quot;,
+            &quot;游戏&quot;,
+            &quot;健身&quot;,
+            &quot;旅游&quot;
+        ],
+        &quot;datasets&quot;: [
+            {
+                &quot;label&quot;: &quot;喜爱指数&quot;,
+                &quot;data&quot;: [
+                    30,
+                    24,
+                    19,
+                    14,
+                    9,
+                    4
+                ],
+                &quot;backgroundColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.5)&quot;,
+                        &quot;rgba(54, 162, 235, 0.5)&quot;,
+                        &quot;rgba(255, 206, 86, 0.5)&quot;,
+                        &quot;rgba(75, 192, 192, 0.5)&quot;,
+                        &quot;rgba(153, 102, 255, 0.5)&quot;,
+                        &quot;rgba(255, 159, 64, 0.5)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.2)&quot;,
+                        &quot;rgba(54, 162, 235, 0.2)&quot;,
+                        &quot;rgba(255, 206, 86, 0.2)&quot;,
+                        &quot;rgba(75, 192, 192, 0.2)&quot;,
+                        &quot;rgba(153, 102, 255, 0.2)&quot;,
+                        &quot;rgba(255, 159, 64, 0.2)&quot;
+                    ]
+                },
+                &quot;borderColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ]
+                }
+            }
+        ]
+    },
+    &quot;options&quot;: {
+        &quot;plugins&quot;: {
+            &quot;legend&quot;: {
+                &quot;labels&quot;: {
+                    &quot;color&quot;: {
+                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
+                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
+                    }
+                }
+            }
+        }
+    }
+}
+</pre>
+            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
+我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
+在此过程中也解决了无数的小谜团。<br>
+<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
+I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
+Countless small mysteries are also solved in the process.</span></p></div>
+          </div>
+<p><strong>tab演示</strong></p>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<p><strong>按钮button测试</strong></p>
+<div class="btn-center">
+<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+</div>
+<p><strong>文字高亮</strong></p>
+<mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
+<mark class="hl-label red">红色</mark>
 ]]></content>
       <categories>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>blog</tag>
         <tag>教程</tag>
+        <tag>blog</tag>
+        <tag>测试</tag>
         <tag>hexo</tag>
       </tags>
   </entry>
@@ -2319,48 +2621,216 @@ Countless small mysteries are also solved in the process.</span></p></div>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>blog</tag>
         <tag>教程</tag>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
-    <title>数据分析工具superset安装和使用(version:0.381)</title>
-    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
+    <title>hexo博客系列(二)博客创建指南</title>
+    <url>/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h1>简介</h1>
-<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<p>Hexo 是一个由Nodejs驱动的博客框架，支持 Markdown、一键部署、插件和多种模板引擎。Hexo 可以让你轻松创建、管理和部署你的个人或团队博客。本文基于个人的实践经验，<strong>以Windows为主要开发环境</strong>，旨在让那些对博客搭建感兴趣但碍于困难的朋友能搭建起基本的博客框架。</p>
 <h1>准备工作</h1>
+<h2 id="课前提醒——主要是针对非程序员">课前提醒——主要是针对非程序员</h2>
+<p><strong>大部分的操作、代码输入</strong>都是在<strong>Windows</strong>系统<strong>终端</strong>中执行的。</p>
+<p><strong>方法</strong>：点击开始-搜索“终端”-打开，或者在任意文件夹中“右键”-“在终端中打开”。会出现黑色的框。后续大部分代码都是在这“黑框”中输入且执行的。</p>
+<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/1.png" alt></p>
+<ul>
+<li>代码块没有标明代码语言的都是在Windows终端中运行的。mac系统和linux系统相关指令请查询有关资料</li>
+<li>默认电脑下载了git和注册了github。没有注册github和下载git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
+<li>默认会“科学上网”，不会的可以参考此大佬的教程<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a>，可以在他的博客中搜索&quot;搭建个人博客“   <a href="https://starlike-daydream.github.io/Cesteo.github.io/">Ceasteo’s Blog</a>。按照此大佬的方法也可以实现简单的hexo博客创建。<strong>注意大佬文档中的淘宝镜像已经失效,请换成<a href="https://registry.npmmirror.com">https://registry.npmmirror.com</a></strong></li>
+</ul>
+<h2 id="相关资料下载">相关资料下载</h2>
+<ol>
+<li><a href="https://nodejs.cn/">Node.js 中文网 (nodejs.cn)</a>安装，进去后点击下载安装，选择长期支持版（LTS）即可</li>
+</ol>
+<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/2.png" alt></p>
+<ol start="2">
+<li>安装cnpm并配置淘宝镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/3.png" alt></p>
 <blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+<p><strong>注意</strong>：后面代码中我打//并且后面跟着文字的（比如//这里是初始化)都是<strong>注释</strong>，<strong>不要写在终端里面</strong></p>
 </blockquote>
+<ol start="3">
+<li>测试cnpm是否安装</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm -v   </span><br></pre></td></tr></table></figure>
+<p><strong>v</strong>：version 版本的意思</p>
+<ol start="4">
+<li>安装hexo博客框架</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>测试hexo博客框架是否安装</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+<h2 id="初始化博客">初始化博客</h2>
+<blockquote>
+<p>后续可以通过blog文件(<strong>shift+鼠标右键-在终端中打开</strong>）直接进入终端，也可以用Visual Studio Code将此文件打开并创建终端（建议使用vscode，后续博客维护很方便）。</p>
+</blockquote>
+<ol start="6">
+<li>在空文件夹（我这里事先创建并将其命名为temp)中初始化hexo博客框架,然后通过cd指令进入此目录。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">//示例：cd .\Desktop\temp\</span><br><span class="line">hexo init</span><br><span class="line">//如果报错的话就输入cnpm install 然后再输入hexo s即可</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>启动博客  start   用来预览修改后的博客 按ctrl+c即可停止运行。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>清除博客内容</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean  //或者hexo cl</span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li>生成博客内容</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<h2 id="部署">部署</h2>
+<p><strong>我这里只讲解部署到github的思路</strong>，部署到其他平台或者服务器请自行查询有关资料。没有注册github和git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></p>
+<ol start="10">
+<li>github创建仓库,注意格式严格为    <a href="http://xn--github-on9im33ani7aou3bged.github.io">你的github用户名.github.io</a> 并复制SSH的clone地址，我这里以Tom为例</li>
+</ol>
+<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/4.png" alt></p>
+<ol start="11">
+<li>安装部署插件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<ol start="12">
+<li>修改_config.yml文件</li>
+</ol>
+<p><img src="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/5.png" alt></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">//一般是最后一行。</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">粘贴你10步复制的地址。</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<ol start="13">
+<li>部署到github</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<ol start="14">
+<li>
+<p>13步后有的会提示输入github账号密码，没有就跳过14和15步</p>
+</li>
+<li>
+<p>分别输入用户名与密码。</p>
+</li>
+</ol>
+<p>输入密码之后报错并<strong>提醒你github已经停止使用密码登录</strong>，需要用密钥或者是ssh，这里我采用ssh的方式。</p>
+<ol start="16">
+<li>初始化用户名与邮箱(“yourname”和”youremail“改成你之前注册github设置的)</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot; //（注意user.name/email和英文双引号&quot;之间要有一个空格）</span><br><span class="line">git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
+<ol start="17">
+<li>确认是否设置成功</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">//用户名与邮箱</span><br><span class="line">git config --global user.name</span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
+<ol start="18">
+<li>下载github部署插件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<ol start="19">
+<li>本地生成密钥</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;（这里改为16步你设置的邮箱）</span><br></pre></td></tr></table></figure>
+<ol start="20">
+<li>获取你生成的密钥，并复制返回的结果</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<ol start="21">
+<li>
+<p><strong>登录github</strong>, 点击头像——settings——点击SSH and GPG keys-再点击New SSH key,自己取一个标题,然后将复制的密钥粘贴到&quot;key&quot;文本框内并提交（Add SSH key)。</p>
+</li>
+<li>
+<p>验证：</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<ol start="23">
+<li>再次提交</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<ol start="24">
+<li>运行并检验是否成功</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo s   //或者在浏览器URL栏输入“你的github用户名.github.io”，验证是否已经部署。</span><br></pre></td></tr></table></figure>
+<p>至此你已经成功部署一个简单的hexo博客，恭喜你我的朋友(^o^)/~，<strong>但这只是伟大征程的第一步，这是结束也是开始</strong>……</p>
+<h1>博客维护</h1>
+<h2 id="基础指令">基础指令</h2>
+<p>主题、文章修改之后要重新生成并部署。<br>
+简单讲解：</p>
+<ol>
+<li><code>hexo cl</code> 将之前上传的清除</li>
+<li><code>hexo g</code> 生成框架</li>
+<li><code>hexo s</code> 将其打开在主机上</li>
+<li><code>hexo d</code> 提交到github上</li>
+</ol>
+<blockquote>
+<p>总结：<strong>最重要的是第2,4个代码（部分插件使用需要第一个代码，这样通过你的用户名.github.io打开的博客才会更改。</strong></p>
+</blockquote>
+<h2 id="md文件">md文件</h2>
+<p><strong>命令行创建md文件</strong><br>
+<code>hexo n &quot;博客文章名&quot;</code>， <strong>必须先进入到文件中才能使用</strong>，会自动在 你所创建的文件夹\source_posts\博客文件名.md  路径下创建一个md文件。</p>
+<p><strong>md文件保存位置</strong><br>
+一般就在/_ posts 文件下创建md文件即可（或者把md文件移动到这里），要在开头加上如下语句即可.<strong>注意冒号后面要留空格</strong></p>
+<p><strong>示例格式如下</strong></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;! -- 这里是html的注释 写的时候不要添加 - - &gt;</span><br><span class="line">title: 我的第一篇博客文章</span><br><span class="line">date: 2024-06-01  19:10:34</span><br><span class="line">tags: C++</span><br><span class="line">no<span class="emphasis">_valine: true&lt;!- - 关闭评论- - &gt;</span></span><br><span class="line"><span class="emphasis">comments: 是否开启评论(true or false)</span></span><br><span class="line"><span class="emphasis">top: &lt;!- - 文章置顶true- - &gt;</span></span><br><span class="line"><span class="emphasis">no_</span>word<span class="emphasis">_count: true&lt;!- -关闭字数统计- - &gt;</span></span><br><span class="line"><span class="emphasis">password: &lt;! - -如果加密，这里填写密码 - - &gt;</span></span><br><span class="line"><span class="emphasis">reward: true&lt;!- - 当前文章是否开启打赏 - - &gt;</span></span><br><span class="line"><span class="emphasis">copyright: true&lt;!- - 当前文章是否开启版权声明 - - &gt;</span></span><br><span class="line"><span class="emphasis">categories: &lt;! - -如下，分类2是分类1的子分类- - &gt;</span></span><br><span class="line"><span class="emphasis">- [分类1，子分类1]</span></span><br><span class="line"><span class="emphasis">- [分类1，子分类2]</span></span><br><span class="line"><span class="emphasis">- [分类2]</span></span><br><span class="line"><span class="emphasis">tags: </span></span><br><span class="line"><span class="emphasis">- 标签1</span></span><br><span class="line"><span class="emphasis">- 标签2</span></span><br></pre></td></tr></table></figure>
+<h2 id="插件下载与使用">插件下载与使用</h2>
+<p><strong>提醒：少即是多, 避免华而不实。</strong></p>
+<p>打开官方文档<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a>，点击插件，点击中意的插件，按照作者的教程去配置插件</p>
+<p><strong>举例</strong><br>
+<strong>DPlayer插件</strong></p>
+<p><strong>播放代码</strong><br>
+<code>&#123;% dplayer "url=" "pic=" "theme=#FADFA3" "autoplay=false" "mutex=true" %&#125;</code></p>
+<p><strong>示例</strong><br>
+打开对应视频资源网页版（这里以b站为例），鼠标移动到分享-“嵌入代码”，将代码复制到md文件里面，如果需要调整大小，可添加<code>height=450 width=600</code> ,根据需要调整即可</p>
+<h2 id="主题的下载与使用">主题的下载与使用</h2>
+<p><strong>安装思路同插件</strong><br>
+注意在themes界面中可以点击“visit preview site”预览主题。</p>
+<ol>
+<li>看作者介绍如何安装，一步步安装  ，复杂一点的主题还有一系列插件安装</li>
+<li>打开根目录下的_config.yml  将theme: 以前的主题 改为 theme: 现在的主题</li>
+<li>后续的改动都是要基于作者文档。熟悉前端开发的朋友可以用“<strong>检查</strong>“了解作者网页的结构，然后自行修改</li>
+</ol>
+<p><strong>推荐主题</strong>：</p>
 <ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料
+<li>极简风格：
 <ul>
-<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+<li>yilia-plus：<a href="https://github.com/JoeyBling/hexo-theme-yilia-plus">一个简洁优雅的hexo主题</a></li>
+</ul>
+</li>
+<li>优雅又实用：
+<ul>
+<li>butterfly：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安裝文檔(一) 快速開始 | Butterfly</a></li>
+<li>matery：<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">hexo-theme-matery/README_CN.md</a></li>
 </ul>
 </li>
 </ul>
-<h1>基本环境配置</h1>
+<h1>Hexo进阶-butterfly主题安装及其定制化</h1>
+<blockquote>
+<p>我目前安装的是5.1.0版本的。</p>
+</blockquote>
+<p>虽然主菜单栏里面可以分成多个子菜单，但是似乎每一个子菜单只能放一个md文件，所以<u>建议此md文件作为某一类型的东西的索引来呈现。</u></p>
+<p>所有的博客md文件都需要放在_post文件夹里面，其他地方大多只能放索引md文件。<strong>建议使用</strong><code>hexo n post 标题名</code> ,这样就会<strong>自动将对应的文件夹也生成</strong>。</p>
+<p>建议修改的使用经常使用Hexo s命令，修改无误之后再提交。</p>
+<p><strong>To be continue……</strong></p>
+<hr>
+<h1>总结</h1>
+<p>本篇文章主要侧重于基础的hexo博客搭建，至于进阶的hexo主题搭建和插件安装，限于笔者能力难以展开，有兴趣的读者可以去官方文档找对应的资料，按照作者的文档去安装。</p>
+<h1>结束语</h1>
+<p>有的朋友会说这也太难了吧，确实对于零基础的小白配置一个复杂的博客主题绝非易事，但是我想用王安石的一句话共勉想要变得更强、超越自我的朋友。<br>
+<strong>“而世之奇伟、瑰怪、非常之观，常在于险远，而人之所罕之焉，故非有志者不能之也。”</strong></p>
+<h1>参考资料</h1>
 <ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
+<li><strong>官方网站</strong>：<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></li>
+<li><strong>其他人的教程</strong>：<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a></li>
+<li>git和github<strong>下载和使用</strong>：<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
 </ol>
-<h1>superset使用指南</h1>
-<p>待更新……</p>
 ]]></content>
       <categories>
-        <category>大数据</category>
+        <category>blog</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
-        <tag>大数据</tag>
+        <tag>教程</tag>
+        <tag>blog</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -2787,6 +3257,46 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
       <tags>
         <tag>C</tag>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析工具superset安装和使用(version:0.381)</title>
+    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
+    <content><![CDATA[<h1>简介</h1>
+<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<h1>准备工作</h1>
+<blockquote>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+</blockquote>
+<ul>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料
+<ul>
+<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h1>基本环境配置</h1>
+<ol>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
+</ol>
+<h1>superset使用指南</h1>
+<p>待更新……</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
