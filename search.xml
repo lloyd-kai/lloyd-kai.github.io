@@ -1,32 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Linux学习笔记(一)</title>
-    <url>/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1>学前提醒</h1>
+    <title>Linux学习笔记(一)Centos</title>
+    <url>/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/</url>
+    <content><![CDATA[<blockquote>
+<p>本博客使用的是Centos7版本</p>
+</blockquote>
+<h1>学前提醒</h1>
 <ol>
 <li>不要死记Linux命令，先敲一遍，以后在学习和工作中练习就足够了，需要的时候就查命令手册</li>
-<li>Centos在2024年已停止更新，这篇博客<strong>主要介绍Centos的基础命令，不涉及其进阶操作</strong>。进阶可以学一下ubuntu等其他常用的Linux发行版</li>
+<li>Centos在2024年已停止维护，这篇博客<strong>主要介绍Centos的基础命令(Linux发行版基础指令基本一样)，不涉及其进阶操作</strong>。建议读者可以学一下ubuntu、Debian等其他常用的Linux发行版</li>
 </ol>
 <h1>初识Linux</h1>
 <ol>
 <li>
-<p>什么是Linux？即服务器操作系统的一种。<strong>操作系统就是第一层软件</strong>，作为用户和计算机硬件之间的桥梁，调度和管理计算机硬件进行工作。对于前后端开发人员、运维测试人员、大数据等都是必学的内容</p>
+<p>什么是Linux？即<strong>服务器操作系统</strong>的一种。<strong>操作系统就是第一层软件</strong>，作为用户和计算机硬件之间的桥梁，调度和管理计算机硬件进行工作。Linux是前后端开发人员、运维测试人员、大数据分析人员等必学的内容。</p>
 </li>
 <li>
-<p>Linux的组成：由Linux系统<strong>内核</strong>+系统级应用<strong>程序</strong>(简单理解成系统自带的软件，比如文件管理，图片查看等)组成，其他的软件都叫第三方应用程序。</p>
+<p>Linux的组成：由Linux系统<strong>内核</strong>+系统级应用<strong>程序</strong>(简单理解成系统自带的软件，比如文件管理，图片查看等)组成，其他的软件都叫第三方应用程序。这其中<strong>最重要的就是内核</strong></p>
 </li>
-<li>
-<p>Linux发行版：任何人都可以获得并修改内核，并且自行集成系统级程序，提供了内核+系统级程序的完整封装，称之为Linux发行版。常见的ubuntu和redhat等就是Linux的发行版。所以也<strong>不要纠结学哪一个，学会了一个，其他的都会触类旁通了</strong>。</p>
-</li>
+</ol>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/Linux%E7%B3%BB%E7%BB%9F%E7%BB%84%E6%88%90%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="Linux系统组成示意图"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/Linux%E8%B0%83%E5%BA%A6%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="Linux调度流程图"></p>
+<ol start="3">
+<li>Linux发行版：任何人都可以获得并修改内核，并且自行集成系统级程序，提供了内核+系统级程序的完整封装，称之为Linux发行版。常见的ubuntu和redhat等就是Linux的发行版。所以也<strong>不要纠结学哪一个，学会了一个，其他的都会触类旁通了</strong>。</li>
 </ol>
 <h2 id="虚拟机">虚拟机</h2>
 <p>即借助虚拟化技术，我们可以在系统中，通过软件模拟计算机硬件，并给虚拟硬件安装真实的操作系统。</p>
-<p>学习Linux可以选择使用虚拟软件，比如VMware，或者是买一个云服务器。</p>
+<p>学习Linux可以选择使用虚拟软件，比如VMware WorkStation，或者是买一个云服务器。</p>
 <p>Windows网络连接(网络适配器)查看方法<code>win+R</code> 输入<code>ncpa.cpl</code> 查看是否有VMnet1和VMnet8的网卡，有了虚拟机才能连上网。</p>
 <h2 id="扩展：WSL">扩展：WSL</h2>
 <p>就是Windows Subsystem for Linux，没错，Windows系统可以得到Linux系统环境，不过目前的主流还是用虚拟软件。</p>
 <p>方法：(Windows 11)在开始中搜索-“启用或者关闭Windows功能”-“适用于Linux的Windows子系统 ”打勾，“虚拟机平台”打勾并重启，然后在应用商店里面搜索对应的Linux发行版下载即可。</p>
+<h2 id="Linux的安装、配置和远程连接">Linux的安装、配置和远程连接</h2>
+<ol>
+<li>虚拟机软件安装：<a href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion">VMware WorkStation官网</a> 进入官网之后选择自己的操作系统进行安装。点击exe文件选择适合的路径安装就行。</li>
+</ol>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_01.png" alt="001_Linux安装_01"></p>
+<ol start="2">
+<li>查看主机的网络适配器是否正常配置：按<strong>win + r</strong>  <strong>输入ncpa.cpl回车</strong>  确保里面有VMnet1和VMnet8</li>
+</ol>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_02.png" alt="001_Linux安装_02"></p>
+<ol start="3">
+<li>在VMware中安装Centos系统</li>
+</ol>
+<p>考虑到国内访问Centos安装包源比较困难，这里使用清华的镜像源网站，且本次使用的是Centos7.6版本，读者需要安装其他版本的都可以在<a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学镜像源网站</a>下面找。Centos下载链接：<a href="https://mirrors.tuna.tsinghua.edu.cn/centos-vault/7.6.1810/isos/x86_64/">清华大学开源软件镜像站</a></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_03.png" alt="001_Linux安装_03"></p>
+<p>下载好之后打开VMWare软件，点击左上角“文件”-“新建虚拟机”</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_04.png" alt="001_Linux安装_04"></p>
+<p>选择“典型(推荐)”</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_05.png" alt="001_Linux安装_05"></p>
+<p>选择你下载的ISO文件的路径</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_06.png" alt="001_Linux安装_06"></p>
+<p>设置用户名和密码</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_07.png" alt="001_Linux安装_07"></p>
+<p>设置虚拟机的位置</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_08.png" alt="001_Linux安装_08"></p>
+<p>设置虚拟机的内存</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_09.png" alt="001_Linux安装_09"></p>
+<p>自定义硬件 建议内核和内存不要分配太多</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_10.png" alt="001_Linux安装_10"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_11.png" alt="001_Linux安装_11"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_12.png" alt="001_Linux安装_12"></p>
+<p>后面就是自动安装了，大概需要10-20分钟左右。<strong>注意不要反复点击界面，否则可能会卡死需要重新安装</strong>。</p>
+<ol start="4">
+<li>登录虚拟机</li>
+</ol>
+<p>用你之前设置的用户登录虚拟机</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_13.png" alt="001_Linux安装_13"></p>
+<p>出现“Getting Started”界面，直接退出即可。出现此界面说明你已经安装好Centos了\(^o^)/~ ,不过<strong>这可不是结束的开始，而是开始的结束</strong>。</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_14.png" alt="001_Linux安装_14"></p>
+<ol start="5">
+<li>远程登录虚拟机</li>
+</ol>
+<p>Linux上面有图形化界面(在界面中右键-“open terminal”，但是<strong>不推荐</strong>。在开发中使用命令行的效率比图形化界面更好.<br>
+但是VMware中的Linux命令行页面不方便，建议使用第三方软件远程连接到Linux上(<strong>生产环境中也是远程开发</strong>)，推荐软件有Xshell和finalshell。我这里使用Xshell，finalshell同理</p>
+<p><a href="https://www.xshell.com/zh/xshell-download/">Xshell 下载官网</a> 建议使用“家庭和学校用户的免费许可证”下的“免费授权界面”下载Xshell和XFTP(用于传输文件),我这里下载的是7版本</p>
+<p>打开Xshell后点击右上角的“文件”-“新建”。</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_15.png" alt="001_Linux安装_15"></p>
+<p>此界面重要的<strong>填写主机IP</strong>。在Centos界面中右键-“open terminal” ，命令行输入<code>ifconfig</code> 回车</p>
+<p>图中方框部分就是此虚拟机的IP，</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_16.png" alt="001_Linux安装_16"></p>
+<p>按照你自己查找的IP将其填写在主机(H)的框中即可。</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_17.png" alt="001_Linux安装_17"></p>
+<p>会弹出如下的警告界面，点击“接收并保存”</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_18.png" alt="001_Linux安装_18"></p>
+<p>选择你登录的用户名，建议<strong>使用一般用户而不是root用户</strong>。我这里演示用就用root用户了。出现如下图表示登录成功</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_19.png" alt="001_Linux安装_19"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_20.png" alt="001_Linux安装_20"></p>
+<p>但是：Linux虚拟机如果重启，有可能发生IP改变，如果IP改变需要在XShell中修改连接的IP地址。以下讲解如何固定IP地址不变。</p>
+<p>在VMware软件中左上角点击“编辑”-“虚拟网络编辑器”，再点击“更改设置”，点击vmnet8并点击NAT设置</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_21.png" alt="001_Linux安装_21"></p>
+<p>按照子网设置网关IP，比如子网IP是192.188.190.0 <a href="http://xn--IP192-fq1h9c273ah50abj4fijah81khkn.188.190.xxx">那么网关IP就设置为192.188.190.xxx</a>,xxx在0-255之间，这里建议就用2代替xxx，IP</p>
+<p>记住以上红色方框中的内容</p>
+<p>然后用Xshell远程登录(使用root用户登录)，在命令行输入<code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code></p>
+<p>然后按<code>i</code>键后输入以下内容，根据自己的实际情况改。那个``IPADDR=“建议设置成你之前ifconfig查询的IP”`</p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001_Linux%E5%AE%89%E8%A3%85_22.png" alt="001_Linux安装_22"></p>
+<p>再点击esc键，输入<code>:wq</code> 回车就保存并退出了</p>
+<p>在命令行中输入并执行<code>systemctl restart network</code> 重启网卡，执行<code>ifconfig</code>即可看到ip地址固定为你设置的IP了。</p>
+<hr>
+<blockquote>
+<p>此LloydEduCentos仅作演示安装用，后续Linux学习使用的是hspEdu01的虚拟机，读者无需担心，不影响后续学习Linux</p>
+</blockquote>
 <h1>Linux入门</h1>
 <p>学习Linux需要掌握<strong>命令</strong>来操作系统，图形化页面很少使用。图形化界面易于理解，但是命令行效率更高。</p>
 <p>那么在哪里敲命令行呢？VMware里面可以，但是不方便。建议使用Xshell或者是FinalShell软件，这里我用的是Xshell。</p>
@@ -35,9 +110,9 @@
 <h1>Linux基础命令</h1>
 <p>💡以下的指令本质上都是可执行的二进制文件。</p>
 <h2 id="Linux目录结构">Linux目录结构</h2>
-<p><strong>一切皆文件</strong>：指的是Linux会将一切对象映射成文件。Linux中最重要的就是目录，以后从事相关工作要背主目录。<strong>因为在生产环境中是没有图形化界面的，只有控制台</strong>。对于其他目录要了解其英文单词和实际用途。</p>
+<p><strong>一切皆文件</strong>：指的是Linux会将一切对象映射成文件。Linux中最重要的就是目录，以后从事相关工作要背主目录。<strong>因为在生产环境中是很少使用图形化界面的，基本只用控制台</strong>。对于其他目录要了解其英文单词和实际用途。</p>
 <p>图片演示</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20221027214128.png" alt="20221027214128"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/002_Linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84_01.png" alt="002_Linux目录结构_01"></p>
 <ul>
 <li><code>/</code>，根目录是最顶级的目录了，也就是说<code>~</code>是<code>/</code>的子目录</li>
 <li>Linux有且只有一个顶级目录：<code>/</code></li>
@@ -63,12 +138,12 @@ command [-options] [parameter]</p>
 <li>-a，表示all的意思，即显示所有文件，包括隐藏文件(在Linux中以<code>.</code>开头的，均是隐藏的)</li>
 </ul>
 <p>演示如下</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/001.png" alt="001"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/001.png" alt="001"></p>
 <p><strong>注意</strong>：当前登录用户的HOME目录作为当前工作目录，所以ls命令列出的是HOME目录的内容</p>
 <p>HOME目录：每个操作用户在Linux系统的个人账户目录，路径在：/home/用户名</p>
 <p>普通用户的HOME目录，默认在：<code>/home/用户名</code>，而root用户的HOME目录，在：<code>/root</code></p>
 <p>语法中的选项是可以组合使用的，比如学习的-和-l可以组合应用,比如<code>ls -la</code></p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/002.png" alt="002"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/002.png" alt="002"></p>
 <h3 id="cd-change-directory-命令">cd(change directory) 命令</h3>
 <p>功能：切换工作目录</p>
 <p>语法：<code>cd [linux路径]</code></p>
@@ -76,7 +151,7 @@ command [-options] [parameter]</p>
 <h3 id="pwd-print-work-directory">pwd(print work directory)</h3>
 <p>功能：展示当前所在的工作目录</p>
 <p>语法:<code>pwd</code></p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/003.png" alt="003"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/003.png" alt="003"></p>
 <p><strong>相对路径与绝对路径</strong></p>
 <ul>
 <li>
@@ -100,7 +175,7 @@ command [-options] [parameter]</p>
 <li>选项：-p，可选，表示创建前置路径，比如你输入<code>mkdir -p /usr/test/work</code> 但是test文件夹没有创建，那么<code>-p</code>会帮助创建一个test的文件夹，然后再创建work文件夹</li>
 <li>此图第一个d表示这是一个文件夹，后面的与<strong>权限</strong>有关</li>
 </ul>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/004.png" alt="004"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/004.png" alt="004"></p>
 <h2 id="文件操作命令">文件操作命令</h2>
 <h3 id="touch命令">touch命令</h3>
 <p>功能：创建文件，注意要<strong>添加后缀</strong></p>
@@ -165,7 +240,7 @@ command [-options] [parameter]</p>
 <li>参数，关键字，必填，表示过滤的关键字，带有空格或其它特殊符号，建议使用””将关键字包围起来</li>
 <li>参数，文件路径，必填，表示要过滤内容的文件路径，可作为<strong>内容输入端口(就是|)</strong></li>
 </ul>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/005.png" alt="005"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/005.png" alt="005"></p>
 <h3 id="wc命令">wc命令</h3>
 <p>功能：统计</p>
 <p>语法：<code>wc [-c -m -l -w] 文件路径</code></p>
@@ -176,14 +251,14 @@ command [-options] [parameter]</p>
 <li>选项，-w，统计单词(word)数量</li>
 <li>参数，文件路径，被统计的文件，可作为内容输入端口</li>
 </ul>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/006.png" alt="006"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/006.png" alt="006"></p>
 <p>从左到右分别是行数、单词数、字符数、字节数.</p>
 <h3 id="管道符">管道符|</h3>
 <p>写法：<code>|</code></p>
 <p>功能：<strong>将符号左边的结果，作为符号右边的输入</strong></p>
 <p>示例：<code>cat a.txt | grep itheima</code>，将cat a.txt的结果，作为grep命令的输入，用来过滤<code>itheima</code>关键字</p>
 <p>可以支持嵌套：<code>cat a.txt | grep itheima | grep itcast</code> 还比如<code>ls -l /usr/bin | wc -l</code>表示展示bin文件夹内有多少个文件</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/007.png" alt="007"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/007.png" alt="007"></p>
 <h2 id="echo、tail和重定向符">echo、tail和重定向符</h2>
 <h3 id="echo命令">echo命令</h3>
 <p>功能：输出内容</p>
@@ -191,7 +266,7 @@ command [-options] [parameter]</p>
 <h3 id="反引号">`反引号</h3>
 <p>功能：被两个反引号包围的内容，会作为命令执行</p>
 <p>示例： echo `pwd`，会输出当前工作目录</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/008.png" alt="008"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/008.png" alt="008"></p>
 <h3 id="tail命令">tail命令</h3>
 <p>功能：查看文件尾部内容，就是从后往前展示文件内容。</p>
 <p>语法：<code>tail [-f -num] 参数</code></p>
@@ -451,7 +526,7 @@ command [-options] [parameter]</p>
 <li>
 <p>查看系统中的用户<code>getent passwd</code></p>
 <p>如图所示</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/009.png" alt="009"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/009.png" alt="009"></p>
 <p>信息格式为：用户名：密码(X):用户ID:组ID:描述信息（无用）：HOME目录：执行终端(默认bash）可以使用<code>getent group</code>查看系统中有哪些组</p>
 </li>
 <li>
@@ -460,10 +535,10 @@ command [-options] [parameter]</p>
 </ul>
 <h3 id="权限信息">权限信息</h3>
 <p>如图所示</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/010.png" alt="010"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/010.png" alt="010"></p>
 <p>序号1表示文件和文件夹的权限控制信息，序号2表示文件和文件夹所属的用户和用户组。</p>
 <p>权限讲解如下图</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/011.png" alt="011"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/011.png" alt="011"></p>
 <p>r\w\x分别代表可读、可写、可执行。</p>
 <h3 id="chmod命令">chmod命令</h3>
 <p>语法：<code>chmod [-R] 权限 参数</code></p>
@@ -610,7 +685,7 @@ command [-options] [parameter]</p>
 <h3 id="软链接">软链接</h3>
 <p>功能：创建文件、文件夹软链接（快捷方式）</p>
 <p>语法：<code>ln -s 参数1 参数2</code>；参数1：被链接的；参数2：要链接去的地方（快捷方式的名称和存放位置）</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/012.png" alt="012"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/012.png" alt="012"></p>
 <p>图中红色方框部分就是软链接</p>
 <h3 id="日期及其计算">日期及其计算</h3>
 <p>语法：<code>date [-d] [+格式化字符串]</code></p>
@@ -692,7 +767,7 @@ command [-options] [parameter]</p>
 <p>功能：查看进程信息</p>
 <p>语法：<code>ps -ef</code>，查看全部进程信息，可以搭配grep做过滤：<code>ps -ef | grep xxx</code></p>
 <p>示例如下图</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/014.png" alt="014"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/014.png" alt="014"></p>
 <p>UID是指进程所属的用户ID，PPID:进程的父ID(启动此进程的其它进程）C:此进程的CPU占用率（百分比）STME:进程的启动时间;TTY:启动此进程的终端序号，如显示？，表示非终端启动;TIME :进程占用cpu的时间；CMD：进程的启动路径或者命令。</p>
 <h3 id="kill命令">kill命令</h3>
 <p>语法：<code>kill [-9] 进程ID</code> -9表示强制关闭进程。</p>
@@ -701,7 +776,7 @@ command [-options] [parameter]</p>
 <p>功能：查看主机运行状态</p>
 <p>语法：<code>top</code>，查看基础信息，按<code>q</code>退出</p>
 <p>示意图如下</p>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/015.png" alt="015"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/015.png" alt="015"></p>
 <p>解释：</p>
 <ul>
 <li>第一行：top:命令名称，08:31:30：当前系统时间，up 38 min:启动了38分钟，1 users:1个用户登录，load average:1、5、15分钟负载</li>
@@ -821,7 +896,7 @@ command [-options] [parameter]</p>
 <ul>
 <li>临时设置：export 变量名=变量值</li>
 </ul>
-<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/016.png" alt="016"></p>
+<p><img src="/2024/10/22/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)Centos/016.png" alt="016"></p>
 <ul>
 <li>永久设置：
 <ul>
@@ -3268,6 +3343,46 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
       </tags>
   </entry>
   <entry>
+    <title>数据分析工具superset安装和使用(version:0.381)</title>
+    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
+    <content><![CDATA[<h1>简介</h1>
+<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<h1>准备工作</h1>
+<blockquote>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+</blockquote>
+<ul>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料
+<ul>
+<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h1>基本环境配置</h1>
+<ol>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
+</ol>
+<h1>superset使用指南</h1>
+<p>待更新……</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构可视化</title>
     <url>/2024/11/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<blockquote>
@@ -3778,46 +3893,6 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
       </categories>
       <tags>
         <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析工具superset安装和使用(version:0.381)</title>
-    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
-    <content><![CDATA[<h1>简介</h1>
-<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
-<h1>准备工作</h1>
-<blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
-</blockquote>
-<ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料
-<ul>
-<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ul>
-</li>
-</ul>
-<h1>基本环境配置</h1>
-<ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
-</ol>
-<h1>superset使用指南</h1>
-<p>待更新……</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
