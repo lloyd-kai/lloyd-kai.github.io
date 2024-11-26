@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://lloyd-kai.github.io/2024/11/22/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%BA%8C)%E8%BF%9B%E9%98%B6%E7%AF%87/</loc>
+    
+    <lastmod>2024-11-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://lloyd-kai.github.io/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%E5%9F%BA%E7%A1%80%E7%AF%87/</loc>
     
     <lastmod>2024-11-26</lastmod>
@@ -75,15 +84,6 @@
   
   <url>
     <loc>http://lloyd-kai.github.io/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/</loc>
-    
-    <lastmod>2024-11-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://lloyd-kai.github.io/2024/11/22/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%BA%8C)%E8%BF%9B%E9%98%B6%E7%AF%87/</loc>
     
     <lastmod>2024-11-26</lastmod>
     
@@ -267,20 +267,6 @@
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/tags/C/</loc>
-    <lastmod>2024-11-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://lloyd-kai.github.io/tags/C/</loc>
-    <lastmod>2024-11-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://lloyd-kai.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2024-11-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -288,7 +274,14 @@
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/tags/data-structure/</loc>
+    <loc>http://lloyd-kai.github.io/tags/C/</loc>
+    <lastmod>2024-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://lloyd-kai.github.io/tags/C/</loc>
     <lastmod>2024-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -296,6 +289,13 @@
   
   <url>
     <loc>http://lloyd-kai.github.io/tags/English/</loc>
+    <lastmod>2024-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://lloyd-kai.github.io/tags/data-structure/</loc>
     <lastmod>2024-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -325,13 +325,6 @@
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/categories/C/</loc>
-    <lastmod>2024-11-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://lloyd-kai.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2024-11-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -339,7 +332,7 @@
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/categories/data-structure/</loc>
+    <loc>http://lloyd-kai.github.io/categories/C/</loc>
     <lastmod>2024-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -347,6 +340,13 @@
   
   <url>
     <loc>http://lloyd-kai.github.io/categories/English/</loc>
+    <lastmod>2024-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://lloyd-kai.github.io/categories/data-structure/</loc>
     <lastmod>2024-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
