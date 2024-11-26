@@ -2433,7 +2433,7 @@ where与having区别</p>
 <p>方法1：通过picgo图床实现图片上传。参考<a href="https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c">Typora+PicGo+阿里云OSS实现云笔记|Typora上传图片</a></p>
 </li>
 <li>
-<p>方法2-本地上传图片：参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用。如果部署到zeabur的博客图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。</p>
+<p>方法2-本地上传图片：参考此博客<code>[hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客](https://blog.csdn.net/weixin_43702620/article/details/118655308)</code> 简单来说就是在post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用。如果部署到zeabur的博客图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。</p>
 </li>
 <li>
 <p>方法3：使用其他的图床网站如<a href="https://smms.app/">SMMS</a>。上传图片后，点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。<strong>博主因为部署的原因绝大多数图片都使用此方法</strong>，如果读者只使用github page作为网站托管平台那么三个方法都可以用。</p>
@@ -2620,213 +2620,6 @@ Countless small mysteries are also solved in the process.</span></p></div>
         <tag>blog</tag>
         <tag>测试</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客系列(三)博客写作指南</title>
-    <url>/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1>简介</h1>
-<p>在撰写博客的过程中，内容至关重要但不是唯一重要的因素，排版、图片、交互体验等视觉设计也同样需要关注。一个设计精美、易于阅读的博客会吸引更多读者，提升用户体验。本文将为你提供一套完整的 markdown 博客创作指南，从实战的角度帮助你写出既有深度又美观的博客文章。</p>
-<h1>准备工具</h1>
-<h2 id="写作工具">写作工具</h2>
-<p>个人比较推崇<strong>Typora</strong>这种简洁的支持<strong>markdown</strong>格式的编辑器，相比之下，obsidian的布局不利于专注于写作，notion的自定义布局和数据库这两大突出优势在markdown格式下会有损失，vscode依赖于插件。</p>
-<p>总之就是一句话:</p>
-<blockquote>
-<p>能让你心无旁骛地去写的编辑器就是最好的</p>
-</blockquote>
-<h2 id="博客引擎">博客引擎</h2>
-<p>本文基于hexo+butterfly的主题进行博客创作，但读者无须担心，博客创作更多的在于<strong>文章结构</strong>、<strong>词句修辞</strong>、<strong>排版和可读性</strong>方面下功夫，其他方面依赖博客引擎和前端特性的并不多，读者可以在CSDN、博客园、掘金社区等其他地方同样可以撰写和托管博客。</p>
-<h1>博客撰写讲解</h1>
-<h2 id="目录结构">目录结构</h2>
-<p>好的目录结构要梳理文章逻辑，如果是<strong>新闻热点点评类</strong>，就要能讲清楚事件发生的时间地点人物，发生原因及其分析，结论、启示或者经验教训；如果是<strong>技术分享类</strong>，就要说明技术的应用范围，原理，怎样配置技术所需的环境，阐明使用技术的效果等。这方面主要靠读者多看技术大佬的博客、优秀的公众号推文等，看他们的目录是如何区分的，只要能达到<strong>行云流水</strong>的效果就行，不需要在分级、格式方面过于讲究。</p>
-<p>可供参考的文章结构：大部分都是<strong>总-分-总</strong>结构</p>
-<ul>
-<li>提出问题-&gt;分析问题-&gt;解决问题-&gt;总结经验，技术问题分享。</li>
-<li>背景-&gt;思考-&gt;尝试-&gt;遇到的困难-&gt;解决方案-&gt;最后结果，问题分享</li>
-<li>摘要-&gt;简介-&gt;分支主题-&gt;总结，一般技术分享。</li>
-<li>是什么-原理-背景&gt;解决了什么问题-&gt;基本操作-&gt;同类对比-&gt;总结 ，适合新技术分享</li>
-</ul>
-<p>参考的目录结构如下，以markdown格式的代码块展示,这里<code>//</code>及其后面的内容代表注释</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 简介    </span></span><br><span class="line"><span class="section"># 一、准备工作 //一些环境配置，安装等，或者是解决问题的背景等</span></span><br><span class="line"><span class="section">## 1.centos安装  //以数字的形式合理分级，建议标题的层级不要超过四层</span></span><br><span class="line"><span class="section">## 2.idea解包</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 二、基本用法 //对于技术文章就像是语法书，对于问题就是发现问题，分析问题，</span></span><br><span class="line"><span class="section">## 1. 对页面的操作</span></span><br><span class="line"><span class="section">## 2. 1 初始化浏览器对象</span></span><br><span class="line"><span class="section">## 2. 2</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 三、高阶用法  //或者是多个解决方案</span></span><br><span class="line"><span class="section"># 总结  //对技术或者过程的总结，建议不要太长</span></span><br><span class="line"><span class="section"># 参考  //把你写作过程中参考的资料，或者是推荐的链接放在这里，便于读者后续学习</span></span><br><span class="line"><span class="section"># 开源协议  //如果使用的是hexo或者其他博客网站，撰写博客的时候会自动生成，不需要自己写</span></span><br></pre></td></tr></table></figure>
-<h3 id="标题">标题</h3>
-<p>取标题要注意几点</p>
-<ol>
-<li><strong>简洁直观</strong>：不仅仅是利于搜索引擎优化，更多的是便于读者和自己，读者可以通过标题判断博客的信息对于自己是否有效，作者可以根据标题了解自己博客的侧重方面。<strong>不要被国内电商式的标题所蒙蔽</strong>(比如“爆肝……”“震惊，百大up主齐聚一堂竟然是为……”)，虽然能带来流量，但是作者不太建议，这种标题就显得作者没有真才实学，只能靠眼球吸引读者，</li>
-<li><strong>关键词</strong>：标题一定要包含文章的高频词或者是重点词语，比如如果你写的是有关MySQL的学习知识分享，那么关键字就是“MySQL”，可能有“教程”等其他关键词，再用适当的句子结构(问句、陈述句等)将其组合为标题。比如组合为”MySQL学习指南(一)“</li>
-</ol>
-<p><strong>特殊</strong>:所有<strong>系列文章</strong>(比如MySQL学习笔记)的标题要一致，<strong>相关的</strong>可以不一致。标题+XX:XX为数字，不满两位用0替代;比如mysql01;标题+(序数词):比如mysql学习(一)</p>
-<h3 id="简介">简介</h3>
-<p>文章的标题和简要介绍一下文章，要解决的是什么问题</p>
-<p><strong>示例</strong>：Selenium是广泛使用的模拟浏览器运行的库，它是一个用于Web应用程序测试的工具。 Selenium测试直接运行在浏览器中，就像真正的用户在操作一样，并且支持大多数现代 Web 浏览器。下面就进入正式的学习阶段。</p>
-<h3 id="文章主体">文章主体</h3>
-<p>以下主要侧重于排版。</p>
-<ol>
-<li>段落：建议不要太长，最好保持在300字以内</li>
-<li>字体效果：用黑体强调重要词汇，用斜体或者下划线强调重要段落</li>
-<li>列表：恰当使用无序和有序列表，对于超过10个点的列表建议使用markdown里面的表格</li>
-<li>图片：如果图片能便于读者理解，减少文字量，可以使用。</li>
-<li>代码块：建议默认收起或者收缩，需要的时候读者点击即可全部展开。指明代码块对应的编程语言，不是的话要提前说明</li>
-<li>分割线：建议用在两个一级标题或者是两段长段落之间。</li>
-</ol>
-<p>注意事项</p>
-<ol>
-<li>所有的代码至少要在自己的电脑上或者对应的运行环境上运行，否则不写</li>
-<li>不易理解或者抽象的地方要用图解释，可以是GIF动图制作也可以是chartjs、echart等，注意不要泄漏私人信息。</li>
-<li>模棱两可或者自己不懂的不要轻易写，写的话注意叠甲。</li>
-</ol>
-<h2 id="超文本内容">超文本内容</h2>
-<p>这一部分主要涉及前端的特性，属于是锦上添花的内容，即使没有也不是特别影响文章的质量，就算《资本论》只有文字，也无可争议是最伟大的鸿篇巨著之一。</p>
-<p>常用的类型有：图片、动画(gif等)、视频、音频、表情、标签外挂、图标、链接等。</p>
-<h3 id="图表">图表</h3>
-<ol>
-<li><a href="https://excalidraw.com/">Excalidraw</a>：手绘风格的开源工具，适合绘制思维导图、流程图等。</li>
-</ol>
-<p><img src="https://s2.loli.net/2024/11/26/lvhXLijoyQYUnkb.png" alt="博客写作指南_01"></p>
-<ol start="2">
-<li><a href="https://mermaid.nodejs.cn/">Mermaid 中文网</a>：基于 Markdown 的流程图工具，可以生成流程图、时序图等。或者也可以使用<a href="https://app.diagrams.net/">draw.io</a>。主要侧重于计算机方面的知识图表，常用于UML统一建模语言。</li>
-</ol>
-<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
-  
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop HealthCheck
-        John-&gt;&gt;John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
-    John--&gt;&gt;Alice: Great!
-    John-&gt;&gt;Bob: How about you?
-    Bob--&gt;&gt;John: Jolly good!
-
-  </pre></div>
-<ol start="3">
-<li><a href="https://chartjs.cn/docs/latest/">Chart.js 中文网</a>：是一个用于创建动态图表的 JavaScript 库，适合做一些比较复杂的数据分析图。</li>
-</ol>
-<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
-            <pre class="chartjs-src" hidden>{
-    &quot;type&quot;: &quot;pie&quot;,
-    &quot;data&quot;: {
-        &quot;labels&quot;: [
-            &quot;编程&quot;,
-            &quot;音乐&quot;,
-            &quot;阅读&quot;,
-            &quot;游戏&quot;,
-            &quot;健身&quot;,
-            &quot;旅游&quot;
-        ],
-        &quot;datasets&quot;: [
-            {
-                &quot;label&quot;: &quot;喜爱指数&quot;,
-                &quot;data&quot;: [
-                    30,
-                    24,
-                    19,
-                    14,
-                    9,
-                    4
-                ],
-                &quot;backgroundColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.5)&quot;,
-                        &quot;rgba(54, 162, 235, 0.5)&quot;,
-                        &quot;rgba(255, 206, 86, 0.5)&quot;,
-                        &quot;rgba(75, 192, 192, 0.5)&quot;,
-                        &quot;rgba(153, 102, 255, 0.5)&quot;,
-                        &quot;rgba(255, 159, 64, 0.5)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.2)&quot;,
-                        &quot;rgba(54, 162, 235, 0.2)&quot;,
-                        &quot;rgba(255, 206, 86, 0.2)&quot;,
-                        &quot;rgba(75, 192, 192, 0.2)&quot;,
-                        &quot;rgba(153, 102, 255, 0.2)&quot;,
-                        &quot;rgba(255, 159, 64, 0.2)&quot;
-                    ]
-                },
-                &quot;borderColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ]
-                }
-            }
-        ]
-    },
-    &quot;options&quot;: {
-        &quot;plugins&quot;: {
-            &quot;legend&quot;: {
-                &quot;labels&quot;: {
-                    &quot;color&quot;: {
-                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
-                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
-                    }
-                }
-            }
-        }
-    }
-}
-</pre>
-            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
-我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
-在此过程中也解决了无数的小谜团。<br>
-<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
-I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
-Countless small mysteries are also solved in the process.</span></p></div>
-          </div>
-<h3 id="视频">视频</h3>
-<ol>
-<li>B站引用：打开网页版的bilibili，点击要分享的视频-“分享”-“嵌入代码”，然后粘贴到markdown文件内即可。参考如下</li>
-</ol>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
-    </iframe>
-</div>
-<h3 id="公式">公式</h3>
-<p>建议使用katex，或者是markdown本地的公式嵌入。</p>
-<p>参考教程<a href="https://freeopen.github.io/mathjax/">Markdown 数学公式指导手册 | Freeopen</a></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sin^2(\theta) + \cos^2(\theta) = 1
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1219em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8719em;"><span style="top:-3.1208em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">cos</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></p>
-<h3 id="表情符号">表情符号</h3>
-<ol>
-<li><a href="https://www.lddgo.net/common/emoticons">在线颜文字大全</a> ：与markdown兼容，基本不会有不显示等问题</li>
-<li><a href="https://www.emojiall.com/zh-hans/categories/A">表情包</a> ：注意typora的表情(格式为<code>:表情</code>)无法在hexo显示，所以只能用图片替代表情</li>
-<li><a href="https://fontawesome.com/v4/icons/">图标</a>：适当的图标可以让人记忆犹新，见图思义。</li>
-</ol>
-<h3 id="交互式的组件">交互式的组件</h3>
-<p>比如butterfly中的button、图床等，由于不同的博客引擎涉及的组件不同，这里就不展开。建议读者不要舍本逐末，过度美化而忽视文章的内容。</p>
-<h2 id="总结与参考">总结与参考</h2>
-<ul>
-<li>
-<p>用一段话给文章内容作总结。</p>
-</li>
-<li>
-<p><strong>参考</strong>要注明来源，比如链接、转载出处，注意定期更新以防失效。</p>
-</li>
-</ul>
-<h1>参考</h1>
-<ol>
-<li><a href="https://www.cnblogs.com/returntmp/p/17591866.html">【全方位解析】如何写好技术文章 - ReturnTmp - 博客园</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -3975,46 +3768,6 @@ NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li
       </tags>
   </entry>
   <entry>
-    <title>数据分析工具superset安装和使用(version:0.381)</title>
-    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
-    <content><![CDATA[<h1>简介</h1>
-<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
-<h1>准备工作</h1>
-<blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
-</blockquote>
-<ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料
-<ul>
-<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ul>
-</li>
-</ul>
-<h1>基本环境配置</h1>
-<ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
-</ol>
-<h1>superset使用指南</h1>
-<p>待更新……</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>大数据</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客系列(二)博客创建指南</title>
     <url>/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h1>简介</h1>
@@ -4220,6 +3973,253 @@ NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li
         <tag>教程</tag>
         <tag>blog</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客系列(三)博客写作指南</title>
+    <url>/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1>简介</h1>
+<p>在撰写博客的过程中，内容至关重要但不是唯一重要的因素，排版、图片、交互体验等视觉设计也同样需要关注。一个设计精美、易于阅读的博客会吸引更多读者，提升用户体验。本文将为你提供一套完整的 markdown 博客创作指南，从实战的角度帮助你写出既有深度又美观的博客文章。</p>
+<h1>准备工具</h1>
+<h2 id="写作工具">写作工具</h2>
+<p>个人比较推崇<strong>Typora</strong>这种简洁的支持<strong>markdown</strong>格式的编辑器，相比之下，obsidian的布局不利于专注于写作，notion的自定义布局和数据库这两大突出优势在markdown格式下会有损失，vscode依赖于插件。</p>
+<p>总之就是一句话:</p>
+<blockquote>
+<p>能让你心无旁骛地去写的编辑器就是最好的</p>
+</blockquote>
+<h2 id="博客引擎">博客引擎</h2>
+<p>本文基于hexo+butterfly的主题进行博客创作，但读者无须担心，博客创作更多的在于<strong>文章结构</strong>、<strong>词句修辞</strong>、<strong>排版和可读性</strong>方面下功夫，其他方面依赖博客引擎和前端特性的并不多，读者可以在CSDN、博客园、掘金社区等其他地方同样可以撰写和托管博客。</p>
+<h1>博客撰写讲解</h1>
+<h2 id="目录结构">目录结构</h2>
+<p>好的目录结构要梳理文章逻辑，如果是<strong>新闻热点点评类</strong>，就要能讲清楚事件发生的时间地点人物，发生原因及其分析，结论、启示或者经验教训；如果是<strong>技术分享类</strong>，就要说明技术的应用范围，原理，怎样配置技术所需的环境，阐明使用技术的效果等。这方面主要靠读者多看技术大佬的博客、优秀的公众号推文等，看他们的目录是如何区分的，只要能达到<strong>行云流水</strong>的效果就行，不需要在分级、格式方面过于讲究。</p>
+<p>可供参考的文章结构：大部分都是<strong>总-分-总</strong>结构</p>
+<ul>
+<li>提出问题-&gt;分析问题-&gt;解决问题-&gt;总结经验，技术问题分享。</li>
+<li>背景-&gt;思考-&gt;尝试-&gt;遇到的困难-&gt;解决方案-&gt;最后结果，问题分享</li>
+<li>摘要-&gt;简介-&gt;分支主题-&gt;总结，一般技术分享。</li>
+<li>是什么-原理-背景&gt;解决了什么问题-&gt;基本操作-&gt;同类对比-&gt;总结 ，适合新技术分享</li>
+</ul>
+<p>参考的目录结构如下，以markdown格式的代码块展示,这里<code>//</code>及其后面的内容代表注释</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 简介    </span></span><br><span class="line"><span class="section"># 一、准备工作 //一些环境配置，安装等，或者是解决问题的背景等</span></span><br><span class="line"><span class="section">## 1.centos安装  //以数字的形式合理分级，建议标题的层级不要超过四层</span></span><br><span class="line"><span class="section">## 2.idea解包</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 二、基本用法 //对于技术文章就像是语法书，对于问题就是发现问题，分析问题，</span></span><br><span class="line"><span class="section">## 1. 对页面的操作</span></span><br><span class="line"><span class="section">## 2. 1 初始化浏览器对象</span></span><br><span class="line"><span class="section">## 2. 2</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 三、高阶用法  //或者是多个解决方案</span></span><br><span class="line"><span class="section"># 总结  //对技术或者过程的总结，建议不要太长</span></span><br><span class="line"><span class="section"># 参考  //把你写作过程中参考的资料，或者是推荐的链接放在这里，便于读者后续学习</span></span><br><span class="line"><span class="section"># 开源协议  //如果使用的是hexo或者其他博客网站，撰写博客的时候会自动生成，不需要自己写</span></span><br></pre></td></tr></table></figure>
+<h3 id="标题">标题</h3>
+<p>取标题要注意几点</p>
+<ol>
+<li><strong>简洁直观</strong>：不仅仅是利于搜索引擎优化，更多的是便于读者和自己，读者可以通过标题判断博客的信息对于自己是否有效，作者可以根据标题了解自己博客的侧重方面。<strong>不要被国内电商式的标题所蒙蔽</strong>(比如“爆肝……”“震惊，百大up主齐聚一堂竟然是为……”)，虽然能带来流量，但是作者不太建议，这种标题就显得作者没有真才实学，只能靠眼球吸引读者，</li>
+<li><strong>关键词</strong>：标题一定要包含文章的高频词或者是重点词语，比如如果你写的是有关MySQL的学习知识分享，那么关键字就是“MySQL”，可能有“教程”等其他关键词，再用适当的句子结构(问句、陈述句等)将其组合为标题。比如组合为”MySQL学习指南(一)“</li>
+</ol>
+<p><strong>特殊</strong>:所有<strong>系列文章</strong>(比如MySQL学习笔记)的标题要一致，<strong>相关的</strong>可以不一致。标题+XX:XX为数字，不满两位用0替代;比如mysql01;标题+(序数词):比如mysql学习(一)</p>
+<h3 id="简介">简介</h3>
+<p>文章的标题和简要介绍一下文章，要解决的是什么问题</p>
+<p><strong>示例</strong>：Selenium是广泛使用的模拟浏览器运行的库，它是一个用于Web应用程序测试的工具。 Selenium测试直接运行在浏览器中，就像真正的用户在操作一样，并且支持大多数现代 Web 浏览器。下面就进入正式的学习阶段。</p>
+<h3 id="文章主体">文章主体</h3>
+<p>以下主要侧重于排版。</p>
+<ol>
+<li>段落：建议不要太长，最好保持在300字以内</li>
+<li>字体效果：用黑体强调重要词汇，用斜体或者下划线强调重要段落</li>
+<li>列表：恰当使用无序和有序列表，对于超过10个点的列表建议使用markdown里面的表格</li>
+<li>图片：如果图片能便于读者理解，减少文字量，可以使用。</li>
+<li>代码块：建议默认收起或者收缩，需要的时候读者点击即可全部展开。指明代码块对应的编程语言，不是的话要提前说明</li>
+<li>分割线：建议用在两个一级标题或者是两段长段落之间。</li>
+</ol>
+<p>注意事项</p>
+<ol>
+<li>所有的代码至少要在自己的电脑上或者对应的运行环境上运行，否则不写</li>
+<li>不易理解或者抽象的地方要用图解释，可以是GIF动图制作也可以是chartjs、echart等，注意不要泄漏私人信息。</li>
+<li>模棱两可或者自己不懂的不要轻易写，写的话注意叠甲。</li>
+</ol>
+<h2 id="超文本内容">超文本内容</h2>
+<p>这一部分主要涉及前端的特性，属于是锦上添花的内容，即使没有也不是特别影响文章的质量，就算《资本论》只有文字，也无可争议是最伟大的鸿篇巨著之一。</p>
+<p>常用的类型有：图片、动画(gif等)、视频、音频、表情、标签外挂、图标、链接等。</p>
+<h3 id="图表">图表</h3>
+<ol>
+<li><a href="https://excalidraw.com/">Excalidraw</a>：手绘风格的开源工具，适合绘制思维导图、流程图等。</li>
+</ol>
+<p><img src="https://s2.loli.net/2024/11/26/lvhXLijoyQYUnkb.png" alt="博客写作指南_01"></p>
+<ol start="2">
+<li><a href="https://mermaid.nodejs.cn/">Mermaid 中文网</a>：基于 Markdown 的流程图工具，可以生成流程图、时序图等。或者也可以使用<a href="https://app.diagrams.net/">draw.io</a>。主要侧重于计算机方面的知识图表，常用于UML统一建模语言。</li>
+</ol>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop HealthCheck
+        John-&gt;&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
+    John--&gt;&gt;Alice: Great!
+    John-&gt;&gt;Bob: How about you?
+    Bob--&gt;&gt;John: Jolly good!
+
+  </pre></div>
+<ol start="3">
+<li><a href="https://chartjs.cn/docs/latest/">Chart.js 中文网</a>：是一个用于创建动态图表的 JavaScript 库，适合做一些比较复杂的数据分析图。</li>
+</ol>
+<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
+            <pre class="chartjs-src" hidden>{
+    &quot;type&quot;: &quot;pie&quot;,
+    &quot;data&quot;: {
+        &quot;labels&quot;: [
+            &quot;编程&quot;,
+            &quot;音乐&quot;,
+            &quot;阅读&quot;,
+            &quot;游戏&quot;,
+            &quot;健身&quot;,
+            &quot;旅游&quot;
+        ],
+        &quot;datasets&quot;: [
+            {
+                &quot;label&quot;: &quot;喜爱指数&quot;,
+                &quot;data&quot;: [
+                    30,
+                    24,
+                    19,
+                    14,
+                    9,
+                    4
+                ],
+                &quot;backgroundColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.5)&quot;,
+                        &quot;rgba(54, 162, 235, 0.5)&quot;,
+                        &quot;rgba(255, 206, 86, 0.5)&quot;,
+                        &quot;rgba(75, 192, 192, 0.5)&quot;,
+                        &quot;rgba(153, 102, 255, 0.5)&quot;,
+                        &quot;rgba(255, 159, 64, 0.5)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.2)&quot;,
+                        &quot;rgba(54, 162, 235, 0.2)&quot;,
+                        &quot;rgba(255, 206, 86, 0.2)&quot;,
+                        &quot;rgba(75, 192, 192, 0.2)&quot;,
+                        &quot;rgba(153, 102, 255, 0.2)&quot;,
+                        &quot;rgba(255, 159, 64, 0.2)&quot;
+                    ]
+                },
+                &quot;borderColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ]
+                }
+            }
+        ]
+    },
+    &quot;options&quot;: {
+        &quot;plugins&quot;: {
+            &quot;legend&quot;: {
+                &quot;labels&quot;: {
+                    &quot;color&quot;: {
+                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
+                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
+                    }
+                }
+            }
+        }
+    }
+}
+</pre>
+            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
+我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
+在此过程中也解决了无数的小谜团。<br>
+<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
+I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
+Countless small mysteries are also solved in the process.</span></p></div>
+          </div>
+<h3 id="视频">视频</h3>
+<ol>
+<li>B站引用：打开网页版的bilibili，点击要分享的视频-“分享”-“嵌入代码”，然后粘贴到markdown文件内即可。参考如下</li>
+</ol>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
+    </iframe>
+</div>
+<h3 id="公式">公式</h3>
+<p>建议使用katex，或者是markdown本地的公式嵌入。</p>
+<p>参考教程<a href="https://freeopen.github.io/mathjax/">Markdown 数学公式指导手册 | Freeopen</a></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sin^2(\theta) + \cos^2(\theta) = 1
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1219em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8719em;"><span style="top:-3.1208em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">cos</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></p>
+<h3 id="表情符号">表情符号</h3>
+<ol>
+<li><a href="https://www.lddgo.net/common/emoticons">在线颜文字大全</a> ：与markdown兼容，基本不会有不显示等问题</li>
+<li><a href="https://www.emojiall.com/zh-hans/categories/A">表情包</a> ：注意typora的表情(格式为<code>:表情</code>)无法在hexo显示，所以只能用图片替代表情</li>
+<li><a href="https://fontawesome.com/v4/icons/">图标</a>：适当的图标可以让人记忆犹新，见图思义。</li>
+</ol>
+<h3 id="交互式的组件">交互式的组件</h3>
+<p>比如butterfly中的button、图床等，由于不同的博客引擎涉及的组件不同，这里就不展开。建议读者不要舍本逐末，过度美化而忽视文章的内容。</p>
+<h2 id="总结与参考">总结与参考</h2>
+<ul>
+<li>
+<p>用一段话给文章内容作总结。</p>
+</li>
+<li>
+<p><strong>参考</strong>要注明来源，比如链接、转载出处，注意定期更新以防失效。</p>
+</li>
+</ul>
+<h1>参考</h1>
+<ol>
+<li><a href="https://www.cnblogs.com/returntmp/p/17591866.html">【全方位解析】如何写好技术文章 - ReturnTmp - 博客园</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析工具superset安装和使用(version:0.381)</title>
+    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
+    <content><![CDATA[<h1>简介</h1>
+<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<h1>准备工作</h1>
+<blockquote>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+</blockquote>
+<ul>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料
+<ul>
+<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h1>基本环境配置</h1>
+<ol>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
+</ol>
+<h1>superset使用指南</h1>
+<p>待更新……</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
