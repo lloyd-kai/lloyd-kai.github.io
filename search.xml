@@ -90,6 +90,9 @@
 <p><img src="https://s2.loli.net/2024/11/26/z16c7ZqIaLJBS5t.png" alt="001_Linux安装_20.png"></p>
 <p>但是：Linux虚拟机如果重启，有可能发生IP改变，如果IP改变需要在XShell中修改连接的IP地址。以下讲解如何固定IP地址不变。</p>
 <h2 id="Linux固定IP">Linux固定IP</h2>
+<blockquote>
+<p>可以在安装Centos的时候配置网络，参考链接如下<a href="https://b11et3un53m.feishu.cn/wiki/FJAnwOhpIihMkLkOKQocdWZ7nUc">day02-Docker - 飞书云文档</a></p>
+</blockquote>
 <p>在VMware软件中左上角点击“编辑”-“虚拟网络编辑器”，再点击“更改设置”，点击vmnet8并点击NAT设置</p>
 <p><img src="https://s2.loli.net/2024/11/26/el6NtSZiP5ys3pE.png" alt="001_Linux安装_21.png"></p>
 <p>按照子网设置网关IP，比如子网IP是192.188.190.0。<a href="http://xn--IP192-fq1h9c273ah50abj4fijah81khkn.188.190.xxx">那么网关IP就设置为192.188.190.xxx</a>。其中xxx在0-255之间，这里建议就用2代替xxx，IP</p>
@@ -2399,7 +2402,8 @@ where与having区别</p>
 <li>添加一下赞助墙</li>
 <li>更新算法相关博客并添加数学动画视频或者是算法演示动画</li>
 <li>学习并在博客中添加图表-对于本网站以chartjs的图表为主，涉及UML就用Mermaid,对于精致的图表(比如数据分析)才会用Echart.</li>
-<li>如果zeabur部署失效，可以考虑netlify、21cloudbox、码云等托管平台。</li>
+<li>考虑21cloudbox或者阿里云等托管平台部署网站，实在不行就用域名+CDN的方式让游客能间接访问我的github.io网站。</li>
+<li>如果托管平台不负责，就早日申请SSL证书、域名绑定(可选)和完成网站备案，参考网站<a href="https://xuezenghui.com/posts/hexo-deploy-to-netlify/">将 Hexo 博客部署至 Netlify | Zander Hsueh</a>  域名申请<a href="https://tech.yemengstar.com/hexo-tutorial-use-your-domain-beginner/">为HEXO绑定自己的域名</a></li>
 </ol></div><div class="tab-item-content"><h2 id="debug经验">debug经验</h2>
 <p>目前由于butterfly的版本更新，导致以前的部分功能失效，建议<strong>先看官方文档，将对应过时的代码注释或者去除，没有的代码添加</strong>，然后再<strong>根据</strong>F12检查对应的板块，<strong>用前端的知识去搜查问题发生的地点和原因</strong>，然后再纠错。</p>
 <h2 id="hexo框架更新">hexo框架更新</h2>
@@ -2433,7 +2437,7 @@ where与having区别</p>
 <p>方法1：通过picgo图床实现图片上传。参考<a href="https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c">Typora+PicGo+阿里云OSS实现云笔记|Typora上传图片</a></p>
 </li>
 <li>
-<p>方法2-本地上传图片：参考此博客<code>[hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客](https://blog.csdn.net/weixin_43702620/article/details/118655308)</code> 简单来说就是在post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用。如果部署到zeabur的博客图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。</p>
+<p>方法2-本地上传图片：参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用。如果部署到zeabur的博客图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。</p>
 </li>
 <li>
 <p>方法3：使用其他的图床网站如<a href="https://smms.app/">SMMS</a>。上传图片后，点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。<strong>博主因为部署的原因绝大多数图片都使用此方法</strong>，如果读者只使用github page作为网站托管平台那么三个方法都可以用。</p>
@@ -2449,7 +2453,7 @@ where与having区别</p>
 <h2 id="测试">测试</h2>
 <h3 id="测试图片">测试图片</h3>
 <p><strong>阿里云图片测试</strong></p>
-<p>得出结论，在github上无法显示。</p>
+<p>得出结论，在github.io上无法显示。</p>
 <p><code>https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-imggame_menu.png</code></p>
 <p><strong>本地图片测试</strong></p>
 <p>由于github镜像源限制的问题，<strong>不推荐站主们使用github作为文件或者是图片的镜像源，而是使用比较正规的托管平台或者图片上传平台</strong>。</p>
@@ -2681,11 +2685,12 @@ xxx.ibd：xxx代表的是表名，innoDB引擎的每张表都会对应这样一�
 </ol>
 <p><img src="https://s2.loli.net/2024/11/26/G6DotI1dn4kKCv2.png" alt="001_存储引擎_06.png"></p>
 <ul>
-<li>表空间(Tablespace): InnoDB存储引擎逻辑结构的最高层，ibd文件其实就是表空间文件，在表空间中可以包含多个Segment段。</li>
-<li>段(Segment): 表空间是由各个段组成的， 常见的段有数据段、索引段、回滚段等。InnoDB中对于段的管理，都是引擎自身完成，不需要人为对其控制，一个段中包含多个区。</li>
+<li>表空间(Tablespace): InnoDB存储引擎逻辑结构的最高层，ibd文件其实就是表空间文件，在表空间中可以包含多个Segment段。如果用户启用了参数 innodb_file_per_table(在8.0版本中默认开启) ，则每张表都会有一个表空间（xxx.ibd），一个mysql实例可以对应多个表空间，用于存储记录、索引等数据</li>
+<li>段(Segment): 表空间是由各个段组成的， 分为数据段（Leaf node segment）、索引段（Non-leaf node segment）、回滚段<br>
+（Rollback segment）  等,InnoDB中对于段的管理，都是引擎自身完成，不需要人为对其控制，InnoDB是索引组织表，数据段就是B+树的叶子节点， 索引段即为B+树的非叶子节点。段用来管理多个Extent（区）。</li>
 <li>区(Extent): 区是表空间的单元结构，每个区的大小为1M。 默认情况下， InnoDB存储引擎页大小为16K， 即一个区中一共有64个连续的页。</li>
 <li>页(Page): 页是组成区的最小单元，页也是InnoDB 存储引擎磁盘管理的最小单元，每个页的大小默认为 16KB。为了保证页的连续性，InnoDB 存储引擎每次从磁盘申请 4-5 个区。</li>
-<li>行(Row): InnoDB 存储引擎是面向行的，也就是说数据是按行进行存放的，在每一行中除了定义表时所指定的字段以外，还包含两个隐藏字段(后面会详细介绍)。</li>
+<li>行(Row): InnoDB 存储引擎是面向行的，也就是说数据是按行进行存放的，在每一行中除了定义表时所指定的字段以外，还包含两个隐藏字段.一个是Trx_id：每次对某条记录进行改动时，都会把对应的事务id赋值给trx_id隐藏列。；另一个是Roll_pointer：每次对某条引记录进行改动时，都会把旧的版本写入到undo日志中，然后这个隐藏列就相当于一个指针，可以通过它来找到该记录修改前的信息</li>
 </ul></div><div class="tab-item-content"><ol>
 <li>介绍<br>
 MyISAM是MySQL早期的默认存储引擎。</li>
@@ -3750,6 +3755,7 @@ NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li
 <li>元数据锁(meta data lcok,MDL)</li>
 <li>意向锁</li>
 </ul>
+<h3 id="表锁">表锁</h3>
 <ol>
 <li>添加锁：</li>
 </ol>
@@ -3758,6 +3764,296 @@ NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li
 <p><img src="https://s2.loli.net/2024/11/26/dVLrF6CSuqDoMGj.png" alt="010_锁_03.png"></p>
 <p>在设置共享读锁的时候只能读不能写</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 不能写</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> course <span class="keyword">values</span> (<span class="number">5</span>,<span class="string">&#x27;Linux&#x27;</span>);<span class="comment">-- 如果是其他的进程尝试写会阻塞</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2024/11/26/W6PApbLxGRkj5a7.png" alt="010_锁_04.png"></p>
+<ol start="2">
+<li>释放锁：<code>unlock tables;</code></li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 释放表锁</span></span><br><span class="line">unlock tables ;</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2024/11/26/jI5PUeVvWTOyl4N.png" alt="010_锁_05.png"></p>
+<p>示例</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 添加独写锁</span></span><br><span class="line">lock tables course write ;</span><br><span class="line"><span class="comment">-- 可读可写</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> course <span class="keyword">values</span> (<span class="number">5</span>,<span class="string">&#x27;Linux&#x27;</span>);<span class="comment">-- 其他的进程尝试读写会阻塞</span></span><br><span class="line"><span class="comment">-- 释放</span></span><br><span class="line">unlock tables ;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>读锁不会阻塞其他客户端的读，但是会阻塞写。写锁既会阻塞其他客户端的读，又会阻塞其他客户端的写。</p>
+</blockquote>
+<h3 id="元数据锁">元数据锁</h3>
+<p>meta data lock , 元数据锁，简写<strong>MDL</strong>。MDL加锁过程是系统自动控制，无需显式使用，在访问一张表的时候会自动加上。MDL锁主要作用是维护表元数据的数据一致性，在表上有活动<strong>事务</strong>的时候，不可以对元数据进行写入操作。为了避免DML与DDL冲突，保证读写的正确性。<br>
+这里的<strong>元数据</strong>，大家可以简单理解为就是一张表的<strong>表结构</strong>。 也就是说，某一张表涉及到<strong>未提交的事务时，是不能够修改这张表的表结构的</strong>。<br>
+在MySQL5.5中引入了MDL，当对一张表进行增删改查的时候，加MDL读锁(共享)；当对表结构进行变更操作的时候，加MDL写锁(排他)。<br>
+常见的SQL操作时，所添加的元数据锁</p>
+<table>
+<thead>
+<tr>
+<th>对应SQL</th>
+<th>锁类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lock tables xxx read / write</td>
+<td>SHARED_READ_ONLY / SHARED_NO_READ_WRITE</td>
+<td></td>
+</tr>
+<tr>
+<td>select 、select … lock in share mode</td>
+<td>SHARED_READ</td>
+<td>与SHARED_READ、 SHARED_WRITE兼容，与 EXCLUSIVE互斥</td>
+</tr>
+<tr>
+<td>insert 、update、 delete、select … for update</td>
+<td>SHARED_WRITE</td>
+<td>与SHARED_READ、 SHARED_WRITE兼容，与 EXCLUSIVE互斥</td>
+</tr>
+<tr>
+<td>alter table …</td>
+<td>EXCLUSIVE</td>
+<td>与其他的MDL都互斥</td>
+</tr>
+</tbody>
+</table>
+<p>当执行SELECT、INSERT、UPDATE、DELETE等语句时，添加的是元数据共享锁（SHARED_READ /SHARED_WRITE），之间是兼容的，也就是允许并行开发。</p>
+<p>当执行SELECT语句时，添加的是元数据共享锁（SHARED_READ），会阻塞元数据排他锁（EXCLUSIVE），之间是互斥的。</p>
+<p><img src="https://s2.loli.net/2024/11/26/cJNioFDxT79wL56.png" alt="010_锁_06.png"></p>
+<p>事务提交之后</p>
+<p><img src="https://s2.loli.net/2024/11/26/rFYl18MI6fjVzX3.png" alt="010_锁_07.png"></p>
+<p>查看数据库中的元数据锁</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 查看元数据锁</span></span><br><span class="line"><span class="keyword">select</span> object_type,object_schema,object_name,lock_type,lock_duration <span class="keyword">from</span> performance_schema.metadata_locks;</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2024/11/26/xsCi6jkAbqpfREv.png" alt="010_锁_08.png"></p>
+<h3 id="意向锁">意向锁</h3>
+<p>为了避免DML在执行时，加的行锁与表锁的冲突，在InnoDB中引入了意向锁，使得表锁不用检查每行数据是否加锁，使用意向锁来减少表锁的检查。</p>
+<p>开启一个事务，然后执行DML操作，在执行DML语句时，会对涉及到的行加行锁。  其他客户端，在对这张表加表锁的时候，会根据该表上所加的意向锁来判定是否可以成功加表锁，而不用逐行判断行锁情况了。</p>
+<p>分类</p>
+<ul>
+<li>意向共享锁(IS): 由语句select … lock in share mode添加 。 与 表锁共享锁(read)兼容，与表锁排他锁(write)互斥。</li>
+<li>意向排他锁(IX): 由insert、update、delete、select…for update添加 。与表锁共享锁(read)及排他锁(write)都互斥，意向锁之间不会互斥。</li>
+</ul>
+<blockquote>
+<p>一旦事务提交了，意向共享锁、意向排他锁，都会自动释放。</p>
+</blockquote>
+<p>查看意向锁及行锁的加锁情况</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> object_schema,object_name,index_name,lock_type,lock_mode,lock_data <span class="keyword">from</span></span><br><span class="line">performance_schema.data_locks;</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2024/11/26/PRN87WgcB3inCSY.png" alt="010_锁_09.png"></p>
+<p>注意：意向共享锁与表读锁是兼容的、意向排他锁与表读锁、写锁都是互斥的</p>
+<h2 id="行锁">行锁</h2>
+<p>行级锁，每次操作锁住对应的行数据。锁定粒度最小，发生锁冲突的概率最低，并发度最高。应用在InnoDB存储引擎中。<br>
+InnoDB的数据是基于索引组织的，行锁是通过对索引上的索引项加锁来实现的，而不是对记录加的<br>
+锁。对于行级锁，主要分为以下三类：</p>
+<ul>
+<li>行锁（Record Lock）：锁定单个行记录的锁，防止其他事务对此行进行update和delete。在RC、RR隔离级别下都支持。</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/11/27/ghdv8so6mr7CAVY.png" alt="100_演示图_15.png"></p>
+<ul>
+<li>间隙锁（Gap Lock）：锁定索引记录间隙（不含该记录），确保索引记录间隙不变，防止其他事务在这个间隙进行insert，产生幻读。在RR隔离级别下都支持。</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/11/27/B4K8fF5vmpiAxMd.png" alt="100_演示图_16.png"></p>
+<ul>
+<li>临键锁（Next-Key Lock）：行锁和间隙锁组合，同时锁住数据，并锁住数据前面的间隙Gap。在RR隔离级别下支持</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/11/27/FrnjGt8akCq2W5E.png" alt="100_演示图_17.png"></p>
+<p>InnoDB实现了以下两种类型的行锁：</p>
+<ul>
+<li>共享锁（S）：允许一个事务去读一行，阻止其他事务获得相同数据集的排它锁。</li>
+<li>排他锁（X）：允许获取排他锁的事务更新数据，阻止其他事务获得相同数据集的共享锁和排他<br>
+锁</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>当前锁类型\请求锁类型</th>
+<th>S(共享锁)</th>
+<th>X(排他锁)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S(共享锁)</td>
+<td>兼容</td>
+<td>冲突</td>
+</tr>
+<tr>
+<td>X(排他锁)</td>
+<td>冲突</td>
+<td>冲突</td>
+</tr>
+</tbody>
+</table>
+<p>常见的SQL语句，在执行时，所加的行锁如下：</p>
+<table>
+<thead>
+<tr>
+<th>SQL</th>
+<th>行锁类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INSERT …</td>
+<td>排他锁</td>
+<td>自动加锁</td>
+</tr>
+<tr>
+<td>UPDATE …</td>
+<td>排他锁</td>
+<td>自动加锁</td>
+</tr>
+<tr>
+<td>DELETE …</td>
+<td>排他锁</td>
+<td>自动加锁</td>
+</tr>
+<tr>
+<td>SELECT（正常）</td>
+<td>不加任何 锁</td>
+<td></td>
+</tr>
+<tr>
+<td>SELECT … LOCK IN SHARE MODE</td>
+<td>共享锁</td>
+<td>需要手动在SELECT之后加LOCK IN SHARE MODE</td>
+</tr>
+<tr>
+<td>SELECT … FOR UPDATE</td>
+<td>排他锁</td>
+<td>需要手动在SELECT之后加FOR UPDATE</td>
+</tr>
+</tbody>
+</table>
+<p>默认情况下，InnoDB在 REPEATABLE READ事务隔离级别运行，InnoDB使用 next-key 锁进行搜索和索引扫描，以防止幻读。</p>
+<ul>
+<li>针对唯一索引进行检索时，对已存在的记录进行等值匹配时，将会自动优化为行锁。</li>
+<li>InnoDB的行锁是针对于索引加的锁，不通过索引条件检索数据，那么InnoDB将对表中的所有记录加锁，此时就会升级为表锁。</li>
+</ul>
+<p>示例</p>
+<p><img src="https://s2.loli.net/2024/11/26/pgS6c4uqOitQlx2.png" alt="010_锁_10.png"></p>
+<p>兼容性</p>
+<p><img src="https://s2.loli.net/2024/11/26/nw8tjYNKgEZ9bpo.png" alt="010_锁_11.png"></p>
+<p><img src="https://s2.loli.net/2024/11/26/a4q61XnvMCwRzge.png" alt="010_锁_12.png"></p>
+<p><img src="https://s2.loli.net/2024/11/26/qDL4jZaR53QVK8c.png" alt="010_锁_13.png"></p>
+<p><img src="https://s2.loli.net/2024/11/26/BPMGV58fFr3gZdO.png" alt="010_锁_14.png"></p>
+<p><img src="https://s2.loli.net/2024/11/26/SQsb3XhgW7HaBOJ.png" alt="010_锁_15.png"></p>
+<p>如果没有索引，更新语句行锁会升级为表锁(因为行锁是对索引项加的锁，而某字段没有索引)  ，这样我们根据索引字段进行更新操作，就可以避免行锁升级为表锁的情况。</p>
+<p>间隙锁和临键锁</p>
+<p>默认情况下，InnoDB在 REPEATABLE READ事务隔离级别运行，InnoDB使用 next-key 锁进行搜<br>
+索和索引扫描，以防止幻读。</p>
+<ul>
+<li>索引上的等值查询(唯一索引)，给不存在的记录加锁时, 优化为间隙锁 。</li>
+<li>索引上的等值查询(非唯一普通索引)，向右遍历时最后一个值不满足查询需求时，next-keylock 退化为间隙锁。</li>
+<li>索引上的范围查询(唯一索引)–会访问到不满足条件的第一个值为止。</li>
+</ul>
+<blockquote>
+<p>注意：间隙锁唯一目的是防止其他事务插入间隙。间隙锁可以共存，一个事务采用的间隙锁不会阻止另一个事务在同一间隙上采用间隙锁。</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2024/11/26/UZwhtQ5VvrxecpL.png" alt="010_锁_16.png"></p>
+<p>图中方框中的GAP就是间隙锁</p>
+<p>常见的上锁情况</p>
+<ul>
+<li>索引上的等值查询(唯一索引)，给不存在的记录加锁时, 优化为间隙锁</li>
+<li>索引上的等值查询(非唯一普通索引)，向右遍历时最后一个值不满足查询需求时，next-keylock 退化为间隙锁。</li>
+</ul>
+<p>分析</p>
+<p>我们知道InnoDB的B+树索引，叶子节点是有序的双向链表。 假如，我们要根据这个二级索引查询值为18的数据，并加上共享锁，我们是只锁定18这一行就可以了吗？ 并不是，因为是非唯一索引，这个结构中可能有多个18的存在，所以，在加锁时会继续往后找，找到一个不满足条件的值（当前案例中也就是29）。此时会对18加临键锁，并对29之前的间隙加锁。</p>
+<p>索引上的范围查询(唯一索引)–会访问到不满足条件的第一个值为止。  比如查询的条件为id&gt;=19，并添加共享锁。 此时我们可以根据数据库表中现有的数据，将数据分为三个部分：[19]、 (19,25]、 (25,+∞] 所以数据库数据在加锁时，就是将19加了行锁，25的临键锁（包含25及25之前的间隙），正无穷的临键锁(正无穷及之前的间隙)。</p>
+<h1>InnoDB引擎</h1>
+<p>逻辑存储结构见<code>001_存储引擎_06.png</code>和逻辑存储结构部分</p>
+<p>参考黑马和这篇博客<a href="https://blog.csdn.net/2401_83283514/article/details/140721803">InnoDB引擎：底层结构及底层原理</a> ，讲解得足够详细。</p>
+<p>这一部分的重点在于<strong>理解其实现原理</strong>，而不是死记硬背。</p>
+<h1>MySQL管理</h1>
+<p>系统自带的数据库</p>
+<table>
+<thead>
+<tr>
+<th>数据库</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mysql</td>
+<td>存储MySQL服务器正常运行所需要的各种信息 （时区、主从、用 户、权限等）</td>
+</tr>
+<tr>
+<td>information_schema</td>
+<td>提供了访问数据库元数据的各种表和视图，包含数据库、表、字段类 型及访问权限等</td>
+</tr>
+<tr>
+<td>performance_schema</td>
+<td>为MySQL服务器运行时状态提供了一个底层监控功能，主要用于收集 数据库服务器性能参数</td>
+</tr>
+<tr>
+<td>sys</td>
+<td>包含了一系列方便 DBA 和开发人员利用 performance_schema 性能数据库进行性能调优和诊断的视图</td>
+</tr>
+</tbody>
+</table>
+<h2 id="常用工具">常用工具</h2>
+<h3 id="mysql的客户端工具"><strong>mysql的客户端工具</strong></h3>
+<p>语法：<code>mysql [options] [database]</code> 在<strong>命令行</strong>中输入</p>
+<p>option</p>
+<ul>
+<li>-u, --user=name #指定用户名</li>
+<li>-p, --password[=name] #指定密码</li>
+<li>-h, --host=name #指定服务器IP或域名</li>
+<li>-P, --port=port #指定连接端口</li>
+<li>-e, --execute=name #执行SQL语句并退出</li>
+</ul>
+<p>-e选项可以在Mysql客户端执行SQL语句，而不用连接到MySQL数据库再执行，对于一些批处理脚本，这种方式尤其方便</p>
+<p><img src="https://s2.loli.net/2024/11/26/cVr7FzLDwqs1lnk.png" alt="012_mysql管理_02.png"></p>
+<h3 id="mysqladmin">mysqladmin</h3>
+<p>是一个执行管理操作的客户端程序。可以用它来检查服务器的配置和当前状态、创建并删除数据库等。</p>
+<p>语法：<code>mysqladmin --help</code></p>
+<p><img src="https://s2.loli.net/2024/11/26/24y6eSqDIjfm8oi.png" alt="012_mysql管理_03.png"></p>
+<p>语法：<code>mysqlamin [options] command </code></p>
+<p>options:</p>
+<ul>
+<li>-u, --user=name #指定用户名</li>
+<li>-p, --password[=name] #指定密码</li>
+<li>-h, --host=name #指定服务器IP或域名</li>
+<li>-P, --port=port #指定连接端口</li>
+</ul>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mysqladmin -uroot –p1234 drop &#x27;test01&#x27;;</span><br><span class="line">mysqladmin -uroot –p1234 version;</span><br></pre></td></tr></table></figure>
+<h3 id="mysqlbinlog">mysqlbinlog</h3>
+<p>由于服务器生成的二进制日志文件以二进制格式保存，所以如果想要检查这些文本的文本格式，就会使用到mysqlbinlog 日志管理工具。</p>
+<p>语法：<code>mysqlbinlog [options] log-files1 log-files2 ...  </code></p>
+<p>options:</p>
+<ul>
+<li>-d, --database=name 指定数据库名称，只列出指定的数据库相关操作。</li>
+<li>-o, --offset=# 忽略掉日志中的前n行命令。</li>
+<li>-r,–result-file=name 将输出的文本格式日志输出到指定文件。</li>
+<li>-s, --short-form 显示简单格式， 省略掉一些信息。</li>
+<li>–start-datatime=date1 --stop-datetime=date2 指定日期间隔内的所有日志。</li>
+<li>–start-position=pos1 --stop-position=pos2 指定位置间隔内的所有日志。</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/11/26/dHcx7UXhZiTa3kV.png" alt="012_mysql管理_04.png"></p>
+<h3 id="mysqlshow">mysqlshow</h3>
+<p>mysqlshow 客户端对象查找工具，用来很快地查找存在哪些数据库、数据库中的表、表中的列或者索引。</p>
+<p>语法：<code>mysqlshow [options] [db_name [table_name [col_name]]]  </code></p>
+<p>options</p>
+<ul>
+<li>–count 显示数据库及表的统计信息（数据库，表 均可以不指定）</li>
+<li>-i 显示指定数据库或者指定表的状态信息</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查询<span class="built_in">test</span>库中每个表中的字段书，及行数</span></span><br><span class="line">mysqlshow -uroot -p2143 test --count</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查询<span class="built_in">test</span>库中book表的详细情况</span></span><br><span class="line">mysqlshow -uroot -p2143 test book --count</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2024/11/26/cIYJA9Lbjktq3g1.png" alt="012_mysql管理_05.png"></p>
+<h3 id="mysqldump">mysqldump</h3>
+<p>mysqldump 客户端工具用来备份数据库或在不同数据库之间进行数据迁移。备份内容包含创建表，及插入表的SQL语句。</p>
+<p>语法</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mysqldump [options] db_name [tables]</span><br><span class="line">mysqldump [options] --database/-B db1 [db2 db3...]</span><br><span class="line">mysqldump [options] --all-databases/-A</span><br><span class="line"></span><br><span class="line">连接选项 ：</span><br><span class="line">-u, --user=name 指定用户名</span><br><span class="line">-p, --password[=name] 指定密码</span><br><span class="line">-h, --host=name 指定服务器ip或域名</span><br><span class="line">-P, --port=# 指定连接端口</span><br><span class="line">输出选项：</span><br><span class="line">--add-drop-database 在每个数据库创建语句前加上 drop database 语句</span><br><span class="line">--add-drop-table 在每个表创建语句前加上 drop table 语句 , 默认开启 ; 不开启 (--skip-add-drop-table)</span><br><span class="line">-n, --no-create-db 不包含数据库的创建语句</span><br><span class="line">-t, --no-create-info 不包含数据表的创建语句</span><br><span class="line">-d --no-data 不包含数据</span><br><span class="line">-T, --tab=name 自动生成两个文件：一个.sql文件，创建表结构的语句；一个.txt文件，数据文件</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2024/11/26/k1IKbloOEAeWP2t.png" alt="012_mysql管理_06.png"></p>
+<h3 id="mysqlimport-source">mysqlimport/source</h3>
+<p>mysqlimport 是客户端数据导入工具，用来导入mysqldump 加 -T 参数后导出的文本文件</p>
+<p>语法：<code>mysqlimport [options] db_name textfile1 [textfile2...]  </code></p>
+<p>示例：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mysqlimport -uroot -p2143 test /tmp/city.txt</span><br></pre></td></tr></table></figure>
+<p>语法：如果需要导入sql文件,可以使用mysql中的source 指令 :</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">source /root/xxxxx.sql  # 这里的/root/xxxxx.sql是文件路径</span><br></pre></td></tr></table></figure>
+<h1>参考</h1>
+<ol>
+<li><a href="https://blog.csdn.net/qq_45938466/article/details/107941557">数据库工作原理</a></li>
+<li>黑马程序员的视频和pdf资料</li>
+<li><a href="https://dev.mysql.com">MySQL官网</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>MySQL</category>
@@ -3765,6 +4061,213 @@ NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li
       <tags>
         <tag>MySQL</tag>
         <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客系列(三)博客写作指南</title>
+    <url>/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1>简介</h1>
+<p>在撰写博客的过程中，内容至关重要但不是唯一重要的因素，排版、图片、交互体验等视觉设计也同样需要关注。一个设计精美、易于阅读的博客会吸引更多读者，提升用户体验。本文将为你提供一套完整的 markdown 博客创作指南，从实战的角度帮助你写出既有深度又美观的博客文章。</p>
+<h1>准备工具</h1>
+<h2 id="写作工具">写作工具</h2>
+<p>个人比较推崇<strong>Typora</strong>这种简洁的支持<strong>markdown</strong>格式的编辑器，相比之下，obsidian的布局不利于专注于写作，notion的自定义布局和数据库这两大突出优势在markdown格式下会有损失，vscode依赖于插件。</p>
+<p>总之就是一句话:</p>
+<blockquote>
+<p>能让你心无旁骛地去写的编辑器就是最好的</p>
+</blockquote>
+<h2 id="博客引擎">博客引擎</h2>
+<p>本文基于hexo+butterfly的主题进行博客创作，但读者无须担心，博客创作更多的在于<strong>文章结构</strong>、<strong>词句修辞</strong>、<strong>排版和可读性</strong>方面下功夫，其他方面依赖博客引擎和前端特性的并不多，读者可以在CSDN、博客园、掘金社区等其他地方同样可以撰写和托管博客。</p>
+<h1>博客撰写讲解</h1>
+<h2 id="目录结构">目录结构</h2>
+<p>好的目录结构要梳理文章逻辑，如果是<strong>新闻热点点评类</strong>，就要能讲清楚事件发生的时间地点人物，发生原因及其分析，结论、启示或者经验教训；如果是<strong>技术分享类</strong>，就要说明技术的应用范围，原理，怎样配置技术所需的环境，阐明使用技术的效果等。这方面主要靠读者多看技术大佬的博客、优秀的公众号推文等，看他们的目录是如何区分的，只要能达到<strong>行云流水</strong>的效果就行，不需要在分级、格式方面过于讲究。</p>
+<p>可供参考的文章结构：大部分都是<strong>总-分-总</strong>结构</p>
+<ul>
+<li>提出问题-&gt;分析问题-&gt;解决问题-&gt;总结经验，技术问题分享。</li>
+<li>背景-&gt;思考-&gt;尝试-&gt;遇到的困难-&gt;解决方案-&gt;最后结果，问题分享</li>
+<li>摘要-&gt;简介-&gt;分支主题-&gt;总结，一般技术分享。</li>
+<li>是什么-原理-背景&gt;解决了什么问题-&gt;基本操作-&gt;同类对比-&gt;总结 ，适合新技术分享</li>
+</ul>
+<p>参考的目录结构如下，以markdown格式的代码块展示,这里<code>//</code>及其后面的内容代表注释</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 简介    </span></span><br><span class="line"><span class="section"># 一、准备工作 //一些环境配置，安装等，或者是解决问题的背景等</span></span><br><span class="line"><span class="section">## 1.centos安装  //以数字的形式合理分级，建议标题的层级不要超过四层</span></span><br><span class="line"><span class="section">## 2.idea解包</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 二、基本用法 //对于技术文章就像是语法书，对于问题就是发现问题，分析问题，</span></span><br><span class="line"><span class="section">## 1. 对页面的操作</span></span><br><span class="line"><span class="section">## 2. 1 初始化浏览器对象</span></span><br><span class="line"><span class="section">## 2. 2</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 三、高阶用法  //或者是多个解决方案</span></span><br><span class="line"><span class="section"># 总结  //对技术或者过程的总结，建议不要太长</span></span><br><span class="line"><span class="section"># 参考  //把你写作过程中参考的资料，或者是推荐的链接放在这里，便于读者后续学习</span></span><br><span class="line"><span class="section"># 开源协议  //如果使用的是hexo或者其他博客网站，撰写博客的时候会自动生成，不需要自己写</span></span><br></pre></td></tr></table></figure>
+<h3 id="标题">标题</h3>
+<p>取标题要注意几点</p>
+<ol>
+<li><strong>简洁直观</strong>：不仅仅是利于搜索引擎优化，更多的是便于读者和自己，读者可以通过标题判断博客的信息对于自己是否有效，作者可以根据标题了解自己博客的侧重方面。<strong>不要被国内电商式的标题所蒙蔽</strong>(比如“爆肝……”“震惊，百大up主齐聚一堂竟然是为……”)，虽然能带来流量，但是作者不太建议，这种标题就显得作者没有真才实学，只能靠眼球吸引读者，</li>
+<li><strong>关键词</strong>：标题一定要包含文章的高频词或者是重点词语，比如如果你写的是有关MySQL的学习知识分享，那么关键字就是“MySQL”，可能有“教程”等其他关键词，再用适当的句子结构(问句、陈述句等)将其组合为标题。比如组合为”MySQL学习指南(一)“</li>
+</ol>
+<p><strong>特殊</strong>:所有<strong>系列文章</strong>(比如MySQL学习笔记)的标题要一致，<strong>相关的</strong>可以不一致。标题+XX:XX为数字，不满两位用0替代;比如mysql01;标题+(序数词):比如mysql学习(一)</p>
+<h3 id="简介">简介</h3>
+<p>文章的标题和简要介绍一下文章，要解决的是什么问题</p>
+<p><strong>示例</strong>：Selenium是广泛使用的模拟浏览器运行的库，它是一个用于Web应用程序测试的工具。 Selenium测试直接运行在浏览器中，就像真正的用户在操作一样，并且支持大多数现代 Web 浏览器。下面就进入正式的学习阶段。</p>
+<h3 id="文章主体">文章主体</h3>
+<p>以下主要侧重于排版。</p>
+<ol>
+<li>段落：建议不要太长，最好保持在300字以内</li>
+<li>字体效果：用黑体强调重要词汇，用斜体或者下划线强调重要段落</li>
+<li>列表：恰当使用无序和有序列表，对于超过10个点的列表建议使用markdown里面的表格</li>
+<li>图片：如果图片能便于读者理解，减少文字量，可以使用。</li>
+<li>代码块：建议默认收起或者收缩，需要的时候读者点击即可全部展开。指明代码块对应的编程语言，不是的话要提前说明</li>
+<li>分割线：建议用在两个一级标题或者是两段长段落之间。</li>
+</ol>
+<p>注意事项</p>
+<ol>
+<li>所有的代码至少要在自己的电脑上或者对应的运行环境上运行，否则不写</li>
+<li>不易理解或者抽象的地方要用图解释，可以是GIF动图制作也可以是chartjs、echart等，注意不要泄漏私人信息。</li>
+<li>模棱两可或者自己不懂的不要轻易写，写的话注意叠甲。</li>
+</ol>
+<h2 id="超文本内容">超文本内容</h2>
+<p>这一部分主要涉及前端的特性，属于是锦上添花的内容，即使没有也不是特别影响文章的质量，就算《资本论》只有文字，也无可争议是最伟大的鸿篇巨著之一。</p>
+<p>常用的类型有：图片、动画(gif等)、视频、音频、表情、标签外挂、图标、链接等。</p>
+<h3 id="图表">图表</h3>
+<ol>
+<li><a href="https://excalidraw.com/">Excalidraw</a>：手绘风格的开源工具，适合绘制思维导图、流程图等。</li>
+</ol>
+<p><img src="https://s2.loli.net/2024/11/26/lvhXLijoyQYUnkb.png" alt="博客写作指南_01"></p>
+<ol start="2">
+<li><a href="https://mermaid.nodejs.cn/">Mermaid 中文网</a>：基于 Markdown 的流程图工具，可以生成流程图、时序图等。或者也可以使用<a href="https://app.diagrams.net/">draw.io</a>。主要侧重于计算机方面的知识图表，常用于UML统一建模语言。</li>
+</ol>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop HealthCheck
+        John-&gt;&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
+    John--&gt;&gt;Alice: Great!
+    John-&gt;&gt;Bob: How about you?
+    Bob--&gt;&gt;John: Jolly good!
+
+  </pre></div>
+<ol start="3">
+<li><a href="https://chartjs.cn/docs/latest/">Chart.js 中文网</a>：是一个用于创建动态图表的 JavaScript 库，适合做一些比较复杂的数据分析图。</li>
+</ol>
+<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
+            <pre class="chartjs-src" hidden>{
+    &quot;type&quot;: &quot;pie&quot;,
+    &quot;data&quot;: {
+        &quot;labels&quot;: [
+            &quot;编程&quot;,
+            &quot;音乐&quot;,
+            &quot;阅读&quot;,
+            &quot;游戏&quot;,
+            &quot;健身&quot;,
+            &quot;旅游&quot;
+        ],
+        &quot;datasets&quot;: [
+            {
+                &quot;label&quot;: &quot;喜爱指数&quot;,
+                &quot;data&quot;: [
+                    30,
+                    24,
+                    19,
+                    14,
+                    9,
+                    4
+                ],
+                &quot;backgroundColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.5)&quot;,
+                        &quot;rgba(54, 162, 235, 0.5)&quot;,
+                        &quot;rgba(255, 206, 86, 0.5)&quot;,
+                        &quot;rgba(75, 192, 192, 0.5)&quot;,
+                        &quot;rgba(153, 102, 255, 0.5)&quot;,
+                        &quot;rgba(255, 159, 64, 0.5)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.2)&quot;,
+                        &quot;rgba(54, 162, 235, 0.2)&quot;,
+                        &quot;rgba(255, 206, 86, 0.2)&quot;,
+                        &quot;rgba(75, 192, 192, 0.2)&quot;,
+                        &quot;rgba(153, 102, 255, 0.2)&quot;,
+                        &quot;rgba(255, 159, 64, 0.2)&quot;
+                    ]
+                },
+                &quot;borderColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ]
+                }
+            }
+        ]
+    },
+    &quot;options&quot;: {
+        &quot;plugins&quot;: {
+            &quot;legend&quot;: {
+                &quot;labels&quot;: {
+                    &quot;color&quot;: {
+                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
+                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
+                    }
+                }
+            }
+        }
+    }
+}
+</pre>
+            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
+我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
+在此过程中也解决了无数的小谜团。<br>
+<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
+I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
+Countless small mysteries are also solved in the process.</span></p></div>
+          </div>
+<h3 id="视频">视频</h3>
+<ol>
+<li>B站引用：打开网页版的bilibili，点击要分享的视频-“分享”-“嵌入代码”，然后粘贴到markdown文件内即可。参考如下</li>
+</ol>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
+    </iframe>
+</div>
+<h3 id="公式">公式</h3>
+<p>建议使用katex，或者是markdown本地的公式嵌入。</p>
+<p>参考教程<a href="https://freeopen.github.io/mathjax/">Markdown 数学公式指导手册 | Freeopen</a></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sin^2(\theta) + \cos^2(\theta) = 1
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1219em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8719em;"><span style="top:-3.1208em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">cos</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></p>
+<h3 id="表情符号">表情符号</h3>
+<ol>
+<li><a href="https://www.lddgo.net/common/emoticons">在线颜文字大全</a> ：与markdown兼容，基本不会有不显示等问题</li>
+<li><a href="https://www.emojiall.com/zh-hans/categories/A">表情包</a> ：注意typora的表情(格式为<code>:表情</code>)无法在hexo显示，所以只能用图片替代表情</li>
+<li><a href="https://fontawesome.com/v4/icons/">图标</a>：适当的图标可以让人记忆犹新，见图思义。</li>
+</ol>
+<h3 id="交互式的组件">交互式的组件</h3>
+<p>比如butterfly中的button、图床等，由于不同的博客引擎涉及的组件不同，这里就不展开。建议读者不要舍本逐末，过度美化而忽视文章的内容。</p>
+<h2 id="总结与参考">总结与参考</h2>
+<ul>
+<li>
+<p>用一段话给文章内容作总结。</p>
+</li>
+<li>
+<p><strong>参考</strong>要注明来源，比如链接、转载出处，注意定期更新以防失效。</p>
+</li>
+</ul>
+<h1>参考</h1>
+<ol>
+<li><a href="https://www.cnblogs.com/returntmp/p/17591866.html">【全方位解析】如何写好技术文章 - ReturnTmp - 博客园</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -3976,250 +4479,65 @@ NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li
       </tags>
   </entry>
   <entry>
-    <title>hexo博客系列(三)博客写作指南</title>
-    <url>/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1>简介</h1>
-<p>在撰写博客的过程中，内容至关重要但不是唯一重要的因素，排版、图片、交互体验等视觉设计也同样需要关注。一个设计精美、易于阅读的博客会吸引更多读者，提升用户体验。本文将为你提供一套完整的 markdown 博客创作指南，从实战的角度帮助你写出既有深度又美观的博客文章。</p>
-<h1>准备工具</h1>
-<h2 id="写作工具">写作工具</h2>
-<p>个人比较推崇<strong>Typora</strong>这种简洁的支持<strong>markdown</strong>格式的编辑器，相比之下，obsidian的布局不利于专注于写作，notion的自定义布局和数据库这两大突出优势在markdown格式下会有损失，vscode依赖于插件。</p>
-<p>总之就是一句话:</p>
-<blockquote>
-<p>能让你心无旁骛地去写的编辑器就是最好的</p>
+    <title>数据结构可视化</title>
+    <url>/2024/11/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要侧重于可视化的介绍和简单的操作，为后续算法相关的博客提供可视化素材。具体细节请读者自行学习。</p>
 </blockquote>
-<h2 id="博客引擎">博客引擎</h2>
-<p>本文基于hexo+butterfly的主题进行博客创作，但读者无须担心，博客创作更多的在于<strong>文章结构</strong>、<strong>词句修辞</strong>、<strong>排版和可读性</strong>方面下功夫，其他方面依赖博客引擎和前端特性的并不多，读者可以在CSDN、博客园、掘金社区等其他地方同样可以撰写和托管博客。</p>
-<h1>博客撰写讲解</h1>
-<h2 id="目录结构">目录结构</h2>
-<p>好的目录结构要梳理文章逻辑，如果是<strong>新闻热点点评类</strong>，就要能讲清楚事件发生的时间地点人物，发生原因及其分析，结论、启示或者经验教训；如果是<strong>技术分享类</strong>，就要说明技术的应用范围，原理，怎样配置技术所需的环境，阐明使用技术的效果等。这方面主要靠读者多看技术大佬的博客、优秀的公众号推文等，看他们的目录是如何区分的，只要能达到<strong>行云流水</strong>的效果就行，不需要在分级、格式方面过于讲究。</p>
-<p>可供参考的文章结构：大部分都是<strong>总-分-总</strong>结构</p>
-<ul>
-<li>提出问题-&gt;分析问题-&gt;解决问题-&gt;总结经验，技术问题分享。</li>
-<li>背景-&gt;思考-&gt;尝试-&gt;遇到的困难-&gt;解决方案-&gt;最后结果，问题分享</li>
-<li>摘要-&gt;简介-&gt;分支主题-&gt;总结，一般技术分享。</li>
-<li>是什么-原理-背景&gt;解决了什么问题-&gt;基本操作-&gt;同类对比-&gt;总结 ，适合新技术分享</li>
-</ul>
-<p>参考的目录结构如下，以markdown格式的代码块展示,这里<code>//</code>及其后面的内容代表注释</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 简介    </span></span><br><span class="line"><span class="section"># 一、准备工作 //一些环境配置，安装等，或者是解决问题的背景等</span></span><br><span class="line"><span class="section">## 1.centos安装  //以数字的形式合理分级，建议标题的层级不要超过四层</span></span><br><span class="line"><span class="section">## 2.idea解包</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 二、基本用法 //对于技术文章就像是语法书，对于问题就是发现问题，分析问题，</span></span><br><span class="line"><span class="section">## 1. 对页面的操作</span></span><br><span class="line"><span class="section">## 2. 1 初始化浏览器对象</span></span><br><span class="line"><span class="section">## 2. 2</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 三、高阶用法  //或者是多个解决方案</span></span><br><span class="line"><span class="section"># 总结  //对技术或者过程的总结，建议不要太长</span></span><br><span class="line"><span class="section"># 参考  //把你写作过程中参考的资料，或者是推荐的链接放在这里，便于读者后续学习</span></span><br><span class="line"><span class="section"># 开源协议  //如果使用的是hexo或者其他博客网站，撰写博客的时候会自动生成，不需要自己写</span></span><br></pre></td></tr></table></figure>
-<h3 id="标题">标题</h3>
-<p>取标题要注意几点</p>
+<h1>简介</h1>
+<p>数据结构对于计算机系的同学们来说无疑是最基础、最重要的一门课程之一，但是在面对抽象的代码、陌生的概念时感到无从下手，对于数据结构的运行步骤没有一个直观的认识，而数据结构可视化可以帮助同学们用具体的图形理解抽象的算法，从而更好掌握数据结构的精髓。</p>
+<h1>准备工作</h1>
+<h2 id="推荐的可视化网站">推荐的可视化网站</h2>
 <ol>
-<li><strong>简洁直观</strong>：不仅仅是利于搜索引擎优化，更多的是便于读者和自己，读者可以通过标题判断博客的信息对于自己是否有效，作者可以根据标题了解自己博客的侧重方面。<strong>不要被国内电商式的标题所蒙蔽</strong>(比如“爆肝……”“震惊，百大up主齐聚一堂竟然是为……”)，虽然能带来流量，但是作者不太建议，这种标题就显得作者没有真才实学，只能靠眼球吸引读者，</li>
-<li><strong>关键词</strong>：标题一定要包含文章的高频词或者是重点词语，比如如果你写的是有关MySQL的学习知识分享，那么关键字就是“MySQL”，可能有“教程”等其他关键词，再用适当的句子结构(问句、陈述句等)将其组合为标题。比如组合为”MySQL学习指南(一)“</li>
+<li><a href="https://pythontutor.com/">Python Tutor - Python Online Compiler with Visual AI Help</a></li>
+<li><a href="https://visualgo.net/zh">通过动画可视化数据结构和算法 - VisuAlgo</a> 如果想要动画效果建议使用此网站</li>
 </ol>
-<p><strong>特殊</strong>:所有<strong>系列文章</strong>(比如MySQL学习笔记)的标题要一致，<strong>相关的</strong>可以不一致。标题+XX:XX为数字，不满两位用0替代;比如mysql01;标题+(序数词):比如mysql学习(一)</p>
-<h3 id="简介">简介</h3>
-<p>文章的标题和简要介绍一下文章，要解决的是什么问题</p>
-<p><strong>示例</strong>：Selenium是广泛使用的模拟浏览器运行的库，它是一个用于Web应用程序测试的工具。 Selenium测试直接运行在浏览器中，就像真正的用户在操作一样，并且支持大多数现代 Web 浏览器。下面就进入正式的学习阶段。</p>
-<h3 id="文章主体">文章主体</h3>
-<p>以下主要侧重于排版。</p>
+<h2 id="编程基础">编程基础</h2>
+<p>读者至少掌握一门常见的计算机语言(如C++、Python等)的基础语法,否则数据结构可视化无从谈起。</p>
+<h1>可视化开发</h1>
+<h2 id="Python-tutor">Python tutor</h2>
+<p>基础的界面如下，参考图像文字学习</p>
+<p><strong>代码展示和调试区</strong></p>
+<p><img src="https://s2.loli.net/2024/11/26/XstjOaTp1YBQi6L.png" alt="001_可视化开发基础_01"></p>
+<p><strong>调试</strong>：设置断点：点击对应的代码，其颜色会变红，下方会出现红线，如果你点击&lt;prev或者是Next&gt; 会自动跳转到设置有断点的代码行。示例如下</p>
+<p><img src="https://s2.loli.net/2024/11/26/I3YJVByXk86wpFK.png" alt="001_可视化开发基础_03"></p>
+<blockquote>
+<p>注意：执行步数最大为999步</p>
+</blockquote>
+<p><strong>编辑代码区</strong></p>
+<p>编辑完成并确认没有语法错误后点击左下角的<code>visualize execution</code> 将其可视化。</p>
+<p><img src="https://s2.loli.net/2024/11/26/SJsid7fGpbMXEI3.png" alt="001_可视化开发基础_02"></p>
+<p><strong>案例</strong></p>
+<p>可以点击代码区下面的<code>show code examples</code> 感受一下不同例子可视化的效果</p>
+<p><strong>小技巧</strong></p>
 <ol>
-<li>段落：建议不要太长，最好保持在300字以内</li>
-<li>字体效果：用黑体强调重要词汇，用斜体或者下划线强调重要段落</li>
-<li>列表：恰当使用无序和有序列表，对于超过10个点的列表建议使用markdown里面的表格</li>
-<li>图片：如果图片能便于读者理解，减少文字量，可以使用。</li>
-<li>代码块：建议默认收起或者收缩，需要的时候读者点击即可全部展开。指明代码块对应的编程语言，不是的话要提前说明</li>
-<li>分割线：建议用在两个一级标题或者是两段长段落之间。</li>
+<li>对于Python，可以在编辑代码区可以通过一行<code>#pythontutor_hide: 变量名</code> 将指定的变量在可视化界面中隐藏，读者可以使用此代码隐藏无关变量。对于其他的编译器，可以在可视化执行之后点击<code>Move and hide objects</code> 按照说明将指定的对象隐藏。</li>
+<li>可视化执行之后，可以点击左下方的两个按钮生成链接或者是iframe嵌入到markdown文件格式里面，甚至可以执行\(^o^)/~，如下</li>
 </ol>
-<p>注意事项</p>
-<ol>
-<li>所有的代码至少要在自己的电脑上或者对应的运行环境上运行，否则不写</li>
-<li>不易理解或者抽象的地方要用图解释，可以是GIF动图制作也可以是chartjs、echart等，注意不要泄漏私人信息。</li>
-<li>模棱两可或者自己不懂的不要轻易写，写的话注意叠甲。</li>
-</ol>
-<h2 id="超文本内容">超文本内容</h2>
-<p>这一部分主要涉及前端的特性，属于是锦上添花的内容，即使没有也不是特别影响文章的质量，就算《资本论》只有文字，也无可争议是最伟大的鸿篇巨著之一。</p>
-<p>常用的类型有：图片、动画(gif等)、视频、音频、表情、标签外挂、图标、链接等。</p>
-<h3 id="图表">图表</h3>
-<ol>
-<li><a href="https://excalidraw.com/">Excalidraw</a>：手绘风格的开源工具，适合绘制思维导图、流程图等。</li>
-</ol>
-<p><img src="https://s2.loli.net/2024/11/26/lvhXLijoyQYUnkb.png" alt="博客写作指南_01"></p>
-<ol start="2">
-<li><a href="https://mermaid.nodejs.cn/">Mermaid 中文网</a>：基于 Markdown 的流程图工具，可以生成流程图、时序图等。或者也可以使用<a href="https://app.diagrams.net/">draw.io</a>。主要侧重于计算机方面的知识图表，常用于UML统一建模语言。</li>
-</ol>
-<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
-  
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop HealthCheck
-        John-&gt;&gt;John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
-    John--&gt;&gt;Alice: Great!
-    John-&gt;&gt;Bob: How about you?
-    Bob--&gt;&gt;John: Jolly good!
-
-  </pre></div>
-<ol start="3">
-<li><a href="https://chartjs.cn/docs/latest/">Chart.js 中文网</a>：是一个用于创建动态图表的 JavaScript 库，适合做一些比较复杂的数据分析图。</li>
-</ol>
-<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
-            <pre class="chartjs-src" hidden>{
-    &quot;type&quot;: &quot;pie&quot;,
-    &quot;data&quot;: {
-        &quot;labels&quot;: [
-            &quot;编程&quot;,
-            &quot;音乐&quot;,
-            &quot;阅读&quot;,
-            &quot;游戏&quot;,
-            &quot;健身&quot;,
-            &quot;旅游&quot;
-        ],
-        &quot;datasets&quot;: [
-            {
-                &quot;label&quot;: &quot;喜爱指数&quot;,
-                &quot;data&quot;: [
-                    30,
-                    24,
-                    19,
-                    14,
-                    9,
-                    4
-                ],
-                &quot;backgroundColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.5)&quot;,
-                        &quot;rgba(54, 162, 235, 0.5)&quot;,
-                        &quot;rgba(255, 206, 86, 0.5)&quot;,
-                        &quot;rgba(75, 192, 192, 0.5)&quot;,
-                        &quot;rgba(153, 102, 255, 0.5)&quot;,
-                        &quot;rgba(255, 159, 64, 0.5)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.2)&quot;,
-                        &quot;rgba(54, 162, 235, 0.2)&quot;,
-                        &quot;rgba(255, 206, 86, 0.2)&quot;,
-                        &quot;rgba(75, 192, 192, 0.2)&quot;,
-                        &quot;rgba(153, 102, 255, 0.2)&quot;,
-                        &quot;rgba(255, 159, 64, 0.2)&quot;
-                    ]
-                },
-                &quot;borderColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ]
-                }
-            }
-        ]
-    },
-    &quot;options&quot;: {
-        &quot;plugins&quot;: {
-            &quot;legend&quot;: {
-                &quot;labels&quot;: {
-                    &quot;color&quot;: {
-                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
-                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
-                    }
-                }
-            }
-        }
-    }
-}
-</pre>
-            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
-我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
-在此过程中也解决了无数的小谜团。<br>
-<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
-I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
-Countless small mysteries are also solved in the process.</span></p></div>
-          </div>
-<h3 id="视频">视频</h3>
-<ol>
-<li>B站引用：打开网页版的bilibili，点击要分享的视频-“分享”-“嵌入代码”，然后粘贴到markdown文件内即可。参考如下</li>
-</ol>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
-    </iframe>
-</div>
-<h3 id="公式">公式</h3>
-<p>建议使用katex，或者是markdown本地的公式嵌入。</p>
-<p>参考教程<a href="https://freeopen.github.io/mathjax/">Markdown 数学公式指导手册 | Freeopen</a></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sin^2(\theta) + \cos^2(\theta) = 1
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1219em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8719em;"><span style="top:-3.1208em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">cos</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></p>
-<h3 id="表情符号">表情符号</h3>
-<ol>
-<li><a href="https://www.lddgo.net/common/emoticons">在线颜文字大全</a> ：与markdown兼容，基本不会有不显示等问题</li>
-<li><a href="https://www.emojiall.com/zh-hans/categories/A">表情包</a> ：注意typora的表情(格式为<code>:表情</code>)无法在hexo显示，所以只能用图片替代表情</li>
-<li><a href="https://fontawesome.com/v4/icons/">图标</a>：适当的图标可以让人记忆犹新，见图思义。</li>
-</ol>
-<h3 id="交互式的组件">交互式的组件</h3>
-<p>比如butterfly中的button、图床等，由于不同的博客引擎涉及的组件不同，这里就不展开。建议读者不要舍本逐末，过度美化而忽视文章的内容。</p>
-<h2 id="总结与参考">总结与参考</h2>
-<ul>
-<li>
-<p>用一段话给文章内容作总结。</p>
-</li>
-<li>
-<p><strong>参考</strong>要注明来源，比如链接、转载出处，注意定期更新以防失效。</p>
-</li>
-</ul>
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23include%20%3Ciostream%3E%0A%0Aint%20main%28%29%20%7B%0A%20%20int*%20x%20%3D%20new%20int%5B3%5D%3B%0A%20%20x%5B1%5D%20%3D%2020%3Bint*%20p%20%3D%20%26x%5B1%5D%3B%20//%20pointer%20into%20middle%0A%20%20const%20char**%20fruit%20%3D%20new%20const%20char*%5B3%5D%3B%0A%20%20fruit%5B1%5D%20%3D%20%22bananas%22%3B%0A%20%20std%3A%3Acout%20%3C%3C%20%22Yum%20%22%20%3C%3C%20*p%20%3C%3C%20%22%20%22%20%3C%3C%20fruit%5B1%5D%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+<p><strong>建议以上网址链接用电脑端打开，手机端会有界面溢出的问题</strong></p>
+<p><img src="https://s2.loli.net/2024/11/26/cWnDdbAMEBvuUjk.png" alt="001_可视化开发基础_04"></p>
+<h2 id="visualgo">visualgo</h2>
+<p>这个网站有中文，同时也有教程，这里就不展开教学了，比较适合需要动画效果的代码展示。</p>
+<h2 id="gif录制">gif录制</h2>
+<p>软件：<a href="https://www.screentogif.com/">ScreenToGif</a> 选择对应的版本下载即可。</p>
+<p>参考教程：链接:<a href="https://www.bilibili.com/video/BV1fb411P74h?vd_source=bb8dacb993f11c0e39f8147c98a2894c">screentogif</a></p>
+<p>示例如下(gif相当于图片，可以直接在markdown文件里面按照图片的格式插入)</p>
+<p><img src="https://s2.loli.net/2024/11/26/eAGhpQafRJqD1PM.gif" alt="动画"></p>
 <h1>参考</h1>
 <ol>
-<li><a href="https://www.cnblogs.com/returntmp/p/17591866.html">【全方位解析】如何写好技术文章 - ReturnTmp - 博客园</a></li>
+<li><a href="https://pythontutor.com/">Python Tutor - Python Online Compiler with Visual AI Help</a></li>
+<li><a href="https://visualgo.net/zh">通过动画可视化数据结构和算法 - VisuAlgo</a></li>
+<li><a href="https://www.screentogif.com/">ScreenToGif</a>：软件下载官方网站</li>
+<li><a href="https://www.bilibili.com/video/BV1fb411P74h?vd_source=bb8dacb993f11c0e39f8147c98a2894c">screentogif</a> ：B站教程</li>
 </ol>
 ]]></content>
       <categories>
-        <category>blog</category>
+        <category>data structure</category>
       </categories>
       <tags>
         <tag>教程</tag>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据分析工具superset安装和使用(version:0.381)</title>
-    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
-    <content><![CDATA[<h1>简介</h1>
-<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
-<h1>准备工作</h1>
-<blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
-</blockquote>
-<ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料
-<ul>
-<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ul>
-</li>
-</ul>
-<h1>基本环境配置</h1>
-<ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
-</ol>
-<h1>superset使用指南</h1>
-<p>待更新……</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>大数据</tag>
+        <tag>data structure</tag>
       </tags>
   </entry>
   <entry>
@@ -4633,7 +4951,7 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
 <p>“大破之,取阳晋,拜为上将,以勇气闻於诸侯”</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在main.cpp文件里面</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Person.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Country.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义函数库</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//创建“廉颇”与“蔺相如”</span></span><br><span class="line">	<span class="function">Person <span class="title">LianPo</span><span class="params">(<span class="string">&quot;廉颇&quot;</span>, <span class="string">&quot;Zhao&quot;</span>, <span class="number">5</span>,<span class="string">&quot;良将&quot;</span>)</span></span>;</span><br><span class="line">	<span class="function">Person <span class="title">LiXiangRu</span><span class="params">(<span class="string">&quot;蔺相如&quot;</span>, <span class="string">&quot;Zhao&quot;</span>, <span class="number">5</span>, <span class="string">&quot;舍人&quot;</span>)</span></span>;</span><br><span class="line">	<span class="comment">//输出“廉颇”的基本信息</span></span><br><span class="line">	cout &lt;&lt; LianPo.m_name &lt;&lt; <span class="string">&quot;者,&quot;</span> &lt;&lt; LianPo.m_nationality &lt;&lt; <span class="string">&quot;之&quot;</span> &lt;&lt; LianPo.m_status &lt;&lt; <span class="string">&quot;也&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//创建齐国</span></span><br><span class="line">	<span class="function">Country <span class="title">Qi</span><span class="params">(<span class="string">&quot;qi&quot;</span>, <span class="number">3</span>)</span></span>;</span><br><span class="line">	<span class="comment">//赵惠王十六年</span></span><br><span class="line">	<span class="type">int</span> to_year = <span class="number">16</span>;</span><br><span class="line">	<span class="comment">//廉颇为赵将伐齐</span></span><br><span class="line">	<span class="type">bool</span> ret = LianPo.<span class="built_in">Attack</span>(Qi);</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; LianPo.m_name &lt;&lt; <span class="string">&quot;对&quot;</span> &lt;&lt; Qi.m_name &lt;&lt; <span class="string">&quot;发起攻击&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//判断讨伐是否成功</span></span><br><span class="line">	<span class="keyword">if</span> (ret)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;大破之&quot;</span> &lt;&lt; endl;</span><br><span class="line">		LianPo.m_status = <span class="string">&quot;上卿&quot;</span>;</span><br><span class="line">		cout &lt;&lt; LianPo.m_name &lt;&lt; <span class="string">&quot;被拜为&quot;</span> &lt;&lt; LianPo.m_status &lt;&lt; endl;</span><br><span class="line">		LianPo.fame = <span class="number">4</span>;</span><br><span class="line">		<span class="comment">//判断名声等级</span></span><br><span class="line">		<span class="keyword">if</span> (LianPo.fame &gt;= <span class="number">4</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;以勇气闻於诸侯&quot;</span> &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>看到这里,你会有一个问题,为什么要用写作来形容代码的编写过程呢?对以中文为母语的人可能难以理解,但是对于以英语为母语的人早已习以为常,甚至达到了“美国人刚出生就会写代码”的程度.对他们来说,写代码就是写英语作文,无非是语法更严格,字数变更少,语句更加讲逻辑,对我们来说就是在“写天书”.这里想说的是,将写代码看做是写英语作文,可以<strong>有效提高写代码的逻辑性</strong>,而且,一旦你认为自己写的是一篇作文,要传阅给所有人看,你就会不自觉“美化”你的作文(代码),<strong>在无形之中,你对自己写的作文(代码)提高了要求</strong>。我以写作为例,更多的是想让你感受一下<strong>保安三问定律</strong>在写代码方面的作用和按照一定的规则写代码的好处,毕竟代码就是语句,多行代码构成段落,多个段落构成故事,<strong>故事都有起因经过结果,保安定律就是为了回答这三者究竟是什么，规则限定我们写故事写在哪，怎样写易读性更强</strong>。也许自己的故事有缺陷,也许编程能力有限,但总是能引导我们走向文章的结尾,给老师(编译器)和他人一个满意的答卷.</p>
-<ol class="series-items"><li><a href="/2024/06/25/%E3%80%8A%E9%AB%98%E8%B4%A8%E9%87%8FC%E3%80%81C++%E3%80%8B%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" title="《高质量C、C++》笔记整理">《高质量C、C++》笔记整理</a></li></ol>
+<ol class="series-items"><li><a href="/2024/06/25/%E3%80%8A%E9%AB%98%E8%B4%A8%E9%87%8FC%E3%80%81C++%E3%80%8B%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" title="《高质量C、C++》笔记整理">《高质量C、C++》笔记整理</a></li><li><a href="/2024/12/14/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97(%E4%B8%80)%E8%93%9D%E6%A1%A5%E6%9D%AF/" title="算法系列(一)蓝桥杯">算法系列(一)蓝桥杯</a></li></ol>
 <h1>参考资料</h1>
 <ul>
 <li>《高质量C、C++》 林锐</li>
@@ -4649,65 +4967,106 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
       </tags>
   </entry>
   <entry>
-    <title>数据结构可视化</title>
-    <url>/2024/11/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要侧重于可视化的介绍和简单的操作，为后续算法相关的博客提供可视化素材。具体细节请读者自行学习。</p>
-</blockquote>
-<h1>简介</h1>
-<p>数据结构对于计算机系的同学们来说无疑是最基础、最重要的一门课程之一，但是在面对抽象的代码、陌生的概念时感到无从下手，对于数据结构的运行步骤没有一个直观的认识，而数据结构可视化可以帮助同学们用具体的图形理解抽象的算法，从而更好掌握数据结构的精髓。</p>
+    <title>数据分析工具superset安装和使用(version:0.381)</title>
+    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
+    <content><![CDATA[<h1>简介</h1>
+<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
 <h1>准备工作</h1>
-<h2 id="推荐的可视化网站">推荐的可视化网站</h2>
-<ol>
-<li><a href="https://pythontutor.com/">Python Tutor - Python Online Compiler with Visual AI Help</a></li>
-<li><a href="https://visualgo.net/zh">通过动画可视化数据结构和算法 - VisuAlgo</a> 如果想要动画效果建议使用此网站</li>
-</ol>
-<h2 id="编程基础">编程基础</h2>
-<p>读者至少掌握一门常见的计算机语言(如C++、Python等)的基础语法,否则数据结构可视化无从谈起。</p>
-<h1>可视化开发</h1>
-<h2 id="Python-tutor">Python tutor</h2>
-<p>基础的界面如下，参考图像文字学习</p>
-<p><strong>代码展示和调试区</strong></p>
-<p><img src="https://s2.loli.net/2024/11/26/XstjOaTp1YBQi6L.png" alt="001_可视化开发基础_01"></p>
-<p><strong>调试</strong>：设置断点：点击对应的代码，其颜色会变红，下方会出现红线，如果你点击&lt;prev或者是Next&gt; 会自动跳转到设置有断点的代码行。示例如下</p>
-<p><img src="https://s2.loli.net/2024/11/26/I3YJVByXk86wpFK.png" alt="001_可视化开发基础_03"></p>
 <blockquote>
-<p>注意：执行步数最大为999步</p>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
 </blockquote>
-<p><strong>编辑代码区</strong></p>
-<p>编辑完成并确认没有语法错误后点击左下角的<code>visualize execution</code> 将其可视化。</p>
-<p><img src="https://s2.loli.net/2024/11/26/SJsid7fGpbMXEI3.png" alt="001_可视化开发基础_02"></p>
-<p><strong>案例</strong></p>
-<p>可以点击代码区下面的<code>show code examples</code> 感受一下不同例子可视化的效果</p>
-<p><strong>小技巧</strong></p>
+<ul>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料
+<ul>
+<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h1>基本环境配置</h1>
 <ol>
-<li>对于Python，可以在编辑代码区可以通过一行<code>#pythontutor_hide: 变量名</code> 将指定的变量在可视化界面中隐藏，读者可以使用此代码隐藏无关变量。对于其他的编译器，可以在可视化执行之后点击<code>Move and hide objects</code> 按照说明将指定的对象隐藏。</li>
-<li>可视化执行之后，可以点击左下方的两个按钮生成链接或者是iframe嵌入到markdown文件格式里面，甚至可以执行\(^o^)/~，如下</li>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
 </ol>
-<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23include%20%3Ciostream%3E%0A%0Aint%20main%28%29%20%7B%0A%20%20int*%20x%20%3D%20new%20int%5B3%5D%3B%0A%20%20x%5B1%5D%20%3D%2020%3Bint*%20p%20%3D%20%26x%5B1%5D%3B%20//%20pointer%20into%20middle%0A%20%20const%20char**%20fruit%20%3D%20new%20const%20char*%5B3%5D%3B%0A%20%20fruit%5B1%5D%20%3D%20%22bananas%22%3B%0A%20%20std%3A%3Acout%20%3C%3C%20%22Yum%20%22%20%3C%3C%20*p%20%3C%3C%20%22%20%22%20%3C%3C%20fruit%5B1%5D%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
-<p><strong>建议以上网址链接用电脑端打开，手机端会有界面溢出的问题</strong></p>
-<p><img src="https://s2.loli.net/2024/11/26/cWnDdbAMEBvuUjk.png" alt="001_可视化开发基础_04"></p>
-<h2 id="visualgo">visualgo</h2>
-<p>这个网站有中文，同时也有教程，这里就不展开教学了，比较适合需要动画效果的代码展示。</p>
-<h2 id="gif录制">gif录制</h2>
-<p>软件：<a href="https://www.screentogif.com/">ScreenToGif</a> 选择对应的版本下载即可。</p>
-<p>参考教程：链接:<a href="https://www.bilibili.com/video/BV1fb411P74h?vd_source=bb8dacb993f11c0e39f8147c98a2894c">screentogif</a></p>
-<p>示例如下(gif相当于图片，可以直接在markdown文件里面按照图片的格式插入)</p>
-<p><img src="https://s2.loli.net/2024/11/26/eAGhpQafRJqD1PM.gif" alt="动画"></p>
-<h1>参考</h1>
+<h1>superset使用指南</h1>
+<p>待更新……</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法系列(一)蓝桥杯</title>
+    <url>/2024/12/14/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97(%E4%B8%80)%E8%93%9D%E6%A1%A5%E6%9D%AF/</url>
+    <content><![CDATA[<h1>算法刷题与总结</h1>
+<blockquote>
+<p>以下内容借鉴了参考中的视频和其他部分。当前还在持续更新中</p>
+</blockquote>
+<h2 id="蓝桥杯系列">蓝桥杯系列</h2>
+<h3 id="字符串">字符串</h3>
+<blockquote>
+<p>提醒：C语言和C++</p>
+</blockquote>
+<p><strong>字母与数字的映射关系</strong>：比如题目规定出现A代表10，B代表11，就要想到A的ASCII编码是97，B的编码是98,找对应关系。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数字映射为字母 10代表A  11代表B</span></span><br><span class="line"><span class="keyword">if</span>(n&gt;=<span class="number">10</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,n<span class="number">-10</span>+<span class="string">&#x27;A&#x27;</span>);<span class="comment">//这样n为11就打印B，12就打印C，反之同理</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//字母映射为数字</span></span><br><span class="line"><span class="keyword">if</span>(c&gt;<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,c-<span class="string">&#x27;A&#x27;</span>+<span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>字母的大小写转换</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//小写转大写</span></span><br><span class="line"><span class="type">char</span> a = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a+(<span class="string">&#x27;A&#x27;</span>-<span class="string">&#x27;a&#x27;</span>));<span class="comment">//大写A比小写a少‘32’，但是不能直接写32或者&#x27;32&#x27;，而是写(&#x27;A&#x27;-&#x27;a&#x27;)</span></span><br><span class="line"><span class="comment">//大写转化为小写同理</span></span><br></pre></td></tr></table></figure>
+<p>在C/C++语言中规定，未尾以\0结束的字符型数组称为字符串。这里值得强调的是，只有以<code>\0</code> 结束的才能算是字符串，否则只能算作字符型数组。这在C/C++中算是一种标准。也只有以<code> \0</code>结束的字符数组才能以&quot;%s&quot;的方式用printf输出，否则输出的结果会非常奇怪。自己在char数组上构造一个字符串的时候，忘记在末尾加<code>\0</code>可能会导致访问非法内存的错误。如果使用的是C++的话，可以使用string 类</p>
+<p><strong>字符串复制</strong></p>
+<p>strcpy 具体看 C/C++参考文档 官网如下<a href="https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5">cppreference.com</a></p>
+<p><strong>字符串拼接</strong></p>
+<p>函数原型：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *<span class="title function_">strcat</span><span class="params">(<span class="type">char</span> *<span class="keyword">restrict</span> dest, <span class="type">const</span> <span class="type">char</span> *<span class="keyword">restrict</span> src )</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>字符串比较</strong></p>
+<p>函数原型</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">strcmp</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *lhs, <span class="type">const</span> <span class="type">char</span> *rhs )</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>字符串长度</strong></p>
+<p>strlen</p>
+<p>C/C++<strong>获取字符串</strong></p>
+<p>C++:一种方法是用string 类+cin获取，另一种是fgets()函数+输入流的方式</p>
+<p><strong>注意</strong>：cin与cout：对于考试而言，<strong>这两个输入输出函数运行时间过长</strong>，有时候会导致运行超时，考试一般建议使用scanf与printf。但是对于C++的容器，有些不能用scanf输入，只能用cin(比如string)，注意。</p>
+<p>cin是可以直接将数据放在容器里面的</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> str[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;str[i];<span class="comment">//将输入的字符串写入到str[i]中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="日期">日期</h3>
+<p><strong>经典题型1</strong> 找闰年</p>
+<p>分析：年份非整百且能被4整除的为闰年和年份能被400整除的是闰年</p>
+<p>用C语言表示为</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(year % <span class="number">400</span> == <span class="number">0</span>||(year % <span class="number">100</span> != <span class="number">0</span> &amp;&amp; year %<span class="number">4</span> == <span class="number">0</span> ) ) <span class="comment">//这里有个小技巧，先将判断量小的放前面再将判断量大的放后面，优化一定的时间。</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>经典题型2</strong>：星期几</p>
+<p>分析：经常会遇到别人问你几月几号是星期几的情况，如何不查日历，直接用程序算出来呢？一种最简单的方法是，记住很久以前的<br>
+某一天是星期几，比如公元1年1月1日是星期一。然后一天一天模拟，算出日期是星期几。这种方法容易理解，但是实现起来代码可能比较长。除此之外，有一个公式可以快速地根据日期计算这一天是星期几，这被称为<strong>蔡基姆拉尔森计算公式</strong>。</p>
+<p>假设星期为w,年份为y，月份为m,日期为d(第几天)，公式为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>w</mi><mo>=</mo><mo stretchy="false">(</mo><mi>d</mi><mo>+</mo><mn>2</mn><mi>m</mi><mo>+</mo><mn>3</mn><mo stretchy="false">(</mo><mi>m</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mn>5</mn><mo>+</mo><mi>y</mi><mo>+</mo><mi>y</mi><mi mathvariant="normal">/</mi><mn>4</mn><mo>−</mo><mi>y</mi><mi mathvariant="normal">/</mi><mn>100</mn><mo>+</mo><mi>y</mi><mi mathvariant="normal">/</mi><mn>400</mn><mo stretchy="false">)</mo><mi mathvariant="normal">%</mi><mn>7</mn></mrow><annotation encoding="application/x-tex">w = (d + 2m + 3(m+1)/5+y+y/4-y/100+y/400)\%7
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">/5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord">/4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord">/100</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord">/400</span><span class="mclose">)</span><span class="mord">%7</span></span></span></span></span></p>
+<p>然后把计算出来的w加上1就是真正的星期几了,<strong>注意每年的1,2月要当成上一年13,14月计算，上述的除法均为整除</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">ComDay</span><span class="params">(<span class="type">int</span> y,<span class="type">int</span> m,<span class="type">int</span> d)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(m&lt;=<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        m+=<span class="number">12</span>;</span><br><span class="line">        y--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> (d+<span class="number">2</span>*m+<span class="number">3</span>*(m+<span class="number">1</span>)/<span class="number">5</span>+y+y/<span class="number">4</span>-y/<span class="number">100</span>+y/<span class="number">400</span>)%<span class="number">7</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>经典题型3</strong>：计算日期并按格式输出<br>
+分析：要考虑到闰年二月时间的变化，不同月份的天数不同。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="type">int</span> day[<span class="number">13</span>] = &#123;<span class="number">0</span>,<span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>&#125;</span><br><span class="line"><span class="type">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> y,m,d,k;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>,&amp;y,&amp;m,&amp;d,&amp;k);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i =<span class="number">1</span>;i &lt;=k;i++)&#123;</span><br><span class="line">		<span class="number">1f</span>((y%<span class="number">100</span>!=<span class="number">0</span> &amp;&amp; y%<span class="number">4</span>=<span class="number">0</span>)||y%<span class="number">400</span>=<span class="number">0</span>)&#123;</span><br><span class="line">			day[<span class="number">2</span>]= <span class="number">29</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			day[<span class="number">2</span>]= <span class="number">28</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		d++;</span><br><span class="line">		<span class="keyword">if</span> (d == day[m])&#123;</span><br><span class="line">			d=<span class="number">1</span>;</span><br><span class="line">			m++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (m == <span class="number">13</span>)&#123;</span><br><span class="line">			m=<span class="number">1</span>;</span><br><span class="line">			y++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%04d-%02d-%02d\n&quot;</span>,y,m,d);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>技巧：</p>
+<p><strong>判断与穷举、范围、布尔值的转化</strong>：对于每个月份有多少天这种规律比较复杂的一系列数，用if判断显得臃肿，而将其所有情况写在数组里面，用下标代替判断更为有效。对于字符不能是A-Z这种限定条件，不要用穷举而是用范围的方式(比如<code>if(c&gt;='A' &amp;&amp; C&lt;='Z')</code>),这样更加简洁。对于字符串是否相等的问题，有时候不需要flag标志进行判断，而可以用链式方式简化</p>
+<h2 id="参考">参考</h2>
 <ol>
-<li><a href="https://pythontutor.com/">Python Tutor - Python Online Compiler with Visual AI Help</a></li>
-<li><a href="https://visualgo.net/zh">通过动画可视化数据结构和算法 - VisuAlgo</a></li>
-<li><a href="https://www.screentogif.com/">ScreenToGif</a>：软件下载官方网站</li>
-<li><a href="https://www.bilibili.com/video/BV1fb411P74h?vd_source=bb8dacb993f11c0e39f8147c98a2894c">screentogif</a> ：B站教程</li>
+<li><a href="https://www.bilibili.com/video/BV1Lb4y1k7K3/?share_source=copy_web&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">蓝桥杯比赛视频教程（入门学习+算法辅导)</a> 建议看前41节 重点是他讲的知识点，由于他讲题特别快不建议按照他的课刷题，建议自行在蓝桥杯题库中刷题。</li>
 </ol>
 ]]></content>
       <categories>
-        <category>data structure</category>
+        <category>C++</category>
       </categories>
       <tags>
-        <tag>教程</tag>
-        <tag>data structure</tag>
+        <tag>C</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
