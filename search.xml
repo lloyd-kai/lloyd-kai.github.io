@@ -2503,6 +2503,479 @@ InnoDB的数据是基于索引组织的，行锁是通过对索引上的索引�
       </tags>
   </entry>
   <entry>
+    <title>hexo博客系列(三)博客写作指南</title>
+    <url>/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1>简介</h1>
+<p>在撰写博客的过程中，内容至关重要但不是唯一重要的因素，排版、图片、交互体验等视觉设计也同样需要关注。一个设计精美、易于阅读的博客会吸引更多读者，提升用户体验。本文将为你提供一套完整的 markdown 博客创作指南，从实战的角度帮助你写出既有深度又美观的博客文章。</p>
+<h1>准备工具</h1>
+<h2 id="写作工具">写作工具</h2>
+<p>个人比较推崇<strong>Typora</strong>这种简洁的支持<strong>markdown</strong>格式的编辑器，相比之下，obsidian的布局不利于专注于写作，notion的自定义布局和数据库这两大突出优势在markdown格式下会有损失，vscode依赖于插件。</p>
+<p>总之就是一句话:</p>
+<blockquote>
+<p>能让你心无旁骛地去写的编辑器就是最好的</p>
+</blockquote>
+<h2 id="博客引擎">博客引擎</h2>
+<p>本文基于hexo+butterfly的主题进行博客创作，但读者无须担心，博客创作更多的在于<strong>文章结构</strong>、<strong>词句修辞</strong>、<strong>排版和可读性</strong>方面下功夫，其他方面依赖博客引擎和前端特性的并不多，读者可以在CSDN、博客园、掘金社区等其他地方同样可以撰写和托管博客。</p>
+<h1>博客撰写讲解</h1>
+<h2 id="目录结构">目录结构</h2>
+<p>好的目录结构要梳理文章逻辑，如果是<strong>新闻热点点评类</strong>，就要能讲清楚事件发生的时间地点人物，发生原因及其分析，结论、启示或者经验教训；如果是<strong>技术分享类</strong>，就要说明技术的应用范围，原理，怎样配置技术所需的环境，阐明使用技术的效果等。这方面主要靠读者多看技术大佬的博客、优秀的公众号推文等，看他们的目录是如何区分的，只要能达到<strong>行云流水</strong>的效果就行，不需要在分级、格式方面过于讲究。</p>
+<p>可供参考的文章结构：大部分都是<strong>总-分-总</strong>结构</p>
+<ul>
+<li>提出问题-&gt;分析问题-&gt;解决问题-&gt;总结经验，技术问题分享。</li>
+<li>背景-&gt;思考-&gt;尝试-&gt;遇到的困难-&gt;解决方案-&gt;最后结果，问题分享</li>
+<li>摘要-&gt;简介-&gt;分支主题-&gt;总结，一般技术分享。</li>
+<li>是什么-原理-背景&gt;解决了什么问题-&gt;基本操作-&gt;同类对比-&gt;总结 ，适合新技术分享</li>
+</ul>
+<p>参考的目录结构如下，以markdown格式的代码块展示,这里<code>//</code>及其后面的内容代表注释</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 简介    </span></span><br><span class="line"><span class="section"># 一、准备工作 //一些环境配置，安装等，或者是解决问题的背景等</span></span><br><span class="line"><span class="section">## 1.centos安装  //以数字的形式合理分级，建议标题的层级不要超过四层</span></span><br><span class="line"><span class="section">## 2.idea解包</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 二、基本用法 //对于技术文章就像是语法书，对于问题就是发现问题，分析问题，</span></span><br><span class="line"><span class="section">## 1. 对页面的操作</span></span><br><span class="line"><span class="section">## 2. 1 初始化浏览器对象</span></span><br><span class="line"><span class="section">## 2. 2</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 三、高阶用法  //或者是多个解决方案</span></span><br><span class="line"><span class="section"># 总结  //对技术或者过程的总结，建议不要太长</span></span><br><span class="line"><span class="section"># 参考  //把你写作过程中参考的资料，或者是推荐的链接放在这里，便于读者后续学习</span></span><br><span class="line"><span class="section"># 开源协议  //如果使用的是hexo或者其他博客网站，撰写博客的时候会自动生成，不需要自己写</span></span><br></pre></td></tr></table></figure>
+<h3 id="标题">标题</h3>
+<p>取标题要注意几点</p>
+<ol>
+<li><strong>简洁直观</strong>：不仅仅是利于搜索引擎优化，更多的是便于读者和自己，读者可以通过标题判断博客的信息对于自己是否有效，作者可以根据标题了解自己博客的侧重方面。<strong>不要被国内电商式的标题所蒙蔽</strong>(比如“爆肝……”“震惊，百大up主齐聚一堂竟然是为……”)，虽然能带来流量，但是作者不太建议，这种标题就显得作者没有真才实学，只能靠眼球吸引读者，</li>
+<li><strong>关键词</strong>：标题一定要包含文章的高频词或者是重点词语，比如如果你写的是有关MySQL的学习知识分享，那么关键字就是“MySQL”，可能有“教程”等其他关键词，再用适当的句子结构(问句、陈述句等)将其组合为标题。比如组合为”MySQL学习指南(一)“</li>
+</ol>
+<p><strong>特殊</strong>:所有<strong>系列文章</strong>(比如MySQL学习笔记)的标题要一致，<strong>相关的</strong>可以不一致。标题+XX:XX为数字，不满两位用0替代;比如mysql01;标题+(序数词):比如mysql学习(一)</p>
+<h3 id="简介">简介</h3>
+<p>文章的标题和简要介绍一下文章，要解决的是什么问题</p>
+<p><strong>示例</strong>：Selenium是广泛使用的模拟浏览器运行的库，它是一个用于Web应用程序测试的工具。 Selenium测试直接运行在浏览器中，就像真正的用户在操作一样，并且支持大多数现代 Web 浏览器。下面就进入正式的学习阶段。</p>
+<h3 id="文章主体">文章主体</h3>
+<p>以下主要侧重于排版。</p>
+<ol>
+<li>段落：建议不要太长，最好保持在300字以内</li>
+<li>字体效果：用黑体强调重要词汇，用斜体或者下划线强调重要段落</li>
+<li>列表：恰当使用无序和有序列表，对于超过10个点的列表建议使用markdown里面的表格</li>
+<li>图片：如果图片能便于读者理解，减少文字量，可以使用。</li>
+<li>代码块：建议默认收起或者收缩，需要的时候读者点击即可全部展开。指明代码块对应的编程语言，不是的话要提前说明</li>
+<li>分割线：建议用在两个一级标题或者是两段长段落之间。</li>
+</ol>
+<p>注意事项</p>
+<ol>
+<li>所有的代码至少要在自己的电脑上或者对应的运行环境上运行，否则不写</li>
+<li>不易理解或者抽象的地方要用图解释，可以是GIF动图制作也可以是chartjs、echart等，注意不要泄漏私人信息。</li>
+<li>模棱两可或者自己不懂的不要轻易写，写的话注意叠甲。</li>
+</ol>
+<h2 id="超文本内容">超文本内容</h2>
+<p>这一部分主要涉及前端的特性，属于是锦上添花的内容，即使没有也不是特别影响文章的质量，就算《资本论》只有文字，也无可争议是最伟大的鸿篇巨著之一。</p>
+<p>常用的类型有：图片、动画(gif等)、视频、音频、表情、标签外挂、图标、链接等。</p>
+<h3 id="图表">图表</h3>
+<ol>
+<li><a href="https://excalidraw.com/">Excalidraw</a>：手绘风格的开源工具，适合绘制思维导图、流程图等。</li>
+</ol>
+<p><img src="https://s2.loli.net/2024/11/26/lvhXLijoyQYUnkb.png" alt="博客写作指南_01"></p>
+<ol start="2">
+<li><a href="https://mermaid.nodejs.cn/">Mermaid 中文网</a>：基于 Markdown 的流程图工具，可以生成流程图、时序图等。或者也可以使用<a href="https://app.diagrams.net/">draw.io</a>。主要侧重于计算机方面的知识图表，常用于UML统一建模语言。</li>
+</ol>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop HealthCheck
+        John-&gt;&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
+    John--&gt;&gt;Alice: Great!
+    John-&gt;&gt;Bob: How about you?
+    Bob--&gt;&gt;John: Jolly good!
+
+  </pre></div>
+<ol start="3">
+<li><a href="https://chartjs.cn/docs/latest/">Chart.js 中文网</a>：是一个用于创建动态图表的 JavaScript 库，适合做一些比较复杂的数据分析图。</li>
+</ol>
+<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
+            <pre class="chartjs-src" hidden>{
+    &quot;type&quot;: &quot;pie&quot;,
+    &quot;data&quot;: {
+        &quot;labels&quot;: [
+            &quot;编程&quot;,
+            &quot;音乐&quot;,
+            &quot;阅读&quot;,
+            &quot;游戏&quot;,
+            &quot;健身&quot;,
+            &quot;旅游&quot;
+        ],
+        &quot;datasets&quot;: [
+            {
+                &quot;label&quot;: &quot;喜爱指数&quot;,
+                &quot;data&quot;: [
+                    30,
+                    24,
+                    19,
+                    14,
+                    9,
+                    4
+                ],
+                &quot;backgroundColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.5)&quot;,
+                        &quot;rgba(54, 162, 235, 0.5)&quot;,
+                        &quot;rgba(255, 206, 86, 0.5)&quot;,
+                        &quot;rgba(75, 192, 192, 0.5)&quot;,
+                        &quot;rgba(153, 102, 255, 0.5)&quot;,
+                        &quot;rgba(255, 159, 64, 0.5)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.2)&quot;,
+                        &quot;rgba(54, 162, 235, 0.2)&quot;,
+                        &quot;rgba(255, 206, 86, 0.2)&quot;,
+                        &quot;rgba(75, 192, 192, 0.2)&quot;,
+                        &quot;rgba(153, 102, 255, 0.2)&quot;,
+                        &quot;rgba(255, 159, 64, 0.2)&quot;
+                    ]
+                },
+                &quot;borderColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ]
+                }
+            }
+        ]
+    },
+    &quot;options&quot;: {
+        &quot;plugins&quot;: {
+            &quot;legend&quot;: {
+                &quot;labels&quot;: {
+                    &quot;color&quot;: {
+                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
+                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
+                    }
+                }
+            }
+        }
+    }
+}
+</pre>
+            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
+我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
+在此过程中也解决了无数的小谜团。<br>
+<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
+I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
+Countless small mysteries are also solved in the process.</span></p></div>
+          </div>
+<h3 id="视频">视频</h3>
+<ol>
+<li>B站引用：打开网页版的bilibili，点击要分享的视频-“分享”-“嵌入代码”，然后粘贴到markdown文件内即可。参考如下</li>
+</ol>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
+    </iframe>
+</div>
+<h3 id="公式">公式</h3>
+<p>建议使用katex，或者是markdown本地的公式嵌入。</p>
+<p>参考教程<a href="https://freeopen.github.io/mathjax/">Markdown 数学公式指导手册 | Freeopen</a></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sin^2(\theta) + \cos^2(\theta) = 1
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1219em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8719em;"><span style="top:-3.1208em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">cos</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></p>
+<h3 id="表情符号">表情符号</h3>
+<ol>
+<li><a href="https://www.lddgo.net/common/emoticons">在线颜文字大全</a> ：与markdown兼容，基本不会有不显示等问题</li>
+<li><a href="https://www.emojiall.com/zh-hans/categories/A">表情包</a> ：注意typora的表情(格式为<code>:表情</code>)无法在hexo显示，所以只能用图片替代表情</li>
+<li><a href="https://fontawesome.com/v4/icons/">图标</a>：适当的图标可以让人记忆犹新，见图思义。</li>
+</ol>
+<h3 id="交互式的组件">交互式的组件</h3>
+<p>比如butterfly中的button、图床等，由于不同的博客引擎涉及的组件不同，这里就不展开。建议读者不要舍本逐末，过度美化而忽视文章的内容。</p>
+<h2 id="总结与参考">总结与参考</h2>
+<ul>
+<li>
+<p>用一段话给文章内容作总结。</p>
+</li>
+<li>
+<p><strong>参考</strong>要注明来源，比如链接、转载出处，注意定期更新以防失效。</p>
+</li>
+</ul>
+<h1>参考</h1>
+<ol>
+<li><a href="https://www.cnblogs.com/returntmp/p/17591866.html">【全方位解析】如何写好技术文章 - ReturnTmp - 博客园</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客系列(一)测试与更新</title>
+    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<h1>hexo博客更新和待更新计划</h1>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法与经验</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
+<p>以下更新内容都是从最后一次更新开始的</p>
+</blockquote>
+<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2024</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>11-9</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>在网页/privacy下添加了隐私用户政策</li>
+</ol>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-29</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>修复了手机端视频溢出显示部分的问题</li>
+<li>修改了几处笔误和显示问题。</li>
+<li>优化了所有博客的参考部分</li>
+</ol>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-26</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>butterfly主题从5.0.0更新到5.1.0版本</li>
+<li>优化了chart插件</li>
+<li>更新了一篇新博客</li>
+</ol>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-10</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>butterfly主题从4.13.0更新到5.0.0版本</li>
+<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
+<li>更新了留言板</li>
+<li>优化了搜索功能</li>
+<li>禁止B站视频自动播放</li>
+<li>更新了主页“关于”部分</li>
+<li>修复了几处笔误的问题</li>
+<li>优化了评论功能的选择</li>
+<li>添加了站点工具(谷歌与必应)，优化了文章的描述部分</li>
+<li>优化一下图片无法放大查看的问题</li>
+</ol>
+</div></div></div></div><div class="tab-item-content"><ol>
+<li>子菜单展示内容；方法：通过基本的markdown语言和butterfly专有语法-标签外挂实现效果，建议写成总领式的文章或者展示页面。可以参考此博客<a href="https://blog.guole.fun/posts/butterfly-custom/#%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E8%BD%AE%E6%92%AD%E6%A8%A1%E5%9D%97">我的Blog美化日记——Hexo+Butterfly | Guo Le’s Blog</a> 里面的“volantis”部分，和这个<code>[Hexo Built-in Tag Plugins (Hexo内置标签外挂) | Ofra Serendipity](https://www.huangshiqing.website/2022/11/03/HexoTagPlugins/)</code></li>
+<li>添加一下赞助墙</li>
+<li>更新算法相关博客并添加数学动画视频或者是算法演示动画</li>
+<li>学习并在博客中添加图表-对于本网站以chartjs的图表为主，涉及UML就用Mermaid,对于精致的图表(比如数据分析)才会用Echart.</li>
+<li>考虑21cloudbox或者阿里云等托管平台部署网站，实在不行就用域名+CDN的方式让游客能间接访问我的github.io网站。</li>
+<li>如果托管平台不负责，就早日申请SSL证书、域名绑定(可选)和完成网站备案，参考网站<a href="https://xuezenghui.com/posts/hexo-deploy-to-netlify/">将 Hexo 博客部署至 Netlify | Zander Hsueh</a>  域名申请<a href="https://tech.yemengstar.com/hexo-tutorial-use-your-domain-beginner/">为HEXO绑定自己的域名</a></li>
+</ol></div><div class="tab-item-content"><h2 id="debug经验">debug经验</h2>
+<p>目前由于butterfly的版本更新，导致以前的部分功能失效，建议<strong>先看官方文档，将对应过时的代码注释或者去除，没有的代码添加</strong>，然后再<strong>根据</strong>F12检查对应的板块，<strong>用前端的知识去搜查问题发生的地点和原因</strong>，然后再纠错。</p>
+<h2 id="hexo框架更新">hexo框架更新</h2>
+<p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
+<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
+<h2 id="butterfly主题更新">butterfly主题更新</h2>
+<blockquote>
+<p>更新前记得留下blog快照</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
+<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
+<p>如果不行，就在你的博客/themes/butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
+<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h2 id="个人hexo博客更新讲解">个人hexo博客更新讲解</h2>
+<p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
+<p>示例代码如下</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
+<p><strong>评论功能</strong>：我设置的是twikoo静态评论控制+Valine评论。</p>
+<p><strong>文章置顶功能</strong>：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考<code>梁圣磊の博客</code></p>
+<p><strong>文章加密功能</strong>：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">参考链接</a> 也许以后添加。</p>
+<p><strong>博客撰写</strong>：</p>
+<ol>
+<li>hexo会自动给分级标题编号，不需要自己添加</li>
+<li><u>不要给标点符号加标签或者是特性</u>，容易出现显示问题。</li>
+</ol>
+<p><strong>磁贴功能</strong>：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
+<p><strong>同步问题</strong>：在zeabur的部署大概会间隔一天左右才会同步上。</p>
+<p><strong>图片方面</strong></p>
+<ul>
+<li>
+<p>方法1：通过picgo图床实现图片上传。参考<a href="https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c">Typora+PicGo+阿里云OSS实现云笔记|Typora上传图片</a></p>
+</li>
+<li>
+<p>方法2-本地上传图片：参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用。如果部署到zeabur的博客图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。</p>
+</li>
+<li>
+<p>方法3：使用其他的图床网站如<a href="https://smms.app/">SMMS</a>。上传图片后，点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。<strong>博主因为部署的原因绝大多数图片都使用此方法</strong>，如果读者只使用github page作为网站托管平台那么三个方法都可以用。</p>
+</li>
+</ul>
+<p><strong>音乐</strong></p>
+<ol>
+<li>我使用的是网易云的平台，如果要修改就在自己的那个歌单修改就行了。</li>
+</ol>
+<p><strong>导航栏设置</strong>：在<code>_config.butterfly.yml</code> 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class= &quot; 复制这里的内容&quot; 替代即可。</p>
+<p><strong>系列文章</strong>：在文章的 front-matter 上添加参数 series，并给予一個标签</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="测试">测试</h2>
+<h3 id="测试图片">测试图片</h3>
+<p><strong>阿里云图片测试</strong></p>
+<p>得出结论，在github.io上无法显示。</p>
+<p><code>https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-imggame_menu.png</code></p>
+<p><strong>本地图片测试</strong></p>
+<p>由于github镜像源限制的问题，<strong>不推荐站主们使用github作为文件或者是图片的镜像源，而是使用比较正规的托管平台或者图片上传平台</strong>。</p>
+<p><strong>标签外挂测试图片</strong></p>
+<div class="gallery-container" data-type="data" data-button>
+      <div class="gallery-items">[{"url":"https://s2.loli.net/2024/06/14/4RrcPzbG3fsqyC6.png","alt":"3.png"}]</div>
+    </div>
+<p><strong>图床图片测试</strong></p>
+<p><img src="https://s2.loli.net/2024/10/24/MQ6gGn4LtBDyduJ.png" alt="苍之彼方的四重奏.png"></p>
+<h3 id="测试系列文章">测试系列文章</h3>
+<ol class="series-items"><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/" title="hexo博客系列(一)测试与更新">hexo博客系列(一)测试与更新</a></li><li><a href="/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/" title="hexo博客系列(三)博客写作指南">hexo博客系列(三)博客写作指南</a></li><li><a href="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/" title="hexo博客系列(二)博客创建指南">hexo博客系列(二)博客创建指南</a></li></ol>
+<h3 id="标签外挂测试">标签外挂测试</h3>
+<blockquote>
+<p>本以下基于hexo+butterfly的主题，其他的主题请读者自行查阅有关资料</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文檔(四) 標簽外挂 | Butterfly</a></p>
+<ol>
+<li>Note (Bootstrap Callout)</li>
+</ol>
+<p>个人使用，感觉比较适合知识的分层结构，比如我博客里面的《英语语法(英语兔版)》</p>
+<ol start="2">
+<li>tag-hide</li>
+</ol>
+<p>个人感觉比较适合于问答类型或者是部分内容较多，需要的时候再展开的文章内容。测试如下</p>
+<p><strong>Block测试</strong></p>
+<p>查看答案</p>
+<div class="hide-block"><button type="button" class="hide-button" style>查看答案
+    </button><div class="hide-content"><p>答案就在你心中</p>
+</div></div>
+<p><strong>Toggle测试</strong></p>
+<details class="toggle"><summary class="toggle-button" style>Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
+<p><code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</code></p>
+<p>如果想要安裝比較新的 dev 分支，可以</p>
+<p><code>git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</code></p>
+</div></details>
+<p><strong>Mermaid测试</strong></p>
+<p>这是和图表有关的标签，可以画流程图，时序图等</p>
+<p>注意要先写<code>&#123;% mermaid %&#125; &#123;% endmermaid %&#125;</code> 然后就在这两个标签内写相关代码。</p>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop HealthCheck
+        John-&gt;&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
+    John--&gt;&gt;Alice: Great!
+    John-&gt;&gt;Bob: How about you?
+    Bob--&gt;&gt;John: Jolly good!
+
+  </pre></div>
+<p><strong>乐谱测试</strong></p>
+<div class="abc-music-sheet">X:1
+T:alternate heads
+M:C
+L:1/8
+U:n=!style=normal!
+K:C treble style=rhythm
+&quot;Am&quot; BBBB B2 B&gt;B | &quot;Dm&quot; B2 B/B/B &quot;C&quot; B4 |&quot;Am&quot; B2 nGnB B2 nGnA | &quot;Dm&quot; nDB/B/ nDB/B/ &quot;C&quot; nCB/B/ nCB/B/ |B8| B0 B0 B0 B0 |]
+%%text This translates to:
+[M:C][K:style=normal]
+[A,EAce][A,EAce][A,EAce][A,EAce] [A,EAce]2 [A,EAce]&gt;[A,EAce] |[DAdf]2 [DAdf]/[DAdf]/[DAdf] [CEGce]4 |[A,EAce]2 GA [A,EAce] GA |D[DAdf]/[DAdf]/ D[DAdf]/[DAdf]/ C [CEGce]/[CEGce]/ C[CEGce]/[CEGce]/ |[CEGce]8 | [CEGce]2 [CEGce]2 [CEGce]2 [CEGce]2 |]
+GAB2 !style=harmonic![gb]4|GAB2 [K: style=harmonic]gbgb|
+[K: style=x]
+C/A,/ C/C/E C/zz2|
+w:Rock-y did-nt like that</div>
+<p><strong>测试自带的chartjs</strong>——可以实现动态效果，建议使用。</p>
+<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
+            <pre class="chartjs-src" hidden>{
+    &quot;type&quot;: &quot;pie&quot;,
+    &quot;data&quot;: {
+        &quot;labels&quot;: [
+            &quot;编程&quot;,
+            &quot;音乐&quot;,
+            &quot;阅读&quot;,
+            &quot;游戏&quot;,
+            &quot;健身&quot;,
+            &quot;旅游&quot;
+        ],
+        &quot;datasets&quot;: [
+            {
+                &quot;label&quot;: &quot;喜爱指数&quot;,
+                &quot;data&quot;: [
+                    30,
+                    24,
+                    19,
+                    14,
+                    9,
+                    4
+                ],
+                &quot;backgroundColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.5)&quot;,
+                        &quot;rgba(54, 162, 235, 0.5)&quot;,
+                        &quot;rgba(255, 206, 86, 0.5)&quot;,
+                        &quot;rgba(75, 192, 192, 0.5)&quot;,
+                        &quot;rgba(153, 102, 255, 0.5)&quot;,
+                        &quot;rgba(255, 159, 64, 0.5)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.2)&quot;,
+                        &quot;rgba(54, 162, 235, 0.2)&quot;,
+                        &quot;rgba(255, 206, 86, 0.2)&quot;,
+                        &quot;rgba(75, 192, 192, 0.2)&quot;,
+                        &quot;rgba(153, 102, 255, 0.2)&quot;,
+                        &quot;rgba(255, 159, 64, 0.2)&quot;
+                    ]
+                },
+                &quot;borderColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ]
+                }
+            }
+        ]
+    },
+    &quot;options&quot;: {
+        &quot;plugins&quot;: {
+            &quot;legend&quot;: {
+                &quot;labels&quot;: {
+                    &quot;color&quot;: {
+                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
+                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
+                    }
+                }
+            }
+        }
+    }
+}
+</pre>
+            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
+我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
+在此过程中也解决了无数的小谜团。<br>
+<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
+I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
+Countless small mysteries are also solved in the process.</span></p></div>
+          </div>
+<p><strong>tab演示</strong></p>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<p><strong>按钮button测试</strong></p>
+<div class="btn-center">
+<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+</div>
+<p><strong>文字高亮</strong></p>
+<mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
+<mark class="hl-label red">红色</mark>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>blog</tag>
+        <tag>测试</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL学习笔记(一)基础篇</title>
     <url>/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%E5%9F%BA%E7%A1%80%E7%AF%87/</url>
     <content><![CDATA[<blockquote>
@@ -3798,479 +4271,6 @@ where与having区别</p>
       </tags>
   </entry>
   <entry>
-    <title>hexo博客系列(一)测试与更新</title>
-    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/</url>
-    <content><![CDATA[<h1>hexo博客更新和待更新计划</h1>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法与经验</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
-<p>以下更新内容都是从最后一次更新开始的</p>
-</blockquote>
-<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2024</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>11-9</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>在网页/privacy下添加了隐私用户政策</li>
-</ol>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-29</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>修复了手机端视频溢出显示部分的问题</li>
-<li>修改了几处笔误和显示问题。</li>
-<li>优化了所有博客的参考部分</li>
-</ol>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-26</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>butterfly主题从5.0.0更新到5.1.0版本</li>
-<li>优化了chart插件</li>
-<li>更新了一篇新博客</li>
-</ol>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-10</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>butterfly主题从4.13.0更新到5.0.0版本</li>
-<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
-<li>更新了留言板</li>
-<li>优化了搜索功能</li>
-<li>禁止B站视频自动播放</li>
-<li>更新了主页“关于”部分</li>
-<li>修复了几处笔误的问题</li>
-<li>优化了评论功能的选择</li>
-<li>添加了站点工具(谷歌与必应)，优化了文章的描述部分</li>
-<li>优化一下图片无法放大查看的问题</li>
-</ol>
-</div></div></div></div><div class="tab-item-content"><ol>
-<li>子菜单展示内容；方法：通过基本的markdown语言和butterfly专有语法-标签外挂实现效果，建议写成总领式的文章或者展示页面。可以参考此博客<a href="https://blog.guole.fun/posts/butterfly-custom/#%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E8%BD%AE%E6%92%AD%E6%A8%A1%E5%9D%97">我的Blog美化日记——Hexo+Butterfly | Guo Le’s Blog</a> 里面的“volantis”部分，和这个<code>[Hexo Built-in Tag Plugins (Hexo内置标签外挂) | Ofra Serendipity](https://www.huangshiqing.website/2022/11/03/HexoTagPlugins/)</code></li>
-<li>添加一下赞助墙</li>
-<li>更新算法相关博客并添加数学动画视频或者是算法演示动画</li>
-<li>学习并在博客中添加图表-对于本网站以chartjs的图表为主，涉及UML就用Mermaid,对于精致的图表(比如数据分析)才会用Echart.</li>
-<li>考虑21cloudbox或者阿里云等托管平台部署网站，实在不行就用域名+CDN的方式让游客能间接访问我的github.io网站。</li>
-<li>如果托管平台不负责，就早日申请SSL证书、域名绑定(可选)和完成网站备案，参考网站<a href="https://xuezenghui.com/posts/hexo-deploy-to-netlify/">将 Hexo 博客部署至 Netlify | Zander Hsueh</a>  域名申请<a href="https://tech.yemengstar.com/hexo-tutorial-use-your-domain-beginner/">为HEXO绑定自己的域名</a></li>
-</ol></div><div class="tab-item-content"><h2 id="debug经验">debug经验</h2>
-<p>目前由于butterfly的版本更新，导致以前的部分功能失效，建议<strong>先看官方文档，将对应过时的代码注释或者去除，没有的代码添加</strong>，然后再<strong>根据</strong>F12检查对应的板块，<strong>用前端的知识去搜查问题发生的地点和原因</strong>，然后再纠错。</p>
-<h2 id="hexo框架更新">hexo框架更新</h2>
-<p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
-<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
-<h2 id="butterfly主题更新">butterfly主题更新</h2>
-<blockquote>
-<p>更新前记得留下blog快照</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
-<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
-<p>如果不行，就在你的博客/themes/butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
-<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-<h2 id="个人hexo博客更新讲解">个人hexo博客更新讲解</h2>
-<p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
-<p>示例代码如下</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
-<p><strong>评论功能</strong>：我设置的是twikoo静态评论控制+Valine评论。</p>
-<p><strong>文章置顶功能</strong>：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考<code>梁圣磊の博客</code></p>
-<p><strong>文章加密功能</strong>：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">参考链接</a> 也许以后添加。</p>
-<p><strong>博客撰写</strong>：</p>
-<ol>
-<li>hexo会自动给分级标题编号，不需要自己添加</li>
-<li><u>不要给标点符号加标签或者是特性</u>，容易出现显示问题。</li>
-</ol>
-<p><strong>磁贴功能</strong>：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
-<p><strong>同步问题</strong>：在zeabur的部署大概会间隔一天左右才会同步上。</p>
-<p><strong>图片方面</strong></p>
-<ul>
-<li>
-<p>方法1：通过picgo图床实现图片上传。参考<a href="https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c">Typora+PicGo+阿里云OSS实现云笔记|Typora上传图片</a></p>
-</li>
-<li>
-<p>方法2-本地上传图片：参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用。如果部署到zeabur的博客图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。</p>
-</li>
-<li>
-<p>方法3：使用其他的图床网站如<a href="https://smms.app/">SMMS</a>。上传图片后，点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。<strong>博主因为部署的原因绝大多数图片都使用此方法</strong>，如果读者只使用github page作为网站托管平台那么三个方法都可以用。</p>
-</li>
-</ul>
-<p><strong>音乐</strong></p>
-<ol>
-<li>我使用的是网易云的平台，如果要修改就在自己的那个歌单修改就行了。</li>
-</ol>
-<p><strong>导航栏设置</strong>：在<code>_config.butterfly.yml</code> 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class= &quot; 复制这里的内容&quot; 替代即可。</p>
-<p><strong>系列文章</strong>：在文章的 front-matter 上添加参数 series，并给予一個标签</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="测试">测试</h2>
-<h3 id="测试图片">测试图片</h3>
-<p><strong>阿里云图片测试</strong></p>
-<p>得出结论，在github.io上无法显示。</p>
-<p><code>https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-imggame_menu.png</code></p>
-<p><strong>本地图片测试</strong></p>
-<p>由于github镜像源限制的问题，<strong>不推荐站主们使用github作为文件或者是图片的镜像源，而是使用比较正规的托管平台或者图片上传平台</strong>。</p>
-<p><strong>标签外挂测试图片</strong></p>
-<div class="gallery-container" data-type="data" data-button>
-      <div class="gallery-items">[{"url":"https://s2.loli.net/2024/06/14/4RrcPzbG3fsqyC6.png","alt":"3.png"}]</div>
-    </div>
-<p><strong>图床图片测试</strong></p>
-<p><img src="https://s2.loli.net/2024/10/24/MQ6gGn4LtBDyduJ.png" alt="苍之彼方的四重奏.png"></p>
-<h3 id="测试系列文章">测试系列文章</h3>
-<ol class="series-items"><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/" title="hexo博客系列(一)测试与更新">hexo博客系列(一)测试与更新</a></li><li><a href="/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/" title="hexo博客系列(三)博客写作指南">hexo博客系列(三)博客写作指南</a></li><li><a href="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/" title="hexo博客系列(二)博客创建指南">hexo博客系列(二)博客创建指南</a></li></ol>
-<h3 id="标签外挂测试">标签外挂测试</h3>
-<blockquote>
-<p>本以下基于hexo+butterfly的主题，其他的主题请读者自行查阅有关资料</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文檔(四) 標簽外挂 | Butterfly</a></p>
-<ol>
-<li>Note (Bootstrap Callout)</li>
-</ol>
-<p>个人使用，感觉比较适合知识的分层结构，比如我博客里面的《英语语法(英语兔版)》</p>
-<ol start="2">
-<li>tag-hide</li>
-</ol>
-<p>个人感觉比较适合于问答类型或者是部分内容较多，需要的时候再展开的文章内容。测试如下</p>
-<p><strong>Block测试</strong></p>
-<p>查看答案</p>
-<div class="hide-block"><button type="button" class="hide-button" style>查看答案
-    </button><div class="hide-content"><p>答案就在你心中</p>
-</div></div>
-<p><strong>Toggle测试</strong></p>
-<details class="toggle"><summary class="toggle-button" style>Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
-<p><code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</code></p>
-<p>如果想要安裝比較新的 dev 分支，可以</p>
-<p><code>git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</code></p>
-</div></details>
-<p><strong>Mermaid测试</strong></p>
-<p>这是和图表有关的标签，可以画流程图，时序图等</p>
-<p>注意要先写<code>&#123;% mermaid %&#125; &#123;% endmermaid %&#125;</code> 然后就在这两个标签内写相关代码。</p>
-<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
-  
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop HealthCheck
-        John-&gt;&gt;John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
-    John--&gt;&gt;Alice: Great!
-    John-&gt;&gt;Bob: How about you?
-    Bob--&gt;&gt;John: Jolly good!
-
-  </pre></div>
-<p><strong>乐谱测试</strong></p>
-<div class="abc-music-sheet">X:1
-T:alternate heads
-M:C
-L:1/8
-U:n=!style=normal!
-K:C treble style=rhythm
-&quot;Am&quot; BBBB B2 B&gt;B | &quot;Dm&quot; B2 B/B/B &quot;C&quot; B4 |&quot;Am&quot; B2 nGnB B2 nGnA | &quot;Dm&quot; nDB/B/ nDB/B/ &quot;C&quot; nCB/B/ nCB/B/ |B8| B0 B0 B0 B0 |]
-%%text This translates to:
-[M:C][K:style=normal]
-[A,EAce][A,EAce][A,EAce][A,EAce] [A,EAce]2 [A,EAce]&gt;[A,EAce] |[DAdf]2 [DAdf]/[DAdf]/[DAdf] [CEGce]4 |[A,EAce]2 GA [A,EAce] GA |D[DAdf]/[DAdf]/ D[DAdf]/[DAdf]/ C [CEGce]/[CEGce]/ C[CEGce]/[CEGce]/ |[CEGce]8 | [CEGce]2 [CEGce]2 [CEGce]2 [CEGce]2 |]
-GAB2 !style=harmonic![gb]4|GAB2 [K: style=harmonic]gbgb|
-[K: style=x]
-C/A,/ C/C/E C/zz2|
-w:Rock-y did-nt like that</div>
-<p><strong>测试自带的chartjs</strong>——可以实现动态效果，建议使用。</p>
-<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
-            <pre class="chartjs-src" hidden>{
-    &quot;type&quot;: &quot;pie&quot;,
-    &quot;data&quot;: {
-        &quot;labels&quot;: [
-            &quot;编程&quot;,
-            &quot;音乐&quot;,
-            &quot;阅读&quot;,
-            &quot;游戏&quot;,
-            &quot;健身&quot;,
-            &quot;旅游&quot;
-        ],
-        &quot;datasets&quot;: [
-            {
-                &quot;label&quot;: &quot;喜爱指数&quot;,
-                &quot;data&quot;: [
-                    30,
-                    24,
-                    19,
-                    14,
-                    9,
-                    4
-                ],
-                &quot;backgroundColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.5)&quot;,
-                        &quot;rgba(54, 162, 235, 0.5)&quot;,
-                        &quot;rgba(255, 206, 86, 0.5)&quot;,
-                        &quot;rgba(75, 192, 192, 0.5)&quot;,
-                        &quot;rgba(153, 102, 255, 0.5)&quot;,
-                        &quot;rgba(255, 159, 64, 0.5)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.2)&quot;,
-                        &quot;rgba(54, 162, 235, 0.2)&quot;,
-                        &quot;rgba(255, 206, 86, 0.2)&quot;,
-                        &quot;rgba(75, 192, 192, 0.2)&quot;,
-                        &quot;rgba(153, 102, 255, 0.2)&quot;,
-                        &quot;rgba(255, 159, 64, 0.2)&quot;
-                    ]
-                },
-                &quot;borderColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ]
-                }
-            }
-        ]
-    },
-    &quot;options&quot;: {
-        &quot;plugins&quot;: {
-            &quot;legend&quot;: {
-                &quot;labels&quot;: {
-                    &quot;color&quot;: {
-                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
-                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
-                    }
-                }
-            }
-        }
-    }
-}
-</pre>
-            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
-我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
-在此过程中也解决了无数的小谜团。<br>
-<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
-I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
-Countless small mysteries are also solved in the process.</span></p></div>
-          </div>
-<p><strong>tab演示</strong></p>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-<p><strong>按钮button测试</strong></p>
-<div class="btn-center">
-<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-</div>
-<p><strong>文字高亮</strong></p>
-<mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
-<mark class="hl-label red">红色</mark>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>blog</tag>
-        <tag>测试</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客系列(三)博客写作指南</title>
-    <url>/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1>简介</h1>
-<p>在撰写博客的过程中，内容至关重要但不是唯一重要的因素，排版、图片、交互体验等视觉设计也同样需要关注。一个设计精美、易于阅读的博客会吸引更多读者，提升用户体验。本文将为你提供一套完整的 markdown 博客创作指南，从实战的角度帮助你写出既有深度又美观的博客文章。</p>
-<h1>准备工具</h1>
-<h2 id="写作工具">写作工具</h2>
-<p>个人比较推崇<strong>Typora</strong>这种简洁的支持<strong>markdown</strong>格式的编辑器，相比之下，obsidian的布局不利于专注于写作，notion的自定义布局和数据库这两大突出优势在markdown格式下会有损失，vscode依赖于插件。</p>
-<p>总之就是一句话:</p>
-<blockquote>
-<p>能让你心无旁骛地去写的编辑器就是最好的</p>
-</blockquote>
-<h2 id="博客引擎">博客引擎</h2>
-<p>本文基于hexo+butterfly的主题进行博客创作，但读者无须担心，博客创作更多的在于<strong>文章结构</strong>、<strong>词句修辞</strong>、<strong>排版和可读性</strong>方面下功夫，其他方面依赖博客引擎和前端特性的并不多，读者可以在CSDN、博客园、掘金社区等其他地方同样可以撰写和托管博客。</p>
-<h1>博客撰写讲解</h1>
-<h2 id="目录结构">目录结构</h2>
-<p>好的目录结构要梳理文章逻辑，如果是<strong>新闻热点点评类</strong>，就要能讲清楚事件发生的时间地点人物，发生原因及其分析，结论、启示或者经验教训；如果是<strong>技术分享类</strong>，就要说明技术的应用范围，原理，怎样配置技术所需的环境，阐明使用技术的效果等。这方面主要靠读者多看技术大佬的博客、优秀的公众号推文等，看他们的目录是如何区分的，只要能达到<strong>行云流水</strong>的效果就行，不需要在分级、格式方面过于讲究。</p>
-<p>可供参考的文章结构：大部分都是<strong>总-分-总</strong>结构</p>
-<ul>
-<li>提出问题-&gt;分析问题-&gt;解决问题-&gt;总结经验，技术问题分享。</li>
-<li>背景-&gt;思考-&gt;尝试-&gt;遇到的困难-&gt;解决方案-&gt;最后结果，问题分享</li>
-<li>摘要-&gt;简介-&gt;分支主题-&gt;总结，一般技术分享。</li>
-<li>是什么-原理-背景&gt;解决了什么问题-&gt;基本操作-&gt;同类对比-&gt;总结 ，适合新技术分享</li>
-</ul>
-<p>参考的目录结构如下，以markdown格式的代码块展示,这里<code>//</code>及其后面的内容代表注释</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 简介    </span></span><br><span class="line"><span class="section"># 一、准备工作 //一些环境配置，安装等，或者是解决问题的背景等</span></span><br><span class="line"><span class="section">## 1.centos安装  //以数字的形式合理分级，建议标题的层级不要超过四层</span></span><br><span class="line"><span class="section">## 2.idea解包</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 二、基本用法 //对于技术文章就像是语法书，对于问题就是发现问题，分析问题，</span></span><br><span class="line"><span class="section">## 1. 对页面的操作</span></span><br><span class="line"><span class="section">## 2. 1 初始化浏览器对象</span></span><br><span class="line"><span class="section">## 2. 2</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 三、高阶用法  //或者是多个解决方案</span></span><br><span class="line"><span class="section"># 总结  //对技术或者过程的总结，建议不要太长</span></span><br><span class="line"><span class="section"># 参考  //把你写作过程中参考的资料，或者是推荐的链接放在这里，便于读者后续学习</span></span><br><span class="line"><span class="section"># 开源协议  //如果使用的是hexo或者其他博客网站，撰写博客的时候会自动生成，不需要自己写</span></span><br></pre></td></tr></table></figure>
-<h3 id="标题">标题</h3>
-<p>取标题要注意几点</p>
-<ol>
-<li><strong>简洁直观</strong>：不仅仅是利于搜索引擎优化，更多的是便于读者和自己，读者可以通过标题判断博客的信息对于自己是否有效，作者可以根据标题了解自己博客的侧重方面。<strong>不要被国内电商式的标题所蒙蔽</strong>(比如“爆肝……”“震惊，百大up主齐聚一堂竟然是为……”)，虽然能带来流量，但是作者不太建议，这种标题就显得作者没有真才实学，只能靠眼球吸引读者，</li>
-<li><strong>关键词</strong>：标题一定要包含文章的高频词或者是重点词语，比如如果你写的是有关MySQL的学习知识分享，那么关键字就是“MySQL”，可能有“教程”等其他关键词，再用适当的句子结构(问句、陈述句等)将其组合为标题。比如组合为”MySQL学习指南(一)“</li>
-</ol>
-<p><strong>特殊</strong>:所有<strong>系列文章</strong>(比如MySQL学习笔记)的标题要一致，<strong>相关的</strong>可以不一致。标题+XX:XX为数字，不满两位用0替代;比如mysql01;标题+(序数词):比如mysql学习(一)</p>
-<h3 id="简介">简介</h3>
-<p>文章的标题和简要介绍一下文章，要解决的是什么问题</p>
-<p><strong>示例</strong>：Selenium是广泛使用的模拟浏览器运行的库，它是一个用于Web应用程序测试的工具。 Selenium测试直接运行在浏览器中，就像真正的用户在操作一样，并且支持大多数现代 Web 浏览器。下面就进入正式的学习阶段。</p>
-<h3 id="文章主体">文章主体</h3>
-<p>以下主要侧重于排版。</p>
-<ol>
-<li>段落：建议不要太长，最好保持在300字以内</li>
-<li>字体效果：用黑体强调重要词汇，用斜体或者下划线强调重要段落</li>
-<li>列表：恰当使用无序和有序列表，对于超过10个点的列表建议使用markdown里面的表格</li>
-<li>图片：如果图片能便于读者理解，减少文字量，可以使用。</li>
-<li>代码块：建议默认收起或者收缩，需要的时候读者点击即可全部展开。指明代码块对应的编程语言，不是的话要提前说明</li>
-<li>分割线：建议用在两个一级标题或者是两段长段落之间。</li>
-</ol>
-<p>注意事项</p>
-<ol>
-<li>所有的代码至少要在自己的电脑上或者对应的运行环境上运行，否则不写</li>
-<li>不易理解或者抽象的地方要用图解释，可以是GIF动图制作也可以是chartjs、echart等，注意不要泄漏私人信息。</li>
-<li>模棱两可或者自己不懂的不要轻易写，写的话注意叠甲。</li>
-</ol>
-<h2 id="超文本内容">超文本内容</h2>
-<p>这一部分主要涉及前端的特性，属于是锦上添花的内容，即使没有也不是特别影响文章的质量，就算《资本论》只有文字，也无可争议是最伟大的鸿篇巨著之一。</p>
-<p>常用的类型有：图片、动画(gif等)、视频、音频、表情、标签外挂、图标、链接等。</p>
-<h3 id="图表">图表</h3>
-<ol>
-<li><a href="https://excalidraw.com/">Excalidraw</a>：手绘风格的开源工具，适合绘制思维导图、流程图等。</li>
-</ol>
-<p><img src="https://s2.loli.net/2024/11/26/lvhXLijoyQYUnkb.png" alt="博客写作指南_01"></p>
-<ol start="2">
-<li><a href="https://mermaid.nodejs.cn/">Mermaid 中文网</a>：基于 Markdown 的流程图工具，可以生成流程图、时序图等。或者也可以使用<a href="https://app.diagrams.net/">draw.io</a>。主要侧重于计算机方面的知识图表，常用于UML统一建模语言。</li>
-</ol>
-<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
-  
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop HealthCheck
-        John-&gt;&gt;John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
-    John--&gt;&gt;Alice: Great!
-    John-&gt;&gt;Bob: How about you?
-    Bob--&gt;&gt;John: Jolly good!
-
-  </pre></div>
-<ol start="3">
-<li><a href="https://chartjs.cn/docs/latest/">Chart.js 中文网</a>：是一个用于创建动态图表的 JavaScript 库，适合做一些比较复杂的数据分析图。</li>
-</ol>
-<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
-            <pre class="chartjs-src" hidden>{
-    &quot;type&quot;: &quot;pie&quot;,
-    &quot;data&quot;: {
-        &quot;labels&quot;: [
-            &quot;编程&quot;,
-            &quot;音乐&quot;,
-            &quot;阅读&quot;,
-            &quot;游戏&quot;,
-            &quot;健身&quot;,
-            &quot;旅游&quot;
-        ],
-        &quot;datasets&quot;: [
-            {
-                &quot;label&quot;: &quot;喜爱指数&quot;,
-                &quot;data&quot;: [
-                    30,
-                    24,
-                    19,
-                    14,
-                    9,
-                    4
-                ],
-                &quot;backgroundColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.5)&quot;,
-                        &quot;rgba(54, 162, 235, 0.5)&quot;,
-                        &quot;rgba(255, 206, 86, 0.5)&quot;,
-                        &quot;rgba(75, 192, 192, 0.5)&quot;,
-                        &quot;rgba(153, 102, 255, 0.5)&quot;,
-                        &quot;rgba(255, 159, 64, 0.5)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.2)&quot;,
-                        &quot;rgba(54, 162, 235, 0.2)&quot;,
-                        &quot;rgba(255, 206, 86, 0.2)&quot;,
-                        &quot;rgba(75, 192, 192, 0.2)&quot;,
-                        &quot;rgba(153, 102, 255, 0.2)&quot;,
-                        &quot;rgba(255, 159, 64, 0.2)&quot;
-                    ]
-                },
-                &quot;borderColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ]
-                }
-            }
-        ]
-    },
-    &quot;options&quot;: {
-        &quot;plugins&quot;: {
-            &quot;legend&quot;: {
-                &quot;labels&quot;: {
-                    &quot;color&quot;: {
-                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
-                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
-                    }
-                }
-            }
-        }
-    }
-}
-</pre>
-            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
-我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
-在此过程中也解决了无数的小谜团。<br>
-<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
-I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
-Countless small mysteries are also solved in the process.</span></p></div>
-          </div>
-<h3 id="视频">视频</h3>
-<ol>
-<li>B站引用：打开网页版的bilibili，点击要分享的视频-“分享”-“嵌入代码”，然后粘贴到markdown文件内即可。参考如下</li>
-</ol>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
-    </iframe>
-</div>
-<h3 id="公式">公式</h3>
-<p>建议使用katex，或者是markdown本地的公式嵌入。</p>
-<p>参考教程<a href="https://freeopen.github.io/mathjax/">Markdown 数学公式指导手册 | Freeopen</a></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sin^2(\theta) + \cos^2(\theta) = 1
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1219em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8719em;"><span style="top:-3.1208em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">cos</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></p>
-<h3 id="表情符号">表情符号</h3>
-<ol>
-<li><a href="https://www.lddgo.net/common/emoticons">在线颜文字大全</a> ：与markdown兼容，基本不会有不显示等问题</li>
-<li><a href="https://www.emojiall.com/zh-hans/categories/A">表情包</a> ：注意typora的表情(格式为<code>:表情</code>)无法在hexo显示，所以只能用图片替代表情</li>
-<li><a href="https://fontawesome.com/v4/icons/">图标</a>：适当的图标可以让人记忆犹新，见图思义。</li>
-</ol>
-<h3 id="交互式的组件">交互式的组件</h3>
-<p>比如butterfly中的button、图床等，由于不同的博客引擎涉及的组件不同，这里就不展开。建议读者不要舍本逐末，过度美化而忽视文章的内容。</p>
-<h2 id="总结与参考">总结与参考</h2>
-<ul>
-<li>
-<p>用一段话给文章内容作总结。</p>
-</li>
-<li>
-<p><strong>参考</strong>要注明来源，比如链接、转载出处，注意定期更新以防失效。</p>
-</li>
-</ul>
-<h1>参考</h1>
-<ol>
-<li><a href="https://www.cnblogs.com/returntmp/p/17591866.html">【全方位解析】如何写好技术文章 - ReturnTmp - 博客园</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客系列(二)博客创建指南</title>
     <url>/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h1>简介</h1>
@@ -4945,68 +4945,6 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
       </tags>
   </entry>
   <entry>
-    <title>数据结构可视化</title>
-    <url>/2024/11/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要侧重于可视化的介绍和简单的操作，为后续算法相关的博客提供可视化素材。具体细节请读者自行学习。</p>
-</blockquote>
-<h1>简介</h1>
-<p>数据结构对于计算机系的同学们来说无疑是最基础、最重要的一门课程之一，但是在面对抽象的代码、陌生的概念时感到无从下手，对于数据结构的运行步骤没有一个直观的认识，而数据结构可视化可以帮助同学们用具体的图形理解抽象的算法，从而更好掌握数据结构的精髓。</p>
-<h1>准备工作</h1>
-<h2 id="推荐的可视化网站">推荐的可视化网站</h2>
-<ol>
-<li><a href="https://pythontutor.com/">Python Tutor - Python Online Compiler with Visual AI Help</a></li>
-<li><a href="https://visualgo.net/zh">通过动画可视化数据结构和算法 - VisuAlgo</a> 如果想要动画效果建议使用此网站</li>
-</ol>
-<h2 id="编程基础">编程基础</h2>
-<p>读者至少掌握一门常见的计算机语言(如C++、Python等)的基础语法,否则数据结构可视化无从谈起。</p>
-<h1>可视化开发</h1>
-<h2 id="Python-tutor">Python tutor</h2>
-<p>基础的界面如下，参考图像文字学习</p>
-<p><strong>代码展示和调试区</strong></p>
-<p><img src="https://s2.loli.net/2024/11/26/XstjOaTp1YBQi6L.png" alt="001_可视化开发基础_01"></p>
-<p><strong>调试</strong>：设置断点：点击对应的代码，其颜色会变红，下方会出现红线，如果你点击&lt;prev或者是Next&gt; 会自动跳转到设置有断点的代码行。示例如下</p>
-<p><img src="https://s2.loli.net/2024/11/26/I3YJVByXk86wpFK.png" alt="001_可视化开发基础_03"></p>
-<blockquote>
-<p>注意：执行步数最大为999步</p>
-</blockquote>
-<p><strong>编辑代码区</strong></p>
-<p>编辑完成并确认没有语法错误后点击左下角的<code>visualize execution</code> 将其可视化。</p>
-<p><img src="https://s2.loli.net/2024/11/26/SJsid7fGpbMXEI3.png" alt="001_可视化开发基础_02"></p>
-<p><strong>案例</strong></p>
-<p>可以点击代码区下面的<code>show code examples</code> 感受一下不同例子可视化的效果</p>
-<p><strong>小技巧</strong></p>
-<ol>
-<li>对于Python，可以在编辑代码区可以通过一行<code>#pythontutor_hide: 变量名</code> 将指定的变量在可视化界面中隐藏，读者可以使用此代码隐藏无关变量。对于其他的编译器，可以在可视化执行之后点击<code>Move and hide objects</code> 按照说明将指定的对象隐藏。</li>
-<li>可视化执行之后，可以点击左下方的两个按钮生成链接或者是iframe嵌入到markdown文件格式里面，甚至可以执行\(^o^)/~，如下</li>
-</ol>
-<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23include%20%3Ciostream%3E%0A%0Aint%20main%28%29%20%7B%0A%20%20int*%20x%20%3D%20new%20int%5B3%5D%3B%0A%20%20x%5B1%5D%20%3D%2020%3Bint*%20p%20%3D%20%26x%5B1%5D%3B%20//%20pointer%20into%20middle%0A%20%20const%20char**%20fruit%20%3D%20new%20const%20char*%5B3%5D%3B%0A%20%20fruit%5B1%5D%20%3D%20%22bananas%22%3B%0A%20%20std%3A%3Acout%20%3C%3C%20%22Yum%20%22%20%3C%3C%20*p%20%3C%3C%20%22%20%22%20%3C%3C%20fruit%5B1%5D%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
-<p><strong>建议以上网址链接用电脑端打开，手机端会有界面溢出的问题</strong></p>
-<p><img src="https://s2.loli.net/2024/11/26/cWnDdbAMEBvuUjk.png" alt="001_可视化开发基础_04"></p>
-<h2 id="visualgo">visualgo</h2>
-<p>这个网站有中文，同时也有教程，这里就不展开教学了，比较适合需要动画效果的代码展示。</p>
-<h2 id="gif录制">gif录制</h2>
-<p>软件：<a href="https://www.screentogif.com/">ScreenToGif</a> 选择对应的版本下载即可。</p>
-<p>参考教程：链接:<a href="https://www.bilibili.com/video/BV1fb411P74h?vd_source=bb8dacb993f11c0e39f8147c98a2894c">screentogif</a></p>
-<p>示例如下(gif相当于图片，可以直接在markdown文件里面按照图片的格式插入)</p>
-<p><img src="https://s2.loli.net/2024/11/26/eAGhpQafRJqD1PM.gif" alt="动画"></p>
-<h1>参考</h1>
-<ol>
-<li><a href="https://pythontutor.com/">Python Tutor - Python Online Compiler with Visual AI Help</a></li>
-<li><a href="https://visualgo.net/zh">通过动画可视化数据结构和算法 - VisuAlgo</a></li>
-<li><a href="https://www.screentogif.com/">ScreenToGif</a>：软件下载官方网站</li>
-<li><a href="https://www.bilibili.com/video/BV1fb411P74h?vd_source=bb8dacb993f11c0e39f8147c98a2894c">screentogif</a> ：B站教程</li>
-</ol>
-]]></content>
-      <categories>
-        <category>data structure</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>data structure</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>算法系列(一)蓝桥杯</title>
     <url>/2024/12/14/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97(%E4%B8%80)%E8%93%9D%E6%A1%A5%E6%9D%AF/</url>
     <content><![CDATA[<h1>算法刷题与总结</h1>
@@ -5225,6 +5163,19 @@ C++通过迭代器可以访问集合中的每个元素。这里迭代器指向�
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这里的代码接上文</span></span><br><span class="line"><span class="comment">// 遍历 map 并打印员工信息</span></span><br><span class="line">   <span class="keyword">for</span> (std::map&lt;std::string, <span class="type">int</span>&gt;::iterator it = employees.<span class="built_in">begin</span>(); it != employees.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">       std::cout &lt;&lt; it-&gt;first &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="string">&quot; years old.&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <p>注意：C++中遍历map是按照关键字从小到大遍历的</p>
 <p>map里面可以套用set或者是map，主要是用于处理键值对重复的问题。</p>
+<h4 id="stack">stack</h4>
+<p>栈，是一种满足一定约束的线性数据结构。其约束是：只允许在栈的一端插入或删除元素，这一端被称为栈顶；相对地，我们<br>
+把另一端称为栈底。</p>
+<p>标准库里面的stack在头文件<code>&lt;stack&gt;</code>里面，它的定义和map、set、vector都大同小异，如果你对前面的标准库已经使用得<br>
+很熟练了，那么对于stack的使用你也会一目了然。<code>stack&lt;T&gt;s</code>定义了一个储存T类型数据的栈s.标准库的栈除了支持push(),pop()等基本操作以外，还支持top()来获取栈顶元素、empty()判断栈是否为空、size()计算栈中元素的个数。</p>
+<p><strong>使用示例</strong> 常用的几乎就在以下示例中</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::stack&lt;<span class="type">int</span>&gt; s;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 向栈中添加元素</span></span><br><span class="line">    s.<span class="built_in">push</span>(<span class="number">10</span>);</span><br><span class="line">    s.<span class="built_in">push</span>(<span class="number">20</span>);</span><br><span class="line">    s.<span class="built_in">push</span>(<span class="number">30</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印栈顶元素</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Top element is: &quot;</span> &lt;&lt; s.<span class="built_in">top</span>() &lt;&lt; std::endl; <span class="comment">// 输出: Top element is: 30</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 移除栈顶元素</span></span><br><span class="line">    s.<span class="built_in">pop</span>();</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;After popping, top element is: &quot;</span> &lt;&lt; s.<span class="built_in">top</span>() &lt;&lt; std::endl; <span class="comment">// 输出: After popping, top element is: 20</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检查栈是否为空</span></span><br><span class="line">    <span class="keyword">if</span> (!s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Stack is not empty.&quot;</span> &lt;&lt; std::endl; <span class="comment">// 输出: Stack is not empty.</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印栈的大小</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Size of stack: &quot;</span> &lt;&lt; s.<span class="built_in">size</span>() &lt;&lt; std::endl; <span class="comment">// 输出: Size of stack: 2</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 继续移除元素</span></span><br><span class="line">    s.<span class="built_in">pop</span>();</span><br><span class="line">    s.<span class="built_in">pop</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检查栈是否为空</span></span><br><span class="line">    <span class="keyword">if</span> (s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Stack is empty.&quot;</span> &lt;&lt; std::endl; <span class="comment">// 输出: Stack is empty.</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="递归">递归</h2>
+<p>递归是计算机编程中应用最广泛的一个技巧，也是比较难理解的一个技巧，所以我们打算花大量的时间来理解递归。所谓递归，就是函数调用函数自身，一个函数在其定义中有直接或者间接调用自身都叫递归。而递归一般都用来解决有重复子问题的问题。我们先来理解直接递归，间接递归非常复杂，用的比较少。下面通过求解！(！代表阶乘)的问题来理解直接递归。我们知道n!=n×(n-1)！，所以我们很容易写下下面的代码。如果仅仅写一个递归式子还是很简单的，但是**递归的一个难点(或者说最难的地方)**就是——<strong>边界条件</strong>。所谓边界条件，就是在什么情况下，函数不应该再继续调用自身。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">factorial</span><span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>)<span class="comment">//递归边界</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> n*<span class="built_in">factorial</span>(n<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>经典题型1：</strong> 汉诺塔</p>
+<p>汉诺问题看似复杂，其实不管是多少，都可以归纳为三个步骤：1. 把n-1个盘子从A移动到B,此时A上只剩下最下面的一个盘子。2. 直接把最后一个盘子从A移动到C。3.把B上的n-1个盘子移动到C上。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span> </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">stack&lt;<span class="type">int</span>&gt; S[<span class="number">3</span>];<span class="comment">//汉诺塔的杆子数 </span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">move</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span><span class="comment">//盘子移动函数 </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> temp = S[x].<span class="built_in">top</span>(); </span><br><span class="line">	S[x].<span class="built_in">pop</span>();</span><br><span class="line">	S[y].<span class="built_in">puish</span>(temp);</span><br><span class="line">	cout&lt;&lt;x&lt;&lt;<span class="string">&quot;--&gt;&quot;</span>&lt;&lt;y&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">hanoi</span><span class="params">(<span class="type">int</span> A,<span class="type">int</span> B,<span class="type">int</span> C,<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>)<span class="comment">//如果A杆只有一个盘子时 </span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">move</span>(A,C);<span class="comment">//将A杆的盘子直接移动到C </span></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">hanoi</span>(A,C,B,n<span class="number">-1</span>); <span class="comment">//将A杆盘子经由C移动到B，并减少A杆的盘子数 </span></span><br><span class="line">	<span class="built_in">move</span>(A,C);</span><br><span class="line">	<span class="built_in">hanoi</span>(B,A,C,n<span class="number">-1</span>);<span class="comment">//将剩下B杆的盘子经由A移动到C，直到所有的盘子都移动到C。 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> n; </span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = n;i&gt;=<span class="number">1</span>;i--)<span class="comment">//演示汉诺塔 </span></span><br><span class="line">	&#123;</span><br><span class="line">		S[<span class="number">0</span>].<span class="built_in">push</span>(i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">hanoi</span>(<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,n);</span><br><span class="line">	<span class="keyword">while</span>(!S[<span class="number">2</span>].<span class="built_in">empty</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;S[<span class="number">2</span>].<span class="built_in">top</span>()&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">		S[<span class="number">2</span>].<span class="built_in">pop</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="参考">参考</h2>
 <ol>
 <li><a href="https://www.bilibili.com/video/BV1Lb4y1k7K3/?share_source=copy_web&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">蓝桥杯比赛视频教程（入门学习+算法辅导)</a> 建议看前41节 重点是他讲的知识点，由于他讲题特别快不建议按照他的课刷题，建议自行在蓝桥杯题库中刷题。</li>
@@ -5237,6 +5188,521 @@ C++通过迭代器可以访问集合中的每个元素。这里迭代器指向�
       <tags>
         <tag>C</tag>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构可视化</title>
+    <url>/2024/11/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要侧重于可视化的介绍和简单的操作，为后续算法相关的博客提供可视化素材。具体细节请读者自行学习。</p>
+</blockquote>
+<h1>简介</h1>
+<p>数据结构对于计算机系的同学们来说无疑是最基础、最重要的一门课程之一，但是在面对抽象的代码、陌生的概念时感到无从下手，对于数据结构的运行步骤没有一个直观的认识，而数据结构可视化可以帮助同学们用具体的图形理解抽象的算法，从而更好掌握数据结构的精髓。</p>
+<h1>准备工作</h1>
+<h2 id="推荐的可视化网站">推荐的可视化网站</h2>
+<ol>
+<li><a href="https://pythontutor.com/">Python Tutor - Python Online Compiler with Visual AI Help</a></li>
+<li><a href="https://visualgo.net/zh">通过动画可视化数据结构和算法 - VisuAlgo</a> 如果想要动画效果建议使用此网站</li>
+</ol>
+<h2 id="编程基础">编程基础</h2>
+<p>读者至少掌握一门常见的计算机语言(如C++、Python等)的基础语法,否则数据结构可视化无从谈起。</p>
+<h1>可视化开发</h1>
+<h2 id="Python-tutor">Python tutor</h2>
+<p>基础的界面如下，参考图像文字学习</p>
+<p><strong>代码展示和调试区</strong></p>
+<p><img src="https://s2.loli.net/2024/11/26/XstjOaTp1YBQi6L.png" alt="001_可视化开发基础_01"></p>
+<p><strong>调试</strong>：设置断点：点击对应的代码，其颜色会变红，下方会出现红线，如果你点击&lt;prev或者是Next&gt; 会自动跳转到设置有断点的代码行。示例如下</p>
+<p><img src="https://s2.loli.net/2024/11/26/I3YJVByXk86wpFK.png" alt="001_可视化开发基础_03"></p>
+<blockquote>
+<p>注意：执行步数最大为999步</p>
+</blockquote>
+<p><strong>编辑代码区</strong></p>
+<p>编辑完成并确认没有语法错误后点击左下角的<code>visualize execution</code> 将其可视化。</p>
+<p><img src="https://s2.loli.net/2024/11/26/SJsid7fGpbMXEI3.png" alt="001_可视化开发基础_02"></p>
+<p><strong>案例</strong></p>
+<p>可以点击代码区下面的<code>show code examples</code> 感受一下不同例子可视化的效果</p>
+<p><strong>小技巧</strong></p>
+<ol>
+<li>对于Python，可以在编辑代码区可以通过一行<code>#pythontutor_hide: 变量名</code> 将指定的变量在可视化界面中隐藏，读者可以使用此代码隐藏无关变量。对于其他的编译器，可以在可视化执行之后点击<code>Move and hide objects</code> 按照说明将指定的对象隐藏。</li>
+<li>可视化执行之后，可以点击左下方的两个按钮生成链接或者是iframe嵌入到markdown文件格式里面，甚至可以执行\(^o^)/~，如下</li>
+</ol>
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23include%20%3Ciostream%3E%0A%0Aint%20main%28%29%20%7B%0A%20%20int*%20x%20%3D%20new%20int%5B3%5D%3B%0A%20%20x%5B1%5D%20%3D%2020%3Bint*%20p%20%3D%20%26x%5B1%5D%3B%20//%20pointer%20into%20middle%0A%20%20const%20char**%20fruit%20%3D%20new%20const%20char*%5B3%5D%3B%0A%20%20fruit%5B1%5D%20%3D%20%22bananas%22%3B%0A%20%20std%3A%3Acout%20%3C%3C%20%22Yum%20%22%20%3C%3C%20*p%20%3C%3C%20%22%20%22%20%3C%3C%20fruit%5B1%5D%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+<p><strong>建议以上网址链接用电脑端打开，手机端会有界面溢出的问题</strong></p>
+<p><img src="https://s2.loli.net/2024/11/26/cWnDdbAMEBvuUjk.png" alt="001_可视化开发基础_04"></p>
+<h2 id="visualgo">visualgo</h2>
+<p>这个网站有中文，同时也有教程，这里就不展开教学了，比较适合需要动画效果的代码展示。</p>
+<h2 id="gif录制">gif录制</h2>
+<p>软件：<a href="https://www.screentogif.com/">ScreenToGif</a> 选择对应的版本下载即可。</p>
+<p>参考教程：链接:<a href="https://www.bilibili.com/video/BV1fb411P74h?vd_source=bb8dacb993f11c0e39f8147c98a2894c">screentogif</a></p>
+<p>示例如下(gif相当于图片，可以直接在markdown文件里面按照图片的格式插入)</p>
+<p><img src="https://s2.loli.net/2024/11/26/eAGhpQafRJqD1PM.gif" alt="动画"></p>
+<h1>参考</h1>
+<ol>
+<li><a href="https://pythontutor.com/">Python Tutor - Python Online Compiler with Visual AI Help</a></li>
+<li><a href="https://visualgo.net/zh">通过动画可视化数据结构和算法 - VisuAlgo</a></li>
+<li><a href="https://www.screentogif.com/">ScreenToGif</a>：软件下载官方网站</li>
+<li><a href="https://www.bilibili.com/video/BV1fb411P74h?vd_source=bb8dacb993f11c0e39f8147c98a2894c">screentogif</a> ：B站教程</li>
+</ol>
+]]></content>
+      <categories>
+        <category>data structure</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>data structure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>英语口语(英语兔版)</title>
+    <url>/2024/10/13/%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD(%E8%8B%B1%E8%AF%AD%E5%85%94%E7%89%88)/</url>
+    <content><![CDATA[<h1>英语口语</h1>
+<p>💡不要用中文去替代英文中独有的，但是中文中缺失的音。</p>
+<h1>三种常用的音标</h1>
+<p>国际音标(IPA):</p>
+<p>KK音标：主要是美式音标，方便美式英语的注音。</p>
+<p>DJ音标：主流音标，口语练习的主要音标。<strong>本文后面不加说明的都是练习的DJ音标(IPA88)</strong></p>
+<p>对于非英语专业或者是语言研究的人来说，我们只需要在学习音标的是能认出这是属于哪一类的音标即可，音标终究是用来帮助发音的。</p>
+<h1>全部音标发音</h1>
+<p>视频如下。</p>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
+    </iframe>
+</div>
+<h1>发音讲解</h1>
+<p><strong>以元音和辅音分</strong>：</p>
+<p>元音：就是在发音时不受阻碍(如嘴唇张开，但还是会受到舌头的影响)发出的音。辅音与元音相反。注意这里的舌位指的是舌头在发音时隆起的最高点，舌头太高，舌位就高。</p>
+<p>影响元音三要素：圆唇度(嘴巴”o“的程度)，舌位高低，舌位前后。</p>
+<p><strong>以清音和浊音分</strong>：<br>
+清音与浊音：声带不振动的音就是清音。反之就是浊音。</p>
+<p>示意图如下</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>元音</th>
+<th>辅音</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>浊音</td>
+<td>粗略认为所有的元音都是浊元音</td>
+<td>浊辅音</td>
+</tr>
+<tr>
+<td>清音</td>
+<td>\</td>
+<td>清辅音</td>
+</tr>
+</tbody>
+</table>
+<h2 id="元音">元音</h2>
+<blockquote>
+<p>以下都是DJ音标</p>
+</blockquote>
+<h3 id="单元音">单元音</h3>
+<p>注意：后面在音标中的的：不是其正确写法，只是markdown文件难以展现，具体写法还是见参考部分的第一个链接，后面的也是这样。</p>
+<ul>
+<li><strong>/i:/</strong></li>
+</ul>
+<p>bee、fee、pea、read、meat、lead</p>
+<p>发音时不圆唇，注意舌位更高，嘴角要向两边拉开，带点微笑的感觉。</p>
+<ul>
+<li><strong>/ɪ/</strong></li>
+</ul>
+<p>bit、fit、pit、lit、hit、fish</p>
+<p>注意舌位更低，舌尖在下齿后方，比/i:/更放松，嘴角没有那么咧开。</p>
+<p>注意区分，它<strong>不仅仅是把/i:/的时长缩短</strong>，有些美国人发音舌位会更低。有点像是军训时教官说的“一”。</p>
+<ul>
+<li><strong>/u:/</strong></li>
+</ul>
+<p>too、food、loose、prove、moon、soon</p>
+<p>/u:/<strong>口型没有那么圆,而是更扁</strong>,嘴角向两边拉伸，发音部位靠口腔后部。(不要误发成yu)</p>
+<ul>
+<li><strong>/ʊ/</strong></li>
+</ul>
+<p>book、look、good、took、bush、would</p>
+<p>发/ʊ/时,嘴唇没那么撅，更放松时长更短,发音更靠后。/ʊ/并不仅仅是把长音/u:/短着读，/u:/的唇形像两边拉开,而/ʊ/唇形更圆,更放松。</p>
+<ul>
+<li><strong>/e/</strong></li>
+</ul>
+<p>bed、get、pet、let、met、set</p>
+<p>双唇自然张开，口腔放松。舌尖在下牙齿后方，舌面平放</p>
+<ul>
+<li><strong>/ɜ:/</strong></li>
+</ul>
+<p>her、person、learn、bird、word、fur、urgent</p>
+<p>嘴自然张开，唇和舌自然放松，要确保发音时间够长，是重读的长音。如果发音不重读，更短就变成了/ə/ ，在单词中的拼写有er、ear、ir、or、ur等。</p>
+<p>在<strong>美式</strong>英语中会r化，写作/ɜ:r/，是美式英语最显著的特征之一。</p>
+<ul>
+<li><strong>/ə/</strong></li>
+</ul>
+<p>a-about balloon、e-taken problem、i-family pencil、o-memory freedom、u-supply support、y-syringe analysis 这些字母在单词内发音的时候都发/ə/</p>
+<p>嘴自然张开,唇和舌都自然放松不要重读,轻轻地让气流冲出声带自然读出重读,变长→/ɜ:/，它是英语中出现频率它是英语最高，最特殊,最重要的schwa(中央元音或中性元音)。让说话者在不需要强调某个音时用它代替，为了在某个音上减少所花时间，<strong>弱化</strong>成一个中性的默认音。有时候/ə/甚至省略不读。</p>
+<ul>
+<li><strong>/ʌ/</strong></li>
+</ul>
+<p>but、hut、must、son、ton、done</p>
+<p>舌尖在下牙齿后方，舌头平放发音靠口腔中后方，类似于啊但是口型没有那么大,时长更短，英美发音不同。</p>
+<p><strong>美音</strong>/ʌ/和中央元音/ə/区别在于，/ʌ/只出现在重读音节中，而/ə/只出现在轻读音节中。两者一般不做舌位上的区分，区别在于是否重读,在美音中的发音不是在口腔中后方，而是在口腔中间，也就说比英音靠前。</p>
+<ul>
+<li><strong>/ɔ:/</strong></li>
+</ul>
+<p>caught、bought、law、saw、door、four</p>
+<p>嘴唇要撅起来，圆而外凸,肌肉较为紧张，口腔后方发音。</p>
+<p><strong>美音</strong>中/ɔ/没有英音那样圆形外凸，更靠近汉语拼音ao而不是o，如果这个音后面跟字母r，美音中往往r化。</p>
+<ul>
+<li><strong>/æ/</strong></li>
+</ul>
+<p>bad、fat、pat、lad、mat、sat</p>
+<p>最容易读错的音之一，口型一定要张大，饱满，嘴角也要向两边拉伸。舌端在下牙齿后方，同时发出/ɑ:/和/e/这两个音。</p>
+<ul>
+<li><strong>/ɑ:/</strong></li>
+</ul>
+<p>father、fast、glass、car、park、mark</p>
+<p>/ɑ:/的口型比“啊”更大,发音更靠口腔后部(舌根处)发音，时长要足够长。</p>
+<ul>
+<li><strong>/ɒ/</strong></li>
+</ul>
+<p>top、hot、lot、box、stop、wash</p>
+<p>/ɒ/和普通话的凹(ao)相似,但并不相同发/ɒ/时,嘴型更小,时间更短,凹有口型变化，/ɒ/没有。</p>
+<p>在<strong>美音</strong>中一般读作/ɑ:/，也是英式英语和美式英语主要区别之一。</p>
+<h3 id="双元音">双元音</h3>
+<ul>
+<li><strong>/eɪ/</strong></li>
+</ul>
+<p>make、date、cake、safe、play、plane</p>
+<p>/e/和/ɪ/一前一后快速紧密发出，或者理解为从/e/向/ɪ/平滑发音。发这个音口腔是有变化的。</p>
+<ul>
+<li><strong>/ɔɪ/</strong></li>
+</ul>
+<p>boy、toy、soy、voice、noise、moist</p>
+<p>/ɔ:/变短后和/ɪ/一前一后快速紧密发出，或者理解为从/ɔ:/向/ɪ/发音，发这个音口腔是有变化。</p>
+<ul>
+<li><strong>/aɪ/</strong></li>
+</ul>
+<p>bike、nice、time、lick、site、life</p>
+<p>/a/和/ɪ/一前一后快速紧密发出，或者理解为从/a/向/ɪ/发音，发这个音口腔是有变化的，口型更加饱满。</p>
+<ul>
+<li><strong>/aʊ/</strong></li>
+</ul>
+<p>how、cow、allow、house、loud、mouse</p>
+<p>/a/和/ʊ/一前一后快速紧密发出，发这个音口腔是有变化的，口型更饱满更长。</p>
+<ul>
+<li><strong>/əʊ/</strong></li>
+</ul>
+<p>open、hope、post、coat、boat、soap</p>
+<p>/ə/和/ʊ/一前一后快速紧密发出，发这个音口腔是有变化的，嘴唇有收缩的，英音的起始音位比**美音/oʊ/**更靠前。</p>
+<ul>
+<li><strong>/ʊə/</strong></li>
+</ul>
+<p>tour、poor、moor、pure、cure、lure</p>
+<p>/ʊ/和/ə/一前一后快速紧密发出，发音一定要连贯。读音在英音中包含/ʊə/的词基本上都包含字母r，在<strong>美音</strong>中会r化。</p>
+<ul>
+<li><strong>/eə/</strong></li>
+</ul>
+<p>hair、pair、chair、fare、care、dare</p>
+<p>/e/和/ə/一前一后快速紧密发出，发音一定要连贯，注意这个/ə/可不等于/r/.</p>
+<ul>
+<li><strong>/ɪə/</strong></li>
+</ul>
+<p>area、idea、beer、dear、fear、here</p>
+<p>/ɪ/和/ə/一前一后快速紧密发出，发音一定要连贯。请注意,如果是读英音，单词拼写即使出现字母r，单词内部也不会r化，如果是读<strong>美音</strong>，只有单词内部出现r，才有可能r化。美音中如出现r，则对应读音为/ɪr/如不出现r，则一样。如果单词内部没有r，则英音美音都是/ɪə/，比如idea。</p>
+<h2 id="辅音">辅音</h2>
+<p>概念解读(辅音三阶段)：成阻：气流被阻塞；持阻：气流持续往外冲，但仍被阻塞；除阻：阻塞被去除，气流冲出；</p>
+<p>辅音三要素：清浊，调音部位、调音方式</p>
+<blockquote>
+<p>很多中式发音就是因为喜欢在字母后面加上其他的音，比如s后面加i变成”子“please读成普利子</p>
+</blockquote>
+<ul>
+<li><strong>/p/ /b/</strong></li>
+</ul>
+<p>peak beak、pet bed、pig big、rapid rabbit、lap lab、speak beak</p>
+<ol>
+<li>如果p后有元音，比如: peak就是<strong>送气音</strong></li>
+<li>如果p紧跟s，比如: speak就是<strong>不送气音</strong></li>
+<li>如果p后紧跟某些辅音，往往嘴巴闭上就基本完成发音国际音标:[p ]，<strong>几乎听不出这个音</strong>，比如: trapdoor, help me, leap year，<strong>无声除阻音</strong> (也称不完全爆破音)</li>
+</ol>
+<p><strong>/ b/<strong>是</strong>浊辅音</strong>，声带振动。</p>
+<ul>
+<li><strong>/t/ /d/</strong></li>
+</ul>
+<p>tip dip、tea deep、test desk、tap dab、bat bad、bet bed</p>
+<ol>
+<li>如果t后有元音，比如:top就是送气音</li>
+<li>如果t紧跟s，比如: stop就是<strong>不送气音</strong></li>
+<li>如果t后紧跟某些辅音，嘴巴闭上就基本完成发音国际音标: [t ]比如: setback, forget me，<strong>无声除阻音</strong>。</li>
+</ol>
+<p>如果想要知道音标的音位变体，见参考“英语兔”视频部分</p>
+<ol>
+<li>在<strong>美式英语</strong>中，元音之间的字母t(尤其是非重读音节中)，读作<strong>闪音</strong>，国际音标:[ɾ]，舌尖在上牙齿上方硬腭处，阻挡气流,轻轻—弹比如: water, better, little，听起来很像发出了/d/ 的声音。在标准英音中仍读作正常t: water, better, little。</li>
+<li>在<strong>美式英语</strong>中，鼻音/n/之前的t往往读作<strong>喉塞音</strong>，国际音标:[ʔ]，声门阻住气流，像是把声音&quot;卡在喉咙&quot;里一样比如: certain, important, button，在标准英音中仍读作正常t : certain, important, button</li>
+<li>在<strong>美式英语</strong>中，鼻音/n/之后的t往往基本听不见，比如: winter≈winner， interview≈innerview，甚至有的词中, t前后都有鼻音，比如: mountain，在标准英音中仍读作正常t: winter, interview, mountain</li>
+<li>/ d/是浊辅音，声带振动。在美音中，/d /和/t/一样会有<strong>闪音</strong>的读法: metal约等于medal，鼻音也会影响/d/的读音: abandon.</li>
+</ol>
+<ul>
+<li><strong>/k/ /g/</strong></li>
+</ul>
+<p>kit git、kate gate、cup gut、anchor anger、pick pig、peck keg</p>
+<ol>
+<li>如果k后有元音比如:kite，就是送气音</li>
+<li>如果k紧跟s比如: sky，不送气音普通话&quot;该&quot;的声母</li>
+<li>如果k后紧跟某些辅音嘴巴闭上就基本完成发音国际音标: [k ]，比如: dogtor, backdoor, make dinner，<strong>无声除阻音</strong>。</li>
+</ol>
+<ul>
+<li><strong>/m/ /n/ /ŋ/</strong></li>
+</ul>
+<p>map nap、met net、meet neat、room noon、tom run、lime line、sin sing、on long、sun sung</p>
+<ol>
+<li>/m/在元音之前，和普通话&quot;妈&quot;的声母(汉语拼音m)相似。在元音之后，发音方式相似，但只是双唇闭拢发鼻音。</li>
+<li>/n/在元音之前，和普通话&quot;拿&quot;的声母(汉语拼音n)相似/n/要比/m/的舌位高，尤其是舌端部分。在元音之后,发音方式相似，轻微通过鼻子出气。</li>
+<li>/ŋ/和/n/相似,但舌后端抵住软腭，而不像/n/一样舌前端抵住上齿龈。</li>
+</ol>
+<p>普通话中的后鼻音往往没有英语中那么清晰明显</p>
+<ul>
+<li><strong>/f/ /v/</strong></li>
+</ul>
+<p>fat valley、fit visit、ferry very、fest vest、life drive、leaf leave</p>
+<p>/f/和普通话&quot;夫&quot;的声母，基本一样/v/是&quot;声带振动版&quot;的/f/</p>
+<ul>
+<li><strong>/s/ /z/</strong></li>
+</ul>
+<p>sip zip、soon zoom、soup zoo、lesson reason、once lose、peace please</p>
+<p>英语的/s/，/z/都属于所谓<strong>摩擦音</strong>，不同于爆破音，/s/和普通话&quot;斯&quot;的声母(汉语拼音s)一样，/z/和/s/很像，区别就在于/z/发音时<strong>声带振动</strong>。</p>
+<ul>
+<li><strong>/θ/ /ð/</strong></li>
+</ul>
+<p>three there、thin that、thank those、thigh the、bath bathe、breath breathe</p>
+<p>和/s//z/一样，属于摩擦音，不同在于舌尖不在上下牙齿后方，而是在上下齿之间，被轻轻咬住，/θ/ /ð/区别在于/ð/需要<strong>声带振动</strong>。</p>
+<ul>
+<li><strong>/ʃ/ /ʒ/</strong></li>
+</ul>
+<p>mesh measure、fresh pleasure、leash decision、attention occasion、shall usual、shame regime</p>
+<p>/ʃ/ /ʒ/属于摩擦音，/ʃ/ /ʒ/区别在于/ʒ/需要声带振动。</p>
+<ul>
+<li><strong>/tʃ/ /dʒ/</strong></li>
+</ul>
+<p>chuck jug、chop job、choke joke、cheap jeep、catch page、pitch college</p>
+<p>/tʃ/可以理解为由/t/和/ʃ/构成,爆破音/t/和摩擦音/ʃ/同时发出，声带不振动。</p>
+<p>/dʒ/可以理解为由/d /和/ʒ/构成,爆破音/d/和摩擦音/ʒ/同时发出，声带振动，所以也被称作破擦音。</p>
+<ul>
+<li><strong>/h/</strong></li>
+</ul>
+<p>hat、hot、high、home、house、him</p>
+<p>舌面后部抬起接近软腭，形成缝隙,让气流向外通过,声带不振动。</p>
+<ul>
+<li><strong>/w/</strong></li>
+</ul>
+<p>was、why、wide、wet、we、wood</p>
+<p>双唇圈起，向外凸出，气流冲出发音，声带震动，/w/往往听上去像元音/u:/或/ʊ/,所以又被称作半元音，英语w开头的单词基本都是/w/开始。</p>
+<ul>
+<li><strong>/r/</strong></li>
+</ul>
+<p>rat、red、read、rice、right、room、car、her、ear、bore、tour、pure</p>
+<ol>
+<li>英音中，当字母r出现在元音<strong>之前</strong>，双唇突出并<strong>圆唇</strong>,舌尖上扬，气流从舌面上方滑出,声带振动。发英语/r/的音时，舌尖指向上齿龈。</li>
+<li>英音中，当字母r出现在元音<strong>之后</strong>，—般不发音或读作中央元音/ə/</li>
+<li>如果r出现在单词<strong>末尾</strong>，而下一个单词以元音开头,则连读时一般读出，比如:bear it、fear us、gear up</li>
+<li>美音和英音的区别在于:当字母r出现在元音之后，字母r往往会让<strong>元音r化</strong>，而在英音中则一般不发音或读作中央元音/ə/</li>
+</ol>
+<ul>
+<li><strong>/j/</strong></li>
+</ul>
+<p>yes、yard、yellow、young、yoga、use</p>
+<p>舌端往上抬向硬腭，与元音/i:/的舌位相似，但是更高一些。气流从舌面和硬腭之间通过，产生摩擦出声，声带振动。/j/往往听上去像元音/i:/或/ɪ/，所以又被称作半元音。但是/j/的舌端和硬腭靠得更近，有摩擦的感觉。</p>
+<ol>
+<li><strong>/j/的省略：<strong>在</strong>美式英语</strong>中,有些辅音(如/t/，/d/，/n/)后的/j/经常被<strong>省略</strong>，这个被称作yod-dropping(yod就是/j/)</li>
+<li><strong>/j/的融合</strong>：和之前的辅音经常&quot;合在一起读&quot;,这个被称作yod-coalescence，在口语中(尤其是英音口语中)常见, &quot;标准&quot;英语一般尽量避免。有的词中,yod-coalescence已成为标准音，如: educate /'edʒukeɪt/、issue / 'ɪʃu:/ 、azure /'æʒə/</li>
+<li>yod-coalescence也适用于单词之间，比如:Nice to meet you! Would you do it?</li>
+</ol>
+<ul>
+<li><strong>/l/</strong></li>
+</ul>
+<p>清晰L：lack lake like look lose leak、模糊L：help mile all girl school full</p>
+<ol>
+<li>如果l后有元音：舌尖抵住上牙齿后方，让气流从舌两边(两侧)滑出，同时舌尖离开上牙齿后，声带振动，所以/l/被叫做&quot;舌边音&quot;或&quot;舌侧音&quot;（清晰舌边音）</li>
+<li>如果l后没有元音：舌位和元音前的/l/一致，但是舌尖不离开上牙齿，声带振动（模糊舌边音）模糊L要发到位，否则导致连读时不顺畅，或者没法连读。</li>
+<li>字母|还有一个版本:不发音，英语中不少单词中的l都是不发音的，比如:calm、palm、salmon、colonel、folk</li>
+<li>英音美音发音区别:有的包含l的词在英式英语和<strong>美式英语</strong>中发音不同，比如:英音: million, billion, value美音: million, billion, value</li>
+</ol>
+<ul>
+<li><strong>/ts/ /dz/</strong></li>
+</ul>
+<p>bats bands、dates deeds、kites kids、fights friends、hats hands、lots leads</p>
+<ol>
+<li>/ts/可以理解为由/t/和/s/构成。爆破音/t/和摩擦音/s/同时发出，声带不振动。</li>
+<li>/dz/可以理解为由/d/和/z/构成，爆破音/d/和摩擦音/z/同时发出，声带振动。</li>
+</ol>
+<p>所以这两个音被归类为所谓破擦音(爆破＋摩擦)</p>
+<ul>
+<li><strong>/tr/ /dr/</strong></li>
+</ul>
+<p>trip drip、true drew、tree dream、try dry、country laundry、pantry hundred</p>
+<ol>
+<li>/tr/可以理解为由/t/和/r/构成。爆破音/t/和摩擦音/r/同时发出，声带不振动。</li>
+<li>/dr/可以理解为由/d/和/r/构成。爆破音/d/和摩擦音/r/同时发出，声带振动。</li>
+</ol>
+<p>所以这两个音被归类为所谓破擦音(爆破＋摩擦)</p>
+<h1>英语发音技巧</h1>
+<blockquote>
+<p>这些发音技巧能够让你的发音更加地道，同时也能很大程度上提升你的英语听力</p>
+</blockquote>
+<h2 id="连音">连音</h2>
+<p>单词(辅音结尾)+单词(元音开头)如：not at all.(“闹太套”),中文不习惯连读，我们读“我爱天安门”不会像外国人那样连读成“外天门”。这就是英语听不准确的重要口语习惯和原因。也就是说，<strong>辅音单词结尾的辅音要发到位，不加上不存在的元音</strong>，然后自然读下一个单词就能“连读”。</p>
+<p>💡连读不是创造一个音，而是两个音结合产生的结果。试着平滑地读I am，你就会感受到/j/的发音，这就是<strong>连音的本质</strong>。如果<strong>你的发音不标准，就不会自然而然地读出连音</strong>。</p>
+<p><strong>加音规则</strong></p>
+<p>注意是先有加音现象，再总结出规律。</p>
+<ol>
+<li>元音+元音：元音与元音连读容易糊，加上一个之前不存在的“过渡音”使得加音连贯。
+<ul>
+<li>/u:/, <strong>/ʊ/</strong>,<strong>/aʊ/</strong>, <strong>/əʊ/</strong>+元音:+/w/。如：just do it.</li>
+<li>/i:/,<strong>/ɪ/</strong>,<strong>/eɪ/</strong>,<strong>/aɪ/</strong>,<strong>/ɔɪ/</strong>+元音:+/j/。如： I am.</li>
+<li><strong>/ə/</strong>,<strong>/ɑ:/</strong>,<strong>/ɔ:/</strong>+元音:+/r/。主要是英式英语用，美式英语很少。如 the idea of；美式英语主要是字母r+元音，如bear it.连读但是不加音。</li>
+</ul>
+</li>
+<li>辅音+元音(词尾辅音 + 词首元音）： travel agency</li>
+</ol>
+<h2 id="同化">同化</h2>
+<ol>
+<li>逆行同化(前面的音受到后一个音的影响)
+<ol>
+<li>无声除阻(不完全爆破)：/k/ /t/ /d/+辅音，爆破音不发音 如:look back</li>
+<li>浊音变清音：如 have to :直接变成/f/+/t/,这样比原来的浊音更好发音。</li>
+<li>双唇化：如in person.受到p这个要闭唇的音印象，读起来变成了 im person。</li>
+</ol>
+</li>
+<li>顺行同化(后面音受到前面影响)
+<ol>
+<li>复数词尾：如books 一般会读成ks而不是kz。</li>
+</ol>
+</li>
+<li>互相同化：
+<ol>
+<li>融合发音:/s/+/j/ = <strong>/ʃ/</strong>;例如:God bless you;/z/+/j/ =  <strong>/ʒ/</strong>;例如as you wish;/t/+/j/ = <strong>/tʃ/</strong> ;例如Nice to me you;/d/+/j/ = <strong>/dʒ/</strong>;例如Did you do it?</li>
+<li>辅音延长：当前面一个音和后面一个音是同一个音时。只发一个音(这里的音是指<strong>音标</strong>不是字母)，但是要延长：如fish shop.这里前后都是sh</li>
+</ol>
+</li>
+<li>完全失爆（词尾爆破音( p b t d k g)+ 词首爆破音( p b t d k g)：
+<ol>
+<li>good question</li>
+</ol>
+</li>
+</ol>
+<h2 id="异化">异化</h2>
+<p>常见于/s/+/t/、/s/+/k/、/s/+/p/的组合。<strong>严格来说不是浊化</strong>，而是将这些音变成不送气的音，但是只是发音的话就是不用考虑这些</p>
+<ol>
+<li>r使前面的元音r化：如door 使前一个r消失，如surprise变成su®prise.</li>
+<li>具体例子sp+元音：
+<ol>
+<li>How do you spend your leisure time?</li>
+<li>sk+元音：i’m so scared</li>
+<li>st + 元音：Stand up and study hard.</li>
+<li>str+ 元音:  He struck me with a stick</li>
+</ol>
+</li>
+</ol>
+<h2 id="省音">省音</h2>
+<ol>
+<li>偷懒不读某一个或者是一些音：如interesting,这类往往可省可不省，省多少看个人说话习惯。</li>
+<li>必须省音。如debt\subtle\know\knee\write\wrong……这些词中b\k\w都是省略不读的。</li>
+<li>词与词之间省略：比如last year就只读las year.t直接省略。</li>
+<li>还有/t/、/d/等(词尾)爆破音也经常省略。如：have 的/h/(这被称为<strong>h击穿</strong>)。ing中的/g/，比如 Are you listenin’?这里打‘就说明省去了g</li>
+</ol>
+<h2 id="缩读">缩读</h2>
+<p>缩写表示可以缩读：如 I am=I’m,I have=I’ve 这些词往往在英语听力的时候读的很快不容易听到或者是听完整。比如wanna=want to, going to=gonna,because='cause还有许多缩写形式的单词或者短语都是这种形式。还有很多类似的都是，比如don’t know=dunno、give me=gimme、would have would’ve/would’a、you and I=you 'n’l、come on =c’mon</p>
+<h2 id="弱读">弱读</h2>
+<p>弱读非常重要，是中国人听不清英语的关键。<br>
+弱读不是声音变小，而是将元音改变了,这样能够让语句发音更轻松自然，不至于像中文那样“字正腔圆”导致读起来上气不接下气。</p>
+<p>例句：What <strong>do</strong> you want <strong>to do</strong>?<strong>From</strong> <strong>what</strong> I <strong>can</strong> tell,you <strong>must</strong> be tired <strong>of</strong> it,<strong>but</strong> I’m not,so <strong>would</strong> you like me <strong>to do</strong> it <strong>for</strong> you?<br>
+/d<strong>ə</strong> t<strong>ə</strong> fr<strong>ə</strong>m w<strong>ə</strong>t k<strong>ə</strong>n m<strong>ə</strong>st <strong>ə</strong>v b<strong>ə</strong>t w<strong>ə</strong>d f<strong>ə</strong>/</p>
+<blockquote>
+<p>弱读时，单词的中间的元音一般会变成中央元音/<strong>ə/</strong></p>
+</blockquote>
+<h2 id="节奏">节奏</h2>
+<p>💡英语是重音等时语言</p>
+<p><strong>英语语句中重读音节之间的时长基本相等</strong>，也就是说英语句中词语所花时间是由重读音节数量决定的。举例：Rabbits | eat | carrots.\A rabbit is | eating some | carrots.\The <strong>rabbit</strong> has been | <strong>eating</strong> some of the | <strong>carrots</strong>.分成三个音节，加粗部分为重读音节<br>
+也就是说，这是三个音节之间时长相等，根据之间的单词个数决定要不要快速读或者是连读，这样其实也体现了中央元音/ə/的重要性，就是为了和重读音节相对应的。</p>
+<p>总而言之记住一句话：英语句子中的非重读音节数量远远大于重读音节数量。</p>
+<h2 id="语调">语调</h2>
+<p>💡语调基于节奏</p>
+<p>语调就是英语句子声调在哪里升高哪里降低。但是不是中文的四声或者五度标记法。<br>
+语调就是表达说话人的情感，不需要死记(不一定升调就是提问，降调就是丧气)，多听多说就能理解。</p>
+<h3 id="升调">升调</h3>
+<p>这里用☑表示升调，放在哪个单词后哪个单词就升调，一般用来表达态度/情感/陈述/疑问/强调等</p>
+<p>举例</p>
+<ol>
+<li>一般疑问句：Are you kidding me☑ ？</li>
+<li>陈述形式的提问：Rabbits eat carrot☑ ?</li>
+<li>反义疑问词中的附加问句：you are right,are not you☑ ?</li>
+<li>列举中最后一个元素之前的元素：Are rabbits red☑，yellow☑，blue☑，green☑,or white?</li>
+<li>礼貌请求:Tell me,please☑</li>
+<li>句子中未完成的部分：The rabbit ate a carrot☑ and then slept.</li>
+</ol>
+<h3 id="降调">降调</h3>
+<p>用[\]表示降调</p>
+<ol>
+<li>特殊疑问句(非yes/no问题)：what is your name[\]?</li>
+<li>陈述事实或者回答问题： I see a white rabbit[\].</li>
+<li>感叹：what a beautiful leaf[\]!</li>
+<li>命令：put the girl down[\]!</li>
+<li>列举中最后一个元素：反义疑问句前一部分：Rabbits like to eat,play,sleep and run[\].</li>
+<li>反义疑问句前面一部分：Rabbit eat carrots[\],don’t they?</li>
+<li>作为回答/附和/确认的问句形式：The rabbit ate all the carrots. Did it[\]?</li>
+<li>已经知道提问的答案：can you call me at 6[\].</li>
+<li>问句形式表礼貌，并非真的在问问题：Would you pass me the salt[\]?</li>
+<li>不满、愤怒：Is that what you think[\]?</li>
+</ol>
+<p>参考音节</p>
+<p>TU表示重读，tu表示弱读。同样适用于句子和词组。</p>
+<ol>
+<li>单音节 TU：如two!two?</li>
+<li>双音节 TU tu： 如rabbit!rabbit?</li>
+<li>双音节 tu TU：如sit down!sit down?</li>
+<li>三音节 TU tu tu：如possible!possible?</li>
+<li>三音节 tu TU tu：如computer!computer?</li>
+<li>三音节 tu tu TU：如engineer!engineer?</li>
+</ol>
+<h1>自然拼读(Phonics)</h1>
+<p>就是看字母，<strong>猜读音</strong>。这部分内容属于技巧向，对英语口语与听力有帮助。</p>
+<p>以下内容主要讨论一般情况，特殊情况请参考词典。</p>
+<h2 id="开音节与闭音节">开音节与闭音节</h2>
+<p><strong>概念解析</strong>：</p>
+<p>音节：由音素组合成的<strong>最小</strong>最自然的语音单位，比如rabbit的音节分别是rab和bit。</p>
+<p>闭音节：以辅音结尾的音节。比如baby中的by音节。注意这里的辅音不是指字母而是指音标。</p>
+<p>开音节：以元音结尾的音节。比如baby中的ba音节。</p>
+<p>重读音节：被强调的音节就是重读音节，往往声音更大，元音也被拉长。比如rabbit.其音标为/‘ræbɪt/ 这里的’就是用来标记重读音节的，所以rab音量较大，元音也延长。ˌ为次重读音节，在重读与非重读之间。比如accidental，其音标为/ˌ æksɪ’dentl/</p>
+<p>非重读音节：与重读音节相反。</p>
+<p>相对开音节：以不发音的元音字母e结尾的闭音节。</p>
+<h2 id="单个字母">单个字母</h2>
+<blockquote>
+<p>以下图都是从英语兔公众号下载而来</p>
+</blockquote>
+<p>辅音字母</p>
+<p><img src="https://s2.loli.net/2024/11/26/s6PErIDYCQJL4Z5.png" alt="001_字母发音_01.png"></p>
+<p>元音字母</p>
+<p><strong>单个元音字母在重读开音节里读元音字母本身的读音</strong></p>
+<p><img src="https://s2.loli.net/2024/11/26/ohsaKvIrCBfPZdx.png" alt="001_字母发音_02.png"></p>
+<p><strong>单个元音字母在相对开音节里读元音字母本身的读音</strong> 比如bate</p>
+<h2 id="字母组合">字母组合</h2>
+<p>辅音组合</p>
+<p><img src="https://s2.loli.net/2024/11/26/iCemwkp4ySY6Hjb.png" alt="001_字母发音_03.png"></p>
+<p>元音组合</p>
+<p><img src="https://s2.loli.net/2024/11/26/3BkEcelpLydK2sO.png" alt="001_字母发音_04.png"></p>
+<p>以上这些只是技巧向，真正要学好英语口语还是要大量的输入与输出。</p>
+<h1>参考</h1>
+<ol>
+<li><a href="https://www.jiwake.com/yinbiaofayin/">英语音标发音表-英语48个音标在线读 (jiwake.com)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/457728471">【笔记】英语兔的DJ音标整理 - 知乎 (zhihu.com)</a></li>
+<li><a href="https://www.bilibili.com/video/BV1iV411z7Nj?p=28&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">【全网最适合中国人的免费音标课(纯干货, 超详细!)】</a></li>
+<li><a href="https://www.bilibili.com/video/BV1SZ4y1K7Lr?p=7&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">【你必须知道的英语发音技巧(让你的口语更纯正, 更地道!)】</a></li>
+<li><a href="https://www.bilibili.com/video/BV14841117gz?p=4&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">英语自然拼读极简教程（免费、简洁、高效 | 半小时内打牢基础</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>English</category>
+      </categories>
+      <tags>
+        <tag>English</tag>
       </tags>
   </entry>
   <entry>
@@ -7006,459 +7472,6 @@ The rabbit句子是句子的主干，前面句子表示原因，invite这个动�
 <li><a href="https://excalidraw.com/#:~:text=Excalidraw%20is%20a%20virtual%20collaborative%20whiteboard%20tool%20that">Excalidraw绘图网站</a></li>
 <li><a href="https://www.yingyutu.com/">英语兔 (yingyutu.com)</a> 其实是微信公众号不是网站</li>
 <li><a href="https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/">免费的剑桥英语词典和同义词词典 (cambridge.org)</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>English</category>
-      </categories>
-      <tags>
-        <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>英语口语(英语兔版)</title>
-    <url>/2024/10/13/%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD(%E8%8B%B1%E8%AF%AD%E5%85%94%E7%89%88)/</url>
-    <content><![CDATA[<h1>英语口语</h1>
-<p>💡不要用中文去替代英文中独有的，但是中文中缺失的音。</p>
-<h1>三种常用的音标</h1>
-<p>国际音标(IPA):</p>
-<p>KK音标：主要是美式音标，方便美式英语的注音。</p>
-<p>DJ音标：主流音标，口语练习的主要音标。<strong>本文后面不加说明的都是练习的DJ音标(IPA88)</strong></p>
-<p>对于非英语专业或者是语言研究的人来说，我们只需要在学习音标的是能认出这是属于哪一类的音标即可，音标终究是用来帮助发音的。</p>
-<h1>全部音标发音</h1>
-<p>视频如下。</p>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
-    </iframe>
-</div>
-<h1>发音讲解</h1>
-<p><strong>以元音和辅音分</strong>：</p>
-<p>元音：就是在发音时不受阻碍(如嘴唇张开，但还是会受到舌头的影响)发出的音。辅音与元音相反。注意这里的舌位指的是舌头在发音时隆起的最高点，舌头太高，舌位就高。</p>
-<p>影响元音三要素：圆唇度(嘴巴”o“的程度)，舌位高低，舌位前后。</p>
-<p><strong>以清音和浊音分</strong>：<br>
-清音与浊音：声带不振动的音就是清音。反之就是浊音。</p>
-<p>示意图如下</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>元音</th>
-<th>辅音</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>浊音</td>
-<td>粗略认为所有的元音都是浊元音</td>
-<td>浊辅音</td>
-</tr>
-<tr>
-<td>清音</td>
-<td>\</td>
-<td>清辅音</td>
-</tr>
-</tbody>
-</table>
-<h2 id="元音">元音</h2>
-<blockquote>
-<p>以下都是DJ音标</p>
-</blockquote>
-<h3 id="单元音">单元音</h3>
-<p>注意：后面在音标中的的：不是其正确写法，只是markdown文件难以展现，具体写法还是见参考部分的第一个链接，后面的也是这样。</p>
-<ul>
-<li><strong>/i:/</strong></li>
-</ul>
-<p>bee、fee、pea、read、meat、lead</p>
-<p>发音时不圆唇，注意舌位更高，嘴角要向两边拉开，带点微笑的感觉。</p>
-<ul>
-<li><strong>/ɪ/</strong></li>
-</ul>
-<p>bit、fit、pit、lit、hit、fish</p>
-<p>注意舌位更低，舌尖在下齿后方，比/i:/更放松，嘴角没有那么咧开。</p>
-<p>注意区分，它<strong>不仅仅是把/i:/的时长缩短</strong>，有些美国人发音舌位会更低。有点像是军训时教官说的“一”。</p>
-<ul>
-<li><strong>/u:/</strong></li>
-</ul>
-<p>too、food、loose、prove、moon、soon</p>
-<p>/u:/<strong>口型没有那么圆,而是更扁</strong>,嘴角向两边拉伸，发音部位靠口腔后部。(不要误发成yu)</p>
-<ul>
-<li><strong>/ʊ/</strong></li>
-</ul>
-<p>book、look、good、took、bush、would</p>
-<p>发/ʊ/时,嘴唇没那么撅，更放松时长更短,发音更靠后。/ʊ/并不仅仅是把长音/u:/短着读，/u:/的唇形像两边拉开,而/ʊ/唇形更圆,更放松。</p>
-<ul>
-<li><strong>/e/</strong></li>
-</ul>
-<p>bed、get、pet、let、met、set</p>
-<p>双唇自然张开，口腔放松。舌尖在下牙齿后方，舌面平放</p>
-<ul>
-<li><strong>/ɜ:/</strong></li>
-</ul>
-<p>her、person、learn、bird、word、fur、urgent</p>
-<p>嘴自然张开，唇和舌自然放松，要确保发音时间够长，是重读的长音。如果发音不重读，更短就变成了/ə/ ，在单词中的拼写有er、ear、ir、or、ur等。</p>
-<p>在<strong>美式</strong>英语中会r化，写作/ɜ:r/，是美式英语最显著的特征之一。</p>
-<ul>
-<li><strong>/ə/</strong></li>
-</ul>
-<p>a-about balloon、e-taken problem、i-family pencil、o-memory freedom、u-supply support、y-syringe analysis 这些字母在单词内发音的时候都发/ə/</p>
-<p>嘴自然张开,唇和舌都自然放松不要重读,轻轻地让气流冲出声带自然读出重读,变长→/ɜ:/，它是英语中出现频率它是英语最高，最特殊,最重要的schwa(中央元音或中性元音)。让说话者在不需要强调某个音时用它代替，为了在某个音上减少所花时间，<strong>弱化</strong>成一个中性的默认音。有时候/ə/甚至省略不读。</p>
-<ul>
-<li><strong>/ʌ/</strong></li>
-</ul>
-<p>but、hut、must、son、ton、done</p>
-<p>舌尖在下牙齿后方，舌头平放发音靠口腔中后方，类似于啊但是口型没有那么大,时长更短，英美发音不同。</p>
-<p><strong>美音</strong>/ʌ/和中央元音/ə/区别在于，/ʌ/只出现在重读音节中，而/ə/只出现在轻读音节中。两者一般不做舌位上的区分，区别在于是否重读,在美音中的发音不是在口腔中后方，而是在口腔中间，也就说比英音靠前。</p>
-<ul>
-<li><strong>/ɔ:/</strong></li>
-</ul>
-<p>caught、bought、law、saw、door、four</p>
-<p>嘴唇要撅起来，圆而外凸,肌肉较为紧张，口腔后方发音。</p>
-<p><strong>美音</strong>中/ɔ/没有英音那样圆形外凸，更靠近汉语拼音ao而不是o，如果这个音后面跟字母r，美音中往往r化。</p>
-<ul>
-<li><strong>/æ/</strong></li>
-</ul>
-<p>bad、fat、pat、lad、mat、sat</p>
-<p>最容易读错的音之一，口型一定要张大，饱满，嘴角也要向两边拉伸。舌端在下牙齿后方，同时发出/ɑ:/和/e/这两个音。</p>
-<ul>
-<li><strong>/ɑ:/</strong></li>
-</ul>
-<p>father、fast、glass、car、park、mark</p>
-<p>/ɑ:/的口型比“啊”更大,发音更靠口腔后部(舌根处)发音，时长要足够长。</p>
-<ul>
-<li><strong>/ɒ/</strong></li>
-</ul>
-<p>top、hot、lot、box、stop、wash</p>
-<p>/ɒ/和普通话的凹(ao)相似,但并不相同发/ɒ/时,嘴型更小,时间更短,凹有口型变化，/ɒ/没有。</p>
-<p>在<strong>美音</strong>中一般读作/ɑ:/，也是英式英语和美式英语主要区别之一。</p>
-<h3 id="双元音">双元音</h3>
-<ul>
-<li><strong>/eɪ/</strong></li>
-</ul>
-<p>make、date、cake、safe、play、plane</p>
-<p>/e/和/ɪ/一前一后快速紧密发出，或者理解为从/e/向/ɪ/平滑发音。发这个音口腔是有变化的。</p>
-<ul>
-<li><strong>/ɔɪ/</strong></li>
-</ul>
-<p>boy、toy、soy、voice、noise、moist</p>
-<p>/ɔ:/变短后和/ɪ/一前一后快速紧密发出，或者理解为从/ɔ:/向/ɪ/发音，发这个音口腔是有变化。</p>
-<ul>
-<li><strong>/aɪ/</strong></li>
-</ul>
-<p>bike、nice、time、lick、site、life</p>
-<p>/a/和/ɪ/一前一后快速紧密发出，或者理解为从/a/向/ɪ/发音，发这个音口腔是有变化的，口型更加饱满。</p>
-<ul>
-<li><strong>/aʊ/</strong></li>
-</ul>
-<p>how、cow、allow、house、loud、mouse</p>
-<p>/a/和/ʊ/一前一后快速紧密发出，发这个音口腔是有变化的，口型更饱满更长。</p>
-<ul>
-<li><strong>/əʊ/</strong></li>
-</ul>
-<p>open、hope、post、coat、boat、soap</p>
-<p>/ə/和/ʊ/一前一后快速紧密发出，发这个音口腔是有变化的，嘴唇有收缩的，英音的起始音位比**美音/oʊ/**更靠前。</p>
-<ul>
-<li><strong>/ʊə/</strong></li>
-</ul>
-<p>tour、poor、moor、pure、cure、lure</p>
-<p>/ʊ/和/ə/一前一后快速紧密发出，发音一定要连贯。读音在英音中包含/ʊə/的词基本上都包含字母r，在<strong>美音</strong>中会r化。</p>
-<ul>
-<li><strong>/eə/</strong></li>
-</ul>
-<p>hair、pair、chair、fare、care、dare</p>
-<p>/e/和/ə/一前一后快速紧密发出，发音一定要连贯，注意这个/ə/可不等于/r/.</p>
-<ul>
-<li><strong>/ɪə/</strong></li>
-</ul>
-<p>area、idea、beer、dear、fear、here</p>
-<p>/ɪ/和/ə/一前一后快速紧密发出，发音一定要连贯。请注意,如果是读英音，单词拼写即使出现字母r，单词内部也不会r化，如果是读<strong>美音</strong>，只有单词内部出现r，才有可能r化。美音中如出现r，则对应读音为/ɪr/如不出现r，则一样。如果单词内部没有r，则英音美音都是/ɪə/，比如idea。</p>
-<h2 id="辅音">辅音</h2>
-<p>概念解读(辅音三阶段)：成阻：气流被阻塞；持阻：气流持续往外冲，但仍被阻塞；除阻：阻塞被去除，气流冲出；</p>
-<p>辅音三要素：清浊，调音部位、调音方式</p>
-<blockquote>
-<p>很多中式发音就是因为喜欢在字母后面加上其他的音，比如s后面加i变成”子“please读成普利子</p>
-</blockquote>
-<ul>
-<li><strong>/p/ /b/</strong></li>
-</ul>
-<p>peak beak、pet bed、pig big、rapid rabbit、lap lab、speak beak</p>
-<ol>
-<li>如果p后有元音，比如: peak就是<strong>送气音</strong></li>
-<li>如果p紧跟s，比如: speak就是<strong>不送气音</strong></li>
-<li>如果p后紧跟某些辅音，往往嘴巴闭上就基本完成发音国际音标:[p ]，<strong>几乎听不出这个音</strong>，比如: trapdoor, help me, leap year，<strong>无声除阻音</strong> (也称不完全爆破音)</li>
-</ol>
-<p><strong>/ b/<strong>是</strong>浊辅音</strong>，声带振动。</p>
-<ul>
-<li><strong>/t/ /d/</strong></li>
-</ul>
-<p>tip dip、tea deep、test desk、tap dab、bat bad、bet bed</p>
-<ol>
-<li>如果t后有元音，比如:top就是送气音</li>
-<li>如果t紧跟s，比如: stop就是<strong>不送气音</strong></li>
-<li>如果t后紧跟某些辅音，嘴巴闭上就基本完成发音国际音标: [t ]比如: setback, forget me，<strong>无声除阻音</strong>。</li>
-</ol>
-<p>如果想要知道音标的音位变体，见参考“英语兔”视频部分</p>
-<ol>
-<li>在<strong>美式英语</strong>中，元音之间的字母t(尤其是非重读音节中)，读作<strong>闪音</strong>，国际音标:[ɾ]，舌尖在上牙齿上方硬腭处，阻挡气流,轻轻—弹比如: water, better, little，听起来很像发出了/d/ 的声音。在标准英音中仍读作正常t: water, better, little。</li>
-<li>在<strong>美式英语</strong>中，鼻音/n/之前的t往往读作<strong>喉塞音</strong>，国际音标:[ʔ]，声门阻住气流，像是把声音&quot;卡在喉咙&quot;里一样比如: certain, important, button，在标准英音中仍读作正常t : certain, important, button</li>
-<li>在<strong>美式英语</strong>中，鼻音/n/之后的t往往基本听不见，比如: winter≈winner， interview≈innerview，甚至有的词中, t前后都有鼻音，比如: mountain，在标准英音中仍读作正常t: winter, interview, mountain</li>
-<li>/ d/是浊辅音，声带振动。在美音中，/d /和/t/一样会有<strong>闪音</strong>的读法: metal约等于medal，鼻音也会影响/d/的读音: abandon.</li>
-</ol>
-<ul>
-<li><strong>/k/ /g/</strong></li>
-</ul>
-<p>kit git、kate gate、cup gut、anchor anger、pick pig、peck keg</p>
-<ol>
-<li>如果k后有元音比如:kite，就是送气音</li>
-<li>如果k紧跟s比如: sky，不送气音普通话&quot;该&quot;的声母</li>
-<li>如果k后紧跟某些辅音嘴巴闭上就基本完成发音国际音标: [k ]，比如: dogtor, backdoor, make dinner，<strong>无声除阻音</strong>。</li>
-</ol>
-<ul>
-<li><strong>/m/ /n/ /ŋ/</strong></li>
-</ul>
-<p>map nap、met net、meet neat、room noon、tom run、lime line、sin sing、on long、sun sung</p>
-<ol>
-<li>/m/在元音之前，和普通话&quot;妈&quot;的声母(汉语拼音m)相似。在元音之后，发音方式相似，但只是双唇闭拢发鼻音。</li>
-<li>/n/在元音之前，和普通话&quot;拿&quot;的声母(汉语拼音n)相似/n/要比/m/的舌位高，尤其是舌端部分。在元音之后,发音方式相似，轻微通过鼻子出气。</li>
-<li>/ŋ/和/n/相似,但舌后端抵住软腭，而不像/n/一样舌前端抵住上齿龈。</li>
-</ol>
-<p>普通话中的后鼻音往往没有英语中那么清晰明显</p>
-<ul>
-<li><strong>/f/ /v/</strong></li>
-</ul>
-<p>fat valley、fit visit、ferry very、fest vest、life drive、leaf leave</p>
-<p>/f/和普通话&quot;夫&quot;的声母，基本一样/v/是&quot;声带振动版&quot;的/f/</p>
-<ul>
-<li><strong>/s/ /z/</strong></li>
-</ul>
-<p>sip zip、soon zoom、soup zoo、lesson reason、once lose、peace please</p>
-<p>英语的/s/，/z/都属于所谓<strong>摩擦音</strong>，不同于爆破音，/s/和普通话&quot;斯&quot;的声母(汉语拼音s)一样，/z/和/s/很像，区别就在于/z/发音时<strong>声带振动</strong>。</p>
-<ul>
-<li><strong>/θ/ /ð/</strong></li>
-</ul>
-<p>three there、thin that、thank those、thigh the、bath bathe、breath breathe</p>
-<p>和/s//z/一样，属于摩擦音，不同在于舌尖不在上下牙齿后方，而是在上下齿之间，被轻轻咬住，/θ/ /ð/区别在于/ð/需要<strong>声带振动</strong>。</p>
-<ul>
-<li><strong>/ʃ/ /ʒ/</strong></li>
-</ul>
-<p>mesh measure、fresh pleasure、leash decision、attention occasion、shall usual、shame regime</p>
-<p>/ʃ/ /ʒ/属于摩擦音，/ʃ/ /ʒ/区别在于/ʒ/需要声带振动。</p>
-<ul>
-<li><strong>/tʃ/ /dʒ/</strong></li>
-</ul>
-<p>chuck jug、chop job、choke joke、cheap jeep、catch page、pitch college</p>
-<p>/tʃ/可以理解为由/t/和/ʃ/构成,爆破音/t/和摩擦音/ʃ/同时发出，声带不振动。</p>
-<p>/dʒ/可以理解为由/d /和/ʒ/构成,爆破音/d/和摩擦音/ʒ/同时发出，声带振动，所以也被称作破擦音。</p>
-<ul>
-<li><strong>/h/</strong></li>
-</ul>
-<p>hat、hot、high、home、house、him</p>
-<p>舌面后部抬起接近软腭，形成缝隙,让气流向外通过,声带不振动。</p>
-<ul>
-<li><strong>/w/</strong></li>
-</ul>
-<p>was、why、wide、wet、we、wood</p>
-<p>双唇圈起，向外凸出，气流冲出发音，声带震动，/w/往往听上去像元音/u:/或/ʊ/,所以又被称作半元音，英语w开头的单词基本都是/w/开始。</p>
-<ul>
-<li><strong>/r/</strong></li>
-</ul>
-<p>rat、red、read、rice、right、room、car、her、ear、bore、tour、pure</p>
-<ol>
-<li>英音中，当字母r出现在元音<strong>之前</strong>，双唇突出并<strong>圆唇</strong>,舌尖上扬，气流从舌面上方滑出,声带振动。发英语/r/的音时，舌尖指向上齿龈。</li>
-<li>英音中，当字母r出现在元音<strong>之后</strong>，—般不发音或读作中央元音/ə/</li>
-<li>如果r出现在单词<strong>末尾</strong>，而下一个单词以元音开头,则连读时一般读出，比如:bear it、fear us、gear up</li>
-<li>美音和英音的区别在于:当字母r出现在元音之后，字母r往往会让<strong>元音r化</strong>，而在英音中则一般不发音或读作中央元音/ə/</li>
-</ol>
-<ul>
-<li><strong>/j/</strong></li>
-</ul>
-<p>yes、yard、yellow、young、yoga、use</p>
-<p>舌端往上抬向硬腭，与元音/i:/的舌位相似，但是更高一些。气流从舌面和硬腭之间通过，产生摩擦出声，声带振动。/j/往往听上去像元音/i:/或/ɪ/，所以又被称作半元音。但是/j/的舌端和硬腭靠得更近，有摩擦的感觉。</p>
-<ol>
-<li><strong>/j/的省略：<strong>在</strong>美式英语</strong>中,有些辅音(如/t/，/d/，/n/)后的/j/经常被<strong>省略</strong>，这个被称作yod-dropping(yod就是/j/)</li>
-<li><strong>/j/的融合</strong>：和之前的辅音经常&quot;合在一起读&quot;,这个被称作yod-coalescence，在口语中(尤其是英音口语中)常见, &quot;标准&quot;英语一般尽量避免。有的词中,yod-coalescence已成为标准音，如: educate /'edʒukeɪt/、issue / 'ɪʃu:/ 、azure /'æʒə/</li>
-<li>yod-coalescence也适用于单词之间，比如:Nice to meet you! Would you do it?</li>
-</ol>
-<ul>
-<li><strong>/l/</strong></li>
-</ul>
-<p>清晰L：lack lake like look lose leak、模糊L：help mile all girl school full</p>
-<ol>
-<li>如果l后有元音：舌尖抵住上牙齿后方，让气流从舌两边(两侧)滑出，同时舌尖离开上牙齿后，声带振动，所以/l/被叫做&quot;舌边音&quot;或&quot;舌侧音&quot;（清晰舌边音）</li>
-<li>如果l后没有元音：舌位和元音前的/l/一致，但是舌尖不离开上牙齿，声带振动（模糊舌边音）模糊L要发到位，否则导致连读时不顺畅，或者没法连读。</li>
-<li>字母|还有一个版本:不发音，英语中不少单词中的l都是不发音的，比如:calm、palm、salmon、colonel、folk</li>
-<li>英音美音发音区别:有的包含l的词在英式英语和<strong>美式英语</strong>中发音不同，比如:英音: million, billion, value美音: million, billion, value</li>
-</ol>
-<ul>
-<li><strong>/ts/ /dz/</strong></li>
-</ul>
-<p>bats bands、dates deeds、kites kids、fights friends、hats hands、lots leads</p>
-<ol>
-<li>/ts/可以理解为由/t/和/s/构成。爆破音/t/和摩擦音/s/同时发出，声带不振动。</li>
-<li>/dz/可以理解为由/d/和/z/构成，爆破音/d/和摩擦音/z/同时发出，声带振动。</li>
-</ol>
-<p>所以这两个音被归类为所谓破擦音(爆破＋摩擦)</p>
-<ul>
-<li><strong>/tr/ /dr/</strong></li>
-</ul>
-<p>trip drip、true drew、tree dream、try dry、country laundry、pantry hundred</p>
-<ol>
-<li>/tr/可以理解为由/t/和/r/构成。爆破音/t/和摩擦音/r/同时发出，声带不振动。</li>
-<li>/dr/可以理解为由/d/和/r/构成。爆破音/d/和摩擦音/r/同时发出，声带振动。</li>
-</ol>
-<p>所以这两个音被归类为所谓破擦音(爆破＋摩擦)</p>
-<h1>英语发音技巧</h1>
-<blockquote>
-<p>这些发音技巧能够让你的发音更加地道，同时也能很大程度上提升你的英语听力</p>
-</blockquote>
-<h2 id="连音">连音</h2>
-<p>单词(辅音结尾)+单词(元音开头)如：not at all.(“闹太套”),中文不习惯连读，我们读“我爱天安门”不会像外国人那样连读成“外天门”。这就是英语听不准确的重要口语习惯和原因。也就是说，<strong>辅音单词结尾的辅音要发到位，不加上不存在的元音</strong>，然后自然读下一个单词就能“连读”。</p>
-<p>💡连读不是创造一个音，而是两个音结合产生的结果。试着平滑地读I am，你就会感受到/j/的发音，这就是<strong>连音的本质</strong>。如果<strong>你的发音不标准，就不会自然而然地读出连音</strong>。</p>
-<p><strong>加音规则</strong></p>
-<p>注意是先有加音现象，再总结出规律。</p>
-<ol>
-<li>元音+元音：元音与元音连读容易糊，加上一个之前不存在的“过渡音”使得加音连贯。
-<ul>
-<li>/u:/, <strong>/ʊ/</strong>,<strong>/aʊ/</strong>, <strong>/əʊ/</strong>+元音:+/w/。如：just do it.</li>
-<li>/i:/,<strong>/ɪ/</strong>,<strong>/eɪ/</strong>,<strong>/aɪ/</strong>,<strong>/ɔɪ/</strong>+元音:+/j/。如： I am.</li>
-<li><strong>/ə/</strong>,<strong>/ɑ:/</strong>,<strong>/ɔ:/</strong>+元音:+/r/。主要是英式英语用，美式英语很少。如 the idea of；美式英语主要是字母r+元音，如bear it.连读但是不加音。</li>
-</ul>
-</li>
-<li>辅音+元音(词尾辅音 + 词首元音）： travel agency</li>
-</ol>
-<h2 id="同化">同化</h2>
-<ol>
-<li>逆行同化(前面的音受到后一个音的影响)
-<ol>
-<li>无声除阻(不完全爆破)：/k/ /t/ /d/+辅音，爆破音不发音 如:look back</li>
-<li>浊音变清音：如 have to :直接变成/f/+/t/,这样比原来的浊音更好发音。</li>
-<li>双唇化：如in person.受到p这个要闭唇的音印象，读起来变成了 im person。</li>
-</ol>
-</li>
-<li>顺行同化(后面音受到前面影响)
-<ol>
-<li>复数词尾：如books 一般会读成ks而不是kz。</li>
-</ol>
-</li>
-<li>互相同化：
-<ol>
-<li>融合发音:/s/+/j/ = <strong>/ʃ/</strong>;例如:God bless you;/z/+/j/ =  <strong>/ʒ/</strong>;例如as you wish;/t/+/j/ = <strong>/tʃ/</strong> ;例如Nice to me you;/d/+/j/ = <strong>/dʒ/</strong>;例如Did you do it?</li>
-<li>辅音延长：当前面一个音和后面一个音是同一个音时。只发一个音(这里的音是指<strong>音标</strong>不是字母)，但是要延长：如fish shop.这里前后都是sh</li>
-</ol>
-</li>
-<li>完全失爆（词尾爆破音( p b t d k g)+ 词首爆破音( p b t d k g)：
-<ol>
-<li>good question</li>
-</ol>
-</li>
-</ol>
-<h2 id="异化">异化</h2>
-<p>常见于/s/+/t/、/s/+/k/、/s/+/p/的组合。<strong>严格来说不是浊化</strong>，而是将这些音变成不送气的音，但是只是发音的话就是不用考虑这些</p>
-<ol>
-<li>r使前面的元音r化：如door 使前一个r消失，如surprise变成su®prise.</li>
-<li>具体例子sp+元音：
-<ol>
-<li>How do you spend your leisure time?</li>
-<li>sk+元音：i’m so scared</li>
-<li>st + 元音：Stand up and study hard.</li>
-<li>str+ 元音:  He struck me with a stick</li>
-</ol>
-</li>
-</ol>
-<h2 id="省音">省音</h2>
-<ol>
-<li>偷懒不读某一个或者是一些音：如interesting,这类往往可省可不省，省多少看个人说话习惯。</li>
-<li>必须省音。如debt\subtle\know\knee\write\wrong……这些词中b\k\w都是省略不读的。</li>
-<li>词与词之间省略：比如last year就只读las year.t直接省略。</li>
-<li>还有/t/、/d/等(词尾)爆破音也经常省略。如：have 的/h/(这被称为<strong>h击穿</strong>)。ing中的/g/，比如 Are you listenin’?这里打‘就说明省去了g</li>
-</ol>
-<h2 id="缩读">缩读</h2>
-<p>缩写表示可以缩读：如 I am=I’m,I have=I’ve 这些词往往在英语听力的时候读的很快不容易听到或者是听完整。比如wanna=want to, going to=gonna,because='cause还有许多缩写形式的单词或者短语都是这种形式。还有很多类似的都是，比如don’t know=dunno、give me=gimme、would have would’ve/would’a、you and I=you 'n’l、come on =c’mon</p>
-<h2 id="弱读">弱读</h2>
-<p>弱读非常重要，是中国人听不清英语的关键。<br>
-弱读不是声音变小，而是将元音改变了,这样能够让语句发音更轻松自然，不至于像中文那样“字正腔圆”导致读起来上气不接下气。</p>
-<p>例句：What <strong>do</strong> you want <strong>to do</strong>?<strong>From</strong> <strong>what</strong> I <strong>can</strong> tell,you <strong>must</strong> be tired <strong>of</strong> it,<strong>but</strong> I’m not,so <strong>would</strong> you like me <strong>to do</strong> it <strong>for</strong> you?<br>
-/d<strong>ə</strong> t<strong>ə</strong> fr<strong>ə</strong>m w<strong>ə</strong>t k<strong>ə</strong>n m<strong>ə</strong>st <strong>ə</strong>v b<strong>ə</strong>t w<strong>ə</strong>d f<strong>ə</strong>/</p>
-<blockquote>
-<p>弱读时，单词的中间的元音一般会变成中央元音/<strong>ə/</strong></p>
-</blockquote>
-<h2 id="节奏">节奏</h2>
-<p>💡英语是重音等时语言</p>
-<p><strong>英语语句中重读音节之间的时长基本相等</strong>，也就是说英语句中词语所花时间是由重读音节数量决定的。举例：Rabbits | eat | carrots.\A rabbit is | eating some | carrots.\The <strong>rabbit</strong> has been | <strong>eating</strong> some of the | <strong>carrots</strong>.分成三个音节，加粗部分为重读音节<br>
-也就是说，这是三个音节之间时长相等，根据之间的单词个数决定要不要快速读或者是连读，这样其实也体现了中央元音/ə/的重要性，就是为了和重读音节相对应的。</p>
-<p>总而言之记住一句话：英语句子中的非重读音节数量远远大于重读音节数量。</p>
-<h2 id="语调">语调</h2>
-<p>💡语调基于节奏</p>
-<p>语调就是英语句子声调在哪里升高哪里降低。但是不是中文的四声或者五度标记法。<br>
-语调就是表达说话人的情感，不需要死记(不一定升调就是提问，降调就是丧气)，多听多说就能理解。</p>
-<h3 id="升调">升调</h3>
-<p>这里用☑表示升调，放在哪个单词后哪个单词就升调，一般用来表达态度/情感/陈述/疑问/强调等</p>
-<p>举例</p>
-<ol>
-<li>一般疑问句：Are you kidding me☑ ？</li>
-<li>陈述形式的提问：Rabbits eat carrot☑ ?</li>
-<li>反义疑问词中的附加问句：you are right,are not you☑ ?</li>
-<li>列举中最后一个元素之前的元素：Are rabbits red☑，yellow☑，blue☑，green☑,or white?</li>
-<li>礼貌请求:Tell me,please☑</li>
-<li>句子中未完成的部分：The rabbit ate a carrot☑ and then slept.</li>
-</ol>
-<h3 id="降调">降调</h3>
-<p>用[\]表示降调</p>
-<ol>
-<li>特殊疑问句(非yes/no问题)：what is your name[\]?</li>
-<li>陈述事实或者回答问题： I see a white rabbit[\].</li>
-<li>感叹：what a beautiful leaf[\]!</li>
-<li>命令：put the girl down[\]!</li>
-<li>列举中最后一个元素：反义疑问句前一部分：Rabbits like to eat,play,sleep and run[\].</li>
-<li>反义疑问句前面一部分：Rabbit eat carrots[\],don’t they?</li>
-<li>作为回答/附和/确认的问句形式：The rabbit ate all the carrots. Did it[\]?</li>
-<li>已经知道提问的答案：can you call me at 6[\].</li>
-<li>问句形式表礼貌，并非真的在问问题：Would you pass me the salt[\]?</li>
-<li>不满、愤怒：Is that what you think[\]?</li>
-</ol>
-<p>参考音节</p>
-<p>TU表示重读，tu表示弱读。同样适用于句子和词组。</p>
-<ol>
-<li>单音节 TU：如two!two?</li>
-<li>双音节 TU tu： 如rabbit!rabbit?</li>
-<li>双音节 tu TU：如sit down!sit down?</li>
-<li>三音节 TU tu tu：如possible!possible?</li>
-<li>三音节 tu TU tu：如computer!computer?</li>
-<li>三音节 tu tu TU：如engineer!engineer?</li>
-</ol>
-<h1>自然拼读(Phonics)</h1>
-<p>就是看字母，<strong>猜读音</strong>。这部分内容属于技巧向，对英语口语与听力有帮助。</p>
-<p>以下内容主要讨论一般情况，特殊情况请参考词典。</p>
-<h2 id="开音节与闭音节">开音节与闭音节</h2>
-<p><strong>概念解析</strong>：</p>
-<p>音节：由音素组合成的<strong>最小</strong>最自然的语音单位，比如rabbit的音节分别是rab和bit。</p>
-<p>闭音节：以辅音结尾的音节。比如baby中的by音节。注意这里的辅音不是指字母而是指音标。</p>
-<p>开音节：以元音结尾的音节。比如baby中的ba音节。</p>
-<p>重读音节：被强调的音节就是重读音节，往往声音更大，元音也被拉长。比如rabbit.其音标为/‘ræbɪt/ 这里的’就是用来标记重读音节的，所以rab音量较大，元音也延长。ˌ为次重读音节，在重读与非重读之间。比如accidental，其音标为/ˌ æksɪ’dentl/</p>
-<p>非重读音节：与重读音节相反。</p>
-<p>相对开音节：以不发音的元音字母e结尾的闭音节。</p>
-<h2 id="单个字母">单个字母</h2>
-<blockquote>
-<p>以下图都是从英语兔公众号下载而来</p>
-</blockquote>
-<p>辅音字母</p>
-<p><img src="https://s2.loli.net/2024/11/26/s6PErIDYCQJL4Z5.png" alt="001_字母发音_01.png"></p>
-<p>元音字母</p>
-<p><strong>单个元音字母在重读开音节里读元音字母本身的读音</strong></p>
-<p><img src="https://s2.loli.net/2024/11/26/ohsaKvIrCBfPZdx.png" alt="001_字母发音_02.png"></p>
-<p><strong>单个元音字母在相对开音节里读元音字母本身的读音</strong> 比如bate</p>
-<h2 id="字母组合">字母组合</h2>
-<p>辅音组合</p>
-<p><img src="https://s2.loli.net/2024/11/26/iCemwkp4ySY6Hjb.png" alt="001_字母发音_03.png"></p>
-<p>元音组合</p>
-<p><img src="https://s2.loli.net/2024/11/26/3BkEcelpLydK2sO.png" alt="001_字母发音_04.png"></p>
-<p>以上这些只是技巧向，真正要学好英语口语还是要大量的输入与输出。</p>
-<h1>参考</h1>
-<ol>
-<li><a href="https://www.jiwake.com/yinbiaofayin/">英语音标发音表-英语48个音标在线读 (jiwake.com)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/457728471">【笔记】英语兔的DJ音标整理 - 知乎 (zhihu.com)</a></li>
-<li><a href="https://www.bilibili.com/video/BV1iV411z7Nj?p=28&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">【全网最适合中国人的免费音标课(纯干货, 超详细!)】</a></li>
-<li><a href="https://www.bilibili.com/video/BV1SZ4y1K7Lr?p=7&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">【你必须知道的英语发音技巧(让你的口语更纯正, 更地道!)】</a></li>
-<li><a href="https://www.bilibili.com/video/BV14841117gz?p=4&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">英语自然拼读极简教程（免费、简洁、高效 | 半小时内打牢基础</a></li>
 </ol>
 ]]></content>
       <categories>
