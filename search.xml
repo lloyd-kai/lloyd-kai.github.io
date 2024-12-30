@@ -1,272 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo博客系列(一)测试与更新</title>
-    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/</url>
-    <content><![CDATA[<h1>hexo博客更新和待更新计划</h1>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法与经验</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
-<p>以下更新内容都是从最后一次更新开始的</p>
-</blockquote>
-<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2024</p>
-</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>11-9</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>在网页/privacy下添加了隐私用户政策</li>
-</ol>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-29</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>修复了手机端视频溢出显示部分的问题</li>
-<li>修改了几处笔误和显示问题。</li>
-<li>优化了所有博客的参考部分</li>
-</ol>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-26</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>butterfly主题从5.0.0更新到5.1.0版本</li>
-<li>优化了chart插件</li>
-<li>更新了一篇新博客</li>
-</ol>
-</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-10</p>
-</div></div><div class="timeline-item-content"><ol>
-<li>butterfly主题从4.13.0更新到5.0.0版本</li>
-<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
-<li>更新了留言板</li>
-<li>优化了搜索功能</li>
-<li>禁止B站视频自动播放</li>
-<li>更新了主页“关于”部分</li>
-<li>修复了几处笔误的问题</li>
-<li>优化了评论功能的选择</li>
-<li>添加了站点工具(谷歌与必应)，优化了文章的描述部分</li>
-<li>优化一下图片无法放大查看的问题</li>
-</ol>
-</div></div></div></div><div class="tab-item-content"><ol>
-<li>子菜单展示内容；方法：通过基本的markdown语言和butterfly专有语法-标签外挂实现效果，建议写成总领式的文章或者展示页面。可以参考此博客<a href="https://blog.guole.fun/posts/butterfly-custom/#%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E8%BD%AE%E6%92%AD%E6%A8%A1%E5%9D%97">我的Blog美化日记——Hexo+Butterfly | Guo Le’s Blog</a> 里面的“volantis”部分，和这个<code>[Hexo Built-in Tag Plugins (Hexo内置标签外挂) | Ofra Serendipity](https://www.huangshiqing.website/2022/11/03/HexoTagPlugins/)</code></li>
-<li>添加一下赞助墙</li>
-<li>更新算法相关博客并添加数学动画视频或者是算法演示动画</li>
-<li>学习并在博客中添加图表-对于本网站以chartjs的图表为主，涉及UML就用Mermaid,对于精致的图表(比如数据分析)才会用Echart.</li>
-<li>考虑21cloudbox或者阿里云等托管平台部署网站，实在不行就用域名+CDN的方式让游客能间接访问我的github.io网站。</li>
-<li>如果托管平台不负责，就早日申请SSL证书、域名绑定(可选)和完成网站备案，参考网站<a href="https://xuezenghui.com/posts/hexo-deploy-to-netlify/">将 Hexo 博客部署至 Netlify | Zander Hsueh</a>  域名申请<a href="https://tech.yemengstar.com/hexo-tutorial-use-your-domain-beginner/">为HEXO绑定自己的域名</a></li>
-</ol></div><div class="tab-item-content"><h2 id="debug经验">debug经验</h2>
-<p>目前由于butterfly的版本更新，导致以前的部分功能失效，建议<strong>先看官方文档，将对应过时的代码注释或者去除，没有的代码添加</strong>，然后再<strong>根据</strong>F12检查对应的板块，<strong>用前端的知识去搜查问题发生的地点和原因</strong>，然后再纠错。</p>
-<h2 id="hexo框架更新">hexo框架更新</h2>
-<p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
-<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
-<h2 id="butterfly主题更新">butterfly主题更新</h2>
-<blockquote>
-<p>更新前记得留下blog快照</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
-<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
-<p>如果不行，就在你的博客/themes/butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
-<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-<h2 id="个人hexo博客更新讲解">个人hexo博客更新讲解</h2>
-<p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
-<p>示例代码如下</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
-<p><strong>评论功能</strong>：我设置的是twikoo静态评论控制+Valine评论。</p>
-<p><strong>文章置顶功能</strong>：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考<code>梁圣磊の博客</code></p>
-<p><strong>文章加密功能</strong>：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">参考链接</a> 也许以后添加。</p>
-<p><strong>博客撰写</strong>：</p>
-<ol>
-<li>hexo会自动给分级标题编号，不需要自己添加</li>
-<li><u>不要给标点符号加标签或者是特性</u>，容易出现显示问题。</li>
-</ol>
-<p><strong>磁贴功能</strong>：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
-<p><strong>同步问题</strong>：在zeabur的部署大概会间隔一天左右才会同步上。</p>
-<p><strong>图片方面</strong></p>
-<ul>
-<li>
-<p>方法1：通过picgo图床实现图片上传。参考<a href="https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c">Typora+PicGo+阿里云OSS实现云笔记|Typora上传图片</a></p>
-</li>
-<li>
-<p>方法2-本地上传图片：参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用。如果部署到zeabur的博客图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。</p>
-</li>
-<li>
-<p>方法3：使用其他的图床网站如<a href="https://smms.app/">SMMS</a>。上传图片后，点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。<strong>博主因为部署的原因绝大多数图片都使用此方法</strong>，如果读者只使用github page作为网站托管平台那么三个方法都可以用。</p>
-</li>
-</ul>
-<p><strong>音乐</strong></p>
-<ol>
-<li>我使用的是网易云的平台，如果要修改就在自己的那个歌单修改就行了。</li>
-</ol>
-<p><strong>导航栏设置</strong>：在<code>_config.butterfly.yml</code> 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class= &quot; 复制这里的内容&quot; 替代即可。</p>
-<p><strong>系列文章</strong>：在文章的 front-matter 上添加参数 series，并给予一個标签</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="测试">测试</h2>
-<h3 id="测试图片">测试图片</h3>
-<p><strong>阿里云图片测试</strong></p>
-<p>得出结论，在github.io上无法显示。</p>
-<p><code>https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-imggame_menu.png</code></p>
-<p><strong>本地图片测试</strong></p>
-<p>由于github镜像源限制的问题，<strong>不推荐站主们使用github作为文件或者是图片的镜像源，而是使用比较正规的托管平台或者图片上传平台</strong>。</p>
-<p><strong>标签外挂测试图片</strong></p>
-<div class="gallery-container" data-type="data" data-button>
-      <div class="gallery-items">[{"url":"https://s2.loli.net/2024/06/14/4RrcPzbG3fsqyC6.png","alt":"3.png"}]</div>
-    </div>
-<p><strong>图床图片测试</strong></p>
-<p><img src="https://s2.loli.net/2024/10/24/MQ6gGn4LtBDyduJ.png" alt="苍之彼方的四重奏.png"></p>
-<h3 id="测试系列文章">测试系列文章</h3>
-<ol class="series-items"><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/" title="hexo博客系列(一)测试与更新">hexo博客系列(一)测试与更新</a></li><li><a href="/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/" title="hexo博客系列(三)博客写作指南">hexo博客系列(三)博客写作指南</a></li><li><a href="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/" title="hexo博客系列(二)博客创建指南">hexo博客系列(二)博客创建指南</a></li></ol>
-<h3 id="标签外挂测试">标签外挂测试</h3>
-<blockquote>
-<p>本以下基于hexo+butterfly的主题，其他的主题请读者自行查阅有关资料</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文檔(四) 標簽外挂 | Butterfly</a></p>
-<ol>
-<li>Note (Bootstrap Callout)</li>
-</ol>
-<p>个人使用，感觉比较适合知识的分层结构，比如我博客里面的《英语语法(英语兔版)》</p>
-<ol start="2">
-<li>tag-hide</li>
-</ol>
-<p>个人感觉比较适合于问答类型或者是部分内容较多，需要的时候再展开的文章内容。测试如下</p>
-<p><strong>Block测试</strong></p>
-<p>查看答案</p>
-<div class="hide-block"><button type="button" class="hide-button" style>查看答案
-    </button><div class="hide-content"><p>答案就在你心中</p>
-</div></div>
-<p><strong>Toggle测试</strong></p>
-<details class="toggle"><summary class="toggle-button" style>Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
-<p><code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</code></p>
-<p>如果想要安裝比較新的 dev 分支，可以</p>
-<p><code>git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</code></p>
-</div></details>
-<p><strong>Mermaid测试</strong></p>
-<p>这是和图表有关的标签，可以画流程图，时序图等</p>
-<p>注意要先写<code>&#123;% mermaid %&#125; &#123;% endmermaid %&#125;</code> 然后就在这两个标签内写相关代码。</p>
-<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
-  
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop HealthCheck
-        John-&gt;&gt;John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
-    John--&gt;&gt;Alice: Great!
-    John-&gt;&gt;Bob: How about you?
-    Bob--&gt;&gt;John: Jolly good!
-
-  </pre></div>
-<p><strong>乐谱测试</strong></p>
-<div class="abc-music-sheet">X:1
-T:alternate heads
-M:C
-L:1/8
-U:n=!style=normal!
-K:C treble style=rhythm
-&quot;Am&quot; BBBB B2 B&gt;B | &quot;Dm&quot; B2 B/B/B &quot;C&quot; B4 |&quot;Am&quot; B2 nGnB B2 nGnA | &quot;Dm&quot; nDB/B/ nDB/B/ &quot;C&quot; nCB/B/ nCB/B/ |B8| B0 B0 B0 B0 |]
-%%text This translates to:
-[M:C][K:style=normal]
-[A,EAce][A,EAce][A,EAce][A,EAce] [A,EAce]2 [A,EAce]&gt;[A,EAce] |[DAdf]2 [DAdf]/[DAdf]/[DAdf] [CEGce]4 |[A,EAce]2 GA [A,EAce] GA |D[DAdf]/[DAdf]/ D[DAdf]/[DAdf]/ C [CEGce]/[CEGce]/ C[CEGce]/[CEGce]/ |[CEGce]8 | [CEGce]2 [CEGce]2 [CEGce]2 [CEGce]2 |]
-GAB2 !style=harmonic![gb]4|GAB2 [K: style=harmonic]gbgb|
-[K: style=x]
-C/A,/ C/C/E C/zz2|
-w:Rock-y did-nt like that</div>
-<p><strong>测试自带的chartjs</strong>——可以实现动态效果，建议使用。</p>
-<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
-            <pre class="chartjs-src" hidden>{
-    &quot;type&quot;: &quot;pie&quot;,
-    &quot;data&quot;: {
-        &quot;labels&quot;: [
-            &quot;编程&quot;,
-            &quot;音乐&quot;,
-            &quot;阅读&quot;,
-            &quot;游戏&quot;,
-            &quot;健身&quot;,
-            &quot;旅游&quot;
-        ],
-        &quot;datasets&quot;: [
-            {
-                &quot;label&quot;: &quot;喜爱指数&quot;,
-                &quot;data&quot;: [
-                    30,
-                    24,
-                    19,
-                    14,
-                    9,
-                    4
-                ],
-                &quot;backgroundColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.5)&quot;,
-                        &quot;rgba(54, 162, 235, 0.5)&quot;,
-                        &quot;rgba(255, 206, 86, 0.5)&quot;,
-                        &quot;rgba(75, 192, 192, 0.5)&quot;,
-                        &quot;rgba(153, 102, 255, 0.5)&quot;,
-                        &quot;rgba(255, 159, 64, 0.5)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.2)&quot;,
-                        &quot;rgba(54, 162, 235, 0.2)&quot;,
-                        &quot;rgba(255, 206, 86, 0.2)&quot;,
-                        &quot;rgba(75, 192, 192, 0.2)&quot;,
-                        &quot;rgba(153, 102, 255, 0.2)&quot;,
-                        &quot;rgba(255, 159, 64, 0.2)&quot;
-                    ]
-                },
-                &quot;borderColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ]
-                }
-            }
-        ]
-    },
-    &quot;options&quot;: {
-        &quot;plugins&quot;: {
-            &quot;legend&quot;: {
-                &quot;labels&quot;: {
-                    &quot;color&quot;: {
-                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
-                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
-                    }
-                }
-            }
-        }
-    }
-}
-</pre>
-            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
-我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
-在此过程中也解决了无数的小谜团。<br>
-<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
-I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
-Countless small mysteries are also solved in the process.</span></p></div>
-          </div>
-<p><strong>tab演示</strong></p>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-<p><strong>按钮button测试</strong></p>
-<div class="btn-center">
-<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-</div>
-<p><strong>文字高亮</strong></p>
-<mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
-<mark class="hl-label red">红色</mark>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>测试</tag>
-        <tag>教程</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL学习笔记(一)基础篇</title>
     <url>/2024/10/30/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%E5%9F%BA%E7%A1%80%E7%AF%87/</url>
     <content><![CDATA[<blockquote>
@@ -1557,8 +1291,8 @@ where与having区别</p>
         <category>MySQL</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>MySQL</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -2994,8 +2728,8 @@ InnoDB的数据是基于索引组织的，行锁是通过对索引上的索引�
         <category>MySQL</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>MySQL</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -4064,214 +3798,6 @@ InnoDB的数据是基于索引组织的，行锁是通过对索引上的索引�
       </tags>
   </entry>
   <entry>
-    <title>hexo博客系列(二)博客创建指南</title>
-    <url>/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1>简介</h1>
-<p>Hexo 是一个由Nodejs驱动的博客框架，支持 Markdown、一键部署、插件和多种模板引擎。Hexo 可以让你轻松创建、管理和部署你的个人或团队博客。本文基于个人的实践经验，<strong>以Windows为主要开发环境</strong>，旨在让那些对博客搭建感兴趣但碍于困难的朋友能搭建起基本的博客框架。</p>
-<h1>准备工作</h1>
-<h2 id="课前提醒——主要是针对非程序员">课前提醒——主要是针对非程序员</h2>
-<p><strong>大部分的操作、代码输入</strong>都是在<strong>Windows</strong>系统<strong>终端</strong>中执行的。</p>
-<p><strong>方法</strong>：点击开始-搜索“终端”-打开，或者在任意文件夹中“右键”-“在终端中打开”。会出现黑色的框。后续大部分代码都是在这“黑框”中输入且执行的。</p>
-<p><img src="https://s2.loli.net/2024/11/26/2q15iMDwhdxRHPb.png" alt="博客创建指南01"></p>
-<ul>
-<li>代码块没有标明代码语言的都是在Windows终端中运行的。mac系统和linux系统相关指令请查询有关资料</li>
-<li>默认电脑下载了git和注册了github。没有注册github和下载git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
-<li>默认会“科学上网”，不会的可以参考此大佬的教程<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a>，可以在他的博客中搜索&quot;搭建个人博客“   <a href="https://starlike-daydream.github.io/Cesteo.github.io/">Ceasteo’s Blog</a>。按照此大佬的方法也可以实现简单的hexo博客创建。<strong>注意大佬文档中的淘宝镜像已经失效,请换成</strong><code>https://registry.npmmirror.com</code></li>
-</ul>
-<h2 id="相关资料下载">相关资料下载</h2>
-<ol>
-<li><a href="https://nodejs.cn/">Node.js 中文网 (nodejs.cn)</a>安装，进去后点击下载安装，选择长期支持版（LTS）即可</li>
-</ol>
-<p><img src="https://s2.loli.net/2024/11/26/BZNOMvsk15YIKr8.png" alt="博客创建指南02"></p>
-<ol start="2">
-<li>安装cnpm并配置淘宝镜像</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2024/11/26/J9FsPLaTqZ1Ygb8.png" alt="博客创建指南03"></p>
-<blockquote>
-<p><strong>注意</strong>：后面代码中我打//并且后面跟着文字的（比如//这里是初始化)都是<strong>注释</strong>，<strong>不要写在终端里面</strong></p>
-</blockquote>
-<ol start="3">
-<li>测试cnpm是否安装</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm -v   </span><br></pre></td></tr></table></figure>
-<p><strong>v</strong>：version 版本的意思</p>
-<ol start="4">
-<li>安装hexo博客框架</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>测试hexo博客框架是否安装</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-<h2 id="初始化博客">初始化博客</h2>
-<blockquote>
-<p>后续可以通过blog文件(<strong>shift+鼠标右键-在终端中打开</strong>）直接进入终端，也可以用Visual Studio Code将此文件打开并创建终端（建议使用vscode，后续博客维护很方便）。</p>
-</blockquote>
-<ol start="6">
-<li>在空文件夹（我这里事先创建并将其命名为temp)中初始化hexo博客框架,然后通过cd指令进入此目录。</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">//示例：cd .\Desktop\temp\</span><br><span class="line">hexo init</span><br><span class="line">//如果报错的话就输入cnpm install 然后再输入hexo s即可</span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>启动博客  start   用来预览修改后的博客 按ctrl+c即可停止运行。</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>清除博客内容</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean  //或者hexo cl</span><br></pre></td></tr></table></figure>
-<ol start="9">
-<li>生成博客内容</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<h2 id="部署">部署</h2>
-<p><strong>我这里只讲解部署到github的思路</strong>，部署到其他平台或者服务器请自行查询有关资料。没有注册github和git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></p>
-<ol start="10">
-<li>github创建仓库,注意格式严格为<code>你的github用户名.github.io</code> 并复制SSH的clone地址，我这里以Tom为例</li>
-</ol>
-<p><img src="https://s2.loli.net/2024/11/26/Ju7GXhRZjFKTbSQ.png" alt="博客创建指南04"></p>
-<ol start="11">
-<li>安装部署插件</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-<ol start="12">
-<li>修改_config.yml文件</li>
-</ol>
-<p><img src="https://s2.loli.net/2024/11/26/ij6X1BzdSGuLOnm.png" alt="博客创建指南05"></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">//一般是最后一行。</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">粘贴你10步复制的地址。</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<ol start="13">
-<li>部署到github</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<ol start="14">
-<li>
-<p>13步后有的会提示输入github账号密码，没有就跳过14和15步</p>
-</li>
-<li>
-<p>分别输入用户名与密码。</p>
-</li>
-</ol>
-<p>输入密码之后报错并<strong>提醒你github已经停止使用密码登录</strong>，需要用密钥或者是ssh，这里我采用ssh的方式。</p>
-<ol start="16">
-<li>初始化用户名与邮箱(“yourname”和”youremail“改成你之前注册github设置的)</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot; //（注意user.name/email和英文双引号&quot;之间要有一个空格）</span><br><span class="line">git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
-<ol start="17">
-<li>确认是否设置成功</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">//用户名与邮箱</span><br><span class="line">git config --global user.name</span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
-<ol start="18">
-<li>下载github部署插件</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<ol start="19">
-<li>本地生成密钥</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;（这里改为16步你设置的邮箱）</span><br></pre></td></tr></table></figure>
-<ol start="20">
-<li>获取你生成的密钥，并复制返回的结果</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-<ol start="21">
-<li>
-<p><strong>登录github</strong>, 点击头像——settings——点击SSH and GPG keys-再点击New SSH key,自己取一个标题,然后将复制的密钥粘贴到&quot;key&quot;文本框内并提交（Add SSH key)。</p>
-</li>
-<li>
-<p>验证：</p>
-</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<ol start="23">
-<li>再次提交</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<ol start="24">
-<li>运行并检验是否成功</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo s   //或者在浏览器URL栏输入“你的github用户名.github.io”，验证是否已经部署。</span><br></pre></td></tr></table></figure>
-<p>至此你已经成功部署一个简单的hexo博客，恭喜你我的朋友(^o^)/~，<strong>但这只是伟大征程的第一步，这是结束也是开始</strong>……</p>
-<h1>博客维护</h1>
-<h2 id="基础指令">基础指令</h2>
-<p>主题、文章修改之后要重新生成并部署。<br>
-简单讲解：</p>
-<ol>
-<li><code>hexo cl</code> 将之前上传的清除</li>
-<li><code>hexo g</code> 生成框架</li>
-<li><code>hexo s</code> 将其打开在主机上</li>
-<li><code>hexo d</code> 提交到github上</li>
-</ol>
-<blockquote>
-<p>总结：<strong>最重要的是第2,4个代码（部分插件使用需要第一个代码，这样通过你的用户名.github.io打开的博客才会更改。</strong></p>
-</blockquote>
-<h2 id="md文件">md文件</h2>
-<p><strong>命令行创建md文件</strong><br>
-<code>hexo n &quot;博客文章名&quot;</code>， <strong>必须先进入到文件中才能使用</strong>，会自动在 你所创建的文件夹\source_posts\博客文件名.md  路径下创建一个md文件。</p>
-<p><strong>md文件保存位置</strong><br>
-一般就在/_ posts 文件下创建md文件即可（或者把md文件移动到这里），要在开头加上如下语句即可.<strong>注意冒号后面要留空格</strong></p>
-<p><strong>示例格式如下</strong></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;! -- 这里是html的注释 写的时候不要添加 - - &gt;</span><br><span class="line">title: 我的第一篇博客文章</span><br><span class="line">date: 2024-06-01  19:10:34</span><br><span class="line">tags: C++</span><br><span class="line">no<span class="emphasis">_valine: true&lt;!- - 关闭评论- - &gt;</span></span><br><span class="line"><span class="emphasis">comments: 是否开启评论(true or false)</span></span><br><span class="line"><span class="emphasis">top: &lt;!- - 文章置顶true- - &gt;</span></span><br><span class="line"><span class="emphasis">no_</span>word<span class="emphasis">_count: true&lt;!- -关闭字数统计- - &gt;</span></span><br><span class="line"><span class="emphasis">password: &lt;! - -如果加密，这里填写密码 - - &gt;</span></span><br><span class="line"><span class="emphasis">reward: true&lt;!- - 当前文章是否开启打赏 - - &gt;</span></span><br><span class="line"><span class="emphasis">copyright: true&lt;!- - 当前文章是否开启版权声明 - - &gt;</span></span><br><span class="line"><span class="emphasis">categories: &lt;! - -如下，分类2是分类1的子分类- - &gt;</span></span><br><span class="line"><span class="emphasis">- [分类1，子分类1]</span></span><br><span class="line"><span class="emphasis">- [分类1，子分类2]</span></span><br><span class="line"><span class="emphasis">- [分类2]</span></span><br><span class="line"><span class="emphasis">tags: </span></span><br><span class="line"><span class="emphasis">- 标签1</span></span><br><span class="line"><span class="emphasis">- 标签2</span></span><br></pre></td></tr></table></figure>
-<h2 id="插件下载与使用">插件下载与使用</h2>
-<p><strong>提醒：少即是多, 避免华而不实。</strong></p>
-<p>打开官方文档<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a>，点击插件，点击中意的插件，按照作者的教程去配置插件</p>
-<p><strong>举例</strong><br>
-<strong>DPlayer插件</strong></p>
-<p><strong>播放代码</strong><br>
-<code>&#123;% dplayer "url=" "pic=" "theme=#FADFA3" "autoplay=false" "mutex=true" %&#125;</code></p>
-<p><strong>示例</strong><br>
-打开对应视频资源网页版（这里以b站为例），鼠标移动到分享-“嵌入代码”，将代码复制到md文件里面，如果需要调整大小，可添加<code>height=450 width=600</code> ,根据需要调整即可</p>
-<h2 id="主题的下载与使用">主题的下载与使用</h2>
-<p><strong>安装思路同插件</strong><br>
-注意在themes界面中可以点击“visit preview site”预览主题。</p>
-<ol>
-<li>看作者介绍如何安装，一步步安装  ，复杂一点的主题还有一系列插件安装</li>
-<li>打开根目录下的_config.yml  将theme: 以前的主题 改为 theme: 现在的主题</li>
-<li>后续的改动都是要基于作者文档。熟悉前端开发的朋友可以用“<strong>检查</strong>“了解作者网页的结构，然后自行修改</li>
-</ol>
-<p><strong>推荐主题</strong>：</p>
-<ul>
-<li>极简风格：
-<ul>
-<li>yilia-plus：<a href="https://github.com/JoeyBling/hexo-theme-yilia-plus">一个简洁优雅的hexo主题</a></li>
-</ul>
-</li>
-<li>优雅又实用：
-<ul>
-<li>butterfly：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安裝文檔(一) 快速開始 | Butterfly</a></li>
-<li>matery：<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">hexo-theme-matery/README_CN.md</a></li>
-</ul>
-</li>
-</ul>
-<h1>Hexo进阶-butterfly主题安装及其定制化</h1>
-<blockquote>
-<p>我目前安装的是5.1.0版本的。</p>
-</blockquote>
-<p>虽然主菜单栏里面可以分成多个子菜单，但是似乎每一个子菜单只能放一个md文件，所以<u>建议此md文件作为某一类型的东西的索引来呈现。</u></p>
-<p>所有的博客md文件都需要放在_post文件夹里面，其他地方大多只能放索引md文件。<strong>建议使用</strong><code>hexo n post 标题名</code> ,这样就会<strong>自动将对应的文件夹也生成</strong>。</p>
-<p>建议修改的使用经常使用Hexo s命令，修改无误之后再提交。</p>
-<p><strong>To be continue……</strong></p>
-<hr>
-<h1>总结</h1>
-<p>本篇文章主要侧重于基础的hexo博客搭建，至于进阶的hexo主题搭建和插件安装，限于笔者能力难以展开，有兴趣的读者可以去官方文档找对应的资料，按照作者的文档去安装。</p>
-<h1>结束语</h1>
-<p>有的朋友会说这也太难了吧，确实对于零基础的小白配置一个复杂的博客主题绝非易事，但是我想用王安石的一句话共勉想要变得更强、超越自我的朋友。<br>
-<strong>“而世之奇伟、瑰怪、非常之观，常在于险远，而人之所罕之焉，故非有志者不能之也。”</strong></p>
-<h1>参考资料</h1>
-<ol>
-<li><strong>官方网站</strong>：<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></li>
-<li><strong>其他人的教程</strong>：<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a></li>
-<li>git和github<strong>下载和使用</strong>：<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>教程</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客系列(三)博客写作指南</title>
     <url>/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h1>简介</h1>
@@ -4474,8 +4000,522 @@ Countless small mysteries are also solved in the process.</span></p></div>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>blog</tag>
         <tag>教程</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客系列(一)测试与更新</title>
+    <url>/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<h1>hexo博客更新和待更新计划</h1>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">更新内容</button><button type="button" class="tab">未来可能更新内容</button><button type="button" class="tab">更新方法与经验</button></div><div class="tab-contents"><div class="tab-item-content active"><blockquote>
+<p>以下更新内容都是从最后一次更新开始的</p>
+</blockquote>
+<div class="timeline green"><div class="timeline-item headline"><div class="timeline-item-title"><div class="item-circle"><p>2024</p>
+</div></div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>11-9</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>在网页/privacy下添加了隐私用户政策</li>
+</ol>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-29</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>修复了手机端视频溢出显示部分的问题</li>
+<li>修改了几处笔误和显示问题。</li>
+<li>优化了所有博客的参考部分</li>
+</ol>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-26</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>butterfly主题从5.0.0更新到5.1.0版本</li>
+<li>优化了chart插件</li>
+<li>更新了一篇新博客</li>
+</ol>
+</div></div><div class="timeline-item"><div class="timeline-item-title"><div class="item-circle"><p>10-10</p>
+</div></div><div class="timeline-item-content"><ol>
+<li>butterfly主题从4.13.0更新到5.0.0版本</li>
+<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
+<li>更新了留言板</li>
+<li>优化了搜索功能</li>
+<li>禁止B站视频自动播放</li>
+<li>更新了主页“关于”部分</li>
+<li>修复了几处笔误的问题</li>
+<li>优化了评论功能的选择</li>
+<li>添加了站点工具(谷歌与必应)，优化了文章的描述部分</li>
+<li>优化一下图片无法放大查看的问题</li>
+</ol>
+</div></div></div></div><div class="tab-item-content"><ol>
+<li>子菜单展示内容；方法：通过基本的markdown语言和butterfly专有语法-标签外挂实现效果，建议写成总领式的文章或者展示页面。可以参考此博客<a href="https://blog.guole.fun/posts/butterfly-custom/#%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E8%BD%AE%E6%92%AD%E6%A8%A1%E5%9D%97">我的Blog美化日记——Hexo+Butterfly | Guo Le’s Blog</a> 里面的“volantis”部分，和这个<code>[Hexo Built-in Tag Plugins (Hexo内置标签外挂) | Ofra Serendipity](https://www.huangshiqing.website/2022/11/03/HexoTagPlugins/)</code></li>
+<li>添加一下赞助墙</li>
+<li>更新算法相关博客并添加数学动画视频或者是算法演示动画</li>
+<li>学习并在博客中添加图表-对于本网站以chartjs的图表为主，涉及UML就用Mermaid,对于精致的图表(比如数据分析)才会用Echart.</li>
+<li>考虑21cloudbox或者阿里云等托管平台部署网站，实在不行就用域名+CDN的方式让游客能间接访问我的github.io网站。</li>
+<li>如果托管平台不负责，就早日申请SSL证书、域名绑定(可选)和完成网站备案，参考网站<a href="https://xuezenghui.com/posts/hexo-deploy-to-netlify/">将 Hexo 博客部署至 Netlify | Zander Hsueh</a>  域名申请<a href="https://tech.yemengstar.com/hexo-tutorial-use-your-domain-beginner/">为HEXO绑定自己的域名</a></li>
+</ol></div><div class="tab-item-content"><h2 id="debug经验">debug经验</h2>
+<p>目前由于butterfly的版本更新，导致以前的部分功能失效，建议<strong>先看官方文档，将对应过时的代码注释或者去除，没有的代码添加</strong>，然后再<strong>根据</strong>F12检查对应的板块，<strong>用前端的知识去搜查问题发生的地点和原因</strong>，然后再纠错。</p>
+<h2 id="hexo框架更新">hexo框架更新</h2>
+<p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
+<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
+<h2 id="butterfly主题更新">butterfly主题更新</h2>
+<blockquote>
+<p>更新前记得留下blog快照</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
+<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
+<p>如果不行，就在你的博客/themes/butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
+<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h2 id="个人hexo博客更新讲解">个人hexo博客更新讲解</h2>
+<p>在md文件开头的是配置部分，tags是标签(就是在文档末尾出现的几个按钮文字)，<strong>可以有很多个</strong>;categories是分类，建议将其分为大类，<strong>小类从属于大类</strong>。在首页中博客只显示发布日期，更新日期、分类和标签(第一个).</p>
+<p>示例代码如下</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tags:</span> </span><br><span class="line"> <span class="bullet">-</span> <span class="string">blog</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">测试</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">教程</span></span><br></pre></td></tr></table></figure>
+<p><strong>评论功能</strong>：我设置的是twikoo静态评论控制+Valine评论。</p>
+<p><strong>文章置顶功能</strong>：可以直接在文章的 <code>front-matter</code> 区域里添加 <code>sticky: 1</code> 属性来把这篇文章置顶。数值越大，置顶的优先级越大。参考<code>梁圣磊の博客</code></p>
+<p><strong>文章加密功能</strong>：文章加密插件  <a href="https://polar-bear.eu.org/2023/07/21/ce-shi/">参考链接</a> 也许以后添加。</p>
+<p><strong>博客撰写</strong>：</p>
+<ol>
+<li>hexo会自动给分级标题编号，不需要自己添加</li>
+<li><u>不要给标点符号加标签或者是特性</u>，容易出现显示问题。</li>
+</ol>
+<p><strong>磁贴功能</strong>：我干脆把主设置里面的<strong>descr</strong>部分删掉，没写就是对的o(<em>￣▽￣</em>)ブ</p>
+<p><strong>同步问题</strong>：在zeabur的部署大概会间隔一天左右才会同步上。</p>
+<p><strong>图片方面</strong></p>
+<ul>
+<li>
+<p>方法1：通过picgo图床实现图片上传。参考<a href="https://www.bilibili.com/video/BV1ci4y1L7j8?vd_source=bb8dacb993f11c0e39f8147c98a2894c">Typora+PicGo+阿里云OSS实现云笔记|Typora上传图片</a></p>
+</li>
+<li>
+<p>方法2-本地上传图片：参考此博客<a href="https://blog.csdn.net/weixin_43702620/article/details/118655308">hexo搭建博客后图片无法显示的完美解决_hexo博客图片不显示-CSDN博客</a> 简单来说就是在post文件夹内对应每一个md文件创建同名的文件夹，然后将图片放在里面，需要引用的时候就按照<code>![](./文件夹名/图片名.png</code> 进行引用。如果部署到zeabur的博客图片不显示，可以使用<code>![图片名](图片名.png)</code> 此方法，<strong>注意图片必须放在与md文件同名的文件夹下且不允许中文命名</strong>。</p>
+</li>
+<li>
+<p>方法3：使用其他的图床网站如<a href="https://smms.app/">SMMS</a>。上传图片后，点击markdown格式就可以复制图片路径，再用markdown语法粘贴即可。<strong>博主因为部署的原因绝大多数图片都使用此方法</strong>，如果读者只使用github page作为网站托管平台那么三个方法都可以用。</p>
+</li>
+</ul>
+<p><strong>音乐</strong></p>
+<ol>
+<li>我使用的是网易云的平台，如果要修改就在自己的那个歌单修改就行了。</li>
+</ol>
+<p><strong>导航栏设置</strong>：在<code>_config.butterfly.yml</code> 文件中搜索menu, 注意格式要和下面的一样，可以自行设置。  图标（就是||后面的内容）在这里<a href="https://fontawesome.com/v4/icons/">Font Awesome Icons</a>_ 搜索然后复制class= &quot; 复制这里的内容&quot; 替代即可。</p>
+<p><strong>系列文章</strong>：在文章的 front-matter 上添加参数 series，并给予一個标签</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% series %&#125;</span><br><span class="line">&#123;% series [series name] %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="测试">测试</h2>
+<h3 id="测试图片">测试图片</h3>
+<p><strong>阿里云图片测试</strong></p>
+<p>得出结论，在github.io上无法显示。</p>
+<p><code>https://blog-img-copy.oss-cn-guangzhou.aliyuncs.com/C:%5CUsers%5Ckai98%5CPictures%5C%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%5Cpost-imggame_menu.png</code></p>
+<p><strong>本地图片测试</strong></p>
+<p>由于github镜像源限制的问题，<strong>不推荐站主们使用github作为文件或者是图片的镜像源，而是使用比较正规的托管平台或者图片上传平台</strong>。</p>
+<p><strong>标签外挂测试图片</strong></p>
+<div class="gallery-container" data-type="data" data-button>
+      <div class="gallery-items">[{"url":"https://s2.loli.net/2024/06/14/4RrcPzbG3fsqyC6.png","alt":"3.png"}]</div>
+    </div>
+<p><strong>图床图片测试</strong></p>
+<p><img src="https://s2.loli.net/2024/10/24/MQ6gGn4LtBDyduJ.png" alt="苍之彼方的四重奏.png"></p>
+<h3 id="测试系列文章">测试系列文章</h3>
+<ol class="series-items"><li><a href="/2024/06/10/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%80)%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%9B%B4%E6%96%B0/" title="hexo博客系列(一)测试与更新">hexo博客系列(一)测试与更新</a></li><li><a href="/2024/10/26/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%B8%89)%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/" title="hexo博客系列(三)博客写作指南">hexo博客系列(三)博客写作指南</a></li><li><a href="/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/" title="hexo博客系列(二)博客创建指南">hexo博客系列(二)博客创建指南</a></li></ol>
+<h3 id="标签外挂测试">标签外挂测试</h3>
+<blockquote>
+<p>本以下基于hexo+butterfly的主题，其他的主题请读者自行查阅有关资料</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文檔(四) 標簽外挂 | Butterfly</a></p>
+<ol>
+<li>Note (Bootstrap Callout)</li>
+</ol>
+<p>个人使用，感觉比较适合知识的分层结构，比如我博客里面的《英语语法(英语兔版)》</p>
+<ol start="2">
+<li>tag-hide</li>
+</ol>
+<p>个人感觉比较适合于问答类型或者是部分内容较多，需要的时候再展开的文章内容。测试如下</p>
+<p><strong>Block测试</strong></p>
+<p>查看答案</p>
+<div class="hide-block"><button type="button" class="hide-button" style>查看答案
+    </button><div class="hide-content"><p>答案就在你心中</p>
+</div></div>
+<p><strong>Toggle测试</strong></p>
+<details class="toggle"><summary class="toggle-button" style>Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
+<p><code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</code></p>
+<p>如果想要安裝比較新的 dev 分支，可以</p>
+<p><code>git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</code></p>
+</div></details>
+<p><strong>Mermaid测试</strong></p>
+<p>这是和图表有关的标签，可以画流程图，时序图等</p>
+<p>注意要先写<code>&#123;% mermaid %&#125; &#123;% endmermaid %&#125;</code> 然后就在这两个标签内写相关代码。</p>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop HealthCheck
+        John-&gt;&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
+    John--&gt;&gt;Alice: Great!
+    John-&gt;&gt;Bob: How about you?
+    Bob--&gt;&gt;John: Jolly good!
+
+  </pre></div>
+<p><strong>乐谱测试</strong></p>
+<div class="abc-music-sheet">X:1
+T:alternate heads
+M:C
+L:1/8
+U:n=!style=normal!
+K:C treble style=rhythm
+&quot;Am&quot; BBBB B2 B&gt;B | &quot;Dm&quot; B2 B/B/B &quot;C&quot; B4 |&quot;Am&quot; B2 nGnB B2 nGnA | &quot;Dm&quot; nDB/B/ nDB/B/ &quot;C&quot; nCB/B/ nCB/B/ |B8| B0 B0 B0 B0 |]
+%%text This translates to:
+[M:C][K:style=normal]
+[A,EAce][A,EAce][A,EAce][A,EAce] [A,EAce]2 [A,EAce]&gt;[A,EAce] |[DAdf]2 [DAdf]/[DAdf]/[DAdf] [CEGce]4 |[A,EAce]2 GA [A,EAce] GA |D[DAdf]/[DAdf]/ D[DAdf]/[DAdf]/ C [CEGce]/[CEGce]/ C[CEGce]/[CEGce]/ |[CEGce]8 | [CEGce]2 [CEGce]2 [CEGce]2 [CEGce]2 |]
+GAB2 !style=harmonic![gb]4|GAB2 [K: style=harmonic]gbgb|
+[K: style=x]
+C/A,/ C/C/E C/zz2|
+w:Rock-y did-nt like that</div>
+<p><strong>测试自带的chartjs</strong>——可以实现动态效果，建议使用。</p>
+<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
+            <pre class="chartjs-src" hidden>{
+    &quot;type&quot;: &quot;pie&quot;,
+    &quot;data&quot;: {
+        &quot;labels&quot;: [
+            &quot;编程&quot;,
+            &quot;音乐&quot;,
+            &quot;阅读&quot;,
+            &quot;游戏&quot;,
+            &quot;健身&quot;,
+            &quot;旅游&quot;
+        ],
+        &quot;datasets&quot;: [
+            {
+                &quot;label&quot;: &quot;喜爱指数&quot;,
+                &quot;data&quot;: [
+                    30,
+                    24,
+                    19,
+                    14,
+                    9,
+                    4
+                ],
+                &quot;backgroundColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.5)&quot;,
+                        &quot;rgba(54, 162, 235, 0.5)&quot;,
+                        &quot;rgba(255, 206, 86, 0.5)&quot;,
+                        &quot;rgba(75, 192, 192, 0.5)&quot;,
+                        &quot;rgba(153, 102, 255, 0.5)&quot;,
+                        &quot;rgba(255, 159, 64, 0.5)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.2)&quot;,
+                        &quot;rgba(54, 162, 235, 0.2)&quot;,
+                        &quot;rgba(255, 206, 86, 0.2)&quot;,
+                        &quot;rgba(75, 192, 192, 0.2)&quot;,
+                        &quot;rgba(153, 102, 255, 0.2)&quot;,
+                        &quot;rgba(255, 159, 64, 0.2)&quot;
+                    ]
+                },
+                &quot;borderColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ]
+                }
+            }
+        ]
+    },
+    &quot;options&quot;: {
+        &quot;plugins&quot;: {
+            &quot;legend&quot;: {
+                &quot;labels&quot;: {
+                    &quot;color&quot;: {
+                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
+                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
+                    }
+                }
+            }
+        }
+    }
+}
+</pre>
+            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
+我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
+在此过程中也解决了无数的小谜团。<br>
+<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
+I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
+Countless small mysteries are also solved in the process.</span></p></div>
+          </div>
+<p><strong>tab演示</strong></p>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<p><strong>按钮button测试</strong></p>
+<div class="btn-center">
+<a class="btn-beautify outline larger" href="https://butterfly.js.org/" title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+</div>
+<p><strong>文字高亮</strong></p>
+<mark class="hl-label color">text</mark> ,颜色可选default/blue/pink/red/purple/orange/green
+<mark class="hl-label red">红色</mark>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>blog</tag>
+        <tag>测试</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客系列(二)博客创建指南</title>
+    <url>/2024/06/12/hexo%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97(%E4%BA%8C)%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1>简介</h1>
+<p>Hexo 是一个由Nodejs驱动的博客框架，支持 Markdown、一键部署、插件和多种模板引擎。Hexo 可以让你轻松创建、管理和部署你的个人或团队博客。本文基于个人的实践经验，<strong>以Windows为主要开发环境</strong>，旨在让那些对博客搭建感兴趣但碍于困难的朋友能搭建起基本的博客框架。</p>
+<h1>准备工作</h1>
+<h2 id="课前提醒——主要是针对非程序员">课前提醒——主要是针对非程序员</h2>
+<p><strong>大部分的操作、代码输入</strong>都是在<strong>Windows</strong>系统<strong>终端</strong>中执行的。</p>
+<p><strong>方法</strong>：点击开始-搜索“终端”-打开，或者在任意文件夹中“右键”-“在终端中打开”。会出现黑色的框。后续大部分代码都是在这“黑框”中输入且执行的。</p>
+<p><img src="https://s2.loli.net/2024/11/26/2q15iMDwhdxRHPb.png" alt="博客创建指南01"></p>
+<ul>
+<li>代码块没有标明代码语言的都是在Windows终端中运行的。mac系统和linux系统相关指令请查询有关资料</li>
+<li>默认电脑下载了git和注册了github。没有注册github和下载git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
+<li>默认会“科学上网”，不会的可以参考此大佬的教程<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a>，可以在他的博客中搜索&quot;搭建个人博客“   <a href="https://starlike-daydream.github.io/Cesteo.github.io/">Ceasteo’s Blog</a>。按照此大佬的方法也可以实现简单的hexo博客创建。<strong>注意大佬文档中的淘宝镜像已经失效,请换成</strong><code>https://registry.npmmirror.com</code></li>
+</ul>
+<h2 id="相关资料下载">相关资料下载</h2>
+<ol>
+<li><a href="https://nodejs.cn/">Node.js 中文网 (nodejs.cn)</a>安装，进去后点击下载安装，选择长期支持版（LTS）即可</li>
+</ol>
+<p><img src="https://s2.loli.net/2024/11/26/BZNOMvsk15YIKr8.png" alt="博客创建指南02"></p>
+<ol start="2">
+<li>安装cnpm并配置淘宝镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2024/11/26/J9FsPLaTqZ1Ygb8.png" alt="博客创建指南03"></p>
+<blockquote>
+<p><strong>注意</strong>：后面代码中我打//并且后面跟着文字的（比如//这里是初始化)都是<strong>注释</strong>，<strong>不要写在终端里面</strong></p>
+</blockquote>
+<ol start="3">
+<li>测试cnpm是否安装</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm -v   </span><br></pre></td></tr></table></figure>
+<p><strong>v</strong>：version 版本的意思</p>
+<ol start="4">
+<li>安装hexo博客框架</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>测试hexo博客框架是否安装</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+<h2 id="初始化博客">初始化博客</h2>
+<blockquote>
+<p>后续可以通过blog文件(<strong>shift+鼠标右键-在终端中打开</strong>）直接进入终端，也可以用Visual Studio Code将此文件打开并创建终端（建议使用vscode，后续博客维护很方便）。</p>
+</blockquote>
+<ol start="6">
+<li>在空文件夹（我这里事先创建并将其命名为temp)中初始化hexo博客框架,然后通过cd指令进入此目录。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">//示例：cd .\Desktop\temp\</span><br><span class="line">hexo init</span><br><span class="line">//如果报错的话就输入cnpm install 然后再输入hexo s即可</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>启动博客  start   用来预览修改后的博客 按ctrl+c即可停止运行。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>清除博客内容</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean  //或者hexo cl</span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li>生成博客内容</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<h2 id="部署">部署</h2>
+<p><strong>我这里只讲解部署到github的思路</strong>，部署到其他平台或者服务器请自行查询有关资料。没有注册github和git的可以看这个<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></p>
+<ol start="10">
+<li>github创建仓库,注意格式严格为<code>你的github用户名.github.io</code> 并复制SSH的clone地址，我这里以Tom为例</li>
+</ol>
+<p><img src="https://s2.loli.net/2024/11/26/Ju7GXhRZjFKTbSQ.png" alt="博客创建指南04"></p>
+<ol start="11">
+<li>安装部署插件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<ol start="12">
+<li>修改_config.yml文件</li>
+</ol>
+<p><img src="https://s2.loli.net/2024/11/26/ij6X1BzdSGuLOnm.png" alt="博客创建指南05"></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">//一般是最后一行。</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">粘贴你10步复制的地址。</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<ol start="13">
+<li>部署到github</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<ol start="14">
+<li>
+<p>13步后有的会提示输入github账号密码，没有就跳过14和15步</p>
+</li>
+<li>
+<p>分别输入用户名与密码。</p>
+</li>
+</ol>
+<p>输入密码之后报错并<strong>提醒你github已经停止使用密码登录</strong>，需要用密钥或者是ssh，这里我采用ssh的方式。</p>
+<ol start="16">
+<li>初始化用户名与邮箱(“yourname”和”youremail“改成你之前注册github设置的)</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot; //（注意user.name/email和英文双引号&quot;之间要有一个空格）</span><br><span class="line">git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
+<ol start="17">
+<li>确认是否设置成功</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">//用户名与邮箱</span><br><span class="line">git config --global user.name</span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
+<ol start="18">
+<li>下载github部署插件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<ol start="19">
+<li>本地生成密钥</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;（这里改为16步你设置的邮箱）</span><br></pre></td></tr></table></figure>
+<ol start="20">
+<li>获取你生成的密钥，并复制返回的结果</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<ol start="21">
+<li>
+<p><strong>登录github</strong>, 点击头像——settings——点击SSH and GPG keys-再点击New SSH key,自己取一个标题,然后将复制的密钥粘贴到&quot;key&quot;文本框内并提交（Add SSH key)。</p>
+</li>
+<li>
+<p>验证：</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<ol start="23">
+<li>再次提交</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<ol start="24">
+<li>运行并检验是否成功</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo s   //或者在浏览器URL栏输入“你的github用户名.github.io”，验证是否已经部署。</span><br></pre></td></tr></table></figure>
+<p>至此你已经成功部署一个简单的hexo博客，恭喜你我的朋友(^o^)/~，<strong>但这只是伟大征程的第一步，这是结束也是开始</strong>……</p>
+<h1>博客维护</h1>
+<h2 id="基础指令">基础指令</h2>
+<p>主题、文章修改之后要重新生成并部署。<br>
+简单讲解：</p>
+<ol>
+<li><code>hexo cl</code> 将之前上传的清除</li>
+<li><code>hexo g</code> 生成框架</li>
+<li><code>hexo s</code> 将其打开在主机上</li>
+<li><code>hexo d</code> 提交到github上</li>
+</ol>
+<blockquote>
+<p>总结：<strong>最重要的是第2,4个代码（部分插件使用需要第一个代码，这样通过你的用户名.github.io打开的博客才会更改。</strong></p>
+</blockquote>
+<h2 id="md文件">md文件</h2>
+<p><strong>命令行创建md文件</strong><br>
+<code>hexo n &quot;博客文章名&quot;</code>， <strong>必须先进入到文件中才能使用</strong>，会自动在 你所创建的文件夹\source_posts\博客文件名.md  路径下创建一个md文件。</p>
+<p><strong>md文件保存位置</strong><br>
+一般就在/_ posts 文件下创建md文件即可（或者把md文件移动到这里），要在开头加上如下语句即可.<strong>注意冒号后面要留空格</strong></p>
+<p><strong>示例格式如下</strong></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;! -- 这里是html的注释 写的时候不要添加 - - &gt;</span><br><span class="line">title: 我的第一篇博客文章</span><br><span class="line">date: 2024-06-01  19:10:34</span><br><span class="line">tags: C++</span><br><span class="line">no<span class="emphasis">_valine: true&lt;!- - 关闭评论- - &gt;</span></span><br><span class="line"><span class="emphasis">comments: 是否开启评论(true or false)</span></span><br><span class="line"><span class="emphasis">top: &lt;!- - 文章置顶true- - &gt;</span></span><br><span class="line"><span class="emphasis">no_</span>word<span class="emphasis">_count: true&lt;!- -关闭字数统计- - &gt;</span></span><br><span class="line"><span class="emphasis">password: &lt;! - -如果加密，这里填写密码 - - &gt;</span></span><br><span class="line"><span class="emphasis">reward: true&lt;!- - 当前文章是否开启打赏 - - &gt;</span></span><br><span class="line"><span class="emphasis">copyright: true&lt;!- - 当前文章是否开启版权声明 - - &gt;</span></span><br><span class="line"><span class="emphasis">categories: &lt;! - -如下，分类2是分类1的子分类- - &gt;</span></span><br><span class="line"><span class="emphasis">- [分类1，子分类1]</span></span><br><span class="line"><span class="emphasis">- [分类1，子分类2]</span></span><br><span class="line"><span class="emphasis">- [分类2]</span></span><br><span class="line"><span class="emphasis">tags: </span></span><br><span class="line"><span class="emphasis">- 标签1</span></span><br><span class="line"><span class="emphasis">- 标签2</span></span><br></pre></td></tr></table></figure>
+<h2 id="插件下载与使用">插件下载与使用</h2>
+<p><strong>提醒：少即是多, 避免华而不实。</strong></p>
+<p>打开官方文档<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a>，点击插件，点击中意的插件，按照作者的教程去配置插件</p>
+<p><strong>举例</strong><br>
+<strong>DPlayer插件</strong></p>
+<p><strong>播放代码</strong><br>
+<code>&#123;% dplayer "url=" "pic=" "theme=#FADFA3" "autoplay=false" "mutex=true" %&#125;</code></p>
+<p><strong>示例</strong><br>
+打开对应视频资源网页版（这里以b站为例），鼠标移动到分享-“嵌入代码”，将代码复制到md文件里面，如果需要调整大小，可添加<code>height=450 width=600</code> ,根据需要调整即可</p>
+<h2 id="主题的下载与使用">主题的下载与使用</h2>
+<p><strong>安装思路同插件</strong><br>
+注意在themes界面中可以点击“visit preview site”预览主题。</p>
+<ol>
+<li>看作者介绍如何安装，一步步安装  ，复杂一点的主题还有一系列插件安装</li>
+<li>打开根目录下的_config.yml  将theme: 以前的主题 改为 theme: 现在的主题</li>
+<li>后续的改动都是要基于作者文档。熟悉前端开发的朋友可以用“<strong>检查</strong>“了解作者网页的结构，然后自行修改</li>
+</ol>
+<p><strong>推荐主题</strong>：</p>
+<ul>
+<li>极简风格：
+<ul>
+<li>yilia-plus：<a href="https://github.com/JoeyBling/hexo-theme-yilia-plus">一个简洁优雅的hexo主题</a></li>
+</ul>
+</li>
+<li>优雅又实用：
+<ul>
+<li>butterfly：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安裝文檔(一) 快速開始 | Butterfly</a></li>
+<li>matery：<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">hexo-theme-matery/README_CN.md</a></li>
+</ul>
+</li>
+</ul>
+<h1>Hexo进阶-butterfly主题安装及其定制化</h1>
+<blockquote>
+<p>我目前安装的是5.1.0版本的。</p>
+</blockquote>
+<p>虽然主菜单栏里面可以分成多个子菜单，但是似乎每一个子菜单只能放一个md文件，所以<u>建议此md文件作为某一类型的东西的索引来呈现。</u></p>
+<p>所有的博客md文件都需要放在_post文件夹里面，其他地方大多只能放索引md文件。<strong>建议使用</strong><code>hexo n post 标题名</code> ,这样就会<strong>自动将对应的文件夹也生成</strong>。</p>
+<p>建议修改的使用经常使用Hexo s命令，修改无误之后再提交。</p>
+<p><strong>To be continue……</strong></p>
+<hr>
+<h1>总结</h1>
+<p>本篇文章主要侧重于基础的hexo博客搭建，至于进阶的hexo主题搭建和插件安装，限于笔者能力难以展开，有兴趣的读者可以去官方文档找对应的资料，按照作者的文档去安装。</p>
+<h1>结束语</h1>
+<p>有的朋友会说这也太难了吧，确实对于零基础的小白配置一个复杂的博客主题绝非易事，但是我想用王安石的一句话共勉想要变得更强、超越自我的朋友。<br>
+<strong>“而世之奇伟、瑰怪、非常之观，常在于险远，而人之所罕之焉，故非有志者不能之也。”</strong></p>
+<h1>参考资料</h1>
+<ol>
+<li><strong>官方网站</strong>：<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></li>
+<li><strong>其他人的教程</strong>：<a href="https://mubu.com/doc/5OeZGO2XKgh">搭建个人博客网站 - 幕布 (mubu.com)</a></li>
+<li>git和github<strong>下载和使用</strong>：<a href="https://www.bilibili.com/video/BV1o5411j7up/?buvid=XY8FE9283F9E25662FCF4765F2CEBCB3B2141&amp;from_spmid=main.space-search.0.0&amp;is_story_h5=false&amp;mid=ueF2Y5ca46qLJ%2B0TtsIVXA%3D%3D&amp;p=2&amp;plat_id=116&amp;share_from=ugc&amp;share_medium=android&amp;share_plat=android&amp;share_session_id=26f5f2ef-15df-4762-87af-a60e30f96419&amp;share_source=COPY&amp;share_tag=s_i&amp;spmid=united.player-video-detail.0.0&amp;timestamp=1718194497&amp;unique_k=7ayW8ON&amp;up_id=456828781&amp;vd_source=9d7958a1b86a1d76c255b26c5fa353b7">github入门及如何提交代码-清晰版本_哔哩哔哩_bilibili</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析工具superset安装和使用(version:0.381)</title>
+    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
+    <content><![CDATA[<h1>简介</h1>
+<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<h1>准备工作</h1>
+<blockquote>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+</blockquote>
+<ul>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料
+<ul>
+<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h1>基本环境配置</h1>
+<ol>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
+</ol>
+<h1>superset使用指南</h1>
+<p>待更新……</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
@@ -4905,46 +4945,6 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
       </tags>
   </entry>
   <entry>
-    <title>数据分析工具superset安装和使用(version:0.381)</title>
-    <url>/2024/09/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7superset/</url>
-    <content><![CDATA[<h1>简介</h1>
-<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
-<h1>准备工作</h1>
-<blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
-</blockquote>
-<ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料
-<ul>
-<li>【尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）】<a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ul>
-</li>
-</ul>
-<h1>基本环境配置</h1>
-<ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
-</ol>
-<h1>superset使用指南</h1>
-<p>待更新……</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>大数据</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据结构可视化</title>
     <url>/2024/11/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<blockquote>
@@ -5017,7 +5017,12 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
 <h2 id="蓝桥杯系列">蓝桥杯系列</h2>
 <h3 id="准备工作">准备工作</h3>
 <ol>
-<li>蓝桥杯使用的C++是11版本的，注意不要使用过多的新语法</li>
+<li>
+<p>蓝桥杯使用的C++是11版本的，注意不要使用过多的新语法</p>
+</li>
+<li>
+<p><code>#include &lt;bits/stdc++.h&gt; </code>考试推荐的万能导入头文件，但是工作的时候不要用</p>
+</li>
 </ol>
 <h3 id="字符串">字符串</h3>
 <blockquote>
@@ -5060,7 +5065,7 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
 <p><strong>正则表达式在scanf中的应用</strong></p>
 <p>例如</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">char</span> s[<span class="number">15</span>];</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%[^\n]&quot;</span>,s);<span class="comment">//这里的正则表达式的意思是只要不是回车就读进去，非常好用</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,s);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;C++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>**strcpy **</p>
+<p><strong>strcpy</strong></p>
 <p>实现字符串复制的功能 具体看 C/C++参考文档 官网如下<a href="https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5">cppreference.com</a></p>
 <p><strong>strcat</strong></p>
 <p>实现字符串拼接的功能，函数原型：</p>
@@ -5074,17 +5079,30 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
 <h4 id="常见的函数及其使用-C">常见的函数及其使用(C++)</h4>
 <p><strong>cin与cout</strong></p>
 <p>它们的作用和scanf与printf一样，但是有一些差别。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span> <span class="comment">//考试推荐的万能导入头文件，但是工作的时候不要用</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">double</span> a,b</span><br><span class="line">	cin&gt;&gt;a&gt;&gt;b;<span class="comment">//输入为2 3</span></span><br><span class="line">	cout&lt;&lt;fixed&lt;&lt;<span class="built_in">setprecision</span>(<span class="number">3</span>)&lt;&lt;a&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;b&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;<span class="comment">//输出为2.000 3.000 这里的setprecision()是设置保留小叔位数</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="type">char</span> ch;</span><br><span class="line">    cin&gt;&gt;ch;<span class="comment">//输入为a</span></span><br><span class="line">    cout&lt;&lt;ch;<span class="comment">//输出为a 这种C语言的字符串建议使用scanf与printf 性能更好</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="type">char</span> s[<span class="number">10</span>];</span><br><span class="line">    cin&gt;&gt;s;<span class="comment">//输入lan qiao</span></span><br><span class="line">    cout&lt;&lt;s;<span class="comment">//输出为lan  注意cin输入字符串也是遇到空格或者回车就结束 </span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    string s;</span><br><span class="line">    <span class="built_in">getline</span>(cin,s);<span class="comment">//输入为lan qioa此函数能获取一行的输入，包括空格</span></span><br><span class="line">    cout&lt;&lt;s;<span class="comment">//输出为lan qiao</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//还有获取字符串的方法是是fgets()函数+输入流的方式</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    string str[<span class="number">10</span>];<span class="comment">//cin的好处就是能直接将输入的数据放入容器中</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;str[i];<span class="comment">//将输入的字符串写入到str[i]中</span></span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">double</span> a,b</span><br><span class="line">	cin&gt;&gt;a&gt;&gt;b;<span class="comment">//输入为2 3</span></span><br><span class="line">	cout&lt;&lt;fixed&lt;&lt;<span class="built_in">setprecision</span>(<span class="number">3</span>)&lt;&lt;a&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;b&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;<span class="comment">//输出为2.000 3.000 这里的setprecision()是设置保留小叔位数</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="type">char</span> ch;</span><br><span class="line">    cin&gt;&gt;ch;<span class="comment">//输入为a</span></span><br><span class="line">    cout&lt;&lt;ch;<span class="comment">//输出为a 这种C语言的字符串建议使用scanf与printf 性能更好</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="type">char</span> s[<span class="number">10</span>];</span><br><span class="line">    cin&gt;&gt;s;<span class="comment">//输入lan qiao</span></span><br><span class="line">    cout&lt;&lt;s;<span class="comment">//输出为lan  注意cin输入字符串也是遇到空格或者回车就结束 </span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    string s;</span><br><span class="line">    <span class="built_in">getline</span>(cin,s);<span class="comment">//输入为lan qioa此函数能获取一行的输入，包括空格</span></span><br><span class="line">    cout&lt;&lt;s;<span class="comment">//输出为lan qiao</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//还有获取字符串的方法是是fgets()函数+输入流的方式</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    string str[<span class="number">10</span>];<span class="comment">//cin的好处就是能直接将输入的数据放入容器中</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;str[i];<span class="comment">//将输入的字符串写入到str[i]中</span></span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以看见，虽然cin与cout在参数传递的时候不需要指定参数类型(自动判断变量类型), 但是cout对于浮点数和自定义的输出格式不如printf，而且cin与cout的性能相对于scanf与printf较低——由于cin和cout需要自动判断变量类型等内部原因，读写效率比scanf和printf更低，一般建议在<strong>考试时使用scanf与printf</strong>,而且需要注意：<u>要么在一个程序中使用cin与cout,要么使用scanf与printf,不推荐两者混合使用</u>。</p>
 <p>那有没有什么办法提高cin与cout的速度呢？有，那就是<strong>取消同步流</strong>.建议使用C++风格的输入与输入函数的时候就加上这一行代码。</p>
 <p>示例如下</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//取消同步流</span></span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//其他操作不变</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	cin&gt;&gt;x;</span><br><span class="line">	cout&lt;&lt;s;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="应用及题型">应用及题型</h4>
-<p><strong>字母与数字的映射关系</strong>：比如题目规定出现A代表10，B代表11，就要想到A的ASCII编码是97，B的编码是98,找对应关系。</p>
+<p><strong>字母与数字的映射关系</strong>：</p>
+<p>比如题目规定出现A代表10，B代表11，就要想到A的ASCII编码是97，a的ASCII编码是65，B的编码是98,找对应关系。字符0-9对应编码为48-57</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数字映射为字母 10代表A  11代表B</span></span><br><span class="line"><span class="keyword">if</span>(n&gt;=<span class="number">10</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,n<span class="number">-10</span>+<span class="string">&#x27;A&#x27;</span>);<span class="comment">//这样n为11就打印B，12就打印C，反之同理</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//字母映射为数字</span></span><br><span class="line"><span class="keyword">if</span>(c&gt;<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,c-<span class="string">&#x27;A&#x27;</span>+<span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>字母的大小写转换</strong></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//小写转大写</span></span><br><span class="line"><span class="type">char</span> a = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a+(<span class="string">&#x27;A&#x27;</span>-<span class="string">&#x27;a&#x27;</span>));<span class="comment">//大写A比小写a少‘32’，但是不能直接写32或者&#x27;32&#x27;，而是写(&#x27;A&#x27;-&#x27;a&#x27;)</span></span><br><span class="line"><span class="comment">//大写转化为小写同理</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>用ASCII码实现</li>
+</ol>
+<p>原理：字符A减去字符a会变为数字32.</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//小写转大写</span></span><br><span class="line"><span class="type">char</span> a = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a+(<span class="string">&#x27;A&#x27;</span>-<span class="string">&#x27;a&#x27;</span>));<span class="comment">//大写A比小写a少‘32’，但是不能直接写32或者&#x27;32&#x27;(直接写就会整形提升)，而是写(&#x27;A&#x27;-&#x27;a&#x27;)，</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//大写转化为小写同理</span></span><br><span class="line"><span class="type">char</span> b = <span class="string">&#x27;B&#x27;</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,b-(<span class="string">&#x27;A&#x27;</span>-<span class="string">&#x27;a&#x27;</span>));</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>示例：将输入的字符串大写转小写，小写转大写</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cctype&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">char</span> <span class="title">convertedCh</span><span class="params">(<span class="type">char</span> ch)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">islower</span>(ch))<span class="comment">//或者是用if(&#x27;a&#x27;&lt;=ch &amp;&amp; ch&lt;=&#x27;z&#x27;)</span></span><br><span class="line">	&#123;</span><br><span class="line">		ch = <span class="built_in">toupper</span>(ch);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">isupper</span>(ch))<span class="comment">//或者用if(&#x27;A&#x27;&lt;=ch &amp;&amp; ch&lt;=&#x27;Z&#x27;)</span></span><br><span class="line">	&#123;</span><br><span class="line">		ch = <span class="built_in">tolower</span>(ch);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ch;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//将输入的字符串小写变大写，大写变小写</span></span><br><span class="line">	string s;</span><br><span class="line">	<span class="built_in">getline</span>(cin,s);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j&lt;s.<span class="built_in">length</span>();j++)</span><br><span class="line">	&#123;</span><br><span class="line">		s[j] = <span class="built_in">convertedCh</span>(s[j]);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;s&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在C/C++语言中规定，未尾以\0结束的字符型数组称为字符串。这里值得强调的是，只有以<code>\0</code> 结束的才能算是字符串，否则只能算作字符型数组。这在C/C++中算是一种标准。也只有以<code> \0</code>结束的字符数组才能以&quot;%s&quot;的方式用printf输出，否则输出的结果会非常奇怪。自己在char数组上构造一个字符串的时候，忘记在末尾加<code>\0</code>可能会导致访问非法内存的错误。</p>
+<ol start="2">
+<li>用库函数实现</li>
+</ol>
+<p>islower和isupper是C++标准库中的字符分类函数，用于检查一个字符(<code>char</code>)是否为小写字母或大写字母。islower和isupper函数需要包含头文件<code>&lt;cctype&gt;</code>,也可用万能头包含。函数返回值为bool类型.tolower(char ch)可以将ch转化为小写字母，如果ch不是大写字母就不进行操作。toupper同理，将ch转为大写字母。</p>
+<p>示例</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cctype&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="type">char</span> ch1 = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">islower</span>(ch1)) </span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;ch1&lt;&lt;<span class="string">&quot;是小写字母&quot;</span>&lt;&lt;endl;</span><br><span class="line">		<span class="type">char</span> ch3 = <span class="built_in">toupper</span>(ch1);<span class="comment">//注意如果直接在cout中输入toupper(ch1)会默认将其转为int类型，所以需要用char类型的变量接收</span></span><br><span class="line">		cout&lt;&lt;ch3&lt;&lt;<span class="string">&quot;是大写字母&quot;</span>&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="type">char</span> ch2 = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">isupper</span>(ch2))</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;ch2&lt;&lt;<span class="string">&quot;是大写字母&quot;</span>&lt;&lt;endl;</span><br><span class="line">		<span class="type">char</span> ch4 = <span class="built_in">tolower</span>(ch2);</span><br><span class="line">		cout&lt;&lt;ch4&lt;&lt;<span class="string">&quot;是小写字母&quot;</span>&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>例题1</strong>：判断一个数是奇数还是偶数，但是至少10000位_(:з」∠)_ ？</p>
 <p>分析：如果这个数<code>%2==0</code> 就是偶数，关键在于这个数<strong>数量级太大</strong>，long long也存不下，这个时候需要将其作为“字符”来看待，可以用string 或者是char[] 数组，观察可知，判断奇偶数的关键其实在于<strong>最后一位的数字，只要其为偶数，那么整个数为偶数</strong>，反之就是奇数.找最后一位就需要用strlen获取字符串的长度了，代码示例如下</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="comment">//如果你用的是C就导入stdio.h和string.h C++的导入上述的方库</span></span><br><span class="line"><span class="type">char</span> s[<span class="number">10001</span>]</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> len;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s);</span><br><span class="line">	len = <span class="built_in">strlen</span>(s);</span><br><span class="line">	<span class="keyword">if</span>((s[len<span class="number">-1</span>]-<span class="string">&#x27;0&#x27;</span>)%<span class="number">2</span> == <span class="number">0</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;是偶数&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;是奇数&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -5123,20 +5141,25 @@ new内置了sizeof、类型转换、类型安全检查等功能,建议多使用<
 <li>
 <p><code>sort(iterator beg, iterator end, _Pred);  </code></p>
 <p>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>
-//  beg    开始迭代器<br>
-//  end    结束迭代器<br>
+//  beg    开始迭代器  或者是起始地址<br>
+//  end    结束迭代器 或者是结束地址的下一位(<code>arr+size</code>)<br>
 // _Pred  谓词 <strong>也就是排序方法</strong> 比如greater就是从大到小排序</p>
 </li>
 </ul>
 <p><strong>示例：</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">myPrint</span><span class="params">(<span class="type">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; val &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">	v.<span class="built_in">push_back</span>(<span class="number">10</span>);</span><br><span class="line">	v.<span class="built_in">push_back</span>(<span class="number">30</span>);</span><br><span class="line">	v.<span class="built_in">push_back</span>(<span class="number">50</span>);</span><br><span class="line">	v.<span class="built_in">push_back</span>(<span class="number">20</span>);</span><br><span class="line">	v.<span class="built_in">push_back</span>(<span class="number">40</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sort默认从小到大排序</span></span><br><span class="line">	<span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">	for_each(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), myPrint);</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//从大到小排序</span></span><br><span class="line">	<span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), <span class="built_in">greater</span>&lt;<span class="type">int</span>&gt;());</span><br><span class="line">	for_each(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), myPrint);</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">myPrint</span><span class="params">(<span class="type">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; val &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">	v.<span class="built_in">push_back</span>(<span class="number">10</span>);</span><br><span class="line">	v.<span class="built_in">push_back</span>(<span class="number">30</span>);</span><br><span class="line">	v.<span class="built_in">push_back</span>(<span class="number">50</span>);</span><br><span class="line">	v.<span class="built_in">push_back</span>(<span class="number">20</span>);</span><br><span class="line">	v.<span class="built_in">push_back</span>(<span class="number">40</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sort默认从小到大排序</span></span><br><span class="line">	<span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">	for_each(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), myPrint);</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//从大到小排序</span></span><br><span class="line">	<span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), <span class="built_in">greater</span>&lt;<span class="type">int</span>&gt;());</span><br><span class="line">	for_each(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), myPrint);</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//对数组排序</span></span><br><span class="line">    <span class="type">int</span> a[<span class="number">1000</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;<span class="number">1000</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        a[i] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(a,a<span class="number">+1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>总结</strong>：sort属于开发中最常用的算法之一，需熟练掌握</p>
 <h4 id="进阶：自定义-Pred参数">进阶：自定义 _Pred参数</h4>
 <p>对于一般的容器谓词可以直接用greater,但是如果是类的排序或者是其他具有多个成员变量的对象的排序呢？这个时候就需要自己定义一个谓词，将需要进行比较的对象作为形参，以某种比较方式进行比较，最后要返回布尔值。为真就会被排到容器前面，假就会排在后面。</p>
 <p>示例如下</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//返回值必须是bool</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="comment">//这里是比较x与y个位大小，为真返回true，即只要为真的都在前面，为false都在后面。</span></span><br><span class="line">	<span class="keyword">return</span> x % <span class="number">10</span> &gt; y % <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//返回值必须是bool</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="comment">//这里是比较x与y个位大小，为真返回true，即只要为真的都在前面，为false都在后面。</span></span><br><span class="line">	<span class="keyword">return</span> x % <span class="number">10</span> &gt; y % <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>使用lambda表达式定义排序方法</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在&quot;Sort.cpp&quot;文件内</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Test_Sort</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//初始化</span></span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; v= &#123;<span class="number">5</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">9</span>,<span class="number">11</span>&#125;;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//对数组排序</span></span><br><span class="line">	<span class="built_in">sort</span>(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>(),[](<span class="type">const</span> <span class="type">int</span> &amp;u,<span class="type">const</span> <span class="type">int</span> &amp;v) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> u&gt;v;</span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;v[i]&lt;&lt;<span class="string">&#x27; &#x27;</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在main.cpp文件</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//测试排序函数</span></span><br><span class="line">	<span class="built_in">Test_Sort</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然可以用<strong>运算符重载</strong>直接作为排序方法，但是在考场上不建议使用</p>
 <p>还可以<strong>加入多个语句进行多次的排序</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//按照成绩排序，如果第一个成绩相同就按第二个成绩排序，如果第二个成绩相同就按第三个成绩排序</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp_score</span><span class="params">(Student x,Student y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x.score[<span class="number">0</span>]!=.score[<span class="number">0</span>])&#123;</span><br><span class="line">		<span class="keyword">return</span> x.score[<span class="number">0</span>]&gt;y.score[<span class="number">0</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (x.score[<span class="number">1</span>]!=.score[<span class="number">1</span>])&#123;</span><br><span class="line">		<span class="keyword">return</span> x.score[<span class="number">1</span>]&gt;y.score[<span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> x.score[<span class="number">2</span>]&gt;y.score[<span class="number">2</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例题：<a href="https://www.lanqiao.cn/problems/1265/learning/?page=1&amp;first_category_id=1&amp;problem_id=1265&amp;sort=students_count&amp;asc=1">1.排序 - 蓝桥云课</a></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">// 请在此输入您的代码</span></span><br><span class="line">  <span class="type">int</span> size = <span class="number">0</span>;<span class="comment">//获取数组的长度</span></span><br><span class="line">  cin&gt;&gt;size;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> num[size];</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;size;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    cin&gt;&gt;num[i];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">sort</span>(num,num+size);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;size;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    cout&lt;&lt;num[i]&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  cout&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i = size<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--) <span class="comment">//这里我用了取巧的方法，如果正向遍历是升序，反向遍历就是降序。就只需要排序一次</span></span><br><span class="line">  &#123;</span><br><span class="line">    cout&lt;&lt;num[i]&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>初始化列表-C++特性</strong></p>
 <blockquote>
 <p>常用于构造函数和实例对象创建，主要是起到简便的作用。</p>
@@ -5364,6 +5387,69 @@ bfs从起点开始，优先搜索离起点最近的点，然后由这个最近�
 <p>例题1：杨辉三角——请求出杨辉三角的第n行，第m项的数字是什么？通过递推式表达出来</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"># 用数据表示为</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">1 1</span></span><br><span class="line"><span class="comment">1 2 1</span></span><br><span class="line"><span class="comment">1 3 3 1</span></span><br><span class="line"><span class="comment">……</span></span><br><span class="line"><span class="comment">整理出递推式子为:f[i][j] = f[i-1][j-1]+f[i-1][j]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 <p>动态规划是编程解题的一种重要手段。1951年美国数学家R.Bellman等人，根据一类多阶段问题的特点，把多阶段决策问题变换为一系列互相联系的单阶段问题，然后逐个加以解决。与此同时，他提出了解决这类问题的“最优化原理”，从而创建了解决最优化问题的一种新方法：动态规划。动态规划算法通常用于求解具有某种最优性质的问题。在这类问题中，可能会有许多可行解。每一个解都对应于一个值，我们希望找到具有最优值的解。我们可以用一个表来记录所有已解的子问题的答案。不管该子问题以后是否被用到，只要它被计算过，就将其结果填入表中。这就是动态规划法的基本思路。具体的动态规划算法多种多样，但它们具有相同的填表格式。</p>
+<h3 id="查找">查找</h3>
+<p>库函数只能对数组进行二分查找。对一个数组进行二分查找的前提是这个<strong>数组中的元素是单调的</strong>，一般为单调不减或者单调不增（需要修改比较函数），例如[1,5,5,9,11] 是单调不减</p>
+<p>binary_search是C++标准库中的一个算法函数，用于在已排序的序列（例如数组array或容器vector）<br>
+中查找特定元素。它通过<strong>二分查找算法</strong>来确定序列中是否存在目标元素。函数返回一个bool值，表示目标元素是否存在于序列中。如果需要获取找到的元素的位置，可以使用<code>std:lower bound</code>函数或<code>std:upper_bound</code>函数。</p>
+<p>示例</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在BiSearch.h文件中</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span>  <span class="comment">//要使用二分法的函数、lower_bound和upper_bound需要导入算法库</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Test_BiSearch</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; numbers = &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>&#125;;</span><br><span class="line">	<span class="type">int</span> target = <span class="number">5</span>;</span><br><span class="line">	<span class="type">bool</span> flag = <span class="built_in">binary_search</span>(numbers.<span class="built_in">begin</span>(),numbers.<span class="built_in">end</span>(),target);</span><br><span class="line">	<span class="keyword">if</span>(flag)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;<span class="string">&quot;目标元素&quot;</span>&lt;&lt;target&lt;&lt;<span class="string">&quot;被找到&quot;</span>&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//在main.cpp文件中</span></span><br><span class="line"><span class="comment">//这里主要负责测试头文件定义的测试函数 </span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//测试二分法</span></span><br><span class="line">	<span class="built_in">Test_BiSearch</span>() ;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>lower_bound</code>与<code>upper_bound</code>前提：<strong>数组必须为非降序</strong>。如果要在非升序的数组中使用，可以通过修改比较函数实现(方法与sort自定义比较函数类似)<br>
+<code>lower_bound(st,ed,x)</code>返回地址[st,ed)中第一个大于等于x的元素的<strong>地址</strong>。地址-首地址=下标<br>
+<code>upper_bound(st,ed,x)</code>返回地址[st,ed)中第一个大于x的元素的<strong>地址</strong>。如果不存在则返回最后一个元素的下一个位置，在vector中即end()。</p>
+<p>示例</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在BiSearch.h文件中</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Test_bound</span><span class="params">(<span class="type">void</span>)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//初始化 </span></span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; v = &#123;<span class="number">5</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">3</span>,<span class="number">10</span>,<span class="number">18</span>,<span class="number">9</span>&#125;;</span><br><span class="line">	<span class="built_in">sort</span>(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>());</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//找到数组中第一个大于等于8元素的下标</span></span><br><span class="line">	cout&lt;&lt;(<span class="built_in">lower_bound</span>(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>(),<span class="number">8</span>)-v.<span class="built_in">begin</span>())&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在main.cpp文件中</span></span><br><span class="line"><span class="comment">//这里主要负责测试头文件定义的测试函数 </span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//测试bound</span></span><br><span class="line">	<span class="built_in">Test_bound</span>(); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例题：<a href="https://www.lanqiao.cn/problems/1389/learning/?page=1&amp;first_category_id=1&amp;second_category_id=6&amp;problem_id=1389">1.二分查找数组元素 - 蓝桥云课</a></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">// 请在此输入您的代码</span></span><br><span class="line">  <span class="comment">//初始化</span></span><br><span class="line">  <span class="type">int</span> data[<span class="number">200</span>];</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;<span class="number">200</span>;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    data[i] = <span class="number">4</span>*i<span class="number">+6</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> target = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;target);</span><br><span class="line">  cout&lt;&lt;(<span class="built_in">lower_bound</span>(data,data<span class="number">+200</span>,target)-data);<span class="comment">//对于数组之类的 begin指的是首地址。其他同理</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="其他常见的库函数">其他常见的库函数</h3>
+<h4 id="memset">memset</h4>
+<p>memset()是一个用于设置内存块值的函数。它的原型定义在<code>&lt;cstring&gt;</code>头文件中，函数的声明如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> * <span class="title">memset</span><span class="params">(<span class="type">void</span>* ptr,<span class="type">int</span> value,<span class="type">size_t</span> num)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>其中：ptr:指向要设置值的内存块的指针。value:要设置的值，通常是一个整数(8位二进制数)。num:要设置的字节数。</p>
+<p>函数将ptr指向的内存块的前num个字节设置为value的值。它返回一个指向ptr的指针。通常用于初始化内存块，将其设置为特定的值</p>
+<p>示例：将一个整型数组所有元素设置为0</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">10</span>];</span><br><span class="line"><span class="built_in">memset</span>(arr,<span class="number">0</span>,<span class="built_in">sizeof</span>(arr));</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，memset()函数对于非字符类型(即不是char类型的)的数组可能会产生未定义行为。需要使用遍历将其设置对应的值.<strong>memset会将每个byte设置为value</strong>,比图 比如说你设置的value为1,类型为int,那么二进制为00000001 00000001 00000001 00000001</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> a[<span class="number">5</span>] ;</span><br><span class="line"><span class="built_in">memset</span>(a,<span class="number">1</span>,<span class="built_in">sizeof</span>(a));<span class="comment">//在可能的情况下最好使用二进制、八进制，十六进制作为value</span></span><br><span class="line"><span class="comment">//示例 memset(a,0x33,sizeof(a))  16进制的33</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">	cout&lt;&lt;<span class="built_in">bitset</span>&lt;<span class="number">32</span>&gt;(a[i])&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;<span class="comment">//输出结果为00000001</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="swap">swap</h4>
+<p>swap(T&amp;a,T&amp;b)函数接受两个参数：<br>
+1.a:要交换值的第一个变量的引用<br>
+2.b:要交换值的第二个变量的引用，<br>
+swap()函数通过将第一个变量的值存储到临时变量中，然后将第二个变量的值赋给第一个变量，最后将临时变量的值赋给第二<br>
+个变量，实现两个变量值的交换。swap()函数可以用于<strong>交换任意类型的变量</strong>，包括基本类型(如整数、浮点数等）和自定义类型<br>
+(如结构体、类对象等)以下是一个示例，展示如何使用swap()函数交换两个整数的值：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> b = <span class="number">20</span>;</span><br><span class="line">std::<span class="built_in">swap</span>(a,b);</span><br></pre></td></tr></table></figure>
+<h4 id="reverse">reverse</h4>
+<p>反转容器中元素顺序的函数,它的原型定义在<code>&lt;algorithm&gt;</code>头文件中</p>
+<p>reverse()函数接受两个参数：<br>
+1.first:指向容器中要反转的<strong>第一个元素</strong>的迭代器。<br>
+2.last:指向容器中要反转的<strong>最后一个元素的下一个位置</strong>的迭代器。<br>
+reverse()函数将[first,last)范围内的元素顺序进行反转。也就是说，它会将frst,last)范围内的元素按相反的顺序重新排列。<br>
+reverse()函数可用于反转各种类型的容器，包括数组、向量、链表等。以下是一个示例，展示如何使用reverse(O函数反转一个整型向量的元素顺序：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在OtherFun.h文件里面</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Test_Reverse</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; v = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">	<span class="built_in">reverse</span>(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>());</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;v[i]&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在main.cpp文件里面</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">Test_Reverse</span>(); </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，reverse函数只能用于支持双向迭代器的容器，因为它需要能够向前和向后遍历容器中的元素。对于只支持单向迭代器的容器（如前向链表），无法使用reverse函数进行反转。</p>
+<h4 id="unique">unique</h4>
+<p>去除容器中相邻重复元素的函数，需要导入头文件<code>&lt;algorithm&gt;</code></p>
+<p>在上述示例中，std:unique(vec.begin(),vec.end())将整型向量vec中的相邻重复元素去除。最终输出的结果是1 2 3 4 5.需要注意的是，unique()函数<strong>只能去除相邻的重复元素</strong>，如果容器中存在非相邻的重复元素，则无法去除。如果需要去除所有重复元素，而不仅仅是相邻的重复元素，<strong>可以先对容器进行排序，然后再使用unique()函数</strong>。</p>
+<p>示例</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在OtherFun.h文件里面</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Test_Unique</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a[] = &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">	<span class="type">int</span> n = <span class="built_in">unique</span>(a,a<span class="number">+5</span>)-a;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;a[i]&lt;&lt;<span class="string">&#x27; &#x27;</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在main.cpp文件里面</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">Test_Unique</span>(); <span class="comment">//结果为1 2 3</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="全排列">全排列</h4>
+<p>next_permutation函数用于生成当前序列的下一个排列。它按照字典序对序列进行重新排列，如果存在下一个排列，则将当前序列更改为下一个排列，并返回tue;如果当前序列已经是最后一个排列，则将序列更改为第一个排列，并返回false。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在OtherFun.h文件里面</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Test_permutation</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; v = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//生成下一个排列</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">next_permutation</span>(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>()))</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;<span class="string">&quot;下一个排序&quot;</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;<span class="number">3</span>;i++) </span><br><span class="line">		&#123;</span><br><span class="line">			cout&lt;&lt;v[i]&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在main.cpp文件里面</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//测试全排列函数 </span></span><br><span class="line">	<span class="built_in">Test_permutation</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>prev_permutation函数与next_permutation函数相反，它用于生成当前序列的上一个排列</p>
+<h4 id="最值函数">最值函数</h4>
+<p>min(a，b)返回a和b中较小的那个值，只能传入两个值，或传入一个列表(比如min({1,2,3,4})。max同理<br>
+min_element(St,ed)返回地址[st,ed)中最小的那个值的<strong>地址</strong>（迭代器），传入参数为两个地址或迭代器。<br>
+max_element(st,ed)返回地址[st,ed)中最大的那个值的地址（迭代器），传入参数为两个地址或迭代器。时间复杂度均为O(n),n为数组大小（由传入的参数决定）</p>
+<p>但是要注意的是，返回值类型是<code>size_t</code> 一般用long long接收</p>
+<p>示例</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">Test_TheValue</span><span class="params">(<span class="type">void</span>)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//初始化</span></span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; v = &#123;<span class="number">5</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">11</span>&#125; ;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//输出最大的元素 通过*解引用得到值</span></span><br><span class="line">	cout&lt;&lt;*<span class="built_in">max_element</span>(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>()) &lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在main.cpp文件里面</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//测试最值函数</span></span><br><span class="line">	<span class="built_in">Test_TheValue</span>(); <span class="comment">//输出结果为11</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>nth_element函数</strong></p>
+<p>nth_element(st,k,ed)进行部分排序，返回值为void() 传入参数为三个地址或迭代器。其中第二个参数位置的元素将处于正确位置，<strong>其他位置元素的顺序可能是任意的，但前面的都比它小，后面的都比它大</strong>。时间复杂度O(n)。</p>
+<p>**举个栗子求第3小，对于 a[9]={4,7,6,9,1,8,2,3,5};**nth_element(a,a+2,a+9)，将下标为2，也就是第3个数放在正确的位置，求的是第3小的数a[2]。（下标从零开始）</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">Test_nth</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//初始化</span></span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; v = &#123;<span class="number">5</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">3</span>,<span class="number">10</span>,<span class="number">18</span>,<span class="number">9</span>&#125;;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//输出最大的元素</span></span><br><span class="line">	<span class="built_in">nth_element</span>(v.<span class="built_in">begin</span>(),v.<span class="built_in">begin</span>()<span class="number">+3</span>,v.<span class="built_in">end</span>()) ;<span class="comment">//这里找的是第四小的数</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;<span class="number">7</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;v[i]&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在main.cpp文件里面</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//测试最值函数</span></span><br><span class="line">	<span class="built_in">Test_nth</span>();<span class="comment">//输出结果为3 1 5 7 9 18 10</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例题</p>
+<p><a href="https://www.lanqiao.cn/problems/497/learning/?page=1&amp;first_category_id=1&amp;problem_id=497">1.成绩分析 - 蓝桥云课-497</a></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">//人数</span></span><br><span class="line">  <span class="type">int</span> num  =<span class="number">0</span>;</span><br><span class="line">  cin&gt;&gt;num;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//成绩初始化</span></span><br><span class="line">  <span class="type">int</span> arr[num];</span><br><span class="line">  <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;num;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    cin&gt;&gt;arr[i];</span><br><span class="line">    sum+=arr[i];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  cout&lt;&lt;*<span class="built_in">max_element</span>(arr,arr+num)&lt;&lt;<span class="string">&#x27;\n&#x27;</span>&lt;&lt;*<span class="built_in">min_element</span>(arr,arr+num)&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">  cout&lt;&lt;fixed&lt;&lt;<span class="built_in">setprecision</span>(<span class="number">2</span>)&lt;&lt;<span class="number">1.0</span>*sum/num;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="参考">参考</h2>
 <ol>
 <li><a href="https://www.bilibili.com/video/BV1Lb4y1k7K3/?share_source=copy_web&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">蓝桥杯比赛视频教程（入门学习+算法辅导)</a> 建议看前41节 重点是他讲的知识点，由于他讲题特别快不建议按照他的课刷题，建议自行在蓝桥杯题库中刷题。</li>
