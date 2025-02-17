@@ -268,6 +268,20 @@
   </url>
   
   <url>
+    <loc>http://lloyd-kai.github.io/tags/MySQL/</loc>
+    <lastmod>2025-02-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://lloyd-kai.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2025-02-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://lloyd-kai.github.io/tags/blog/</loc>
     <lastmod>2025-02-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -282,13 +296,6 @@
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-02-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://lloyd-kai.github.io/tags/hexo/</loc>
     <lastmod>2025-02-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -296,13 +303,6 @@
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/tags/MySQL/</loc>
-    <lastmod>2025-02-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://lloyd-kai.github.io/tags/C/</loc>
     <lastmod>2025-02-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -311,13 +311,6 @@
   
   <url>
     <loc>http://lloyd-kai.github.io/tags/C/</loc>
-    <lastmod>2025-02-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://lloyd-kai.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2025-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -325,6 +318,13 @@
   
   <url>
     <loc>http://lloyd-kai.github.io/tags/data-structure/</loc>
+    <lastmod>2025-02-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://lloyd-kai.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2025-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -347,14 +347,14 @@
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/categories/blog/</loc>
+    <loc>http://lloyd-kai.github.io/categories/MySQL/</loc>
     <lastmod>2025-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/categories/MySQL/</loc>
+    <loc>http://lloyd-kai.github.io/categories/blog/</loc>
     <lastmod>2025-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -368,14 +368,14 @@
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <loc>http://lloyd-kai.github.io/categories/data-structure/</loc>
     <lastmod>2025-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://lloyd-kai.github.io/categories/data-structure/</loc>
+    <loc>http://lloyd-kai.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2025-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
