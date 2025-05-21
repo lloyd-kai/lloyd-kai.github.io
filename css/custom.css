@@ -44,3 +44,21 @@
     padding: 0 5px 0 5px;
   }
 }
+
+/* 字体自定义修改处 */
+/* 霞鹜字体最好找一个比较粗的 */
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  font-display: swap;
+  src: url('../font/HarmonyOS_Sans_SC_Regular.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-display: swap;
+  src: url('../font/JetBrainsMono-Regular.ttf') format("truetype");
+}
+
+body {
+  font-family: 'JetBrains Mono', 'HarmonyOS Sans SC';
+}
