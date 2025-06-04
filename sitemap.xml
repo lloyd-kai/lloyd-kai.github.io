@@ -281,20 +281,6 @@
 
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/MySQL/</loc>
-    <lastmod>2025-06-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-06-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.lloydkai.top/tags/Linux/</loc>
     <lastmod>2025-06-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -316,7 +302,21 @@
   </url>
   
   <url>
+    <loc>https://blog.lloydkai.top/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2025-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.lloydkai.top/tags/hexo/</loc>
+    <lastmod>2025-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/MySQL/</loc>
     <lastmod>2025-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -367,13 +367,6 @@
 
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/MySQL/</loc>
-    <lastmod>2025-06-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.lloydkai.top/categories/Linux/</loc>
     <lastmod>2025-06-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -382,6 +375,13 @@
   
   <url>
     <loc>https://blog.lloydkai.top/categories/blog/</loc>
+    <lastmod>2025-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/categories/MySQL/</loc>
     <lastmod>2025-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
