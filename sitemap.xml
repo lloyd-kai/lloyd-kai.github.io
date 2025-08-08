@@ -332,21 +332,21 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/C/</loc>
-    <lastmod>2025-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/tags/C/</loc>
-    <lastmod>2025-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.lloydkai.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <lastmod>2025-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/C/</loc>
+    <lastmod>2025-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/C/</loc>
     <lastmod>2025-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -367,14 +367,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/Leetcode/</loc>
+    <loc>https://blog.lloydkai.top/tags/English/</loc>
     <lastmod>2025-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/English/</loc>
+    <loc>https://blog.lloydkai.top/tags/Leetcode/</loc>
     <lastmod>2025-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -404,14 +404,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/C/</loc>
+    <loc>https://blog.lloydkai.top/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2025-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <loc>https://blog.lloydkai.top/categories/C/</loc>
     <lastmod>2025-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -425,14 +425,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/algorithm/</loc>
+    <loc>https://blog.lloydkai.top/categories/data-structure/</loc>
     <lastmod>2025-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/data-structure/</loc>
+    <loc>https://blog.lloydkai.top/categories/algorithm/</loc>
     <lastmod>2025-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
