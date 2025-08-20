@@ -290,20 +290,6 @@
 
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/MySQL/</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.lloydkai.top/tags/Linux/</loc>
     <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -325,28 +311,21 @@
   </url>
   
   <url>
+    <loc>https://blog.lloydkai.top/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/MySQL/</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.lloydkai.top/tags/hexo/</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/tags/life/</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/tags/C/</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/tags/C/</loc>
     <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -360,14 +339,28 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/data-structure/</loc>
+    <loc>https://blog.lloydkai.top/tags/C/</loc>
     <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/Leetcode/</loc>
+    <loc>https://blog.lloydkai.top/tags/C/</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/life/</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/data-structure/</loc>
     <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -380,14 +373,14 @@
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://blog.lloydkai.top/categories/MySQL/</loc>
+    <loc>https://blog.lloydkai.top/tags/Leetcode/</loc>
     <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
+  
+
   
   <url>
     <loc>https://blog.lloydkai.top/categories/Linux/</loc>
@@ -404,14 +397,7 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/life/</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/categories/C/</loc>
+    <loc>https://blog.lloydkai.top/categories/MySQL/</loc>
     <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -425,7 +411,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/algorithm/</loc>
+    <loc>https://blog.lloydkai.top/categories/C/</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/categories/life/</loc>
     <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -433,6 +426,13 @@
   
   <url>
     <loc>https://blog.lloydkai.top/categories/data-structure/</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/categories/algorithm/</loc>
     <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
