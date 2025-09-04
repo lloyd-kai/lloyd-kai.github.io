@@ -168,10 +168,19 @@ Type <code>python3</code> at a terminal prompt (Mac/Unix/Linux) or open the Pyth
 </ol>
 <p>Q3：判断是否为质数</p>
 <p>Q4：找出数中只出现一次的数字</p>
+<p>Q5-Q6 是关于Environment Diagrams，也就是局部和全局、return语句相关的知识。需要注意的是函数”赋值“，如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">double</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> x * <span class="number">2</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># double名称指向的是func double(x) [parent=Global]</span></span><br><span class="line">hat = double <span class="comment">#hat也指向的是func double(x) [parent=Global]</span></span><br></pre></td></tr></table></figure>
+<p>不是让hat指向double,而是让hat指向double所指向的函数，本质也就是C的函数指针。</p>
 <p><strong>需要注意的翻译</strong></p>
 <p>assignment statement：赋值语句</p>
 <p>local：在这里要翻译成局部，与之相对的是全局global</p>
 <p>Iteration：迭代</p>
+<h3 id="Ch1-6-Higher-Order-Functions">Ch1.6 Higher-Order Functions</h3>
+<p>概念：操纵函数的函数就叫高阶函数</p>
+<p>新知识：term，类比C++传入函数指针作为参数</p>
+<p><code>term(k)</code> 表示调用函数 <code>term</code> 并传入参数 <code>k</code>，其返回值用于累加。这种设计使得 <code>summation</code> 函数非常通用，可以计算任意形式的累加和，只要传入相应的 <code>term</code> 函数即可</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">summation</span>(<span class="params">n, term</span>):</span><br><span class="line">    total,k = <span class="number">0</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> k&lt;=n:</span><br><span class="line">        total,k = total+term(k),k+<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
+<p><strong>这种函数的设计非常优雅，将抽象的、重复的逻辑整合为一个高阶函数，在高阶函数中调用”定制“的函数，就可以扩展函数的功能</strong>。</p>
 <p>待续…</p>
 ]]></content>
       <categories>
