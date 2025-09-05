@@ -181,6 +181,22 @@ Type <code>python3</code> at a terminal prompt (Mac/Unix/Linux) or open the Pyth
 <p><code>term(k)</code> 表示调用函数 <code>term</code> 并传入参数 <code>k</code>，其返回值用于累加。这种设计使得 <code>summation</code> 函数非常通用，可以计算任意形式的累加和，只要传入相应的 <code>term</code> 函数即可</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">summation</span>(<span class="params">n, term</span>):</span><br><span class="line">    total,k = <span class="number">0</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> k&lt;=n:</span><br><span class="line">        total,k = total+term(k),k+<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
 <p><strong>这种函数的设计非常优雅，将抽象的、重复的逻辑整合为一个高阶函数，在高阶函数中调用”定制“的函数，就可以扩展函数的功能</strong>。</p>
+<p><strong>Nested Functions</strong></p>
+<p>函数嵌套，顾名思义就是在函数里面定义函数并使用</p>
+<p>嵌套函数的特点</p>
+<ul>
+<li>本地函数的名称不会与定义它的函数的外部名称发生冲突，因为本地函数名称将在定义它的当前本地环境中绑定，而不是在全局环境中绑定。</li>
+<li>局部函数可以访问外层函数的环境，因为局部函数的主体是在一个扩展了定义它的评估环境的环境中进行评估的。也就是说函数内部定义的函数可以使用外部函数中的环境，比如变量、参数等等</li>
+</ul>
+<p>词法作用域(<strong>Lexical scope</strong>)：</p>
+<p>核心定义是：<strong>一个变量或符号的可见性（它在哪儿能被访问到）是由它在源代码中的位置决定的，并且在编译时（compile time）就已经确定，而不是在运行时（run time）</strong></p>
+<p>比如将变量定义在函数内部，那么作用域就被定死了。表现为向内访问，向外遮蔽</p>
+<p>利用这些特性，甚至可以返回函数的组合</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">compose1</span>(<span class="params">f, g</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">h</span>(<span class="params">x</span>):</span><br><span class="line">        <span class="keyword">return</span> f(g(x))</span><br><span class="line">    <span class="keyword">return</span> h</span><br></pre></td></tr></table></figure>
+<p><strong>curry:卷曲：</strong></p>
+<p>有些编程语言（如 Haskell）只允许函数接受一个参数，因此程序员必须对所有多参数过程进行 “卷曲”</p>
+<p>示例如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">curried_pow</span>(<span class="params">x</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">h</span>(<span class="params">y</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">pow</span>(x, y)</span><br><span class="line">        <span class="keyword">return</span> h</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>curried_pow(<span class="number">2</span>)(<span class="number">3</span>)   <span class="comment"># 先将carried_pow返回为h(3) 而x=2已经在pow(2,y)里面，再调入y=3 即可得到8</span></span><br><span class="line"><span class="number">8</span></span><br></pre></td></tr></table></figure>
 <p>待续…</p>
 ]]></content>
       <categories>
