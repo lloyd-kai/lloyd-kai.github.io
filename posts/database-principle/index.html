@@ -1,0 +1,1176 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>MySQL学习笔记(零)数据库原理 | Lloyd的个人博客</title><meta name="author" content="Lloyd,kai9827@outlook.com"><meta name="copyright" content="Lloyd"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="学习数据库的基本原理和理论知识，为后续学习MySQL等数据库打下坚实的基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL学习笔记(零)数据库原理">
+<meta property="og:url" content="https://blog.lloydkai.top/posts/database-principle/index.html">
+<meta property="og:site_name" content="Lloyd的个人博客">
+<meta property="og:description" content="学习数据库的基本原理和理论知识，为后续学习MySQL等数据库打下坚实的基础">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2024/10/13/lD4iJ2BjFNuQtoL.jpg">
+<meta property="article:published_time" content="2026-03-13T01:30:23.000Z">
+<meta property="article:modified_time" content="2026-03-13T01:58:04.284Z">
+<meta property="article:author" content="Lloyd">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="计算机专业知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2024/10/13/lD4iJ2BjFNuQtoL.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MySQL学习笔记(零)数据库原理",
+  "url": "https://blog.lloydkai.top/posts/database-principle/",
+  "image": "https://s2.loli.net/2024/10/13/lD4iJ2BjFNuQtoL.jpg",
+  "datePublished": "2026-03-13T01:30:23.000Z",
+  "dateModified": "2026-03-13T01:58:04.284Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Lloyd",
+      "url": "https://github.com/lloyd-kai/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.lloydkai.top/posts/database-principle/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><meta name="google-site-verification" content="vNvK4ziqUShGY5vf9FoDHK_aV9gyXHz7LwfeSygAmVI"/><meta name="msvalidate.01" content="DF281BDECF95EB0C20BC890873302353"/><link rel="stylesheet" href="/css/index.css?v=5.3.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Lloyd","link":"链接: ","source":"来源: Lloyd的个人博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MySQL学习笔记(零)数据库原理',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})
+setTimeout(function(){preloader.endLoading();}, 5000);
+document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})</script><div id="web_bg" style="background-image: url(https://s2.loli.net/2025/06/01/xCbDMemvuUjz5Kg.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://s2.loli.net/2024/10/21/WXqzA7jMSxHo6fO.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa-solid fa-house"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/computer/"><i class="fa-fw fa fa-television"></i><span> 计算机</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/draw/"><i class="fa-fw fa fa-paint-brush"></i><span> 绘画</span></a></li><li><a class="site-page child" href="/galgame/"><i class="fa-fw fa fa-gamepad"></i><span> 视觉小说</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> 阅读</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(https://s2.loli.net/2024/10/13/lD4iJ2BjFNuQtoL.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Lloyd的个人博客</span></a><a class="nav-page-title" href="/"><span class="site-name">MySQL学习笔记(零)数据库原理</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa-solid fa-house"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/computer/"><i class="fa-fw fa fa-television"></i><span> 计算机</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/draw/"><i class="fa-fw fa fa-paint-brush"></i><span> 绘画</span></a></li><li><a class="site-page child" href="/galgame/"><i class="fa-fw fa fa-gamepad"></i><span> 视觉小说</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> 阅读</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">MySQL学习笔记(零)数据库原理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-03-13T01:30:23.000Z" title="发表于 2026-03-13 09:30:23">2026-03-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T01:58:04.284Z" title="更新于 2026-03-13 09:58:04">2026-03-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MySQL/">MySQL</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">6.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>22分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/database-principle/#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:730,&quot;messagePrev&quot;:&quot;自从上次更新以来已经过去了&quot;,&quot;messageNext&quot;:&quot;天,这篇文章(主要是技术性博客)的内容可能已经过期&quot;,&quot;postUpdate&quot;:&quot;2026-03-13 09:58:04&quot;}" hidden></div><h1>第一章：数据模型</h1>
+<p>这一章主要考选填、简答题。重点背以下东西</p>
+<p>data\database\DBMS的定义、特点及其包含关系</p>
+<p>数据的独立性，逻辑和物理</p>
+<p>数据模型的组成三要素</p>
+<p>三级模式和两级映射是什么，如何工作的——<strong>两层映像的作用就是让上层的模式感受不到下层的变化，从而实现独立性</strong></p>
+<p>数据控制：指的就是权限的授予和收回，</p>
+<h2 id="为什么要解决数据冗余？">为什么要解决数据冗余？</h2>
+<p><strong>数据冗余（Data Redundancy）</strong> 之所以被认为是产生数据不一致的根本原因，是因为它创造了<strong>同一信息多个独立副本</strong>并存的环境，却没有建立<strong>同步更新</strong>的机制，导致在更新时无法保证所有副本同时改变，从而引发矛盾</p>
+<p>文件系统就具有数据冗余的缺点，无法保证当某一个副本更新的时候，其他与之关联的副本也随之更新，从而不能保证数据库的一致性。</p>
+<h1>第二章：关系代数</h1>
+<p>基本的五个关系运算</p>
+<p>根据题目要求写查询的关系代数式——重点是多选、难点的</p>
+<h2 id="为什么并、差、选择、投影、笛卡尔积是五个基本运算？">为什么并、差、选择、投影、笛卡尔积是五个基本运算？</h2>
+<p>因为它们构成了一个<strong>完备集</strong>：这五个运算相互独立，且其他的关系代数运算（如交、连接、除等）都可以用这五个运算组合推导出来。</p>
+<p>以下是常见的派生运算及其推导公式：</p>
+<h4 id="1-交运算-cap">1. 交运算 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∩</mo></mrow><annotation encoding="application/x-tex">\cap</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5556em;"></span><span class="mord">∩</span></span></span></span></h4>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>∩</mo><mi>S</mi><mo>=</mo><mi>R</mi><mo>−</mo><mo stretchy="false">(</mo><mi>R</mi><mo>−</mo><mi>S</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">R \cap S = R - (R - S)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∩</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mclose">)</span></span></span></span></p>
+<h4 id="2-连接运算-Join">2. 连接运算<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⋈</mo></mrow><annotation encoding="application/x-tex">\Join</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.51em;vertical-align:-0.005em;"></span><span class="mrel">⋈</span></span></span></span></h4>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><msub><mo>⋈</mo><mi>θ</mi></msub><mi>S</mi><mo>=</mo><msub><mi>σ</mi><mi>θ</mi></msub><mo stretchy="false">(</mo><mi>R</mi><mo>×</mo><mi>S</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">R \Join_{\theta} S = \sigma_{\theta}(R \times S)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel">⋈</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mclose">)</span></span></span></span></p>
+<ol>
+<li>先做 <strong>笛卡尔积</strong> ( <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>×</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">R \times S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span> )：把所有可能的组合都列出来。</li>
+<li>再做 <strong>选择</strong> (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi>θ</mi></msub></mrow><annotation encoding="application/x-tex">\sigma_{\theta}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> )：只保留那些满足连接条件 ( <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span> ) 的组合。</li>
+<li>自然连接可以在此基础上加上投影去掉重复的同名列。</li>
+</ol>
+<h4 id="3-除运算-div">3. 除运算<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>÷</mo></mrow><annotation encoding="application/x-tex">\div</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">÷</span></span></span></span></h4>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>÷</mo><mi>S</mi><mo>=</mo><msub><mi>π</mi><mi>A</mi></msub><mo stretchy="false">(</mo><mi>R</mi><mo stretchy="false">)</mo><mo>−</mo><msub><mi>π</mi><mi>A</mi></msub><mo stretchy="false">(</mo><mo stretchy="false">(</mo><msub><mi>π</mi><mi>A</mi></msub><mo stretchy="false">(</mo><mi>R</mi><mo stretchy="false">)</mo><mo>×</mo><mi>S</mi><mo stretchy="false">)</mo><mo>−</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">R \div S = \pi_{A}(R) - \pi_{A}((\pi_{A}(R) \times S) - R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">((</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span><br>
+（假设 A 是 R 独有的属性集，B 是 S 的属性集，且<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>⊆</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">B \subseteq R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊆</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span></p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mn>1</mn><mo>=</mo><msub><mi>π</mi><mi>A</mi></msub><mo stretchy="false">(</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T1 = \pi_{A}(R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span>：找出 R 中所有可能的候选值（如所有学生）。</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mn>2</mn><mo>=</mo><msub><mi>π</mi><mi>A</mi></msub><mo stretchy="false">(</mo><mo stretchy="false">(</mo><msub><mi>π</mi><mi>A</mi></msub><mo stretchy="false">(</mo><mi>R</mi><mo stretchy="false">)</mo><mo>×</mo><mi>S</mi><mo stretchy="false">)</mo><mo>−</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T2 = \pi_{A}((\pi_{A}(R) \times S) - R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">((</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span>：
+<ul>
+<li>先做笛卡尔积 ( <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mi>A</mi></msub><mo stretchy="false">(</mo><mi>R</mi><mo stretchy="false">)</mo><mo>×</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">\pi_{A}(R) \times S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>)：让每个候选值与 S 中所有值配对（想象每个学生配上所有课程）。</li>
+<li>减去 ( R )：去掉实际存在的配对，剩下的就是“缺失的配对”（如张三缺了数学课没选）。</li>
+<li>投影 ( <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">\pi_{A}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> )：找出有缺失配对的候选者（有过缺课记录的学生）。</li>
+</ul>
+</li>
+<li>( T1 - T2 )：从所有候选者中减去那些有缺失的人，剩下的就是拥有全部 S 的人。</li>
+</ol>
+<h2 id="实战讲解">实战讲解</h2>
+<p>传统的集合运算并不要求所有的属性名字一样，只需要取值范围相同(域)即可。</p>
+<p><strong>已知关系模式S(sno,sname,age,sex),SC(sno,cno,Grade),C(cno,cname,teacher)</strong></p>
+<h3 id="查询至少选修1号课程和3号课程的学生号码">查询至少选修1号课程和3号课程的学生号码</h3>
+<p>这种选修多个的一般用除法(<strong>除法的作用就是找出符合多个条件的元组</strong>)，得到符合多个条件的元组</p>
+<p>而除法会消除相同的属性，这里就用课程号。</p>
+<p>由题，得到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mrow><mi>c</mi><mi>n</mi><mi>o</mi><msup><mo>=</mo><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><msup><mn>1</mn><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>∧</mo><mi>c</mi><mi>n</mi><mi>o</mi><msup><mo>=</mo><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><msup><mn>3</mn><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow></msub><mo stretchy="false">(</mo><mi>S</mi><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sigma_{cno =&#x27;1&#x27; \land cno =&#x27;3&#x27;}(SC)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span><span class="mrel mtight"><span class="mrel mtight">=</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mtight"><span class="mord mtight">1</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mbin mtight">∧</span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span><span class="mrel mtight"><span class="mrel mtight">=</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mtight"><span class="mord mtight">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">SC</span><span class="mclose">)</span></span></span></span>  这样得到选择了1、3其中一个的元组，然后只投影cno即可</p>
+<p>然后，用<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mrow><mi>s</mi><mi>n</mi><mi>o</mi><mo separator="true">,</mo><mi>c</mi><mi>n</mi><mi>o</mi></mrow></msub><mo stretchy="false">(</mo><mi>S</mi><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\pi_{sno,cno}(SC)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">SC</span><span class="mclose">)</span></span></span></span> 除去投影的就可以得到结果了</p>
+<p>最终就是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mrow><mi>s</mi><mi>n</mi><mi>o</mi><mo separator="true">,</mo><mi>c</mi><mi>n</mi><mi>o</mi></mrow></msub><mo stretchy="false">(</mo><mi>S</mi><mi>C</mi><mo stretchy="false">)</mo><mo>÷</mo><msub><mi>π</mi><mrow><mi>c</mi><mi>n</mi><mi>o</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>σ</mi><mrow><mi>c</mi><mi>n</mi><mi>o</mi><msup><mo>=</mo><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><msup><mn>1</mn><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>∨</mo><mi>c</mi><mi>n</mi><mi>o</mi><msup><mo>=</mo><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><msup><mn>3</mn><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow></msub><mo stretchy="false">(</mo><mi>S</mi><mi>C</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\pi_{sno,cno}(SC) \div \pi_{cno}(\sigma_{cno =&#x27;1&#x27; \lor cno =&#x27;3&#x27;}(SC))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">SC</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span><span class="mrel mtight"><span class="mrel mtight">=</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mtight"><span class="mord mtight">1</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mbin mtight">∨</span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span><span class="mrel mtight"><span class="mrel mtight">=</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mtight"><span class="mord mtight">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">SC</span><span class="mclose">))</span></span></span></span></p>
+<h3 id="查询张三没有选修过的课程的课程号">查询张三没有选修过的课程的课程号</h3>
+<p>首先，关系代数中不存在<code>!=</code>，没有<code>不符合</code>的说法</p>
+<p>那么，解决思路就是正难则反，先找出张三选修过的课程，让所有的课程-张三选的=张三没有选的</p>
+<p>所以，思路就清晰了。</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mrow><mi>c</mi><mi>n</mi><mi>o</mi></mrow></msub><mo stretchy="false">(</mo><mi>S</mi><mi>C</mi><mo stretchy="false">)</mo><mo>−</mo><msub><mi>π</mi><mrow><mi>c</mi><mi>n</mi><mi>o</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>σ</mi><mrow><mi>S</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi><msup><mo>=</mo><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mi>z</mi><mi>h</mi><mi>a</mi><mi>n</mi><mi>g</mi><mi>s</mi><mi>a</mi><msup><mi>n</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow></msub><mo stretchy="false">(</mo><mi>S</mi><mo stretchy="false">)</mo><mo>⋈</mo><mi>S</mi><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\pi_{cno}(SC) - \pi_{cno}(\sigma_{Sname = &#x27;zhangsan&#x27;  }(S)\bowtie SC)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">SC</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span><span class="mord mathnormal mtight">nam</span><span class="mord mathnormal mtight">e</span><span class="mrel mtight"><span class="mrel mtight">=</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span><span class="mord mathnormal mtight">han</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">a</span><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⋈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">SC</span><span class="mclose">)</span></span></span></span></p>
+<p>但是SQL语句中没有专门的减法，怎么实现呢？</p>
+<p>常见的思路是转换逻辑，也就是说，张三没有选修的课程=不存在课程张三选修了</p>
+<p>解答如下</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cno <span class="keyword">from</span> C</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> <span class="keyword">exists</span>(</span><br><span class="line">	<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> S,SC</span><br><span class="line">    <span class="keyword">where</span> S.sno <span class="operator">=</span> SC.sno</span><br><span class="line">    <span class="keyword">AND</span> SC.cno <span class="operator">=</span> C.cno</span><br><span class="line">    <span class="keyword">AND</span> S.sname <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="查询选修了全部课程的学生学号和姓名">查询选修了全部课程的学生学号和姓名</h3>
+<p>关系代数：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>÷</mo></mrow><annotation encoding="application/x-tex">\div</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">÷</span></span></span></span> 的作用是实现<code>至少有</code>的功能，比如R<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>÷</mo></mrow><annotation encoding="application/x-tex">\div</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">÷</span></span></span></span>S,其中S有AB，R只要是S的父集就行</p>
+<p>用关系代数很好实现,用除法找到符合条件的，然后连接就行</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mrow><mi>s</mi><mi>n</mi><mi>o</mi><mo separator="true">,</mo><mi>c</mi><mi>n</mi><mi>o</mi></mrow></msub><mo stretchy="false">(</mo><mi>S</mi><mi>C</mi><mo stretchy="false">)</mo><mo>÷</mo><msub><mi>π</mi><mrow><mi>c</mi><mi>n</mi><mi>o</mi></mrow></msub><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo><mo>⋈</mo><msub><mi>π</mi><mrow><mi>s</mi><mi>n</mi><mi>o</mi><mo separator="true">,</mo><mi>s</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi></mrow></msub><mo stretchy="false">(</mo><mi>S</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\pi_{sno,cno}(SC) \div \pi_{cno}(C)\bowtie \pi_{sno,sname} (S)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">SC</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⋈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">o</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">nam</span><span class="mord mathnormal mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mclose">)</span></span></span></span></p>
+<p>但是SQL语句没有专门的除法，我们应该如何实现呢？</p>
+<p>以下是两种思路</p>
+<ul>
+<li>方法1：如果一个学生选的课的数量，等于课程表中总的课程数量，那么他就选了全部课程</li>
+<li>方法2：利用逻辑代数，选修了全部课程=没有一门课他没有选修</li>
+</ul>
+<p>方法1</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> S.sno, S.sname</span><br><span class="line"><span class="keyword">FROM</span> S</span><br><span class="line"><span class="keyword">WHERE</span> S.sno <span class="keyword">IN</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> SC.sno</span><br><span class="line">    <span class="keyword">FROM</span> SC</span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span> SC.sno</span><br><span class="line">    <span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">=</span> (<span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> C) # 选课数<span class="operator">=</span>全部的课程数</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p><strong>方法2需要多层嵌套，不建议使用</strong>。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> S.sno, S.sname</span><br><span class="line"><span class="keyword">FROM</span> S</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line">    <span class="keyword">FROM</span> C</span><br><span class="line">    <span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">FROM</span> SC</span><br><span class="line">        <span class="keyword">WHERE</span> SC.sno <span class="operator">=</span> S.sno</span><br><span class="line">          <span class="keyword">AND</span> SC.cno <span class="operator">=</span> C.cno</span><br><span class="line">    )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p><code>EXISTS</code> 只关心<strong>子查询是否返回行</strong>，不关心返回的具体内容。优化器在执行时，<strong>会把 <code>SELECT *</code> 自动优化成 <code>SELECT 1</code> 或 <code>SELECT 'any'</code></strong>，根本不会去实际获取数据</p>
+<h4 id="具体讲解">具体讲解</h4>
+<p><strong>S（学生表）</strong></p>
+<table>
+<thead>
+<tr>
+<th>sno</th>
+<th>sname</th>
+<th>age</th>
+<th>sex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>张三</td>
+<td>20</td>
+<td>M</td>
+</tr>
+<tr>
+<td>2</td>
+<td>李四</td>
+<td>21</td>
+<td>F</td>
+</tr>
+<tr>
+<td>3</td>
+<td>王五</td>
+<td>20</td>
+<td>M</td>
+</tr>
+</tbody>
+</table>
+<p><strong>C（课程表）</strong></p>
+<table>
+<thead>
+<tr>
+<th>cno</th>
+<th>cname</th>
+<th>teacher</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>数学</td>
+<td>赵老师</td>
+</tr>
+<tr>
+<td>B</td>
+<td>英语</td>
+<td>钱老师</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SC（选课表）</strong></p>
+<table>
+<thead>
+<tr>
+<th>sno</th>
+<th>cno</th>
+<th>grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A</td>
+<td>85</td>
+</tr>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>90</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A</td>
+<td>78</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B</td>
+<td>88</td>
+</tr>
+</tbody>
+</table>
+<p>总课程数 = 2（A、B）</p>
+<p>找出<strong>选了全部课程</strong>的学生学号和姓名。</p>
+<p>预期结果：只有 <strong>张三（sno=1）</strong> 选了 A 和 B。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">FROM</span> SC</span><br><span class="line"><span class="keyword">WHERE</span> SC.sno <span class="operator">=</span> S.sno</span><br><span class="line">  <span class="keyword">AND</span> SC.cno <span class="operator">=</span> C.cno</span><br></pre></td></tr></table></figure>
+<p>这个子查询的作用：<strong>检查某学生（S.sno）是否选了某门课（C.cno）</strong>。</p>
+<hr>
+<p>举例：当外层 S.sno = 1，C.cno = ‘A’</p>
+<p>代入：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">FROM</span> SC</span><br><span class="line"><span class="keyword">WHERE</span> SC.sno <span class="operator">=</span> <span class="number">1</span>      <span class="comment">-- 学生 1</span></span><br><span class="line">  <span class="keyword">AND</span> SC.cno <span class="operator">=</span> <span class="string">&#x27;A&#x27;</span>    <span class="comment">-- 课程 A</span></span><br></pre></td></tr></table></figure>
+<p>从 SC 表中找：</p>
+<table>
+<thead>
+<tr>
+<th>sno</th>
+<th>cno</th>
+<th>grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A</td>
+<td>85</td>
+</tr>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<p>→ 找到一行（sno=1, cno=A）<br>
+→ 子查询返回 <strong>1 行</strong>（内容是 1）<br>
+→ <strong>存在</strong>（EXISTS 为 TRUE）</p>
+<hr>
+<p>举例：当外层 S.sno = 1，C.cno = ‘B’</p>
+<p>找 SC 表：</p>
+<table>
+<thead>
+<tr>
+<th>sno</th>
+<th>cno</th>
+<th>grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A</td>
+<td>85</td>
+</tr>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<p>→ 找到一行（sno=1, cno=B）<br>
+→ <strong>存在</strong></p>
+<hr>
+<p>举例：当外层 S.sno = 2，C.cno = ‘B’</p>
+<p>找 SC 表：</p>
+<table>
+<thead>
+<tr>
+<th>sno</th>
+<th>cno</th>
+<th>grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>A</td>
+<td>78</td>
+</tr>
+</tbody>
+</table>
+<p>→ 没有 sno=2 且 cno=B 的行<br>
+→ <strong>不存在</strong>（EXISTS 为 FALSE）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> C</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (  <span class="comment">-- 最内层子查询 )</span></span><br></pre></td></tr></table></figure>
+<p>这一层的逻辑：<br>
+<strong>对于某学生 S.sno，遍历所有课程 C.cno，看是否存在一门课，这个学生没有选。</strong></p>
+<hr>
+<p>对学生 1（sno=1）执行这一层</p>
+<p><strong>循环 C 表：</strong></p>
+<ul>
+<li>课程 A：最内层查询（sno=1, cno=A）→ 存在（TRUE）<br>
+<code>NOT EXISTS (TRUE)</code> → FALSE → <strong>不保留 A</strong></li>
+<li>课程 B：最内层查询（sno=1, cno=B）→ 存在（TRUE）<br>
+<code>NOT EXISTS (TRUE)</code> → FALSE → <strong>不保留 B</strong></li>
+</ul>
+<p>结果：<strong>没有课程被保留</strong><br>
+→ 这一层子查询返回 <strong>空集（0 行）</strong></p>
+<hr>
+<p>对学生 2（sno=2）执行这一层</p>
+<p><strong>循环 C 表：</strong></p>
+<ul>
+<li>课程 A：最内层查询（sno=2, cno=A）→ 存在（TRUE）<br>
+<code>NOT EXISTS (TRUE)</code> → FALSE → <strong>不保留 A</strong></li>
+<li>课程 B：最内层查询（sno=2, cno=B）→ 不存在（FALSE）<br>
+<code>NOT EXISTS (FALSE)</code> → TRUE → <strong>保留 B</strong></li>
+</ul>
+<p>结果：<strong>保留课程 B</strong><br>
+→ 这一层子查询返回 <strong>1 行</strong>（B 这一行）</p>
+<hr>
+<p>对学生 3（sno=3）执行这一层</p>
+<p><strong>循环 C 表：</strong></p>
+<ul>
+<li>课程 A：最内层查询（sno=3, cno=A）→ 不存在（FALSE）<br>
+<code>NOT EXISTS (FALSE)</code> → TRUE → <strong>保留 A</strong></li>
+<li>课程 B：最内层查询（sno=3, cno=B）→ 存在（TRUE）<br>
+<code>NOT EXISTS (TRUE)</code> → FALSE → <strong>不保留 B</strong></li>
+</ul>
+<p>结果：<strong>保留课程 A</strong><br>
+→ 这一层子查询返回 <strong>1 行</strong>（A 这一行）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> S.sno, S.sname</span><br><span class="line"><span class="keyword">FROM</span> S</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (  <span class="comment">-- 中间层子查询 )</span></span><br></pre></td></tr></table></figure>
+<p>这一层的逻辑：<br>
+<strong>筛选出那些“中间层子查询返回空集”的学生。</strong></p>
+<hr>
+<h5 id="对学生-1（sno-1）">对学生 1（sno=1）</h5>
+<p>中间层子查询结果：<strong>空集（0 行）</strong><br>
+<code>NOT EXISTS (空集)</code> → TRUE（因为不存在任何他没选的课）<br>
+→ <strong>保留学生 1</strong></p>
+<hr>
+<h5 id="对学生-2（sno-2）">对学生 2（sno=2）</h5>
+<p>中间层子查询结果：<strong>1 行（课程 B）</strong><br>
+<code>NOT EXISTS (有 1 行)</code> → FALSE<br>
+→ <strong>不保留学生 2</strong></p>
+<hr>
+<h5 id="对学生-3（sno-3）">对学生 3（sno=3）</h5>
+<p>中间层子查询结果：<strong>1 行（课程 A）</strong><br>
+<code>NOT EXISTS (有 1 行)</code> → FALSE<br>
+→ <strong>不保留学生 3</strong></p>
+<hr>
+<p>结果</p>
+<table>
+<thead>
+<tr>
+<th>sno</th>
+<th>sname</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>张三</td>
+</tr>
+</tbody>
+</table>
+<p>✅ 正确！只有张三选修了全部课程。</p>
+<p>注意看的时候要从内向外看，先看最内层，再结合看最内层和倒数第二层，依次类推。</p>
+<h1>第三章：SQL语句</h1>
+<h2 id="DDL、DML、DCL、DQL的区别和典型语句">DDL、DML、DCL、DQL的区别和典型语句</h2>
+<h3 id="1-DDL（数据定义语言）">1. DDL（数据定义语言）</h3>
+<ul>
+<li><strong>定义：</strong> 用于<strong>定义、修改或删除数据库中的对象结构</strong>（如数据库、表、视图、索引等）。也就是说<strong>处理对象是表，索引这种的就是DDL</strong>。</li>
+<li><strong>典型语句：</strong> 比如<code>create table</code> <code>drop index</code></li>
+<li>特殊：audit语句是DDL</li>
+</ul>
+<h3 id="2-DML（数据操作语言）">2. DML（数据操作语言）</h3>
+<ul>
+<li><strong>定义：</strong> 用于操作数据库中存储的实际数据。</li>
+<li><strong>典型语句：</strong> 插入删除和更改<code>insert delete update</code> 处理的对象是元组，实际的数据</li>
+</ul>
+<h3 id="3-DCL（数据控制语言）">3. DCL（数据控制语言）</h3>
+<ul>
+<li><strong>定义：</strong> 用于控制数据库的<strong>访问权限、用户权限和事务</strong>。涉及到授权的就是DCL</li>
+<li><strong>典型语句：</strong><code>CREATE USER</code> / <code>DROP USER</code>：创建/删除用户 <code>grant revoke</code> 授权和回收权限等</li>
+</ul>
+<h3 id="4-DQL（数据查询语言）">4. DQL（数据查询语言）</h3>
+<ul>
+<li><strong>定义：</strong> 专门用于从数据库中查询数据。但在严格分类中单独列为DQL，因为它只负责查询，不修改数据。</li>
+<li><strong>典型语句：</strong> <code>select</code> 语句</li>
+</ul>
+<hr>
+<h2 id="通用分析方法">通用分析方法</h2>
+<blockquote>
+<p>就是要用分析英语长难句的方法分析实际需求，然后转为正确的sql语句</p>
+<p><strong>三段论</strong>，如果有从句也同样按照此方法分析</p>
+</blockquote>
+<p>比如:查询所有年龄在20岁以下的学生姓名及其年龄</p>
+<ol>
+<li>首先分析查的是什么——姓名、年龄</li>
+<li>然后从哪里查——学生表</li>
+<li>查询条件是什么——age&lt;20</li>
+</ol>
+<p>最后基本上是补充限制条件(比如distinct防止重复、取别名等)、从后往前写，然后按照格式调整顺序即可</p>
+<p>这里就是<code>where age &lt; 20</code> <code>from Student</code>  <code>select name,age</code></p>
+<p>组合为</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name, age <span class="keyword">from</span> Student <span class="keyword">where</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+<p>如果涉及到分组，select后面只能跟被分组的属性或者是聚合函数，并且只能使用having作为限制条件而不能使用where。</p>
+<h2 id="查询">查询</h2>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">&lt;</span>属性名<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+<p>表明你要查的是什么,这里的属性名可以是表达式，也可以是表中没有的(比如字符串等)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span>表名或者视图名<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+<p>从哪一个表(视图)中查</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span>条件<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+<p>查询记录所需要符合的条件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="operator">&lt;</span>列名<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+<p>查完之后按照哪一列分组，然后再展示</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>列名<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+<p>最后给记录排序的时候按照哪一列排序，升序还是降序(默认升序)</p>
+<h3 id="查询的背后">查询的背后</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name,age</span><br><span class="line"><span class="keyword">from</span> student,sc</span><br><span class="line"><span class="keyword">where</span> student.sno <span class="operator">=</span> sc.sno <span class="keyword">and</span> sc.cno <span class="operator">=</span> <span class="string">&#x27;1&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>在查询的背后，首先用<code>student.sno = sc.sno</code> 将两个表合成一张大表，然后在此表的基础上选择符合条件的元组。</p>
+<h2 id="常考的SQL语句">常考的SQL语句</h2>
+<p>剩下的见书，常考的还有创建表、字符串的模糊匹配、嵌套查询、更新、插入、定义视图，见到一个查一个</p>
+<h2 id="实战讲解-v2">实战讲解</h2>
+<p>注意只有分组了之后才能使用having,where语句中不能出现聚集函数</p>
+<p><code>HAVING</code> 的语法规则：<strong>只能使用「分组字段」或「聚合函数（count ()/sum ()/avg () 等）」作为判断条件</strong></p>
+<p>WHERE 分组前过滤行，HAVING 分组后过滤组</p>
+<p>还有一点就是and前后语句的顺序问题</p>
+<p><strong>虽然可以调换顺序，但建议按照逻辑清晰的方式排列条件，比如先写连接条件，后写过滤条件，这样可以提高代码的可读性。</strong></p>
+<h3 id="复杂的查询语句">复杂的查询语句</h3>
+<p>执行顺序（死记）：<code>from</code> → <code>where</code> → <code>group by</code> → <code>having</code>→ <code>select</code></p>
+<p>比如：统计各科不及格超过3的学生的人数——逻辑理解（通俗）：先把「不及格的成绩挑出来」，再「按学号分组」，最后「数每个组有多少个不及格的科目」，超过3的才选择，没有超过3的不展示。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sno, <span class="built_in">count</span>(<span class="operator">*</span>)  </span><br><span class="line"><span class="keyword">from</span> sc </span><br><span class="line"><span class="keyword">where</span> grade <span class="operator">&lt;</span> <span class="number">60</span> </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> cno</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">count</span>(<span class="operator">*</span>)<span class="operator">&gt;</span><span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="空值的使用提醒">空值的使用提醒</h3>
+<p>SQL 中判断字段是否为 NULL，<strong>唯一正确写法</strong>：<code>字段 IS NULL</code> / <code>字段 IS NOT NULL</code>；</p>
+<p>NULL 是「未知值」，不能用 <code>=</code>/<code>!=</code>/<code>&lt;</code>/<code>&gt;</code> 等普通运算符匹配，这是 SQL 的语法铁律，用字段 + 运算符 + 比较值查不到任何值。</p>
+<h1>第四章：数据库安全性</h1>
+<p>主要出选填、简答题</p>
+<p>背安全级别划分,还有以下的SQL语句</p>
+<h2 id="授权和回收权利">授权和回收权利</h2>
+<ol>
+<li>授予什么权利</li>
+<li>针对什么对象</li>
+<li>给谁</li>
+</ol>
+<p>ex:在视图上授予王平查询学生表成绩的权利</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span>(grade) # 权利</span><br><span class="line"><span class="keyword">on</span> <span class="keyword">view</span> student # 对象</span><br><span class="line"><span class="keyword">to</span> WangPing # 用户</span><br></pre></td></tr></table></figure>
+<p>有时候题目还要求使用WITH GRANT OPTION或者是级联等，注意</p>
+<h2 id="审计">审计</h2>
+<ol>
+<li>对什么操作审计</li>
+<li>针对哪一个表</li>
+</ol>
+<p>ex:对修改sc表的结构及其数据的操作进行审计</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">audit <span class="keyword">alter</span>,<span class="keyword">update</span> # 操作</span><br><span class="line"><span class="keyword">on</span> sc # 对象</span><br></pre></td></tr></table></figure>
+<h1>第五章：数据库完整性</h1>
+<blockquote>
+<p>[!NOTE]</p>
+<p>注意为了和实际应用相契合，这里统一用<strong>键</strong>指代码。</p>
+</blockquote>
+<p>三个完整性定义要背，同时题目喜欢考在创建表的时候限制主键和外键、属性的范围和要求等，SQL也要会写</p>
+<h2 id="实体完整性">实体完整性</h2>
+<p>就是主键的问题，唯一非空</p>
+<h2 id="参照完整性——外键">参照完整性——外键</h2>
+<p>简单来说，就是<strong>参照的</strong>一旦改动与被参照的不一致，就拒绝，<strong>被参照的</strong>改变要根据策略做出回应，是拒绝还是级联更新还是置空。</p>
+<h2 id="用户定义完整性">用户定义完整性</h2>
+<p>就是数据要符合要求，比如年龄不能有小数，性别只有两个等。</p>
+<p>用sql语句规定其完整性，比如<code>NOT NULL</code> 不能为空，<code>Sex CHAR(2) CHECK(Sex IN('男','女'))</code> 性别只有两个</p>
+<p>常见的有<code>NOT NULL</code> <code>UNIQUE</code> <code>CHECK</code></p>
+<p>当然用的最多的就是<code>CONSTRAINT</code>语句</p>
+<p>总结：三大完整性区别</p>
+<p>实体：既然实际存在，那么就不为空</p>
+<p>参照：外键为空或一致</p>
+<p>定义：自行规定的取值范围。</p>
+<h2 id="断言和触发器">断言和触发器</h2>
+<p>断言类似各个计算机语言的assert,</p>
+<p>而触发器相当于JavaScript的事件监听和触发</p>
+<h1>第六章：关系数据库理论</h1>
+<p>要解决的问题就是insert、update和delete的异常以及冗余的数据，通过合理规划依赖(也就是<strong>如何更好的设计表</strong>)，实现更好的数据库维护</p>
+<p>这个思想其实与函数的单一性功能非常相似，也就是一张表“只干一件事”，把复杂的表拆分成几个简单的表，这样有助于更好维护数据库。</p>
+<h2 id="范式-Normal-Form-NF">范式(Normal Form-NF)</h2>
+<p>定义：符合某种级别的关系模式的集合，人话就是</p>
+<p><strong>1NF</strong>：不可分</p>
+<p><strong>2NF</strong>：非主完全依赖于<strong>任意</strong>候选码(如果能推出多个，那么每一个都要满足)</p>
+<p><strong>3NF</strong>：非主不存在对候选键的传递依赖。也就是<strong>消除非主属性的传递依赖</strong>，解决方法一般是：拆表</p>
+<p>对于比较复杂的关系、依赖和隐蔽的传递依赖，需要通过定义判断</p>
+<p>即R 满足 3NF，如果对 F 中每个函数依赖 X→Y（其中 Y 不在 X 中）：<strong>X 是超键或者Y 的每个属性都是主属性（属于某个候选键）</strong>。</p>
+<p>然后对于隐藏的传递依赖，把所有候选键写出来，然后看能不能<strong>传递推导推出</strong>非主属性，都不能则说明是3NF</p>
+<p><strong>BCNF</strong>：X推出Y，Y不属于X（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>→</mo><mi>Y</mi><mo separator="true">,</mo><mi>Y</mi><mo>⊈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">X\rightarrow Y,Y\nsubseteq X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0966em;vertical-align:-0.3027em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel amsrm">⊈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span>)且X必须是键（书本上说的是除了X之外没有决定性因素，X不能是键的一部分)。换句话说就是要<strong>消除主键之间的依赖</strong>。</p>
+<p><strong>此时BCNF基本消除了insert和delete异常</strong>，但是没有解决冗余问题</p>
+<p><strong>4NF</strong>：每一个非平凡多值依赖X–&gt;Y，其中X都是键，解决了冗余问题。</p>
+<p><strong>多值依赖</strong></p>
+<p>用例子来解释：【例】关系Teaching(C,T,B)中，对于C的每一个值，T有一组值与之对应，而不论B取何值。因此T多值依赖于C，即C→→T。</p>
+<p>表示为(C,B)-&gt;T,但是T与B没有关系。注意这里推出的是一组值而不是一个</p>
+<p>如果画出图来，那么T与B的关系很像&quot;全相联映射&quot;。</p>
+<h2 id="判断的方法">判断的方法</h2>
+<p>比如关系模式STJ(S,T,J),分别表示学生、老师和课程，一个老师只教一门课，每门课有若干老师，某一个学生选定某门课，就对应一个固定的老师。</p>
+<p>首先，先写出所有的依赖，这里是</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>S</mi><mo separator="true">,</mo><mi>T</mi><mo stretchy="false">)</mo><mo>→</mo><mi>J</mi><mo separator="true">,</mo><mo stretchy="false">(</mo><mi>S</mi><mo separator="true">,</mo><mi>J</mi><mo stretchy="false">)</mo><mo>→</mo><mi>T</mi><mo separator="true">,</mo><mi>T</mi><mo>→</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">(S,T)\rightarrow J,(S,J)\rightarrow T,T\rightarrow J</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.09618em;">J</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.09618em;">J</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.09618em;">J</span></span></span></span></p>
+<p>然后一个个确定键，看相应的依赖，从第二范式开始判断是否符合</p>
+<p>这里键分别是(S,T),(S,J)，注意T不是键。这里所有的属性都在候选键中，所以没有非主属性，因此满足2NF要求</p>
+<p>同样没有码传递依赖，所以满足3NF</p>
+<p>这里T决定J，J不包含于T，但是T不是码，所以不满足BCNF</p>
+<p>综上，关系模式满足3NF</p>
+<h3 id="2NF的判断问题">2NF的判断问题</h3>
+<p>比如（Sno，Gno）-&gt;Dno,(Sno,Dno)-&gt;Person,候选键是（Sno，Gno）,这个时候要多推导一下，由候选键推出Dno，Dno再结合主属性推出Person，对于Person来说是传递依赖，而不是部分函数依赖，因为(Sno,Dno)并不是候选键的真子集，不能称之为部分函数依赖，所以满足的是2NF，而不满足3NF。</p>
+<h3 id="如何化为BCNF？">如何化为BCNF？</h3>
+<p>以上题为例，有一个T-&gt;J,可以通过分解，把这个导致它不是bc范式的这个函数依赖给它分解出来。比如这里分成ST(S,T)和(T,J) 这样两个关系模式分别满足BCNF了。</p>
+<h2 id="难点：公理系统">难点：公理系统</h2>
+<p>闭包：比如<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>A</mi><mi>B</mi><msubsup><mo stretchy="false">)</mo><mi>F</mi><mo>+</mo></msubsup></mrow><annotation encoding="application/x-tex">(AB)^+_F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.105em;vertical-align:-0.2935em;"></span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8115em;"><span style="top:-2.4065em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span></span></span><span style="top:-3.1031em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2935em;"><span></span></span></span></span></span></span></span></span></span> 意思就是求在已知AB属性的情况下能够推出哪些属性。</p>
+<p>这里不要求掌握推理过程和定义，直接放弃，以后有需要再学吧</p>
+<h2 id="⭐⭐⭐模式分解">⭐⭐⭐模式分解</h2>
+<blockquote>
+<p>涉及到分库分表,我用一个实际例子来讲解如何分解表，以后工作分表、设计表的时候会很有帮助。</p>
+</blockquote>
+<p><strong>已知学生关系模式S(Sno,Sname,Sdept,Sdname,Course,Grade) 其中Sno为学号，Sname为学生名字，Sdept为系名，Sdname为系主任名字，Course为课程名，Grade为成绩</strong></p>
+<ol>
+<li>写出关系模式S的基本函数依赖和主键</li>
+<li>原关系S为第几范式？为什么？请说明如何分解为高一级的范式</li>
+<li>请在(2)的基础上分解为高一级的范式，并说明为什么？</li>
+</ol>
+<p>1)<strong>首先看当某一个属性(或者一组)确定的时候，另一个属性是否唯一确定</strong></p>
+<p>比如当学号确定的时候，学生名字就唯一确定，则有<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>n</mi><mi>o</mi><mo>→</mo><mi>S</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Sno \rightarrow Sname</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">nam</span><span class="mord mathnormal">e</span></span></span></span></p>
+<p>同理：当学号和课程同时确定时，才确定成绩，则有<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>S</mi><mi>n</mi><mi>o</mi><mo separator="true">,</mo><mi>C</mi><mi>o</mi><mi>u</mi><mi>r</mi><mi>s</mi><mi>e</mi><mo stretchy="false">)</mo><mo>→</mo><mi>G</mi><mi>r</mi><mi>a</mi><mi>d</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">(Sno,Course) \rightarrow Grade</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">rse</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">G</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span></span></span></span></p>
+<p>而当Sname确定的时候，无法确定Sdname，因为学生有可能重名，</p>
+<p>依次类推分析…</p>
+<p>得到基本函数依赖为</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>n</mi><mi>o</mi><mo>→</mo><mi>S</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi><mo separator="true">,</mo><mi>S</mi><mi>d</mi><mi>e</mi><mi>p</mi><mi>t</mi><mo>→</mo><mi>S</mi><mi>d</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi><mo separator="true">,</mo><mi>S</mi><mi>n</mi><mi>o</mi><mo>→</mo><mi>S</mi><mi>d</mi><mi>e</mi><mi>p</mi><mi>t</mi><mo separator="true">,</mo><mo stretchy="false">(</mo><mi>S</mi><mi>n</mi><mi>o</mi><mo separator="true">,</mo><mi>C</mi><mi>o</mi><mi>u</mi><mi>r</mi><mi>s</mi><mi>e</mi><mo stretchy="false">)</mo><mo>→</mo><mi>G</mi><mi>r</mi><mi>a</mi><mi>d</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Sno \rightarrow Sname,Sdept \rightarrow Sdname,Sno \rightarrow Sdept,(Sno,Course) \rightarrow Grade</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">nam</span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal">pt</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">d</span><span class="mord mathnormal">nam</span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal">pt</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">rse</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">G</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span></span></span></span></p>
+<p><strong>主键就是当某一个或者一组属性确定的时候，可以唯一确定一条记录(元组)</strong></p>
+<p>这里主键就是(Sno,Course)，而且<strong>缺一不可</strong>。</p>
+<p><strong>2)从1NF开始分析</strong></p>
+<p>属性不可再分吗？是，那么就满足第一范式(1NF)</p>
+<p>非主属性完全依赖于任意候选码？这里非主属性就是不属于候选码的属性，候选码是键，可以唯一确定一条记录。</p>
+<p>这里候选码就是主键(Sno,Course),其他的属性就是非主属性，而根据1) Sname只需要Sno就可以确定，不需要Course，所以为否。</p>
+<p>因此，这个模式为1NF</p>
+<p><strong>那么如何分解呢？</strong></p>
+<p>出问题的地方就是Course作为了主键的一部分，而Sname、Sdept都是不依赖于Course的，所以解决问题的方法就是让Course远离Sname和Sdept。</p>
+<p>因此我们可以分解为</p>
+<p>S1(Sno,Sname,Sdept,Sdname)  S2(Sno,Course,Grade)</p>
+<p>这样在每一个关系模式中，非主属性完全依赖于任意候选码，因此两个都是2NF</p>
+<p><strong>3)分析2)S1得到这样的基本函数依赖</strong></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>n</mi><mi>o</mi><mo>→</mo><mi>S</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi><mo separator="true">,</mo><mi>S</mi><mi>n</mi><mi>o</mi><mo>→</mo><mi>S</mi><mi>d</mi><mi>e</mi><mi>p</mi><mi>t</mi><mo separator="true">,</mo><mi>S</mi><mi>d</mi><mi>e</mi><mi>p</mi><mi>t</mi><mo>→</mo><mi>S</mi><mi>d</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Sno \rightarrow Sname,Sno \rightarrow Sdept,Sdept \rightarrow Sdname</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">nam</span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal">pt</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal">pt</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">d</span><span class="mord mathnormal">nam</span><span class="mord mathnormal">e</span></span></span></span></p>
+<p>非主属性存在对主键的依赖传递吗？发现Sno可以通过Sdept决定Sdname，因此存在函数依赖，所以不是3NF。</p>
+<p><strong>那么如何分解呢？</strong></p>
+<p>出问题的地方就是Sdept充当了桥梁，那么过河拆桥即可，将Sdept分别给Sno和Sdname</p>
+<p>因此我们可以分解为</p>
+<p>S1(Sno,Sname,Sdept)  S3(Sdept,Sdname)</p>
+<p>这样在每一个关系模式中，非主属性不存在对主键的依赖传递，因此两个都是3NF</p>
+<h1>第七章：数据库设计</h1>
+<p>这部分<strong>实践要重于理论</strong>，也就是说，理论过一下就行，最终在做项目的过程中体会到设计的全过程就行。</p>
+<p>计算机很多知识都是这样，先有工程实践，然后将工程实践抽象为知识。</p>
+<h2 id="概念结构设计">概念结构设计</h2>
+<p>这个是重点部分。</p>
+<p>目前常见的设计方法是：画E-R图、画UML图等，理论上喜欢用E-R，而实际应用偏UML</p>
+<p>一切以实际开发为准，这里因为复试需要就学习E-R模型</p>
+<p>当E-R图画好之后，就是看图说话，把基本的依赖都写出来，这样再根据不同的范式要求设计表就是<strong>逻辑结构设计</strong>。</p>
+<p>如何画E-R图呢？我画的E-R图见UML图</p>
+<p>首先，当只要求画局部的E-R图时，可以适当省略无关信息(做题的要求)</p>
+<p>比如学生有学号、姓名、性别、课程，一开始先将其作为属性，然后读题，如果课程还可以细分，那么就将课程作为实体并联系，同时把本来学生的课程名属性等归到课程的实体属性中，以免重复。同时也要标记对应关系，这涉及到下一步的转换。</p>
+<h2 id="逻辑结构设计——如何将画完的E-R图转化为关系模式">逻辑结构设计——如何将画完的E-R图转化为关系模式</h2>
+<p>首先，将所有实体都看作一个表，写其所有的属性。</p>
+<p>然后(以下是一般情况)</p>
+<p>首先分析1:1的关系：可以直接将关系的两个实体的键+关系的属性单独合成一张表，然后这两个实体自己各自作为一张表，或者是把联系的另一端(B)的键+属性并入到另一端(A)（<strong>这叫合并</strong>)，那么A中有自己的属性+B的键+关系的属性，B中就只有自己的属性</p>
+<p>再分析1：n的关系：将1端的实体的键和n端的实体所有属性+关系的属性合成一张表放入n端中，1保持不变</p>
+<p>再分析m：n的关系：把两端的键+联系的属性拿出来单独合成一张表，两端也作为独立的一张表</p>
+<p>最后，如果有传递性的也要同理处理</p>
+<h1>第八章：嵌入式SQL</h1>
+<p>目前只考了存储过程</p>
+<h2 id="存储过程和函数">存储过程和函数</h2>
+<p>示例：创建一个过程，将学号为s1,课程为c1的成绩修改为g1</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> REPLACE <span class="keyword">PROCEDURE</span> PROC3</span><br><span class="line">(</span><br><span class="line">    S1 <span class="type">CHAR</span>(<span class="number">8</span>),</span><br><span class="line">    C1 <span class="type">VARCHAR</span>(<span class="number">10</span>),</span><br><span class="line">    G1 <span class="type">SMALLINT</span>,</span><br><span class="line">)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">	<span class="keyword">UPDATE</span> SC</span><br><span class="line">	<span class="keyword">SET</span> GRADE <span class="operator">=</span> G1</span><br><span class="line">	<span class="keyword">WHERE</span> S#<span class="operator">=</span>S1 <span class="keyword">AND</span> CN<span class="operator">=</span>C1</span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+<h1>第九章：关系查询处理和优化</h1>
+<p>P书285页，这里是重点，以后无论是设计还是查询都要学会其中的方法，这也是区分一般程序员和优秀程序员的关键知识。</p>
+<p>背查询处理的四个步骤，了解查询优化算法、代数优化的方法</p>
+<h2 id="语法树的查询优化过程">语法树的查询优化过程</h2>
+<ol>
+<li>首先拿到关系代数式子写成语法树形式</li>
+<li>可以下移的<strong>选择</strong>往下移到底</li>
+<li>把不需要的列投影去掉</li>
+<li>分组：一个笛卡尔积（二元运算）分为一组</li>
+</ol>
+<h1>第十章：数据库恢复技术</h1>
+<p>掌握事务的四特点、四种故障、检查点。</p>
+<h1>第十一章：并发控制</h1>
+<p>注意区分幻读和脏读——关键是脏读涉及到事务的撤销</p>
+<p>S锁和X锁的相容关系、两段锁协议</p>
+<p>目前还没有看到难的</p>
+<h1>新技术篇</h1>
+<p>等研究生的时候再学</p>
+<h1>参考资料</h1>
+<ol>
+<li>数据库系统概论/王珊,萨师煊编著.–5版.–北京：高等教育出版社,2014.9(2022.5重印)     ISBN 978-7-04-040664-1</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://chat.deepseek.com/">deepseek </a>：用于生成database实践案例</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>MySQL学习笔记(零)数据库原理</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://blog.lloydkai.top/posts/database-principle/">https://blog.lloydkai.top/posts/database-principle/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>Lloyd</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2026-03-13</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2026-03-13</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener external nofollow noreferrer" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener external nofollow noreferrer" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MySQL/">MySQL</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/">计算机专业知识</a></div><div class="post-share"><div class="social-share" data-image="https://s2.loli.net/2024/10/13/lD4iJ2BjFNuQtoL.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/social-share.js/1.0.16/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/posts/post-on-experience/" title="考研经验帖"><img class="cover" src="https://s2.loli.net/2024/10/13/nTGQsyz47qmcHhx.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">考研经验帖</div></div><div class="info-2"><div class="info-item-1">以个人的实际经历为基础，给即将跨考408的同学提一些考研备考的建议。</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/mysql-series-two/" title="MySQL学习笔记(二)进阶篇"><img class="cover" src="https://s2.loli.net/2024/06/10/q24e9CMDLd8cYfa.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-22</div><div class="info-item-2">MySQL学习笔记(二)进阶篇</div></div><div class="info-2"><div class="info-item-1">教你学会MySQL的进阶知识，为测试、运维、后端开发、索引优化等方面做准备</div></div></div></a><a class="pagination-related" href="/posts/mysql-series-one/" title="MySQL学习笔记(一)基础篇"><img class="cover" src="https://s2.loli.net/2024/06/10/q24e9CMDLd8cYfa.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-30</div><div class="info-item-2">MySQL学习笔记(一)基础篇</div></div><div class="info-2"><div class="info-item-1">教你学会MySQL的基础知识，为测试、运维、后端开发、索引优化等方面做准备</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Twikoo</span><span id="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://s2.loli.net/2024/10/21/WXqzA7jMSxHo6fO.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Lloyd</div><div class="author-info-description">哲学家只是用不同的方式来看待世界,而问题在于改变世界.</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/lloyd-kai"><i class="fab fa-github"></i><span>访问我的Github</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/lloyd-kai/" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fa-brands fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:kai9827@outlook.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #24292e;"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=3472606843" rel="external nofollow noreferrer" target="_blank" title="QQ"><i class="fa-brands fa-qq" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客，此博客基于hexo和butterfly主题开发而成，希望来到此网站的同学们能够一起努力，追逐所愿。PS：一年之期已到！站主考研归来！目前备考复试ing。如果想与我交流可以扫描下方二维码。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第一章：数据模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%A7%A3%E5%86%B3%E6%95%B0%E6%8D%AE%E5%86%97%E4%BD%99%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">为什么要解决数据冗余？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">第二章：关系代数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B9%B6%E3%80%81%E5%B7%AE%E3%80%81%E9%80%89%E6%8B%A9%E3%80%81%E6%8A%95%E5%BD%B1%E3%80%81%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF%E6%98%AF%E4%BA%94%E4%B8%AA%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">为什么并、差、选择、投影、笛卡尔积是五个基本运算？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BA%A4%E8%BF%90%E7%AE%97-cap"><span class="toc-number">2.1.0.1.</span> <span class="toc-text">1. 交运算 ∩\cap∩</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%BF%9E%E6%8E%A5%E8%BF%90%E7%AE%97-Join"><span class="toc-number">2.1.0.2.</span> <span class="toc-text">2. 连接运算⋈\Join⋈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E9%99%A4%E8%BF%90%E7%AE%97-div"><span class="toc-number">2.1.0.3.</span> <span class="toc-text">3. 除运算÷\div÷</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E8%AE%B2%E8%A7%A3"><span class="toc-number">2.2.</span> <span class="toc-text">实战讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E8%87%B3%E5%B0%91%E9%80%89%E4%BF%AE1%E5%8F%B7%E8%AF%BE%E7%A8%8B%E5%92%8C3%E5%8F%B7%E8%AF%BE%E7%A8%8B%E7%9A%84%E5%AD%A6%E7%94%9F%E5%8F%B7%E7%A0%81"><span class="toc-number">2.2.1.</span> <span class="toc-text">查询至少选修1号课程和3号课程的学生号码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%BC%A0%E4%B8%89%E6%B2%A1%E6%9C%89%E9%80%89%E4%BF%AE%E8%BF%87%E7%9A%84%E8%AF%BE%E7%A8%8B%E7%9A%84%E8%AF%BE%E7%A8%8B%E5%8F%B7"><span class="toc-number">2.2.2.</span> <span class="toc-text">查询张三没有选修过的课程的课程号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E9%80%89%E4%BF%AE%E4%BA%86%E5%85%A8%E9%83%A8%E8%AF%BE%E7%A8%8B%E7%9A%84%E5%AD%A6%E7%94%9F%E5%AD%A6%E5%8F%B7%E5%92%8C%E5%A7%93%E5%90%8D"><span class="toc-number">2.2.3.</span> <span class="toc-text">查询选修了全部课程的学生学号和姓名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E8%AE%B2%E8%A7%A3"><span class="toc-number">2.2.3.1.</span> <span class="toc-text">具体讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E5%AD%A6%E7%94%9F-1%EF%BC%88sno-1%EF%BC%89"><span class="toc-number">2.2.3.1.1.</span> <span class="toc-text">对学生 1（sno&#x3D;1）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E5%AD%A6%E7%94%9F-2%EF%BC%88sno-2%EF%BC%89"><span class="toc-number">2.2.3.1.2.</span> <span class="toc-text">对学生 2（sno&#x3D;2）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E5%AD%A6%E7%94%9F-3%EF%BC%88sno-3%EF%BC%89"><span class="toc-number">2.2.3.1.3.</span> <span class="toc-text">对学生 3（sno&#x3D;3）</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">第三章：SQL语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DDL%E3%80%81DML%E3%80%81DCL%E3%80%81DQL%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E5%85%B8%E5%9E%8B%E8%AF%AD%E5%8F%A5"><span class="toc-number">3.1.</span> <span class="toc-text">DDL、DML、DCL、DQL的区别和典型语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-DDL%EF%BC%88%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80%EF%BC%89"><span class="toc-number">3.1.1.</span> <span class="toc-text">1. DDL（数据定义语言）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-DML%EF%BC%88%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80%EF%BC%89"><span class="toc-number">3.1.2.</span> <span class="toc-text">2. DML（数据操作语言）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-DCL%EF%BC%88%E6%95%B0%E6%8D%AE%E6%8E%A7%E5%88%B6%E8%AF%AD%E8%A8%80%EF%BC%89"><span class="toc-number">3.1.3.</span> <span class="toc-text">3. DCL（数据控制语言）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-DQL%EF%BC%88%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80%EF%BC%89"><span class="toc-number">3.1.4.</span> <span class="toc-text">4. DQL（数据查询语言）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">通用分析方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.3.</span> <span class="toc-text">查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E7%9A%84%E8%83%8C%E5%90%8E"><span class="toc-number">3.3.1.</span> <span class="toc-text">查询的背后</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%80%83%E7%9A%84SQL%E8%AF%AD%E5%8F%A5"><span class="toc-number">3.4.</span> <span class="toc-text">常考的SQL语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E8%AE%B2%E8%A7%A3-v2"><span class="toc-number">3.5.</span> <span class="toc-text">实战讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E7%9A%84%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5"><span class="toc-number">3.5.1.</span> <span class="toc-text">复杂的查询语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E5%80%BC%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8F%90%E9%86%92"><span class="toc-number">3.5.2.</span> <span class="toc-text">空值的使用提醒</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">第四章：数据库安全性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%88%E6%9D%83%E5%92%8C%E5%9B%9E%E6%94%B6%E6%9D%83%E5%88%A9"><span class="toc-number">4.1.</span> <span class="toc-text">授权和回收权利</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A1%E8%AE%A1"><span class="toc-number">4.2.</span> <span class="toc-text">审计</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">第五章：数据库完整性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">5.1.</span> <span class="toc-text">实体完整性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7%E2%80%94%E2%80%94%E5%A4%96%E9%94%AE"><span class="toc-number">5.2.</span> <span class="toc-text">参照完整性——外键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">5.3.</span> <span class="toc-text">用户定义完整性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%AD%E8%A8%80%E5%92%8C%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">5.4.</span> <span class="toc-text">断言和触发器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">第六章：关系数据库理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F-Normal-Form-NF"><span class="toc-number">6.1.</span> <span class="toc-text">范式(Normal Form-NF)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">6.2.</span> <span class="toc-text">判断的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2NF%E7%9A%84%E5%88%A4%E6%96%AD%E9%97%AE%E9%A2%98"><span class="toc-number">6.2.1.</span> <span class="toc-text">2NF的判断问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%8C%96%E4%B8%BABCNF%EF%BC%9F"><span class="toc-number">6.2.2.</span> <span class="toc-text">如何化为BCNF？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%BE%E7%82%B9%EF%BC%9A%E5%85%AC%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">6.3.</span> <span class="toc-text">难点：公理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90%E2%AD%90%E2%AD%90%E6%A8%A1%E5%BC%8F%E5%88%86%E8%A7%A3"><span class="toc-number">6.4.</span> <span class="toc-text">⭐⭐⭐模式分解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">第七章：数据库设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">7.1.</span> <span class="toc-text">概念结构设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E2%80%94%E2%80%94%E5%A6%82%E4%BD%95%E5%B0%86%E7%94%BB%E5%AE%8C%E7%9A%84E-R%E5%9B%BE%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F"><span class="toc-number">7.2.</span> <span class="toc-text">逻辑结构设计——如何将画完的E-R图转化为关系模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">第八章：嵌入式SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E5%87%BD%E6%95%B0"><span class="toc-number">8.1.</span> <span class="toc-text">存储过程和函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">第九章：关系查询处理和优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E6%A0%91%E7%9A%84%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96%E8%BF%87%E7%A8%8B"><span class="toc-number">9.1.</span> <span class="toc-text">语法树的查询优化过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">第十章：数据库恢复技术</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text">第十一章：并发控制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text">新技术篇</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text">参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/database-principle/" title="MySQL学习笔记(零)数据库原理"><img src="https://s2.loli.net/2024/10/13/lD4iJ2BjFNuQtoL.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL学习笔记(零)数据库原理"/></a><div class="content"><a class="title" href="/posts/database-principle/" title="MySQL学习笔记(零)数据库原理">MySQL学习笔记(零)数据库原理</a><time datetime="2026-03-13T01:30:23.000Z" title="发表于 2026-03-13 09:30:23">2026-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/post-on-experience/" title="考研经验帖"><img src="https://s2.loli.net/2024/10/13/nTGQsyz47qmcHhx.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="考研经验帖"/></a><div class="content"><a class="title" href="/posts/post-on-experience/" title="考研经验帖">考研经验帖</a><time datetime="2026-01-18T01:10:23.000Z" title="发表于 2026-01-18 09:10:23">2026-01-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/51-SingleMachine/" title="基于51单片机的红外遥控切换数码管显示系统设计"><img src="https://s2.loli.net/2024/10/13/nTGQsyz47qmcHhx.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于51单片机的红外遥控切换数码管显示系统设计"/></a><div class="content"><a class="title" href="/posts/51-SingleMachine/" title="基于51单片机的红外遥控切换数码管显示系统设计">基于51单片机的红外遥控切换数码管显示系统设计</a><time datetime="2025-10-31T13:23:32.000Z" title="发表于 2025-10-31 21:23:32">2025-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/CSLearning-61A/" title="CS自学路线系列(一)61A"><img src="https://s2.loli.net/2024/10/13/OiMP6XG7BR1fHIN.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS自学路线系列(一)61A"/></a><div class="content"><a class="title" href="/posts/CSLearning-61A/" title="CS自学路线系列(一)61A">CS自学路线系列(一)61A</a><time datetime="2025-08-31T14:23:32.000Z" title="发表于 2025-08-31 22:23:32">2025-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/road-to-health/" title="健康与长寿之路"><img src="https://s2.loli.net/2024/06/14/9oPncpgrjCfQ1Mw.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="健康与长寿之路"/></a><div class="content"><a class="title" href="/posts/road-to-health/" title="健康与长寿之路">健康与长寿之路</a><time datetime="2025-07-30T07:25:31.000Z" title="发表于 2025-07-30 15:25:31">2025-07-30</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://s2.loli.net/2024/10/13/lD4iJ2BjFNuQtoL.jpg);"><div id="footer-wrap"><div id="ft"><div class="ft-item-1"><div class="t-top"><div class="t-t-l"><p class="ft-t t-l-t">格言🧬</p><div class="bg-ad"><div> 穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！——《滕王阁序》王勃</div><div>再看看那个光点，它就在这里，这是家园，这是我们 —— 你所爱的每一个人，你认识的一个人，你听说过的每一个人，曾经有过的每一个人，都在它上面度过他们的一生✨</div><div class="btn-xz-box"><a class="btn-xz" href="https://blog.lloydkai.top/">Hello World!</a></div></div></div><div class="t-t-r"><p class="ft-t t-l-t">猜你想看💡</p><ul class="ft-links"><li> <a href="/tags/blog/">Hexo博客系列</a><a href="/link/">友情链接</a></li><li><a href="/about/">关于作者</a><a href="/archives/">文章归档</a></li><li><a href="/categories/">文章分类</a><a href="/tags/">文章标签</a></li><li><a href="/galgame/">视觉小说</a><a href="/comments/">留下评论</a></li></ul></div></div></div><div class="ft-item-2"><p class="ft-t t-l-t">推荐友链⌛<ul class="ft-links"><li> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.fomal.cc/">Fomalhaut🥝</a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://akilar.top/">Akilarの糖果屋</a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://butterfly.js.org/">Butterfly</a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://anzhiy.cn/">安知鱼</a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hikarilan.life/">HikariLan贺兰星辰</a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://polar-bear.eu.org/">Ziyourufeng</a></li></ul></p></div></div><div class="copyright"><span><b>&copy;2024 - 2026</b></span><span><b>&nbsp;&nbsp;By Lloyd</b></span></div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener external nofollow noreferrer" href="https://lloyd-kai.github.io/">blog</a>!</div><div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" rel="external nofollow noreferrer" style="margin-inline:5px" title="博客框架为Hexo_v7.3.0"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" rel="external nofollow noreferrer" style="margin-inline:5px" title="主题版本Butterfly_v5.3.2"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" rel="external nofollow noreferrer" style="margin-inline:5px" title="本站采用多线部署，主线路托管于Vercel"><img src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" rel="external nofollow noreferrer" style="margin-inline:5px" title="本网站源码由Github提供存储仓库"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" style="margin-inline:5px" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.3.2"></script><script src="/js/main.js?v=5.3.2"></script><script src="/js/tw_cn.js?v=5.3.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.16.19/dist/katex.min.css')
+    if (false) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.16.19/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const applyThemeDefaultsConfig = theme => {
+    if (theme === 'dark-mode') {
+      Chart.defaults.color = "rgba(255, 255, 255, 0.8)"
+      Chart.defaults.borderColor = "rgba(255, 255, 255, 0.2)"
+      Chart.defaults.scale.ticks.backdropColor = "transparent"
+    } else {
+      Chart.defaults.color = "rgba(0, 0, 0, 0.8)"
+      Chart.defaults.borderColor = "rgba(0, 0, 0, 0.1)"
+      Chart.defaults.scale.ticks.backdropColor = "transparent"
+    }
+  }
+
+  // Recursively traverse the config object and automatically apply theme-specific color schemes
+  const applyThemeConfig = (obj, theme) => {
+    if (typeof obj !== 'object' || obj === null) return
+
+    Object.keys(obj).forEach(key => {
+      const value = obj[key]
+      // If the property is an object and has theme-specific options, apply them
+      if (typeof value === 'object' && value !== null) {
+        if (value[theme]) {
+          obj[key] = value[theme] // Apply the value for the current theme
+        } else {
+          // Recursively process child objects
+          applyThemeConfig(value, theme)
+        }
+      }
+    })
+  }
+
+  const runChartJS = ele => {
+    window.loadChartJS = true
+
+    Array.from(ele).forEach((item, index) => {
+      const chartSrc = item.firstElementChild
+      const chartID = item.getAttribute('data-chartjs-id') || ('chartjs-' + index) // Use custom ID or default ID
+      const width = item.getAttribute('data-width')
+      const existingCanvas = document.getElementById(chartID)
+
+      // If a canvas already exists, remove it to avoid rendering duplicates
+      if (existingCanvas) {
+          existingCanvas.parentNode.remove()
+      }
+
+      const chartDefinition = chartSrc.textContent
+      const canvas = document.createElement('canvas')
+      canvas.id = chartID
+
+      const div = document.createElement('div')
+      div.className = 'chartjs-wrap'
+
+      if (width) {
+        div.style.width = width
+      }
+
+      div.appendChild(canvas)
+      chartSrc.insertAdjacentElement('afterend', div)
+
+      const ctx = document.getElementById(chartID).getContext('2d')
+
+      const config = JSON.parse(chartDefinition)
+
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark-mode' : 'light-mode'
+
+      // Set default styles (initial setup)
+      applyThemeDefaultsConfig(theme)
+
+      // Automatically traverse the config and apply dual-mode color schemes
+      applyThemeConfig(config, theme)
+
+      new Chart(ctx, config)
+    })
+  }
+
+  const loadChartJS = () => {
+    const chartJSEle = document.querySelectorAll('#article-container .chartjs-container')
+    if (chartJSEle.length === 0) return
+
+    window.loadChartJS ? runChartJS(chartJSEle) : btf.getScript('https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js').then(() => runChartJS(chartJSEle))
+  }
+
+  // Listen for theme change events
+  btf.addGlobalFn('themeChange', loadChartJS, 'chartjs')
+  btf.addGlobalFn('encrypt', loadChartJS, 'chartjs')
+
+  window.pjax ? loadChartJS() : document.addEventListener('DOMContentLoaded', loadChartJS)
+})()</script><script>(() => {
+  const abcjsInit = () => {
+    const abcjsFn = () => setTimeout(() => {
+      document.querySelectorAll(".abc-music-sheet").forEach(ele => {
+        if (ele.children.length > 0) return
+        ABCJS.renderAbc(ele, ele.innerHTML, {responsive: 'resize'})
+      })
+    }, 100)
+    
+    typeof ABCJS === 'object' ? abcjsFn()
+      : btf.getScript('https://cdn.jsdelivr.net/npm/abcjs@6.4.4/dist/abcjs-basic-min.min.js').then(abcjsFn)
+  }
+
+  window.pjax ? abcjsInit() : window.addEventListener('load', abcjsInit)
+  btf.addGlobalFn('encrypt', abcjsInit, 'abcjs')
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-api-three-sand.vercel.app',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://twikoo-api-three-sand.vercel.app',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.41/dist/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: 'lznevgEpvkZIT3hib1I36B54-gzGzoHsz',
+      appKey: 'VvnbhZ2uIp2MRjW4y3ZFquQa',
+      avatar: 'monsterid',
+      serverURLs: 'https://lznevgep.lc-cn-n1-shared.com',
+      emojiMaps: "",
+      visitor: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/valine/1.4.16/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Twikoo' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script>window.newestComments = {
+  changeContent: content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<code>.*?<\/code>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g, "") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0, 150) + '...'
+    }
+    return content
+  },
+
+  generateHtml: (array, ele) => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class="aside-list-item">'
+
+        if (true && array[i].avatar) {
+          const imgAttr = 'src'
+          const lazyloadNative = ''
+          result += `<a href="${array[i].url}" class="thumbnail"><img ${imgAttr}="${array[i].avatar}" alt="${array[i].nick}" ${lazyloadNative}></a>`
+        }
+
+        result += `<div class="content">
+        <a class="comment" href="${array[i].url}" title="${array[i].content}">${array[i].content}</a>
+        <div class="name"><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '暂无评论'
+    }
+
+    ele.innerHTML = result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh(ele)
+  },
+
+  newestCommentInit: (name, getComment) => {
+    const $dom = document.querySelector('#card-newest-comments .aside-list')
+    if ($dom) {
+      const data = btf.saveToLocal.get(name)
+      if (data) {
+        newestComments.generateHtml(JSON.parse(data), $dom)
+      } else {
+        getComment($dom)
+      }
+    }
+  },
+
+  run: (name, getComment) => {
+    newestComments.newestCommentInit(name, getComment)
+    btf.addGlobalFn('pjaxComplete', () => newestComments.newestCommentInit(name, getComment), name)
+  }
+}</script><script>window.addEventListener('load', () => {
+  const keyName = 'twikoo-newest-comments'
+  const { changeContent, generateHtml, run } = window.newestComments
+
+  const getComment = ele => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo-api-three-sand.vercel.app',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(res => {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        btf.saveToLocal.set(keyName, JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray, ele)
+      }).catch(err => {
+        console.error(err)
+        ele.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.41/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  run(keyName, getComment)
+})</script><div class="aplayer no-destroy" data-id="2453833422" data-server="netease" data-type="playlist"  data-fixed="true" data-theme="#3F51B5"></div><script defer src="/js/runtime.js"></script><canvas id="snow"></canvas><script async src="/js/snow.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><!--如果有错，就把''内的改为'//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'--><script async data-pjax src="//jsd.onmicrosoft.cn/npm/penndu@17.0.0/bsz.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.3.2"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementsByClassName('recent-posts')[0];
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/blog-series-one/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src="https://s2.loli.net/2024/10/22/8KJE1CP3nTIDFWm.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-06-10</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/blog-series-one/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">hexo博客系列(一)更新公告</a><div class="blog-slider__text">主要用于博客的更新通知公告,相关基础内容的讲解以及其他的一些细节</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/blog-series-one/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/CSLearning-61A/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src="https://s2.loli.net/2024/10/13/OiMP6XG7BR1fHIN.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-08-31</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/CSLearning-61A/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">CS自学路线系列(一)61A</a><div class="blog-slider__text">主要用于记录学习伯克利CS61A的笔记和心得体会，旨在打下坚实的Python和计算机知识基础，为后续CS61B和阅读外语技术文档和学习资源做准备。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/CSLearning-61A/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/blog-series-two/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src="https://s2.loli.net/2024/10/13/tfez8CIgnwY5iJh.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-06-12</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/blog-series-two/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">hexo博客系列(二)博客创建指南</a><div class="blog-slider__text">教你如何创建一个简单的hexo博客</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/blog-series-two/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/blog-series-three/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src="https://s2.loli.net/2024/10/13/XLE3qtOQlyifzHC.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-10-26</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/blog-series-three/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">hexo博客系列(三)博客写作指南</a><div class="blog-slider__text">本文将从实战的角度出发，提供一套完整的 markdown 博客创作指南，帮助读者写出既有深度又美观的博客文章。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/blog-series-three/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/algorithm-restart/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src="https://s2.loli.net/2024/10/13/UoQ1dIlXtehfvjx.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-03-02</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/algorithm-restart/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">算法系列(四)从零开始的算法刷题生活</a><div class="blog-slider__text">主要参考各个刷算法的网站和资料学习相应的较为基础的算法题目,主要写一些个人的总结和思考内容,部分省略的地方会标明出处,旨在为后续实习和就业打下坚实的算法基础</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/algorithm-restart/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/lanqiaocup-series-four/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src="https://s2.loli.net/2024/10/13/rVx9ogHB31wf4mJ.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-02-16</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/lanqiaocup-series-four/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">算法系列(三)蓝桥杯_算法高阶(二)</a><div class="blog-slider__text">总结了C/C++赛道蓝桥杯常见的题型以及背后的算法原理,为读者提供一个刷题和总结的参考。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/lanqiaocup-series-four/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/lanqiaocup-series-three/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src="https://s2.loli.net/2024/10/13/rVx9ogHB31wf4mJ.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-02-10</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/lanqiaocup-series-three/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">算法系列(三)蓝桥杯_算法高阶(一)</a><div class="blog-slider__text">总结了C/C++赛道蓝桥杯常见的题型以及背后的算法原理,为读者提供一个刷题和总结的参考。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/lanqiaocup-series-three/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/lanqiaocup-series-one/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src="https://s2.loli.net/2024/10/13/rVx9ogHB31wf4mJ.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-12-14</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/lanqiaocup-series-one/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">算法系列(一)蓝桥杯及其知识体系</a><div class="blog-slider__text">总结了C/C++赛道蓝桥杯的知识点以及背后的算法原理，旨在为竞赛和后续算法学习打下基础</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/lanqiaocup-series-one/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/lanqiaocup-series-two/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src="https://s2.loli.net/2024/10/13/rVx9ogHB31wf4mJ.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-01-12</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/lanqiaocup-series-two/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">算法系列(二)蓝桥杯_算法基础</a><div class="blog-slider__text">总结了C/C++赛道蓝桥杯常见的题型以及背后的算法原理,为读者提供一个刷题和总结的参考。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/lanqiaocup-series-two/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/english-grammer/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src="https://s2.loli.net/2024/10/13/kerNGo78PMwicnV.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-10-11</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/english-grammer/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">英语语法(英语兔版)</a><div class="blog-slider__text">教你基础的英语语法，为后续的专业英语和写作等打下坚实的基础。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/english-grammer/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/oral-english/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src="https://s2.loli.net/2024/10/13/Qy4Edm6fxwKnbsL.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-10-13</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/oral-english/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">英语口语(英语兔版)</a><div class="blog-slider__text">本文章讲解基础的英语口语知识，旨在帮助读者提高英语口语和听写能力。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/oral-english/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/51-SingleMachine/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt=""><img width="48" height="48" src="https://s2.loli.net/2024/10/13/nTGQsyz47qmcHhx.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2025-10-31</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/51-SingleMachine/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">基于51单片机的红外遥控切换数码管显示系统设计</a><div class="blog-slider__text">主要用于记录做项目的笔记和体会</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/51-SingleMachine/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>
