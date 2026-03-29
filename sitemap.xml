@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.lloydkai.top/posts/opencamp-os/</loc>
+    
+    <lastmod>2026-03-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.lloydkai.top/about/index.html</loc>
     
     <lastmod>2026-03-21</lastmod>
@@ -335,14 +344,28 @@
 
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF/</loc>
+    <loc>https://blog.lloydkai.top/tags/%E5%BC%80%E6%BA%90%E7%A4%BE%E5%8C%BA/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/Python/</loc>
+    <loc>https://blog.lloydkai.top/tags/OS/</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/rust/</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -363,7 +386,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/blog/</loc>
+    <loc>https://blog.lloydkai.top/tags/Python/</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/MySQL/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -377,14 +407,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/hexo/</loc>
+    <loc>https://blog.lloydkai.top/tags/blog/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/MySQL/</loc>
+    <loc>https://blog.lloydkai.top/tags/hexo/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -412,14 +442,7 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/life/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/tags/%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81/</loc>
+    <loc>https://blog.lloydkai.top/tags/data-structure/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -433,7 +456,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/data-structure/</loc>
+    <loc>https://blog.lloydkai.top/tags/%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81/</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/life/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -463,6 +493,13 @@
 
   
   <url>
+    <loc>https://blog.lloydkai.top/categories/OS/</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.lloydkai.top/categories/CS/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -477,14 +514,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/blog/</loc>
+    <loc>https://blog.lloydkai.top/categories/MySQL/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/MySQL/</loc>
+    <loc>https://blog.lloydkai.top/categories/blog/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -498,7 +535,7 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/life/</loc>
+    <loc>https://blog.lloydkai.top/categories/data-structure/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -512,14 +549,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/data-structure/</loc>
+    <loc>https://blog.lloydkai.top/categories/algorithm/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/algorithm/</loc>
+    <loc>https://blog.lloydkai.top/categories/life/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
