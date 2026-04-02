@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.lloydkai.top/about/index.html</loc>
+    
+    <lastmod>2026-04-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/posts/post-on-experience/</loc>
+    
+    <lastmod>2026-04-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.lloydkai.top/posts/electronic-product/</loc>
     
     <lastmod>2026-04-02</lastmod>
@@ -14,15 +32,6 @@
     <loc>https://blog.lloydkai.top/posts/opencamp-os/</loc>
     
     <lastmod>2026-03-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/about/index.html</loc>
-    
-    <lastmod>2026-03-21</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -75,15 +84,6 @@
   
   <url>
     <loc>https://blog.lloydkai.top/posts/blog-series-four/</loc>
-    
-    <lastmod>2026-01-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/posts/post-on-experience/</loc>
     
     <lastmod>2026-01-18</lastmod>
     
@@ -407,14 +407,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://blog.lloydkai.top/tags/blog/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/blog/</loc>
+    <loc>https://blog.lloydkai.top/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -428,21 +428,21 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/C/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/tags/C/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.lloydkai.top/tags/life/</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/C/</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/C/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -470,13 +470,6 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.lloydkai.top/tags/Leetcode/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -485,6 +478,13 @@
   
   <url>
     <loc>https://blog.lloydkai.top/tags/English/</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -528,14 +528,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/C/</loc>
+    <loc>https://blog.lloydkai.top/categories/life/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/life/</loc>
+    <loc>https://blog.lloydkai.top/categories/C/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -563,14 +563,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/%E8%80%83%E7%A0%94/</loc>
+    <loc>https://blog.lloydkai.top/categories/English/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/English/</loc>
+    <loc>https://blog.lloydkai.top/categories/%E8%80%83%E7%A0%94/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
