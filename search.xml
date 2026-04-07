@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Rust系列(一)Rust语言基础</title>
+      <link href="/posts/rust-series-one/"/>
+      <url>/posts/rust-series-one/</url>
+      
+        <content type="html"><![CDATA[<h1>rust的安装</h1><h2 id="安装rust编译器及其IDE">安装rust编译器及其IDE</h2><p>官网：<a href="https://rust-lang.org/tools/install/">https://rust-lang.org/tools/install/</a>   网上下载init.exe文件然后点击，默认输入1并确认即可</p><p>IDE：推荐使用RustRover或者是用vscode+rust的插件，我这里用RustRover</p><h2 id="更新、卸载和查看rust版本">更新、卸载和查看rust版本</h2><p>更新</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rustup update</span><br></pre></td></tr></table></figure><p>卸载</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rustup self uninstall</span><br></pre></td></tr></table></figure><p>查看版本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rustc --version</span><br></pre></td></tr></table></figure><p>查看本地文档</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rustup doc</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> rust </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> rust </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>建筑、机械工程以及计算机专业劝退报告</title>
       <link href="/posts/quit-profession/"/>
       <url>/posts/quit-profession/</url>
@@ -33,7 +58,7 @@
       <link href="/posts/opencamp-os/"/>
       <url>/posts/opencamp-os/</url>
       
-        <content type="html"><![CDATA[<h2 id="操作系统基础知识">操作系统基础知识</h2><blockquote><p>这部分我在学408的时候就基本掌握的大部分的知识，这里看一下官方的教学视频，回忆一下知识点即可，后续还是要在实战中学习。</p></blockquote><h2 id="rust学习">rust学习</h2><h3 id="安装rust编译器及其IDE">安装rust编译器及其IDE</h3><p>官网：<a href="https://rust-lang.org/tools/install/">https://rust-lang.org/tools/install/</a>   网上下载init.exe文件然后点击，默认输入1并确认即可</p><p>IDE：推荐使用RustRover或者是用vscode+rust的插件，我这里用RustRover</p><h3 id="更新、卸载和查看rust版本">更新、卸载和查看rust版本</h3><p>更新</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rustup update</span><br></pre></td></tr></table></figure><p>卸载</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rustup self uninstall</span><br></pre></td></tr></table></figure><p>查看版本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rustc --version</span><br></pre></td></tr></table></figure><p>查看本地文档</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rustup doc</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1>官方网站</h1><p><a href="https://opencamp.cn/os2edu/camp/2026spring">官方网站链接</a>，有任何的疑问和咨询都可以在官网上查到，自行学习</p><h1>导学阶段</h1><h2 id="操作系统基础知识">操作系统基础知识</h2><blockquote><p>这部分我在学408的时候就基本掌握的大部分的知识，这里看一下官方的教学视频，回忆一下知识点即可，后续还是要在实战中学习。</p></blockquote><h2 id="rust学习">rust学习</h2><p>这部分的笔记我转移到以下这个博客中，有需要的时候就看。</p><ol class="series-items"><li><a href="/posts/rust-series-one/" title="Rust系列(一)Rust语言基础">Rust系列(一)Rust语言基础</a></li></ol><h2 id="Git、Linux等工具使用">Git、Linux等工具使用</h2><p>这部分自己查找资料即可，学习git推荐用<a href="https://learngitbranching.js.org/?locale=zh_CN%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9B%B4%E8%A7%82%E7%9C%8B%E5%88%B0%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%94%AF%E5%92%8C%E7%BB%93%E6%9E%84%E3%80%82">https://learngitbranching.js.org/?locale=zh_CN，可以直观看到项目的分支和结构。</a></p>]]></content>
       
       
       <categories>
