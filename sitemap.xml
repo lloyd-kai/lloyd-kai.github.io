@@ -4,7 +4,7 @@
   <url>
     <loc>https://blog.lloydkai.top/posts/quit-profession/</loc>
     
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -369,20 +369,6 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF/</loc>
-    <lastmod>2026-04-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/tags/Python/</loc>
-    <lastmod>2026-04-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.lloydkai.top/tags/%E5%BC%80%E6%BA%90%E7%A4%BE%E5%8C%BA/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -418,14 +404,21 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/MySQL/</loc>
+    <loc>https://blog.lloydkai.top/tags/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/</loc>
+    <loc>https://blog.lloydkai.top/tags/Python/</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/MySQL/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -453,7 +446,7 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/C/</loc>
+    <loc>https://blog.lloydkai.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -467,7 +460,7 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <loc>https://blog.lloydkai.top/tags/C/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -496,6 +489,13 @@
   
   <url>
     <loc>https://blog.lloydkai.top/tags/%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81/</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -546,6 +546,13 @@
   </url>
   
   <url>
+    <loc>https://blog.lloydkai.top/categories/rust/</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.lloydkai.top/categories/MySQL/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -560,21 +567,7 @@
   </url>
   
   <url>
-    <loc>https://blog.lloydkai.top/categories/rust/</loc>
-    <lastmod>2026-04-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.lloydkai.top/categories/C/</loc>
-    <lastmod>2026-04-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lloydkai.top/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -596,6 +589,13 @@
   
   <url>
     <loc>https://blog.lloydkai.top/categories/data-structure/</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lloydkai.top/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
