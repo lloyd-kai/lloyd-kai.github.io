@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lloydkai.cn/posts/blog-series-one/</loc>
+    
+    <lastmod>2026-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lloydkai.cn/posts/blog-series-five/</loc>
     
     <lastmod>2026-04-14</lastmod>
@@ -14,15 +23,6 @@
     <loc>https://lloydkai.cn/posts/algorithm-restart/</loc>
     
     <lastmod>2026-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/posts/blog-series-one/</loc>
-    
-    <lastmod>2026-04-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
