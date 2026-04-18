@@ -63,6 +63,32 @@ body {
   font-family: 'JetBrains Mono', 'HarmonyOS Sans SC';
 }
 
+/* 菜单栏与侧边栏字号微调（+1px） */
+#nav .site-page,
+#aside-content .card-widget {
+  font-size: calc(var(--global-font-size) + 1px);
+}
+
+/* 正文排版优化（PC / Mobile） */
+#article-container {
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+#article-container p,
+#article-container li,
+#article-container blockquote {
+  font-size: 1em;
+  line-height: inherit;
+}
+
+@media screen and (max-width: 768px) {
+  #article-container {
+    font-size: 17px;
+    line-height: 1.85;
+  }
+}
+
 
 /* 二维码 Start */
 
@@ -152,6 +178,7 @@ body {
   color: rgb(255 255 255 / 80%) !important;
   text-align: left;
   flex-wrap: wrap;
+  font-size: calc(var(--global-font-size) + 1px);
 }
 
 .ft-item-1,
@@ -243,6 +270,10 @@ body {
   margin-bottom: 20px;
   line-height: 1;
   font-weight: 600;
+}
+
+#ft .ft-t {
+  font-size: calc(1.1rem + 1px);
 }
 
 .t-l-t {
