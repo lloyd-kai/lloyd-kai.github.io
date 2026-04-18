@@ -82,6 +82,18 @@ body {
   line-height: inherit;
 }
 
+/* 正文代码字号微调（+1px） */
+#article-container pre,
+#article-container code,
+#article-container .highlight-tools,
+#article-container figure.highlight figcaption {
+  font-size: calc(var(--global-font-size) + 1px) !important;
+}
+
+#article-container pre code {
+  font-size: inherit !important;
+}
+
 @media screen and (max-width: 768px) {
   #article-container {
     font-size: 17px;
