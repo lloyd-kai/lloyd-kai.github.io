@@ -29,6 +29,8 @@
     <summary type="html">具体讲解hexo的博客是如何部署到github pages,vercel和阿里云的ECS服务器上的</summary>
     
     
+    <content src="https://s2.loli.net/2024/10/22/CkiLVJsDWjncZxw.jpg" type="image"/>
+    
     
     <category term="blog" scheme="https://lloydkai.cn/categories/blog/"/>
     
@@ -54,6 +56,8 @@
     <summary type="html">因参加2026春夏季开源操作系统训练营需要使用rust，遂开始学习使用Rust语言，旨在为后续任务开展打下基础</summary>
     
     
+    <content src="https://s2.loli.net/2024/10/22/JIZCAPigNfBVQTa.jpg" type="image"/>
+    
     
     <category term="rust" scheme="https://lloydkai.cn/categories/rust/"/>
     
@@ -75,6 +79,8 @@
     <summary type="html">为在高考选择某一专业和转行的人提供这三种专业的劝退信息，旨在警示自己和后人。</summary>
     
     
+    <content src="https://s2.loli.net/2024/10/22/kRytd2FQg3VH9NG.jpg" type="image"/>
+    
     
     <category term="专业" scheme="https://lloydkai.cn/categories/%E4%B8%93%E4%B8%9A/"/>
     
@@ -95,6 +101,8 @@
     
     <summary type="html">由清华大学的陈渝老师和向勇老师于 2020 年发起，旨在通过使用 Rust 语言编写操作系统的实践，培养全国高校学生的操作系统开发技能。训练营全程免费，指导学员参与开源项目实战，探索设计与构建新一代安全高性能操作系统。本博客记录个人学习的过程，旨在为参与开源项目和工程实践积累经验</summary>
     
+    
+    <content src="https://s2.loli.net/2024/10/13/oJZ7zDkcdrv9q5I.png" type="image"/>
     
     
     <category term="OS" scheme="https://lloydkai.cn/categories/OS/"/>
@@ -121,6 +129,8 @@
     <summary type="html">总结购买电子产品的经验和使用技巧，为后续设备的挑选提供宝贵的参考</summary>
     
     
+    <content src="https://s2.loli.net/2024/10/13/XbDpP8Rt5ITuU9H.jpg" type="image"/>
+    
     
     <category term="CS" scheme="https://lloydkai.cn/categories/CS/"/>
     
@@ -143,6 +153,8 @@
     
     <summary type="html">学习数据库的基本原理和理论知识，为后续学习MySQL等数据库打下坚实的基础</summary>
     
+    
+    <content src="https://s2.loli.net/2024/10/13/lD4iJ2BjFNuQtoL.jpg" type="image"/>
     
     
     <category term="MySQL" scheme="https://lloydkai.cn/categories/MySQL/"/>
@@ -167,6 +179,8 @@
     <summary type="html">以个人的实际经历为基础，给即将跨考408的同学提一些考研备考的建议。</summary>
     
     
+    <content src="https://s2.loli.net/2024/10/13/nTGQsyz47qmcHhx.jpg" type="image"/>
+    
     
     <category term="考研" scheme="https://lloydkai.cn/categories/%E8%80%83%E7%A0%94/"/>
     
@@ -188,6 +202,8 @@
     <summary type="html">主要用于记录做项目的笔记和体会</summary>
     
     
+    <content src="https://s2.loli.net/2024/10/13/G1CvfEijKStxwXl.jpg" type="image"/>
+    
     
     <category term="CS" scheme="https://lloydkai.cn/categories/CS/"/>
     
@@ -208,6 +224,8 @@
     
     <summary type="html">主要用于记录学习伯克利CS61A的笔记和心得体会，旨在打下坚实的Python和计算机知识基础，为后续CS61B和阅读外语技术文档和学习资源做准备。</summary>
     
+    
+    <content src="https://s2.loli.net/2024/10/13/OiMP6XG7BR1fHIN.jpg" type="image"/>
     
     
     <category term="CS" scheme="https://lloydkai.cn/categories/CS/"/>
@@ -232,6 +250,8 @@
     <summary type="html">旨在为自己的日常生活制定合理的饮食和作息规划，最终维护身体健康</summary>
     
     
+    <content src="https://s2.loli.net/2024/06/14/9oPncpgrjCfQ1Mw.png" type="image"/>
+    
     
     <category term="life" scheme="https://lloydkai.cn/categories/life/"/>
     
@@ -252,6 +272,8 @@
     
     <summary type="html">学习大佬是如何提升C&#92;C++代码的质量，为后续其他高级计算机语言的开发打下基础和养成规范编程的习惯</summary>
     
+    
+    <content src="https://s2.loli.net/2024/06/10/QHqgRXDGwunkt4l.png" type="image"/>
     
     
     <category term="C++" scheme="https://lloydkai.cn/categories/C/"/>
@@ -276,6 +298,8 @@
     <summary type="html">主要用于测试hexo新功能和butterfly主题相关的一些新特性,在不确定效果的时候优先以本文件作为测试用例</summary>
     
     
+    <content src="https://s2.loli.net/2024/10/13/ESnx9lyZuJ83XpA.jpg" type="image"/>
+    
     
     <category term="blog" scheme="https://lloydkai.cn/categories/blog/"/>
     
@@ -298,6 +322,8 @@
     
     <summary type="html">主要参考各个刷算法的网站和资料学习相应的较为基础的算法题目,主要写一些个人的总结和思考内容,部分省略的地方会标明出处,旨在为后续实习和就业打下坚实的算法基础</summary>
     
+    
+    <content src="https://s2.loli.net/2024/10/13/UoQ1dIlXtehfvjx.jpg" type="image"/>
     
     
     <category term="algorithm" scheme="https://lloydkai.cn/categories/algorithm/"/>
@@ -324,6 +350,8 @@
     <summary type="html">总结了C/C++赛道蓝桥杯常见的题型以及背后的算法原理,为读者提供一个刷题和总结的参考。</summary>
     
     
+    <content src="https://s2.loli.net/2024/10/13/rVx9ogHB31wf4mJ.jpg" type="image"/>
+    
     
     <category term="algorithm" scheme="https://lloydkai.cn/categories/algorithm/"/>
     
@@ -346,6 +374,8 @@
     
     <summary type="html">总结了C/C++赛道蓝桥杯常见的题型以及背后的算法原理,为读者提供一个刷题和总结的参考。</summary>
     
+    
+    <content src="https://s2.loli.net/2024/10/13/rVx9ogHB31wf4mJ.jpg" type="image"/>
     
     
     <category term="algorithm" scheme="https://lloydkai.cn/categories/algorithm/"/>
@@ -370,6 +400,8 @@
     <summary type="html">总结了C/C++赛道蓝桥杯常见的题型以及背后的算法原理,为读者提供一个刷题和总结的参考。</summary>
     
     
+    <content src="https://s2.loli.net/2024/10/13/rVx9ogHB31wf4mJ.jpg" type="image"/>
+    
     
     <category term="algorithm" scheme="https://lloydkai.cn/categories/algorithm/"/>
     
@@ -392,6 +424,8 @@
     
     <summary type="html">总结了C/C++赛道蓝桥杯常见的题型以及背后的算法原理,为读者提供一个刷题和总结的参考。</summary>
     
+    
+    <content src="https://s2.loli.net/2024/10/13/rVx9ogHB31wf4mJ.jpg" type="image"/>
     
     
     <category term="algorithm" scheme="https://lloydkai.cn/categories/algorithm/"/>
@@ -416,6 +450,8 @@
     <summary type="html">总结了C/C++赛道蓝桥杯的知识点以及背后的算法原理，旨在为竞赛和后续算法学习打下基础</summary>
     
     
+    <content src="https://s2.loli.net/2024/10/13/rVx9ogHB31wf4mJ.jpg" type="image"/>
+    
     
     <category term="algorithm" scheme="https://lloydkai.cn/categories/algorithm/"/>
     
@@ -439,6 +475,8 @@
     <summary type="html">教你学会MySQL的进阶知识，为测试、运维、后端开发、索引优化等方面做准备</summary>
     
     
+    <content src="https://s2.loli.net/2024/06/10/q24e9CMDLd8cYfa.png" type="image"/>
+    
     
     <category term="MySQL" scheme="https://lloydkai.cn/categories/MySQL/"/>
     
@@ -461,6 +499,8 @@
     
     <summary type="html">本文章介绍了一些数据结构可视化开发的网站，帮助读者进行数据结构可视化开发。</summary>
     
+    
+    <content src="https://s2.loli.net/2024/10/13/HzredPNWp2Qs3oJ.jpg" type="image"/>
     
     
     <category term="data structure" scheme="https://lloydkai.cn/categories/data-structure/"/>
