@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lloydkai.cn/posts/new-file/</loc>
+    <loc>https://lloydkai.cn/posts/blog-series-one/</loc>
     
     <lastmod>2026-04-23</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/posts/test-rss/</loc>
+    <loc>https://lloydkai.cn/posts/cprimeplus-note/</loc>
     
     <lastmod>2026-04-23</lastmod>
     
@@ -29,7 +29,16 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/posts/cprimeplus-note/</loc>
+    <loc>https://lloydkai.cn/posts/new-file/</loc>
+    
+    <lastmod>2026-04-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/posts/test-rss/</loc>
     
     <lastmod>2026-04-23</lastmod>
     
@@ -57,15 +66,6 @@
   
   <url>
     <loc>https://lloydkai.cn/posts/Linux-series-one/</loc>
-    
-    <lastmod>2026-04-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/posts/blog-series-one/</loc>
     
     <lastmod>2026-04-23</lastmod>
     
@@ -410,21 +410,21 @@
   </url>
   
   <url>
+    <loc>https://lloydkai.cn/tags/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/Python/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://lloydkai.cn/tags/%E5%8D%95%E7%89%87%E6%9C%BA/</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/MySQL/</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -445,21 +445,14 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF/</loc>
+    <loc>https://lloydkai.cn/tags/MySQL/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/Python/</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/</loc>
+    <loc>https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -474,6 +467,13 @@
   
   <url>
     <loc>https://lloydkai.cn/tags/hexo/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -543,20 +543,6 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/Leetcode/</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/Java/</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lloydkai.cn/tags/English/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -565,6 +551,20 @@
   
   <url>
     <loc>https://lloydkai.cn/tags/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/Leetcode/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/Java/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -587,14 +587,14 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/MySQL/</loc>
+    <loc>https://lloydkai.cn/categories/Linux/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/Linux/</loc>
+    <loc>https://lloydkai.cn/categories/MySQL/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
