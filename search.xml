@@ -5,10 +5,10 @@
     
     <entry>
       <title>hexo测试RSS</title>
-      <link href="/posts/test-one/"/>
-      <url>/posts/test-one/</url>
+      <link href="/posts/test/"/>
+      <url>/posts/test/</url>
       
-        <content type="html"><![CDATA[<h1>这里编写文字</h1>]]></content>
+        <content type="html"><![CDATA[<h1>这里编写文字</h1><p>测试展现效果</p>]]></content>
       
       
       <categories>

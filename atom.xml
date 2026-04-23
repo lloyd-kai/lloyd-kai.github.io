@@ -6,7 +6,7 @@
   <link href="https://lloydkai.cn/atom.xml" rel="self"/>
   
   <link href="https://lloydkai.cn/"/>
-  <updated>2026-04-23T02:05:18.530Z</updated>
+  <updated>2026-04-23T02:10:17.885Z</updated>
   <id>https://lloydkai.cn/</id>
   
   <author>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>hexo测试RSS</title>
-    <link href="https://lloydkai.cn/posts/test-one/"/>
-    <id>https://lloydkai.cn/posts/test-one/</id>
-    <published>2026-04-23T04:16:54.000Z</published>
-    <updated>2026-04-23T02:05:18.530Z</updated>
+    <link href="https://lloydkai.cn/posts/test/"/>
+    <id>https://lloydkai.cn/posts/test/</id>
+    <published>2026-04-23T02:00:13.000Z</published>
+    <updated>2026-04-23T02:10:17.885Z</updated>
     
-    <content type="html"><![CDATA[<h1>这里编写文字</h1>]]></content>
+    <content type="html"><![CDATA[<h1>这里编写文字</h1><p>测试展现效果</p>]]></content>
     
     
     <summary type="html">测试一下在rss阅读器封面是否显示图片</summary>
