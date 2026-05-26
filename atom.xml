@@ -33,9 +33,9 @@
     <category term="blog" scheme="https://lloydkai.cn/categories/blog/"/>
     
     
-    <category term="教程" scheme="https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="blog" scheme="https://lloydkai.cn/tags/blog/"/>
+    
+    <category term="教程" scheme="https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="hexo" scheme="https://lloydkai.cn/tags/hexo/"/>
     
@@ -100,11 +100,11 @@
     <category term="OS" scheme="https://lloydkai.cn/categories/OS/"/>
     
     
+    <category term="rust" scheme="https://lloydkai.cn/tags/rust/"/>
+    
     <category term="开源社区" scheme="https://lloydkai.cn/tags/%E5%BC%80%E6%BA%90%E7%A4%BE%E5%8C%BA/"/>
     
     <category term="OS" scheme="https://lloydkai.cn/tags/OS/"/>
-    
-    <category term="rust" scheme="https://lloydkai.cn/tags/rust/"/>
     
   </entry>
   
@@ -512,9 +512,9 @@
     <category term="blog" scheme="https://lloydkai.cn/categories/blog/"/>
     
     
-    <category term="教程" scheme="https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="blog" scheme="https://lloydkai.cn/tags/blog/"/>
+    
+    <category term="教程" scheme="https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -623,9 +623,9 @@
     <category term="blog" scheme="https://lloydkai.cn/categories/blog/"/>
     
     
-    <category term="教程" scheme="https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="blog" scheme="https://lloydkai.cn/tags/blog/"/>
+    
+    <category term="教程" scheme="https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="hexo" scheme="https://lloydkai.cn/tags/hexo/"/>
     
@@ -648,9 +648,9 @@
     <category term="blog" scheme="https://lloydkai.cn/categories/blog/"/>
     
     
-    <category term="教程" scheme="https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="blog" scheme="https://lloydkai.cn/tags/blog/"/>
+    
+    <category term="教程" scheme="https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="hexo" scheme="https://lloydkai.cn/tags/hexo/"/>
     
