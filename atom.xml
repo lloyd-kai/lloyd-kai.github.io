@@ -100,11 +100,11 @@
     <category term="OS" scheme="https://lloydkai.cn/categories/OS/"/>
     
     
-    <category term="rust" scheme="https://lloydkai.cn/tags/rust/"/>
-    
     <category term="开源社区" scheme="https://lloydkai.cn/tags/%E5%BC%80%E6%BA%90%E7%A4%BE%E5%8C%BA/"/>
     
     <category term="OS" scheme="https://lloydkai.cn/tags/OS/"/>
+    
+    <category term="rust" scheme="https://lloydkai.cn/tags/rust/"/>
     
   </entry>
   
@@ -443,9 +443,9 @@
     <category term="MySQL" scheme="https://lloydkai.cn/categories/MySQL/"/>
     
     
-    <category term="MySQL" scheme="https://lloydkai.cn/tags/MySQL/"/>
-    
     <category term="教程" scheme="https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="MySQL" scheme="https://lloydkai.cn/tags/MySQL/"/>
     
   </entry>
   
@@ -489,9 +489,9 @@
     <category term="MySQL" scheme="https://lloydkai.cn/categories/MySQL/"/>
     
     
-    <category term="MySQL" scheme="https://lloydkai.cn/tags/MySQL/"/>
-    
     <category term="教程" scheme="https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="MySQL" scheme="https://lloydkai.cn/tags/MySQL/"/>
     
   </entry>
   
