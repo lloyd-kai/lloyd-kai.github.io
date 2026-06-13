@@ -2,9 +2,6 @@ var now = new Date();
 function createtime() {
   // 当前时间
   now.setTime(now.getTime() + 1000);
-  var start = new Date("08/01/2022 00:00:00"); // 旅行者1号开始计算的时间
-  var dis = Math.trunc(23400000000 + ((now - start) / 1000) * 17); // 距离=秒数*速度 记住转换毫秒
-  var unit = (dis / 149600000).toFixed(6);  // 天文单位
   var grt = new Date("06/10/2024 00:00:00");	// 网站诞生时间
   var days = (now - grt) / 1e3 / 60 / 60 / 24,
     dnum = Math.floor(days),
@@ -18,10 +15,7 @@ function createtime() {
     snum = Math.round(seconds);
   1 == String(snum).length && (snum = "0" + snum);
   let currentTimeHtml = "";
-  (currentTimeHtml =
-    hnum < 18 && hnum >= 9
-      ? `<div style="font-size:20px;color:#E93F3C;font-family: 宋体;font-weight:bold">焚膏油以继晷,恒兀兀以穷年</div> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
-      : `<div style="font-size:20px;color:#E93F3C;font-family: 宋体;font-weight:bold">春风得意马蹄疾,一日尽看长安花</div> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
+  (currentTimeHtml = `<div style="font-size:13px;font-weight:bold">本站运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i></div>`),
     document.getElementById("workboard") &&
     (document.getElementById("workboard").innerHTML = currentTimeHtml);
 }

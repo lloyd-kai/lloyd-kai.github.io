@@ -362,6 +362,20 @@
 
   
   <url>
+    <loc>https://lloydkai.cn/tags/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/Python/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://lloydkai.cn/tags/%E5%BC%80%E6%BA%90%E7%A4%BE%E5%8C%BA/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -397,20 +411,6 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF/</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/Python/</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lloydkai.cn/tags/MySQL/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -419,13 +419,6 @@
   
   <url>
     <loc>https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -446,21 +439,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/C/</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/C/</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/life/</loc>
+    <loc>https://lloydkai.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -474,7 +453,28 @@
   </url>
   
   <url>
+    <loc>https://lloydkai.cn/tags/life/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://lloydkai.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/C/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/C/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -495,7 +495,14 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/%E8%80%83%E7%A0%94/</loc>
+    <loc>https://lloydkai.cn/tags/English/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/oral-English/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -516,14 +523,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/English/</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/oral-English/</loc>
+    <loc>https://lloydkai.cn/tags/%E8%80%83%E7%A0%94/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -574,7 +574,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/C/</loc>
+    <loc>https://lloydkai.cn/categories/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -588,7 +588,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A/</loc>
+    <loc>https://lloydkai.cn/categories/C/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -602,14 +602,14 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/%E8%80%83%E7%A0%94/</loc>
+    <loc>https://lloydkai.cn/categories/English/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/English/</loc>
+    <loc>https://lloydkai.cn/categories/%E8%80%83%E7%A0%94/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

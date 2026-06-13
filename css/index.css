@@ -3009,6 +3009,35 @@ figure.highlight pre .javascript .function {
   -ms-transform: rotate(0);
   transform: rotate(0);
 }
+#aside-content .card-webinfo .webinfo-tag-cloud {
+  margin: 4px 0 10px;
+}
+#aside-content .card-webinfo .webinfo-tag-cloud a {
+  position: relative;
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 6px 0 4px;
+  line-height: 1.8;
+}
+#aside-content .card-webinfo .webinfo-tag-cloud a:hover {
+  color: #49b1f5 !important;
+  text-decoration: none;
+}
+#aside-content .card-webinfo .webinfo-tag-cloud a .webinfo-tag-count {
+  position: absolute;
+  top: -0.45em;
+  right: -0.35em;
+  min-width: 1em;
+  text-align: center;
+  font-size: 0.55em;
+  font-weight: 700;
+  line-height: 1;
+  color: inherit;
+}
+#aside-content .card-webinfo .webinfo-divider {
+  margin: 12px 0;
+  border-top: 1px dashed var(--hr-border);
+}
 #aside-content .card-webinfo .webinfo .webinfo-item {
   display: -webkit-box;
   display: -moz-box;
