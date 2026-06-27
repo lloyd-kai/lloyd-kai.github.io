@@ -398,14 +398,14 @@
 
   
   <url>
-    <loc>https://lloydkai.cn/tags/Linux/</loc>
+    <loc>https://lloydkai.cn/tags/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>https://lloydkai.cn/tags/Python/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -433,20 +433,6 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF/</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/Python/</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lloydkai.cn/tags/MySQL/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -461,7 +447,14 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://lloydkai.cn/tags/Linux/</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -482,21 +475,14 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <loc>https://lloydkai.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/C/</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/C/</loc>
+    <loc>https://lloydkai.cn/tags/life/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -510,7 +496,21 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/life/</loc>
+    <loc>https://lloydkai.cn/tags/C/</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/C/</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -582,13 +582,6 @@
 
   
   <url>
-    <loc>https://lloydkai.cn/categories/Linux/</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lloydkai.cn/categories/CS/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -603,7 +596,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/rust/</loc>
+    <loc>https://lloydkai.cn/categories/Linux/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -617,7 +610,14 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/C/</loc>
+    <loc>https://lloydkai.cn/categories/rust/</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/categories/life/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -631,7 +631,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/life/</loc>
+    <loc>https://lloydkai.cn/categories/C/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
