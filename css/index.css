@@ -2715,8 +2715,8 @@ figure.highlight pre .javascript .function {
 #resume-page .resume-content h3 {
   position: relative;
   margin: 0;
-  min-height: 74px;
-  padding: 20px 0 6px 86px;
+  min-height: 132px;
+  padding: 20px 0 6px 144px;
   color: #2d3a4d;
   font-size: 1.08em;
 }
@@ -2736,14 +2736,14 @@ figure.highlight pre .javascript .function {
   position: absolute;
   top: 12px;
   left: 0;
-  width: 58px;
-  height: 58px;
-  padding: 10px;
+  width: 112px;
+  height: 112px;
+  padding: 12px;
   background: #fff;
   -webkit-box-shadow: 0 10px 26px rgba(42,59,79,0.12);
   box-shadow: 0 10px 26px rgba(42,59,79,0.12);
   object-fit: contain;
-  border-radius: 14px;
+  border-radius: 16px;
 }
 #resume-page .resume-content h3:has(img):before {
   display: none;
@@ -2751,7 +2751,7 @@ figure.highlight pre .javascript .function {
 #resume-page .resume-content h3 + p {
   position: relative;
   margin: -18px 0 0;
-  padding: 0 0 14px 86px;
+  padding: 0 0 14px 144px;
   color: #5c6878;
   line-height: 1.85;
 }
@@ -2824,14 +2824,15 @@ figure.highlight pre .javascript .function {
     padding: 24px 22px;
   }
   #resume-page .resume-content h3 {
-    padding-left: 76px;
+    min-height: 84px;
+    padding-left: 84px;
   }
   #resume-page .resume-content h3 img {
-    width: 52px;
-    height: 52px;
+    width: 64px;
+    height: 64px;
   }
   #resume-page .resume-content h3 + p {
-    padding-left: 76px;
+    padding-left: 84px;
   }
   #resume-page .resume-content ul {
     grid-template-columns: 1fr;
