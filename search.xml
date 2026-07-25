@@ -320,6 +320,524 @@ Type <code>python3</code> at a terminal prompt (Mac/Unix/Linux) or open the Pyth
       </tags>
   </entry>
   <entry>
+    <title>Rust系列（一）Rust语言基础</title>
+    <url>/posts/rust-series-one/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/22/JIZCAPigNfBVQTa.jpg" alt></p>
+<h1>rust的安装</h1>
+<h2 id="安装rust编译器及其IDE">安装rust编译器及其IDE</h2>
+<p>官网：<a href="https://rust-lang.org/tools/install/">https://rust-lang.org/tools/install/</a>   网上下载init.exe文件然后点击，默认输入1并确认即可</p>
+<p>IDE：推荐使用RustRover或者是用vscode+rust的插件，我这里用RustRover</p>
+<h2 id="更新、卸载和查看rust版本">更新、卸载和查看rust版本</h2>
+<p>更新</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rustup update</span><br></pre></td></tr></table></figure>
+<p>卸载</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rustup self uninstall</span><br></pre></td></tr></table></figure>
+<p>查看版本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rustc --version</span><br></pre></td></tr></table></figure>
+<p>查看本地文档</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rustup doc</span><br></pre></td></tr></table></figure>
+<h1>初识rust</h1>
+<p>rust对应程序文件的后缀名都是rs,文件的命名规范是小驼峰+_ 比如<code>hello_world.rs</code></p>
+<h2 id="从hello-world开始">从hello world开始</h2>
+<p>在main.rs中输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fn main()</span><br><span class="line">&#123;</span><br><span class="line">	println!(&quot;hello world!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解析</p>
+<ul>
+<li>main函数是每个rust可执行程序最先运行的代码</li>
+<li>rust的缩进是四个空格</li>
+<li><code>println!</code>是一个rust macro(宏),如果是函数的话就没有<code>!</code></li>
+</ul>
+<h2 id="简单的rust程序是如何编译的">简单的rust程序是如何编译的</h2>
+<p>编译命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rustc main.rs</span><br></pre></td></tr></table></figure>
+<p>就会生成main.exe的可执行文件还有一个main.pdb文件(包含调试信息)</p>
+<p>而rustc编译只适合简单的项目，对于复杂的项目我们就需要一个<strong>构建系统和包管理的工具</strong>，在Python中是pip，在C语言中是gcc和cmake，而在rust中是<strong>Cargo</strong></p>
+<p>如果要用cargo创建项目，就</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cargo new hello_cargo</span><br></pre></td></tr></table></figure>
+<h2 id="cargo项目是如何编译的">cargo项目是如何编译的</h2>
+<p>在RustRover中把大部分的编译细节都隐藏了，对于软件开发者来说是好事，但是rust应用最多的是操作系统内核和编译器中，需要经常在原始的条件下编译，这里将着重介绍cargo项目的编译过程，以便后续的项目开发</p>
+<p><strong>创建可执行文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cargo build</span><br></pre></td></tr></table></figure>
+<p>一般在<code>target/debug/</code>文件下面，生成exe文件</p>
+<p><strong>运行cargo项目</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cargo run</span><br></pre></td></tr></table></figure>
+<p>这个命令实现编译代码+执行结果，如果已经编译过且源码未改变就直接运行二进制文件</p>
+<p>示例</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Users\Tom\Desktop\projections\rustLearn&gt;cargo run</span><br><span class="line">   Compiling rustLearn v0.1.0 (C:\Users\Tom\Desktop\projections\rustLearn)</span><br><span class="line">    Finished `dev` profile [unoptimized + debuginfo] target(s) <span class="keyword">in</span> 0.89s</span><br><span class="line">     Running `target\debug\rustLearn.exe`</span><br><span class="line">Hello, world!</span><br><span class="line">just <span class="keyword">do</span> it!</span><br></pre></td></tr></table></figure>
+<p>如果编译过就没有Compiling这一行</p>
+<p><strong>检查代码</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cargo check</span><br></pre></td></tr></table></figure>
+<p>检查代码，确保能通过编译，但是不产生任何可执行文件。<strong>在编写代码的时候就没必要反复编译和运行，直接check就行</strong>，需要运行的时候再运行</p>
+<p><strong>为发布而构建</strong></p>
+<p>也就是发行release版本，编译时会进行优化，代码会运行的更快，但是编译时间更长。会在 target/release而不是 target/debug生成可执行文件</p>
+<h2 id="项目的结构">项目的结构</h2>
+<p>这里的项目结构是RustRover中的新建项目的结构</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">项目名</span><br><span class="line"> -src</span><br><span class="line"> --main.rs</span><br><span class="line"> -target</span><br><span class="line"> --debug</span><br><span class="line"> --.rustc_info.json</span><br><span class="line"> --CACHEDIR.TAG</span><br><span class="line"> -.gitignore</span><br><span class="line"> -Cargo.lock</span><br><span class="line"> -Cargo.toml</span><br></pre></td></tr></table></figure>
+<p>源代码都应该在src目录下,顶层目录可以放置：README、许可信息、配置文件和其它与程序源码无关的文件</p>
+<h3 id="Cargo-toml">Cargo.toml</h3>
+<p>Tom’s Obvious,Minimal Language(toml) 格式,是cargo的配置格式</p>
+<figure class="highlight toml"><table><tr><td class="code"><pre><span class="line"><span class="section">[package]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;rustLearn&quot;</span></span><br><span class="line"><span class="attr">version</span> = <span class="string">&quot;0.1.0&quot;</span></span><br><span class="line"><span class="attr">edition</span> = <span class="string">&quot;2024&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[dependencies]</span></span><br></pre></td></tr></table></figure>
+<p>其中，[pacakge]，是一个区域标题，表示下方内容是用来配置包(package)的，name表示项目名，version为版本，edition为rust版本，{dependencies}为依赖，在rust中代码的包成为<strong>crate</strong>.</p>
+<h3 id="Cargo-lock">Cargo.lock</h3>
+<p>第一次运行cargo build 会在顶层目录生成cargo.lock文件该文件负责追踪项目依赖的精确版本，不需要手动修改该文件</p>
+<h1>进入rust编程世界</h1>
+<h2 id="数据类型、函数、注释">数据类型、函数、注释</h2>
+<h2 id="控制流">控制流</h2>
+<h2 id="参考资料">参考资料</h2>
+<ol>
+<li>《The Rust Programming Language》v1</li>
+<li><a href="https://www.bilibili.com/video/BV1hp4y1k7SV/?share_source=copy_web&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">Rust编程语言入门教程（Rust语言/Rust权威指南配套）【已完结】</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>rust</category>
+      </categories>
+      <tags>
+        <tag>rust</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客系列（三）博客写作指南</title>
+    <url>/posts/blog-series-three/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/13/XLE3qtOQlyifzHC.jpg" alt></p>
+<h1>简介</h1>
+<p>在撰写博客的过程中，内容至关重要但不是唯一重要的因素，排版、图片、交互体验等视觉设计也同样需要关注。一个设计精美、易于阅读的博客会吸引更多读者，提升用户体验。本文将为你提供一套完整的 markdown 博客创作指南，从实战的角度帮助你写出既有深度又美观的博客文章。</p>
+<h1>准备工具</h1>
+<h2 id="写作工具">写作工具</h2>
+<p>个人比较推崇<strong>Typora</strong>这种简洁的支持<strong>markdown</strong>格式的编辑器，相比之下，obsidian的布局不利于专注于写作，notion的自定义布局和数据库这两大突出优势在markdown格式下会有损失，vscode依赖于插件。</p>
+<p>总之就是一句话:</p>
+<blockquote>
+<p>能让你心无旁骛地去写的编辑器就是最好的</p>
+</blockquote>
+<h2 id="博客引擎">博客引擎</h2>
+<p>本文基于hexo+butterfly的主题进行博客创作，但读者无须担心，博客创作更多的在于<strong>文章结构</strong>、<strong>词句修辞</strong>、<strong>排版和可读性</strong>方面下功夫，其他方面依赖博客引擎和前端特性的并不多，读者可以在CSDN、博客园、掘金社区等其他地方同样可以撰写和托管博客。</p>
+<h1>博客撰写讲解</h1>
+<h2 id="目录结构">目录结构</h2>
+<p>好的目录结构要梳理文章逻辑，如果是<strong>新闻热点点评类</strong>，就要能讲清楚事件发生的时间地点人物，发生原因及其分析，结论、启示或者经验教训；如果是<strong>技术分享类</strong>，就要说明技术的应用范围，原理，怎样配置技术所需的环境，阐明使用技术的效果等。这方面主要靠读者多看技术大佬的博客、优秀的公众号推文等，看他们的目录是如何区分的，只要能达到<strong>行云流水</strong>的效果就行，不需要在分级、格式方面过于讲究。</p>
+<p>可供参考的文章结构：大部分都是<strong>总-分-总</strong>结构</p>
+<ul>
+<li>提出问题-&gt;分析问题-&gt;解决问题-&gt;总结经验，技术问题分享。</li>
+<li>背景-&gt;思考-&gt;尝试-&gt;遇到的困难-&gt;解决方案-&gt;最后结果，问题分享</li>
+<li>摘要-&gt;简介-&gt;分支主题-&gt;总结，一般技术分享。</li>
+<li>是什么-原理-背景&gt;解决了什么问题-&gt;基本操作-&gt;同类对比-&gt;总结 ，适合新技术分享</li>
+</ul>
+<p>参考的目录结构如下，以markdown格式的代码块展示,这里<code>//</code>及其后面的内容代表注释</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 简介    </span></span><br><span class="line"><span class="section"># 一、准备工作 //一些环境配置，安装等，或者是解决问题的背景等</span></span><br><span class="line"><span class="section">## 1.centos安装  //以数字的形式合理分级，建议标题的层级不要超过四层</span></span><br><span class="line"><span class="section">## 2.idea解包</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 二、基本用法 //对于技术文章就像是语法书，对于问题就是发现问题，分析问题，</span></span><br><span class="line"><span class="section">## 1. 对页面的操作</span></span><br><span class="line"><span class="section">## 2. 1 初始化浏览器对象</span></span><br><span class="line"><span class="section">## 2. 2</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 三、高阶用法  //或者是多个解决方案</span></span><br><span class="line"><span class="section"># 总结  //对技术或者过程的总结，建议不要太长</span></span><br><span class="line"><span class="section"># 参考  //把你写作过程中参考的资料，或者是推荐的链接放在这里，便于读者后续学习</span></span><br><span class="line"><span class="section"># 开源协议  //如果使用的是hexo或者其他博客网站，撰写博客的时候会自动生成，不需要自己写</span></span><br></pre></td></tr></table></figure>
+<h3 id="标题">标题</h3>
+<p>取标题要注意几点</p>
+<ol>
+<li><strong>简洁直观</strong>：不仅仅是利于搜索引擎优化，更多的是便于读者和自己，读者可以通过标题判断博客的信息对于自己是否有效，作者可以根据标题了解自己博客的侧重方面。<strong>不要被国内电商式的标题所蒙蔽</strong>(比如“爆肝……”“震惊，百大up主齐聚一堂竟然是为……”)，虽然能带来流量，但是作者不太建议，这种标题就显得作者没有真才实学，只能靠眼球吸引读者，</li>
+<li><strong>关键词</strong>：标题一定要包含文章的高频词或者是重点词语，比如如果你写的是有关MySQL的学习知识分享，那么关键字就是“MySQL”，可能有“教程”等其他关键词，再用适当的句子结构(问句、陈述句等)将其组合为标题。比如组合为”MySQL学习指南(一)“</li>
+</ol>
+<p><strong>特殊</strong>:所有<strong>系列文章</strong>(比如MySQL学习笔记)的标题要一致，<strong>相关的</strong>可以不一致。标题+XX:XX为数字，不满两位用0替代;比如mysql01;标题+(序数词):比如mysql学习(一)</p>
+<h3 id="简介">简介</h3>
+<p>文章的标题和简要介绍一下文章，要解决的是什么问题</p>
+<p><strong>示例</strong>：Selenium是广泛使用的模拟浏览器运行的库，它是一个用于Web应用程序测试的工具。 Selenium测试直接运行在浏览器中，就像真正的用户在操作一样，并且支持大多数现代 Web 浏览器。下面就进入正式的学习阶段。</p>
+<h3 id="文章主体">文章主体</h3>
+<p>以下主要侧重于排版。</p>
+<ol>
+<li>段落：建议不要太长，最好保持在300字以内</li>
+<li>字体效果：用黑体强调重要词汇，用斜体或者下划线强调重要段落</li>
+<li>列表：恰当使用无序和有序列表，对于超过10个点的列表建议使用markdown里面的表格</li>
+<li>图片：如果图片能便于读者理解，减少文字量，可以使用。</li>
+<li>代码块：建议默认收起或者收缩，需要的时候读者点击即可全部展开。指明代码块对应的编程语言，不是的话要提前说明</li>
+<li>分割线：建议用在两个一级标题或者是两段长段落之间。</li>
+</ol>
+<p>注意事项</p>
+<ol>
+<li>所有的代码至少要在自己的电脑上或者对应的运行环境上运行，否则不写</li>
+<li>不易理解或者抽象的地方要用图解释，可以是GIF动图制作也可以是chartjs、echart等，注意不要泄漏私人信息。</li>
+<li>模棱两可或者自己不懂的不要轻易写，写的话注意叠甲。</li>
+</ol>
+<h2 id="超文本内容">超文本内容</h2>
+<p>这一部分主要涉及前端的特性，属于是锦上添花的内容，即使没有也不是特别影响文章的质量，就算《资本论》只有文字，也无可争议是最伟大的鸿篇巨著之一。</p>
+<p>常用的类型有：图片、动画(gif等)、视频、音频、表情、标签外挂、图标、链接等。</p>
+<h3 id="图表">图表</h3>
+<ol>
+<li><a href="https://excalidraw.com/">Excalidraw</a>：手绘风格的开源工具，适合绘制思维导图、流程图等。</li>
+</ol>
+<p><img src="https://s2.loli.net/2024/11/26/lvhXLijoyQYUnkb.png" alt="博客写作指南_01"></p>
+<ol start="2">
+<li><a href="https://mermaid.nodejs.cn/">Mermaid 中文网</a>：基于 Markdown 的流程图工具，可以生成流程图、时序图等。或者也可以使用<a href="https://app.diagrams.net/">draw.io</a>。主要侧重于计算机方面的知识图表，常用于UML统一建模语言。</li>
+</ol>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+    
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop HealthCheck
+        John-&gt;&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
+    John--&gt;&gt;Alice: Great!
+    John-&gt;&gt;Bob: How about you?
+    Bob--&gt;&gt;John: Jolly good!
+
+  </pre></div>
+<ol start="3">
+<li><a href="https://chartjs.cn/docs/latest/">Chart.js 中文网</a>：是一个用于创建动态图表的 JavaScript 库，适合做一些比较复杂的数据分析图。</li>
+</ol>
+<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
+            <pre class="chartjs-src" hidden>{
+    &quot;type&quot;: &quot;pie&quot;,
+    &quot;data&quot;: {
+        &quot;labels&quot;: [
+            &quot;编程&quot;,
+            &quot;音乐&quot;,
+            &quot;阅读&quot;,
+            &quot;游戏&quot;,
+            &quot;健身&quot;,
+            &quot;旅游&quot;
+        ],
+        &quot;datasets&quot;: [
+            {
+                &quot;label&quot;: &quot;喜爱指数&quot;,
+                &quot;data&quot;: [
+                    30,
+                    24,
+                    19,
+                    14,
+                    9,
+                    4
+                ],
+                &quot;backgroundColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.5)&quot;,
+                        &quot;rgba(54, 162, 235, 0.5)&quot;,
+                        &quot;rgba(255, 206, 86, 0.5)&quot;,
+                        &quot;rgba(75, 192, 192, 0.5)&quot;,
+                        &quot;rgba(153, 102, 255, 0.5)&quot;,
+                        &quot;rgba(255, 159, 64, 0.5)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 0.2)&quot;,
+                        &quot;rgba(54, 162, 235, 0.2)&quot;,
+                        &quot;rgba(255, 206, 86, 0.2)&quot;,
+                        &quot;rgba(75, 192, 192, 0.2)&quot;,
+                        &quot;rgba(153, 102, 255, 0.2)&quot;,
+                        &quot;rgba(255, 159, 64, 0.2)&quot;
+                    ]
+                },
+                &quot;borderColor&quot;: {
+                    &quot;dark-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ],
+                    &quot;light-mode&quot;: [
+                        &quot;rgba(255, 99, 132, 1)&quot;,
+                        &quot;rgba(54, 162, 235, 1)&quot;,
+                        &quot;rgba(255, 206, 86, 1)&quot;,
+                        &quot;rgba(75, 192, 192, 1)&quot;,
+                        &quot;rgba(153, 102, 255, 1)&quot;,
+                        &quot;rgba(255, 159, 64, 1)&quot;
+                    ]
+                }
+            }
+        ]
+    },
+    &quot;options&quot;: {
+        &quot;plugins&quot;: {
+            &quot;legend&quot;: {
+                &quot;labels&quot;: {
+                    &quot;color&quot;: {
+                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
+                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
+                    }
+                }
+            }
+        }
+    }
+}
+</pre>
+            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
+我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
+在此过程中也解决了无数的小谜团。<br>
+<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
+I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
+Countless small mysteries are also solved in the process.</span></p></div>
+          </div>
+<h3 id="视频">视频</h3>
+<ol>
+<li>B站引用：打开网页版的bilibili，点击要分享的视频-“分享”-“嵌入代码”，然后粘贴到markdown文件内即可。参考如下</li>
+</ol>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
+    </iframe>
+</div>
+<h3 id="公式">公式</h3>
+<p>建议使用katex，或者是markdown本地的公式嵌入。</p>
+<p>参考教程<a href="https://freeopen.github.io/mathjax/">Markdown 数学公式指导手册 | Freeopen</a></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sin^2(\theta) + \cos^2(\theta) = 1
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1219em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8719em;"><span style="top:-3.1208em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">cos</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></p>
+<h3 id="表情符号">表情符号</h3>
+<ol>
+<li><a href="https://www.lddgo.net/common/emoticons">在线颜文字大全</a> ：与markdown兼容，基本不会有不显示等问题</li>
+<li><a href="https://www.emojiall.com/zh-hans/categories/A">表情包</a> ：注意typora的表情(格式为<code>:表情</code>)无法直接在hexo显示，需要用插件和配置解决(已经解决)</li>
+<li><a href="https://fontawesome.com/v4/icons/">图标</a>：适当的图标可以让人记忆犹新，见图思义。</li>
+</ol>
+<h3 id="交互式的组件">交互式的组件</h3>
+<p>比如butterfly中的button、图床等，由于不同的博客引擎涉及的组件不同，这里就不展开。建议读者不要舍本逐末，过度美化而忽视文章的内容。</p>
+<h2 id="总结与参考">总结与参考</h2>
+<ul>
+<li>
+<p>用一段话给文章内容作总结。</p>
+</li>
+<li>
+<p><strong>参考</strong>要注明来源，比如链接、转载出处，注意定期更新以防失效。</p>
+</li>
+</ul>
+<h2 id="参考资料">参考资料</h2>
+<ol>
+<li><a href="https://www.cnblogs.com/returntmp/p/17591866.html">【全方位解析】如何写好技术文章 - ReturnTmp - 博客园</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客系列（一）更新公告</title>
+    <url>/posts/blog-series-one/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/22/8KJE1CP3nTIDFWm.jpg" alt></p>
+<h1>hexo博客更新公告</h1>
+<div class="timeline green"><div class="timeline-item headline">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>2026</p>
+</div>
+        </div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>6-16</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>更新了【关于】和【清单】部分</li>
+</ol>
+</div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>6-13</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>优化了页脚展示部分</li>
+<li>优化了右侧栏目中的标签展示</li>
+</ol>
+</div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>4-23</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>首页添加了RSS订阅功能</li>
+<li>更改了网站图标</li>
+<li>所有文章添加了文前封面，便于RSS展示和阅读</li>
+</ol>
+</div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>4-18</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>留言系统已经从vercel迁移到netlify上，国内访问速度明显加快</li>
+<li>开启反垃圾系统，提升安全性</li>
+</ol>
+</div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>4-9</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><!-- timeline 4-15 -->
+<ol>
+<li>ICP、公安等已成功备案，并且添加在网站首页页脚处。</li>
+<li>优化了留言功能，现在可以正常接收到信息和机器人信息。</li>
+<li>使用了51LA的统计API，移除了不算子的统计脚本</li>
+</ol>
+</div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>4-9</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>将博客部署到阿里云的服务器上，并配置相应的域名，正在等待备案中</li>
+<li>优化了页脚和友链，符合备案规定</li>
+</ol>
+</div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>3-19</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>优化了上方菜单栏的布局和展示</li>
+<li>更新了站主公告，龙王考研回归(笑)</li>
+</ol>
+</div>
+      </div></div>
+<div class="timeline green"><div class="timeline-item headline">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>2025</p>
+</div>
+        </div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>6-1</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>魔改了页脚</li>
+<li>改变首页背景图像并添加雪花效果</li>
+</ol>
+</div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>5-31</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>首页添加了轮播图，移除了磁贴</li>
+<li>优化了侧边栏部分，修改了首页布局风格</li>
+<li>魔改并自定义了预加载动画</li>
+<li>优化了文章链接，不用冗余的数字作为链接</li>
+<li>移除了隐私用户政策</li>
+</ol>
+</div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>3-1</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>本blog从zeabur迁移到vercel并更换了一个域名，后续会找一个稳定的服务器。</li>
+</ol>
+</div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>2-14</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>butterfly主题从5.1.0更新到5.3.2版本(以后一年更新一次版本)</li>
+<li>美化了界面(魔改教程)</li>
+<li>将原来的文字显示部分作了宽屏适配</li>
+</ol>
+</div>
+      </div></div>
+<div class="timeline green"><div class="timeline-item headline">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>2024</p>
+</div>
+        </div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>11-9</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>在网页/privacy下添加了隐私用户政策</li>
+</ol>
+</div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>10-29</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>修复了手机端视频溢出显示部分的问题</li>
+<li>修改了几处笔误和显示问题。</li>
+<li>优化了所有博客的参考部分</li>
+</ol>
+</div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>10-26</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>butterfly主题从5.0.0更新到5.1.0版本</li>
+<li>优化了chart插件</li>
+<li>更新了一篇新博客</li>
+</ol>
+</div>
+      </div><div class="timeline-item">
+        <div class="timeline-item-title">
+          <div class="item-circle"><p>10-10</p>
+</div>
+        </div>
+        <div class="timeline-item-content"><ol>
+<li>butterfly主题从4.13.0更新到5.0.0版本</li>
+<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
+<li>更新了留言板</li>
+<li>优化了搜索功能</li>
+<li>禁止B站视频自动播放</li>
+<li>更新了主页“关于”部分</li>
+<li>修复了几处笔误的问题</li>
+<li>优化了评论功能的选择</li>
+<li>添加了站点工具(谷歌与必应)，优化了文章的描述部分</li>
+<li>优化一下图片无法放大查看的问题</li>
+</ol>
+</div>
+      </div></div>
+<h2 id="未来更新内容">未来更新内容</h2>
+<h3 id="已更新内容">已更新内容</h3>
+<ul>
+<li>[x] 目前已主要确定S.EE作为图床，以后根据需要换成aliyun的OSS作为图床，<strong>需要配置其URL为自定义域名之后才能用</strong>，参考链接：<a href="https://blog.csdn.net/fsjwin/article/details/114644687">https://blog.csdn.net/fsjwin/article/details/114644687</a> 要花费一定的时间，如果成功就续费。</li>
+<li>[x] <strong>添加一些CDN加快图片加载速度和其他相关资源速度</strong>。<a href="https://blog.cpen.top/posts/9b5a2768.html">06_Hexo-elemecdn 加速 Butterfly 第三方资源 | Mycpen</a> 、<a href="https://blog.zhheo.com/p/790087d9.html#%E6%96%B0%E7%89%88butterfly">Butterfly CDN链接更改指南，替换jsdelivr提升访问速度 | 张洪Heo</a>  截止目前<strong>有相当一部分已经404了</strong></li>
+<li>[x] busuanzi的统计优化——已换成51La的统计</li>
+<li>[x] 换一个好一点的域名，比如com或者cn——已换成lloydkai.cn的域名</li>
+<li>[x] 部署到国内的服务器(优先阿里云)并备案。参考网站域名申请<a href="https://tech.yemengstar.com/hexo-tutorial-use-your-domain-beginner/">为HEXO绑定自己的域名</a></li>
+<li>[x] <a href="https://luckysusu.top/post/hexo_emoji.html">让hexo博客支持emoji表情</a></li>
+<li>[x] 评论系统的优化</li>
+<li>[x] todolist清单、【关于】部分优化展示</li>
+</ul>
+<h3 id="待更新内容">待更新内容</h3>
+<ul>
+<li>[ ] 子菜单展示内容；方法：通过基本的markdown语言和butterfly专有语法-标签外挂实现效果，建议写成总领式的文章或者展示页面。可以参考此博客<a href="https://blog.guole.fun/posts/butterfly-custom/#%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E8%BD%AE%E6%92%AD%E6%A8%A1%E5%9D%97">我的Blog美化日记——Hexo+Butterfly | Guo Le’s Blog</a> 里面的“volantis”部分，和这个<a href="https://www.huangshiqing.website/2022/11/03/HexoTagPlugins/">Hexo Built-in Tag Plugins (Hexo内置标签外挂) | Ofra Serendipity</a></li>
+<li>[ ] <strong>综合考虑是否需要将所有的图片转移到国内的图床中，比如阿里云的OSS</strong>。</li>
+<li>[ ] 学习并在博客中添加图表-对于本网站以chartjs的图表为主，对于精致的图表(比如数据分析)会用Echart.</li>
+</ul>
+<h2 id="debug经验">debug经验</h2>
+<p>目前由于butterfly的版本更新，导致以前的部分功能失效，建议<strong>先看官方文档，将对应过时的代码注释或者去除，没有的代码添加</strong>，然后再<strong>根据</strong>F12检查对应的板块，<strong>用前端的知识去搜查问题发生的地点和原因</strong>，然后再纠错。</p>
+<h2 id="hexo框架更新">hexo框架更新</h2>
+<p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
+<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
+<h2 id="butterfly主题更新">butterfly主题更新</h2>
+<blockquote>
+<p>更新前记得留下blog快照</p>
+</blockquote>
+<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
+<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
+<p>如果不行，就在你的博客/themes/butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
+<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p>
+<h2 id="参考资料">参考资料</h2>
+<ol>
+<li><a href="https://hexo.io/zh-cn/docs/">hexo官方文档</a></li>
+<li><a href="https://butterfly.js.org/posts/ceeb73f/#%E7%B6%B2%E7%AB%99%E8%83%8C%E6%99%AF">butterfly主题官方文档</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL系列（一）数据库原理</title>
     <url>/posts/database-principle/</url>
     <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/13/lD4iJ2BjFNuQtoL.jpg" alt></p>
@@ -956,521 +1474,67 @@ Type <code>python3</code> at a terminal prompt (Mac/Unix/Linux) or open the Pyth
       </tags>
   </entry>
   <entry>
-    <title>Rust系列（一）Rust语言基础</title>
-    <url>/posts/rust-series-one/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/22/JIZCAPigNfBVQTa.jpg" alt></p>
-<h1>rust的安装</h1>
-<h2 id="安装rust编译器及其IDE">安装rust编译器及其IDE</h2>
-<p>官网：<a href="https://rust-lang.org/tools/install/">https://rust-lang.org/tools/install/</a>   网上下载init.exe文件然后点击，默认输入1并确认即可</p>
-<p>IDE：推荐使用RustRover或者是用vscode+rust的插件，我这里用RustRover</p>
-<h2 id="更新、卸载和查看rust版本">更新、卸载和查看rust版本</h2>
-<p>更新</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rustup update</span><br></pre></td></tr></table></figure>
-<p>卸载</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rustup self uninstall</span><br></pre></td></tr></table></figure>
-<p>查看版本</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rustc --version</span><br></pre></td></tr></table></figure>
-<p>查看本地文档</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rustup doc</span><br></pre></td></tr></table></figure>
-<h1>初识rust</h1>
-<p>rust对应程序文件的后缀名都是rs,文件的命名规范是小驼峰+_ 比如<code>hello_world.rs</code></p>
-<h2 id="从hello-world开始">从hello world开始</h2>
-<p>在main.rs中输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fn main()</span><br><span class="line">&#123;</span><br><span class="line">	println!(&quot;hello world!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>解析</p>
-<ul>
-<li>main函数是每个rust可执行程序最先运行的代码</li>
-<li>rust的缩进是四个空格</li>
-<li><code>println!</code>是一个rust macro(宏),如果是函数的话就没有<code>!</code></li>
-</ul>
-<h2 id="简单的rust程序是如何编译的">简单的rust程序是如何编译的</h2>
-<p>编译命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rustc main.rs</span><br></pre></td></tr></table></figure>
-<p>就会生成main.exe的可执行文件还有一个main.pdb文件(包含调试信息)</p>
-<p>而rustc编译只适合简单的项目，对于复杂的项目我们就需要一个<strong>构建系统和包管理的工具</strong>，在Python中是pip，在C语言中是gcc和cmake，而在rust中是<strong>Cargo</strong></p>
-<p>如果要用cargo创建项目，就</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cargo new hello_cargo</span><br></pre></td></tr></table></figure>
-<h2 id="cargo项目是如何编译的">cargo项目是如何编译的</h2>
-<p>在RustRover中把大部分的编译细节都隐藏了，对于软件开发者来说是好事，但是rust应用最多的是操作系统内核和编译器中，需要经常在原始的条件下编译，这里将着重介绍cargo项目的编译过程，以便后续的项目开发</p>
-<p><strong>创建可执行文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cargo build</span><br></pre></td></tr></table></figure>
-<p>一般在<code>target/debug/</code>文件下面，生成exe文件</p>
-<p><strong>运行cargo项目</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cargo run</span><br></pre></td></tr></table></figure>
-<p>这个命令实现编译代码+执行结果，如果已经编译过且源码未改变就直接运行二进制文件</p>
-<p>示例</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Users\Tom\Desktop\projections\rustLearn&gt;cargo run</span><br><span class="line">   Compiling rustLearn v0.1.0 (C:\Users\Tom\Desktop\projections\rustLearn)</span><br><span class="line">    Finished `dev` profile [unoptimized + debuginfo] target(s) <span class="keyword">in</span> 0.89s</span><br><span class="line">     Running `target\debug\rustLearn.exe`</span><br><span class="line">Hello, world!</span><br><span class="line">just <span class="keyword">do</span> it!</span><br></pre></td></tr></table></figure>
-<p>如果编译过就没有Compiling这一行</p>
-<p><strong>检查代码</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cargo check</span><br></pre></td></tr></table></figure>
-<p>检查代码，确保能通过编译，但是不产生任何可执行文件。<strong>在编写代码的时候就没必要反复编译和运行，直接check就行</strong>，需要运行的时候再运行</p>
-<p><strong>为发布而构建</strong></p>
-<p>也就是发行release版本，编译时会进行优化，代码会运行的更快，但是编译时间更长。会在 target/release而不是 target/debug生成可执行文件</p>
-<h2 id="项目的结构">项目的结构</h2>
-<p>这里的项目结构是RustRover中的新建项目的结构</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">项目名</span><br><span class="line"> -src</span><br><span class="line"> --main.rs</span><br><span class="line"> -target</span><br><span class="line"> --debug</span><br><span class="line"> --.rustc_info.json</span><br><span class="line"> --CACHEDIR.TAG</span><br><span class="line"> -.gitignore</span><br><span class="line"> -Cargo.lock</span><br><span class="line"> -Cargo.toml</span><br></pre></td></tr></table></figure>
-<p>源代码都应该在src目录下,顶层目录可以放置：README、许可信息、配置文件和其它与程序源码无关的文件</p>
-<h3 id="Cargo-toml">Cargo.toml</h3>
-<p>Tom’s Obvious,Minimal Language(toml) 格式,是cargo的配置格式</p>
-<figure class="highlight toml"><table><tr><td class="code"><pre><span class="line"><span class="section">[package]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;rustLearn&quot;</span></span><br><span class="line"><span class="attr">version</span> = <span class="string">&quot;0.1.0&quot;</span></span><br><span class="line"><span class="attr">edition</span> = <span class="string">&quot;2024&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[dependencies]</span></span><br></pre></td></tr></table></figure>
-<p>其中，[pacakge]，是一个区域标题，表示下方内容是用来配置包(package)的，name表示项目名，version为版本，edition为rust版本，{dependencies}为依赖，在rust中代码的包成为<strong>crate</strong>.</p>
-<h3 id="Cargo-lock">Cargo.lock</h3>
-<p>第一次运行cargo build 会在顶层目录生成cargo.lock文件该文件负责追踪项目依赖的精确版本，不需要手动修改该文件</p>
-<h1>进入rust编程世界</h1>
-<h2 id="数据类型、函数、注释">数据类型、函数、注释</h2>
-<h2 id="控制流">控制流</h2>
+    <title>大学系列（一）建筑、机械工程以及计算机专业劝退</title>
+    <url>/posts/quit-profession/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/22/kRytd2FQg3VH9NG.jpg" alt></p>
+<h1>写在前面的话</h1>
+<p>建筑行业我是在大一的时候接触的，所以我对其的了解仅限于浅层次；机械工程我学习了三年，并且家里和亲戚都有相关的技术背景，我本人也多次去相关的工厂实习看访过，这部分我会多写一点；计算机是我目前学习的专业，我会从劝退和劝入的角度分别讲解。</p>
+<h1>建筑劝退</h1>
+<p>就中国国内的建筑专业来分的话，一般主要有以下二级专业，分别是建筑学、城乡规划和风景园林，由于我本人在专业分流之前就已经转走了，所以我只从这三个专业的共同点来分析。</p>
+<p>首先我先提一点，主要是针对<strong>先天性因素的</strong>，<strong>如果你是色弱或者是色盲，那么和绘画相关的专业你不能选，包括建筑专业</strong>，这个东西一般需要你事先在选专业之前充分了解的，一般会在高考之前会有一个体检，如果体检出有相关的遗传性因素，那么在选专业的时候就要排除，基因的缺陷会让你在从事本专业的时候处于劣势，无关努力，但也确实令人心酸，能做的就是及时止损，我就是这样。</p>
+<p>所有想要选择建筑专业的学生，我个人认为必须要回答以下三个问题，如果这三个问题不能肯定地回答，那么就目前时代的发展背景而言，我强烈不推荐选择。</p>
+<p><strong>第一，你有相当的美术基础吗？</strong></p>
+<p>这里的美术基础，指的是你至少了解和学习过50小时以上的素描(无论是结构素描还是完整的素描)，如果你参加过美术艺考，那种水平基本上就是建筑专业的入门门槛。</p>
+<p>以下我画的这个图就是结构素描还有完整素描的图(有点烂别介意，大概是这个样子)，如果你的绘画水平和我难分伯仲的话，我还是建议你算了吧😄。</p>
+<p><img src="https://files.seeusercontent.com/2026/04/05/nFj1/190db0d.jpg" alt="结构素描图.jpg"></p>
+<p><img src="https://files.seeusercontent.com/2026/04/05/1huP/dfa6d19.jpg" alt="素描图.jpg"></p>
+<p>因为在20年代之前，如果你报考的是建筑专业，或者你要转行到建筑专业，在入学之前是要进行考试的(或者是个人成果集)，考试的内容一般就是结构素描，如果不通过的话就会把你调剂到其他专业。但是时过境迁，建筑行业做梦都想不到中国的房价下降得如此之快，建筑专业一下子从以前的香饽饽变成了“路边一条”，基本上除了“建筑老八校”以外，不再对学生的美术基础作出要求，你以为是对学生好，实际上是坑害那些没学过美术的学生，<strong>建筑就是披着工科皮的艺术专业，建筑就是披着工科皮的艺术专业，建筑就是披着工科皮的艺术专业</strong>！这句话我要反复强调，在国外建筑学是给那些从艺术学院出来人学的，国内也是这样，你在大一的时候上的最多的课就是设计课，高等数学是不修的，力学是阉割版本的。不学高等数学，不搞实验的，天天画图的你说它是工科，鬼都不信。</p>
+<p><strong>第二，你热爱建筑绘画吗？</strong></p>
+<p>如果你不能肯定的回答说“热爱”那么就是讨厌，而且<strong>注意我的前缀词，必须是“建筑”或者”城市规划图“或者“风景”</strong>,这三个分别对应上面三个专业,喜欢画人物、漫画的不行，这两者走的不是一个绘画的路子。建筑绘画讲究的是符合规律和规则，空间感和宏伟，人物绘画偏向的是微观，你只要画过建筑和人物，你就会清楚的知道这两个的不同。</p>
+<p>以下我画的这个图就是建筑的图</p>
+<p><img src="https://files.seeusercontent.com/2026/04/05/7ylW/cf8ffe8.jpg" alt="钢笔画.jpg"></p>
+<p>这个图是钢笔画，如果你真的学建筑，后面还会学习油画、水彩、版印等，在入学的那一天，老师就会要求你们每周都要画3张A4的钢笔画或者是结构素描等，学了这门专业，你的余生都要与画笔为伴，<strong>如果没有热爱的话，真的很难支撑下去</strong>。</p>
+<p><strong>第三，你的家庭经济基础好吗？</strong></p>
+<p>这里的家庭经济基础，指的是家里能支撑你的学费，能够支持你读硕读博，能够每年支持大概2到3次左右的外出实习费用(一般是4000左右)，能够负担的起报绘画班、绘画材料的费用。</p>
+<p>首先我要强调的是，相比隐形开支，学费显得一无是处。你每一个学期至少需要参加一个外出实习，一般就是到某一个旅游景点或者是知名建筑、风景区那边写生，问题就是，学校是不会负担你的门票费和住宿费的，而偏偏就是这些风景区的门票费、住宿和交通费用最贵。当你要开始写生的时候，你会发现要买的东西真是多——铅笔钢笔圆珠笔、专门的素描纸、画线笔、T字尺、支架、摄影机、颜料、建模板材、502胶水、美工刀、数位板等等，这些开销每一次花费大概几百左右，但是这样的开销次数多，可能几周就有一次。如果你以后要读研，会发现有一个专门的考试科目叫做快图，要求你在6小时之内画满A1的图纸，如果你不报班，不经过长期艰苦的努力训练，是不可能在6小时以内画完的。</p>
+<p>最后我要强调的问题是，建筑专业的<strong>艺术本质</strong>。它的思维方式不是理工科思维，也不是文科思维，而是艺术生思维。<strong>完美按照黄金分割比的图纸不一定好看，但是好看的图纸一定是由那些有天赋的人画出来的</strong>，你懂我意思吗？艺术的本质是<strong>天赋</strong>，是只需要画几笔就知道灰与白应该怎样表现，看几次就知道光应该从哪里入射，哪里画得暗，在哪里画几笔会凸显立体感，在画画之前就在脑海中构思完整个图的全貌…  这些都会让理工科的人感到不知所措，<strong>艺术是没有标准答案的</strong>，很多时候就是一种感性的理解和表达。如果你去看建筑专业的作业答辩，你会发现整个过程没有对理论的讨论，都是“我觉得这样怎么怎么好看”，“表现出了建筑的宏伟与壮观“，“突出了人文风貌和风土气息”，换句话说，建筑适合充满想象力、有绘画能力、对美有独特的理解和思考，最好带有一点口才的人去学，发现了没？这些完美契合女生的气质，这也是建筑专业女生多的原因，而长期学习理工科的学生我不是特别建议，因为你们的思维早已是1+1=2的，无论怎么样你都不能接受1+1=3甚至1+1还可以等于4。</p>
+<h1>机械劝退</h1>
+<p>机械在当下这个时间段可以说是T1专业了，可以和计算机、电气等专业结合，工作是不用愁的，只是你愿不愿意去做。上至高级技工，下至钢板搬运工，在哪里都可以充分就业。不过在选择这个专业之前，我简要的介绍你要学习的东西、工作的环境和未来的趋势。</p>
+<p>目前中国的机械工程是一级学科，一级学科下面还有许多的二级学科，比如机械设计制造及其自动化、车辆工程、智能制造、材料工程、汽车服务、机器人工程等。二级学科有很多，不同的学校有不同侧重，比如南方的机械一般侧重轻工业、北方的侧重重工业，国防相关的侧重军工、北上广深侧重机器人等。机械能做的事情很多，要学的东西也很多，所以需要有所侧重。</p>
+<p>通常来说，机械工程(这里指的是传统的机械，也就是不带“电”)在大一的时候要学<strong>机械制图</strong>，这个是重中之重，无论你是干低端的加工制造，还是高端的数控机床、机器人，你都需要认真学习，具体长什么样你可以在网上看，我要提醒的是这门课程对空间想象的能力要求高，如果你的几何不太好，对以后的学习就业可能会造成一定影响，还有就是<strong>CAD</strong>，也就是用计算机画图，也是重点必须熟练掌握。</p>
+<p>而在大二的时候，你学习的侧重点就是各种力学——<strong>理论力学、材料力学、流体力学</strong>，还有两门专业课，如果你选择的是机械设计制造及其自动化，你的专业课就是机械设计和机械制造；如果是车辆工程，就是汽车理论。无论是哪一门专业，我都要强调的是，<strong>你的力学必须好</strong>，数学会根据公式算就行。<strong>如果你高考物理都不及格，或者是力学怎么学都学不会，我不建议你学机械工程</strong>。在你设计机械产品或者制造的时候，用的最多的就是力学分析，公式计算。</p>
+<p>而其他要学的科目根据不同的二级学科有所不同，如果是偏自动化的，会学模电数电、控制工程、复变函数、单片机等；如果是偏电气的，那么就会学电路、电磁场等；如果是偏制造和加工的就会学数控机床、精密仪器检测等。其实这个就是机械的发展趋势——<strong>复合专业</strong>。网上经常会说，<strong>机械不带电，饿死一大片</strong>，在找工作的时候，如果是单纯的设计岗位或者是加工岗，一般开到6k到8k就算比较高的了，而如果你会一些电气工程的知识，会自动化、数控编程的话，工资就可以上w。也就是说，<strong>你在选择机械工程的同时，也需要选好其下的二级学科</strong>，每一个学科学到的知识，都会转化为未来求职的工作要求。有的学校会在高考选专业的时候就确定，有的学校是在大一之后再进行专业分流，这方面你要多多注意，往往越好的机械二级学科越难越不好考。</p>
+<p>那么你工作的时候用的最多的是什么软件呢？一般来说机械工程的都要学习Solidworks与AutoCAD，前者在设计加工、绘图等都用的上，后者就是机械制图用的，车辆工程的要学rhnio和UG，嵌入式方向要学keil，机器人要学ROS等。我推荐你在确定你是否选择机械专业之前先把这两个软件下了并且在网上找视频学习（跟着做就行，不需要先学理论再画图），如果你不讨厌甚至有一点喜欢，那么就可以选；<strong>如果你感到无感甚至对枯燥的设计和绘图厌烦，那么就不要选</strong>。</p>
+<p>至于其他的科目，我的建议是，你根据你以后的求职方向选择性学习，因为学校里教的很多东西都过时了，不过机械还算是一个古老的学科，虽然落后了一点，但是核心的知识还在，只是你要根据时代的变化去补充你欠缺的能力和知识，以便在未来求职夺得先机。</p>
+<p>那么机械专业的工作环境是什么样子的呢？请自己在网上搜索<strong>金工实习</strong>的视频，那个地方大概率就是你以后工作的地方，设计岗会稍微好一点，但也只是好一点，你还是要随时到这个地方看你设计出来的产品的。这里我要强调的是，<strong>工作环境的污染程度和危险程度超乎你的想象</strong>。你知道有一种东西叫做碳纤维吗？如果你长期生活在碳纤维敞开的环境下，你的呼吸道会损伤，最严重的情况下就是呼吸道灼伤，导致以后呼吸的时候食道都会痛(真实案例)；工厂里面还有一个隐形的杀手是加工的噪音——机床刀具切割声、金属碰撞声、焊工电焊的声音等，预估环境分贝在80分贝左右，长期待下来你的听力一定会受损。你可能会说难道工厂不会发隔音耳罩吗？难道不会像精密工厂那样专门设置一个清洗间和防尘服供员工穿吗？孩子，这是制造业，不是内存厂，制造业的利润率本来就低，为了多挣点钱，只好委屈一下员工，耳罩是没有的，厂房是不打扫的，经常是24小时轮班制的，老板是没文化土财主的，骂声是难听的，宿舍是堪比陋室铭的，工厂饭堂是堪比潲水的。除非真心喜欢制造和习惯机油味的、迫于生计和技术水平不得不做的，我想不到还有什么样的人会去这样的地方。自从我第一次进入到这个地方，我就在想，如果要选择一种死法，我宁愿选择在电脑前猝死，也不愿死在满是灰尘和油污的厂房中。<strong>环境好的地方不是没有，仅限于北上广深</strong>，我建议选择这一行的人都尽量往这些地方跑，为了你的身体安全和健康，也为自己的前途命运着想，在二三线城市制造业是真的把员工当耗材的！</p>
+<p>最后我给你们解答一些常见的疑惑。</p>
+<p><strong>机械专业，越老越吃香</strong>：这其实只说了半截话，另一截是“<strong>前提是你真的喜欢</strong>”，不喜欢怎么可能支持你从事这个专业到老。</p>
+<p><strong>机械专业，工作不愁</strong>：模糊的表述，工作确实不愁，3k4k的在小县城多的是，一般就是搬运钢材、齿轮等，这种重体力活等你赶到三四十岁左右的时候你大概率就要被辞退了，你可能会说难道工厂还没有实现用机器人搬运吗？说句比较地狱的话，<strong>因为人工成本比机器人低，所以现在很多某些地方还在用人工搬运</strong>。</p>
+<p>其实我个人来说，最大的无奈就是机械的制造业本质——在工业克苏鲁的中国，机械在其中起到了中流砥柱的作用，也付出了难以想象的代价，请问中国制造是如何畅销全世界的，无非就是物美价廉，物美就是靠技术的提升，价廉就是靠压榨和大量生产，制造业的本质注定了整个行业的利润率低，能达到10%就算很好的了，很多时候都是赚的辛苦钱，老板、股东、CEO等要分走大部分，留给技工、工人的少之又少。如果你看过《大国工匠》系列记录片，你会发现，哪怕是这些在技术上精益求精甚至巅峰造极的人，哪怕已经攻克了一个又一个的难关，他们的待遇完全和付出不相匹配。如果把同样的努力和天赋发挥到金融、计算机等领域，他们的回报会是制造业的好几十倍。在你选择之前，你问问自己，你能接受这样的结果吗?你是一个把技术放在金钱、荣誉和地位之前的人吗？你是一个哪怕穷困潦倒依然热爱制作的那个少年吗？如果不是的话，还是选择其他相对轻松回报高点的专业吧。</p>
+<h1>计算机劝退</h1>
+<p>以下图片是节选自网上评论的，讲得基本到位。</p>
+<p><img src="https://files.seeusercontent.com/2026/04/06/1oCl/ed52185.jpg" alt="计算机专业劝退.jpg"></p>
+<p>如果你还想要确认你是否喜欢计算机。我给你布置一个任务。放心，这个任务对于哪怕没有学过计算机的人也能完成，只是看你有没有这方面的兴趣和特质。</p>
+<p>任务：请编程实现《Python编程：从入门到实践》这本书后面的外星人入侵的项目，并且将其推送到github上自己的仓库中，同时写一个README.md文件分别用中文和英文简要介绍这个项目。</p>
+<p>要求：你可以选择任意的编程语言实现，甚至可以选择其他的项目，只要复杂程度和这个项目差不多就行(用Python实现大概600行代码，对于没学过计算机的人来说算比较多的了)。你可以选择购买这本书，或者以其他的方式获取。要自己一行行编程(不准使用AI)，需要的环境自己配置，出了Bug自己修，必须能完整实现书中项目的功能。md是markdown语法，自己学。github自己注册，想办法登录和推送(必须是github，gitee不算），使用什么样的工具你自己找。</p>
+<p>好了，我等你一会儿，如果真是零基础要完成以上项目估计要至少三天到一周。</p>
+<p>做完了吗？没做完？不想做？好的你可以不用选这个专业了，<strong>这就是计算机专业以后要做的事情，并且只会比这个难</strong>。</p>
+<p>做完了？不错，你有学习计算机的重要的品质——<strong>独立解决问题的能力，善于搜索查找资料的能力，快速学习的能力，细心与坚持，有一定的英语水平，再加上对体制化的反感和对规则的突破</strong>。但是我还是要问你一些问题，你在心里回答就行，回答完了不用我多说你就知道你要不要选计算机了。</p>
+<p>你在做这个项目的时候感受到快乐了吗？是过程快乐还是结果快乐？</p>
+<p>你愿意一辈子活到老学到老吗？能够时刻保持对新知识和技术的好奇吗？</p>
+<p>你愿意一辈子和代码朝夕相处吗？哪怕35岁失业，身体被摧残，日复一日在电脑前坐着吗？</p>
+<p>好了，我的问题问完了，相信你有答案了。<strong>计算机确实是好专业，但仅限于热爱的人</strong>。</p>
 <h2 id="参考资料">参考资料</h2>
 <ol>
-<li>《The Rust Programming Language》v1</li>
-<li><a href="https://www.bilibili.com/video/BV1hp4y1k7SV/?share_source=copy_web&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">Rust编程语言入门教程（Rust语言/Rust权威指南配套）【已完结】</a></li>
+<li>《上海交通大学生存手册》</li>
+<li>B站up主框框大学相关专业讲解视频</li>
 </ol>
 ]]></content>
       <categories>
-        <category>rust</category>
+        <category>大学</category>
       </categories>
       <tags>
-        <tag>rust</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客系列（一）更新公告</title>
-    <url>/posts/blog-series-one/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/22/8KJE1CP3nTIDFWm.jpg" alt></p>
-<h1>hexo博客更新公告</h1>
-<div class="timeline green"><div class="timeline-item headline">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>2026</p>
-</div>
-        </div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>6-16</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>更新了【关于】和【清单】部分</li>
-</ol>
-</div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>6-13</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>优化了页脚展示部分</li>
-<li>优化了右侧栏目中的标签展示</li>
-</ol>
-</div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>4-23</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>首页添加了RSS订阅功能</li>
-<li>更改了网站图标</li>
-<li>所有文章添加了文前封面，便于RSS展示和阅读</li>
-</ol>
-</div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>4-18</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>留言系统已经从vercel迁移到netlify上，国内访问速度明显加快</li>
-<li>开启反垃圾系统，提升安全性</li>
-</ol>
-</div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>4-9</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><!-- timeline 4-15 -->
-<ol>
-<li>ICP、公安等已成功备案，并且添加在网站首页页脚处。</li>
-<li>优化了留言功能，现在可以正常接收到信息和机器人信息。</li>
-<li>使用了51LA的统计API，移除了不算子的统计脚本</li>
-</ol>
-</div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>4-9</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>将博客部署到阿里云的服务器上，并配置相应的域名，正在等待备案中</li>
-<li>优化了页脚和友链，符合备案规定</li>
-</ol>
-</div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>3-19</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>优化了上方菜单栏的布局和展示</li>
-<li>更新了站主公告，龙王考研回归(笑)</li>
-</ol>
-</div>
-      </div></div>
-<div class="timeline green"><div class="timeline-item headline">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>2025</p>
-</div>
-        </div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>6-1</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>魔改了页脚</li>
-<li>改变首页背景图像并添加雪花效果</li>
-</ol>
-</div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>5-31</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>首页添加了轮播图，移除了磁贴</li>
-<li>优化了侧边栏部分，修改了首页布局风格</li>
-<li>魔改并自定义了预加载动画</li>
-<li>优化了文章链接，不用冗余的数字作为链接</li>
-<li>移除了隐私用户政策</li>
-</ol>
-</div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>3-1</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>本blog从zeabur迁移到vercel并更换了一个域名，后续会找一个稳定的服务器。</li>
-</ol>
-</div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>2-14</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>butterfly主题从5.1.0更新到5.3.2版本(以后一年更新一次版本)</li>
-<li>美化了界面(魔改教程)</li>
-<li>将原来的文字显示部分作了宽屏适配</li>
-</ol>
-</div>
-      </div></div>
-<div class="timeline green"><div class="timeline-item headline">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>2024</p>
-</div>
-        </div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>11-9</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>在网页/privacy下添加了隐私用户政策</li>
-</ol>
-</div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>10-29</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>修复了手机端视频溢出显示部分的问题</li>
-<li>修改了几处笔误和显示问题。</li>
-<li>优化了所有博客的参考部分</li>
-</ol>
-</div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>10-26</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>butterfly主题从5.0.0更新到5.1.0版本</li>
-<li>优化了chart插件</li>
-<li>更新了一篇新博客</li>
-</ol>
-</div>
-      </div><div class="timeline-item">
-        <div class="timeline-item-title">
-          <div class="item-circle"><p>10-10</p>
-</div>
-        </div>
-        <div class="timeline-item-content"><ol>
-<li>butterfly主题从4.13.0更新到5.0.0版本</li>
-<li>首页添加了磁贴,修复了磁贴名字和描述不匹配的问题</li>
-<li>更新了留言板</li>
-<li>优化了搜索功能</li>
-<li>禁止B站视频自动播放</li>
-<li>更新了主页“关于”部分</li>
-<li>修复了几处笔误的问题</li>
-<li>优化了评论功能的选择</li>
-<li>添加了站点工具(谷歌与必应)，优化了文章的描述部分</li>
-<li>优化一下图片无法放大查看的问题</li>
-</ol>
-</div>
-      </div></div>
-<h2 id="未来更新内容">未来更新内容</h2>
-<h3 id="已更新内容">已更新内容</h3>
-<ul>
-<li>[x] 目前已主要确定S.EE作为图床，以后根据需要换成aliyun的OSS作为图床，<strong>需要配置其URL为自定义域名之后才能用</strong>，参考链接：<a href="https://blog.csdn.net/fsjwin/article/details/114644687">https://blog.csdn.net/fsjwin/article/details/114644687</a> 要花费一定的时间，如果成功就续费。</li>
-<li>[x] <strong>添加一些CDN加快图片加载速度和其他相关资源速度</strong>。<a href="https://blog.cpen.top/posts/9b5a2768.html">06_Hexo-elemecdn 加速 Butterfly 第三方资源 | Mycpen</a> 、<a href="https://blog.zhheo.com/p/790087d9.html#%E6%96%B0%E7%89%88butterfly">Butterfly CDN链接更改指南，替换jsdelivr提升访问速度 | 张洪Heo</a>  截止目前<strong>有相当一部分已经404了</strong></li>
-<li>[x] busuanzi的统计优化——已换成51La的统计</li>
-<li>[x] 换一个好一点的域名，比如com或者cn——已换成lloydkai.cn的域名</li>
-<li>[x] 部署到国内的服务器(优先阿里云)并备案。参考网站域名申请<a href="https://tech.yemengstar.com/hexo-tutorial-use-your-domain-beginner/">为HEXO绑定自己的域名</a></li>
-<li>[x] <a href="https://luckysusu.top/post/hexo_emoji.html">让hexo博客支持emoji表情</a></li>
-<li>[x] 评论系统的优化</li>
-<li>[x] todolist清单、【关于】部分优化展示</li>
-</ul>
-<h3 id="待更新内容">待更新内容</h3>
-<ul>
-<li>[ ] 子菜单展示内容；方法：通过基本的markdown语言和butterfly专有语法-标签外挂实现效果，建议写成总领式的文章或者展示页面。可以参考此博客<a href="https://blog.guole.fun/posts/butterfly-custom/#%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E8%BD%AE%E6%92%AD%E6%A8%A1%E5%9D%97">我的Blog美化日记——Hexo+Butterfly | Guo Le’s Blog</a> 里面的“volantis”部分，和这个<a href="https://www.huangshiqing.website/2022/11/03/HexoTagPlugins/">Hexo Built-in Tag Plugins (Hexo内置标签外挂) | Ofra Serendipity</a></li>
-<li>[ ] <strong>综合考虑是否需要将所有的图片转移到国内的图床中，比如阿里云的OSS</strong>。</li>
-<li>[ ] 学习并在博客中添加图表-对于本网站以chartjs的图表为主，对于精致的图表(比如数据分析)会用Echart.</li>
-</ul>
-<h2 id="debug经验">debug经验</h2>
-<p>目前由于butterfly的版本更新，导致以前的部分功能失效，建议<strong>先看官方文档，将对应过时的代码注释或者去除，没有的代码添加</strong>，然后再<strong>根据</strong>F12检查对应的板块，<strong>用前端的知识去搜查问题发生的地点和原因</strong>，然后再纠错。</p>
-<h2 id="hexo框架更新">hexo框架更新</h2>
-<p>参考此博客<a href="https://blog.zhheo.com/p/6d1f1f98.html">如何更新Hexo及插件的版本？如何更新主题版本？ | 张洪Heo (zhheo.com)</a></p>
-<p>简单来说就是先进入博客根目录然后在终端输入<code>npm update</code> ，确保node.js包是最新版本。然后输入<code>npm outdated</code> 看哪些插件已经过时，可以更新。然后修改根目录的package.json文件，将对应插件名称所对应的版本号更改为要更新的版本号。再在终端输入<code>npm install --save</code> 开始更新hexo及其插件，通过<code>hexo version</code> 查看是否已经更新</p>
-<h2 id="butterfly主题更新">butterfly主题更新</h2>
-<blockquote>
-<p>更新前记得留下blog快照</p>
-</blockquote>
-<p>官方文档：<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a></p>
-<p>从butterfly5.0.0版本开始，可以直接在hexo根目录下输入<code>npm update hexo-theme-butterfly</code></p>
-<p>如果不行，就在你的博客/themes/butterfly 根目录下打开git bash并输入<code>git pull</code> 即可更新</p>
-<p>建议以后更新博客直接在命令行输入<code>hexo cl;hexo g</code> 一键清除与生成，多个分号代表分别执行。</p>
-<h2 id="参考资料">参考资料</h2>
-<ol>
-<li><a href="https://hexo.io/zh-cn/docs/">hexo官方文档</a></li>
-<li><a href="https://butterfly.js.org/posts/ceeb73f/#%E7%B6%B2%E7%AB%99%E8%83%8C%E6%99%AF">butterfly主题官方文档</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>教程</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客系列（三）博客写作指南</title>
-    <url>/posts/blog-series-three/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/13/XLE3qtOQlyifzHC.jpg" alt></p>
-<h1>简介</h1>
-<p>在撰写博客的过程中，内容至关重要但不是唯一重要的因素，排版、图片、交互体验等视觉设计也同样需要关注。一个设计精美、易于阅读的博客会吸引更多读者，提升用户体验。本文将为你提供一套完整的 markdown 博客创作指南，从实战的角度帮助你写出既有深度又美观的博客文章。</p>
-<h1>准备工具</h1>
-<h2 id="写作工具">写作工具</h2>
-<p>个人比较推崇<strong>Typora</strong>这种简洁的支持<strong>markdown</strong>格式的编辑器，相比之下，obsidian的布局不利于专注于写作，notion的自定义布局和数据库这两大突出优势在markdown格式下会有损失，vscode依赖于插件。</p>
-<p>总之就是一句话:</p>
-<blockquote>
-<p>能让你心无旁骛地去写的编辑器就是最好的</p>
-</blockquote>
-<h2 id="博客引擎">博客引擎</h2>
-<p>本文基于hexo+butterfly的主题进行博客创作，但读者无须担心，博客创作更多的在于<strong>文章结构</strong>、<strong>词句修辞</strong>、<strong>排版和可读性</strong>方面下功夫，其他方面依赖博客引擎和前端特性的并不多，读者可以在CSDN、博客园、掘金社区等其他地方同样可以撰写和托管博客。</p>
-<h1>博客撰写讲解</h1>
-<h2 id="目录结构">目录结构</h2>
-<p>好的目录结构要梳理文章逻辑，如果是<strong>新闻热点点评类</strong>，就要能讲清楚事件发生的时间地点人物，发生原因及其分析，结论、启示或者经验教训；如果是<strong>技术分享类</strong>，就要说明技术的应用范围，原理，怎样配置技术所需的环境，阐明使用技术的效果等。这方面主要靠读者多看技术大佬的博客、优秀的公众号推文等，看他们的目录是如何区分的，只要能达到<strong>行云流水</strong>的效果就行，不需要在分级、格式方面过于讲究。</p>
-<p>可供参考的文章结构：大部分都是<strong>总-分-总</strong>结构</p>
-<ul>
-<li>提出问题-&gt;分析问题-&gt;解决问题-&gt;总结经验，技术问题分享。</li>
-<li>背景-&gt;思考-&gt;尝试-&gt;遇到的困难-&gt;解决方案-&gt;最后结果，问题分享</li>
-<li>摘要-&gt;简介-&gt;分支主题-&gt;总结，一般技术分享。</li>
-<li>是什么-原理-背景&gt;解决了什么问题-&gt;基本操作-&gt;同类对比-&gt;总结 ，适合新技术分享</li>
-</ul>
-<p>参考的目录结构如下，以markdown格式的代码块展示,这里<code>//</code>及其后面的内容代表注释</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 简介    </span></span><br><span class="line"><span class="section"># 一、准备工作 //一些环境配置，安装等，或者是解决问题的背景等</span></span><br><span class="line"><span class="section">## 1.centos安装  //以数字的形式合理分级，建议标题的层级不要超过四层</span></span><br><span class="line"><span class="section">## 2.idea解包</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 二、基本用法 //对于技术文章就像是语法书，对于问题就是发现问题，分析问题，</span></span><br><span class="line"><span class="section">## 1. 对页面的操作</span></span><br><span class="line"><span class="section">## 2. 1 初始化浏览器对象</span></span><br><span class="line"><span class="section">## 2. 2</span></span><br><span class="line"><span class="section">## ……</span></span><br><span class="line"><span class="section"># 三、高阶用法  //或者是多个解决方案</span></span><br><span class="line"><span class="section"># 总结  //对技术或者过程的总结，建议不要太长</span></span><br><span class="line"><span class="section"># 参考  //把你写作过程中参考的资料，或者是推荐的链接放在这里，便于读者后续学习</span></span><br><span class="line"><span class="section"># 开源协议  //如果使用的是hexo或者其他博客网站，撰写博客的时候会自动生成，不需要自己写</span></span><br></pre></td></tr></table></figure>
-<h3 id="标题">标题</h3>
-<p>取标题要注意几点</p>
-<ol>
-<li><strong>简洁直观</strong>：不仅仅是利于搜索引擎优化，更多的是便于读者和自己，读者可以通过标题判断博客的信息对于自己是否有效，作者可以根据标题了解自己博客的侧重方面。<strong>不要被国内电商式的标题所蒙蔽</strong>(比如“爆肝……”“震惊，百大up主齐聚一堂竟然是为……”)，虽然能带来流量，但是作者不太建议，这种标题就显得作者没有真才实学，只能靠眼球吸引读者，</li>
-<li><strong>关键词</strong>：标题一定要包含文章的高频词或者是重点词语，比如如果你写的是有关MySQL的学习知识分享，那么关键字就是“MySQL”，可能有“教程”等其他关键词，再用适当的句子结构(问句、陈述句等)将其组合为标题。比如组合为”MySQL学习指南(一)“</li>
-</ol>
-<p><strong>特殊</strong>:所有<strong>系列文章</strong>(比如MySQL学习笔记)的标题要一致，<strong>相关的</strong>可以不一致。标题+XX:XX为数字，不满两位用0替代;比如mysql01;标题+(序数词):比如mysql学习(一)</p>
-<h3 id="简介">简介</h3>
-<p>文章的标题和简要介绍一下文章，要解决的是什么问题</p>
-<p><strong>示例</strong>：Selenium是广泛使用的模拟浏览器运行的库，它是一个用于Web应用程序测试的工具。 Selenium测试直接运行在浏览器中，就像真正的用户在操作一样，并且支持大多数现代 Web 浏览器。下面就进入正式的学习阶段。</p>
-<h3 id="文章主体">文章主体</h3>
-<p>以下主要侧重于排版。</p>
-<ol>
-<li>段落：建议不要太长，最好保持在300字以内</li>
-<li>字体效果：用黑体强调重要词汇，用斜体或者下划线强调重要段落</li>
-<li>列表：恰当使用无序和有序列表，对于超过10个点的列表建议使用markdown里面的表格</li>
-<li>图片：如果图片能便于读者理解，减少文字量，可以使用。</li>
-<li>代码块：建议默认收起或者收缩，需要的时候读者点击即可全部展开。指明代码块对应的编程语言，不是的话要提前说明</li>
-<li>分割线：建议用在两个一级标题或者是两段长段落之间。</li>
-</ol>
-<p>注意事项</p>
-<ol>
-<li>所有的代码至少要在自己的电脑上或者对应的运行环境上运行，否则不写</li>
-<li>不易理解或者抽象的地方要用图解释，可以是GIF动图制作也可以是chartjs、echart等，注意不要泄漏私人信息。</li>
-<li>模棱两可或者自己不懂的不要轻易写，写的话注意叠甲。</li>
-</ol>
-<h2 id="超文本内容">超文本内容</h2>
-<p>这一部分主要涉及前端的特性，属于是锦上添花的内容，即使没有也不是特别影响文章的质量，就算《资本论》只有文字，也无可争议是最伟大的鸿篇巨著之一。</p>
-<p>常用的类型有：图片、动画(gif等)、视频、音频、表情、标签外挂、图标、链接等。</p>
-<h3 id="图表">图表</h3>
-<ol>
-<li><a href="https://excalidraw.com/">Excalidraw</a>：手绘风格的开源工具，适合绘制思维导图、流程图等。</li>
-</ol>
-<p><img src="https://s2.loli.net/2024/11/26/lvhXLijoyQYUnkb.png" alt="博客写作指南_01"></p>
-<ol start="2">
-<li><a href="https://mermaid.nodejs.cn/">Mermaid 中文网</a>：基于 Markdown 的流程图工具，可以生成流程图、时序图等。或者也可以使用<a href="https://app.diagrams.net/">draw.io</a>。主要侧重于计算机方面的知识图表，常用于UML统一建模语言。</li>
-</ol>
-<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
-    
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop HealthCheck
-        John-&gt;&gt;John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail!
-    John--&gt;&gt;Alice: Great!
-    John-&gt;&gt;Bob: How about you?
-    Bob--&gt;&gt;John: Jolly good!
-
-  </pre></div>
-<ol start="3">
-<li><a href="https://chartjs.cn/docs/latest/">Chart.js 中文网</a>：是一个用于创建动态图表的 JavaScript 库，适合做一些比较复杂的数据分析图。</li>
-</ol>
-<div class="chartjs-container chartjs-abreast" data-chartjs-id data-width="40%">
-            <pre class="chartjs-src" hidden>{
-    &quot;type&quot;: &quot;pie&quot;,
-    &quot;data&quot;: {
-        &quot;labels&quot;: [
-            &quot;编程&quot;,
-            &quot;音乐&quot;,
-            &quot;阅读&quot;,
-            &quot;游戏&quot;,
-            &quot;健身&quot;,
-            &quot;旅游&quot;
-        ],
-        &quot;datasets&quot;: [
-            {
-                &quot;label&quot;: &quot;喜爱指数&quot;,
-                &quot;data&quot;: [
-                    30,
-                    24,
-                    19,
-                    14,
-                    9,
-                    4
-                ],
-                &quot;backgroundColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.5)&quot;,
-                        &quot;rgba(54, 162, 235, 0.5)&quot;,
-                        &quot;rgba(255, 206, 86, 0.5)&quot;,
-                        &quot;rgba(75, 192, 192, 0.5)&quot;,
-                        &quot;rgba(153, 102, 255, 0.5)&quot;,
-                        &quot;rgba(255, 159, 64, 0.5)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 0.2)&quot;,
-                        &quot;rgba(54, 162, 235, 0.2)&quot;,
-                        &quot;rgba(255, 206, 86, 0.2)&quot;,
-                        &quot;rgba(75, 192, 192, 0.2)&quot;,
-                        &quot;rgba(153, 102, 255, 0.2)&quot;,
-                        &quot;rgba(255, 159, 64, 0.2)&quot;
-                    ]
-                },
-                &quot;borderColor&quot;: {
-                    &quot;dark-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ],
-                    &quot;light-mode&quot;: [
-                        &quot;rgba(255, 99, 132, 1)&quot;,
-                        &quot;rgba(54, 162, 235, 1)&quot;,
-                        &quot;rgba(255, 206, 86, 1)&quot;,
-                        &quot;rgba(75, 192, 192, 1)&quot;,
-                        &quot;rgba(153, 102, 255, 1)&quot;,
-                        &quot;rgba(255, 159, 64, 1)&quot;
-                    ]
-                }
-            }
-        ]
-    },
-    &quot;options&quot;: {
-        &quot;plugins&quot;: {
-            &quot;legend&quot;: {
-                &quot;labels&quot;: {
-                    &quot;color&quot;: {
-                        &quot;dark-mode&quot;: &quot;rgba(255, 255, 255, 0.8)&quot;,
-                        &quot;light-mode&quot;: &quot;rgba(0, 0, 0, 0.8)&quot;
-                    }
-                }
-            }
-        }
-    }
-}
-</pre>
-            <div class="chartjs-desc"><p>除了<strong>计算机编程</strong>外，我想不出还有其他让我感兴趣的工作。<br>
-我可以无中生有地创造出<strong>精美的范式</strong>和<strong>结构</strong>，<br>
-在此过程中也解决了无数的小谜团。<br>
-<span style="font-size:0.8em;color: var(--sep-secondtext);">I can’t think of any other job other than <strong>computer programming</strong> that interests me.<br>
-I can create <strong>beautiful paradigms</strong> and <strong>structures</strong> out of nothing,<br>
-Countless small mysteries are also solved in the process.</span></p></div>
-          </div>
-<h3 id="视频">视频</h3>
-<ol>
-<li>B站引用：打开网页版的bilibili，点击要分享的视频-“分享”-“嵌入代码”，然后粘贴到markdown文件内即可。参考如下</li>
-</ol>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
-    </iframe>
-</div>
-<h3 id="公式">公式</h3>
-<p>建议使用katex，或者是markdown本地的公式嵌入。</p>
-<p>参考教程<a href="https://freeopen.github.io/mathjax/">Markdown 数学公式指导手册 | Freeopen</a></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sin^2(\theta) + \cos^2(\theta) = 1
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1219em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8719em;"><span style="top:-3.1208em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">cos</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></p>
-<h3 id="表情符号">表情符号</h3>
-<ol>
-<li><a href="https://www.lddgo.net/common/emoticons">在线颜文字大全</a> ：与markdown兼容，基本不会有不显示等问题</li>
-<li><a href="https://www.emojiall.com/zh-hans/categories/A">表情包</a> ：注意typora的表情(格式为<code>:表情</code>)无法直接在hexo显示，需要用插件和配置解决(已经解决)</li>
-<li><a href="https://fontawesome.com/v4/icons/">图标</a>：适当的图标可以让人记忆犹新，见图思义。</li>
-</ol>
-<h3 id="交互式的组件">交互式的组件</h3>
-<p>比如butterfly中的button、图床等，由于不同的博客引擎涉及的组件不同，这里就不展开。建议读者不要舍本逐末，过度美化而忽视文章的内容。</p>
-<h2 id="总结与参考">总结与参考</h2>
-<ul>
-<li>
-<p>用一段话给文章内容作总结。</p>
-</li>
-<li>
-<p><strong>参考</strong>要注明来源，比如链接、转载出处，注意定期更新以防失效。</p>
-</li>
-</ul>
-<h2 id="参考资料">参考资料</h2>
-<ol>
-<li><a href="https://www.cnblogs.com/returntmp/p/17591866.html">【全方位解析】如何写好技术文章 - ReturnTmp - 博客园</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>hexo</tag>
+        <tag>大学</tag>
       </tags>
   </entry>
   <entry>
@@ -1554,8 +1618,8 @@ Countless small mysteries are also solved in the process.</span></p></div>
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>教程</tag>
         <tag>hexo</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -1763,72 +1827,8 @@ Countless small mysteries are also solved in the process.</span></p></div>
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>教程</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大学系列（一）建筑、机械工程以及计算机专业劝退</title>
-    <url>/posts/quit-profession/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/22/kRytd2FQg3VH9NG.jpg" alt></p>
-<h1>写在前面的话</h1>
-<p>建筑行业我是在大一的时候接触的，所以我对其的了解仅限于浅层次；机械工程我学习了三年，并且家里和亲戚都有相关的技术背景，我本人也多次去相关的工厂实习看访过，这部分我会多写一点；计算机是我目前学习的专业，我会从劝退和劝入的角度分别讲解。</p>
-<h1>建筑劝退</h1>
-<p>就中国国内的建筑专业来分的话，一般主要有以下二级专业，分别是建筑学、城乡规划和风景园林，由于我本人在专业分流之前就已经转走了，所以我只从这三个专业的共同点来分析。</p>
-<p>首先我先提一点，主要是针对<strong>先天性因素的</strong>，<strong>如果你是色弱或者是色盲，那么和绘画相关的专业你不能选，包括建筑专业</strong>，这个东西一般需要你事先在选专业之前充分了解的，一般会在高考之前会有一个体检，如果体检出有相关的遗传性因素，那么在选专业的时候就要排除，基因的缺陷会让你在从事本专业的时候处于劣势，无关努力，但也确实令人心酸，能做的就是及时止损，我就是这样。</p>
-<p>所有想要选择建筑专业的学生，我个人认为必须要回答以下三个问题，如果这三个问题不能肯定地回答，那么就目前时代的发展背景而言，我强烈不推荐选择。</p>
-<p><strong>第一，你有相当的美术基础吗？</strong></p>
-<p>这里的美术基础，指的是你至少了解和学习过50小时以上的素描(无论是结构素描还是完整的素描)，如果你参加过美术艺考，那种水平基本上就是建筑专业的入门门槛。</p>
-<p>以下我画的这个图就是结构素描还有完整素描的图(有点烂别介意，大概是这个样子)，如果你的绘画水平和我难分伯仲的话，我还是建议你算了吧😄。</p>
-<p><img src="https://files.seeusercontent.com/2026/04/05/nFj1/190db0d.jpg" alt="结构素描图.jpg"></p>
-<p><img src="https://files.seeusercontent.com/2026/04/05/1huP/dfa6d19.jpg" alt="素描图.jpg"></p>
-<p>因为在20年代之前，如果你报考的是建筑专业，或者你要转行到建筑专业，在入学之前是要进行考试的(或者是个人成果集)，考试的内容一般就是结构素描，如果不通过的话就会把你调剂到其他专业。但是时过境迁，建筑行业做梦都想不到中国的房价下降得如此之快，建筑专业一下子从以前的香饽饽变成了“路边一条”，基本上除了“建筑老八校”以外，不再对学生的美术基础作出要求，你以为是对学生好，实际上是坑害那些没学过美术的学生，<strong>建筑就是披着工科皮的艺术专业，建筑就是披着工科皮的艺术专业，建筑就是披着工科皮的艺术专业</strong>！这句话我要反复强调，在国外建筑学是给那些从艺术学院出来人学的，国内也是这样，你在大一的时候上的最多的课就是设计课，高等数学是不修的，力学是阉割版本的。不学高等数学，不搞实验的，天天画图的你说它是工科，鬼都不信。</p>
-<p><strong>第二，你热爱建筑绘画吗？</strong></p>
-<p>如果你不能肯定的回答说“热爱”那么就是讨厌，而且<strong>注意我的前缀词，必须是“建筑”或者”城市规划图“或者“风景”</strong>,这三个分别对应上面三个专业,喜欢画人物、漫画的不行，这两者走的不是一个绘画的路子。建筑绘画讲究的是符合规律和规则，空间感和宏伟，人物绘画偏向的是微观，你只要画过建筑和人物，你就会清楚的知道这两个的不同。</p>
-<p>以下我画的这个图就是建筑的图</p>
-<p><img src="https://files.seeusercontent.com/2026/04/05/7ylW/cf8ffe8.jpg" alt="钢笔画.jpg"></p>
-<p>这个图是钢笔画，如果你真的学建筑，后面还会学习油画、水彩、版印等，在入学的那一天，老师就会要求你们每周都要画3张A4的钢笔画或者是结构素描等，学了这门专业，你的余生都要与画笔为伴，<strong>如果没有热爱的话，真的很难支撑下去</strong>。</p>
-<p><strong>第三，你的家庭经济基础好吗？</strong></p>
-<p>这里的家庭经济基础，指的是家里能支撑你的学费，能够支持你读硕读博，能够每年支持大概2到3次左右的外出实习费用(一般是4000左右)，能够负担的起报绘画班、绘画材料的费用。</p>
-<p>首先我要强调的是，相比隐形开支，学费显得一无是处。你每一个学期至少需要参加一个外出实习，一般就是到某一个旅游景点或者是知名建筑、风景区那边写生，问题就是，学校是不会负担你的门票费和住宿费的，而偏偏就是这些风景区的门票费、住宿和交通费用最贵。当你要开始写生的时候，你会发现要买的东西真是多——铅笔钢笔圆珠笔、专门的素描纸、画线笔、T字尺、支架、摄影机、颜料、建模板材、502胶水、美工刀、数位板等等，这些开销每一次花费大概几百左右，但是这样的开销次数多，可能几周就有一次。如果你以后要读研，会发现有一个专门的考试科目叫做快图，要求你在6小时之内画满A1的图纸，如果你不报班，不经过长期艰苦的努力训练，是不可能在6小时以内画完的。</p>
-<p>最后我要强调的问题是，建筑专业的<strong>艺术本质</strong>。它的思维方式不是理工科思维，也不是文科思维，而是艺术生思维。<strong>完美按照黄金分割比的图纸不一定好看，但是好看的图纸一定是由那些有天赋的人画出来的</strong>，你懂我意思吗？艺术的本质是<strong>天赋</strong>，是只需要画几笔就知道灰与白应该怎样表现，看几次就知道光应该从哪里入射，哪里画得暗，在哪里画几笔会凸显立体感，在画画之前就在脑海中构思完整个图的全貌…  这些都会让理工科的人感到不知所措，<strong>艺术是没有标准答案的</strong>，很多时候就是一种感性的理解和表达。如果你去看建筑专业的作业答辩，你会发现整个过程没有对理论的讨论，都是“我觉得这样怎么怎么好看”，“表现出了建筑的宏伟与壮观“，“突出了人文风貌和风土气息”，换句话说，建筑适合充满想象力、有绘画能力、对美有独特的理解和思考，最好带有一点口才的人去学，发现了没？这些完美契合女生的气质，这也是建筑专业女生多的原因，而长期学习理工科的学生我不是特别建议，因为你们的思维早已是1+1=2的，无论怎么样你都不能接受1+1=3甚至1+1还可以等于4。</p>
-<h1>机械劝退</h1>
-<p>机械在当下这个时间段可以说是T1专业了，可以和计算机、电气等专业结合，工作是不用愁的，只是你愿不愿意去做。上至高级技工，下至钢板搬运工，在哪里都可以充分就业。不过在选择这个专业之前，我简要的介绍你要学习的东西、工作的环境和未来的趋势。</p>
-<p>目前中国的机械工程是一级学科，一级学科下面还有许多的二级学科，比如机械设计制造及其自动化、车辆工程、智能制造、材料工程、汽车服务、机器人工程等。二级学科有很多，不同的学校有不同侧重，比如南方的机械一般侧重轻工业、北方的侧重重工业，国防相关的侧重军工、北上广深侧重机器人等。机械能做的事情很多，要学的东西也很多，所以需要有所侧重。</p>
-<p>通常来说，机械工程(这里指的是传统的机械，也就是不带“电”)在大一的时候要学<strong>机械制图</strong>，这个是重中之重，无论你是干低端的加工制造，还是高端的数控机床、机器人，你都需要认真学习，具体长什么样你可以在网上看，我要提醒的是这门课程对空间想象的能力要求高，如果你的几何不太好，对以后的学习就业可能会造成一定影响，还有就是<strong>CAD</strong>，也就是用计算机画图，也是重点必须熟练掌握。</p>
-<p>而在大二的时候，你学习的侧重点就是各种力学——<strong>理论力学、材料力学、流体力学</strong>，还有两门专业课，如果你选择的是机械设计制造及其自动化，你的专业课就是机械设计和机械制造；如果是车辆工程，就是汽车理论。无论是哪一门专业，我都要强调的是，<strong>你的力学必须好</strong>，数学会根据公式算就行。<strong>如果你高考物理都不及格，或者是力学怎么学都学不会，我不建议你学机械工程</strong>。在你设计机械产品或者制造的时候，用的最多的就是力学分析，公式计算。</p>
-<p>而其他要学的科目根据不同的二级学科有所不同，如果是偏自动化的，会学模电数电、控制工程、复变函数、单片机等；如果是偏电气的，那么就会学电路、电磁场等；如果是偏制造和加工的就会学数控机床、精密仪器检测等。其实这个就是机械的发展趋势——<strong>复合专业</strong>。网上经常会说，<strong>机械不带电，饿死一大片</strong>，在找工作的时候，如果是单纯的设计岗位或者是加工岗，一般开到6k到8k就算比较高的了，而如果你会一些电气工程的知识，会自动化、数控编程的话，工资就可以上w。也就是说，<strong>你在选择机械工程的同时，也需要选好其下的二级学科</strong>，每一个学科学到的知识，都会转化为未来求职的工作要求。有的学校会在高考选专业的时候就确定，有的学校是在大一之后再进行专业分流，这方面你要多多注意，往往越好的机械二级学科越难越不好考。</p>
-<p>那么你工作的时候用的最多的是什么软件呢？一般来说机械工程的都要学习Solidworks与AutoCAD，前者在设计加工、绘图等都用的上，后者就是机械制图用的，车辆工程的要学rhnio和UG，嵌入式方向要学keil，机器人要学ROS等。我推荐你在确定你是否选择机械专业之前先把这两个软件下了并且在网上找视频学习（跟着做就行，不需要先学理论再画图），如果你不讨厌甚至有一点喜欢，那么就可以选；<strong>如果你感到无感甚至对枯燥的设计和绘图厌烦，那么就不要选</strong>。</p>
-<p>至于其他的科目，我的建议是，你根据你以后的求职方向选择性学习，因为学校里教的很多东西都过时了，不过机械还算是一个古老的学科，虽然落后了一点，但是核心的知识还在，只是你要根据时代的变化去补充你欠缺的能力和知识，以便在未来求职夺得先机。</p>
-<p>那么机械专业的工作环境是什么样子的呢？请自己在网上搜索<strong>金工实习</strong>的视频，那个地方大概率就是你以后工作的地方，设计岗会稍微好一点，但也只是好一点，你还是要随时到这个地方看你设计出来的产品的。这里我要强调的是，<strong>工作环境的污染程度和危险程度超乎你的想象</strong>。你知道有一种东西叫做碳纤维吗？如果你长期生活在碳纤维敞开的环境下，你的呼吸道会损伤，最严重的情况下就是呼吸道灼伤，导致以后呼吸的时候食道都会痛(真实案例)；工厂里面还有一个隐形的杀手是加工的噪音——机床刀具切割声、金属碰撞声、焊工电焊的声音等，预估环境分贝在80分贝左右，长期待下来你的听力一定会受损。你可能会说难道工厂不会发隔音耳罩吗？难道不会像精密工厂那样专门设置一个清洗间和防尘服供员工穿吗？孩子，这是制造业，不是内存厂，制造业的利润率本来就低，为了多挣点钱，只好委屈一下员工，耳罩是没有的，厂房是不打扫的，经常是24小时轮班制的，老板是没文化土财主的，骂声是难听的，宿舍是堪比陋室铭的，工厂饭堂是堪比潲水的。除非真心喜欢制造和习惯机油味的、迫于生计和技术水平不得不做的，我想不到还有什么样的人会去这样的地方。自从我第一次进入到这个地方，我就在想，如果要选择一种死法，我宁愿选择在电脑前猝死，也不愿死在满是灰尘和油污的厂房中。<strong>环境好的地方不是没有，仅限于北上广深</strong>，我建议选择这一行的人都尽量往这些地方跑，为了你的身体安全和健康，也为自己的前途命运着想，在二三线城市制造业是真的把员工当耗材的！</p>
-<p>最后我给你们解答一些常见的疑惑。</p>
-<p><strong>机械专业，越老越吃香</strong>：这其实只说了半截话，另一截是“<strong>前提是你真的喜欢</strong>”，不喜欢怎么可能支持你从事这个专业到老。</p>
-<p><strong>机械专业，工作不愁</strong>：模糊的表述，工作确实不愁，3k4k的在小县城多的是，一般就是搬运钢材、齿轮等，这种重体力活等你赶到三四十岁左右的时候你大概率就要被辞退了，你可能会说难道工厂还没有实现用机器人搬运吗？说句比较地狱的话，<strong>因为人工成本比机器人低，所以现在很多某些地方还在用人工搬运</strong>。</p>
-<p>其实我个人来说，最大的无奈就是机械的制造业本质——在工业克苏鲁的中国，机械在其中起到了中流砥柱的作用，也付出了难以想象的代价，请问中国制造是如何畅销全世界的，无非就是物美价廉，物美就是靠技术的提升，价廉就是靠压榨和大量生产，制造业的本质注定了整个行业的利润率低，能达到10%就算很好的了，很多时候都是赚的辛苦钱，老板、股东、CEO等要分走大部分，留给技工、工人的少之又少。如果你看过《大国工匠》系列记录片，你会发现，哪怕是这些在技术上精益求精甚至巅峰造极的人，哪怕已经攻克了一个又一个的难关，他们的待遇完全和付出不相匹配。如果把同样的努力和天赋发挥到金融、计算机等领域，他们的回报会是制造业的好几十倍。在你选择之前，你问问自己，你能接受这样的结果吗?你是一个把技术放在金钱、荣誉和地位之前的人吗？你是一个哪怕穷困潦倒依然热爱制作的那个少年吗？如果不是的话，还是选择其他相对轻松回报高点的专业吧。</p>
-<h1>计算机劝退</h1>
-<p>以下图片是节选自网上评论的，讲得基本到位。</p>
-<p><img src="https://files.seeusercontent.com/2026/04/06/1oCl/ed52185.jpg" alt="计算机专业劝退.jpg"></p>
-<p>如果你还想要确认你是否喜欢计算机。我给你布置一个任务。放心，这个任务对于哪怕没有学过计算机的人也能完成，只是看你有没有这方面的兴趣和特质。</p>
-<p>任务：请编程实现《Python编程：从入门到实践》这本书后面的外星人入侵的项目，并且将其推送到github上自己的仓库中，同时写一个README.md文件分别用中文和英文简要介绍这个项目。</p>
-<p>要求：你可以选择任意的编程语言实现，甚至可以选择其他的项目，只要复杂程度和这个项目差不多就行(用Python实现大概600行代码，对于没学过计算机的人来说算比较多的了)。你可以选择购买这本书，或者以其他的方式获取。要自己一行行编程(不准使用AI)，需要的环境自己配置，出了Bug自己修，必须能完整实现书中项目的功能。md是markdown语法，自己学。github自己注册，想办法登录和推送(必须是github，gitee不算），使用什么样的工具你自己找。</p>
-<p>好了，我等你一会儿，如果真是零基础要完成以上项目估计要至少三天到一周。</p>
-<p>做完了吗？没做完？不想做？好的你可以不用选这个专业了，<strong>这就是计算机专业以后要做的事情，并且只会比这个难</strong>。</p>
-<p>做完了？不错，你有学习计算机的重要的品质——<strong>独立解决问题的能力，善于搜索查找资料的能力，快速学习的能力，细心与坚持，有一定的英语水平，再加上对体制化的反感和对规则的突破</strong>。但是我还是要问你一些问题，你在心里回答就行，回答完了不用我多说你就知道你要不要选计算机了。</p>
-<p>你在做这个项目的时候感受到快乐了吗？是过程快乐还是结果快乐？</p>
-<p>你愿意一辈子活到老学到老吗？能够时刻保持对新知识和技术的好奇吗？</p>
-<p>你愿意一辈子和代码朝夕相处吗？哪怕35岁失业，身体被摧残，日复一日在电脑前坐着吗？</p>
-<p>好了，我的问题问完了，相信你有答案了。<strong>计算机确实是好专业，但仅限于热爱的人</strong>。</p>
-<h2 id="参考资料">参考资料</h2>
-<ol>
-<li>《上海交通大学生存手册》</li>
-<li>B站up主框框大学相关专业讲解视频</li>
-</ol>
-]]></content>
-      <categories>
-        <category>大学</category>
-      </categories>
-      <tags>
-        <tag>大学</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -2089,107 +2089,6 @@ Countless small mysteries are also solved in the process.</span></p></div>
       </tags>
   </entry>
   <entry>
-    <title>大学系列（二）考研经验帖</title>
-    <url>/posts/postgraduate-on-experience/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/13/nTGQsyz47qmcHhx.jpg" alt></p>
-<h1>个人背景</h1>
-<p>本人为双非的应届生，由于自己职业规划不明确，直到大二下才确定自己的职业发展目标，自觉走机械这条路走不通，选择跨考计算机。<br>
-考虑到本人是双非院校+跨考debuff，就选择了广州的211——华南师范大学。初试390，一战上岸计算机学院软件工程学硕。</p>
-<p>在本科期间没有科研经历，只有一个蓝桥杯省级二等奖，相当于没有，虽然有奖学金，但双非的成绩懂得都懂。年级排名前20%，六级500出头，有一定的学习基础。在大二的时候跟着网上的资源自学了一些C++、数据库、前端、Linux等，对408有一定的了解，至少不算是完全没学过，<strong>我个人认为这是我同一些跨考计算机同辈们最大的不同——我是认真学了一年计算机之后才作出的跨考决定，而不是简单的出于对本专业的厌恶或者是对计算机高薪的向往而作出的选择</strong>。</p>
-<h1>择校经验</h1>
-<p>这部分我给不了多少经验，我当时就想着如果要在计算机这一行发展，那么就只能去北上广深，对我来说湖北都是偏北方，所以我只考虑广州的学校，然后结合自己的背景，选择了一个偏保险的211，而广州只有暨南和华师这两个211。暨南是偏文科的，而且我要报考的是偏软件方向，而暨南没有，最后排除法就选择了华南师范大学。</p>
-<h1>初试复习经验</h1>
-<h2 id="政治">政治</h2>
-<p>我在九月之前没有碰过政治，大量实践案例证明9月开始完全来得及，就我身边备考的那些人都是从10月开始复习政治，最后也考了70多，所以如果学习任务紧张的话，就不要在9月之前开政治，开了也没用。</p>
-<p>我的学习路线是，先过一遍徐涛的强化课，最值得听的就是马原、毛概，历史学得好的不用看史纲，道法和新思想看视频意义不大，考场上都是考语感和理解的选择题。然后用小程序刷1000题、米鹏、腿姐的选择题，过了两遍背诵手册，最后刷肖四肖八选择题，米鹏六套卷，真题就上考场了。</p>
-<p><strong>考后复盘</strong></p>
-<ol>
-<li>1000题更侧重于知识的全面复习，如果时间紧张确实没什么必要做。</li>
-<li>真题很少出帽子题，更多的情况下是结合时政考你对某个知识的理解，在某种意义上就是靠语感选的，所以没有必要花大量时间在背诵手册上，眼睛过几遍就差不多了.</li>
-<li>肖四前两套一定要背，不一定能压对，但是至少能让你有一定的语料，有话可写。后两套意义不大，我当时没有背，最后考试的时候发现真题考的主要就是前两套题目。</li>
-<li>真题一定要做，而且要总结错误原因，比如绝对化、换主语等，真题是和模拟题不一样的。</li>
-<li>在考前几天最好完整练习一套试卷，一般来说选择题在30min左右，大题每一个小问12-14min，一定要严格限制在14min以内，否则在考场上很有可能写不完。</li>
-</ol>
-<p>还有一个注意事项是，考场上政治考试的答题卡比你网上买的要稍微大一点，练习的时候按照自购的答题卡限制范围就没问题。</p>
-<p>还有一个tip是：倒数第二大题道德与法治的答题范围大概是其他题目的3/4,所以你在背诵的时候这部分可以少背一点(笑)</p>
-<h2 id="英语">英语</h2>
-<p><strong>单词</strong></p>
-<p>个人推荐用软件来背单词，不需要买单词书，也不要自己搞一个什么艾宾浩森遗忘曲线图表、乱七八糟的笔记本，直接刷背单词就行了。</p>
-<p>在背单词的时候尽量看句子回答，就实际情况而言，<strong>大部分人不是不知道这个单词是什么意思，而是不知道在这个句子里面单词是什么意思</strong>，脱离句子背单词，就是无根之木。</p>
-<p><strong>三小门</strong></p>
-<p>这部分我是看的宋逸轩老师的网课，我建议是看老师的方法论，跟着先做几道题，剩下的就是自己限时实战做题。没必要花大量时间在这上面，在考场上这三部分大概率你是在最后1小时左右的时候写的，能够拿到及格分就是胜利。你像翻译这部分，不仅考英语，还考语文表达水平，这些都不是一朝一夕能提升的，能够短期提升的就是考试技巧和方法。</p>
-<p><strong>阅读</strong></p>
-<p>这部分我看的是唐迟老师的阅读方法论，唐迟老师的课有优点也有缺点，优点是对于一个题目能够从多个角度(主要是逻辑)去分析为什么这样选，确保选择的肯定性和正确性，缺点就是这个方法在某种意义上是<strong>建立在能够全文阅读并且大概理解的基础上的</strong>，如果你没有这种能力，可能唐迟老师不太适合你，一般我就建议基础差一点的跟颉斌斌老师学方法。</p>
-<p>英语的真题是最重要的，建议每天都练习一套阅读，限制在18min左右。</p>
-<p>至于作文，我推荐基础一般的跟石雷鹏，基础好的跟王晶婷，在大概九月份的时候开作文，每隔几天练习小作文或者大作文。到考前哪怕脑子没有记住，手也能记住。虽然大部分人吐槽石雷鹏的作文模板过于简单，我推荐他还是因为这个写作思路是通用的，你完全可以沿用相同的思路用不同的语法、句子来写，我自己就是用石雷鹏的思路，写王晶婷的句子。</p>
-<p>至于时间，一般来说小作文18min，大作文36min，实际上如果平时练熟了的话大作文可以在25min左右写完，多出来的时间可以用于阅读，但是建议不要超过时间，否则后面就没有时间写三小门了。</p>
-<p>考场的作答顺序，我推荐先写前两篇阅读，然后写小作文，再两篇阅读，再大作文，三小门，最后写完形。让写作和阅读交错避免疲劳。</p>
-<h2 id="数学">数学</h2>
-<p><strong>基础阶段</strong></p>
-<p>我个人是非常推荐张宇🐙老师的高数18讲，讲的非常仔细。有些知识武忠祥老师没有讲但是张宇老师讲了，比如点绕曲线得到曲面方程的求法。</p>
-<p>线性代数我全程跟着李永乐老师，但是就考研的趋势来看，最好还加上张宇的线代作为补充。</p>
-<p>概率论与数理统计我非常推荐跟方浩，当你学了“刚好遇见你”求卷积，高山看海求复合期望的时候，就会意识到这些方法有多么巧妙。</p>
-<p>张宇老师有一点可能不太好，就是有许多的二级结论和超纲的知识点，实际上在考场上用不到多少，很多都是事后的角度补充知识点，而且书写得太厚，容易把把握不到重点。</p>
-<p><strong>强化阶段</strong></p>
-<p>高数部分我强烈推荐武忠祥老师，对于知识、考点和方法的总结堪称一绝，我确实学到了许多的技巧和知识，也应用到了考场上。</p>
-<p>张宇的课就是大力出奇迹，不管什么题，都是从定义、知识出发一步步解答，如果想考高分推荐张宇。</p>
-<p>我推荐的做题册就是880和660,1000题太有张宇的风格，660是用来针对选填的，880非常贴近真题，因为很多就是真题的改编，当然也有很多题很难，不要灰心，一点点刷，反复多做几次，重要的是知识点而不是正确率。</p>
-<p><strong>冲刺阶段</strong></p>
-<p>这部分我在10月的时候开始做真题，注意在21年左右的时候是一个分水岭，前面的都是8选择6填空8大题，后面改革变成10选择6填空6大题，选填占80分。所以10-20年的可以做，零几年的选择做，重点是21年之后的，反复做。</p>
-<p>在写完之后可以适当刷模拟题，主要是模拟考试情况，我个人推荐的选择题是李六，合工大有点过于难了，但是用选填查漏补缺还可以。</p>
-<p>就考试情况来看，最最最重要的就是计算能力，很多人就是知识知道，但就是算不对，5分10分就没有了，一定在平时的时候练习限时做题目，不仅要算的快，而且要算的对。</p>
-<h2 id="给跨考生的建议">给跨考生的建议</h2>
-<p>首先，肯定你对计算机的热爱和敢于挑战的勇气，11408可是死亡组合，能和它相比的好像只有电气。</p>
-<p>其次，在你复习之前，我有一些建议想和你说。</p>
-<p><strong>408虽然看起来只有4本，但实际上并非如此</strong>。</p>
-<p><strong>数据结构是默认你会C语言、C++的</strong>，虽然老师说考试只是涉及到C基本的语法，但是2025年考的内存分区，对于计算机的人来说在学C语言、Java的时候老师一定会提到，但是书上你是找不到知识点的，也就是说，<strong>408还会考计算机学生的基本素养</strong>，你要做的就是在备考前和备考时多多学习计算机的基本知识。</p>
-<p><strong>计算机组成原理是建立在数字电路和汇编语言的基础上的</strong>，因为我是机械偏控制方向的，所以我都学过。如果你还没有学过，建议还是先学习一下这两门课程，否则看计组真的是在看天书。数字电路看一下速成课就差不多了，汇编建议跟王爽老师的《汇编语言》学，大概了解即可。</p>
-<p>操作系统对于没有接触过基础架构的人来说更是抽象无比，我的建议是，可以跟着黑马快速学习和体验一下Linux操作系统，对内存管理、文件管理、进程等有一个感性的认识，这样再学操作系统才不会将大量的时间投入到概念的背诵，而是从底层逻辑明白这项技术为什么诞生，解决了什么样的问题。</p>
-<p>计算机网络我建议跟湖科大，讲得一绝。至于做题我建议看王道咸鱼的“骚图”，一步步从底层讲这个数据是如何封装、选择、发送、应答和接收的。</p>
-<p>如果你还有余力，我建议还可以学习离散数学和编译原理，主要是针对数据结构的选择题和应用题。</p>
-<p>我的备考路线是：从三月份开始，第一轮跟着王道视频过一遍，然后写课后选择题，第二轮自己把书看一遍，自己画思维导图、看书和自己讲解知识点，然后把一轮的错题再做一遍，尝试做大题，在暑假的时候看王道的强化课。10月的时候跟湖科大的每日一题，用checklist记录遗忘的知识点并且复习，每天花4小时左右，一天学习数据结构和计算机网络，一天学习计算机组成原理和操作系统，这样不容易遗忘。</p>
-<p>最后两个月一遍用真题模拟，一边做了王道和竟成的模拟卷，个人觉得王道的pv大题、选择，还有竟成的选择还是值得做的，主要是查漏补缺。</p>
-<p><strong>考后复盘</strong></p>
-<ol>
-<li>每年408选择都会出一些王道书上没有的知识点，有时候并不算超纲，但是对于我这种跨考的来说，光是过完这四本书就竭尽全力了，没有多余的时间在读原教材上，所以建议对分数要求不高的不用花时间在回归教材上。对着大纲复习犹如海底捞针。</li>
-<li>王道的课后大题除了pv的基本上没必要做，就只做真题</li>
-<li>王道的强化课值得看，咸鱼会讲相关的知识给你串一遍，让你有一定的系统思维和知识贯通的感觉，结合他们的卷子和打卡表复习。</li>
-<li><strong>408目前的趋势是：题目越来越难，大题字数越来越多</strong>。40个选择和7个大题要想在3小时写完是相当紧张的，平时就要限时写选择(1.5min一个),大题大概16-18min，而且也极其考验考生的阅读水平、知识迁移和计算机基本功的能力，可以这么说，以后跨考生会越来越难，这应该是国家的战略需要——高水平的计算机人才。</li>
-</ol>
-<h1>总结复盘</h1>
-<h2 id="学习时间的合理规划">学习时间的合理规划</h2>
-<p>在2-6月的时候，我基本上是7.30开始学数学，学4小时左右，吃饭+午休，然后下午1：00到5:30学4小时左右在408上，晚饭，再学2个小时数学，然后英语两个小时。一天下来就是12小时。基本没有放假休息。后面果然身体扛不住了，暑假回家休息了一个月，这期间每天学10小时左右。然后从9月开始学习时间在11小时上下，一直到考前。</p>
-<p>我建议是学习时间在10-12小时，一周最好休一天或者一个时间段，否则身体一定扛不住的。</p>
-<p>同时，建议没有必要的时候少带耳机等，我就是因为看视频听音乐带耳机过多，导致后期出现了耳鸣，一度想要放弃。好在最后还是缓解了。</p>
-<p>我想说的是，<strong>适度原则，违背客观规律只会顾此失彼，得不偿失</strong>，当你的身体无法支撑你学习的时候，请马上停止，务必休息！考研只是一条路，但是生命只有一次！</p>
-<h2 id="学习方法的复盘">学习方法的复盘</h2>
-<p>个人认为比较好的学习方法是checklist，也就是回顾式复习——每一次的复习不是都要从第一章开始，而是从最薄弱的地方开始</p>
-<p>示例如下，</p>
-<p><img src="https://files.seeusercontent.com/2026/04/10/vr4U/_checklist_001.png" alt="考研经验帖_checklist_001"></p>
-<p>也就是每天学习的时候把自己感觉比较困难的、易错的知识写成“待办”事项，然后学习之前就把checklist拿出来，对着题目用自己的话回答，如果答出来就勾选上并再过几天复习一次，复习时间间隔依次增大，如果答不上来就标记并适当增加复习次数，直到自己能流畅回答再开始下一个的学习，通过这个方法，我不仅记住了很多知识，并且学会了深入思考问题，让我在面对难题的时候游刃有余。</p>
-<p>或者用图画的形式学习和复习知识，如下所示，<a href="http://xn--draw-p85fj2aw57icbzartcuw4g.io">使用的软件是draw.io</a>。</p>
-<p><img src="https://files.seeusercontent.com/2026/04/10/faD1/_.jpg" alt="考研经验帖_函数栈帧"></p>
-<p>408的知识很多很杂，你需要的不是一字不落的将所有内容背下来，而是用自己的方式理解并且用自己的话表达出来，图画+文字就是形和数的结合，前者直观后者入微，当你能像这样画出知识并且给自己或者他人讲一遍的时候，会记得又快又牢，这个方法的原理就是学习的金字塔——讲授给他人时知识的留存率是70%，而看视频看书知识的留存率是10%，所以在复习的时候可以多多尝试将知识讲给他人听，如果能够让那些不懂计算机的人都听懂了， 那么你才算是真的懂了。</p>
-<h2 id="参考资料">参考资料</h2>
-<ol>
-<li>《基础三十讲》，张宇</li>
-<li>《高等数学辅导讲义》，武忠祥</li>
-<li>《线性代数辅导讲义》，李永乐</li>
-<li>王道计算机考研教育</li>
-<li>《阅读的逻辑》，唐迟</li>
-<li>《肖秀荣四套卷》，肖秀荣</li>
-<li>《李林880》，李林</li>
-</ol>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>大学</tag>
-        <tag>考研</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>大数据系列（一）数据分析工具superset安装(version:0.381)</title>
     <url>/posts/superset-install/</url>
     <content><![CDATA[<p><img src="https://s2.loli.net/2024/06/10/R21dguZMKpAPhNf.png" alt></p>
@@ -2305,6 +2204,107 @@ Countless small mysteries are also solved in the process.</span></p></div>
       </categories>
       <tags>
         <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大学系列（二）考研经验帖</title>
+    <url>/posts/postgraduate-on-experience/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/13/nTGQsyz47qmcHhx.jpg" alt></p>
+<h1>个人背景</h1>
+<p>本人为双非的应届生，由于自己职业规划不明确，直到大二下才确定自己的职业发展目标，自觉走机械这条路走不通，选择跨考计算机。<br>
+考虑到本人是双非院校+跨考debuff，就选择了广州的211——华南师范大学。初试390，一战上岸计算机学院软件工程学硕。</p>
+<p>在本科期间没有科研经历，只有一个蓝桥杯省级二等奖，相当于没有，虽然有奖学金，但双非的成绩懂得都懂。年级排名前20%，六级500出头，有一定的学习基础。在大二的时候跟着网上的资源自学了一些C++、数据库、前端、Linux等，对408有一定的了解，至少不算是完全没学过，<strong>我个人认为这是我同一些跨考计算机同辈们最大的不同——我是认真学了一年计算机之后才作出的跨考决定，而不是简单的出于对本专业的厌恶或者是对计算机高薪的向往而作出的选择</strong>。</p>
+<h1>择校经验</h1>
+<p>这部分我给不了多少经验，我当时就想着如果要在计算机这一行发展，那么就只能去北上广深，对我来说湖北都是偏北方，所以我只考虑广州的学校，然后结合自己的背景，选择了一个偏保险的211，而广州只有暨南和华师这两个211。暨南是偏文科的，而且我要报考的是偏软件方向，而暨南没有，最后排除法就选择了华南师范大学。</p>
+<h1>初试复习经验</h1>
+<h2 id="政治">政治</h2>
+<p>我在九月之前没有碰过政治，大量实践案例证明9月开始完全来得及，就我身边备考的那些人都是从10月开始复习政治，最后也考了70多，所以如果学习任务紧张的话，就不要在9月之前开政治，开了也没用。</p>
+<p>我的学习路线是，先过一遍徐涛的强化课，最值得听的就是马原、毛概，历史学得好的不用看史纲，道法和新思想看视频意义不大，考场上都是考语感和理解的选择题。然后用小程序刷1000题、米鹏、腿姐的选择题，过了两遍背诵手册，最后刷肖四肖八选择题，米鹏六套卷，真题就上考场了。</p>
+<p><strong>考后复盘</strong></p>
+<ol>
+<li>1000题更侧重于知识的全面复习，如果时间紧张确实没什么必要做。</li>
+<li>真题很少出帽子题，更多的情况下是结合时政考你对某个知识的理解，在某种意义上就是靠语感选的，所以没有必要花大量时间在背诵手册上，眼睛过几遍就差不多了.</li>
+<li>肖四前两套一定要背，不一定能压对，但是至少能让你有一定的语料，有话可写。后两套意义不大，我当时没有背，最后考试的时候发现真题考的主要就是前两套题目。</li>
+<li>真题一定要做，而且要总结错误原因，比如绝对化、换主语等，真题是和模拟题不一样的。</li>
+<li>在考前几天最好完整练习一套试卷，一般来说选择题在30min左右，大题每一个小问12-14min，一定要严格限制在14min以内，否则在考场上很有可能写不完。</li>
+</ol>
+<p>还有一个注意事项是，考场上政治考试的答题卡比你网上买的要稍微大一点，练习的时候按照自购的答题卡限制范围就没问题。</p>
+<p>还有一个tip是：倒数第二大题道德与法治的答题范围大概是其他题目的3/4,所以你在背诵的时候这部分可以少背一点(笑)</p>
+<h2 id="英语">英语</h2>
+<p><strong>单词</strong></p>
+<p>个人推荐用软件来背单词，不需要买单词书，也不要自己搞一个什么艾宾浩森遗忘曲线图表、乱七八糟的笔记本，直接刷背单词就行了。</p>
+<p>在背单词的时候尽量看句子回答，就实际情况而言，<strong>大部分人不是不知道这个单词是什么意思，而是不知道在这个句子里面单词是什么意思</strong>，脱离句子背单词，就是无根之木。</p>
+<p><strong>三小门</strong></p>
+<p>这部分我是看的宋逸轩老师的网课，我建议是看老师的方法论，跟着先做几道题，剩下的就是自己限时实战做题。没必要花大量时间在这上面，在考场上这三部分大概率你是在最后1小时左右的时候写的，能够拿到及格分就是胜利。你像翻译这部分，不仅考英语，还考语文表达水平，这些都不是一朝一夕能提升的，能够短期提升的就是考试技巧和方法。</p>
+<p><strong>阅读</strong></p>
+<p>这部分我看的是唐迟老师的阅读方法论，唐迟老师的课有优点也有缺点，优点是对于一个题目能够从多个角度(主要是逻辑)去分析为什么这样选，确保选择的肯定性和正确性，缺点就是这个方法在某种意义上是<strong>建立在能够全文阅读并且大概理解的基础上的</strong>，如果你没有这种能力，可能唐迟老师不太适合你，一般我就建议基础差一点的跟颉斌斌老师学方法。</p>
+<p>英语的真题是最重要的，建议每天都练习一套阅读，限制在18min左右。</p>
+<p>至于作文，我推荐基础一般的跟石雷鹏，基础好的跟王晶婷，在大概九月份的时候开作文，每隔几天练习小作文或者大作文。到考前哪怕脑子没有记住，手也能记住。虽然大部分人吐槽石雷鹏的作文模板过于简单，我推荐他还是因为这个写作思路是通用的，你完全可以沿用相同的思路用不同的语法、句子来写，我自己就是用石雷鹏的思路，写王晶婷的句子。</p>
+<p>至于时间，一般来说小作文18min，大作文36min，实际上如果平时练熟了的话大作文可以在25min左右写完，多出来的时间可以用于阅读，但是建议不要超过时间，否则后面就没有时间写三小门了。</p>
+<p>考场的作答顺序，我推荐先写前两篇阅读，然后写小作文，再两篇阅读，再大作文，三小门，最后写完形。让写作和阅读交错避免疲劳。</p>
+<h2 id="数学">数学</h2>
+<p><strong>基础阶段</strong></p>
+<p>我个人是非常推荐张宇🐙老师的高数18讲，讲的非常仔细。有些知识武忠祥老师没有讲但是张宇老师讲了，比如点绕曲线得到曲面方程的求法。</p>
+<p>线性代数我全程跟着李永乐老师，但是就考研的趋势来看，最好还加上张宇的线代作为补充。</p>
+<p>概率论与数理统计我非常推荐跟方浩，当你学了“刚好遇见你”求卷积，高山看海求复合期望的时候，就会意识到这些方法有多么巧妙。</p>
+<p>张宇老师有一点可能不太好，就是有许多的二级结论和超纲的知识点，实际上在考场上用不到多少，很多都是事后的角度补充知识点，而且书写得太厚，容易把把握不到重点。</p>
+<p><strong>强化阶段</strong></p>
+<p>高数部分我强烈推荐武忠祥老师，对于知识、考点和方法的总结堪称一绝，我确实学到了许多的技巧和知识，也应用到了考场上。</p>
+<p>张宇的课就是大力出奇迹，不管什么题，都是从定义、知识出发一步步解答，如果想考高分推荐张宇。</p>
+<p>我推荐的做题册就是880和660,1000题太有张宇的风格，660是用来针对选填的，880非常贴近真题，因为很多就是真题的改编，当然也有很多题很难，不要灰心，一点点刷，反复多做几次，重要的是知识点而不是正确率。</p>
+<p><strong>冲刺阶段</strong></p>
+<p>这部分我在10月的时候开始做真题，注意在21年左右的时候是一个分水岭，前面的都是8选择6填空8大题，后面改革变成10选择6填空6大题，选填占80分。所以10-20年的可以做，零几年的选择做，重点是21年之后的，反复做。</p>
+<p>在写完之后可以适当刷模拟题，主要是模拟考试情况，我个人推荐的选择题是李六，合工大有点过于难了，但是用选填查漏补缺还可以。</p>
+<p>就考试情况来看，最最最重要的就是计算能力，很多人就是知识知道，但就是算不对，5分10分就没有了，一定在平时的时候练习限时做题目，不仅要算的快，而且要算的对。</p>
+<h2 id="给跨考生的建议">给跨考生的建议</h2>
+<p>首先，肯定你对计算机的热爱和敢于挑战的勇气，11408可是死亡组合，能和它相比的好像只有电气。</p>
+<p>其次，在你复习之前，我有一些建议想和你说。</p>
+<p><strong>408虽然看起来只有4本，但实际上并非如此</strong>。</p>
+<p><strong>数据结构是默认你会C语言、C++的</strong>，虽然老师说考试只是涉及到C基本的语法，但是2025年考的内存分区，对于计算机的人来说在学C语言、Java的时候老师一定会提到，但是书上你是找不到知识点的，也就是说，<strong>408还会考计算机学生的基本素养</strong>，你要做的就是在备考前和备考时多多学习计算机的基本知识。</p>
+<p><strong>计算机组成原理是建立在数字电路和汇编语言的基础上的</strong>，因为我是机械偏控制方向的，所以我都学过。如果你还没有学过，建议还是先学习一下这两门课程，否则看计组真的是在看天书。数字电路看一下速成课就差不多了，汇编建议跟王爽老师的《汇编语言》学，大概了解即可。</p>
+<p>操作系统对于没有接触过基础架构的人来说更是抽象无比，我的建议是，可以跟着黑马快速学习和体验一下Linux操作系统，对内存管理、文件管理、进程等有一个感性的认识，这样再学操作系统才不会将大量的时间投入到概念的背诵，而是从底层逻辑明白这项技术为什么诞生，解决了什么样的问题。</p>
+<p>计算机网络我建议跟湖科大，讲得一绝。至于做题我建议看王道咸鱼的“骚图”，一步步从底层讲这个数据是如何封装、选择、发送、应答和接收的。</p>
+<p>如果你还有余力，我建议还可以学习离散数学和编译原理，主要是针对数据结构的选择题和应用题。</p>
+<p>我的备考路线是：从三月份开始，第一轮跟着王道视频过一遍，然后写课后选择题，第二轮自己把书看一遍，自己画思维导图、看书和自己讲解知识点，然后把一轮的错题再做一遍，尝试做大题，在暑假的时候看王道的强化课。10月的时候跟湖科大的每日一题，用checklist记录遗忘的知识点并且复习，每天花4小时左右，一天学习数据结构和计算机网络，一天学习计算机组成原理和操作系统，这样不容易遗忘。</p>
+<p>最后两个月一遍用真题模拟，一边做了王道和竟成的模拟卷，个人觉得王道的pv大题、选择，还有竟成的选择还是值得做的，主要是查漏补缺。</p>
+<p><strong>考后复盘</strong></p>
+<ol>
+<li>每年408选择都会出一些王道书上没有的知识点，有时候并不算超纲，但是对于我这种跨考的来说，光是过完这四本书就竭尽全力了，没有多余的时间在读原教材上，所以建议对分数要求不高的不用花时间在回归教材上。对着大纲复习犹如海底捞针。</li>
+<li>王道的课后大题除了pv的基本上没必要做，就只做真题</li>
+<li>王道的强化课值得看，咸鱼会讲相关的知识给你串一遍，让你有一定的系统思维和知识贯通的感觉，结合他们的卷子和打卡表复习。</li>
+<li><strong>408目前的趋势是：题目越来越难，大题字数越来越多</strong>。40个选择和7个大题要想在3小时写完是相当紧张的，平时就要限时写选择(1.5min一个),大题大概16-18min，而且也极其考验考生的阅读水平、知识迁移和计算机基本功的能力，可以这么说，以后跨考生会越来越难，这应该是国家的战略需要——高水平的计算机人才。</li>
+</ol>
+<h1>总结复盘</h1>
+<h2 id="学习时间的合理规划">学习时间的合理规划</h2>
+<p>在2-6月的时候，我基本上是7.30开始学数学，学4小时左右，吃饭+午休，然后下午1：00到5:30学4小时左右在408上，晚饭，再学2个小时数学，然后英语两个小时。一天下来就是12小时。基本没有放假休息。后面果然身体扛不住了，暑假回家休息了一个月，这期间每天学10小时左右。然后从9月开始学习时间在11小时上下，一直到考前。</p>
+<p>我建议是学习时间在10-12小时，一周最好休一天或者一个时间段，否则身体一定扛不住的。</p>
+<p>同时，建议没有必要的时候少带耳机等，我就是因为看视频听音乐带耳机过多，导致后期出现了耳鸣，一度想要放弃。好在最后还是缓解了。</p>
+<p>我想说的是，<strong>适度原则，违背客观规律只会顾此失彼，得不偿失</strong>，当你的身体无法支撑你学习的时候，请马上停止，务必休息！考研只是一条路，但是生命只有一次！</p>
+<h2 id="学习方法的复盘">学习方法的复盘</h2>
+<p>个人认为比较好的学习方法是checklist，也就是回顾式复习——每一次的复习不是都要从第一章开始，而是从最薄弱的地方开始</p>
+<p>示例如下，</p>
+<p><img src="https://files.seeusercontent.com/2026/04/10/vr4U/_checklist_001.png" alt="考研经验帖_checklist_001"></p>
+<p>也就是每天学习的时候把自己感觉比较困难的、易错的知识写成“待办”事项，然后学习之前就把checklist拿出来，对着题目用自己的话回答，如果答出来就勾选上并再过几天复习一次，复习时间间隔依次增大，如果答不上来就标记并适当增加复习次数，直到自己能流畅回答再开始下一个的学习，通过这个方法，我不仅记住了很多知识，并且学会了深入思考问题，让我在面对难题的时候游刃有余。</p>
+<p>或者用图画的形式学习和复习知识，如下所示，<a href="http://xn--draw-p85fj2aw57icbzartcuw4g.io">使用的软件是draw.io</a>。</p>
+<p><img src="https://files.seeusercontent.com/2026/04/10/faD1/_.jpg" alt="考研经验帖_函数栈帧"></p>
+<p>408的知识很多很杂，你需要的不是一字不落的将所有内容背下来，而是用自己的方式理解并且用自己的话表达出来，图画+文字就是形和数的结合，前者直观后者入微，当你能像这样画出知识并且给自己或者他人讲一遍的时候，会记得又快又牢，这个方法的原理就是学习的金字塔——讲授给他人时知识的留存率是70%，而看视频看书知识的留存率是10%，所以在复习的时候可以多多尝试将知识讲给他人听，如果能够让那些不懂计算机的人都听懂了， 那么你才算是真的懂了。</p>
+<h2 id="参考资料">参考资料</h2>
+<ol>
+<li>《基础三十讲》，张宇</li>
+<li>《高等数学辅导讲义》，武忠祥</li>
+<li>《线性代数辅导讲义》，李永乐</li>
+<li>王道计算机考研教育</li>
+<li>《阅读的逻辑》，唐迟</li>
+<li>《肖秀荣四套卷》，肖秀荣</li>
+<li>《李林880》，李林</li>
+</ol>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>大学</tag>
+        <tag>考研</tag>
       </tags>
   </entry>
   <entry>
@@ -4344,6 +4344,460 @@ The rabbit句子是句子的主干，前面句子表示原因，invite这个动�
       </tags>
   </entry>
   <entry>
+    <title>英语系列（二）英语口语（英语兔版）</title>
+    <url>/posts/oral-english/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/13/Qy4Edm6fxwKnbsL.jpg" alt></p>
+<h1>英语口语</h1>
+<p>💡不要用中文去替代英文中独有的，但是中文中缺失的音。</p>
+<h1>三种常用的音标</h1>
+<p>国际音标(IPA):</p>
+<p>KK音标：主要是美式音标，方便美式英语的注音。</p>
+<p>DJ音标：主流音标，口语练习的主要音标。<strong>本文后面不加说明的都是练习的DJ音标(IPA88)</strong></p>
+<p>对于非英语专业或者是语言研究的人来说，我们只需要在学习音标的是能认出这是属于哪一类的音标即可，音标终究是用来帮助发音的。</p>
+<h1>全部音标发音</h1>
+<p>视频如下。</p>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
+    </iframe>
+</div>
+<h1>发音讲解</h1>
+<p><strong>以元音和辅音分</strong>：</p>
+<p>元音：就是在发音时不受阻碍(如嘴唇张开，但还是会受到舌头的影响)发出的音。辅音与元音相反。注意这里的舌位指的是舌头在发音时隆起的最高点，舌头太高，舌位就高。</p>
+<p>影响元音三要素：圆唇度(嘴巴”o“的程度)，舌位高低，舌位前后。</p>
+<p><strong>以清音和浊音分</strong>：<br>
+清音与浊音：声带不振动的音就是清音。反之就是浊音。</p>
+<p>示意图如下</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>元音</th>
+<th>辅音</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>浊音</td>
+<td>粗略认为所有的元音都是浊元音</td>
+<td>浊辅音</td>
+</tr>
+<tr>
+<td>清音</td>
+<td>\</td>
+<td>清辅音</td>
+</tr>
+</tbody>
+</table>
+<h2 id="元音">元音</h2>
+<blockquote>
+<p>以下都是DJ音标</p>
+</blockquote>
+<h3 id="单元音">单元音</h3>
+<p>注意：后面在音标中的的：不是其正确写法，只是markdown文件难以展现，具体写法还是见参考部分的第一个链接，后面的也是这样。</p>
+<ul>
+<li><strong>/i:/</strong></li>
+</ul>
+<p>bee、fee、pea、read、meat、lead</p>
+<p>发音时不圆唇，注意舌位更高，嘴角要向两边拉开，带点微笑的感觉。</p>
+<ul>
+<li><strong>/ɪ/</strong></li>
+</ul>
+<p>bit、fit、pit、lit、hit、fish</p>
+<p>注意舌位更低，舌尖在下齿后方，比/i:/更放松，嘴角没有那么咧开。</p>
+<p>注意区分，它<strong>不仅仅是把/i:/的时长缩短</strong>，有些美国人发音舌位会更低。有点像是军训时教官说的“一”。</p>
+<ul>
+<li><strong>/u:/</strong></li>
+</ul>
+<p>too、food、loose、prove、moon、soon</p>
+<p>/u:/<strong>口型没有那么圆,而是更扁</strong>,嘴角向两边拉伸，发音部位靠口腔后部。(不要误发成yu)</p>
+<ul>
+<li><strong>/ʊ/</strong></li>
+</ul>
+<p>book、look、good、took、bush、would</p>
+<p>发/ʊ/时,嘴唇没那么撅，更放松时长更短,发音更靠后。/ʊ/并不仅仅是把长音/u:/短着读，/u:/的唇形像两边拉开,而/ʊ/唇形更圆,更放松。</p>
+<ul>
+<li><strong>/e/</strong></li>
+</ul>
+<p>bed、get、pet、let、met、set</p>
+<p>双唇自然张开，口腔放松。舌尖在下牙齿后方，舌面平放</p>
+<ul>
+<li><strong>/ɜ:/</strong></li>
+</ul>
+<p>her、person、learn、bird、word、fur、urgent</p>
+<p>嘴自然张开，唇和舌自然放松，要确保发音时间够长，是重读的长音。如果发音不重读，更短就变成了/ə/ ，在单词中的拼写有er、ear、ir、or、ur等。</p>
+<p>在<strong>美式</strong>英语中会r化，写作/ɜ:r/，是美式英语最显著的特征之一。</p>
+<ul>
+<li><strong>/ə/</strong></li>
+</ul>
+<p>a-about balloon、e-taken problem、i-family pencil、o-memory freedom、u-supply support、y-syringe analysis 这些字母在单词内发音的时候都发/ə/</p>
+<p>嘴自然张开,唇和舌都自然放松不要重读,轻轻地让气流冲出声带自然读出重读,变长→/ɜ:/，它是英语中出现频率它是英语最高，最特殊,最重要的schwa(中央元音或中性元音)。让说话者在不需要强调某个音时用它代替，为了在某个音上减少所花时间，<strong>弱化</strong>成一个中性的默认音。有时候/ə/甚至省略不读。</p>
+<ul>
+<li><strong>/ʌ/</strong></li>
+</ul>
+<p>but、hut、must、son、ton、done</p>
+<p>舌尖在下牙齿后方，舌头平放发音靠口腔中后方，类似于啊但是口型没有那么大,时长更短，英美发音不同。</p>
+<p><strong>美音</strong>/ʌ/和中央元音/ə/区别在于，/ʌ/只出现在重读音节中，而/ə/只出现在轻读音节中。两者一般不做舌位上的区分，区别在于是否重读,在美音中的发音不是在口腔中后方，而是在口腔中间，也就说比英音靠前。</p>
+<ul>
+<li><strong>/ɔ:/</strong></li>
+</ul>
+<p>caught、bought、law、saw、door、four</p>
+<p>嘴唇要撅起来，圆而外凸,肌肉较为紧张，口腔后方发音。</p>
+<p><strong>美音</strong>中/ɔ/没有英音那样圆形外凸，更靠近汉语拼音ao而不是o，如果这个音后面跟字母r，美音中往往r化。</p>
+<ul>
+<li><strong>/æ/</strong></li>
+</ul>
+<p>bad、fat、pat、lad、mat、sat</p>
+<p>最容易读错的音之一，口型一定要张大，饱满，嘴角也要向两边拉伸。舌端在下牙齿后方，同时发出/ɑ:/和/e/这两个音。</p>
+<ul>
+<li><strong>/ɑ:/</strong></li>
+</ul>
+<p>father、fast、glass、car、park、mark</p>
+<p>/ɑ:/的口型比“啊”更大,发音更靠口腔后部(舌根处)发音，时长要足够长。</p>
+<ul>
+<li><strong>/ɒ/</strong></li>
+</ul>
+<p>top、hot、lot、box、stop、wash</p>
+<p>/ɒ/和普通话的凹(ao)相似,但并不相同发/ɒ/时,嘴型更小,时间更短,凹有口型变化，/ɒ/没有。</p>
+<p>在<strong>美音</strong>中一般读作/ɑ:/，也是英式英语和美式英语主要区别之一。</p>
+<h3 id="双元音">双元音</h3>
+<ul>
+<li><strong>/eɪ/</strong></li>
+</ul>
+<p>make、date、cake、safe、play、plane</p>
+<p>/e/和/ɪ/一前一后快速紧密发出，或者理解为从/e/向/ɪ/平滑发音。发这个音口腔是有变化的。</p>
+<ul>
+<li><strong>/ɔɪ/</strong></li>
+</ul>
+<p>boy、toy、soy、voice、noise、moist</p>
+<p>/ɔ:/变短后和/ɪ/一前一后快速紧密发出，或者理解为从/ɔ:/向/ɪ/发音，发这个音口腔是有变化。</p>
+<ul>
+<li><strong>/aɪ/</strong></li>
+</ul>
+<p>bike、nice、time、lick、site、life</p>
+<p>/a/和/ɪ/一前一后快速紧密发出，或者理解为从/a/向/ɪ/发音，发这个音口腔是有变化的，口型更加饱满。</p>
+<ul>
+<li><strong>/aʊ/</strong></li>
+</ul>
+<p>how、cow、allow、house、loud、mouse</p>
+<p>/a/和/ʊ/一前一后快速紧密发出，发这个音口腔是有变化的，口型更饱满更长。</p>
+<ul>
+<li><strong>/əʊ/</strong></li>
+</ul>
+<p>open、hope、post、coat、boat、soap</p>
+<p>/ə/和/ʊ/一前一后快速紧密发出，发这个音口腔是有变化的，嘴唇有收缩的，英音的起始音位比**美音/oʊ/**更靠前。</p>
+<ul>
+<li><strong>/ʊə/</strong></li>
+</ul>
+<p>tour、poor、moor、pure、cure、lure</p>
+<p>/ʊ/和/ə/一前一后快速紧密发出，发音一定要连贯。读音在英音中包含/ʊə/的词基本上都包含字母r，在<strong>美音</strong>中会r化。</p>
+<ul>
+<li><strong>/eə/</strong></li>
+</ul>
+<p>hair、pair、chair、fare、care、dare</p>
+<p>/e/和/ə/一前一后快速紧密发出，发音一定要连贯，注意这个/ə/可不等于/r/.</p>
+<ul>
+<li><strong>/ɪə/</strong></li>
+</ul>
+<p>area、idea、beer、dear、fear、here</p>
+<p>/ɪ/和/ə/一前一后快速紧密发出，发音一定要连贯。请注意,如果是读英音，单词拼写即使出现字母r，单词内部也不会r化，如果是读<strong>美音</strong>，只有单词内部出现r，才有可能r化。美音中如出现r，则对应读音为/ɪr/如不出现r，则一样。如果单词内部没有r，则英音美音都是/ɪə/，比如idea。</p>
+<h2 id="辅音">辅音</h2>
+<p>概念解读(辅音三阶段)：成阻：气流被阻塞；持阻：气流持续往外冲，但仍被阻塞；除阻：阻塞被去除，气流冲出；</p>
+<p>辅音三要素：清浊，调音部位、调音方式</p>
+<blockquote>
+<p>很多中式发音就是因为喜欢在字母后面加上其他的音，比如s后面加i变成”子“please读成普利子</p>
+</blockquote>
+<ul>
+<li><strong>/p/ /b/</strong></li>
+</ul>
+<p>peak beak、pet bed、pig big、rapid rabbit、lap lab、speak beak</p>
+<ol>
+<li>如果p后有元音，比如: peak就是<strong>送气音</strong></li>
+<li>如果p紧跟s，比如: speak就是<strong>不送气音</strong></li>
+<li>如果p后紧跟某些辅音，往往嘴巴闭上就基本完成发音国际音标:[p ]，<strong>几乎听不出这个音</strong>，比如: trapdoor, help me, leap year，<strong>无声除阻音</strong> (也称不完全爆破音)</li>
+</ol>
+<p><strong>/ b/<strong>是</strong>浊辅音</strong>，声带振动。</p>
+<ul>
+<li><strong>/t/ /d/</strong></li>
+</ul>
+<p>tip dip、tea deep、test desk、tap dab、bat bad、bet bed</p>
+<ol>
+<li>如果t后有元音，比如:top就是送气音</li>
+<li>如果t紧跟s，比如: stop就是<strong>不送气音</strong></li>
+<li>如果t后紧跟某些辅音，嘴巴闭上就基本完成发音国际音标: [t ]比如: setback, forget me，<strong>无声除阻音</strong>。</li>
+</ol>
+<p>如果想要知道音标的音位变体，见参考“英语兔”视频部分</p>
+<ol>
+<li>在<strong>美式英语</strong>中，元音之间的字母t(尤其是非重读音节中)，读作<strong>闪音</strong>，国际音标:[ɾ]，舌尖在上牙齿上方硬腭处，阻挡气流,轻轻—弹比如: water, better, little，听起来很像发出了/d/ 的声音。在标准英音中仍读作正常t: water, better, little。</li>
+<li>在<strong>美式英语</strong>中，鼻音/n/之前的t往往读作<strong>喉塞音</strong>，国际音标:[ʔ]，声门阻住气流，像是把声音&quot;卡在喉咙&quot;里一样比如: certain, important, button，在标准英音中仍读作正常t : certain, important, button</li>
+<li>在<strong>美式英语</strong>中，鼻音/n/之后的t往往基本听不见，比如: winter≈winner， interview≈innerview，甚至有的词中, t前后都有鼻音，比如: mountain，在标准英音中仍读作正常t: winter, interview, mountain</li>
+<li>/ d/是浊辅音，声带振动。在美音中，/d /和/t/一样会有<strong>闪音</strong>的读法: metal约等于medal，鼻音也会影响/d/的读音: abandon.</li>
+</ol>
+<ul>
+<li><strong>/k/ /g/</strong></li>
+</ul>
+<p>kit git、kate gate、cup gut、anchor anger、pick pig、peck keg</p>
+<ol>
+<li>如果k后有元音比如:kite，就是送气音</li>
+<li>如果k紧跟s比如: sky，不送气音普通话&quot;该&quot;的声母</li>
+<li>如果k后紧跟某些辅音嘴巴闭上就基本完成发音国际音标: [k ]，比如: dogtor, backdoor, make dinner，<strong>无声除阻音</strong>。</li>
+</ol>
+<ul>
+<li><strong>/m/ /n/ /ŋ/</strong></li>
+</ul>
+<p>map nap、met net、meet neat、room noon、tom run、lime line、sin sing、on long、sun sung</p>
+<ol>
+<li>/m/在元音之前，和普通话&quot;妈&quot;的声母(汉语拼音m)相似。在元音之后，发音方式相似，但只是双唇闭拢发鼻音。</li>
+<li>/n/在元音之前，和普通话&quot;拿&quot;的声母(汉语拼音n)相似/n/要比/m/的舌位高，尤其是舌端部分。在元音之后,发音方式相似，轻微通过鼻子出气。</li>
+<li>/ŋ/和/n/相似,但舌后端抵住软腭，而不像/n/一样舌前端抵住上齿龈。</li>
+</ol>
+<p>普通话中的后鼻音往往没有英语中那么清晰明显</p>
+<ul>
+<li><strong>/f/ /v/</strong></li>
+</ul>
+<p>fat valley、fit visit、ferry very、fest vest、life drive、leaf leave</p>
+<p>/f/和普通话&quot;夫&quot;的声母，基本一样/v/是&quot;声带振动版&quot;的/f/</p>
+<ul>
+<li><strong>/s/ /z/</strong></li>
+</ul>
+<p>sip zip、soon zoom、soup zoo、lesson reason、once lose、peace please</p>
+<p>英语的/s/，/z/都属于所谓<strong>摩擦音</strong>，不同于爆破音，/s/和普通话&quot;斯&quot;的声母(汉语拼音s)一样，/z/和/s/很像，区别就在于/z/发音时<strong>声带振动</strong>。</p>
+<ul>
+<li><strong>/θ/ /ð/</strong></li>
+</ul>
+<p>three there、thin that、thank those、thigh the、bath bathe、breath breathe</p>
+<p>和/s//z/一样，属于摩擦音，不同在于舌尖不在上下牙齿后方，而是在上下齿之间，被轻轻咬住，/θ/ /ð/区别在于/ð/需要<strong>声带振动</strong>。</p>
+<ul>
+<li><strong>/ʃ/ /ʒ/</strong></li>
+</ul>
+<p>mesh measure、fresh pleasure、leash decision、attention occasion、shall usual、shame regime</p>
+<p>/ʃ/ /ʒ/属于摩擦音，/ʃ/ /ʒ/区别在于/ʒ/需要声带振动。</p>
+<ul>
+<li><strong>/tʃ/ /dʒ/</strong></li>
+</ul>
+<p>chuck jug、chop job、choke joke、cheap jeep、catch page、pitch college</p>
+<p>/tʃ/可以理解为由/t/和/ʃ/构成,爆破音/t/和摩擦音/ʃ/同时发出，声带不振动。</p>
+<p>/dʒ/可以理解为由/d /和/ʒ/构成,爆破音/d/和摩擦音/ʒ/同时发出，声带振动，所以也被称作破擦音。</p>
+<ul>
+<li><strong>/h/</strong></li>
+</ul>
+<p>hat、hot、high、home、house、him</p>
+<p>舌面后部抬起接近软腭，形成缝隙,让气流向外通过,声带不振动。</p>
+<ul>
+<li><strong>/w/</strong></li>
+</ul>
+<p>was、why、wide、wet、we、wood</p>
+<p>双唇圈起，向外凸出，气流冲出发音，声带震动，/w/往往听上去像元音/u:/或/ʊ/,所以又被称作半元音，英语w开头的单词基本都是/w/开始。</p>
+<ul>
+<li><strong>/r/</strong></li>
+</ul>
+<p>rat、red、read、rice、right、room、car、her、ear、bore、tour、pure</p>
+<ol>
+<li>英音中，当字母r出现在元音<strong>之前</strong>，双唇突出并<strong>圆唇</strong>,舌尖上扬，气流从舌面上方滑出,声带振动。发英语/r/的音时，舌尖指向上齿龈。</li>
+<li>英音中，当字母r出现在元音<strong>之后</strong>，—般不发音或读作中央元音/ə/</li>
+<li>如果r出现在单词<strong>末尾</strong>，而下一个单词以元音开头,则连读时一般读出，比如:bear it、fear us、gear up</li>
+<li>美音和英音的区别在于:当字母r出现在元音之后，字母r往往会让<strong>元音r化</strong>，而在英音中则一般不发音或读作中央元音/ə/</li>
+</ol>
+<ul>
+<li><strong>/j/</strong></li>
+</ul>
+<p>yes、yard、yellow、young、yoga、use</p>
+<p>舌端往上抬向硬腭，与元音/i:/的舌位相似，但是更高一些。气流从舌面和硬腭之间通过，产生摩擦出声，声带振动。/j/往往听上去像元音/i:/或/ɪ/，所以又被称作半元音。但是/j/的舌端和硬腭靠得更近，有摩擦的感觉。</p>
+<ol>
+<li><strong>/j/的省略：<strong>在</strong>美式英语</strong>中,有些辅音(如/t/，/d/，/n/)后的/j/经常被<strong>省略</strong>，这个被称作yod-dropping(yod就是/j/)</li>
+<li><strong>/j/的融合</strong>：和之前的辅音经常&quot;合在一起读&quot;,这个被称作yod-coalescence，在口语中(尤其是英音口语中)常见, &quot;标准&quot;英语一般尽量避免。有的词中,yod-coalescence已成为标准音，如: educate /'edʒukeɪt/、issue / 'ɪʃu:/ 、azure /'æʒə/</li>
+<li>yod-coalescence也适用于单词之间，比如:Nice to meet you! Would you do it?</li>
+</ol>
+<ul>
+<li><strong>/l/</strong></li>
+</ul>
+<p>清晰L：lack lake like look lose leak、模糊L：help mile all girl school full</p>
+<ol>
+<li>如果l后有元音：舌尖抵住上牙齿后方，让气流从舌两边(两侧)滑出，同时舌尖离开上牙齿后，声带振动，所以/l/被叫做&quot;舌边音&quot;或&quot;舌侧音&quot;（清晰舌边音）</li>
+<li>如果l后没有元音：舌位和元音前的/l/一致，但是舌尖不离开上牙齿，声带振动（模糊舌边音）模糊L要发到位，否则导致连读时不顺畅，或者没法连读。</li>
+<li>字母|还有一个版本:不发音，英语中不少单词中的l都是不发音的，比如:calm、palm、salmon、colonel、folk</li>
+<li>英音美音发音区别:有的包含l的词在英式英语和<strong>美式英语</strong>中发音不同，比如:英音: million, billion, value美音: million, billion, value</li>
+</ol>
+<ul>
+<li><strong>/ts/ /dz/</strong></li>
+</ul>
+<p>bats bands、dates deeds、kites kids、fights friends、hats hands、lots leads</p>
+<ol>
+<li>/ts/可以理解为由/t/和/s/构成。爆破音/t/和摩擦音/s/同时发出，声带不振动。</li>
+<li>/dz/可以理解为由/d/和/z/构成，爆破音/d/和摩擦音/z/同时发出，声带振动。</li>
+</ol>
+<p>所以这两个音被归类为所谓破擦音(爆破＋摩擦)</p>
+<ul>
+<li><strong>/tr/ /dr/</strong></li>
+</ul>
+<p>trip drip、true drew、tree dream、try dry、country laundry、pantry hundred</p>
+<ol>
+<li>/tr/可以理解为由/t/和/r/构成。爆破音/t/和摩擦音/r/同时发出，声带不振动。</li>
+<li>/dr/可以理解为由/d/和/r/构成。爆破音/d/和摩擦音/r/同时发出，声带振动。</li>
+</ol>
+<p>所以这两个音被归类为所谓破擦音(爆破＋摩擦)</p>
+<h1>英语发音技巧</h1>
+<blockquote>
+<p>这些发音技巧能够让你的发音更加地道，同时也能很大程度上提升你的英语听力</p>
+</blockquote>
+<h2 id="连音">连音</h2>
+<p>单词(辅音结尾)+单词(元音开头)如：not at all.(“闹太套”),中文不习惯连读，我们读“我爱天安门”不会像外国人那样连读成“外天门”。这就是英语听不准确的重要口语习惯和原因。也就是说，<strong>辅音单词结尾的辅音要发到位，不加上不存在的元音</strong>，然后自然读下一个单词就能“连读”。</p>
+<p>💡连读不是创造一个音，而是两个音结合产生的结果。试着平滑地读I am，你就会感受到/j/的发音，这就是<strong>连音的本质</strong>。如果<strong>你的发音不标准，就不会自然而然地读出连音</strong>。</p>
+<p><strong>加音规则</strong></p>
+<p>注意是先有加音现象，再总结出规律。</p>
+<ol>
+<li>元音+元音：元音与元音连读容易糊，加上一个之前不存在的“过渡音”使得加音连贯。
+<ul>
+<li>/u:/, <strong>/ʊ/</strong>,<strong>/aʊ/</strong>, <strong>/əʊ/</strong>+元音:+/w/。如：just do it.</li>
+<li>/i:/,<strong>/ɪ/</strong>,<strong>/eɪ/</strong>,<strong>/aɪ/</strong>,<strong>/ɔɪ/</strong>+元音:+/j/。如： I am.</li>
+<li><strong>/ə/</strong>,<strong>/ɑ:/</strong>,<strong>/ɔ:/</strong>+元音:+/r/。主要是英式英语用，美式英语很少。如 the idea of；美式英语主要是字母r+元音，如bear it.连读但是不加音。</li>
+</ul>
+</li>
+<li>辅音+元音(词尾辅音 + 词首元音）： travel agency</li>
+</ol>
+<h2 id="同化">同化</h2>
+<ol>
+<li>逆行同化(前面的音受到后一个音的影响)
+<ol>
+<li>无声除阻(不完全爆破)：/k/ /t/ /d/+辅音，爆破音不发音 如:look back</li>
+<li>浊音变清音：如 have to :直接变成/f/+/t/,这样比原来的浊音更好发音。</li>
+<li>双唇化：如in person.受到p这个要闭唇的音印象，读起来变成了 im person。</li>
+</ol>
+</li>
+<li>顺行同化(后面音受到前面影响)
+<ol>
+<li>复数词尾：如books 一般会读成ks而不是kz。</li>
+</ol>
+</li>
+<li>互相同化：
+<ol>
+<li>融合发音:/s/+/j/ = <strong>/ʃ/</strong>;例如:God bless you;/z/+/j/ =  <strong>/ʒ/</strong>;例如as you wish;/t/+/j/ = <strong>/tʃ/</strong> ;例如Nice to me you;/d/+/j/ = <strong>/dʒ/</strong>;例如Did you do it?</li>
+<li>辅音延长：当前面一个音和后面一个音是同一个音时。只发一个音(这里的音是指<strong>音标</strong>不是字母)，但是要延长：如fish shop.这里前后都是sh</li>
+</ol>
+</li>
+<li>完全失爆（词尾爆破音( p b t d k g)+ 词首爆破音( p b t d k g)：
+<ol>
+<li>good question</li>
+</ol>
+</li>
+</ol>
+<h2 id="异化">异化</h2>
+<p>常见于/s/+/t/、/s/+/k/、/s/+/p/的组合。<strong>严格来说不是浊化</strong>，而是将这些音变成不送气的音，但是只是发音的话就是不用考虑这些</p>
+<ol>
+<li>r使前面的元音r化：如door 使前一个r消失，如surprise变成su®prise.</li>
+<li>具体例子sp+元音：
+<ol>
+<li>How do you spend your leisure time?</li>
+<li>sk+元音：i’m so scared</li>
+<li>st + 元音：Stand up and study hard.</li>
+<li>str+ 元音:  He struck me with a stick</li>
+</ol>
+</li>
+</ol>
+<h2 id="省音">省音</h2>
+<ol>
+<li>偷懒不读某一个或者是一些音：如interesting,这类往往可省可不省，省多少看个人说话习惯。</li>
+<li>必须省音。如debt\subtle\know\knee\write\wrong……这些词中b\k\w都是省略不读的。</li>
+<li>词与词之间省略：比如last year就只读las year.t直接省略。</li>
+<li>还有/t/、/d/等(词尾)爆破音也经常省略。如：have 的/h/(这被称为<strong>h击穿</strong>)。ing中的/g/，比如 Are you listenin’?这里打‘就说明省去了g</li>
+</ol>
+<h2 id="缩读">缩读</h2>
+<p>缩写表示可以缩读：如 I am=I’m,I have=I’ve 这些词往往在英语听力的时候读的很快不容易听到或者是听完整。比如wanna=want to, going to=gonna,because='cause还有许多缩写形式的单词或者短语都是这种形式。还有很多类似的都是，比如don’t know=dunno、give me=gimme、would have would’ve/would’a、you and I=you 'n’l、come on =c’mon</p>
+<h2 id="弱读">弱读</h2>
+<p>弱读非常重要，是中国人听不清英语的关键。<br>
+弱读不是声音变小，而是将元音改变了,这样能够让语句发音更轻松自然，不至于像中文那样“字正腔圆”导致读起来上气不接下气。</p>
+<p>例句：What <strong>do</strong> you want <strong>to do</strong>?<strong>From</strong> <strong>what</strong> I <strong>can</strong> tell,you <strong>must</strong> be tired <strong>of</strong> it,<strong>but</strong> I’m not,so <strong>would</strong> you like me <strong>to do</strong> it <strong>for</strong> you?<br>
+/d<strong>ə</strong> t<strong>ə</strong> fr<strong>ə</strong>m w<strong>ə</strong>t k<strong>ə</strong>n m<strong>ə</strong>st <strong>ə</strong>v b<strong>ə</strong>t w<strong>ə</strong>d f<strong>ə</strong>/</p>
+<blockquote>
+<p>弱读时，单词的中间的元音一般会变成中央元音/<strong>ə/</strong></p>
+</blockquote>
+<h2 id="节奏">节奏</h2>
+<p>💡英语是重音等时语言</p>
+<p><strong>英语语句中重读音节之间的时长基本相等</strong>，也就是说英语句中词语所花时间是由重读音节数量决定的。举例：Rabbits | eat | carrots.\A rabbit is | eating some | carrots.\The <strong>rabbit</strong> has been | <strong>eating</strong> some of the | <strong>carrots</strong>.分成三个音节，加粗部分为重读音节<br>
+也就是说，这是三个音节之间时长相等，根据之间的单词个数决定要不要快速读或者是连读，这样其实也体现了中央元音/ə/的重要性，就是为了和重读音节相对应的。</p>
+<p>总而言之记住一句话：英语句子中的非重读音节数量远远大于重读音节数量。</p>
+<h2 id="语调">语调</h2>
+<p>💡语调基于节奏</p>
+<p>语调就是英语句子声调在哪里升高哪里降低。但是不是中文的四声或者五度标记法。<br>
+语调就是表达说话人的情感，不需要死记(不一定升调就是提问，降调就是丧气)，多听多说就能理解。</p>
+<h3 id="升调">升调</h3>
+<p>这里用☑表示升调，放在哪个单词后哪个单词就升调，一般用来表达态度/情感/陈述/疑问/强调等</p>
+<p>举例</p>
+<ol>
+<li>一般疑问句：Are you kidding me☑ ？</li>
+<li>陈述形式的提问：Rabbits eat carrot☑ ?</li>
+<li>反义疑问词中的附加问句：you are right,are not you☑ ?</li>
+<li>列举中最后一个元素之前的元素：Are rabbits red☑，yellow☑，blue☑，green☑,or white?</li>
+<li>礼貌请求:Tell me,please☑</li>
+<li>句子中未完成的部分：The rabbit ate a carrot☑ and then slept.</li>
+</ol>
+<h3 id="降调">降调</h3>
+<p>用[\]表示降调</p>
+<ol>
+<li>特殊疑问句(非yes/no问题)：what is your name[\]?</li>
+<li>陈述事实或者回答问题： I see a white rabbit[\].</li>
+<li>感叹：what a beautiful leaf[\]!</li>
+<li>命令：put the girl down[\]!</li>
+<li>列举中最后一个元素：反义疑问句前一部分：Rabbits like to eat,play,sleep and run[\].</li>
+<li>反义疑问句前面一部分：Rabbit eat carrots[\],don’t they?</li>
+<li>作为回答/附和/确认的问句形式：The rabbit ate all the carrots. Did it[\]?</li>
+<li>已经知道提问的答案：can you call me at 6[\].</li>
+<li>问句形式表礼貌，并非真的在问问题：Would you pass me the salt[\]?</li>
+<li>不满、愤怒：Is that what you think[\]?</li>
+</ol>
+<p>参考音节</p>
+<p>TU表示重读，tu表示弱读。同样适用于句子和词组。</p>
+<ol>
+<li>单音节 TU：如two!two?</li>
+<li>双音节 TU tu： 如rabbit!rabbit?</li>
+<li>双音节 tu TU：如sit down!sit down?</li>
+<li>三音节 TU tu tu：如possible!possible?</li>
+<li>三音节 tu TU tu：如computer!computer?</li>
+<li>三音节 tu tu TU：如engineer!engineer?</li>
+</ol>
+<h1>自然拼读(Phonics)</h1>
+<p>就是看字母，<strong>猜读音</strong>。这部分内容属于技巧向，对英语口语与听力有帮助。</p>
+<p>以下内容主要讨论一般情况，特殊情况请参考词典。</p>
+<h2 id="开音节与闭音节">开音节与闭音节</h2>
+<p><strong>概念解析</strong>：</p>
+<p>音节：由音素组合成的<strong>最小</strong>最自然的语音单位，比如rabbit的音节分别是rab和bit。</p>
+<p>闭音节：以辅音结尾的音节。比如baby中的by音节。注意这里的辅音不是指字母而是指音标。</p>
+<p>开音节：以元音结尾的音节。比如baby中的ba音节。</p>
+<p>重读音节：被强调的音节就是重读音节，往往声音更大，元音也被拉长。比如rabbit.其音标为/‘ræbɪt/ 这里的’就是用来标记重读音节的，所以rab音量较大，元音也延长。ˌ为次重读音节，在重读与非重读之间。比如accidental，其音标为/ˌ æksɪ’dentl/</p>
+<p>非重读音节：与重读音节相反。</p>
+<p>相对开音节：以不发音的元音字母e结尾的闭音节。</p>
+<h2 id="单个字母">单个字母</h2>
+<blockquote>
+<p>以下图都是从英语兔公众号下载而来</p>
+</blockquote>
+<p>辅音字母</p>
+<p><img src="https://s2.loli.net/2024/11/26/s6PErIDYCQJL4Z5.png" alt="001_字母发音_01.png"></p>
+<p>元音字母</p>
+<p><strong>单个元音字母在重读开音节里读元音字母本身的读音</strong></p>
+<p><img src="https://s2.loli.net/2024/11/26/ohsaKvIrCBfPZdx.png" alt="001_字母发音_02.png"></p>
+<p><strong>单个元音字母在相对开音节里读元音字母本身的读音</strong> 比如bate</p>
+<h2 id="字母组合">字母组合</h2>
+<p>辅音组合</p>
+<p><img src="https://s2.loli.net/2024/11/26/iCemwkp4ySY6Hjb.png" alt="001_字母发音_03.png"></p>
+<p>元音组合</p>
+<p><img src="https://s2.loli.net/2024/11/26/3BkEcelpLydK2sO.png" alt="001_字母发音_04.png"></p>
+<p>以上这些只是技巧向，真正要学好英语口语还是要大量的输入与输出。</p>
+<h1>参考资料</h1>
+<ol>
+<li><a href="https://www.jiwake.com/yinbiaofayin/">英语音标发音表-英语48个音标在线读 (jiwake.com)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/457728471">【笔记】英语兔的DJ音标整理 - 知乎 (zhihu.com)</a></li>
+<li><a href="https://www.bilibili.com/video/BV1iV411z7Nj?p=28&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">全网最适合中国人的免费音标课(纯干货, 超详细!)</a></li>
+<li><a href="https://www.bilibili.com/video/BV1SZ4y1K7Lr?p=7&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">你必须知道的英语发音技巧(让你的口语更纯正, 更地道!)</a></li>
+<li><a href="https://www.bilibili.com/video/BV14841117gz?p=4&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">英语自然拼读极简教程（免费、简洁、高效 | 半小时内打牢基础</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>English</category>
+      </categories>
+      <tags>
+        <tag>English</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>蓝桥杯系列（一）知识体系</title>
     <url>/posts/lanqiaocup-series-one/</url>
     <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/13/rVx9ogHB31wf4mJ.jpg" alt></p>
@@ -4828,460 +5282,6 @@ max_element(st,ed)返回地址[st,ed)中最大的那个值的地址（迭代器�
       <tags>
         <tag>algorithm</tag>
         <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>英语系列（二）英语口语（英语兔版）</title>
-    <url>/posts/oral-english/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2024/10/13/Qy4Edm6fxwKnbsL.jpg" alt></p>
-<h1>英语口语</h1>
-<p>💡不要用中文去替代英文中独有的，但是中文中缺失的音。</p>
-<h1>三种常用的音标</h1>
-<p>国际音标(IPA):</p>
-<p>KK音标：主要是美式音标，方便美式英语的注音。</p>
-<p>DJ音标：主流音标，口语练习的主要音标。<strong>本文后面不加说明的都是练习的DJ音标(IPA88)</strong></p>
-<p>对于非英语专业或者是语言研究的人来说，我们只需要在学习音标的是能认出这是属于哪一类的音标即可，音标终究是用来帮助发音的。</p>
-<h1>全部音标发音</h1>
-<p>视频如下。</p>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
-    </iframe>
-</div>
-<h1>发音讲解</h1>
-<p><strong>以元音和辅音分</strong>：</p>
-<p>元音：就是在发音时不受阻碍(如嘴唇张开，但还是会受到舌头的影响)发出的音。辅音与元音相反。注意这里的舌位指的是舌头在发音时隆起的最高点，舌头太高，舌位就高。</p>
-<p>影响元音三要素：圆唇度(嘴巴”o“的程度)，舌位高低，舌位前后。</p>
-<p><strong>以清音和浊音分</strong>：<br>
-清音与浊音：声带不振动的音就是清音。反之就是浊音。</p>
-<p>示意图如下</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>元音</th>
-<th>辅音</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>浊音</td>
-<td>粗略认为所有的元音都是浊元音</td>
-<td>浊辅音</td>
-</tr>
-<tr>
-<td>清音</td>
-<td>\</td>
-<td>清辅音</td>
-</tr>
-</tbody>
-</table>
-<h2 id="元音">元音</h2>
-<blockquote>
-<p>以下都是DJ音标</p>
-</blockquote>
-<h3 id="单元音">单元音</h3>
-<p>注意：后面在音标中的的：不是其正确写法，只是markdown文件难以展现，具体写法还是见参考部分的第一个链接，后面的也是这样。</p>
-<ul>
-<li><strong>/i:/</strong></li>
-</ul>
-<p>bee、fee、pea、read、meat、lead</p>
-<p>发音时不圆唇，注意舌位更高，嘴角要向两边拉开，带点微笑的感觉。</p>
-<ul>
-<li><strong>/ɪ/</strong></li>
-</ul>
-<p>bit、fit、pit、lit、hit、fish</p>
-<p>注意舌位更低，舌尖在下齿后方，比/i:/更放松，嘴角没有那么咧开。</p>
-<p>注意区分，它<strong>不仅仅是把/i:/的时长缩短</strong>，有些美国人发音舌位会更低。有点像是军训时教官说的“一”。</p>
-<ul>
-<li><strong>/u:/</strong></li>
-</ul>
-<p>too、food、loose、prove、moon、soon</p>
-<p>/u:/<strong>口型没有那么圆,而是更扁</strong>,嘴角向两边拉伸，发音部位靠口腔后部。(不要误发成yu)</p>
-<ul>
-<li><strong>/ʊ/</strong></li>
-</ul>
-<p>book、look、good、took、bush、would</p>
-<p>发/ʊ/时,嘴唇没那么撅，更放松时长更短,发音更靠后。/ʊ/并不仅仅是把长音/u:/短着读，/u:/的唇形像两边拉开,而/ʊ/唇形更圆,更放松。</p>
-<ul>
-<li><strong>/e/</strong></li>
-</ul>
-<p>bed、get、pet、let、met、set</p>
-<p>双唇自然张开，口腔放松。舌尖在下牙齿后方，舌面平放</p>
-<ul>
-<li><strong>/ɜ:/</strong></li>
-</ul>
-<p>her、person、learn、bird、word、fur、urgent</p>
-<p>嘴自然张开，唇和舌自然放松，要确保发音时间够长，是重读的长音。如果发音不重读，更短就变成了/ə/ ，在单词中的拼写有er、ear、ir、or、ur等。</p>
-<p>在<strong>美式</strong>英语中会r化，写作/ɜ:r/，是美式英语最显著的特征之一。</p>
-<ul>
-<li><strong>/ə/</strong></li>
-</ul>
-<p>a-about balloon、e-taken problem、i-family pencil、o-memory freedom、u-supply support、y-syringe analysis 这些字母在单词内发音的时候都发/ə/</p>
-<p>嘴自然张开,唇和舌都自然放松不要重读,轻轻地让气流冲出声带自然读出重读,变长→/ɜ:/，它是英语中出现频率它是英语最高，最特殊,最重要的schwa(中央元音或中性元音)。让说话者在不需要强调某个音时用它代替，为了在某个音上减少所花时间，<strong>弱化</strong>成一个中性的默认音。有时候/ə/甚至省略不读。</p>
-<ul>
-<li><strong>/ʌ/</strong></li>
-</ul>
-<p>but、hut、must、son、ton、done</p>
-<p>舌尖在下牙齿后方，舌头平放发音靠口腔中后方，类似于啊但是口型没有那么大,时长更短，英美发音不同。</p>
-<p><strong>美音</strong>/ʌ/和中央元音/ə/区别在于，/ʌ/只出现在重读音节中，而/ə/只出现在轻读音节中。两者一般不做舌位上的区分，区别在于是否重读,在美音中的发音不是在口腔中后方，而是在口腔中间，也就说比英音靠前。</p>
-<ul>
-<li><strong>/ɔ:/</strong></li>
-</ul>
-<p>caught、bought、law、saw、door、four</p>
-<p>嘴唇要撅起来，圆而外凸,肌肉较为紧张，口腔后方发音。</p>
-<p><strong>美音</strong>中/ɔ/没有英音那样圆形外凸，更靠近汉语拼音ao而不是o，如果这个音后面跟字母r，美音中往往r化。</p>
-<ul>
-<li><strong>/æ/</strong></li>
-</ul>
-<p>bad、fat、pat、lad、mat、sat</p>
-<p>最容易读错的音之一，口型一定要张大，饱满，嘴角也要向两边拉伸。舌端在下牙齿后方，同时发出/ɑ:/和/e/这两个音。</p>
-<ul>
-<li><strong>/ɑ:/</strong></li>
-</ul>
-<p>father、fast、glass、car、park、mark</p>
-<p>/ɑ:/的口型比“啊”更大,发音更靠口腔后部(舌根处)发音，时长要足够长。</p>
-<ul>
-<li><strong>/ɒ/</strong></li>
-</ul>
-<p>top、hot、lot、box、stop、wash</p>
-<p>/ɒ/和普通话的凹(ao)相似,但并不相同发/ɒ/时,嘴型更小,时间更短,凹有口型变化，/ɒ/没有。</p>
-<p>在<strong>美音</strong>中一般读作/ɑ:/，也是英式英语和美式英语主要区别之一。</p>
-<h3 id="双元音">双元音</h3>
-<ul>
-<li><strong>/eɪ/</strong></li>
-</ul>
-<p>make、date、cake、safe、play、plane</p>
-<p>/e/和/ɪ/一前一后快速紧密发出，或者理解为从/e/向/ɪ/平滑发音。发这个音口腔是有变化的。</p>
-<ul>
-<li><strong>/ɔɪ/</strong></li>
-</ul>
-<p>boy、toy、soy、voice、noise、moist</p>
-<p>/ɔ:/变短后和/ɪ/一前一后快速紧密发出，或者理解为从/ɔ:/向/ɪ/发音，发这个音口腔是有变化。</p>
-<ul>
-<li><strong>/aɪ/</strong></li>
-</ul>
-<p>bike、nice、time、lick、site、life</p>
-<p>/a/和/ɪ/一前一后快速紧密发出，或者理解为从/a/向/ɪ/发音，发这个音口腔是有变化的，口型更加饱满。</p>
-<ul>
-<li><strong>/aʊ/</strong></li>
-</ul>
-<p>how、cow、allow、house、loud、mouse</p>
-<p>/a/和/ʊ/一前一后快速紧密发出，发这个音口腔是有变化的，口型更饱满更长。</p>
-<ul>
-<li><strong>/əʊ/</strong></li>
-</ul>
-<p>open、hope、post、coat、boat、soap</p>
-<p>/ə/和/ʊ/一前一后快速紧密发出，发这个音口腔是有变化的，嘴唇有收缩的，英音的起始音位比**美音/oʊ/**更靠前。</p>
-<ul>
-<li><strong>/ʊə/</strong></li>
-</ul>
-<p>tour、poor、moor、pure、cure、lure</p>
-<p>/ʊ/和/ə/一前一后快速紧密发出，发音一定要连贯。读音在英音中包含/ʊə/的词基本上都包含字母r，在<strong>美音</strong>中会r化。</p>
-<ul>
-<li><strong>/eə/</strong></li>
-</ul>
-<p>hair、pair、chair、fare、care、dare</p>
-<p>/e/和/ə/一前一后快速紧密发出，发音一定要连贯，注意这个/ə/可不等于/r/.</p>
-<ul>
-<li><strong>/ɪə/</strong></li>
-</ul>
-<p>area、idea、beer、dear、fear、here</p>
-<p>/ɪ/和/ə/一前一后快速紧密发出，发音一定要连贯。请注意,如果是读英音，单词拼写即使出现字母r，单词内部也不会r化，如果是读<strong>美音</strong>，只有单词内部出现r，才有可能r化。美音中如出现r，则对应读音为/ɪr/如不出现r，则一样。如果单词内部没有r，则英音美音都是/ɪə/，比如idea。</p>
-<h2 id="辅音">辅音</h2>
-<p>概念解读(辅音三阶段)：成阻：气流被阻塞；持阻：气流持续往外冲，但仍被阻塞；除阻：阻塞被去除，气流冲出；</p>
-<p>辅音三要素：清浊，调音部位、调音方式</p>
-<blockquote>
-<p>很多中式发音就是因为喜欢在字母后面加上其他的音，比如s后面加i变成”子“please读成普利子</p>
-</blockquote>
-<ul>
-<li><strong>/p/ /b/</strong></li>
-</ul>
-<p>peak beak、pet bed、pig big、rapid rabbit、lap lab、speak beak</p>
-<ol>
-<li>如果p后有元音，比如: peak就是<strong>送气音</strong></li>
-<li>如果p紧跟s，比如: speak就是<strong>不送气音</strong></li>
-<li>如果p后紧跟某些辅音，往往嘴巴闭上就基本完成发音国际音标:[p ]，<strong>几乎听不出这个音</strong>，比如: trapdoor, help me, leap year，<strong>无声除阻音</strong> (也称不完全爆破音)</li>
-</ol>
-<p><strong>/ b/<strong>是</strong>浊辅音</strong>，声带振动。</p>
-<ul>
-<li><strong>/t/ /d/</strong></li>
-</ul>
-<p>tip dip、tea deep、test desk、tap dab、bat bad、bet bed</p>
-<ol>
-<li>如果t后有元音，比如:top就是送气音</li>
-<li>如果t紧跟s，比如: stop就是<strong>不送气音</strong></li>
-<li>如果t后紧跟某些辅音，嘴巴闭上就基本完成发音国际音标: [t ]比如: setback, forget me，<strong>无声除阻音</strong>。</li>
-</ol>
-<p>如果想要知道音标的音位变体，见参考“英语兔”视频部分</p>
-<ol>
-<li>在<strong>美式英语</strong>中，元音之间的字母t(尤其是非重读音节中)，读作<strong>闪音</strong>，国际音标:[ɾ]，舌尖在上牙齿上方硬腭处，阻挡气流,轻轻—弹比如: water, better, little，听起来很像发出了/d/ 的声音。在标准英音中仍读作正常t: water, better, little。</li>
-<li>在<strong>美式英语</strong>中，鼻音/n/之前的t往往读作<strong>喉塞音</strong>，国际音标:[ʔ]，声门阻住气流，像是把声音&quot;卡在喉咙&quot;里一样比如: certain, important, button，在标准英音中仍读作正常t : certain, important, button</li>
-<li>在<strong>美式英语</strong>中，鼻音/n/之后的t往往基本听不见，比如: winter≈winner， interview≈innerview，甚至有的词中, t前后都有鼻音，比如: mountain，在标准英音中仍读作正常t: winter, interview, mountain</li>
-<li>/ d/是浊辅音，声带振动。在美音中，/d /和/t/一样会有<strong>闪音</strong>的读法: metal约等于medal，鼻音也会影响/d/的读音: abandon.</li>
-</ol>
-<ul>
-<li><strong>/k/ /g/</strong></li>
-</ul>
-<p>kit git、kate gate、cup gut、anchor anger、pick pig、peck keg</p>
-<ol>
-<li>如果k后有元音比如:kite，就是送气音</li>
-<li>如果k紧跟s比如: sky，不送气音普通话&quot;该&quot;的声母</li>
-<li>如果k后紧跟某些辅音嘴巴闭上就基本完成发音国际音标: [k ]，比如: dogtor, backdoor, make dinner，<strong>无声除阻音</strong>。</li>
-</ol>
-<ul>
-<li><strong>/m/ /n/ /ŋ/</strong></li>
-</ul>
-<p>map nap、met net、meet neat、room noon、tom run、lime line、sin sing、on long、sun sung</p>
-<ol>
-<li>/m/在元音之前，和普通话&quot;妈&quot;的声母(汉语拼音m)相似。在元音之后，发音方式相似，但只是双唇闭拢发鼻音。</li>
-<li>/n/在元音之前，和普通话&quot;拿&quot;的声母(汉语拼音n)相似/n/要比/m/的舌位高，尤其是舌端部分。在元音之后,发音方式相似，轻微通过鼻子出气。</li>
-<li>/ŋ/和/n/相似,但舌后端抵住软腭，而不像/n/一样舌前端抵住上齿龈。</li>
-</ol>
-<p>普通话中的后鼻音往往没有英语中那么清晰明显</p>
-<ul>
-<li><strong>/f/ /v/</strong></li>
-</ul>
-<p>fat valley、fit visit、ferry very、fest vest、life drive、leaf leave</p>
-<p>/f/和普通话&quot;夫&quot;的声母，基本一样/v/是&quot;声带振动版&quot;的/f/</p>
-<ul>
-<li><strong>/s/ /z/</strong></li>
-</ul>
-<p>sip zip、soon zoom、soup zoo、lesson reason、once lose、peace please</p>
-<p>英语的/s/，/z/都属于所谓<strong>摩擦音</strong>，不同于爆破音，/s/和普通话&quot;斯&quot;的声母(汉语拼音s)一样，/z/和/s/很像，区别就在于/z/发音时<strong>声带振动</strong>。</p>
-<ul>
-<li><strong>/θ/ /ð/</strong></li>
-</ul>
-<p>three there、thin that、thank those、thigh the、bath bathe、breath breathe</p>
-<p>和/s//z/一样，属于摩擦音，不同在于舌尖不在上下牙齿后方，而是在上下齿之间，被轻轻咬住，/θ/ /ð/区别在于/ð/需要<strong>声带振动</strong>。</p>
-<ul>
-<li><strong>/ʃ/ /ʒ/</strong></li>
-</ul>
-<p>mesh measure、fresh pleasure、leash decision、attention occasion、shall usual、shame regime</p>
-<p>/ʃ/ /ʒ/属于摩擦音，/ʃ/ /ʒ/区别在于/ʒ/需要声带振动。</p>
-<ul>
-<li><strong>/tʃ/ /dʒ/</strong></li>
-</ul>
-<p>chuck jug、chop job、choke joke、cheap jeep、catch page、pitch college</p>
-<p>/tʃ/可以理解为由/t/和/ʃ/构成,爆破音/t/和摩擦音/ʃ/同时发出，声带不振动。</p>
-<p>/dʒ/可以理解为由/d /和/ʒ/构成,爆破音/d/和摩擦音/ʒ/同时发出，声带振动，所以也被称作破擦音。</p>
-<ul>
-<li><strong>/h/</strong></li>
-</ul>
-<p>hat、hot、high、home、house、him</p>
-<p>舌面后部抬起接近软腭，形成缝隙,让气流向外通过,声带不振动。</p>
-<ul>
-<li><strong>/w/</strong></li>
-</ul>
-<p>was、why、wide、wet、we、wood</p>
-<p>双唇圈起，向外凸出，气流冲出发音，声带震动，/w/往往听上去像元音/u:/或/ʊ/,所以又被称作半元音，英语w开头的单词基本都是/w/开始。</p>
-<ul>
-<li><strong>/r/</strong></li>
-</ul>
-<p>rat、red、read、rice、right、room、car、her、ear、bore、tour、pure</p>
-<ol>
-<li>英音中，当字母r出现在元音<strong>之前</strong>，双唇突出并<strong>圆唇</strong>,舌尖上扬，气流从舌面上方滑出,声带振动。发英语/r/的音时，舌尖指向上齿龈。</li>
-<li>英音中，当字母r出现在元音<strong>之后</strong>，—般不发音或读作中央元音/ə/</li>
-<li>如果r出现在单词<strong>末尾</strong>，而下一个单词以元音开头,则连读时一般读出，比如:bear it、fear us、gear up</li>
-<li>美音和英音的区别在于:当字母r出现在元音之后，字母r往往会让<strong>元音r化</strong>，而在英音中则一般不发音或读作中央元音/ə/</li>
-</ol>
-<ul>
-<li><strong>/j/</strong></li>
-</ul>
-<p>yes、yard、yellow、young、yoga、use</p>
-<p>舌端往上抬向硬腭，与元音/i:/的舌位相似，但是更高一些。气流从舌面和硬腭之间通过，产生摩擦出声，声带振动。/j/往往听上去像元音/i:/或/ɪ/，所以又被称作半元音。但是/j/的舌端和硬腭靠得更近，有摩擦的感觉。</p>
-<ol>
-<li><strong>/j/的省略：<strong>在</strong>美式英语</strong>中,有些辅音(如/t/，/d/，/n/)后的/j/经常被<strong>省略</strong>，这个被称作yod-dropping(yod就是/j/)</li>
-<li><strong>/j/的融合</strong>：和之前的辅音经常&quot;合在一起读&quot;,这个被称作yod-coalescence，在口语中(尤其是英音口语中)常见, &quot;标准&quot;英语一般尽量避免。有的词中,yod-coalescence已成为标准音，如: educate /'edʒukeɪt/、issue / 'ɪʃu:/ 、azure /'æʒə/</li>
-<li>yod-coalescence也适用于单词之间，比如:Nice to meet you! Would you do it?</li>
-</ol>
-<ul>
-<li><strong>/l/</strong></li>
-</ul>
-<p>清晰L：lack lake like look lose leak、模糊L：help mile all girl school full</p>
-<ol>
-<li>如果l后有元音：舌尖抵住上牙齿后方，让气流从舌两边(两侧)滑出，同时舌尖离开上牙齿后，声带振动，所以/l/被叫做&quot;舌边音&quot;或&quot;舌侧音&quot;（清晰舌边音）</li>
-<li>如果l后没有元音：舌位和元音前的/l/一致，但是舌尖不离开上牙齿，声带振动（模糊舌边音）模糊L要发到位，否则导致连读时不顺畅，或者没法连读。</li>
-<li>字母|还有一个版本:不发音，英语中不少单词中的l都是不发音的，比如:calm、palm、salmon、colonel、folk</li>
-<li>英音美音发音区别:有的包含l的词在英式英语和<strong>美式英语</strong>中发音不同，比如:英音: million, billion, value美音: million, billion, value</li>
-</ol>
-<ul>
-<li><strong>/ts/ /dz/</strong></li>
-</ul>
-<p>bats bands、dates deeds、kites kids、fights friends、hats hands、lots leads</p>
-<ol>
-<li>/ts/可以理解为由/t/和/s/构成。爆破音/t/和摩擦音/s/同时发出，声带不振动。</li>
-<li>/dz/可以理解为由/d/和/z/构成，爆破音/d/和摩擦音/z/同时发出，声带振动。</li>
-</ol>
-<p>所以这两个音被归类为所谓破擦音(爆破＋摩擦)</p>
-<ul>
-<li><strong>/tr/ /dr/</strong></li>
-</ul>
-<p>trip drip、true drew、tree dream、try dry、country laundry、pantry hundred</p>
-<ol>
-<li>/tr/可以理解为由/t/和/r/构成。爆破音/t/和摩擦音/r/同时发出，声带不振动。</li>
-<li>/dr/可以理解为由/d/和/r/构成。爆破音/d/和摩擦音/r/同时发出，声带振动。</li>
-</ol>
-<p>所以这两个音被归类为所谓破擦音(爆破＋摩擦)</p>
-<h1>英语发音技巧</h1>
-<blockquote>
-<p>这些发音技巧能够让你的发音更加地道，同时也能很大程度上提升你的英语听力</p>
-</blockquote>
-<h2 id="连音">连音</h2>
-<p>单词(辅音结尾)+单词(元音开头)如：not at all.(“闹太套”),中文不习惯连读，我们读“我爱天安门”不会像外国人那样连读成“外天门”。这就是英语听不准确的重要口语习惯和原因。也就是说，<strong>辅音单词结尾的辅音要发到位，不加上不存在的元音</strong>，然后自然读下一个单词就能“连读”。</p>
-<p>💡连读不是创造一个音，而是两个音结合产生的结果。试着平滑地读I am，你就会感受到/j/的发音，这就是<strong>连音的本质</strong>。如果<strong>你的发音不标准，就不会自然而然地读出连音</strong>。</p>
-<p><strong>加音规则</strong></p>
-<p>注意是先有加音现象，再总结出规律。</p>
-<ol>
-<li>元音+元音：元音与元音连读容易糊，加上一个之前不存在的“过渡音”使得加音连贯。
-<ul>
-<li>/u:/, <strong>/ʊ/</strong>,<strong>/aʊ/</strong>, <strong>/əʊ/</strong>+元音:+/w/。如：just do it.</li>
-<li>/i:/,<strong>/ɪ/</strong>,<strong>/eɪ/</strong>,<strong>/aɪ/</strong>,<strong>/ɔɪ/</strong>+元音:+/j/。如： I am.</li>
-<li><strong>/ə/</strong>,<strong>/ɑ:/</strong>,<strong>/ɔ:/</strong>+元音:+/r/。主要是英式英语用，美式英语很少。如 the idea of；美式英语主要是字母r+元音，如bear it.连读但是不加音。</li>
-</ul>
-</li>
-<li>辅音+元音(词尾辅音 + 词首元音）： travel agency</li>
-</ol>
-<h2 id="同化">同化</h2>
-<ol>
-<li>逆行同化(前面的音受到后一个音的影响)
-<ol>
-<li>无声除阻(不完全爆破)：/k/ /t/ /d/+辅音，爆破音不发音 如:look back</li>
-<li>浊音变清音：如 have to :直接变成/f/+/t/,这样比原来的浊音更好发音。</li>
-<li>双唇化：如in person.受到p这个要闭唇的音印象，读起来变成了 im person。</li>
-</ol>
-</li>
-<li>顺行同化(后面音受到前面影响)
-<ol>
-<li>复数词尾：如books 一般会读成ks而不是kz。</li>
-</ol>
-</li>
-<li>互相同化：
-<ol>
-<li>融合发音:/s/+/j/ = <strong>/ʃ/</strong>;例如:God bless you;/z/+/j/ =  <strong>/ʒ/</strong>;例如as you wish;/t/+/j/ = <strong>/tʃ/</strong> ;例如Nice to me you;/d/+/j/ = <strong>/dʒ/</strong>;例如Did you do it?</li>
-<li>辅音延长：当前面一个音和后面一个音是同一个音时。只发一个音(这里的音是指<strong>音标</strong>不是字母)，但是要延长：如fish shop.这里前后都是sh</li>
-</ol>
-</li>
-<li>完全失爆（词尾爆破音( p b t d k g)+ 词首爆破音( p b t d k g)：
-<ol>
-<li>good question</li>
-</ol>
-</li>
-</ol>
-<h2 id="异化">异化</h2>
-<p>常见于/s/+/t/、/s/+/k/、/s/+/p/的组合。<strong>严格来说不是浊化</strong>，而是将这些音变成不送气的音，但是只是发音的话就是不用考虑这些</p>
-<ol>
-<li>r使前面的元音r化：如door 使前一个r消失，如surprise变成su®prise.</li>
-<li>具体例子sp+元音：
-<ol>
-<li>How do you spend your leisure time?</li>
-<li>sk+元音：i’m so scared</li>
-<li>st + 元音：Stand up and study hard.</li>
-<li>str+ 元音:  He struck me with a stick</li>
-</ol>
-</li>
-</ol>
-<h2 id="省音">省音</h2>
-<ol>
-<li>偷懒不读某一个或者是一些音：如interesting,这类往往可省可不省，省多少看个人说话习惯。</li>
-<li>必须省音。如debt\subtle\know\knee\write\wrong……这些词中b\k\w都是省略不读的。</li>
-<li>词与词之间省略：比如last year就只读las year.t直接省略。</li>
-<li>还有/t/、/d/等(词尾)爆破音也经常省略。如：have 的/h/(这被称为<strong>h击穿</strong>)。ing中的/g/，比如 Are you listenin’?这里打‘就说明省去了g</li>
-</ol>
-<h2 id="缩读">缩读</h2>
-<p>缩写表示可以缩读：如 I am=I’m,I have=I’ve 这些词往往在英语听力的时候读的很快不容易听到或者是听完整。比如wanna=want to, going to=gonna,because='cause还有许多缩写形式的单词或者短语都是这种形式。还有很多类似的都是，比如don’t know=dunno、give me=gimme、would have would’ve/would’a、you and I=you 'n’l、come on =c’mon</p>
-<h2 id="弱读">弱读</h2>
-<p>弱读非常重要，是中国人听不清英语的关键。<br>
-弱读不是声音变小，而是将元音改变了,这样能够让语句发音更轻松自然，不至于像中文那样“字正腔圆”导致读起来上气不接下气。</p>
-<p>例句：What <strong>do</strong> you want <strong>to do</strong>?<strong>From</strong> <strong>what</strong> I <strong>can</strong> tell,you <strong>must</strong> be tired <strong>of</strong> it,<strong>but</strong> I’m not,so <strong>would</strong> you like me <strong>to do</strong> it <strong>for</strong> you?<br>
-/d<strong>ə</strong> t<strong>ə</strong> fr<strong>ə</strong>m w<strong>ə</strong>t k<strong>ə</strong>n m<strong>ə</strong>st <strong>ə</strong>v b<strong>ə</strong>t w<strong>ə</strong>d f<strong>ə</strong>/</p>
-<blockquote>
-<p>弱读时，单词的中间的元音一般会变成中央元音/<strong>ə/</strong></p>
-</blockquote>
-<h2 id="节奏">节奏</h2>
-<p>💡英语是重音等时语言</p>
-<p><strong>英语语句中重读音节之间的时长基本相等</strong>，也就是说英语句中词语所花时间是由重读音节数量决定的。举例：Rabbits | eat | carrots.\A rabbit is | eating some | carrots.\The <strong>rabbit</strong> has been | <strong>eating</strong> some of the | <strong>carrots</strong>.分成三个音节，加粗部分为重读音节<br>
-也就是说，这是三个音节之间时长相等，根据之间的单词个数决定要不要快速读或者是连读，这样其实也体现了中央元音/ə/的重要性，就是为了和重读音节相对应的。</p>
-<p>总而言之记住一句话：英语句子中的非重读音节数量远远大于重读音节数量。</p>
-<h2 id="语调">语调</h2>
-<p>💡语调基于节奏</p>
-<p>语调就是英语句子声调在哪里升高哪里降低。但是不是中文的四声或者五度标记法。<br>
-语调就是表达说话人的情感，不需要死记(不一定升调就是提问，降调就是丧气)，多听多说就能理解。</p>
-<h3 id="升调">升调</h3>
-<p>这里用☑表示升调，放在哪个单词后哪个单词就升调，一般用来表达态度/情感/陈述/疑问/强调等</p>
-<p>举例</p>
-<ol>
-<li>一般疑问句：Are you kidding me☑ ？</li>
-<li>陈述形式的提问：Rabbits eat carrot☑ ?</li>
-<li>反义疑问词中的附加问句：you are right,are not you☑ ?</li>
-<li>列举中最后一个元素之前的元素：Are rabbits red☑，yellow☑，blue☑，green☑,or white?</li>
-<li>礼貌请求:Tell me,please☑</li>
-<li>句子中未完成的部分：The rabbit ate a carrot☑ and then slept.</li>
-</ol>
-<h3 id="降调">降调</h3>
-<p>用[\]表示降调</p>
-<ol>
-<li>特殊疑问句(非yes/no问题)：what is your name[\]?</li>
-<li>陈述事实或者回答问题： I see a white rabbit[\].</li>
-<li>感叹：what a beautiful leaf[\]!</li>
-<li>命令：put the girl down[\]!</li>
-<li>列举中最后一个元素：反义疑问句前一部分：Rabbits like to eat,play,sleep and run[\].</li>
-<li>反义疑问句前面一部分：Rabbit eat carrots[\],don’t they?</li>
-<li>作为回答/附和/确认的问句形式：The rabbit ate all the carrots. Did it[\]?</li>
-<li>已经知道提问的答案：can you call me at 6[\].</li>
-<li>问句形式表礼貌，并非真的在问问题：Would you pass me the salt[\]?</li>
-<li>不满、愤怒：Is that what you think[\]?</li>
-</ol>
-<p>参考音节</p>
-<p>TU表示重读，tu表示弱读。同样适用于句子和词组。</p>
-<ol>
-<li>单音节 TU：如two!two?</li>
-<li>双音节 TU tu： 如rabbit!rabbit?</li>
-<li>双音节 tu TU：如sit down!sit down?</li>
-<li>三音节 TU tu tu：如possible!possible?</li>
-<li>三音节 tu TU tu：如computer!computer?</li>
-<li>三音节 tu tu TU：如engineer!engineer?</li>
-</ol>
-<h1>自然拼读(Phonics)</h1>
-<p>就是看字母，<strong>猜读音</strong>。这部分内容属于技巧向，对英语口语与听力有帮助。</p>
-<p>以下内容主要讨论一般情况，特殊情况请参考词典。</p>
-<h2 id="开音节与闭音节">开音节与闭音节</h2>
-<p><strong>概念解析</strong>：</p>
-<p>音节：由音素组合成的<strong>最小</strong>最自然的语音单位，比如rabbit的音节分别是rab和bit。</p>
-<p>闭音节：以辅音结尾的音节。比如baby中的by音节。注意这里的辅音不是指字母而是指音标。</p>
-<p>开音节：以元音结尾的音节。比如baby中的ba音节。</p>
-<p>重读音节：被强调的音节就是重读音节，往往声音更大，元音也被拉长。比如rabbit.其音标为/‘ræbɪt/ 这里的’就是用来标记重读音节的，所以rab音量较大，元音也延长。ˌ为次重读音节，在重读与非重读之间。比如accidental，其音标为/ˌ æksɪ’dentl/</p>
-<p>非重读音节：与重读音节相反。</p>
-<p>相对开音节：以不发音的元音字母e结尾的闭音节。</p>
-<h2 id="单个字母">单个字母</h2>
-<blockquote>
-<p>以下图都是从英语兔公众号下载而来</p>
-</blockquote>
-<p>辅音字母</p>
-<p><img src="https://s2.loli.net/2024/11/26/s6PErIDYCQJL4Z5.png" alt="001_字母发音_01.png"></p>
-<p>元音字母</p>
-<p><strong>单个元音字母在重读开音节里读元音字母本身的读音</strong></p>
-<p><img src="https://s2.loli.net/2024/11/26/ohsaKvIrCBfPZdx.png" alt="001_字母发音_02.png"></p>
-<p><strong>单个元音字母在相对开音节里读元音字母本身的读音</strong> 比如bate</p>
-<h2 id="字母组合">字母组合</h2>
-<p>辅音组合</p>
-<p><img src="https://s2.loli.net/2024/11/26/iCemwkp4ySY6Hjb.png" alt="001_字母发音_03.png"></p>
-<p>元音组合</p>
-<p><img src="https://s2.loli.net/2024/11/26/3BkEcelpLydK2sO.png" alt="001_字母发音_04.png"></p>
-<p>以上这些只是技巧向，真正要学好英语口语还是要大量的输入与输出。</p>
-<h1>参考资料</h1>
-<ol>
-<li><a href="https://www.jiwake.com/yinbiaofayin/">英语音标发音表-英语48个音标在线读 (jiwake.com)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/457728471">【笔记】英语兔的DJ音标整理 - 知乎 (zhihu.com)</a></li>
-<li><a href="https://www.bilibili.com/video/BV1iV411z7Nj?p=28&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">全网最适合中国人的免费音标课(纯干货, 超详细!)</a></li>
-<li><a href="https://www.bilibili.com/video/BV1SZ4y1K7Lr?p=7&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">你必须知道的英语发音技巧(让你的口语更纯正, 更地道!)</a></li>
-<li><a href="https://www.bilibili.com/video/BV14841117gz?p=4&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">英语自然拼读极简教程（免费、简洁、高效 | 半小时内打牢基础</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>English</category>
-      </categories>
-      <tags>
-        <tag>English</tag>
       </tags>
   </entry>
   <entry>
