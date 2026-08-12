@@ -397,13 +397,6 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/rust/</loc>
-    <lastmod>2026-08-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lloydkai.cn/tags/MySQL/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -418,6 +411,13 @@
   </url>
   
   <url>
+    <loc>https://lloydkai.cn/tags/rust/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://lloydkai.cn/tags/blog/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -425,14 +425,14 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/hexo/</loc>
+    <loc>https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://lloydkai.cn/tags/hexo/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -453,13 +453,6 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/computer/</loc>
-    <lastmod>2026-08-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lloydkai.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -474,7 +467,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/C-C/</loc>
+    <loc>https://lloydkai.cn/tags/computer/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -482,6 +475,13 @@
   
   <url>
     <loc>https://lloydkai.cn/tags/English/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/C-C/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -511,14 +511,14 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/rust/</loc>
+    <loc>https://lloydkai.cn/categories/MySQL/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/MySQL/</loc>
+    <loc>https://lloydkai.cn/categories/rust/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
