@@ -273,6 +273,62 @@ body {
   color: var(--theme-color) !important;
 }
 
+.ft-friend-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0 14px;
+}
+
+.ft-friend-card {
+  display: grid !important;
+  grid-template-columns: 34px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 9px;
+  align-items: center;
+  padding: 8px;
+  min-width: 0;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 12px !important;
+  background: rgb(255 255 255 / 8%);
+  color: rgb(255 255 255 / 86%) !important;
+}
+
+.ft-friend-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--theme-color);
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.ft-friend-avatar {
+  grid-row: 1 / 3;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.ft-friend-name,
+.ft-friend-desc {
+  display: block;
+  overflow: hidden;
+  min-width: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ft-friend-name {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ft-friend-desc {
+  color: rgb(255 255 255 / 62%);
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
 .ft-item-2 .ft-img-group {
   width: 100%;
 }
@@ -325,6 +381,10 @@ body {
     flex-basis: 100% !important;
   }
 
+  .ft-friend-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .t-top .t-t-l .bg-ad {
     width: 100%;
   }
@@ -342,6 +402,10 @@ body {
   .t-top .t-t-r {
     margin-top: 16px;
     flex-basis: 100% !important;
+  }
+
+  .ft-friend-list {
+    grid-template-columns: 1fr;
   }
 }
 
