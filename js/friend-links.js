@@ -48,15 +48,15 @@
 
   const setAvatar = (card, value) => {
     if (!value) return
-    card.querySelectorAll('.flink-item-icon img, .ft-friend-avatar').forEach(img => {
+    card.querySelectorAll('.flink-item-icon img, .ft-friend-avatar, .link-card__avatar').forEach(img => {
       img.src = value
     })
   }
 
   const applyMeta = (link, meta) => {
     cards.filter(card => card.dataset.friendLink === link).forEach(card => {
-      if (card.dataset.autoName === 'true') setText(card, '.flink-item-name, .ft-friend-name', meta.name)
-      if (card.dataset.autoDescr === 'true') setText(card, '.flink-item-desc, .ft-friend-desc', meta.descr)
+      if (card.dataset.autoName === 'true') setText(card, '.flink-item-name, .ft-friend-name, .link-card__name', meta.name)
+      if (card.dataset.autoDescr === 'true') setText(card, '.flink-item-desc, .ft-friend-desc, .link-card__desc', meta.descr)
       if (card.dataset.autoAvatar === 'true') setAvatar(card, meta.avatar)
     })
   }
