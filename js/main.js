@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
       $nav = document.getElementById('nav')
     }
 
-    const hideMenuIndex = window.innerWidth <= 768 || headerContentWidth > $nav.offsetWidth - 120
+    const hideMenuIndex = window.innerWidth <= 768
     $nav.classList.toggle('hide-menu', hideMenuIndex)
   }
 

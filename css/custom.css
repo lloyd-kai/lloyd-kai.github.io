@@ -16,6 +16,181 @@
   background: transparent !important;
 }
 
+/* 青墨色导航，与站点背景保持一致 */
+#page-header #nav,
+#page-header.not-top-img #nav,
+#page-header.nav-fixed #nav {
+  background: rgba(25, 57, 61, 0.82) !important;
+  border-bottom: 1px solid rgba(191, 226, 222, 0.18);
+  box-shadow: 0 5px 18px rgba(9, 35, 39, 0.22);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+#page-header #nav a,
+#page-header #nav span.site-page,
+#page-header #nav .site-name,
+#page-header #nav #toggle-menu {
+  color: rgba(238, 249, 247, 0.92) !important;
+}
+
+/* 顶部导航：站名独立在左侧，分组菜单稳定靠右显示 */
+@media screen and (min-width: 769px) {
+  #page-header #nav {
+    display: flex !important;
+    gap: 0;
+    padding-right: 28px;
+    padding-left: 28px;
+    font-size: 1.12em;
+  }
+
+  #page-header #nav #blog-info {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  #page-header #nav #menus {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    transform: translateX(-50%);
+  }
+
+  #page-header #nav .menus_items {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 0;
+  }
+
+  #page-header #nav .menus_item > a,
+  #page-header #nav .menus_item > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+  }
+
+  #page-header #nav .menus_item > a > i,
+  #page-header #nav .menus_item > span > i:first-child {
+    margin: 0;
+  }
+
+  #page-header #nav .menus_item_child {
+    left: 0;
+    right: auto;
+    transform: none;
+  }
+
+  #page-header #nav .menus_item {
+    position: relative;
+    padding-left: 10px;
+    white-space: nowrap;
+  }
+
+  #page-header #nav #search-button {
+    padding-left: 10px;
+    white-space: nowrap;
+  }
+
+  /* 主题的空间检测会误隐藏桌面菜单，桌面始终保留可访问的分组入口。 */
+  #page-header #nav.hide-menu .menus_items {
+    display: inline-flex !important;
+  }
+
+  #page-header #nav.hide-menu #toggle-menu {
+    display: none !important;
+  }
+
+  #page-header #nav .menus_item_child {
+    z-index: 110;
+    margin-top: 12px;
+    border: 1px solid rgba(191, 226, 222, 0.2);
+    background: rgba(25, 57, 61, 0.96);
+    box-shadow: 0 12px 28px rgba(9, 35, 39, 0.28);
+  }
+
+  #page-header #nav .menus_item_child a {
+    color: rgba(238, 249, 247, 0.92) !important;
+  }
+
+  #page-header #nav .menus_item_child li:hover {
+    background: rgba(116, 190, 188, 0.24);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #page-header #nav {
+    gap: 8px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  #page-header #nav #blog-info {
+    min-width: 0;
+  }
+
+  #page-header #nav .site-name {
+    display: block;
+    overflow: hidden;
+    max-width: 58vw;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+  #page-header #nav {
+    gap: 10px;
+    padding-right: 18px;
+    padding-left: 18px;
+    font-size: 1em;
+  }
+
+  #page-header #nav .menus_item {
+    padding-left: 6px;
+  }
+
+  #page-header #nav #search-button {
+    padding-left: 6px;
+  }
+
+  #page-header #nav #search-button .site-page > span {
+    display: none;
+  }
+}
+
+html {
+  scrollbar-color: #376b70 transparent;
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: #376b70;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #4f8587;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 /* 夜间模式遮罩透明 */
 [data-theme="dark"] #footer::before {
   background: transparent !important;
@@ -539,4 +714,203 @@ body {
 /* 雪花黑夜模式不显示 */
 [data-theme="dark"] #snow {
   display: none;
+}
+
+/* 首页文章卡片优化（参考 card.css，保留 Butterfly 横向布局） */
+#recent-posts .recent-post-item {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid rgb(55 107 85 / 20%);
+  border-radius: 20px;
+  background: rgb(255 255 255 / 84%);
+  box-shadow: 0 8px 30px rgb(0 0 0 / 8%);
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+#recent-posts .recent-post-item:hover {
+  border-color: rgb(55 107 85 / 38%);
+  box-shadow: 0 15px 40px rgb(0 0 0 / 15%);
+  transform: translateY(-6px);
+}
+
+#recent-posts .recent-post-item .post_cover {
+  overflow: hidden;
+  border-radius: 19px 0 0 19px;
+}
+
+#recent-posts .recent-post-item .post_cover .post-bg {
+  transition: transform .6s ease;
+}
+
+#recent-posts .recent-post-item:hover .post_cover .post-bg {
+  transform: scale(1.08);
+}
+
+#recent-posts .recent-post-item > .recent-post-info {
+  padding: 20px 28px;
+}
+
+#recent-posts .recent-post-item .article-title {
+  margin-top: 8px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.5;
+  transition: color .3s ease;
+}
+
+#recent-posts .recent-post-item:hover .article-title {
+  color: #376b55;
+}
+
+#recent-posts .recent-post-item .content {
+  margin-top: 10px;
+  color: #888;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+#recent-posts .recent-post-item .article-meta-wrap {
+  color: #999;
+  font-size: 13px;
+}
+
+/* 侧边栏卡片优化（参考 aside.css） */
+#aside-content .card-widget:not(#card-wechat) {
+  border: 1px solid rgb(55 107 85 / 20%);
+  border-radius: 18px;
+  background: rgb(255 255 255 / 78%);
+  box-shadow: 0 8px 25px rgb(0 0 0 / 6%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: transform .35s ease, box-shadow .35s ease, background .35s ease, border-color .35s ease;
+}
+
+/* 二维码卡片沿用翻转布局，但外观与其他侧边栏卡片统一 */
+#aside-content .card-widget#card-wechat {
+  border: 1px solid rgb(55 107 85 / 20%);
+  border-radius: 18px;
+  background: rgb(255 255 255 / 78%) !important;
+  box-shadow: 0 8px 25px rgb(0 0 0 / 6%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: transform .35s ease, box-shadow .35s ease, background .35s ease, border-color .35s ease;
+}
+
+#aside-content .card-widget#card-wechat:hover {
+  border-color: rgb(55 107 85 / 38%);
+  background: rgb(226 239 231 / 92%) !important;
+  box-shadow: 0 12px 35px rgb(0 0 0 / 12%);
+  transform: translateY(-4px);
+}
+
+[data-theme="light"] #aside-content .card-widget#card-wechat {
+  background: rgb(255 255 255 / 78%) !important;
+}
+
+#aside-content .card-widget:not(#card-wechat):hover {
+  border-color: rgb(55 107 85 / 38%);
+  background: rgb(226 239 231 / 92%);
+  box-shadow: 0 12px 35px rgb(0 0 0 / 12%);
+  transform: translateY(-4px);
+}
+
+#aside-content .item-headline {
+  color: #376b55;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#aside-content .item-headline i {
+  margin-right: 6px;
+  color: #376b55;
+}
+
+#aside-content .card-widget:not(#card-wechat) a {
+  transition: color .25s ease;
+}
+
+#aside-content .card-widget:not(#card-wechat) a:hover {
+  color: #376b55;
+}
+
+#aside-content .card-info .avatar-img {
+  transition: transform .5s ease;
+}
+
+#aside-content .card-info:hover .avatar-img {
+  transform: rotate(5deg) scale(1.05);
+}
+
+#aside-content .card-info-social-icons a {
+  transition: transform .3s ease, color .3s ease;
+}
+
+#aside-content .card-info-social-icons a:hover {
+  color: #376b55;
+  transform: translateY(-3px);
+}
+
+#aside-content .card-announcement {
+  line-height: 30px;
+}
+
+#aside-content .card-recent-post ul,
+#aside-content .card-categories ul {
+  padding-left: 0;
+}
+
+#aside-content .card-recent-post .aside-list-item:hover,
+#aside-content .card-categories li:hover,
+#aside-content .card-archives li:hover {
+  transform: translateX(5px);
+}
+
+#aside-content .card-recent-post .aside-list-item,
+#aside-content .card-categories li,
+#aside-content .card-archives li {
+  transition: transform .25s ease;
+}
+
+[data-theme="dark"] #recent-posts .recent-post-item {
+  border-color: rgb(255 255 255 / 10%);
+  background: rgb(20 28 24 / 88%);
+  box-shadow: 0 8px 30px rgb(0 0 0 / 35%);
+}
+
+[data-theme="dark"] #recent-posts .recent-post-item .content,
+[data-theme="dark"] #recent-posts .recent-post-item .article-meta-wrap {
+  color: #aaa;
+}
+
+[data-theme="dark"] #aside-content .card-widget:not(#card-wechat) {
+  border-color: rgb(255 255 255 / 10%);
+  background: rgb(10 18 14 / 88%);
+  box-shadow: 0 8px 30px rgb(0 0 0 / 30%);
+}
+
+[data-theme="dark"] #aside-content .card-widget#card-wechat {
+  border-color: rgb(255 255 255 / 10%);
+  background: rgb(10 18 14 / 88%) !important;
+  box-shadow: 0 8px 30px rgb(0 0 0 / 30%);
+}
+
+[data-theme="dark"] #aside-content .card-widget:not(#card-wechat):hover {
+  background: rgb(35 83 61 / 90%);
+  box-shadow: 0 12px 35px rgb(0 0 0 / 45%);
+}
+
+[data-theme="dark"] #aside-content .card-widget#card-wechat:hover {
+  background: rgb(35 83 61 / 90%) !important;
+  box-shadow: 0 12px 35px rgb(0 0 0 / 45%);
+}
+
+@media screen and (max-width: 768px) {
+  #recent-posts .recent-post-item .post_cover {
+    border-radius: 19px 19px 0 0;
+  }
+
+  #recent-posts .recent-post-item > .recent-post-info {
+    padding: 20px 20px 30px;
+  }
 }
