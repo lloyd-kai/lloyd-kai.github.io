@@ -2524,6 +2524,16 @@ figure.highlight pre .javascript .function {
   display: grid;
   gap: 12px;
 }
+#about-person-page .about-sponsor-intro {
+  margin: -5px 0 14px;
+  color: #68778a;
+  font-size: 0.92em;
+}
+#about-person-page .about-sponsor-updated {
+  margin-top: 12px;
+  color: #758294;
+  font-size: 0.84em;
+}
 #about-person-page .about-sponsor-item {
   display: -webkit-box;
   display: -moz-box;
@@ -2548,16 +2558,44 @@ figure.highlight pre .javascript .function {
   color: #d06b4c;
   font-size: 1.2em;
 }
-#about-person-page .about-sponsor-text {
+#about-person-page .about-sponsor-item .about-sponsor-text {
   display: grid;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   gap: 2px;
 }
-#about-person-page .about-sponsor-text strong {
+#about-person-page .about-sponsor-item strong {
   color: #253348;
 }
-#about-person-page .about-sponsor-text span {
+#about-person-page .about-sponsor-item span {
   color: #68778a;
   font-size: 0.92em;
+}
+#about-person-page .about-sponsor-meta {
+  display: grid;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  justify-items: end;
+  gap: 2px;
+  margin-left: auto;
+}
+#about-person-page .about-sponsor-meta strong {
+  color: #376b55;
+  font-size: 1.05em;
+}
+#about-person-page .about-sponsor-meta time {
+  color: #758294;
+  font-size: 0.8em;
 }
 #resume-page .resume-hero {
   display: -webkit-box;
