@@ -115,6 +115,18 @@
     box-shadow: 0 12px 28px rgba(9, 35, 39, 0.28);
   }
 
+  /* 悬停桥覆盖父项与子菜单间的全部空隙（含入场动画位移），避免下拉菜单自动收起 */
+  #page-header #nav .menus_item_child::before {
+    top: -32px;
+    left: -28px;
+    width: calc(100% + 56px);
+    height: 40px;
+  }
+
+  #page-header #nav .menus_item:hover .menus_item_child {
+    animation: none;
+  }
+
   #page-header #nav .menus_item_child a {
     color: rgba(238, 249, 247, 0.92) !important;
   }

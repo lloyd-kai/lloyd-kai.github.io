@@ -161,228 +161,267 @@
   isToc: true,
   pageType: 'post'
 }</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3PdGh1mJtS5LxUYm",ck:"3PdGh1mJtS5LxUYm"})</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Lloyd的个人博客" type="application/atom+xml">
-</head><body><div id="loading-box" aria-label="Lloyd loading screen"><canvas id="lloyd-starfield" aria-hidden="true"></canvas><div class="loader-grid" aria-hidden="true"></div><div class="lloyd-loader"><div class="intro-meta"><span>Lloyd</span><span>/ Personal Space</span></div><div class="loader-status"><span>sample</span><span>refine</span><span>decode</span></div><button class="loader-skip" type="button" aria-label="Skip loading animation"><span>skip</span><kbd>Esc</kbd></button></div></div><script async="async">const loadingBox = document.getElementById('loading-box')
-const loadingStartedAt = Date.now()
-const introStorageKey = 'lloyd-intro-seen'
-let hasSeenIntro = false
-try {
-  hasSeenIntro = window.localStorage.getItem(introStorageKey) === 'true'
-} catch (error) {}
-const firstVisitMinimumLoadingTime = 3600
-const repeatVisitMinimumLoadingTime = 0
-const minimumLoadingTime = hasSeenIntro ? repeatVisitMinimumLoadingTime : firstVisitMinimumLoadingTime
-const maxLoadingTime = hasSeenIntro ? 3600 : 7600
+</head><body><div id="loading-box" aria-label="Lloyd 入场动画"><canvas id="lloyd-intro-canvas" aria-hidden="true"></canvas><div class="intro-hud"><div class="intro-pipe"><div class="intro-stage"><i></i><span>sample</span></div><div class="intro-seg"><b></b></div><div class="intro-stage"><i></i><span>refine</span></div><div class="intro-seg"><b></b></div><div class="intro-stage"><i></i><span>decode</span></div></div></div><div class="intro-card"><img class="intro-av" src="https://files.seeusercontent.com/2026/09/14/fpO9/webConfiguration_topimg.jpg" alt="Lloyd" onerror="this.onerror=null;this.src='/img/404.jpg'"/><div class="intro-nm">Lloyd</div><button class="intro-enter" type="button">进入 ~/lloyd →</button></div><button class="intro-skip" type="button" aria-label="跳过入场动画">跳过 →</button></div><script>;(function () {
+  const overlay = document.getElementById('loading-box')
+  if (!overlay) return
+  const canvas = document.getElementById('lloyd-intro-canvas')
+  const hud = overlay.querySelector('.intro-hud')
+  const card = overlay.querySelector('.intro-card')
+  const enterBtn = overlay.querySelector('.intro-enter')
+  const avBtn = overlay.querySelector('.intro-av')
+  const skipBtn = overlay.querySelector('.intro-skip')
 
-var preloader = {
-  endLoading: () => {
-    try {
-      window.localStorage.setItem(introStorageKey, 'true')
-    } catch (error) {}
-    document.body.style.overflow = 'auto';
-    loadingBox && loadingBox.classList.add("loaded")
-  },
-  initLoading: () => {
-    document.body.style.overflow = '';
-    loadingBox && loadingBox.classList.remove("loaded")
+  const introStorageKey = 'lloyd-intro-seen-at'
+  const introCooldownMs = 24 * 60 * 60 * 1000
+  let recentlySeen = false
+  try {
+    const seenAt = parseInt(localStorage.getItem(introStorageKey) || '0', 10)
+    recentlySeen = seenAt > 0 && Date.now() - seenAt < introCooldownMs
+  } catch (error) {}
+  const reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  const preloader = {
+    endLoading: () => {
+      document.body.style.overflow = 'auto'
+      overlay.classList.add('loaded')
+    },
+    initLoading: () => {
+      document.body.style.overflow = ''
+      overlay.classList.remove('loaded')
+    }
   }
-}
+  window.preloader = preloader
 
-;(() => {
-  const canvas = document.getElementById('lloyd-starfield')
-  if (!canvas || !loadingBox) return
+  function skipIntro() {
+    let finished = false
+    const finish = function () {
+      if (finished) return
+      finished = true
+      preloader.endLoading()
+    }
+    if (document.readyState === 'complete') setTimeout(finish, 250)
+    else addEventListener('load', function () { setTimeout(finish, 250) })
+    setTimeout(finish, 3000)
+  }
+
+  if (!canvas || !hud || !card || recentlySeen || reduceMotion) {
+    skipIntro()
+    return
+  }
 
   const ctx = canvas.getContext('2d')
-  const textCanvas = document.createElement('canvas')
-  const textCtx = textCanvas.getContext('2d')
-  const particles = []
-  const pointer = { x: -9999, y: -9999 }
-  const loaderText = 'LLOYD'
-  let width = 0
-  let height = 0
-  let dpr = 1
-  let targetPoints = []
-  let animationFrame = 0
+  const sprite = document.createElement('canvas')
+  sprite.width = sprite.height = 64
+  ;(function () {
+    const g = sprite.getContext('2d')
+    const grad = g.createRadialGradient(32, 32, 0, 32, 32, 32)
+    grad.addColorStop(0, 'rgba(214,243,255,1)')
+    grad.addColorStop(0.25, 'rgba(138,214,255,.6)')
+    grad.addColorStop(0.6, 'rgba(110,190,240,.14)')
+    grad.addColorStop(1, 'rgba(110,190,240,0)')
+    g.fillStyle = grad
+    g.fillRect(0, 0, 64, 64)
+  })()
 
-  const rand = (min, max) => min + Math.random() * (max - min)
+  const STEPS = [
+    { t: 0.55, d: 0.14 }, { t: 1.05, d: 0.32 }, { t: 1.55, d: 0.52 },
+    { t: 2.05, d: 0.72 }, { t: 2.5, d: 0.88 }, { t: 2.95, d: 1.0 }
+  ]
 
-  const drawSpacedText = (text, x, y, letterSpacing) => {
-    const chars = Array.from(text)
-    const widths = chars.map(char => textCtx.measureText(char).width)
-    const totalWidth = widths.reduce((sum, charWidth) => sum + charWidth, 0) + letterSpacing * (chars.length - 1)
-    let cursor = x - totalWidth / 2
+  let W = 0, H = 0, DPR = 1, parts = [], pulse = 0, d = 0, dTarget = 0
+  let stepShown = -1, doneAt = 0, raf = 0, t0 = 0
+  let revealing = false, landed = false
+  const mouse = { x: -1e9, y: -1e9 }
+  let STAGE_EL = null, SEG_EL = null
 
-    chars.forEach((char, index) => {
-      textCtx.fillText(char, cursor + widths[index] / 2, y)
-      cursor += widths[index] + letterSpacing
+  function vw() { const w = innerWidth || document.documentElement.clientWidth || 0; return w > 20 ? w : 1280 }
+  function vh() { const h = innerHeight || document.documentElement.clientHeight || 0; return h > 20 ? h : 800 }
+
+  function resize() {
+    DPR = Math.min(devicePixelRatio || 1, 2)
+    W = canvas.width = Math.round(vw() * DPR)
+    H = canvas.height = Math.round(vh() * DPR)
+    canvas.style.width = vw() + 'px'
+    canvas.style.height = vh() + 'px'
+  }
+
+  addEventListener('mousemove', function (e) { mouse.x = e.clientX * DPR; mouse.y = e.clientY * DPR })
+  addEventListener('mouseleave', function () { mouse.x = mouse.y = -1e9 })
+
+  function sampleText() {
+    if (!W || !H) return []
+    const off = document.createElement('canvas')
+    off.width = W; off.height = H
+    const o = off.getContext('2d')
+    o.fillStyle = '#fff'
+    o.textBaseline = 'middle'
+    o.textAlign = 'left'
+    const text = 'LLOYD'
+    const tracking = 0.16
+    let size = Math.min(H * 0.36, W * 0.34)
+    const setFont = function () { o.font = '800 ' + size + 'px "JetBrains Mono", ui-monospace, Consolas, monospace' }
+    setFont()
+    const adv = function () { let w = 0; for (let i = 0; i < text.length; i++) w += o.measureText(text[i]).width + size * tracking; return w - size * tracking }
+    if (adv() > W * 0.84) { size *= W * 0.84 / adv(); setFont() }
+    let x = (W - adv()) / 2
+    const y = H * 0.42
+    for (let i = 0; i < text.length; i++) { const ch = text[i]; o.fillText(ch, x, y); x += o.measureText(ch).width + size * tracking }
+    const data = o.getImageData(0, 0, W, H).data
+    const gap = Math.max(5, Math.round(6.5 * DPR))
+    const pts = []
+    for (let yy = 0; yy < H; yy += gap) for (let xx = 0; xx < W; xx += gap) if (data[(yy * W + xx) * 4 + 3] > 140) pts.push({ x: xx, y: yy })
+    return pts
+  }
+
+  function build() {
+    const pts = sampleText()
+    const R = Math.min(W, H) * 0.62
+    parts = pts.map(function (p) {
+      const ang = Math.random() * 6.283, mag = Math.pow(Math.random(), 0.6) * R
+      return {
+        tx: p.x, ty: p.y, ox: Math.cos(ang) * mag, oy: Math.sin(ang) * mag,
+        x: p.x + Math.cos(ang) * mag, y: p.y + Math.sin(ang) * mag,
+        ph: Math.random() * 6.28, r: (Math.random() * 0.8 + 0.7) * DPR, seed: Math.random()
+      }
     })
   }
 
-  const resizeCanvas = () => {
-    dpr = Math.min(window.devicePixelRatio || 1, 2)
-    width = window.innerWidth
-    height = window.innerHeight
-    canvas.width = Math.floor(width * dpr)
-    canvas.height = Math.floor(height * dpr)
-    canvas.style.width = `${width}px`
-    canvas.style.height = `${height}px`
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-    buildTextPoints()
-    buildParticles()
+  function updateStages() {
+    if (!STAGE_EL) { STAGE_EL = hud.querySelectorAll('.intro-stage'); SEG_EL = hud.querySelectorAll('.intro-seg b') }
+    if (!STAGE_EL.length) return
+    const cur = d < 0.30 ? 0 : d < 0.82 ? 1 : 2
+    for (let i = 0; i < STAGE_EL.length; i++) {
+      STAGE_EL[i].classList.toggle('on', i === cur)
+      STAGE_EL[i].classList.toggle('done', i < cur)
+    }
+    if (SEG_EL[0]) SEG_EL[0].style.width = (d < 0.30 ? d / 0.30 : 1) * 100 + '%'
+    if (SEG_EL[1]) SEG_EL[1].style.width = (d < 0.30 ? 0 : d < 0.82 ? (d - 0.30) / 0.52 : 1) * 100 + '%'
   }
 
-  const buildTextPoints = () => {
-    textCanvas.width = Math.floor(width * dpr)
-    textCanvas.height = Math.floor(height * dpr)
-    textCtx.setTransform(dpr, 0, 0, dpr, 0, 0)
-    textCtx.clearRect(0, 0, width, height)
+  function frame(ts) {
+    if (revealing) return
+    if (!t0) t0 = ts
+    const el = (ts - t0) / 1000
+    ctx.globalCompositeOperation = 'source-over'
+    ctx.fillStyle = 'rgba(6,9,13,0.32)'
+    ctx.fillRect(0, 0, W, H)
+    if (el > 0.1) hud.classList.add('show')
 
-    const fontSize = Math.min(width * 0.285, height * 0.31, 260)
-    const letterSpacing = Math.min(width * 0.038, fontSize * 0.34)
-    textCtx.font = `800 ${fontSize}px "JetBrains Mono", "Arial Black", "Segoe UI", Arial, sans-serif`
-    textCtx.textAlign = 'center'
-    textCtx.textBaseline = 'middle'
-    textCtx.fillStyle = '#fff'
-    drawSpacedText(loaderText, width / 2, height / 2, letterSpacing)
+    let step = -1
+    for (let i = 0; i < STEPS.length; i++) if (el >= STEPS[i].t) { dTarget = STEPS[i].d; step = i }
+    d += (dTarget - d) * 0.13
+    if (step !== stepShown) { stepShown = step; if (step >= 0) pulse = 1 }
+    if (d > 0.985 && !doneAt && el > STEPS[STEPS.length - 1].t + 0.5) doneAt = ts
+    if (doneAt && ts - doneAt > 700 && !landed) land()
+    const dim = doneAt ? Math.min(1, (ts - doneAt) / 900) : 0
+    const bphase = doneAt ? (((ts - doneAt) / 9000) % 1) : 0
+    let bc
+    if (bphase < 0.34) bc = 1
+    else if (bphase < 0.54) bc = 1 - (bphase - 0.34) / 0.2
+    else if (bphase < 0.62) bc = 0
+    else bc = (bphase - 0.62) / 0.38
+    bc = bc * bc * (3 - 2 * bc)
+    const breathScatter = (1 - bc) * 0.05 * dim
+    const bf = 1 - dim + dim * (0.4 + bc)
+    updateStages()
+    if (doneAt) hud.style.opacity = String(1 - dim)
 
-    const pixels = textCtx.getImageData(0, 0, textCanvas.width, textCanvas.height).data
-    const step = width < 640 ? 7 : 5
-    targetPoints = []
+    const noiseK = Math.pow(1 - d, 2)
+    pulse *= 0.86
+    ctx.globalCompositeOperation = 'lighter'
 
-    for (let y = 0; y < textCanvas.height; y += step * dpr) {
-      for (let x = 0; x < textCanvas.width; x += step * dpr) {
-        const index = (y * textCanvas.width + x) * 4 + 3
-        if (pixels[index] > 120) {
-          targetPoints.push({
-            x: x / dpr + rand(-.9, .9),
-            y: y / dpr + rand(-.9, .9)
-          })
+    for (let k = 0; k < parts.length; k++) {
+      const p = parts[k]
+      const sK = noiseK + breathScatter
+      const ax = p.tx + p.ox * sK, ay = p.ty + p.oy * sK
+      p.x += (ax - p.x) * (0.18 + pulse * 0.5)
+      p.y += (ay - p.y) * (0.18 + pulse * 0.5)
+      let hb = 0
+      if (d > 0.5) {
+        const mdx = p.x - mouse.x, mdy = p.y - mouse.y, m2 = mdx * mdx + mdy * mdy, RR = (21 * DPR) * (21 * DPR)
+        if (m2 < RR) {
+          hb = 1 - m2 / RR
+          const dd = Math.sqrt(m2) || 1, f = hb * 8 * DPR
+          p.x += mdx / dd * f
+          p.y += mdy / dd * f
         }
       }
+      const turb = noiseK * 34 * DPR
+      const rx = p.x + Math.sin(p.y * 0.012 + el * 1.7 + p.seed * 6.28) * turb
+      const ry = p.y + Math.cos(p.x * 0.012 - el * 1.4 + p.seed * 4) * turb
+      const tw = 0.55 + Math.sin(p.tw = (p.tw || 0) + 0.04) * 0.2 * (1 - dim * 0.92)
+      const a = (0.30 + d * 0.6) * tw * (1 + pulse * 1.1) * bf * (1 + hb * 2.4)
+      const s = p.r * (7.5 - d * 4.6) * (1 + pulse * 0.5 + hb * 1.8)
+      ctx.globalAlpha = Math.min(1, a)
+      ctx.drawImage(sprite, rx - s / 2, ry - s / 2, s, s)
     }
-  }
 
-  const buildParticles = () => {
-    const count = Math.min(targetPoints.length, width < 640 ? 960 : 1900)
-    while (particles.length < count) {
-      particles.push({
-        x: rand(0, width),
-        y: rand(0, height),
-        homeX: rand(0, width),
-        homeY: rand(0, height),
-        vx: rand(-.65, .65),
-        vy: rand(-.65, .65),
-        size: rand(.65, 1.75),
-        phase: rand(0, Math.PI * 2),
-        speed: rand(.026, .055),
-        colorShift: rand(0, 1)
-      })
-    }
-    particles.length = count
-
-    particles.forEach((particle, index) => {
-      const target = targetPoints[Math.floor(index * targetPoints.length / count)] || { x: width / 2, y: height / 2 }
-      particle.tx = target.x
-      particle.ty = target.y
-    })
-  }
-
-  const easeOutCubic = value => 1 - Math.pow(1 - value, 3)
-  const easeInOutCubic = value => value < .5 ? 4 * value * value * value : 1 - Math.pow(-2 * value + 2, 3) / 2
-
-  const draw = (time) => {
-    ctx.clearRect(0, 0, width, height)
-
-    const elapsed = Date.now() - loadingStartedAt
-    const intro = Math.min(1, elapsed / 1400)
-    const gather = easeInOutCubic(Math.max(0, Math.min(1, (elapsed - 620) / 2050)))
-    const settle = easeOutCubic(Math.max(0, Math.min(1, (elapsed - 2450) / 900)))
-    const pulse = Math.sin(time * .0036)
-
-    const halo = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, Math.min(width, height) * .42)
-    halo.addColorStop(0, `rgba(84, 143, 178, ${.13 + settle * .11})`)
-    halo.addColorStop(.46, 'rgba(84, 143, 178, .035)')
-    halo.addColorStop(1, 'rgba(84, 143, 178, 0)')
-    ctx.fillStyle = halo
-    ctx.fillRect(0, 0, width, height)
-
-    particles.forEach(particle => {
-      const driftX = particle.homeX + Math.cos(time * .0006 + particle.phase) * 24
-      const driftY = particle.homeY + Math.sin(time * .0007 + particle.phase) * 20
-      const targetX = driftX * (1 - gather) + particle.tx * gather
-      const targetY = driftY * (1 - gather) + particle.ty * gather
-      const dx = targetX - particle.x
-      const dy = targetY - particle.y
-      const mouseDx = particle.x - pointer.x
-      const mouseDy = particle.y - pointer.y
-      const mouseDistance = Math.sqrt(mouseDx * mouseDx + mouseDy * mouseDy)
-
-      if (mouseDistance < 94) {
-        particle.vx += (mouseDx / Math.max(mouseDistance, 1)) * .34
-        particle.vy += (mouseDy / Math.max(mouseDistance, 1)) * .34
+    if (d > 0.5) {
+      const R2 = (16 * DPR) * (16 * DPR)
+      ctx.strokeStyle = 'rgba(125,211,252,' + (d - 0.5) * 0.42 + ')'
+      ctx.lineWidth = DPR * 0.5
+      ctx.beginPath()
+      for (let i2 = 0; i2 < parts.length; i2++) {
+        const pp = parts[i2]
+        for (let j = i2 + 1; j <= i2 + 2 && j < parts.length; j++) {
+          const q = parts[j], dx = pp.x - q.x, dy = pp.y - q.y
+          if (dx * dx + dy * dy < R2) { ctx.moveTo(pp.x, pp.y); ctx.lineTo(q.x, q.y) }
+        }
       }
-
-      particle.vx += dx * particle.speed * (.72 + gather * 1.45)
-      particle.vy += dy * particle.speed * (.72 + gather * 1.45)
-      particle.vx *= .8 - settle * .08
-      particle.vy *= .8 - settle * .08
-      particle.x += particle.vx
-      particle.y += particle.vy
-
-      const glow = (.22 + intro * .3 + gather * .34 + Math.sin(time * .004 + particle.phase) * .16)
-      const size = particle.size + gather * .72 + settle * .4 + pulse * .1
-      const blue = particle.colorShift > .72 ? '180, 220, 255' : '245, 248, 255'
-      ctx.beginPath()
-      ctx.fillStyle = `rgba(${blue}, ${Math.max(.12, Math.min(.92, glow))})`
-      ctx.arc(particle.x, particle.y, size, 0, Math.PI * 2)
-      ctx.fill()
-    })
-
-    if (settle > .18) {
-      ctx.save()
-      ctx.globalCompositeOperation = 'screen'
-      ctx.strokeStyle = `rgba(101, 158, 185, ${(settle - .18) * .2})`
-      ctx.lineWidth = 1
-      ctx.setLineDash([2, 18])
-      ctx.beginPath()
-      ctx.arc(width / 2, height / 2, Math.min(width, height) * (.235 + pulse * .004), 0, Math.PI * 2)
       ctx.stroke()
-      ctx.restore()
     }
-
-    animationFrame = requestAnimationFrame(draw)
+    ctx.globalAlpha = 1
+    ctx.globalCompositeOperation = 'source-over'
+    raf = requestAnimationFrame(frame)
   }
 
-  window.addEventListener('resize', resizeCanvas)
-  window.addEventListener('mousemove', event => {
-    pointer.x = event.clientX
-    pointer.y = event.clientY
+  function land() {
+    if (landed) return
+    landed = true
+    card.classList.add('show')
+    setTimeout(reveal, 6000)
+  }
+
+  function reveal() {
+    if (revealing) return
+    revealing = true
+    cancelAnimationFrame(raf)
+    card.classList.remove('show')
+    preloader.endLoading()
+    try { localStorage.setItem(introStorageKey, String(Date.now())) } catch (error) {}
+  }
+
+  function start() {
+    resize()
+    build()
+    if (parts.length === 0) { setTimeout(start, 120); return }
+    raf = requestAnimationFrame(frame)
+  }
+
+  function play() {
+    try { localStorage.setItem(introStorageKey, String(Date.now())) } catch (error) {}
+    const done = function () {
+      start()
+      setTimeout(reveal, 12000)
+    }
+    if (document.fonts && document.fonts.load) {
+      Promise.race([document.fonts.load('800 100px "JetBrains Mono"').catch(function () {}), new Promise(function (r) { setTimeout(r, 700) })]).then(done)
+    } else {
+      done()
+    }
+  }
+
+  addEventListener('resize', function () { if (!revealing) { resize(); build() } })
+  skipBtn && skipBtn.addEventListener('click', function (e) { e.stopPropagation(); reveal() })
+  enterBtn && enterBtn.addEventListener('click', function (e) { e.stopPropagation(); reveal() })
+  avBtn && avBtn.addEventListener('click', function (e) { e.stopPropagation(); reveal() })
+  overlay.addEventListener('click', function () { reveal() })
+  addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') reveal()
   })
-  window.addEventListener('touchmove', event => {
-    const touch = event.touches && event.touches[0]
-    if (!touch) return
-    pointer.x = touch.clientX
-    pointer.y = touch.clientY
-  }, { passive: true })
 
-  resizeCanvas()
-  draw(0)
-
-  loadingBox.addEventListener('transitionend', () => {
-    if (loadingBox.classList.contains('loaded')) cancelAnimationFrame(animationFrame)
-  })
-})()
-
-const endWhenReady = () => {
-  const wait = Math.max(0, minimumLoadingTime - (Date.now() - loadingStartedAt))
-  setTimeout(() => preloader.endLoading(), wait)
-}
-
-window.addEventListener('load', endWhenReady)
-setTimeout(function(){preloader.endLoading();}, maxLoadingTime);
-loadingBox && loadingBox.addEventListener('click',()=> {preloader.endLoading()})
-window.addEventListener('keydown', event => {
-  if (event.key === 'Escape') preloader.endLoading()
-})</script><div id="web_bg" style="background-image: url(https://files.seeusercontent.com/2026/09/13/9avI/webConfiguration_xCbDMemvuUjz5Kg.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://files.seeusercontent.com/2026/09/14/fpO9/webConfiguration_topimg.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/categories-tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories-tags/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa-solid fa-house"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa-solid fa-magnifying-glass-chart"></i><span> 概览</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/categories-tags/"><i class="fa-fw fas fa-layer-group"></i><span> 分类与标签</span></a></li><li><a class="site-page child" href="/charts/"><i class="fa-fw fas fa-chart-line"></i><span> 统计表</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/draw/"><i class="fa-fw fa fa-paint-brush"></i><span> 绘画</span></a></li><li><a class="site-page child" href="/galgame/"><i class="fa-fw fa fa-gamepad"></i><span> 视觉小说</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heart"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于本人</span></a></li><li><a class="site-page child" href="/about/story/"><i class="fa-fw fas fa-book-open"></i><span> 我的故事</span></a></li><li><a class="site-page child" href="/about/resume/"><i class="fa-fw fas fa-id-card"></i><span> 我的简历</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(https://files.seeusercontent.com/2026/09/14/z2eS/CSCS61A_cover_001.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Lloyd的个人博客</span></a><a class="nav-page-title" href="/"><span class="site-name">CS自学系列（一）CS61A</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa-solid fa-house"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa-solid fa-magnifying-glass-chart"></i><span> 概览</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/categories-tags/"><i class="fa-fw fas fa-layer-group"></i><span> 分类与标签</span></a></li><li><a class="site-page child" href="/charts/"><i class="fa-fw fas fa-chart-line"></i><span> 统计表</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/draw/"><i class="fa-fw fa fa-paint-brush"></i><span> 绘画</span></a></li><li><a class="site-page child" href="/galgame/"><i class="fa-fw fa fa-gamepad"></i><span> 视觉小说</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heart"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于本人</span></a></li><li><a class="site-page child" href="/about/story/"><i class="fa-fw fas fa-book-open"></i><span> 我的故事</span></a></li><li><a class="site-page child" href="/about/resume/"><i class="fa-fw fas fa-id-card"></i><span> 我的简历</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">CS自学系列（一）CS61A</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-31T14:23:32.000Z" title="发表于 2025-08-31 22:23:32">2025-08-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-09-14T06:45:16.553Z" title="更新于 2026-09-14 14:45:16">2026-09-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CS/">CS</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">4.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/CSLearning-CS61A/#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;自从上次更新以来已经过去了&quot;,&quot;messageNext&quot;:&quot;天,这篇文章(主要是技术性博客)的内容可能已经过期&quot;,&quot;postUpdate&quot;:&quot;2026-09-14 14:45:16&quot;}" hidden></div><p><img src="https://files.seeusercontent.com/2026/09/14/z2eS/CSCS61A_cover_001.jpg" alt="CS自学系列（一）CS61A_cover_001"></p>
+  play()
+})()</script><div id="web_bg" style="background-image: url(https://files.seeusercontent.com/2026/09/13/9avI/webConfiguration_xCbDMemvuUjz5Kg.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://files.seeusercontent.com/2026/09/14/fpO9/webConfiguration_topimg.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/categories-tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories-tags/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa-solid fa-house"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa-solid fa-magnifying-glass-chart"></i><span> 概览</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/categories-tags/"><i class="fa-fw fas fa-layer-group"></i><span> 分类与标签</span></a></li><li><a class="site-page child" href="/charts/"><i class="fa-fw fas fa-chart-line"></i><span> 统计表</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/draw/"><i class="fa-fw fa fa-paint-brush"></i><span> 绘画</span></a></li><li><a class="site-page child" href="/galgame/"><i class="fa-fw fa fa-gamepad"></i><span> 视觉小说</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heart"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于本人</span></a></li><li><a class="site-page child" href="/about/story/"><i class="fa-fw fas fa-book-open"></i><span> 我的故事</span></a></li><li><a class="site-page child" href="/about/resume/"><i class="fa-fw fas fa-id-card"></i><span> 我的简历</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(https://files.seeusercontent.com/2026/09/14/z2eS/CSCS61A_cover_001.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Lloyd的个人博客</span></a><a class="nav-page-title" href="/"><span class="site-name">CS自学系列（一）CS61A</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa-solid fa-house"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa-solid fa-magnifying-glass-chart"></i><span> 概览</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/categories-tags/"><i class="fa-fw fas fa-layer-group"></i><span> 分类与标签</span></a></li><li><a class="site-page child" href="/charts/"><i class="fa-fw fas fa-chart-line"></i><span> 统计表</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/draw/"><i class="fa-fw fa fa-paint-brush"></i><span> 绘画</span></a></li><li><a class="site-page child" href="/galgame/"><i class="fa-fw fa fa-gamepad"></i><span> 视觉小说</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heart"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于本人</span></a></li><li><a class="site-page child" href="/about/story/"><i class="fa-fw fas fa-book-open"></i><span> 我的故事</span></a></li><li><a class="site-page child" href="/about/resume/"><i class="fa-fw fas fa-id-card"></i><span> 我的简历</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">CS自学系列（一）CS61A</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-31T14:23:32.000Z" title="发表于 2025-08-31 22:23:32">2025-08-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-09-14T06:45:16.553Z" title="更新于 2026-09-14 14:45:16">2026-09-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CS/">CS</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">4.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/CSLearning-CS61A/#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;自从上次更新以来已经过去了&quot;,&quot;messageNext&quot;:&quot;天,这篇文章(主要是技术性博客)的内容可能已经过期&quot;,&quot;postUpdate&quot;:&quot;2026-09-14 14:45:16&quot;}" hidden></div><p><img src="https://files.seeusercontent.com/2026/09/14/z2eS/CSCS61A_cover_001.jpg" alt="CS自学系列（一）CS61A_cover_001"></p>
 <h2 id="相关学习的准备">相关学习的准备</h2>
 <blockquote>
 <p>小tip：</p>
