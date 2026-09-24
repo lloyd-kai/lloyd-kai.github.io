@@ -161,7 +161,7 @@
   isToc: true,
   pageType: 'post'
 }</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3PdGh1mJtS5LxUYm",ck:"3PdGh1mJtS5LxUYm"})</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Lloyd的个人博客" type="application/atom+xml">
-</head><body><div id="loading-box" aria-label="Lloyd 入场动画"><canvas id="lloyd-intro-canvas" aria-hidden="true"></canvas><div class="intro-hud"><div class="intro-pipe"><div class="intro-stage"><i></i><span>sample</span></div><div class="intro-seg"><b></b></div><div class="intro-stage"><i></i><span>refine</span></div><div class="intro-seg"><b></b></div><div class="intro-stage"><i></i><span>decode</span></div></div></div><div class="intro-card"><img class="intro-av" src="https://files.seeusercontent.com/2026/09/14/fpO9/webConfiguration_topimg.jpg" alt="Lloyd" onerror="this.onerror=null;this.src='/img/404.jpg'"/><div class="intro-nm">Lloyd</div><button class="intro-enter" type="button">进入 ~/lloyd →</button></div><button class="intro-skip" type="button" aria-label="跳过入场动画">跳过 →</button></div><script>;(function () {
+</head><body><div id="loading-box" aria-label="Lloyd 入场动画"><canvas id="lloyd-intro-canvas" aria-hidden="true"></canvas><div class="intro-fallback" aria-hidden="true"><div class="intro-fallback__ring"></div><div class="intro-fallback__text">LOADING</div></div><div class="intro-hud"><div class="intro-pipe"><div class="intro-stage"><i></i><span>sample</span></div><div class="intro-seg"><b></b></div><div class="intro-stage"><i></i><span>refine</span></div><div class="intro-seg"><b></b></div><div class="intro-stage"><i></i><span>decode</span></div></div></div><div class="intro-card"><img class="intro-av" src="https://files.seeusercontent.com/2026/09/14/fpO9/webConfiguration_topimg.jpg" alt="Lloyd" onerror="this.onerror=null;this.src='/img/404.jpg'"/><div class="intro-nm">Lloyd</div><button class="intro-enter" type="button">进入 ~/lloyd →</button></div><button class="intro-skip" type="button" aria-label="跳过入场动画">跳过 →</button></div><noscript><style>#loading-box { display: none !important; }</style></noscript><script>;(function () {
   const overlay = document.getElementById('loading-box')
   if (!overlay) return
   const canvas = document.getElementById('lloyd-intro-canvas')
@@ -230,7 +230,7 @@
 
   let W = 0, H = 0, DPR = 1, parts = [], pulse = 0, d = 0, dTarget = 0
   let stepShown = -1, doneAt = 0, raf = 0, t0 = 0
-  let revealing = false, landed = false
+  let revealing = false, landed = false, lastPaint = 0, lastTs = 0
   const mouse = { x: -1e9, y: -1e9 }
   let STAGE_EL = null, SEG_EL = null
 
@@ -300,7 +300,14 @@
 
   function frame(ts) {
     if (revealing) return
+    lastPaint = Date.now()
     if (!t0) t0 = ts
+    if (lastTs && ts - lastTs > 600) {
+      const gap = ts - lastTs - 16
+      t0 += gap
+      if (doneAt) doneAt += gap
+    }
+    lastTs = ts
     const el = (ts - t0) / 1000
     ctx.globalCompositeOperation = 'source-over'
     ctx.fillStyle = 'rgba(6,9,13,0.32)'
@@ -399,10 +406,29 @@
   }
 
   function play() {
-    try { localStorage.setItem(introStorageKey, String(Date.now())) } catch (error) {}
     const done = function () {
-      start()
-      setTimeout(reveal, 12000)
+      const go = function () {
+        overlay.classList.add('intro-on')
+        lastPaint = Date.now()
+        const watchdog = setInterval(function () {
+          if (revealing) { clearInterval(watchdog); return }
+          if (document.hidden) { lastPaint = Date.now(); return }
+          if (Date.now() - lastPaint > 5000) {
+            overlay.classList.remove('intro-on')
+            clearInterval(watchdog)
+            reveal()
+          }
+        }, 1000)
+        try { start() } catch (error) { overlay.classList.remove('intro-on'); reveal() }
+        setTimeout(reveal, 12000)
+      }
+      if (document.hidden) {
+        addEventListener('visibilitychange', function onVis() {
+          if (!document.hidden) { removeEventListener('visibilitychange', onVis); go() }
+        })
+      } else {
+        go()
+      }
     }
     if (document.fonts && document.fonts.load) {
       Promise.race([document.fonts.load('800 100px "JetBrains Mono"').catch(function () {}), new Promise(function (r) { setTimeout(r, 700) })]).then(done)
