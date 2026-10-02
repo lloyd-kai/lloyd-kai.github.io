@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lloydkai.cn/link/index.html</loc>
+    <loc>https://lloydkai.cn/posts/grow-up-202609/</loc>
     
     <lastmod>2026-10-02</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/posts/grow-up-202609/</loc>
+    <loc>https://lloydkai.cn/link/index.html</loc>
     
     <lastmod>2026-10-02</lastmod>
     
@@ -366,6 +366,13 @@
   </url>
   
   <url>
+    <loc>https://lloydkai.cn/tags/rust/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://lloydkai.cn/tags/blog/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -381,13 +388,6 @@
   
   <url>
     <loc>https://lloydkai.cn/tags/hexo/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/rust/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -466,14 +466,14 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/blog/</loc>
+    <loc>https://lloydkai.cn/categories/rust/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/categories/rust/</loc>
+    <loc>https://lloydkai.cn/categories/blog/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
