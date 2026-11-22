@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lloydkai.cn/posts/blog-series-one/</loc>
+    
+    <lastmod>2026-11-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lloydkai.cn/about/grow-up/index.html</loc>
     
     <lastmod>2026-11-22</lastmod>
@@ -83,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/posts/blog-series-one/</loc>
+    <loc>https://lloydkai.cn/posts/database-principle/</loc>
     
     <lastmod>2026-09-14</lastmod>
     
@@ -92,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/posts/database-principle/</loc>
+    <loc>https://lloydkai.cn/posts/blog-series-three/</loc>
     
     <lastmod>2026-09-14</lastmod>
     
@@ -119,24 +128,6 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/posts/blog-series-four/</loc>
-    
-    <lastmod>2026-09-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/posts/blog-series-three/</loc>
-    
-    <lastmod>2026-09-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://lloydkai.cn/posts/blog-series-five/</loc>
     
     <lastmod>2026-09-14</lastmod>
@@ -146,7 +137,16 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/posts/quit-profession/</loc>
+    <loc>https://lloydkai.cn/posts/blog-series-four/</loc>
+    
+    <lastmod>2026-09-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/posts/superset-install/</loc>
     
     <lastmod>2026-09-14</lastmod>
     
@@ -164,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/posts/electronic-product/</loc>
+    <loc>https://lloydkai.cn/posts/quit-profession/</loc>
     
     <lastmod>2026-09-14</lastmod>
     
@@ -191,15 +191,6 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/posts/superset-install/</loc>
-    
-    <lastmod>2026-09-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://lloydkai.cn/posts/oral-english/</loc>
     
     <lastmod>2026-09-14</lastmod>
@@ -210,6 +201,15 @@
   
   <url>
     <loc>https://lloydkai.cn/posts/english-grammer/</loc>
+    
+    <lastmod>2026-09-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/posts/electronic-product/</loc>
     
     <lastmod>2026-09-14</lastmod>
     
@@ -236,7 +236,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/about/resume/index.html</loc>
+    <loc>https://lloydkai.cn/about/story/index.html</loc>
     
     <lastmod>2026-09-14</lastmod>
     
@@ -245,7 +245,7 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/about/story/index.html</loc>
+    <loc>https://lloydkai.cn/about/resume/index.html</loc>
     
     <lastmod>2026-09-14</lastmod>
     
@@ -412,27 +412,6 @@
   </url>
   
   <url>
-    <loc>https://lloydkai.cn/tags/%E5%A4%A7%E5%AD%A6/</loc>
-    <lastmod>2026-11-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/computer/</loc>
-    <lastmod>2026-11-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lloydkai.cn/tags/%E8%80%83%E7%A0%94/</loc>
-    <lastmod>2026-11-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lloydkai.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -447,7 +426,28 @@
   </url>
   
   <url>
+    <loc>https://lloydkai.cn/tags/%E5%A4%A7%E5%AD%A6/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/%E8%80%83%E7%A0%94/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://lloydkai.cn/tags/English/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lloydkai.cn/tags/computer/</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
