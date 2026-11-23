@@ -1,25 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>个人成长记录：202608</title>
-    <url>/posts/grow-up-202608/</url>
-    <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/Qje6/202608_cover__.png" alt="个人成长记录：202608_cover_僵尸毁灭工程_孤独摇滚"></p>
+    <title>个人成长记录：202607</title>
+    <url>/posts/grow-up-202607/</url>
+    <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/4ibX/202607_cover_001.jpg" alt="个人成长记录：202607_cover_北京五日游001"></p>
 <h2 id="本月事件">本月事件</h2>
 <ul>
-<li><strong>从大概14号开始就沉迷于刷视频</strong>。我不得不承认，自己的意志力远远没有我想象中的那么强，一旦开始刷第一个视频，B站的自动播放、情绪的反馈还是会御使你去刷下一个视频，直到你的时间被消耗殆尽。我看过一本相关的书，叫《技术封建主义》 ，就说那些互联网大厂利用软件和推荐算法，把用户牢牢“拴”在自己的领地上，让用户为自己无偿贡献内容，自我强化奴性。现在看来无论是国内外都在把用户当作是奶牛，只要轻轻一挤就会产出牛奶，而且在“流量为王”的引导下，如何抢占用户的时间显得至关重要，想尽办法地让用户沉迷自己推荐的内容。在我初中的时候，短视频还处于萌芽阶段，我当时下了火山视频去尝试一下，这一试一个下午就过去了，我猛地醒悟，这东西就是“新时代电子鸦片”，虽然这种言论和“短视频正在毁了年轻人”相去无几，但那时的我意识到，这将产生远比游戏成瘾更严重的后果。因此我给自己立了一个规矩，禁止下载任何的短视频软件，B站少于2min的一律不准看，视频优先用字幕看完，如果没有看视频的必要就只看字幕全文。事实证明这个举措是对的，不仅为我争取到宝贵的时间，而且提高了我速读、快速理解和思考的能力。不过，也存在“长视频”沉迷的问题，很多的10min视频其实没有什么营养，都是批量生产的，而且很多知识区的UP其实都是先写好稿子，然后去找和稿子相关的素材，既然你只需要他们的知识，为何不直接去看他们的稿子（也就是字幕）呢？看视频就有点的南辕北辙了。而且，视频带来的一个巨大问题就是——<strong>看了一遍视频，什么都没留下</strong>。是的，与读书不同的是，看视频不需要你多动脑，全神贯注地去参与，但是因此也丧失了独立思考和判断的能力，你看当下互联网，很容易因为一件事就吵起来，但其实只要去新闻源看一下原文，思考报道的逻辑关系，就能理顺事情的来龙去脉。但是互联网“供过于求”了，以至于你习惯了伸手，习惯等UP给你喂最新的消息，忘记了在互联网刚诞生的时候求助资源是需要“谢谢大佬”的，因为没人有义务给你提供资源，所有的东西需要你自己找。而现在UP主将信息作为商品出售，从你手中获取利润，因此一股脑地出视频，无论好的坏的。总而言之，短视频时代下，大家都成为了信息的生产者和消费者，很少有人作为思考者去分析信息的好坏。</li>
-<li><strong>计算机项目实践经验更加丰富了</strong>。感想【君莫笑】等vibe coding先驱，指引了一条计算机入门和实践的道路，舍弃传统的先看教程学习再去实践的路线，而是从实际项目出发，先用AI去写一个完整的项目，然后与AI问答，让他从宏观架构和微观代码角度去分析这个项目，微观有利于你去辨认什么是值得一学的语法，什么只是奇淫技巧；宏观有利于把控全局，了解一个项目涉及到的知识体系，以后就能有的放矢地学习，再也不用东拼西凑。实践确实是最好的老师，迫使我去思考为什么要这样写，那些语法究竟是为了解决什么问题而存在的，为什么要统一代码风格，git的实际使用是怎样的，<strong>在实际开发中才体会到前辈的良苦用心</strong>。</li>
-<li><strong>我好像患上了计划综合症</strong>。和完全没有计划相反的是，我需要一字一句指定我在一周具体需要做什么，一天大概需要做什么。其实本意是好的，但是我总是习惯不做完计划就不学习，把所有其他事情都抛在脑后，也就是机械地服从计划，不会变通。就我实际经验来看，任务可以分小，不需要过于详细，不用指定时间，只需要告诉自己，需要完成的时间期限即可。不用先画完地图再出门，一边走一边确认自己的位置，<strong>只要在正确的道路上，目的地总会抵达</strong>。</li>
-<li><strong>研究生马上就要开学了</strong>。仔细回想这两个月，基本在学习上算是一事无成，不该随波逐流地去看世界杯，看LOL比赛，刷视频浪费不少时间。本来打算刷的CS61B也没做到，参加的开源和项目也没有做完。在某种意义上家里耽误了我学习。不过在精神上确实好了许多，原来的神经性耳鸣稍微缓解了一些，也和以前的老朋友聚餐，一起去北京旅游，也写了一下latex的手册，和计算机大佬讨论开源项目，优化了博客和学习了深度学习。以后还是尽量不回去了，要么去自习室，要么去实践。我不是有自制力的人，只要一闲下来就容易自甘堕落，<strong>在图书馆能促进我自我监督和学习，让我意识到除了摆烂还有另外的路可以走，还有更多的惊喜值得追求，还有更浩瀚的海洋，还有更璀璨的星辰</strong>。我很想挣钱，有钱了我就能开始购买设备、理财和规划生活了，这肯定很累，还会占用不少时间，但是累得很快乐，总好过对一切都没有憧憬。人没有梦想和咸鱼有什么区别。</li>
+<li><strong>看完了《原子习惯》并且将其应用到自己的习惯养成中</strong>。事实证明很有效果，比如如果你想要控制自己最终每天在手机上的用时不超过1h，那么先从息屏开始，一点点提高挑战和难度，用刻意的步骤强化这个过程（比如超过1h就用盒子装手机，然后放在柜子里面让自己看不到）。拖延是因为一开始过于难了，比如你想要培养一个一个月看完一本书的习惯，那么一开始就从“看一页书”开始，有了第一页，才会有第二页，不断重复，直到整本书被你吸收。适当的奖惩机制，比如每学习1h就给自己的购物账户增加五块钱，让你的努力可视化，更有动力去学习；如果哪一天没有锻炼，就要求下一天不允许打开手机。</li>
+<li><strong>成功进组</strong>。目前成功进入导师的课题组，计算机的科研基本上就是AI方向，需要朝着深度学习、AI模型、调参等方向深入发展，目前我还是处于初级阶段，还需要补充相关的知识，特别感谢导师和大师兄，提供了一些具体的资料、学习路线和建议，后面会慢慢打下学习的基础，一边看线上《深度学习》的书的网页版并结合github源码进行学习，一边结合B站视频补充相关的基础知识和要点。其实之前学机械的时候也了解过一些CNN、RNN等，不过对于机械、土木、电气等专业来说，侧重的是计算机和专业结合，是计算机在具体专业的应用，并不侧重理论上的突破，只需要有相应的实验数据证明在某一领域上有良好的应用前景即可，目前科研确实就是“追风口”——万物连接“AI”，只能说我们一方面要对AI技术的应用前景充满信心，另一方面也要警惕背后的利益纠纷，毕竟历史是有蒸汽机狂热、电气狂热和互联网泡沫这些案例存在的，“黄金”也蕴含着“杀机”。</li>
+<li><strong>和朋友、 学弟互相拜亲戚、吃饭和锻炼</strong>。回来这几天基本上都在朋友家里住，学到部队里面是如何跑3000m、如何放松和如何休息的方法，顿时感觉以前走的都是歧路，怪不得每次跑完步第二天疼的腿都打不开，原来是要通过按摩将堆积在大小腿中的乳酸均匀分散到其他地方，如果乳酸集中堆积到某一个点，身体当天无法恢复，那么第二天就一定会疼。不过这个按摩好疼😢，用脚踩大小腿，还要把腿掰直，做按摩的时候我把这辈子所有痛苦的事都想了一遍，最后还是在鬼哭狼嚎之下做完了。疼是真疼，有效也是真有效，就看有没有相互锻炼、互相按摩的搭子了（可惜我没有）；给另外一个参军的学弟整理了一下电脑，科普了一些大学的相关知识和经验，并且给他写了2000字左右的建议。其实对于大部分非科班生来说，需要掌握的电脑的知识主要集中在：问题是怎么发生的？如何找到答案？比如“我是一个机械学生，我需要下载CAD”，那么第一个问题就是CAD如何安装，学习如何用搜索引擎找到资源、按照教程一步步下载，不懂的问懂行的人或者是AI，在这个实践过程中就会明白什么是路径、为什么文件夹命名最好是英文、如何设置中文或者打补丁、如何破解软件、游戏mod要放在哪里？人一定要会主动找你需要的东西，无论是作为学生还是成年人，<strong>社会上没有理所应当，一切都需要你去争取</strong>。</li>
+<li><strong>开始学习AI、Javaweb和agent</strong>。我在《我的故事》这篇文章中就讲到，我个人是偏向于以后做偏软件开发、网页制作方向的，我愿意为了制作软件而去学习相关的一些底层知识和顶层知识，比如OS、数据库、计网、CPU/GPU、进程、内存管理、AI infra、版本管理系统、agent开发，就像乔布斯在苹果发布会上讲过的那样，“有志于制作好的软件的人，应当制作自己的硬件”。另一方面我也是尝试过才确定自己的未来职业方向的，偏硬件的比如单片机、数字电路，之前实习和制作寻迹小车的时候搞过，不怎么喜欢，无论是在开发过程中还是做出来后都感觉无动于衷，偏数学、理论的这更不用说了，我虽然分数考的高，但是考得高不代表对知识理解得深，反而知识理解得深的考的不好，别人不了解我，我还不了解我自己吗？基本上就是做题蛆一个，侥幸成为了一个还算卖得出高价的区，这种拼天赋的我就算了。还是贴近生活的软件开发，能得到大量实际反馈的项目经历给我带来的影响最大，我依稀还记得为了部署这个网站，端午节三天都是从早上7点搞到晚上11点多，有时候学上头了饭都忘记吃了，<strong>这是我第一次体会到什么是“废寝忘食”，也正是这时我终于找到我的苦苦寻觅的兴趣点和未来的工作</strong>。</li>
 </ul>
-<h2 id="总结">总结</h2>
-<p>夜深忽梦少年事，梦啼妆泪红阑干。</p>
-<p>曾经无数次想过，如果当初高考考好，是不是找工作就没有这么难？</p>
-<p>后来我看了无数个理想中的我，也苦于时代发展变迁太快，自己还没毕业，就已经要失业了。</p>
-<p>这是一代人的悲剧。</p>
-<p>我的朋友讲，很希望回到黄金年代，就不用这么累了。</p>
-<p>可是这江山依旧是这江山。</p>
-<p>无论如何，乱纪元已经到来。</p>
-<p><strong>先活着，才有未来，至于是非，不去判断</strong>。</p>
+<h2 id="重点事件——北京五日游">重点事件——北京五日游</h2>
+<ul>
+<li>
+<p><strong>去北京旅行</strong>。和兄弟三个人一起去北京玩。这里就写一些感想和攻略吧。</p>
+</li>
+<li>
+<p><strong>关于坐飞机的问题</strong>。<strong>虽然飞机上会有行李尺寸和重量限制的约定，但是实际上管的并不严</strong>。一般而言只要尺寸不超过安检时那个盒子大小就能过，那个盒子的尺寸大概60cm * 40cm,一般的包和行李箱都能过，不过有些行李箱在上飞机的时候会发现装不上飞机座位上方的行李架，一般服务员就会帮你固定在走廊处。此外，虽然登记规定个人行李只能有一个，其实额外带两三个小提袋都行，我当时就是一个袋子放吃的，一个是买的纪念品，一个是旅行背包都过了，反正在广州白云、北京首都和大兴都没仔细量尺寸和查重量。不过，北京管液体比较严，安检的时候所有饮料都不能带进去，保温杯要倒完水，这一点要注意，不要带太多水了。</p>
+</li>
+<li>
+<p><strong>去爬长城</strong>。比较推荐的路线是去清河站坐到八达岭长城的车票，建议打车去清河站，地铁会比较慢。<strong>同时提醒每一个人提前买一个1500ml的水，做好防晒准备，景区的矿泉水8元起步，千万不要被割了</strong>。对于男生来说大概2-3小时就能爬完一个路线（推荐北城楼路线），女生可能需要4小时左右，合理安排时间。另外<strong>避雷的就是滑车，80元一个人</strong>，这速度不如自行车，时间又短，景色全被挡住了，还不如缆车。</p>
+</li>
+<li>
+<p><strong>水立方与鸟巢</strong>。这两个地方紧挨一起，我比较推荐晚上去，有灯光秀，而且推荐晚上玩累了先去水立方游泳，然后出来就能看到鸟巢灯光秀，有可能还有明星的演唱会等。</p>
+</li>
+<li>
+<p><strong>北京景区预约问题</strong>。你所听说的北京有名的景区基本上都需要预约，尤其是故宫、天安门那边，一般需要提前5天左右，在微信小程序上搜索即可。对于长城、颐和园、圆明园这些，旅客吞吐量大，非节假日一般不需要提前预约，当场买票就行。</p>
+</li>
+<li>
+<p><strong>关于饮食问题</strong>。我个人推荐不要去商业街，大超市里面去吃饭，又贵又不一定好吃，比较推荐去那些本地人去的小巷子，或者那些不出名但是饮食评分不错的地方去吃。同样一碗炸酱面，我当时去小巷子只需要15元管饱，去什刹海那里28还不够吃。注意北京是没有地摊的，你只能去街道边的商铺去吃。</p>
+</li>
+</ul>
+<h3 id="感想">感想</h3>
+<p>一是去北京旅游的人明显没有之前那么多了。我之前订接近故宫的酒店标准双人间只需要340，问了服务员才知道往年一般都是588左右。生意不是特别好，尤其我们当时是8月初去的，按理说应该是旅游旺季，但是哪怕我们当日订酒店也还是有很多酒店没有订满。除了去故宫排了很长的队以外，其他景区人数感觉和我之前去广州大夫山差不多，人多但是游玩体验还行，没有出现过于人山人海的情况。</p>
+<p>二是旅游景点的同质化严重、商业化严重。说实话我在看颐和园的时候，我想到的是我好像在哪里看过，原来是广州墨宝园，走几步看到的就是小卖铺，买纪念品，园子也被现代化改造，加上了钢筋、护栏和喷雾器。我有时候在想，这些景区是因为景色秀丽出名，还是人文轶事出名，还是历史底蕴而出名？如果没有《岳阳楼记》，那岳阳楼真的有人看吗？如果没有博主的vlog和朋友圈的打卡，你真的会去什刹海穿上古装漫步吗？我曾经去广西、阳江那边旅游，给我的感觉就是，以旅游见长的景区，必因旅游而疯狂。真的会有人骑着摩托敲汽车的窗，几个人手拉手围着车让它停下来，就为了让上面的人下来到他们的店子里吃个饭消费一下，甚至出现了同行破口大骂的情况。我理想中的旅游应当是度假，不过这种特种兵的旅游给我的感觉就像是完成任务，一个炫耀的任务。如果可以，我希望能像北欧那些国家旅游一样，可以对着窗外的飞雪看一晚上，只是围着火炉躺着睡觉，没有必须要完成的事，只有自己怎么舒服怎么来，把时间过得慢一些，把生活过得平淡、幸福一些。</p>
+<p><img src="https://files.seeusercontent.com/2026/09/14/lf9P/202607__002_001.jpg" alt="个人成长记录：202607_感想_北京五日游002_001"></p>
 ]]></content>
       <categories>
         <category>life</category>
@@ -53,6 +69,35 @@
 </ul>
 <p><strong>不要再以写计划为理由拖延了，就现在此时此刻开始执行，计划和思考是做完之后考虑的事，你只管去做！</strong></p>
 <p><strong>just do it!</strong></p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+        <tag>record</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人成长记录：202608</title>
+    <url>/posts/grow-up-202608/</url>
+    <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/Qje6/202608_cover__.png" alt="个人成长记录：202608_cover_僵尸毁灭工程_孤独摇滚"></p>
+<h2 id="本月事件">本月事件</h2>
+<ul>
+<li><strong>从大概14号开始就沉迷于刷视频</strong>。我不得不承认，自己的意志力远远没有我想象中的那么强，一旦开始刷第一个视频，B站的自动播放、情绪的反馈还是会御使你去刷下一个视频，直到你的时间被消耗殆尽。我看过一本相关的书，叫《技术封建主义》 ，就说那些互联网大厂利用软件和推荐算法，把用户牢牢“拴”在自己的领地上，让用户为自己无偿贡献内容，自我强化奴性。现在看来无论是国内外都在把用户当作是奶牛，只要轻轻一挤就会产出牛奶，而且在“流量为王”的引导下，如何抢占用户的时间显得至关重要，想尽办法地让用户沉迷自己推荐的内容。在我初中的时候，短视频还处于萌芽阶段，我当时下了火山视频去尝试一下，这一试一个下午就过去了，我猛地醒悟，这东西就是“新时代电子鸦片”，虽然这种言论和“短视频正在毁了年轻人”相去无几，但那时的我意识到，这将产生远比游戏成瘾更严重的后果。因此我给自己立了一个规矩，禁止下载任何的短视频软件，B站少于2min的一律不准看，视频优先用字幕看完，如果没有看视频的必要就只看字幕全文。事实证明这个举措是对的，不仅为我争取到宝贵的时间，而且提高了我速读、快速理解和思考的能力。不过，也存在“长视频”沉迷的问题，很多的10min视频其实没有什么营养，都是批量生产的，而且很多知识区的UP其实都是先写好稿子，然后去找和稿子相关的素材，既然你只需要他们的知识，为何不直接去看他们的稿子（也就是字幕）呢？看视频就有点的南辕北辙了。而且，视频带来的一个巨大问题就是——<strong>看了一遍视频，什么都没留下</strong>。是的，与读书不同的是，看视频不需要你多动脑，全神贯注地去参与，但是因此也丧失了独立思考和判断的能力，你看当下互联网，很容易因为一件事就吵起来，但其实只要去新闻源看一下原文，思考报道的逻辑关系，就能理顺事情的来龙去脉。但是互联网“供过于求”了，以至于你习惯了伸手，习惯等UP给你喂最新的消息，忘记了在互联网刚诞生的时候求助资源是需要“谢谢大佬”的，因为没人有义务给你提供资源，所有的东西需要你自己找。而现在UP主将信息作为商品出售，从你手中获取利润，因此一股脑地出视频，无论好的坏的。总而言之，短视频时代下，大家都成为了信息的生产者和消费者，很少有人作为思考者去分析信息的好坏。</li>
+<li><strong>计算机项目实践经验更加丰富了</strong>。感想【君莫笑】等vibe coding先驱，指引了一条计算机入门和实践的道路，舍弃传统的先看教程学习再去实践的路线，而是从实际项目出发，先用AI去写一个完整的项目，然后与AI问答，让他从宏观架构和微观代码角度去分析这个项目，微观有利于你去辨认什么是值得一学的语法，什么只是奇淫技巧；宏观有利于把控全局，了解一个项目涉及到的知识体系，以后就能有的放矢地学习，再也不用东拼西凑。实践确实是最好的老师，迫使我去思考为什么要这样写，那些语法究竟是为了解决什么问题而存在的，为什么要统一代码风格，git的实际使用是怎样的，<strong>在实际开发中才体会到前辈的良苦用心</strong>。</li>
+<li><strong>我好像患上了计划综合症</strong>。和完全没有计划相反的是，我需要一字一句指定我在一周具体需要做什么，一天大概需要做什么。其实本意是好的，但是我总是习惯不做完计划就不学习，把所有其他事情都抛在脑后，也就是机械地服从计划，不会变通。就我实际经验来看，任务可以分小，不需要过于详细，不用指定时间，只需要告诉自己，需要完成的时间期限即可。不用先画完地图再出门，一边走一边确认自己的位置，<strong>只要在正确的道路上，目的地总会抵达</strong>。</li>
+<li><strong>研究生马上就要开学了</strong>。仔细回想这两个月，基本在学习上算是一事无成，不该随波逐流地去看世界杯，看LOL比赛，刷视频浪费不少时间。本来打算刷的CS61B也没做到，参加的开源和项目也没有做完。在某种意义上家里耽误了我学习。不过在精神上确实好了许多，原来的神经性耳鸣稍微缓解了一些，也和以前的老朋友聚餐，一起去北京旅游，也写了一下latex的手册，和计算机大佬讨论开源项目，优化了博客和学习了深度学习。以后还是尽量不回去了，要么去自习室，要么去实践。我不是有自制力的人，只要一闲下来就容易自甘堕落，<strong>在图书馆能促进我自我监督和学习，让我意识到除了摆烂还有另外的路可以走，还有更多的惊喜值得追求，还有更浩瀚的海洋，还有更璀璨的星辰</strong>。我很想挣钱，有钱了我就能开始购买设备、理财和规划生活了，这肯定很累，还会占用不少时间，但是累得很快乐，总好过对一切都没有憧憬。人没有梦想和咸鱼有什么区别。</li>
+</ul>
+<h2 id="总结">总结</h2>
+<p>夜深忽梦少年事，梦啼妆泪红阑干。</p>
+<p>曾经无数次想过，如果当初高考考好，是不是找工作就没有这么难？</p>
+<p>后来我看了无数个理想中的我，也苦于时代发展变迁太快，自己还没毕业，就已经要失业了。</p>
+<p>这是一代人的悲剧。</p>
+<p>我的朋友讲，很希望回到黄金年代，就不用这么累了。</p>
+<p>可是这江山依旧是这江山。</p>
+<p>无论如何，乱纪元已经到来。</p>
+<p><strong>先活着，才有未来，至于是非，不去判断</strong>。</p>
 ]]></content>
       <categories>
         <category>life</category>
@@ -1141,51 +1186,6 @@ Type <code>python3</code> at a terminal prompt (Mac/Unix/Linux) or open the Pyth
       </tags>
   </entry>
   <entry>
-    <title>个人成长记录：202607</title>
-    <url>/posts/grow-up-202607/</url>
-    <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/4ibX/202607_cover_001.jpg" alt="个人成长记录：202607_cover_北京五日游001"></p>
-<h2 id="本月事件">本月事件</h2>
-<ul>
-<li><strong>看完了《原子习惯》并且将其应用到自己的习惯养成中</strong>。事实证明很有效果，比如如果你想要控制自己最终每天在手机上的用时不超过1h，那么先从息屏开始，一点点提高挑战和难度，用刻意的步骤强化这个过程（比如超过1h就用盒子装手机，然后放在柜子里面让自己看不到）。拖延是因为一开始过于难了，比如你想要培养一个一个月看完一本书的习惯，那么一开始就从“看一页书”开始，有了第一页，才会有第二页，不断重复，直到整本书被你吸收。适当的奖惩机制，比如每学习1h就给自己的购物账户增加五块钱，让你的努力可视化，更有动力去学习；如果哪一天没有锻炼，就要求下一天不允许打开手机。</li>
-<li><strong>成功进组</strong>。目前成功进入导师的课题组，计算机的科研基本上就是AI方向，需要朝着深度学习、AI模型、调参等方向深入发展，目前我还是处于初级阶段，还需要补充相关的知识，特别感谢导师和大师兄，提供了一些具体的资料、学习路线和建议，后面会慢慢打下学习的基础，一边看线上《深度学习》的书的网页版并结合github源码进行学习，一边结合B站视频补充相关的基础知识和要点。其实之前学机械的时候也了解过一些CNN、RNN等，不过对于机械、土木、电气等专业来说，侧重的是计算机和专业结合，是计算机在具体专业的应用，并不侧重理论上的突破，只需要有相应的实验数据证明在某一领域上有良好的应用前景即可，目前科研确实就是“追风口”——万物连接“AI”，只能说我们一方面要对AI技术的应用前景充满信心，另一方面也要警惕背后的利益纠纷，毕竟历史是有蒸汽机狂热、电气狂热和互联网泡沫这些案例存在的，“黄金”也蕴含着“杀机”。</li>
-<li><strong>和朋友、 学弟互相拜亲戚、吃饭和锻炼</strong>。回来这几天基本上都在朋友家里住，学到部队里面是如何跑3000m、如何放松和如何休息的方法，顿时感觉以前走的都是歧路，怪不得每次跑完步第二天疼的腿都打不开，原来是要通过按摩将堆积在大小腿中的乳酸均匀分散到其他地方，如果乳酸集中堆积到某一个点，身体当天无法恢复，那么第二天就一定会疼。不过这个按摩好疼😢，用脚踩大小腿，还要把腿掰直，做按摩的时候我把这辈子所有痛苦的事都想了一遍，最后还是在鬼哭狼嚎之下做完了。疼是真疼，有效也是真有效，就看有没有相互锻炼、互相按摩的搭子了（可惜我没有）；给另外一个参军的学弟整理了一下电脑，科普了一些大学的相关知识和经验，并且给他写了2000字左右的建议。其实对于大部分非科班生来说，需要掌握的电脑的知识主要集中在：问题是怎么发生的？如何找到答案？比如“我是一个机械学生，我需要下载CAD”，那么第一个问题就是CAD如何安装，学习如何用搜索引擎找到资源、按照教程一步步下载，不懂的问懂行的人或者是AI，在这个实践过程中就会明白什么是路径、为什么文件夹命名最好是英文、如何设置中文或者打补丁、如何破解软件、游戏mod要放在哪里？人一定要会主动找你需要的东西，无论是作为学生还是成年人，<strong>社会上没有理所应当，一切都需要你去争取</strong>。</li>
-<li><strong>开始学习AI、Javaweb和agent</strong>。我在《我的故事》这篇文章中就讲到，我个人是偏向于以后做偏软件开发、网页制作方向的，我愿意为了制作软件而去学习相关的一些底层知识和顶层知识，比如OS、数据库、计网、CPU/GPU、进程、内存管理、AI infra、版本管理系统、agent开发，就像乔布斯在苹果发布会上讲过的那样，“有志于制作好的软件的人，应当制作自己的硬件”。另一方面我也是尝试过才确定自己的未来职业方向的，偏硬件的比如单片机、数字电路，之前实习和制作寻迹小车的时候搞过，不怎么喜欢，无论是在开发过程中还是做出来后都感觉无动于衷，偏数学、理论的这更不用说了，我虽然分数考的高，但是考得高不代表对知识理解得深，反而知识理解得深的考的不好，别人不了解我，我还不了解我自己吗？基本上就是做题蛆一个，侥幸成为了一个还算卖得出高价的区，这种拼天赋的我就算了。还是贴近生活的软件开发，能得到大量实际反馈的项目经历给我带来的影响最大，我依稀还记得为了部署这个网站，端午节三天都是从早上7点搞到晚上11点多，有时候学上头了饭都忘记吃了，<strong>这是我第一次体会到什么是“废寝忘食”，也正是这时我终于找到我的苦苦寻觅的兴趣点和未来的工作</strong>。</li>
-</ul>
-<h2 id="重点事件——北京五日游">重点事件——北京五日游</h2>
-<ul>
-<li>
-<p><strong>去北京旅行</strong>。和兄弟三个人一起去北京玩。这里就写一些感想和攻略吧。</p>
-</li>
-<li>
-<p><strong>关于坐飞机的问题</strong>。<strong>虽然飞机上会有行李尺寸和重量限制的约定，但是实际上管的并不严</strong>。一般而言只要尺寸不超过安检时那个盒子大小就能过，那个盒子的尺寸大概60cm * 40cm,一般的包和行李箱都能过，不过有些行李箱在上飞机的时候会发现装不上飞机座位上方的行李架，一般服务员就会帮你固定在走廊处。此外，虽然登记规定个人行李只能有一个，其实额外带两三个小提袋都行，我当时就是一个袋子放吃的，一个是买的纪念品，一个是旅行背包都过了，反正在广州白云、北京首都和大兴都没仔细量尺寸和查重量。不过，北京管液体比较严，安检的时候所有饮料都不能带进去，保温杯要倒完水，这一点要注意，不要带太多水了。</p>
-</li>
-<li>
-<p><strong>去爬长城</strong>。比较推荐的路线是去清河站坐到八达岭长城的车票，建议打车去清河站，地铁会比较慢。<strong>同时提醒每一个人提前买一个1500ml的水，做好防晒准备，景区的矿泉水8元起步，千万不要被割了</strong>。对于男生来说大概2-3小时就能爬完一个路线（推荐北城楼路线），女生可能需要4小时左右，合理安排时间。另外<strong>避雷的就是滑车，80元一个人</strong>，这速度不如自行车，时间又短，景色全被挡住了，还不如缆车。</p>
-</li>
-<li>
-<p><strong>水立方与鸟巢</strong>。这两个地方紧挨一起，我比较推荐晚上去，有灯光秀，而且推荐晚上玩累了先去水立方游泳，然后出来就能看到鸟巢灯光秀，有可能还有明星的演唱会等。</p>
-</li>
-<li>
-<p><strong>北京景区预约问题</strong>。你所听说的北京有名的景区基本上都需要预约，尤其是故宫、天安门那边，一般需要提前5天左右，在微信小程序上搜索即可。对于长城、颐和园、圆明园这些，旅客吞吐量大，非节假日一般不需要提前预约，当场买票就行。</p>
-</li>
-<li>
-<p><strong>关于饮食问题</strong>。我个人推荐不要去商业街，大超市里面去吃饭，又贵又不一定好吃，比较推荐去那些本地人去的小巷子，或者那些不出名但是饮食评分不错的地方去吃。同样一碗炸酱面，我当时去小巷子只需要15元管饱，去什刹海那里28还不够吃。注意北京是没有地摊的，你只能去街道边的商铺去吃。</p>
-</li>
-</ul>
-<h3 id="感想">感想</h3>
-<p>一是去北京旅游的人明显没有之前那么多了。我之前订接近故宫的酒店标准双人间只需要340，问了服务员才知道往年一般都是588左右。生意不是特别好，尤其我们当时是8月初去的，按理说应该是旅游旺季，但是哪怕我们当日订酒店也还是有很多酒店没有订满。除了去故宫排了很长的队以外，其他景区人数感觉和我之前去广州大夫山差不多，人多但是游玩体验还行，没有出现过于人山人海的情况。</p>
-<p>二是旅游景点的同质化严重、商业化严重。说实话我在看颐和园的时候，我想到的是我好像在哪里看过，原来是广州墨宝园，走几步看到的就是小卖铺，买纪念品，园子也被现代化改造，加上了钢筋、护栏和喷雾器。我有时候在想，这些景区是因为景色秀丽出名，还是人文轶事出名，还是历史底蕴而出名？如果没有《岳阳楼记》，那岳阳楼真的有人看吗？如果没有博主的vlog和朋友圈的打卡，你真的会去什刹海穿上古装漫步吗？我曾经去广西、阳江那边旅游，给我的感觉就是，以旅游见长的景区，必因旅游而疯狂。真的会有人骑着摩托敲汽车的窗，几个人手拉手围着车让它停下来，就为了让上面的人下来到他们的店子里吃个饭消费一下，甚至出现了同行破口大骂的情况。我理想中的旅游应当是度假，不过这种特种兵的旅游给我的感觉就像是完成任务，一个炫耀的任务。如果可以，我希望能像北欧那些国家旅游一样，可以对着窗外的飞雪看一晚上，只是围着火炉躺着睡觉，没有必须要完成的事，只有自己怎么舒服怎么来，把时间过得慢一些，把生活过得平淡、幸福一些。</p>
-<p><img src="https://files.seeusercontent.com/2026/09/14/lf9P/202607__002_001.jpg" alt="个人成长记录：202607_感想_北京五日游002_001"></p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-      <tags>
-        <tag>life</tag>
-        <tag>record</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客系列（一）更新公告</title>
     <url>/posts/blog-series-one/</url>
     <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/Zwr3/hexo_cover_001.jpg" alt="hexo博客系列（一）更新公告_cover_001"></p>
@@ -1869,6 +1869,91 @@ Countless small mysteries are also solved in the process.</span></p></div>
       </tags>
   </entry>
   <entry>
+    <title>hexo博客系列（五）博客部署</title>
+    <url>/posts/blog-series-five/</url>
+    <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/4Vui/hexo_cover_001.jpg" alt="hexo博客系列（五）博客部署_cover_001"></p>
+<h1 id="工作流">工作流</h1>
+<p>目前我的工作流是：本地<code>hexo d</code>推送部署到github上，然后通过github action部署到github pages 和vercel上。同时通过脚本将public文件夹下的静态文件同步推送到我的ECS服务器上。</p>
+<p>也就是说，可以通过三个域名访问到我的博客，一个是<a href="https://lloyd-kai.github.io/">https://lloyd-kai.github.io/</a> 源站点，一个是<a href="https://blog.lloydkai.top/">https://blog.lloydkai.top/</a>  部署到vercel上的(我已解析为自己购买的域名)，一个是<a href="https://lloydkai.cn/">https://lloydkai.cn/</a>  部署到阿里云的ECS上的(方便国内的用户访问)。</p>
+<h2 id="部署时参考的教程">部署时参考的教程</h2>
+<h3 id="部署到vercel上">部署到vercel上</h3>
+<p><a href="https://www.bilibili.com/video/BV1B4421X7kx/?share_source=copy_web&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">零成本免备案部署博客——vercel与zeabur搭建hexo主题博客</a> ,    <a href="https://www.bilibili.com/video/BV1Ke4y1v7Qr/?share_source=copy_web&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">第2期：Vercel部署并绑定自定义域名+安装Butterfly主题</a> 。这两个视频互相补充，主要参考第二个视频即可部署成功</p>
+<h3 id="部署到gihub的pages上">部署到gihub的pages上</h3>
+<p>请看<code>hexo博客系列(二)博客创建指南</code> ，严格来说我不是将hexo博客项目中所有的内容推送到github的，而是用hexo-deployer-git插件在本地生成public下的html文件，再推送到github pages上的。所以你会看到其他的的教程中它是先将整个hexo项目先推送到github，然后再将分支推送到github pages上，而我只上传必要的文件到github pages上，所有的文件都在我的本地电脑里面。主要的参考教程：<a href="https://www.fomal.cc/posts/e593433d.html">Fomalhaut的博客</a>，核心就在于<strong>是否下载了hexo-deployer-git插件以及配置ssh密钥等</strong>。</p>
+<p><a href="https://hexo.io/zh-cn/docs/one-command-deployment">官方hexo-deployer-git教程</a></p>
+<h3 id="部署到阿里云-ECS-上">部署到阿里云 ECS 上</h3>
+<p>主要参考的教程：<a href="https://www.vgtmy.com/2025/05/26/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91-GitHub%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%85%A8%E6%B5%81%E7%A8%8B%E6%8C%87%E5%8D%97/#%E8%87%AA%E5%8A%A8%E7%BB%AD%E7%AD%BE%EF%BC%88Let%E2%80%99s-Encrypt%EF%BC%89">链接</a></p>
+<p><strong>以下是根据我自己的实际使用情况修改</strong>，我使用的是阿里云 ECS，系统为 Ubuntu。</p>
+<h4 id="1-连接阿里云服务器">1. 连接阿里云服务器</h4>
+<p>没有上传 SSH 密钥之前，可以先用下面的命令登录，再输入密码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -l root 你的ECS公网IP -p 22</span><br></pre></td></tr></table></figure>
+<p>如果后面已经配置好了 SSH 密钥，也可以直接使用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh root@你的ECS公网IP</span><br></pre></td></tr></table></figure>
+<h4 id="2-设置阿里云防火墙与安全组">2. 设置阿里云防火墙与安全组</h4>
+<p>这里最容易出问题的是 SSH 的来源 IP 白名单。我的电脑当前出口公网 IP 会变化，所以如果你开了代理或切换了网络，安全组里的放行地址也要一起更新。</p>
+<p>如果你发现把 SSH 安全组临时放开为 <code>0.0.0.0/0</code> 就能连上，那基本可以确定问题出在“来源 IP 不匹配”，而不是 ECS 本身坏了。</p>
+<h4 id="3-配置-Nginx-启用-HTTPS">3. 配置 Nginx 启用 HTTPS</h4>
+<p>Nginx 这里我只保留静态站点的基本配置，目录直接指向 <code>/var/www/html/</code>。如果使用的是 Let’s Encrypt + Certbot，证书路径应使用 <code>/etc/letsencrypt/live/域名/</code> 下的文件，不需要再去阿里云 SSL 控制台手动下载 <code>.pem</code> 和 <code>.key</code>：</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span> <span class="number">80</span> default_server;</span><br><span class="line">	<span class="attribute">listen</span> [::]:<span class="number">80</span> default_server;</span><br><span class="line">	<span class="attribute">server_name</span> _;</span><br><span class="line"></span><br><span class="line">	<span class="attribute">root</span> /var/www/html;</span><br><span class="line">	<span class="attribute">index</span> index.html;</span><br><span class="line"></span><br><span class="line">	<span class="section">location</span> / &#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span> <span class="number">443</span> ssl;</span><br><span class="line">	<span class="attribute">listen</span> [::]:<span class="number">443</span> ssl;</span><br><span class="line">	<span class="attribute">server_name</span> 你的域名 www.你的域名;</span><br><span class="line">	<span class="attribute">ssl_certificate</span> /etc/letsencrypt/live/你的域名/fullchain.pem;</span><br><span class="line">	<span class="attribute">ssl_certificate_key</span> /etc/letsencrypt/live/你的域名/privkey.pem;</span><br><span class="line">	<span class="attribute">root</span> /var/www/html;</span><br><span class="line">	<span class="attribute">index</span> index.html;</span><br><span class="line"></span><br><span class="line">	<span class="section">location</span> / &#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我这里不再使用 GitHub Actions 来同步 ECS，而是改成 Hexo 的 <code>deployAfter</code> 钩子执行脚本上传。</p>
+<h4 id="4-自定义-ECS-部署脚本">4. 自定义 ECS 部署脚本</h4>
+<p>我的实现思路是：</p>
+<ol>
+<li><code>hexo d</code> 完成 Git 部署后，再自动执行脚本上传 <code>public/*</code></li>
+<li>脚本先获取当前电脑的出口公网 IP，并在失败时提示去检查安全组来源地址</li>
+<li>上传后自动修复目录与文件权限，避免 Nginx 读取静态资源异常</li>
+<li>Nginx 直接托管 <code>/var/www/html/</code> 的静态文件</li>
+</ol>
+<p>这样就不需要 GitHub Actions 参与 ECS 同步了，但 <code>hexo d</code> 会多执行一步上传，所以整体会稍慢一些。</p>
+<p>首先，在 <code>_config.yml</code> 文件中添加配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地执行 `hexo d` 后，自动通过脚本上传到阿里云 ECS</span></span><br><span class="line"><span class="attr">ecs_deploy:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">你的ECS公网IP</span></span><br><span class="line">  <span class="attr">user:</span> <span class="string">root</span></span><br><span class="line">  <span class="attr">target:</span> <span class="string">/var/www/html/</span></span><br><span class="line">  <span class="comment"># 如果你想显式记录当前出口公网 IP，对照安全组时更直观，可以再补充一个来源 IP 字段</span></span><br></pre></td></tr></table></figure>
+<p>然后在 Hexo 项目根目录下新建脚本 <code>scripts/deploy-ecs.js</code>。</p>
+<p>这里我是使用<a href="https://cip.cc/">https://cip.cc/</a> 网站查询本机真正的IP，因为我的IP是不定的，所以需要查找确认，如果你嫌麻烦可以直接在服务器的安全组里面的SSH中填写IP为<code>0.0.0.0/0</code> 也就是任何IP都可连接。</p>
+<p>这个脚本的核心逻辑是：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; spawnSync &#125; = <span class="built_in">require</span>(<span class="string">&#x27;child_process&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> https = <span class="built_in">require</span>(<span class="string">&#x27;https&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PUBLIC_IP_CHECK_URL</span> = <span class="string">&#x27;https://cip.cc/&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getPublicIp</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> request = https.<span class="title function_">get</span>(<span class="variable constant_">PUBLIC_IP_CHECK_URL</span>, <span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (response.<span class="property">statusCode</span> !== <span class="number">200</span>) &#123;</span><br><span class="line">        response.<span class="title function_">resume</span>();</span><br><span class="line">        <span class="title function_">resolve</span>(<span class="literal">null</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> body = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">      response.<span class="title function_">setEncoding</span>(<span class="string">&#x27;utf8&#x27;</span>);</span><br><span class="line">      response.<span class="title function_">on</span>(<span class="string">&#x27;data&#x27;</span>, <span class="function">(<span class="params">chunk</span>) =&gt;</span> &#123;</span><br><span class="line">        body += chunk;</span><br><span class="line">      &#125;);</span><br><span class="line">      response.<span class="title function_">on</span>(<span class="string">&#x27;end&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> match = body.<span class="title function_">match</span>(<span class="regexp">/(?:查询\s*IP|IP)\s*[:：]\s*([0-9]&#123;1,3&#125;(?:\.[0-9]&#123;1,3&#125;)&#123;3&#125;)/i</span>);</span><br><span class="line">        <span class="title function_">resolve</span>(match ? match[<span class="number">1</span>] : <span class="literal">null</span>);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    request.<span class="built_in">setTimeout</span>(<span class="number">5000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      request.<span class="title function_">destroy</span>();</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="literal">null</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    request.<span class="title function_">on</span>(<span class="string">&#x27;error&#x27;</span>, <span class="function">() =&gt;</span> <span class="title function_">resolve</span>(<span class="literal">null</span>));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">runOrThrow</span>(<span class="params">command, errorMessage</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="title function_">spawnSync</span>(command, &#123;</span><br><span class="line">    <span class="attr">shell</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">stdio</span>: <span class="string">&#x27;inherit&#x27;</span>,</span><br><span class="line">    <span class="attr">cwd</span>: process.<span class="title function_">cwd</span>()</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (result.<span class="property">status</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">`<span class="subst">$&#123;errorMessage&#125;</span> (exit code <span class="subst">$&#123;result.status&#125;</span>)`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">logConnectionHints</span>(<span class="params">host, port</span>) &#123;</span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">`[ecs-deploy] 连接失败：<span class="subst">$&#123;host&#125;</span>:<span class="subst">$&#123;port&#125;</span>`</span>);</span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 请打开 https://cip.cc/ 查询当前电脑出口公网 IP&#x27;</span>);</span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 请先确认 ECS 的公网 IP 是否发生变化&#x27;</span>);</span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 请确认安全组和服务器防火墙已经放行 SSH 端口&#x27;</span>);</span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 如果 SSH 端口不是 22，请在 _config.yml 中更新 ecs_deploy.port&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hexo.<span class="title function_">on</span>(<span class="string">&#x27;deployAfter&#x27;</span>, <span class="keyword">async</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> cfg = hexo.<span class="property">config</span>.<span class="property">ecs_deploy</span> || &#123;&#125;;</span><br><span class="line">  <span class="keyword">if</span> (cfg.<span class="property">enable</span> === <span class="literal">false</span>) &#123;</span><br><span class="line">    hexo.<span class="property">log</span>.<span class="title function_">info</span>(<span class="string">&#x27;[ecs-deploy] disabled by config&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> host = cfg.<span class="property">host</span>;</span><br><span class="line">  <span class="keyword">const</span> user = cfg.<span class="property">user</span> || <span class="string">&#x27;root&#x27;</span>;</span><br><span class="line">  <span class="keyword">const</span> port = cfg.<span class="property">port</span> || <span class="number">22</span>;</span><br><span class="line">  <span class="keyword">const</span> target = cfg.<span class="property">target</span> || <span class="string">&#x27;/var/www/html/&#x27;</span>;</span><br><span class="line">  <span class="keyword">const</span> sourceIp = cfg.<span class="property">source_ip</span> || cfg.<span class="property">whitelist_ip</span> || cfg.<span class="property">allowed_source_ip</span> || <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!host) &#123;</span><br><span class="line">    hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] skip: missing ecs_deploy.host in _config.yml&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> currentPublicIp = <span class="keyword">await</span> <span class="title function_">getPublicIp</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> source = <span class="string">&#x27;public/*&#x27;</span>;</span><br><span class="line">  <span class="keyword">const</span> destination = <span class="string">`<span class="subst">$&#123;user&#125;</span>@<span class="subst">$&#123;host&#125;</span>:<span class="subst">$&#123;target&#125;</span>`</span>;</span><br><span class="line">  <span class="keyword">const</span> scpCommand = <span class="string">`scp -P <span class="subst">$&#123;port&#125;</span> -r <span class="subst">$&#123;source&#125;</span> <span class="subst">$&#123;destination&#125;</span>`</span>;</span><br><span class="line">  <span class="keyword">const</span> remoteFixPermsCommand = <span class="string">`ssh -p <span class="subst">$&#123;port&#125;</span> <span class="subst">$&#123;user&#125;</span>@<span class="subst">$&#123;host&#125;</span> &quot;find <span class="subst">$&#123;target&#125;</span> -type d -exec chmod 755 &#123;&#125; \\; ; find <span class="subst">$&#123;target&#125;</span> -type f -exec chmod 644 &#123;&#125; \\;&quot;`</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (currentPublicIp) &#123;</span><br><span class="line">    hexo.<span class="property">log</span>.<span class="title function_">info</span>(<span class="string">`[ecs-deploy] 正在通过 scp 上传：来源IP <span class="subst">$&#123;currentPublicIp&#125;</span> -&gt; 目标服务器 <span class="subst">$&#123;destination&#125;</span>`</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    hexo.<span class="property">log</span>.<span class="title function_">info</span>(<span class="string">`[ecs-deploy] 正在通过 scp 上传：来源IP 未获取到 -&gt; 目标服务器 <span class="subst">$&#123;destination&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="title function_">runOrThrow</span>(scpCommand, <span class="string">&#x27;[ecs-deploy] scp 上传失败&#x27;</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="keyword">if</span> (currentPublicIp &amp;&amp; sourceIp) &#123;</span><br><span class="line">      hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">`[ecs-deploy] 当前电脑出口公网 IP: <span class="subst">$&#123;currentPublicIp&#125;</span>`</span>);</span><br><span class="line">      <span class="keyword">if</span> (currentPublicIp !== sourceIp.<span class="title function_">replace</span>(<span class="regexp">/\/\d+$/</span>, <span class="string">&#x27;&#x27;</span>)) &#123;</span><br><span class="line">        hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 两者不一致，请到阿里云安全组中修改允许访问 SSH 的来源 IP&#x27;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (currentPublicIp) &#123;</span><br><span class="line">      hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">`[ecs-deploy] 当前电脑出口公网 IP: <span class="subst">$&#123;currentPublicIp&#125;</span>`</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sourceIp) &#123;</span><br><span class="line">      hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">`[ecs-deploy] 安全组允许的来源 IP: <span class="subst">$&#123;sourceIp&#125;</span>`</span>);</span><br><span class="line">      hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 当前出口公网 IP 获取失败，请手动确认本机/VPN 的外网 IP 是否与安全组一致&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">logConnectionHints</span>(host, port);</span><br><span class="line">    <span class="keyword">throw</span> error;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">info</span>(<span class="string">&#x27;[ecs-deploy] fixing file permissions for nginx&#x27;</span>);</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="title function_">runOrThrow</span>(remoteFixPermsCommand, <span class="string">&#x27;[ecs-deploy] 远端权限修复失败&#x27;</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] SSH 已连接，但远端权限修复失败&#x27;</span>);</span><br><span class="line">    hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 请检查远端目标路径是否存在、目录权限是否正确&#x27;</span>);</span><br><span class="line">    <span class="keyword">throw</span> error;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">info</span>(<span class="string">&#x27;[ecs-deploy] upload finished&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>为什么要做权限修复：</p>
+<ul>
+<li>某些环境下，<code>scp</code> 上传后目录权限可能变得过于严格</li>
+<li>如果 Nginx 无法读取 <code>css</code>、<code>js</code>、<code>font</code> 等资源目录，就会出现样式缺失或者页面和本地预览不一致的问题</li>
+</ul>
+<p>以后只需要正常在终端里输入下面的命令即可：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo cl;hexo g;hexo d</span><br></pre></td></tr></table></figure>
+<p>它会先完成 Hexo 的常规部署，再把生成的 <code>public</code> 目录同步到 ECS 上。</p>
+<h2 id="自动续签SSL证书">自动续签SSL证书</h2>
+<p><a href="https://www.vgtmy.com/2025/05/26/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91-GitHub%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%85%A8%E6%B5%81%E7%A8%8B%E6%8C%87%E5%8D%97/#%E8%87%AA%E5%8A%A8%E7%BB%AD%E7%AD%BE%EF%BC%88Let%E2%80%99s-Encrypt%EF%BC%89">参考链接</a> ，这里实际使用的是 Let’s Encrypt + Certbot 自动续签，不是阿里云 SSL 证书自动续订。</p>
+<p>SSL证书其实就是安全性的问题，如果没有签的话在访问网站的时候，浏览器就会显示</p>
+<p><code>您与此网站之间建立的连接不安全,请勿在此网站上输入任何敏感信息（例如密码或信用卡信息），因为攻击者可能会盗取这些信息。 了解详情</code></p>
+<p>我这里建议使用 Certbot 接管 ECS 上的 Nginx 证书：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> certbot --nginx -d 你的域名 -d www.你的域名</span><br><span class="line"><span class="built_in">sudo</span> certbot renew --dry-run</span><br><span class="line">systemctl list-timers --all | grep certbot</span><br></pre></td></tr></table></figure>
+<p>如果 <code>certbot renew --dry-run</code> 出现 <code>Congratulations, all simulated renewals succeeded</code>，并且 <code>certbot.timer</code> 存在，就说明自动续签链路已经跑通。Certbot 不是固定“每 60 天强制续签一次”，而是由系统定时器定期检查证书，在证书快到期时自动向 Let’s Encrypt 续签，然后继续使用 <code>/etc/letsencrypt/live/你的域名/</code> 下的新证书。</p>
+<p>阿里云免费 SSL 证书的实际情况需要单独说明：</p>
+<ul>
+<li>阿里云的“SSL 免费证书”现在叫“个人测试证书（免费版）”，主要适合测试或个人低成本场景，官方说明见：<a href="https://help.aliyun.com/zh/ssl-certificate/purchase-an-individual-test-certificate">个人测试证书</a>。</li>
+<li>每个实名认证主体每个自然年可以领取一次包含 20 张免费证书的资源包，但单张证书签发后有效期是 90 天。</li>
+<li>这 20 张额度不是 Certbot/Let’s Encrypt 那种服务器自动续签机制；如果使用阿里云免费证书，通常需要在阿里云控制台重新申请、下载证书，并替换到 Nginx 配置中。</li>
+<li>阿里云的证书托管和到期自动部署属于另一套服务，不能理解成免费证书会像 Certbot 一样自动续签到 ECS 的 Nginx；是否支持托管、是否能自动部署，要看证书类型、购买方式和目标云产品，官方说明见：<a href="https://help.aliyun.com/zh/ssl-certificate/enable-certificate-hosting">开启证书托管</a>。</li>
+</ul>
+<h2 id="如何备案">如何备案</h2>
+<p><a href="https://help.aliyun.com/zh/icp-filing/basic-icp-service/getting-started/quick-start-for-icp-filing-for-personal-websites?spm=a2c4g.11186623.0.0.9afd55cfiW4cXr">官方文档</a></p>
+<p>总体来说流程有五个——填表申请、阿里云初审、短信验证、管理审核、ICP出结果和公安备案，ICP出结果之后就要马上将备案信息添加到首页之下，包括公安的备案(出结果后30天内)，如果不添加就会有罚款。</p>
+<p>官方表述</p>
+<p><code>ICP备案成功后，您需要在网站首页底部悬挂ICP备案号并生成链接指向工信部网站(https://beian.miit.gov.cn/)，否则被相关部门核查出来，将会面临罚款。</code></p>
+<h2 id="参考资料">参考资料</h2>
+<ol>
+<li><a href="https://help.aliyun.com/zh/icp-filing/basic-icp-service/getting-started/quick-start-for-icp-filing-for-personal-websites?spm=a2c4g.11186623.0.0.9afd55cfiW4cXr">阿里云备案官方文档</a></li>
+<li><a href="https://www.vgtmy.com/2025/05/26/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91-GitHub%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%85%A8%E6%B5%81%E7%A8%8B%E6%8C%87%E5%8D%97/#%E8%87%AA%E5%8A%A8%E7%BB%AD%E7%AD%BE%EF%BC%88Let%E2%80%99s-Encrypt%EF%BC%89">链接</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>教程</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客系列（四）测试博客功能</title>
     <url>/posts/blog-series-four/</url>
     <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/2Yqc/hexo_cover_001.jpg" alt="hexo博客系列（四）测试博客功能_cover_001"></p>
@@ -2054,6 +2139,70 @@ Countless small mysteries are also solved in the process.</span></p></div>
       </tags>
   </entry>
   <entry>
+    <title>大学系列（一）建筑、机械工程以及计算机专业劝退</title>
+    <url>/posts/quit-profession/</url>
+    <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/qA4v/_cover_001.jpg" alt="大学系列（一）建筑、机械工程以及计算机专业劝退_cover_001"></p>
+<h1 id="写在前面的话">写在前面的话</h1>
+<p>建筑行业我是在大一的时候接触的，所以我对其的了解仅限于浅层次；机械工程我学习了三年，并且家里和亲戚都有相关的技术背景，我本人也多次去相关的工厂实习看访过，这部分我会多写一点；计算机是我目前学习的专业，我会从劝退和劝入的角度分别讲解。</p>
+<h1 id="建筑劝退">建筑劝退</h1>
+<p>就中国国内的建筑专业来分的话，一般主要有以下二级专业，分别是建筑学、城乡规划和风景园林，由于我本人在专业分流之前就已经转走了，所以我只从这三个专业的共同点来分析。</p>
+<p>首先我先提一点，主要是针对<strong>先天性因素的</strong>，<strong>如果你是色弱或者是色盲，那么和绘画相关的专业你不能选，包括建筑专业</strong>，这个东西一般需要你事先在选专业之前充分了解的，一般会在高考之前会有一个体检，如果体检出有相关的遗传性因素，那么在选专业的时候就要排除，基因的缺陷会让你在从事本专业的时候处于劣势，无关努力，但也确实令人心酸，能做的就是及时止损，我就是这样。</p>
+<p>所有想要选择建筑专业的学生，我个人认为必须要回答以下三个问题，如果这三个问题不能肯定地回答，那么就目前时代的发展背景而言，我强烈不推荐选择。</p>
+<p><strong>第一，你有相当的美术基础吗？</strong></p>
+<p>这里的美术基础，指的是你至少了解和学习过50小时以上的素描(无论是结构素描还是完整的素描)，如果你参加过美术艺考，那种水平基本上就是建筑专业的入门门槛。</p>
+<p>以下我画的这个图就是结构素描还有完整素描的图(有点烂别介意，大概是这个样子)，如果你的绘画水平和我难分伯仲的话，我还是建议你算了吧😄。</p>
+<p><img src="https://files.seeusercontent.com/2026/09/14/3rgU/___001.jpg" alt="大学系列（一）建筑、机械工程以及计算机专业劝退_建筑劝退_结构素描图_001"></p>
+<p><img src="https://files.seeusercontent.com/2026/09/14/h5Dg/___002.jpg" alt="大学系列（一）建筑、机械工程以及计算机专业劝退_建筑劝退_素描图_002"></p>
+<p>因为在20年代之前，如果你报考的是建筑专业，或者你要转行到建筑专业，在入学之前是要进行考试的(或者是个人成果集)，考试的内容一般就是结构素描，如果不通过的话就会把你调剂到其他专业。但是时过境迁，建筑行业做梦都想不到中国的房价下降得如此之快，建筑专业一下子从以前的香饽饽变成了“路边一条”，基本上除了“建筑老八校”以外，不再对学生的美术基础作出要求，你以为是对学生好，实际上是坑害那些没学过美术的学生，<strong>建筑就是披着工科皮的艺术专业，建筑就是披着工科皮的艺术专业，建筑就是披着工科皮的艺术专业</strong>！这句话我要反复强调，在国外建筑学是给那些从艺术学院出来人学的，国内也是这样，你在大一的时候上的最多的课就是设计课，高等数学是不修的，力学是阉割版本的。不学高等数学，不搞实验的，天天画图的你说它是工科，鬼都不信。</p>
+<p><strong>第二，你热爱建筑绘画吗？</strong></p>
+<p>如果你不能肯定的回答说“热爱”那么就是讨厌，而且<strong>注意我的前缀词，必须是“建筑”或者”城市规划图“或者“风景”</strong>,这三个分别对应上面三个专业,喜欢画人物、漫画的不行，这两者走的不是一个绘画的路子。建筑绘画讲究的是符合规律和规则，空间感和宏伟，人物绘画偏向的是微观，你只要画过建筑和人物，你就会清楚的知道这两个的不同。</p>
+<p>以下我画的这个图就是建筑的图</p>
+<p><img src="https://files.seeusercontent.com/2026/09/14/mpS3/___003.jpg" alt="大学系列（一）建筑、机械工程以及计算机专业劝退_建筑劝退_钢笔画_003"></p>
+<p>这个图是钢笔画，如果你真的学建筑，后面还会学习油画、水彩、版印等，在入学的那一天，老师就会要求你们每周都要画3张A4的钢笔画或者是结构素描等，学了这门专业，你的余生都要与画笔为伴，<strong>如果没有热爱的话，真的很难支撑下去</strong>。</p>
+<p><strong>第三，你的家庭经济基础好吗？</strong></p>
+<p>这里的家庭经济基础，指的是家里能支撑你的学费，能够支持你读硕读博，能够每年支持大概2到3次左右的外出实习费用(一般是4000左右)，能够负担的起报绘画班、绘画材料的费用。</p>
+<p>首先我要强调的是，相比隐形开支，学费显得一无是处。你每一个学期至少需要参加一个外出实习，一般就是到某一个旅游景点或者是知名建筑、风景区那边写生，问题就是，学校是不会负担你的门票费和住宿费的，而偏偏就是这些风景区的门票费、住宿和交通费用最贵。当你要开始写生的时候，你会发现要买的东西真是多——铅笔钢笔圆珠笔、专门的素描纸、画线笔、T字尺、支架、摄影机、颜料、建模板材、502胶水、美工刀、数位板等等，这些开销每一次花费大概几百左右，但是这样的开销次数多，可能几周就有一次。如果你以后要读研，会发现有一个专门的考试科目叫做快图，要求你在6小时之内画满A1的图纸，如果你不报班，不经过长期艰苦的努力训练，是不可能在6小时以内画完的。</p>
+<p>最后我要强调的问题是，建筑专业的<strong>艺术本质</strong>。它的思维方式不是理工科思维，也不是文科思维，而是艺术生思维。<strong>完美按照黄金分割比的图纸不一定好看，但是好看的图纸一定是由那些有天赋的人画出来的</strong>，你懂我意思吗？艺术的本质是<strong>天赋</strong>，是只需要画几笔就知道灰与白应该怎样表现，看几次就知道光应该从哪里入射，哪里画得暗，在哪里画几笔会凸显立体感，在画画之前就在脑海中构思完整个图的全貌… 这些都会让理工科的人感到不知所措，<strong>艺术是没有标准答案的</strong>，很多时候就是一种感性的理解和表达。如果你去看建筑专业的作业答辩，你会发现整个过程没有对理论的讨论，都是“我觉得这样怎么怎么好看”，“表现出了建筑的宏伟与壮观“，“突出了人文风貌和风土气息”，换句话说，建筑适合充满想象力、有绘画能力、对美有独特的理解和思考，最好带有一点口才的人去学，发现了没？这些完美契合女生的气质，这也是建筑专业女生多的原因，而长期学习理工科的学生我不是特别建议，因为你们的思维早已是1+1=2的，无论怎么样你都不能接受1+1=3甚至1+1还可以等于4。</p>
+<h1 id="机械劝退">机械劝退</h1>
+<p>机械在当下这个时间段可以说是T1专业了，可以和计算机、电气等专业结合，工作是不用愁的，只是你愿不愿意去做。上至高级技工，下至钢板搬运工，在哪里都可以充分就业。不过在选择这个专业之前，我简要的介绍你要学习的东西、工作的环境和未来的趋势。</p>
+<p>目前中国的机械工程是一级学科，一级学科下面还有许多的二级学科，比如机械设计制造及其自动化、车辆工程、智能制造、材料工程、汽车服务、机器人工程等。二级学科有很多，不同的学校有不同侧重，比如南方的机械一般侧重轻工业、北方的侧重重工业，国防相关的侧重军工、北上广深侧重机器人等。机械能做的事情很多，要学的东西也很多，所以需要有所侧重。</p>
+<p>通常来说，机械工程(这里指的是传统的机械，也就是不带“电”)在大一的时候要学<strong>机械制图</strong>，这个是重中之重，无论你是干低端的加工制造，还是高端的数控机床、机器人，你都需要认真学习，具体长什么样你可以在网上看，我要提醒的是这门课程对空间想象的能力要求高，如果你的几何不太好，对以后的学习就业可能会造成一定影响，还有就是<strong>CAD</strong>，也就是用计算机画图，也是重点必须熟练掌握。</p>
+<p>而在大二的时候，你学习的侧重点就是各种力学——<strong>理论力学、材料力学、流体力学</strong>，还有两门专业课，如果你选择的是机械设计制造及其自动化，你的专业课就是机械设计和机械制造；如果是车辆工程，就是汽车理论。无论是哪一门专业，我都要强调的是，<strong>你的力学必须好</strong>，数学会根据公式算就行。<strong>如果你高考物理都不及格，或者是力学怎么学都学不会，我不建议你学机械工程</strong>。在你设计机械产品或者制造的时候，用的最多的就是力学分析，公式计算。</p>
+<p>而其他要学的科目根据不同的二级学科有所不同，如果是偏自动化的，会学模电数电、控制工程、复变函数、单片机等；如果是偏电气的，那么就会学电路、电磁场等；如果是偏制造和加工的就会学数控机床、精密仪器检测等。其实这个就是机械的发展趋势——<strong>复合专业</strong>。网上经常会说，<strong>机械不带电，饿死一大片</strong>，在找工作的时候，如果是单纯的设计岗位或者是加工岗，一般开到6k到8k就算比较高的了，而如果你会一些电气工程的知识，会自动化、数控编程的话，工资就可以上w。也就是说，<strong>你在选择机械工程的同时，也需要选好其下的二级学科</strong>，每一个学科学到的知识，都会转化为未来求职的工作要求。有的学校会在高考选专业的时候就确定，有的学校是在大一之后再进行专业分流，这方面你要多多注意，往往越好的机械二级学科越难越不好考。</p>
+<p>那么你工作的时候用的最多的是什么软件呢？一般来说机械工程的都要学习Solidworks与AutoCAD，前者在设计加工、绘图等都用的上，后者就是机械制图用的，车辆工程的要学rhnio和UG，嵌入式方向要学keil，机器人要学ROS等。我推荐你在确定你是否选择机械专业之前先把这两个软件下了并且在网上找视频学习（跟着做就行，不需要先学理论再画图），如果你不讨厌甚至有一点喜欢，那么就可以选；<strong>如果你感到无感甚至对枯燥的设计和绘图厌烦，那么就不要选</strong>。</p>
+<p>至于其他的科目，我的建议是，你根据你以后的求职方向选择性学习，因为学校里教的很多东西都过时了，不过机械还算是一个古老的学科，虽然落后了一点，但是核心的知识还在，只是你要根据时代的变化去补充你欠缺的能力和知识，以便在未来求职夺得先机。</p>
+<p>那么机械专业的工作环境是什么样子的呢？请自己在网上搜索<strong>金工实习</strong>的视频，那个地方大概率就是你以后工作的地方，设计岗会稍微好一点，但也只是好一点，你还是要随时到这个地方看你设计出来的产品的。这里我要强调的是，<strong>工作环境的污染程度和危险程度超乎你的想象</strong>。你知道有一种东西叫做碳纤维吗？如果你长期生活在碳纤维敞开的环境下，你的呼吸道会损伤，最严重的情况下就是呼吸道灼伤，导致以后呼吸的时候食道都会痛(真实案例)；工厂里面还有一个隐形的杀手是加工的噪音——机床刀具切割声、金属碰撞声、焊工电焊的声音等，预估环境分贝在80分贝左右，长期待下来你的听力一定会受损。你可能会说难道工厂不会发隔音耳罩吗？难道不会像精密工厂那样专门设置一个清洗间和防尘服供员工穿吗？孩子，这是制造业，不是内存厂，制造业的利润率本来就低，为了多挣点钱，只好委屈一下员工，耳罩是没有的，厂房是不打扫的，经常是24小时轮班制的，老板是没文化土财主的，骂声是难听的，宿舍是堪比陋室铭的，工厂饭堂是堪比潲水的。除非真心喜欢制造和习惯机油味的、迫于生计和技术水平不得不做的，我想不到还有什么样的人会去这样的地方。自从我第一次进入到这个地方，我就在想，如果要选择一种死法，我宁愿选择在电脑前猝死，也不愿死在满是灰尘和油污的厂房中。<strong>环境好的地方不是没有，仅限于北上广深</strong>，我建议选择这一行的人都尽量往这些地方跑，为了你的身体安全和健康，也为自己的前途命运着想，在二三线城市制造业是真的把员工当耗材的！</p>
+<p>最后我给你们解答一些常见的疑惑。</p>
+<p><strong>机械专业，越老越吃香</strong>：这其实只说了半截话，另一截是“<strong>前提是你真的喜欢</strong>”，不喜欢怎么可能支持你从事这个专业到老。</p>
+<p><strong>机械专业，工作不愁</strong>：模糊的表述，工作确实不愁，3k4k的在小县城多的是，一般就是搬运钢材、齿轮等，这种重体力活等你赶到三四十岁左右的时候你大概率就要被辞退了，你可能会说难道工厂还没有实现用机器人搬运吗？说句比较地狱的话，<strong>因为人工成本比机器人低，所以现在很多某些地方还在用人工搬运</strong>。</p>
+<p>其实我个人来说，最大的无奈就是机械的制造业本质——在工业克苏鲁的中国，机械在其中起到了中流砥柱的作用，也付出了难以想象的代价，请问中国制造是如何畅销全世界的，无非就是物美价廉，物美就是靠技术的提升，价廉就是靠压榨和大量生产，制造业的本质注定了整个行业的利润率低，能达到10%就算很好的了，很多时候都是赚的辛苦钱，老板、股东、CEO等要分走大部分，留给技工、工人的少之又少。如果你看过《大国工匠》系列记录片，你会发现，哪怕是这些在技术上精益求精甚至巅峰造极的人，哪怕已经攻克了一个又一个的难关，他们的待遇完全和付出不相匹配。如果把同样的努力和天赋发挥到金融、计算机等领域，他们的回报会是制造业的好几十倍。在你选择之前，你问问自己，你能接受这样的结果吗?你是一个把技术放在金钱、荣誉和地位之前的人吗？你是一个哪怕穷困潦倒依然热爱制作的那个少年吗？如果不是的话，还是选择其他相对轻松回报高点的专业吧。</p>
+<h1 id="计算机劝退">计算机劝退</h1>
+<p>以下图片是节选自网上评论的，讲得基本到位。</p>
+<p><img src="https://files.seeusercontent.com/2026/09/14/3xmQ/___001.jpg" alt="大学系列（一）建筑、机械工程以及计算机专业劝退_计算机劝退_计算机专业劝退_001"></p>
+<p>如果你还想要确认你是否喜欢计算机。我给你布置一个任务。放心，这个任务对于哪怕没有学过计算机的人也能完成，只是看你有没有这方面的兴趣和特质。</p>
+<p>任务：请编程实现《Python编程：从入门到实践》这本书后面的外星人入侵的项目，并且将其推送到github上自己的仓库中，同时写一个README.md文件分别用中文和英文简要介绍这个项目。</p>
+<p>要求：你可以选择任意的编程语言实现，甚至可以选择其他的项目，只要复杂程度和这个项目差不多就行(用Python实现大概600行代码，对于没学过计算机的人来说算比较多的了)。你可以选择购买这本书，或者以其他的方式获取。要自己一行行编程(不准使用AI)，需要的环境自己配置，出了Bug自己修，必须能完整实现书中项目的功能。md是markdown语法，自己学。github自己注册，想办法登录和推送(必须是github，gitee不算），使用什么样的工具你自己找。</p>
+<p>好了，我等你一会儿，如果真是零基础要完成以上项目估计要至少三天到一周。</p>
+<p>做完了吗？没做完？不想做？好的你可以不用选这个专业了，<strong>这就是计算机专业以后要做的事情，并且只会比这个难</strong>。</p>
+<p>做完了？不错，你有学习计算机的重要的品质——<strong>独立解决问题的能力，善于搜索查找资料的能力，快速学习的能力，细心与坚持，有一定的英语水平，再加上对体制化的反感和对规则的突破</strong>。但是我还是要问你一些问题，你在心里回答就行，回答完了不用我多说你就知道你要不要选计算机了。</p>
+<p>你在做这个项目的时候感受到快乐了吗？是过程快乐还是结果快乐？</p>
+<p>你愿意一辈子活到老学到老吗？能够时刻保持对新知识和技术的好奇吗？</p>
+<p>你愿意一辈子和代码朝夕相处吗？哪怕35岁失业，身体被摧残，日复一日在电脑前坐着吗？</p>
+<p>好了，我的问题问完了，相信你有答案了。<strong>计算机确实是好专业，但仅限于热爱的人</strong>。</p>
+<h2 id="参考资料">参考资料</h2>
+<ol>
+<li>《上海交通大学生存手册》</li>
+<li>B站up主框框大学相关专业讲解视频</li>
+</ol>
+]]></content>
+      <categories>
+        <category>大学</category>
+      </categories>
+      <tags>
+        <tag>大学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>大学系列（三）毕业篇（卷一）</title>
     <url>/posts/Bachelor-graduation/</url>
     <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/mi5Y/_cover_001.png" alt="大学系列（三）毕业篇（卷一）_cover_毕业篇001"></p>
@@ -2126,88 +2275,47 @@ Countless small mysteries are also solved in the process.</span></p></div>
       </tags>
   </entry>
   <entry>
-    <title>hexo博客系列（五）博客部署</title>
-    <url>/posts/blog-series-five/</url>
-    <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/4Vui/hexo_cover_001.jpg" alt="hexo博客系列（五）博客部署_cover_001"></p>
-<h1 id="工作流">工作流</h1>
-<p>目前我的工作流是：本地<code>hexo d</code>推送部署到github上，然后通过github action部署到github pages 和vercel上。同时通过脚本将public文件夹下的静态文件同步推送到我的ECS服务器上。</p>
-<p>也就是说，可以通过三个域名访问到我的博客，一个是<a href="https://lloyd-kai.github.io/">https://lloyd-kai.github.io/</a> 源站点，一个是<a href="https://blog.lloydkai.top/">https://blog.lloydkai.top/</a>  部署到vercel上的(我已解析为自己购买的域名)，一个是<a href="https://lloydkai.cn/">https://lloydkai.cn/</a>  部署到阿里云的ECS上的(方便国内的用户访问)。</p>
-<h2 id="部署时参考的教程">部署时参考的教程</h2>
-<h3 id="部署到vercel上">部署到vercel上</h3>
-<p><a href="https://www.bilibili.com/video/BV1B4421X7kx/?share_source=copy_web&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">零成本免备案部署博客——vercel与zeabur搭建hexo主题博客</a> ,    <a href="https://www.bilibili.com/video/BV1Ke4y1v7Qr/?share_source=copy_web&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">第2期：Vercel部署并绑定自定义域名+安装Butterfly主题</a> 。这两个视频互相补充，主要参考第二个视频即可部署成功</p>
-<h3 id="部署到gihub的pages上">部署到gihub的pages上</h3>
-<p>请看<code>hexo博客系列(二)博客创建指南</code> ，严格来说我不是将hexo博客项目中所有的内容推送到github的，而是用hexo-deployer-git插件在本地生成public下的html文件，再推送到github pages上的。所以你会看到其他的的教程中它是先将整个hexo项目先推送到github，然后再将分支推送到github pages上，而我只上传必要的文件到github pages上，所有的文件都在我的本地电脑里面。主要的参考教程：<a href="https://www.fomal.cc/posts/e593433d.html">Fomalhaut的博客</a>，核心就在于<strong>是否下载了hexo-deployer-git插件以及配置ssh密钥等</strong>。</p>
-<p><a href="https://hexo.io/zh-cn/docs/one-command-deployment">官方hexo-deployer-git教程</a></p>
-<h3 id="部署到阿里云-ECS-上">部署到阿里云 ECS 上</h3>
-<p>主要参考的教程：<a href="https://www.vgtmy.com/2025/05/26/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91-GitHub%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%85%A8%E6%B5%81%E7%A8%8B%E6%8C%87%E5%8D%97/#%E8%87%AA%E5%8A%A8%E7%BB%AD%E7%AD%BE%EF%BC%88Let%E2%80%99s-Encrypt%EF%BC%89">链接</a></p>
-<p><strong>以下是根据我自己的实际使用情况修改</strong>，我使用的是阿里云 ECS，系统为 Ubuntu。</p>
-<h4 id="1-连接阿里云服务器">1. 连接阿里云服务器</h4>
-<p>没有上传 SSH 密钥之前，可以先用下面的命令登录，再输入密码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -l root 你的ECS公网IP -p 22</span><br></pre></td></tr></table></figure>
-<p>如果后面已经配置好了 SSH 密钥，也可以直接使用：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh root@你的ECS公网IP</span><br></pre></td></tr></table></figure>
-<h4 id="2-设置阿里云防火墙与安全组">2. 设置阿里云防火墙与安全组</h4>
-<p>这里最容易出问题的是 SSH 的来源 IP 白名单。我的电脑当前出口公网 IP 会变化，所以如果你开了代理或切换了网络，安全组里的放行地址也要一起更新。</p>
-<p>如果你发现把 SSH 安全组临时放开为 <code>0.0.0.0/0</code> 就能连上，那基本可以确定问题出在“来源 IP 不匹配”，而不是 ECS 本身坏了。</p>
-<h4 id="3-配置-Nginx-启用-HTTPS">3. 配置 Nginx 启用 HTTPS</h4>
-<p>Nginx 这里我只保留静态站点的基本配置，目录直接指向 <code>/var/www/html/</code>。如果使用的是 Let’s Encrypt + Certbot，证书路径应使用 <code>/etc/letsencrypt/live/域名/</code> 下的文件，不需要再去阿里云 SSL 控制台手动下载 <code>.pem</code> 和 <code>.key</code>：</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span> <span class="number">80</span> default_server;</span><br><span class="line">	<span class="attribute">listen</span> [::]:<span class="number">80</span> default_server;</span><br><span class="line">	<span class="attribute">server_name</span> _;</span><br><span class="line"></span><br><span class="line">	<span class="attribute">root</span> /var/www/html;</span><br><span class="line">	<span class="attribute">index</span> index.html;</span><br><span class="line"></span><br><span class="line">	<span class="section">location</span> / &#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span> <span class="number">443</span> ssl;</span><br><span class="line">	<span class="attribute">listen</span> [::]:<span class="number">443</span> ssl;</span><br><span class="line">	<span class="attribute">server_name</span> 你的域名 www.你的域名;</span><br><span class="line">	<span class="attribute">ssl_certificate</span> /etc/letsencrypt/live/你的域名/fullchain.pem;</span><br><span class="line">	<span class="attribute">ssl_certificate_key</span> /etc/letsencrypt/live/你的域名/privkey.pem;</span><br><span class="line">	<span class="attribute">root</span> /var/www/html;</span><br><span class="line">	<span class="attribute">index</span> index.html;</span><br><span class="line"></span><br><span class="line">	<span class="section">location</span> / &#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我这里不再使用 GitHub Actions 来同步 ECS，而是改成 Hexo 的 <code>deployAfter</code> 钩子执行脚本上传。</p>
-<h4 id="4-自定义-ECS-部署脚本">4. 自定义 ECS 部署脚本</h4>
-<p>我的实现思路是：</p>
+    <title>大数据系列（一）数据分析工具superset安装(version:0.381)</title>
+    <url>/posts/superset-install/</url>
+    <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/oOb7/supersetversion0381_cover_001.png" alt="大数据系列（一）数据分析工具superset安装(version0.381)_cover_001"></p>
+<h1 id="简介">简介</h1>
+<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
+<h1 id="准备工作">准备工作</h1>
+<blockquote>
+<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
+</blockquote>
+<ul>
+<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
+<li>主要参考视频教程和资料
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="基本环境配置">基本环境配置</h1>
 <ol>
-<li><code>hexo d</code> 完成 Git 部署后，再自动执行脚本上传 <code>public/*</code></li>
-<li>脚本先获取当前电脑的出口公网 IP，并在失败时提示去检查安全组来源地址</li>
-<li>上传后自动修复目录与文件权限，避免 Nginx 读取静态资源异常</li>
-<li>Nginx 直接托管 <code>/var/www/html/</code> 的静态文件</li>
+<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
+<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
+<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
+<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
+<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
+<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
+<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
 </ol>
-<p>这样就不需要 GitHub Actions 参与 ECS 同步了，但 <code>hexo d</code> 会多执行一步上传，所以整体会稍慢一些。</p>
-<p>首先，在 <code>_config.yml</code> 文件中添加配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地执行 `hexo d` 后，自动通过脚本上传到阿里云 ECS</span></span><br><span class="line"><span class="attr">ecs_deploy:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">你的ECS公网IP</span></span><br><span class="line">  <span class="attr">user:</span> <span class="string">root</span></span><br><span class="line">  <span class="attr">target:</span> <span class="string">/var/www/html/</span></span><br><span class="line">  <span class="comment"># 如果你想显式记录当前出口公网 IP，对照安全组时更直观，可以再补充一个来源 IP 字段</span></span><br></pre></td></tr></table></figure>
-<p>然后在 Hexo 项目根目录下新建脚本 <code>scripts/deploy-ecs.js</code>。</p>
-<p>这里我是使用<a href="https://cip.cc/">https://cip.cc/</a> 网站查询本机真正的IP，因为我的IP是不定的，所以需要查找确认，如果你嫌麻烦可以直接在服务器的安全组里面的SSH中填写IP为<code>0.0.0.0/0</code> 也就是任何IP都可连接。</p>
-<p>这个脚本的核心逻辑是：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; spawnSync &#125; = <span class="built_in">require</span>(<span class="string">&#x27;child_process&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> https = <span class="built_in">require</span>(<span class="string">&#x27;https&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PUBLIC_IP_CHECK_URL</span> = <span class="string">&#x27;https://cip.cc/&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getPublicIp</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> request = https.<span class="title function_">get</span>(<span class="variable constant_">PUBLIC_IP_CHECK_URL</span>, <span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (response.<span class="property">statusCode</span> !== <span class="number">200</span>) &#123;</span><br><span class="line">        response.<span class="title function_">resume</span>();</span><br><span class="line">        <span class="title function_">resolve</span>(<span class="literal">null</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> body = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">      response.<span class="title function_">setEncoding</span>(<span class="string">&#x27;utf8&#x27;</span>);</span><br><span class="line">      response.<span class="title function_">on</span>(<span class="string">&#x27;data&#x27;</span>, <span class="function">(<span class="params">chunk</span>) =&gt;</span> &#123;</span><br><span class="line">        body += chunk;</span><br><span class="line">      &#125;);</span><br><span class="line">      response.<span class="title function_">on</span>(<span class="string">&#x27;end&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> match = body.<span class="title function_">match</span>(<span class="regexp">/(?:查询\s*IP|IP)\s*[:：]\s*([0-9]&#123;1,3&#125;(?:\.[0-9]&#123;1,3&#125;)&#123;3&#125;)/i</span>);</span><br><span class="line">        <span class="title function_">resolve</span>(match ? match[<span class="number">1</span>] : <span class="literal">null</span>);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    request.<span class="built_in">setTimeout</span>(<span class="number">5000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      request.<span class="title function_">destroy</span>();</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="literal">null</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    request.<span class="title function_">on</span>(<span class="string">&#x27;error&#x27;</span>, <span class="function">() =&gt;</span> <span class="title function_">resolve</span>(<span class="literal">null</span>));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">runOrThrow</span>(<span class="params">command, errorMessage</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="title function_">spawnSync</span>(command, &#123;</span><br><span class="line">    <span class="attr">shell</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">stdio</span>: <span class="string">&#x27;inherit&#x27;</span>,</span><br><span class="line">    <span class="attr">cwd</span>: process.<span class="title function_">cwd</span>()</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (result.<span class="property">status</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">`<span class="subst">$&#123;errorMessage&#125;</span> (exit code <span class="subst">$&#123;result.status&#125;</span>)`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">logConnectionHints</span>(<span class="params">host, port</span>) &#123;</span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">`[ecs-deploy] 连接失败：<span class="subst">$&#123;host&#125;</span>:<span class="subst">$&#123;port&#125;</span>`</span>);</span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 请打开 https://cip.cc/ 查询当前电脑出口公网 IP&#x27;</span>);</span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 请先确认 ECS 的公网 IP 是否发生变化&#x27;</span>);</span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 请确认安全组和服务器防火墙已经放行 SSH 端口&#x27;</span>);</span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 如果 SSH 端口不是 22，请在 _config.yml 中更新 ecs_deploy.port&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hexo.<span class="title function_">on</span>(<span class="string">&#x27;deployAfter&#x27;</span>, <span class="keyword">async</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> cfg = hexo.<span class="property">config</span>.<span class="property">ecs_deploy</span> || &#123;&#125;;</span><br><span class="line">  <span class="keyword">if</span> (cfg.<span class="property">enable</span> === <span class="literal">false</span>) &#123;</span><br><span class="line">    hexo.<span class="property">log</span>.<span class="title function_">info</span>(<span class="string">&#x27;[ecs-deploy] disabled by config&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> host = cfg.<span class="property">host</span>;</span><br><span class="line">  <span class="keyword">const</span> user = cfg.<span class="property">user</span> || <span class="string">&#x27;root&#x27;</span>;</span><br><span class="line">  <span class="keyword">const</span> port = cfg.<span class="property">port</span> || <span class="number">22</span>;</span><br><span class="line">  <span class="keyword">const</span> target = cfg.<span class="property">target</span> || <span class="string">&#x27;/var/www/html/&#x27;</span>;</span><br><span class="line">  <span class="keyword">const</span> sourceIp = cfg.<span class="property">source_ip</span> || cfg.<span class="property">whitelist_ip</span> || cfg.<span class="property">allowed_source_ip</span> || <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!host) &#123;</span><br><span class="line">    hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] skip: missing ecs_deploy.host in _config.yml&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> currentPublicIp = <span class="keyword">await</span> <span class="title function_">getPublicIp</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> source = <span class="string">&#x27;public/*&#x27;</span>;</span><br><span class="line">  <span class="keyword">const</span> destination = <span class="string">`<span class="subst">$&#123;user&#125;</span>@<span class="subst">$&#123;host&#125;</span>:<span class="subst">$&#123;target&#125;</span>`</span>;</span><br><span class="line">  <span class="keyword">const</span> scpCommand = <span class="string">`scp -P <span class="subst">$&#123;port&#125;</span> -r <span class="subst">$&#123;source&#125;</span> <span class="subst">$&#123;destination&#125;</span>`</span>;</span><br><span class="line">  <span class="keyword">const</span> remoteFixPermsCommand = <span class="string">`ssh -p <span class="subst">$&#123;port&#125;</span> <span class="subst">$&#123;user&#125;</span>@<span class="subst">$&#123;host&#125;</span> &quot;find <span class="subst">$&#123;target&#125;</span> -type d -exec chmod 755 &#123;&#125; \\; ; find <span class="subst">$&#123;target&#125;</span> -type f -exec chmod 644 &#123;&#125; \\;&quot;`</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (currentPublicIp) &#123;</span><br><span class="line">    hexo.<span class="property">log</span>.<span class="title function_">info</span>(<span class="string">`[ecs-deploy] 正在通过 scp 上传：来源IP <span class="subst">$&#123;currentPublicIp&#125;</span> -&gt; 目标服务器 <span class="subst">$&#123;destination&#125;</span>`</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    hexo.<span class="property">log</span>.<span class="title function_">info</span>(<span class="string">`[ecs-deploy] 正在通过 scp 上传：来源IP 未获取到 -&gt; 目标服务器 <span class="subst">$&#123;destination&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="title function_">runOrThrow</span>(scpCommand, <span class="string">&#x27;[ecs-deploy] scp 上传失败&#x27;</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="keyword">if</span> (currentPublicIp &amp;&amp; sourceIp) &#123;</span><br><span class="line">      hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">`[ecs-deploy] 当前电脑出口公网 IP: <span class="subst">$&#123;currentPublicIp&#125;</span>`</span>);</span><br><span class="line">      <span class="keyword">if</span> (currentPublicIp !== sourceIp.<span class="title function_">replace</span>(<span class="regexp">/\/\d+$/</span>, <span class="string">&#x27;&#x27;</span>)) &#123;</span><br><span class="line">        hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 两者不一致，请到阿里云安全组中修改允许访问 SSH 的来源 IP&#x27;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (currentPublicIp) &#123;</span><br><span class="line">      hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">`[ecs-deploy] 当前电脑出口公网 IP: <span class="subst">$&#123;currentPublicIp&#125;</span>`</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sourceIp) &#123;</span><br><span class="line">      hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">`[ecs-deploy] 安全组允许的来源 IP: <span class="subst">$&#123;sourceIp&#125;</span>`</span>);</span><br><span class="line">      hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 当前出口公网 IP 获取失败，请手动确认本机/VPN 的外网 IP 是否与安全组一致&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">logConnectionHints</span>(host, port);</span><br><span class="line">    <span class="keyword">throw</span> error;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">info</span>(<span class="string">&#x27;[ecs-deploy] fixing file permissions for nginx&#x27;</span>);</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="title function_">runOrThrow</span>(remoteFixPermsCommand, <span class="string">&#x27;[ecs-deploy] 远端权限修复失败&#x27;</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] SSH 已连接，但远端权限修复失败&#x27;</span>);</span><br><span class="line">    hexo.<span class="property">log</span>.<span class="title function_">warn</span>(<span class="string">&#x27;[ecs-deploy] 请检查远端目标路径是否存在、目录权限是否正确&#x27;</span>);</span><br><span class="line">    <span class="keyword">throw</span> error;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  hexo.<span class="property">log</span>.<span class="title function_">info</span>(<span class="string">&#x27;[ecs-deploy] upload finished&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>为什么要做权限修复：</p>
-<ul>
-<li>某些环境下，<code>scp</code> 上传后目录权限可能变得过于严格</li>
-<li>如果 Nginx 无法读取 <code>css</code>、<code>js</code>、<code>font</code> 等资源目录，就会出现样式缺失或者页面和本地预览不一致的问题</li>
-</ul>
-<p>以后只需要正常在终端里输入下面的命令即可：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo cl;hexo g;hexo d</span><br></pre></td></tr></table></figure>
-<p>它会先完成 Hexo 的常规部署，再把生成的 <code>public</code> 目录同步到 ECS 上。</p>
-<h2 id="自动续签SSL证书">自动续签SSL证书</h2>
-<p><a href="https://www.vgtmy.com/2025/05/26/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91-GitHub%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%85%A8%E6%B5%81%E7%A8%8B%E6%8C%87%E5%8D%97/#%E8%87%AA%E5%8A%A8%E7%BB%AD%E7%AD%BE%EF%BC%88Let%E2%80%99s-Encrypt%EF%BC%89">参考链接</a> ，这里实际使用的是 Let’s Encrypt + Certbot 自动续签，不是阿里云 SSL 证书自动续订。</p>
-<p>SSL证书其实就是安全性的问题，如果没有签的话在访问网站的时候，浏览器就会显示</p>
-<p><code>您与此网站之间建立的连接不安全,请勿在此网站上输入任何敏感信息（例如密码或信用卡信息），因为攻击者可能会盗取这些信息。 了解详情</code></p>
-<p>我这里建议使用 Certbot 接管 ECS 上的 Nginx 证书：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> certbot --nginx -d 你的域名 -d www.你的域名</span><br><span class="line"><span class="built_in">sudo</span> certbot renew --dry-run</span><br><span class="line">systemctl list-timers --all | grep certbot</span><br></pre></td></tr></table></figure>
-<p>如果 <code>certbot renew --dry-run</code> 出现 <code>Congratulations, all simulated renewals succeeded</code>，并且 <code>certbot.timer</code> 存在，就说明自动续签链路已经跑通。Certbot 不是固定“每 60 天强制续签一次”，而是由系统定时器定期检查证书，在证书快到期时自动向 Let’s Encrypt 续签，然后继续使用 <code>/etc/letsencrypt/live/你的域名/</code> 下的新证书。</p>
-<p>阿里云免费 SSL 证书的实际情况需要单独说明：</p>
-<ul>
-<li>阿里云的“SSL 免费证书”现在叫“个人测试证书（免费版）”，主要适合测试或个人低成本场景，官方说明见：<a href="https://help.aliyun.com/zh/ssl-certificate/purchase-an-individual-test-certificate">个人测试证书</a>。</li>
-<li>每个实名认证主体每个自然年可以领取一次包含 20 张免费证书的资源包，但单张证书签发后有效期是 90 天。</li>
-<li>这 20 张额度不是 Certbot/Let’s Encrypt 那种服务器自动续签机制；如果使用阿里云免费证书，通常需要在阿里云控制台重新申请、下载证书，并替换到 Nginx 配置中。</li>
-<li>阿里云的证书托管和到期自动部署属于另一套服务，不能理解成免费证书会像 Certbot 一样自动续签到 ECS 的 Nginx；是否支持托管、是否能自动部署，要看证书类型、购买方式和目标云产品，官方说明见：<a href="https://help.aliyun.com/zh/ssl-certificate/enable-certificate-hosting">开启证书托管</a>。</li>
-</ul>
-<h2 id="如何备案">如何备案</h2>
-<p><a href="https://help.aliyun.com/zh/icp-filing/basic-icp-service/getting-started/quick-start-for-icp-filing-for-personal-websites?spm=a2c4g.11186623.0.0.9afd55cfiW4cXr">官方文档</a></p>
-<p>总体来说流程有五个——填表申请、阿里云初审、短信验证、管理审核、ICP出结果和公安备案，ICP出结果之后就要马上将备案信息添加到首页之下，包括公安的备案(出结果后30天内)，如果不添加就会有罚款。</p>
-<p>官方表述</p>
-<p><code>ICP备案成功后，您需要在网站首页底部悬挂ICP备案号并生成链接指向工信部网站(https://beian.miit.gov.cn/)，否则被相关部门核查出来，将会面临罚款。</code></p>
 <h2 id="参考资料">参考资料</h2>
 <ol>
-<li><a href="https://help.aliyun.com/zh/icp-filing/basic-icp-service/getting-started/quick-start-for-icp-filing-for-personal-websites?spm=a2c4g.11186623.0.0.9afd55cfiW4cXr">阿里云备案官方文档</a></li>
-<li><a href="https://www.vgtmy.com/2025/05/26/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91-GitHub%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%85%A8%E6%B5%81%E7%A8%8B%E6%8C%87%E5%8D%97/#%E8%87%AA%E5%8A%A8%E7%BB%AD%E7%AD%BE%EF%BC%88Let%E2%80%99s-Encrypt%EF%BC%89">链接</a></li>
+<li><a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）</a></li>
+<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
 </ol>
 ]]></content>
       <categories>
-        <category>blog</category>
+        <category>CS</category>
       </categories>
       <tags>
-        <tag>blog</tag>
-        <tag>教程</tag>
-        <tag>hexo</tag>
+        <tag>大数据</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2309,114 +2417,6 @@ Countless small mysteries are also solved in the process.</span></p></div>
       <tags>
         <tag>大学</tag>
         <tag>考研</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大数据系列（一）数据分析工具superset安装(version:0.381)</title>
-    <url>/posts/superset-install/</url>
-    <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/oOb7/supersetversion0381_cover_001.png" alt="大数据系列（一）数据分析工具superset安装(version0.381)_cover_001"></p>
-<h1 id="简介">简介</h1>
-<p>superset是一个开源的现代数据探索和可视化平台。目前属于Apache孵化器项目，主要用于数据分析师进行数据可视化工作,</p>
-<h1 id="准备工作">准备工作</h1>
-<blockquote>
-<p>注意：superset官网<a href="https://superset.apache.ac.cn/docs/intro/">简介 | Superset 中文 (apache.ac.cn)</a> 推荐使用docker安装，而以下教程是手动配置环境，建议不熟悉开发环境的用docker安装(我再也不手动配置了o(╥﹏╥)o)</p>
-</blockquote>
-<ul>
-<li>事先安装centos7(或者有一个服务器)并且安装好mysql</li>
-<li>主要参考视频教程和资料
-<ul>
-<li><a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="基本环境配置">基本环境配置</h1>
-<ol>
-<li>尚硅谷的视频先从P1看到P2，一步步按照视频讲的方法做即可</li>
-<li>然后就要开始创建Python环境，注意这里根据我个人实操和网络上帖子的经验，3.7、3.8的环境都有问题，我尝试过3.9，但是在最后启动superset的时候总是无法访问。这里就不要完全照抄视频，而是要根据此博客<a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a> ，建议安装3.6版本的Python，按照步骤做到第六步。</li>
-<li>然后注意将命令中所有的<code>https://pypi.douban.com/simple/</code> 改成 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
-<li>执行后发现没有安装pip和wheel，查看此<a href="https://blog.csdn.net/qq_15098623/article/details/90905230">centos 如何安装 pip（解决No package python-pip available问题）_no package python37 available-CSDN博客</a> 安装好</li>
-<li>在执行第九步的时候输入命令可以加上 <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>加快下载速度</li>
-<li>在执行第十步的时候发现缺少模块 输入 <code>pip install --upgrade cryptography==3.2 -i https://pypi.tuna.tsinghua.edu.cn/simple</code>  安装</li>
-<li>后面基本上就是照着做了，注意–bind：绑定本机地址 ，绑定的是你服务器的IP地址</li>
-<li>环境安装好之后就可以看尚硅谷的视频继续学了。</li>
-</ol>
-<h2 id="参考资料">参考资料</h2>
-<ol>
-<li><a href="https://www.bilibili.com/video/BV1SL4y1a7WK?p=10&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">尚硅谷大数据Superset教程（数据仓库项目首选数据可视化平台）</a></li>
-<li><a href="https://blog.csdn.net/m0_46914845/article/details/125868049#comments_26566111">数据仓库工具superset安装（完全可用）-CSDN博客</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>CS</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大学系列（一）建筑、机械工程以及计算机专业劝退</title>
-    <url>/posts/quit-profession/</url>
-    <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/qA4v/_cover_001.jpg" alt="大学系列（一）建筑、机械工程以及计算机专业劝退_cover_001"></p>
-<h1 id="写在前面的话">写在前面的话</h1>
-<p>建筑行业我是在大一的时候接触的，所以我对其的了解仅限于浅层次；机械工程我学习了三年，并且家里和亲戚都有相关的技术背景，我本人也多次去相关的工厂实习看访过，这部分我会多写一点；计算机是我目前学习的专业，我会从劝退和劝入的角度分别讲解。</p>
-<h1 id="建筑劝退">建筑劝退</h1>
-<p>就中国国内的建筑专业来分的话，一般主要有以下二级专业，分别是建筑学、城乡规划和风景园林，由于我本人在专业分流之前就已经转走了，所以我只从这三个专业的共同点来分析。</p>
-<p>首先我先提一点，主要是针对<strong>先天性因素的</strong>，<strong>如果你是色弱或者是色盲，那么和绘画相关的专业你不能选，包括建筑专业</strong>，这个东西一般需要你事先在选专业之前充分了解的，一般会在高考之前会有一个体检，如果体检出有相关的遗传性因素，那么在选专业的时候就要排除，基因的缺陷会让你在从事本专业的时候处于劣势，无关努力，但也确实令人心酸，能做的就是及时止损，我就是这样。</p>
-<p>所有想要选择建筑专业的学生，我个人认为必须要回答以下三个问题，如果这三个问题不能肯定地回答，那么就目前时代的发展背景而言，我强烈不推荐选择。</p>
-<p><strong>第一，你有相当的美术基础吗？</strong></p>
-<p>这里的美术基础，指的是你至少了解和学习过50小时以上的素描(无论是结构素描还是完整的素描)，如果你参加过美术艺考，那种水平基本上就是建筑专业的入门门槛。</p>
-<p>以下我画的这个图就是结构素描还有完整素描的图(有点烂别介意，大概是这个样子)，如果你的绘画水平和我难分伯仲的话，我还是建议你算了吧😄。</p>
-<p><img src="https://files.seeusercontent.com/2026/09/14/3rgU/___001.jpg" alt="大学系列（一）建筑、机械工程以及计算机专业劝退_建筑劝退_结构素描图_001"></p>
-<p><img src="https://files.seeusercontent.com/2026/09/14/h5Dg/___002.jpg" alt="大学系列（一）建筑、机械工程以及计算机专业劝退_建筑劝退_素描图_002"></p>
-<p>因为在20年代之前，如果你报考的是建筑专业，或者你要转行到建筑专业，在入学之前是要进行考试的(或者是个人成果集)，考试的内容一般就是结构素描，如果不通过的话就会把你调剂到其他专业。但是时过境迁，建筑行业做梦都想不到中国的房价下降得如此之快，建筑专业一下子从以前的香饽饽变成了“路边一条”，基本上除了“建筑老八校”以外，不再对学生的美术基础作出要求，你以为是对学生好，实际上是坑害那些没学过美术的学生，<strong>建筑就是披着工科皮的艺术专业，建筑就是披着工科皮的艺术专业，建筑就是披着工科皮的艺术专业</strong>！这句话我要反复强调，在国外建筑学是给那些从艺术学院出来人学的，国内也是这样，你在大一的时候上的最多的课就是设计课，高等数学是不修的，力学是阉割版本的。不学高等数学，不搞实验的，天天画图的你说它是工科，鬼都不信。</p>
-<p><strong>第二，你热爱建筑绘画吗？</strong></p>
-<p>如果你不能肯定的回答说“热爱”那么就是讨厌，而且<strong>注意我的前缀词，必须是“建筑”或者”城市规划图“或者“风景”</strong>,这三个分别对应上面三个专业,喜欢画人物、漫画的不行，这两者走的不是一个绘画的路子。建筑绘画讲究的是符合规律和规则，空间感和宏伟，人物绘画偏向的是微观，你只要画过建筑和人物，你就会清楚的知道这两个的不同。</p>
-<p>以下我画的这个图就是建筑的图</p>
-<p><img src="https://files.seeusercontent.com/2026/09/14/mpS3/___003.jpg" alt="大学系列（一）建筑、机械工程以及计算机专业劝退_建筑劝退_钢笔画_003"></p>
-<p>这个图是钢笔画，如果你真的学建筑，后面还会学习油画、水彩、版印等，在入学的那一天，老师就会要求你们每周都要画3张A4的钢笔画或者是结构素描等，学了这门专业，你的余生都要与画笔为伴，<strong>如果没有热爱的话，真的很难支撑下去</strong>。</p>
-<p><strong>第三，你的家庭经济基础好吗？</strong></p>
-<p>这里的家庭经济基础，指的是家里能支撑你的学费，能够支持你读硕读博，能够每年支持大概2到3次左右的外出实习费用(一般是4000左右)，能够负担的起报绘画班、绘画材料的费用。</p>
-<p>首先我要强调的是，相比隐形开支，学费显得一无是处。你每一个学期至少需要参加一个外出实习，一般就是到某一个旅游景点或者是知名建筑、风景区那边写生，问题就是，学校是不会负担你的门票费和住宿费的，而偏偏就是这些风景区的门票费、住宿和交通费用最贵。当你要开始写生的时候，你会发现要买的东西真是多——铅笔钢笔圆珠笔、专门的素描纸、画线笔、T字尺、支架、摄影机、颜料、建模板材、502胶水、美工刀、数位板等等，这些开销每一次花费大概几百左右，但是这样的开销次数多，可能几周就有一次。如果你以后要读研，会发现有一个专门的考试科目叫做快图，要求你在6小时之内画满A1的图纸，如果你不报班，不经过长期艰苦的努力训练，是不可能在6小时以内画完的。</p>
-<p>最后我要强调的问题是，建筑专业的<strong>艺术本质</strong>。它的思维方式不是理工科思维，也不是文科思维，而是艺术生思维。<strong>完美按照黄金分割比的图纸不一定好看，但是好看的图纸一定是由那些有天赋的人画出来的</strong>，你懂我意思吗？艺术的本质是<strong>天赋</strong>，是只需要画几笔就知道灰与白应该怎样表现，看几次就知道光应该从哪里入射，哪里画得暗，在哪里画几笔会凸显立体感，在画画之前就在脑海中构思完整个图的全貌… 这些都会让理工科的人感到不知所措，<strong>艺术是没有标准答案的</strong>，很多时候就是一种感性的理解和表达。如果你去看建筑专业的作业答辩，你会发现整个过程没有对理论的讨论，都是“我觉得这样怎么怎么好看”，“表现出了建筑的宏伟与壮观“，“突出了人文风貌和风土气息”，换句话说，建筑适合充满想象力、有绘画能力、对美有独特的理解和思考，最好带有一点口才的人去学，发现了没？这些完美契合女生的气质，这也是建筑专业女生多的原因，而长期学习理工科的学生我不是特别建议，因为你们的思维早已是1+1=2的，无论怎么样你都不能接受1+1=3甚至1+1还可以等于4。</p>
-<h1 id="机械劝退">机械劝退</h1>
-<p>机械在当下这个时间段可以说是T1专业了，可以和计算机、电气等专业结合，工作是不用愁的，只是你愿不愿意去做。上至高级技工，下至钢板搬运工，在哪里都可以充分就业。不过在选择这个专业之前，我简要的介绍你要学习的东西、工作的环境和未来的趋势。</p>
-<p>目前中国的机械工程是一级学科，一级学科下面还有许多的二级学科，比如机械设计制造及其自动化、车辆工程、智能制造、材料工程、汽车服务、机器人工程等。二级学科有很多，不同的学校有不同侧重，比如南方的机械一般侧重轻工业、北方的侧重重工业，国防相关的侧重军工、北上广深侧重机器人等。机械能做的事情很多，要学的东西也很多，所以需要有所侧重。</p>
-<p>通常来说，机械工程(这里指的是传统的机械，也就是不带“电”)在大一的时候要学<strong>机械制图</strong>，这个是重中之重，无论你是干低端的加工制造，还是高端的数控机床、机器人，你都需要认真学习，具体长什么样你可以在网上看，我要提醒的是这门课程对空间想象的能力要求高，如果你的几何不太好，对以后的学习就业可能会造成一定影响，还有就是<strong>CAD</strong>，也就是用计算机画图，也是重点必须熟练掌握。</p>
-<p>而在大二的时候，你学习的侧重点就是各种力学——<strong>理论力学、材料力学、流体力学</strong>，还有两门专业课，如果你选择的是机械设计制造及其自动化，你的专业课就是机械设计和机械制造；如果是车辆工程，就是汽车理论。无论是哪一门专业，我都要强调的是，<strong>你的力学必须好</strong>，数学会根据公式算就行。<strong>如果你高考物理都不及格，或者是力学怎么学都学不会，我不建议你学机械工程</strong>。在你设计机械产品或者制造的时候，用的最多的就是力学分析，公式计算。</p>
-<p>而其他要学的科目根据不同的二级学科有所不同，如果是偏自动化的，会学模电数电、控制工程、复变函数、单片机等；如果是偏电气的，那么就会学电路、电磁场等；如果是偏制造和加工的就会学数控机床、精密仪器检测等。其实这个就是机械的发展趋势——<strong>复合专业</strong>。网上经常会说，<strong>机械不带电，饿死一大片</strong>，在找工作的时候，如果是单纯的设计岗位或者是加工岗，一般开到6k到8k就算比较高的了，而如果你会一些电气工程的知识，会自动化、数控编程的话，工资就可以上w。也就是说，<strong>你在选择机械工程的同时，也需要选好其下的二级学科</strong>，每一个学科学到的知识，都会转化为未来求职的工作要求。有的学校会在高考选专业的时候就确定，有的学校是在大一之后再进行专业分流，这方面你要多多注意，往往越好的机械二级学科越难越不好考。</p>
-<p>那么你工作的时候用的最多的是什么软件呢？一般来说机械工程的都要学习Solidworks与AutoCAD，前者在设计加工、绘图等都用的上，后者就是机械制图用的，车辆工程的要学rhnio和UG，嵌入式方向要学keil，机器人要学ROS等。我推荐你在确定你是否选择机械专业之前先把这两个软件下了并且在网上找视频学习（跟着做就行，不需要先学理论再画图），如果你不讨厌甚至有一点喜欢，那么就可以选；<strong>如果你感到无感甚至对枯燥的设计和绘图厌烦，那么就不要选</strong>。</p>
-<p>至于其他的科目，我的建议是，你根据你以后的求职方向选择性学习，因为学校里教的很多东西都过时了，不过机械还算是一个古老的学科，虽然落后了一点，但是核心的知识还在，只是你要根据时代的变化去补充你欠缺的能力和知识，以便在未来求职夺得先机。</p>
-<p>那么机械专业的工作环境是什么样子的呢？请自己在网上搜索<strong>金工实习</strong>的视频，那个地方大概率就是你以后工作的地方，设计岗会稍微好一点，但也只是好一点，你还是要随时到这个地方看你设计出来的产品的。这里我要强调的是，<strong>工作环境的污染程度和危险程度超乎你的想象</strong>。你知道有一种东西叫做碳纤维吗？如果你长期生活在碳纤维敞开的环境下，你的呼吸道会损伤，最严重的情况下就是呼吸道灼伤，导致以后呼吸的时候食道都会痛(真实案例)；工厂里面还有一个隐形的杀手是加工的噪音——机床刀具切割声、金属碰撞声、焊工电焊的声音等，预估环境分贝在80分贝左右，长期待下来你的听力一定会受损。你可能会说难道工厂不会发隔音耳罩吗？难道不会像精密工厂那样专门设置一个清洗间和防尘服供员工穿吗？孩子，这是制造业，不是内存厂，制造业的利润率本来就低，为了多挣点钱，只好委屈一下员工，耳罩是没有的，厂房是不打扫的，经常是24小时轮班制的，老板是没文化土财主的，骂声是难听的，宿舍是堪比陋室铭的，工厂饭堂是堪比潲水的。除非真心喜欢制造和习惯机油味的、迫于生计和技术水平不得不做的，我想不到还有什么样的人会去这样的地方。自从我第一次进入到这个地方，我就在想，如果要选择一种死法，我宁愿选择在电脑前猝死，也不愿死在满是灰尘和油污的厂房中。<strong>环境好的地方不是没有，仅限于北上广深</strong>，我建议选择这一行的人都尽量往这些地方跑，为了你的身体安全和健康，也为自己的前途命运着想，在二三线城市制造业是真的把员工当耗材的！</p>
-<p>最后我给你们解答一些常见的疑惑。</p>
-<p><strong>机械专业，越老越吃香</strong>：这其实只说了半截话，另一截是“<strong>前提是你真的喜欢</strong>”，不喜欢怎么可能支持你从事这个专业到老。</p>
-<p><strong>机械专业，工作不愁</strong>：模糊的表述，工作确实不愁，3k4k的在小县城多的是，一般就是搬运钢材、齿轮等，这种重体力活等你赶到三四十岁左右的时候你大概率就要被辞退了，你可能会说难道工厂还没有实现用机器人搬运吗？说句比较地狱的话，<strong>因为人工成本比机器人低，所以现在很多某些地方还在用人工搬运</strong>。</p>
-<p>其实我个人来说，最大的无奈就是机械的制造业本质——在工业克苏鲁的中国，机械在其中起到了中流砥柱的作用，也付出了难以想象的代价，请问中国制造是如何畅销全世界的，无非就是物美价廉，物美就是靠技术的提升，价廉就是靠压榨和大量生产，制造业的本质注定了整个行业的利润率低，能达到10%就算很好的了，很多时候都是赚的辛苦钱，老板、股东、CEO等要分走大部分，留给技工、工人的少之又少。如果你看过《大国工匠》系列记录片，你会发现，哪怕是这些在技术上精益求精甚至巅峰造极的人，哪怕已经攻克了一个又一个的难关，他们的待遇完全和付出不相匹配。如果把同样的努力和天赋发挥到金融、计算机等领域，他们的回报会是制造业的好几十倍。在你选择之前，你问问自己，你能接受这样的结果吗?你是一个把技术放在金钱、荣誉和地位之前的人吗？你是一个哪怕穷困潦倒依然热爱制作的那个少年吗？如果不是的话，还是选择其他相对轻松回报高点的专业吧。</p>
-<h1 id="计算机劝退">计算机劝退</h1>
-<p>以下图片是节选自网上评论的，讲得基本到位。</p>
-<p><img src="https://files.seeusercontent.com/2026/09/14/3xmQ/___001.jpg" alt="大学系列（一）建筑、机械工程以及计算机专业劝退_计算机劝退_计算机专业劝退_001"></p>
-<p>如果你还想要确认你是否喜欢计算机。我给你布置一个任务。放心，这个任务对于哪怕没有学过计算机的人也能完成，只是看你有没有这方面的兴趣和特质。</p>
-<p>任务：请编程实现《Python编程：从入门到实践》这本书后面的外星人入侵的项目，并且将其推送到github上自己的仓库中，同时写一个README.md文件分别用中文和英文简要介绍这个项目。</p>
-<p>要求：你可以选择任意的编程语言实现，甚至可以选择其他的项目，只要复杂程度和这个项目差不多就行(用Python实现大概600行代码，对于没学过计算机的人来说算比较多的了)。你可以选择购买这本书，或者以其他的方式获取。要自己一行行编程(不准使用AI)，需要的环境自己配置，出了Bug自己修，必须能完整实现书中项目的功能。md是markdown语法，自己学。github自己注册，想办法登录和推送(必须是github，gitee不算），使用什么样的工具你自己找。</p>
-<p>好了，我等你一会儿，如果真是零基础要完成以上项目估计要至少三天到一周。</p>
-<p>做完了吗？没做完？不想做？好的你可以不用选这个专业了，<strong>这就是计算机专业以后要做的事情，并且只会比这个难</strong>。</p>
-<p>做完了？不错，你有学习计算机的重要的品质——<strong>独立解决问题的能力，善于搜索查找资料的能力，快速学习的能力，细心与坚持，有一定的英语水平，再加上对体制化的反感和对规则的突破</strong>。但是我还是要问你一些问题，你在心里回答就行，回答完了不用我多说你就知道你要不要选计算机了。</p>
-<p>你在做这个项目的时候感受到快乐了吗？是过程快乐还是结果快乐？</p>
-<p>你愿意一辈子活到老学到老吗？能够时刻保持对新知识和技术的好奇吗？</p>
-<p>你愿意一辈子和代码朝夕相处吗？哪怕35岁失业，身体被摧残，日复一日在电脑前坐着吗？</p>
-<p>好了，我的问题问完了，相信你有答案了。<strong>计算机确实是好专业，但仅限于热爱的人</strong>。</p>
-<h2 id="参考资料">参考资料</h2>
-<ol>
-<li>《上海交通大学生存手册》</li>
-<li>B站up主框框大学相关专业讲解视频</li>
-</ol>
-]]></content>
-      <categories>
-        <category>大学</category>
-      </categories>
-      <tags>
-        <tag>大学</tag>
       </tags>
   </entry>
   <entry>
@@ -2750,6 +2750,460 @@ Countless small mysteries are also solved in the process.</span></p></div>
       <tags>
         <tag>life</tag>
         <tag>computer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>英语系列（二）英语口语（英语兔版）</title>
+    <url>/posts/oral-english/</url>
+    <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/qkT5/_cover_001.jpg" alt="英语系列（二）英语口语（英语兔版）_cover_001"></p>
+<h1 id="英语口语">英语口语</h1>
+<p>💡不要用中文去替代英文中独有的，但是中文中缺失的音。</p>
+<h1 id="三种常用的音标">三种常用的音标</h1>
+<p>国际音标(IPA):</p>
+<p>KK音标：主要是美式音标，方便美式英语的注音。</p>
+<p>DJ音标：主流音标，口语练习的主要音标。<strong>本文后面不加说明的都是练习的DJ音标(IPA88)</strong></p>
+<p>对于非英语专业或者是语言研究的人来说，我们只需要在学习音标的是能认出这是属于哪一类的音标即可，音标终究是用来帮助发音的。</p>
+<h1 id="全部音标发音">全部音标发音</h1>
+<p>视频如下。</p>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
+    </iframe>
+</div>
+<h1 id="发音讲解">发音讲解</h1>
+<p><strong>以元音和辅音分</strong>：</p>
+<p>元音：就是在发音时不受阻碍(如嘴唇张开，但还是会受到舌头的影响)发出的音。辅音与元音相反。注意这里的舌位指的是舌头在发音时隆起的最高点，舌头太高，舌位就高。</p>
+<p>影响元音三要素：圆唇度(嘴巴”o“的程度)，舌位高低，舌位前后。</p>
+<p><strong>以清音和浊音分</strong>：<br>
+清音与浊音：声带不振动的音就是清音。反之就是浊音。</p>
+<p>示意图如下</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>元音</th>
+<th>辅音</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>浊音</td>
+<td>粗略认为所有的元音都是浊元音</td>
+<td>浊辅音</td>
+</tr>
+<tr>
+<td>清音</td>
+<td>\</td>
+<td>清辅音</td>
+</tr>
+</tbody>
+</table>
+<h2 id="元音">元音</h2>
+<blockquote>
+<p>以下都是DJ音标</p>
+</blockquote>
+<h3 id="单元音">单元音</h3>
+<p>注意：后面在音标中的的：不是其正确写法，只是markdown文件难以展现，具体写法还是见参考部分的第一个链接，后面的也是这样。</p>
+<ul>
+<li><strong>/i:/</strong></li>
+</ul>
+<p>bee、fee、pea、read、meat、lead</p>
+<p>发音时不圆唇，注意舌位更高，嘴角要向两边拉开，带点微笑的感觉。</p>
+<ul>
+<li><strong>/ɪ/</strong></li>
+</ul>
+<p>bit、fit、pit、lit、hit、fish</p>
+<p>注意舌位更低，舌尖在下齿后方，比/i:/更放松，嘴角没有那么咧开。</p>
+<p>注意区分，它<strong>不仅仅是把/i:/的时长缩短</strong>，有些美国人发音舌位会更低。有点像是军训时教官说的“一”。</p>
+<ul>
+<li><strong>/u:/</strong></li>
+</ul>
+<p>too、food、loose、prove、moon、soon</p>
+<p>/u:/<strong>口型没有那么圆,而是更扁</strong>,嘴角向两边拉伸，发音部位靠口腔后部。(不要误发成yu)</p>
+<ul>
+<li><strong>/ʊ/</strong></li>
+</ul>
+<p>book、look、good、took、bush、would</p>
+<p>发/ʊ/时,嘴唇没那么撅，更放松时长更短,发音更靠后。/ʊ/并不仅仅是把长音/u:/短着读，/u:/的唇形像两边拉开,而/ʊ/唇形更圆,更放松。</p>
+<ul>
+<li><strong>/e/</strong></li>
+</ul>
+<p>bed、get、pet、let、met、set</p>
+<p>双唇自然张开，口腔放松。舌尖在下牙齿后方，舌面平放</p>
+<ul>
+<li><strong>/ɜ:/</strong></li>
+</ul>
+<p>her、person、learn、bird、word、fur、urgent</p>
+<p>嘴自然张开，唇和舌自然放松，要确保发音时间够长，是重读的长音。如果发音不重读，更短就变成了/ə/ ，在单词中的拼写有er、ear、ir、or、ur等。</p>
+<p>在<strong>美式</strong>英语中会r化，写作/ɜ:r/，是美式英语最显著的特征之一。</p>
+<ul>
+<li><strong>/ə/</strong></li>
+</ul>
+<p>a-about balloon、e-taken problem、i-family pencil、o-memory freedom、u-supply support、y-syringe analysis 这些字母在单词内发音的时候都发/ə/</p>
+<p>嘴自然张开,唇和舌都自然放松不要重读,轻轻地让气流冲出声带自然读出重读,变长→/ɜ:/，它是英语中出现频率它是英语最高，最特殊,最重要的schwa(中央元音或中性元音)。让说话者在不需要强调某个音时用它代替，为了在某个音上减少所花时间，<strong>弱化</strong>成一个中性的默认音。有时候/ə/甚至省略不读。</p>
+<ul>
+<li><strong>/ʌ/</strong></li>
+</ul>
+<p>but、hut、must、son、ton、done</p>
+<p>舌尖在下牙齿后方，舌头平放发音靠口腔中后方，类似于啊但是口型没有那么大,时长更短，英美发音不同。</p>
+<p><strong>美音</strong>/ʌ/和中央元音/ə/区别在于，/ʌ/只出现在重读音节中，而/ə/只出现在轻读音节中。两者一般不做舌位上的区分，区别在于是否重读,在美音中的发音不是在口腔中后方，而是在口腔中间，也就说比英音靠前。</p>
+<ul>
+<li><strong>/ɔ:/</strong></li>
+</ul>
+<p>caught、bought、law、saw、door、four</p>
+<p>嘴唇要撅起来，圆而外凸,肌肉较为紧张，口腔后方发音。</p>
+<p><strong>美音</strong>中/ɔ/没有英音那样圆形外凸，更靠近汉语拼音ao而不是o，如果这个音后面跟字母r，美音中往往r化。</p>
+<ul>
+<li><strong>/æ/</strong></li>
+</ul>
+<p>bad、fat、pat、lad、mat、sat</p>
+<p>最容易读错的音之一，口型一定要张大，饱满，嘴角也要向两边拉伸。舌端在下牙齿后方，同时发出/ɑ:/和/e/这两个音。</p>
+<ul>
+<li><strong>/ɑ:/</strong></li>
+</ul>
+<p>father、fast、glass、car、park、mark</p>
+<p>/ɑ:/的口型比“啊”更大,发音更靠口腔后部(舌根处)发音，时长要足够长。</p>
+<ul>
+<li><strong>/ɒ/</strong></li>
+</ul>
+<p>top、hot、lot、box、stop、wash</p>
+<p>/ɒ/和普通话的凹(ao)相似,但并不相同发/ɒ/时,嘴型更小,时间更短,凹有口型变化，/ɒ/没有。</p>
+<p>在<strong>美音</strong>中一般读作/ɑ:/，也是英式英语和美式英语主要区别之一。</p>
+<h3 id="双元音">双元音</h3>
+<ul>
+<li><strong>/eɪ/</strong></li>
+</ul>
+<p>make、date、cake、safe、play、plane</p>
+<p>/e/和/ɪ/一前一后快速紧密发出，或者理解为从/e/向/ɪ/平滑发音。发这个音口腔是有变化的。</p>
+<ul>
+<li><strong>/ɔɪ/</strong></li>
+</ul>
+<p>boy、toy、soy、voice、noise、moist</p>
+<p>/ɔ:/变短后和/ɪ/一前一后快速紧密发出，或者理解为从/ɔ:/向/ɪ/发音，发这个音口腔是有变化。</p>
+<ul>
+<li><strong>/aɪ/</strong></li>
+</ul>
+<p>bike、nice、time、lick、site、life</p>
+<p>/a/和/ɪ/一前一后快速紧密发出，或者理解为从/a/向/ɪ/发音，发这个音口腔是有变化的，口型更加饱满。</p>
+<ul>
+<li><strong>/aʊ/</strong></li>
+</ul>
+<p>how、cow、allow、house、loud、mouse</p>
+<p>/a/和/ʊ/一前一后快速紧密发出，发这个音口腔是有变化的，口型更饱满更长。</p>
+<ul>
+<li><strong>/əʊ/</strong></li>
+</ul>
+<p>open、hope、post、coat、boat、soap</p>
+<p>/ə/和/ʊ/一前一后快速紧密发出，发这个音口腔是有变化的，嘴唇有收缩的，英音的起始音位比**美音/oʊ/**更靠前。</p>
+<ul>
+<li><strong>/ʊə/</strong></li>
+</ul>
+<p>tour、poor、moor、pure、cure、lure</p>
+<p>/ʊ/和/ə/一前一后快速紧密发出，发音一定要连贯。读音在英音中包含/ʊə/的词基本上都包含字母r，在<strong>美音</strong>中会r化。</p>
+<ul>
+<li><strong>/eə/</strong></li>
+</ul>
+<p>hair、pair、chair、fare、care、dare</p>
+<p>/e/和/ə/一前一后快速紧密发出，发音一定要连贯，注意这个/ə/可不等于/r/.</p>
+<ul>
+<li><strong>/ɪə/</strong></li>
+</ul>
+<p>area、idea、beer、dear、fear、here</p>
+<p>/ɪ/和/ə/一前一后快速紧密发出，发音一定要连贯。请注意,如果是读英音，单词拼写即使出现字母r，单词内部也不会r化，如果是读<strong>美音</strong>，只有单词内部出现r，才有可能r化。美音中如出现r，则对应读音为/ɪr/如不出现r，则一样。如果单词内部没有r，则英音美音都是/ɪə/，比如idea。</p>
+<h2 id="辅音">辅音</h2>
+<p>概念解读(辅音三阶段)：成阻：气流被阻塞；持阻：气流持续往外冲，但仍被阻塞；除阻：阻塞被去除，气流冲出；</p>
+<p>辅音三要素：清浊，调音部位、调音方式</p>
+<blockquote>
+<p>很多中式发音就是因为喜欢在字母后面加上其他的音，比如s后面加i变成”子“please读成普利子</p>
+</blockquote>
+<ul>
+<li><strong>/p/ /b/</strong></li>
+</ul>
+<p>peak beak、pet bed、pig big、rapid rabbit、lap lab、speak beak</p>
+<ol>
+<li>如果p后有元音，比如: peak就是<strong>送气音</strong></li>
+<li>如果p紧跟s，比如: speak就是<strong>不送气音</strong></li>
+<li>如果p后紧跟某些辅音，往往嘴巴闭上就基本完成发音国际音标:[p ]，<strong>几乎听不出这个音</strong>，比如: trapdoor, help me, leap year，<strong>无声除阻音</strong> (也称不完全爆破音)</li>
+</ol>
+<p><strong>/ b/<strong>是</strong>浊辅音</strong>，声带振动。</p>
+<ul>
+<li><strong>/t/ /d/</strong></li>
+</ul>
+<p>tip dip、tea deep、test desk、tap dab、bat bad、bet bed</p>
+<ol>
+<li>如果t后有元音，比如:top就是送气音</li>
+<li>如果t紧跟s，比如: stop就是<strong>不送气音</strong></li>
+<li>如果t后紧跟某些辅音，嘴巴闭上就基本完成发音国际音标: [t ]比如: setback, forget me，<strong>无声除阻音</strong>。</li>
+</ol>
+<p>如果想要知道音标的音位变体，见参考“英语兔”视频部分</p>
+<ol>
+<li>在<strong>美式英语</strong>中，元音之间的字母t(尤其是非重读音节中)，读作<strong>闪音</strong>，国际音标:[ɾ]，舌尖在上牙齿上方硬腭处，阻挡气流,轻轻—弹比如: water, better, little，听起来很像发出了/d/ 的声音。在标准英音中仍读作正常t: water, better, little。</li>
+<li>在<strong>美式英语</strong>中，鼻音/n/之前的t往往读作<strong>喉塞音</strong>，国际音标:[ʔ]，声门阻住气流，像是把声音&quot;卡在喉咙&quot;里一样比如: certain, important, button，在标准英音中仍读作正常t : certain, important, button</li>
+<li>在<strong>美式英语</strong>中，鼻音/n/之后的t往往基本听不见，比如: winter≈winner， interview≈innerview，甚至有的词中, t前后都有鼻音，比如: mountain，在标准英音中仍读作正常t: winter, interview, mountain</li>
+<li>/ d/是浊辅音，声带振动。在美音中，/d /和/t/一样会有<strong>闪音</strong>的读法: metal约等于medal，鼻音也会影响/d/的读音: abandon.</li>
+</ol>
+<ul>
+<li><strong>/k/ /g/</strong></li>
+</ul>
+<p>kit git、kate gate、cup gut、anchor anger、pick pig、peck keg</p>
+<ol>
+<li>如果k后有元音比如:kite，就是送气音</li>
+<li>如果k紧跟s比如: sky，不送气音普通话&quot;该&quot;的声母</li>
+<li>如果k后紧跟某些辅音嘴巴闭上就基本完成发音国际音标: [k ]，比如: dogtor, backdoor, make dinner，<strong>无声除阻音</strong>。</li>
+</ol>
+<ul>
+<li><strong>/m/ /n/ /ŋ/</strong></li>
+</ul>
+<p>map nap、met net、meet neat、room noon、tom run、lime line、sin sing、on long、sun sung</p>
+<ol>
+<li>/m/在元音之前，和普通话&quot;妈&quot;的声母(汉语拼音m)相似。在元音之后，发音方式相似，但只是双唇闭拢发鼻音。</li>
+<li>/n/在元音之前，和普通话&quot;拿&quot;的声母(汉语拼音n)相似/n/要比/m/的舌位高，尤其是舌端部分。在元音之后,发音方式相似，轻微通过鼻子出气。</li>
+<li>/ŋ/和/n/相似,但舌后端抵住软腭，而不像/n/一样舌前端抵住上齿龈。</li>
+</ol>
+<p>普通话中的后鼻音往往没有英语中那么清晰明显</p>
+<ul>
+<li><strong>/f/ /v/</strong></li>
+</ul>
+<p>fat valley、fit visit、ferry very、fest vest、life drive、leaf leave</p>
+<p>/f/和普通话&quot;夫&quot;的声母，基本一样/v/是&quot;声带振动版&quot;的/f/</p>
+<ul>
+<li><strong>/s/ /z/</strong></li>
+</ul>
+<p>sip zip、soon zoom、soup zoo、lesson reason、once lose、peace please</p>
+<p>英语的/s/，/z/都属于所谓<strong>摩擦音</strong>，不同于爆破音，/s/和普通话&quot;斯&quot;的声母(汉语拼音s)一样，/z/和/s/很像，区别就在于/z/发音时<strong>声带振动</strong>。</p>
+<ul>
+<li><strong>/θ/ /ð/</strong></li>
+</ul>
+<p>three there、thin that、thank those、thigh the、bath bathe、breath breathe</p>
+<p>和/s//z/一样，属于摩擦音，不同在于舌尖不在上下牙齿后方，而是在上下齿之间，被轻轻咬住，/θ/ /ð/区别在于/ð/需要<strong>声带振动</strong>。</p>
+<ul>
+<li><strong>/ʃ/ /ʒ/</strong></li>
+</ul>
+<p>mesh measure、fresh pleasure、leash decision、attention occasion、shall usual、shame regime</p>
+<p>/ʃ/ /ʒ/属于摩擦音，/ʃ/ /ʒ/区别在于/ʒ/需要声带振动。</p>
+<ul>
+<li><strong>/tʃ/ /dʒ/</strong></li>
+</ul>
+<p>chuck jug、chop job、choke joke、cheap jeep、catch page、pitch college</p>
+<p>/tʃ/可以理解为由/t/和/ʃ/构成,爆破音/t/和摩擦音/ʃ/同时发出，声带不振动。</p>
+<p>/dʒ/可以理解为由/d /和/ʒ/构成,爆破音/d/和摩擦音/ʒ/同时发出，声带振动，所以也被称作破擦音。</p>
+<ul>
+<li><strong>/h/</strong></li>
+</ul>
+<p>hat、hot、high、home、house、him</p>
+<p>舌面后部抬起接近软腭，形成缝隙,让气流向外通过,声带不振动。</p>
+<ul>
+<li><strong>/w/</strong></li>
+</ul>
+<p>was、why、wide、wet、we、wood</p>
+<p>双唇圈起，向外凸出，气流冲出发音，声带震动，/w/往往听上去像元音/u:/或/ʊ/,所以又被称作半元音，英语w开头的单词基本都是/w/开始。</p>
+<ul>
+<li><strong>/r/</strong></li>
+</ul>
+<p>rat、red、read、rice、right、room、car、her、ear、bore、tour、pure</p>
+<ol>
+<li>英音中，当字母r出现在元音<strong>之前</strong>，双唇突出并<strong>圆唇</strong>,舌尖上扬，气流从舌面上方滑出,声带振动。发英语/r/的音时，舌尖指向上齿龈。</li>
+<li>英音中，当字母r出现在元音<strong>之后</strong>，—般不发音或读作中央元音/ə/</li>
+<li>如果r出现在单词<strong>末尾</strong>，而下一个单词以元音开头,则连读时一般读出，比如:bear it、fear us、gear up</li>
+<li>美音和英音的区别在于:当字母r出现在元音之后，字母r往往会让<strong>元音r化</strong>，而在英音中则一般不发音或读作中央元音/ə/</li>
+</ol>
+<ul>
+<li><strong>/j/</strong></li>
+</ul>
+<p>yes、yard、yellow、young、yoga、use</p>
+<p>舌端往上抬向硬腭，与元音/i:/的舌位相似，但是更高一些。气流从舌面和硬腭之间通过，产生摩擦出声，声带振动。/j/往往听上去像元音/i:/或/ɪ/，所以又被称作半元音。但是/j/的舌端和硬腭靠得更近，有摩擦的感觉。</p>
+<ol>
+<li><strong>/j/的省略：<strong>在</strong>美式英语</strong>中,有些辅音(如/t/，/d/，/n/)后的/j/经常被<strong>省略</strong>，这个被称作yod-dropping(yod就是/j/)</li>
+<li><strong>/j/的融合</strong>：和之前的辅音经常&quot;合在一起读&quot;,这个被称作yod-coalescence，在口语中(尤其是英音口语中)常见, &quot;标准&quot;英语一般尽量避免。有的词中,yod-coalescence已成为标准音，如: educate /'edʒukeɪt/、issue / 'ɪʃu:/ 、azure /'æʒə/</li>
+<li>yod-coalescence也适用于单词之间，比如:Nice to meet you! Would you do it?</li>
+</ol>
+<ul>
+<li><strong>/l/</strong></li>
+</ul>
+<p>清晰L：lack lake like look lose leak、模糊L：help mile all girl school full</p>
+<ol>
+<li>如果l后有元音：舌尖抵住上牙齿后方，让气流从舌两边(两侧)滑出，同时舌尖离开上牙齿后，声带振动，所以/l/被叫做&quot;舌边音&quot;或&quot;舌侧音&quot;（清晰舌边音）</li>
+<li>如果l后没有元音：舌位和元音前的/l/一致，但是舌尖不离开上牙齿，声带振动（模糊舌边音）模糊L要发到位，否则导致连读时不顺畅，或者没法连读。</li>
+<li>字母|还有一个版本:不发音，英语中不少单词中的l都是不发音的，比如:calm、palm、salmon、colonel、folk</li>
+<li>英音美音发音区别:有的包含l的词在英式英语和<strong>美式英语</strong>中发音不同，比如:英音: million, billion, value美音: million, billion, value</li>
+</ol>
+<ul>
+<li><strong>/ts/ /dz/</strong></li>
+</ul>
+<p>bats bands、dates deeds、kites kids、fights friends、hats hands、lots leads</p>
+<ol>
+<li>/ts/可以理解为由/t/和/s/构成。爆破音/t/和摩擦音/s/同时发出，声带不振动。</li>
+<li>/dz/可以理解为由/d/和/z/构成，爆破音/d/和摩擦音/z/同时发出，声带振动。</li>
+</ol>
+<p>所以这两个音被归类为所谓破擦音(爆破＋摩擦)</p>
+<ul>
+<li><strong>/tr/ /dr/</strong></li>
+</ul>
+<p>trip drip、true drew、tree dream、try dry、country laundry、pantry hundred</p>
+<ol>
+<li>/tr/可以理解为由/t/和/r/构成。爆破音/t/和摩擦音/r/同时发出，声带不振动。</li>
+<li>/dr/可以理解为由/d/和/r/构成。爆破音/d/和摩擦音/r/同时发出，声带振动。</li>
+</ol>
+<p>所以这两个音被归类为所谓破擦音(爆破＋摩擦)</p>
+<h1 id="英语发音技巧">英语发音技巧</h1>
+<blockquote>
+<p>这些发音技巧能够让你的发音更加地道，同时也能很大程度上提升你的英语听力</p>
+</blockquote>
+<h2 id="连音">连音</h2>
+<p>单词(辅音结尾)+单词(元音开头)如：not at all.(“闹太套”),中文不习惯连读，我们读“我爱天安门”不会像外国人那样连读成“外天门”。这就是英语听不准确的重要口语习惯和原因。也就是说，<strong>辅音单词结尾的辅音要发到位，不加上不存在的元音</strong>，然后自然读下一个单词就能“连读”。</p>
+<p>💡连读不是创造一个音，而是两个音结合产生的结果。试着平滑地读I am，你就会感受到/j/的发音，这就是<strong>连音的本质</strong>。如果<strong>你的发音不标准，就不会自然而然地读出连音</strong>。</p>
+<p><strong>加音规则</strong></p>
+<p>注意是先有加音现象，再总结出规律。</p>
+<ol>
+<li>元音+元音：元音与元音连读容易糊，加上一个之前不存在的“过渡音”使得加音连贯。
+<ul>
+<li>/u:/, <strong>/ʊ/</strong>,<strong>/aʊ/</strong>, <strong>/əʊ/</strong>+元音:+/w/。如：just do it.</li>
+<li>/i:/,<strong>/ɪ/</strong>,<strong>/eɪ/</strong>,<strong>/aɪ/</strong>,<strong>/ɔɪ/</strong>+元音:+/j/。如： I am.</li>
+<li><strong>/ə/</strong>,<strong>/ɑ:/</strong>,<strong>/ɔ:/</strong>+元音:+/r/。主要是英式英语用，美式英语很少。如 the idea of；美式英语主要是字母r+元音，如bear it.连读但是不加音。</li>
+</ul>
+</li>
+<li>辅音+元音(词尾辅音 + 词首元音）： travel agency</li>
+</ol>
+<h2 id="同化">同化</h2>
+<ol>
+<li>逆行同化(前面的音受到后一个音的影响)
+<ol>
+<li>无声除阻(不完全爆破)：/k/ /t/ /d/+辅音，爆破音不发音 如:look back</li>
+<li>浊音变清音：如 have to :直接变成/f/+/t/,这样比原来的浊音更好发音。</li>
+<li>双唇化：如in person.受到p这个要闭唇的音印象，读起来变成了 im person。</li>
+</ol>
+</li>
+<li>顺行同化(后面音受到前面影响)
+<ol>
+<li>复数词尾：如books 一般会读成ks而不是kz。</li>
+</ol>
+</li>
+<li>互相同化：
+<ol>
+<li>融合发音:/s/+/j/ = <strong>/ʃ/</strong>;例如:God bless you;/z/+/j/ =  <strong>/ʒ/</strong>;例如as you wish;/t/+/j/ = <strong>/tʃ/</strong> ;例如Nice to me you;/d/+/j/ = <strong>/dʒ/</strong>;例如Did you do it?</li>
+<li>辅音延长：当前面一个音和后面一个音是同一个音时。只发一个音(这里的音是指<strong>音标</strong>不是字母)，但是要延长：如fish shop.这里前后都是sh</li>
+</ol>
+</li>
+<li>完全失爆（词尾爆破音( p b t d k g)+ 词首爆破音( p b t d k g)：
+<ol>
+<li>good question</li>
+</ol>
+</li>
+</ol>
+<h2 id="异化">异化</h2>
+<p>常见于/s/+/t/、/s/+/k/、/s/+/p/的组合。<strong>严格来说不是浊化</strong>，而是将这些音变成不送气的音，但是只是发音的话就是不用考虑这些</p>
+<ol>
+<li>r使前面的元音r化：如door 使前一个r消失，如surprise变成su®prise.</li>
+<li>具体例子sp+元音：
+<ol>
+<li>How do you spend your leisure time?</li>
+<li>sk+元音：i’m so scared</li>
+<li>st + 元音：Stand up and study hard.</li>
+<li>str+ 元音:  He struck me with a stick</li>
+</ol>
+</li>
+</ol>
+<h2 id="省音">省音</h2>
+<ol>
+<li>偷懒不读某一个或者是一些音：如interesting,这类往往可省可不省，省多少看个人说话习惯。</li>
+<li>必须省音。如debt\subtle\know\knee\write\wrong……这些词中b\k\w都是省略不读的。</li>
+<li>词与词之间省略：比如last year就只读las year.t直接省略。</li>
+<li>还有/t/、/d/等(词尾)爆破音也经常省略。如：have 的/h/(这被称为<strong>h击穿</strong>)。ing中的/g/，比如 Are you listenin’?这里打‘就说明省去了g</li>
+</ol>
+<h2 id="缩读">缩读</h2>
+<p>缩写表示可以缩读：如 I am=I’m,I have=I’ve 这些词往往在英语听力的时候读的很快不容易听到或者是听完整。比如wanna=want to, going to=gonna,because='cause还有许多缩写形式的单词或者短语都是这种形式。还有很多类似的都是，比如don’t know=dunno、give me=gimme、would have would’ve/would’a、you and I=you 'n’l、come on =c’mon</p>
+<h2 id="弱读">弱读</h2>
+<p>弱读非常重要，是中国人听不清英语的关键。<br>
+弱读不是声音变小，而是将元音改变了,这样能够让语句发音更轻松自然，不至于像中文那样“字正腔圆”导致读起来上气不接下气。</p>
+<p>例句：What <strong>do</strong> you want <strong>to do</strong>?<strong>From</strong> <strong>what</strong> I <strong>can</strong> tell,you <strong>must</strong> be tired <strong>of</strong> it,<strong>but</strong> I’m not,so <strong>would</strong> you like me <strong>to do</strong> it <strong>for</strong> you?<br>
+/d<strong>ə</strong> t<strong>ə</strong> fr<strong>ə</strong>m w<strong>ə</strong>t k<strong>ə</strong>n m<strong>ə</strong>st <strong>ə</strong>v b<strong>ə</strong>t w<strong>ə</strong>d f<strong>ə</strong>/</p>
+<blockquote>
+<p>弱读时，单词的中间的元音一般会变成中央元音/<strong>ə/</strong></p>
+</blockquote>
+<h2 id="节奏">节奏</h2>
+<p>💡英语是重音等时语言</p>
+<p><strong>英语语句中重读音节之间的时长基本相等</strong>，也就是说英语句中词语所花时间是由重读音节数量决定的。举例：Rabbits | eat | carrots.\A rabbit is | eating some | carrots.\The <strong>rabbit</strong> has been | <strong>eating</strong> some of the | <strong>carrots</strong>.分成三个音节，加粗部分为重读音节<br>
+也就是说，这是三个音节之间时长相等，根据之间的单词个数决定要不要快速读或者是连读，这样其实也体现了中央元音/ə/的重要性，就是为了和重读音节相对应的。</p>
+<p>总而言之记住一句话：英语句子中的非重读音节数量远远大于重读音节数量。</p>
+<h2 id="语调">语调</h2>
+<p>💡语调基于节奏</p>
+<p>语调就是英语句子声调在哪里升高哪里降低。但是不是中文的四声或者五度标记法。<br>
+语调就是表达说话人的情感，不需要死记(不一定升调就是提问，降调就是丧气)，多听多说就能理解。</p>
+<h3 id="升调">升调</h3>
+<p>这里用☑表示升调，放在哪个单词后哪个单词就升调，一般用来表达态度/情感/陈述/疑问/强调等</p>
+<p>举例</p>
+<ol>
+<li>一般疑问句：Are you kidding me☑ ？</li>
+<li>陈述形式的提问：Rabbits eat carrot☑ ?</li>
+<li>反义疑问词中的附加问句：you are right,are not you☑ ?</li>
+<li>列举中最后一个元素之前的元素：Are rabbits red☑，yellow☑，blue☑，green☑,or white?</li>
+<li>礼貌请求:Tell me,please☑</li>
+<li>句子中未完成的部分：The rabbit ate a carrot☑ and then slept.</li>
+</ol>
+<h3 id="降调">降调</h3>
+<p>用[\]表示降调</p>
+<ol>
+<li>特殊疑问句(非yes/no问题)：what is your name[\]?</li>
+<li>陈述事实或者回答问题： I see a white rabbit[\].</li>
+<li>感叹：what a beautiful leaf[\]!</li>
+<li>命令：put the girl down[\]!</li>
+<li>列举中最后一个元素：反义疑问句前一部分：Rabbits like to eat,play,sleep and run[\].</li>
+<li>反义疑问句前面一部分：Rabbit eat carrots[\],don’t they?</li>
+<li>作为回答/附和/确认的问句形式：The rabbit ate all the carrots. Did it[\]?</li>
+<li>已经知道提问的答案：can you call me at 6[\].</li>
+<li>问句形式表礼貌，并非真的在问问题：Would you pass me the salt[\]?</li>
+<li>不满、愤怒：Is that what you think[\]?</li>
+</ol>
+<p>参考音节</p>
+<p>TU表示重读，tu表示弱读。同样适用于句子和词组。</p>
+<ol>
+<li>单音节 TU：如two!two?</li>
+<li>双音节 TU tu： 如rabbit!rabbit?</li>
+<li>双音节 tu TU：如sit down!sit down?</li>
+<li>三音节 TU tu tu：如possible!possible?</li>
+<li>三音节 tu TU tu：如computer!computer?</li>
+<li>三音节 tu tu TU：如engineer!engineer?</li>
+</ol>
+<h1 id="自然拼读-Phonics">自然拼读(Phonics)</h1>
+<p>就是看字母，<strong>猜读音</strong>。这部分内容属于技巧向，对英语口语与听力有帮助。</p>
+<p>以下内容主要讨论一般情况，特殊情况请参考词典。</p>
+<h2 id="开音节与闭音节">开音节与闭音节</h2>
+<p><strong>概念解析</strong>：</p>
+<p>音节：由音素组合成的<strong>最小</strong>最自然的语音单位，比如rabbit的音节分别是rab和bit。</p>
+<p>闭音节：以辅音结尾的音节。比如baby中的by音节。注意这里的辅音不是指字母而是指音标。</p>
+<p>开音节：以元音结尾的音节。比如baby中的ba音节。</p>
+<p>重读音节：被强调的音节就是重读音节，往往声音更大，元音也被拉长。比如rabbit.其音标为/‘ræbɪt/ 这里的’就是用来标记重读音节的，所以rab音量较大，元音也延长。ˌ为次重读音节，在重读与非重读之间。比如accidental，其音标为/ˌ æksɪ’dentl/</p>
+<p>非重读音节：与重读音节相反。</p>
+<p>相对开音节：以不发音的元音字母e结尾的闭音节。</p>
+<h2 id="单个字母">单个字母</h2>
+<blockquote>
+<p>以下图都是从英语兔公众号下载而来</p>
+</blockquote>
+<p>辅音字母</p>
+<p><img src="https://files.seeusercontent.com/2026/09/13/zc0M/__001__01_001.png" alt="英语系列（二）英语口语（英语兔版）_单个字母_001_字母发音_01_001"></p>
+<p>元音字母</p>
+<p><strong>单个元音字母在重读开音节里读元音字母本身的读音</strong></p>
+<p><img src="https://files.seeusercontent.com/2026/09/13/w5wK/__001__02_002.png" alt="英语系列（二）英语口语（英语兔版）_单个字母_001_字母发音_02_002"></p>
+<p><strong>单个元音字母在相对开音节里读元音字母本身的读音</strong> 比如bate</p>
+<h2 id="字母组合">字母组合</h2>
+<p>辅音组合</p>
+<p><img src="https://files.seeusercontent.com/2026/09/13/r0Vq/__001__03_001.png" alt="英语系列（二）英语口语（英语兔版）_字母组合_001_字母发音_03_001"></p>
+<p>元音组合</p>
+<p><img src="https://files.seeusercontent.com/2026/09/13/Ta5o/__001__04_002.png" alt="英语系列（二）英语口语（英语兔版）_字母组合_001_字母发音_04_002"></p>
+<p>以上这些只是技巧向，真正要学好英语口语还是要大量的输入与输出。</p>
+<h1 id="参考资料">参考资料</h1>
+<ol>
+<li><a href="https://www.jiwake.com/yinbiaofayin/">英语音标发音表-英语48个音标在线读 (jiwake.com)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/457728471">【笔记】英语兔的DJ音标整理 - 知乎 (zhihu.com)</a></li>
+<li><a href="https://www.bilibili.com/video/BV1iV411z7Nj?p=28&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">全网最适合中国人的免费音标课(纯干货, 超详细!)</a></li>
+<li><a href="https://www.bilibili.com/video/BV1SZ4y1K7Lr?p=7&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">你必须知道的英语发音技巧(让你的口语更纯正, 更地道!)</a></li>
+<li><a href="https://www.bilibili.com/video/BV14841117gz?p=4&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">英语自然拼读极简教程（免费、简洁、高效 | 半小时内打牢基础</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>English</category>
+      </categories>
+      <tags>
+        <tag>English</tag>
       </tags>
   </entry>
   <entry>
@@ -4520,460 +4974,6 @@ The rabbit句子是句子的主干，前面句子表示原因，invite这个动�
 <li><a href="https://excalidraw.com/#:~:text=Excalidraw%20is%20a%20virtual%20collaborative%20whiteboard%20tool%20that">Excalidraw绘图网站</a></li>
 <li><a href="https://www.yingyutu.com/">英语兔 (yingyutu.com)</a> 其实是微信公众号不是网站</li>
 <li><a href="https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/">免费的剑桥英语词典和同义词词典 (cambridge.org)</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>English</category>
-      </categories>
-      <tags>
-        <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>英语系列（二）英语口语（英语兔版）</title>
-    <url>/posts/oral-english/</url>
-    <content><![CDATA[<p><img src="https://files.seeusercontent.com/2026/09/14/qkT5/_cover_001.jpg" alt="英语系列（二）英语口语（英语兔版）_cover_001"></p>
-<h1 id="英语口语">英语口语</h1>
-<p>💡不要用中文去替代英文中独有的，但是中文中缺失的音。</p>
-<h1 id="三种常用的音标">三种常用的音标</h1>
-<p>国际音标(IPA):</p>
-<p>KK音标：主要是美式音标，方便美式英语的注音。</p>
-<p>DJ音标：主流音标，口语练习的主要音标。<strong>本文后面不加说明的都是练习的DJ音标(IPA88)</strong></p>
-<p>对于非英语专业或者是语言研究的人来说，我们只需要在学习音标的是能认出这是属于哪一类的音标即可，音标终究是用来帮助发音的。</p>
-<h1 id="全部音标发音">全部音标发音</h1>
-<p>视频如下。</p>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552211531&bvid=BV1vi4y1C73C&cid=547518386&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" high_quality="1" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;">
-    </iframe>
-</div>
-<h1 id="发音讲解">发音讲解</h1>
-<p><strong>以元音和辅音分</strong>：</p>
-<p>元音：就是在发音时不受阻碍(如嘴唇张开，但还是会受到舌头的影响)发出的音。辅音与元音相反。注意这里的舌位指的是舌头在发音时隆起的最高点，舌头太高，舌位就高。</p>
-<p>影响元音三要素：圆唇度(嘴巴”o“的程度)，舌位高低，舌位前后。</p>
-<p><strong>以清音和浊音分</strong>：<br>
-清音与浊音：声带不振动的音就是清音。反之就是浊音。</p>
-<p>示意图如下</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>元音</th>
-<th>辅音</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>浊音</td>
-<td>粗略认为所有的元音都是浊元音</td>
-<td>浊辅音</td>
-</tr>
-<tr>
-<td>清音</td>
-<td>\</td>
-<td>清辅音</td>
-</tr>
-</tbody>
-</table>
-<h2 id="元音">元音</h2>
-<blockquote>
-<p>以下都是DJ音标</p>
-</blockquote>
-<h3 id="单元音">单元音</h3>
-<p>注意：后面在音标中的的：不是其正确写法，只是markdown文件难以展现，具体写法还是见参考部分的第一个链接，后面的也是这样。</p>
-<ul>
-<li><strong>/i:/</strong></li>
-</ul>
-<p>bee、fee、pea、read、meat、lead</p>
-<p>发音时不圆唇，注意舌位更高，嘴角要向两边拉开，带点微笑的感觉。</p>
-<ul>
-<li><strong>/ɪ/</strong></li>
-</ul>
-<p>bit、fit、pit、lit、hit、fish</p>
-<p>注意舌位更低，舌尖在下齿后方，比/i:/更放松，嘴角没有那么咧开。</p>
-<p>注意区分，它<strong>不仅仅是把/i:/的时长缩短</strong>，有些美国人发音舌位会更低。有点像是军训时教官说的“一”。</p>
-<ul>
-<li><strong>/u:/</strong></li>
-</ul>
-<p>too、food、loose、prove、moon、soon</p>
-<p>/u:/<strong>口型没有那么圆,而是更扁</strong>,嘴角向两边拉伸，发音部位靠口腔后部。(不要误发成yu)</p>
-<ul>
-<li><strong>/ʊ/</strong></li>
-</ul>
-<p>book、look、good、took、bush、would</p>
-<p>发/ʊ/时,嘴唇没那么撅，更放松时长更短,发音更靠后。/ʊ/并不仅仅是把长音/u:/短着读，/u:/的唇形像两边拉开,而/ʊ/唇形更圆,更放松。</p>
-<ul>
-<li><strong>/e/</strong></li>
-</ul>
-<p>bed、get、pet、let、met、set</p>
-<p>双唇自然张开，口腔放松。舌尖在下牙齿后方，舌面平放</p>
-<ul>
-<li><strong>/ɜ:/</strong></li>
-</ul>
-<p>her、person、learn、bird、word、fur、urgent</p>
-<p>嘴自然张开，唇和舌自然放松，要确保发音时间够长，是重读的长音。如果发音不重读，更短就变成了/ə/ ，在单词中的拼写有er、ear、ir、or、ur等。</p>
-<p>在<strong>美式</strong>英语中会r化，写作/ɜ:r/，是美式英语最显著的特征之一。</p>
-<ul>
-<li><strong>/ə/</strong></li>
-</ul>
-<p>a-about balloon、e-taken problem、i-family pencil、o-memory freedom、u-supply support、y-syringe analysis 这些字母在单词内发音的时候都发/ə/</p>
-<p>嘴自然张开,唇和舌都自然放松不要重读,轻轻地让气流冲出声带自然读出重读,变长→/ɜ:/，它是英语中出现频率它是英语最高，最特殊,最重要的schwa(中央元音或中性元音)。让说话者在不需要强调某个音时用它代替，为了在某个音上减少所花时间，<strong>弱化</strong>成一个中性的默认音。有时候/ə/甚至省略不读。</p>
-<ul>
-<li><strong>/ʌ/</strong></li>
-</ul>
-<p>but、hut、must、son、ton、done</p>
-<p>舌尖在下牙齿后方，舌头平放发音靠口腔中后方，类似于啊但是口型没有那么大,时长更短，英美发音不同。</p>
-<p><strong>美音</strong>/ʌ/和中央元音/ə/区别在于，/ʌ/只出现在重读音节中，而/ə/只出现在轻读音节中。两者一般不做舌位上的区分，区别在于是否重读,在美音中的发音不是在口腔中后方，而是在口腔中间，也就说比英音靠前。</p>
-<ul>
-<li><strong>/ɔ:/</strong></li>
-</ul>
-<p>caught、bought、law、saw、door、four</p>
-<p>嘴唇要撅起来，圆而外凸,肌肉较为紧张，口腔后方发音。</p>
-<p><strong>美音</strong>中/ɔ/没有英音那样圆形外凸，更靠近汉语拼音ao而不是o，如果这个音后面跟字母r，美音中往往r化。</p>
-<ul>
-<li><strong>/æ/</strong></li>
-</ul>
-<p>bad、fat、pat、lad、mat、sat</p>
-<p>最容易读错的音之一，口型一定要张大，饱满，嘴角也要向两边拉伸。舌端在下牙齿后方，同时发出/ɑ:/和/e/这两个音。</p>
-<ul>
-<li><strong>/ɑ:/</strong></li>
-</ul>
-<p>father、fast、glass、car、park、mark</p>
-<p>/ɑ:/的口型比“啊”更大,发音更靠口腔后部(舌根处)发音，时长要足够长。</p>
-<ul>
-<li><strong>/ɒ/</strong></li>
-</ul>
-<p>top、hot、lot、box、stop、wash</p>
-<p>/ɒ/和普通话的凹(ao)相似,但并不相同发/ɒ/时,嘴型更小,时间更短,凹有口型变化，/ɒ/没有。</p>
-<p>在<strong>美音</strong>中一般读作/ɑ:/，也是英式英语和美式英语主要区别之一。</p>
-<h3 id="双元音">双元音</h3>
-<ul>
-<li><strong>/eɪ/</strong></li>
-</ul>
-<p>make、date、cake、safe、play、plane</p>
-<p>/e/和/ɪ/一前一后快速紧密发出，或者理解为从/e/向/ɪ/平滑发音。发这个音口腔是有变化的。</p>
-<ul>
-<li><strong>/ɔɪ/</strong></li>
-</ul>
-<p>boy、toy、soy、voice、noise、moist</p>
-<p>/ɔ:/变短后和/ɪ/一前一后快速紧密发出，或者理解为从/ɔ:/向/ɪ/发音，发这个音口腔是有变化。</p>
-<ul>
-<li><strong>/aɪ/</strong></li>
-</ul>
-<p>bike、nice、time、lick、site、life</p>
-<p>/a/和/ɪ/一前一后快速紧密发出，或者理解为从/a/向/ɪ/发音，发这个音口腔是有变化的，口型更加饱满。</p>
-<ul>
-<li><strong>/aʊ/</strong></li>
-</ul>
-<p>how、cow、allow、house、loud、mouse</p>
-<p>/a/和/ʊ/一前一后快速紧密发出，发这个音口腔是有变化的，口型更饱满更长。</p>
-<ul>
-<li><strong>/əʊ/</strong></li>
-</ul>
-<p>open、hope、post、coat、boat、soap</p>
-<p>/ə/和/ʊ/一前一后快速紧密发出，发这个音口腔是有变化的，嘴唇有收缩的，英音的起始音位比**美音/oʊ/**更靠前。</p>
-<ul>
-<li><strong>/ʊə/</strong></li>
-</ul>
-<p>tour、poor、moor、pure、cure、lure</p>
-<p>/ʊ/和/ə/一前一后快速紧密发出，发音一定要连贯。读音在英音中包含/ʊə/的词基本上都包含字母r，在<strong>美音</strong>中会r化。</p>
-<ul>
-<li><strong>/eə/</strong></li>
-</ul>
-<p>hair、pair、chair、fare、care、dare</p>
-<p>/e/和/ə/一前一后快速紧密发出，发音一定要连贯，注意这个/ə/可不等于/r/.</p>
-<ul>
-<li><strong>/ɪə/</strong></li>
-</ul>
-<p>area、idea、beer、dear、fear、here</p>
-<p>/ɪ/和/ə/一前一后快速紧密发出，发音一定要连贯。请注意,如果是读英音，单词拼写即使出现字母r，单词内部也不会r化，如果是读<strong>美音</strong>，只有单词内部出现r，才有可能r化。美音中如出现r，则对应读音为/ɪr/如不出现r，则一样。如果单词内部没有r，则英音美音都是/ɪə/，比如idea。</p>
-<h2 id="辅音">辅音</h2>
-<p>概念解读(辅音三阶段)：成阻：气流被阻塞；持阻：气流持续往外冲，但仍被阻塞；除阻：阻塞被去除，气流冲出；</p>
-<p>辅音三要素：清浊，调音部位、调音方式</p>
-<blockquote>
-<p>很多中式发音就是因为喜欢在字母后面加上其他的音，比如s后面加i变成”子“please读成普利子</p>
-</blockquote>
-<ul>
-<li><strong>/p/ /b/</strong></li>
-</ul>
-<p>peak beak、pet bed、pig big、rapid rabbit、lap lab、speak beak</p>
-<ol>
-<li>如果p后有元音，比如: peak就是<strong>送气音</strong></li>
-<li>如果p紧跟s，比如: speak就是<strong>不送气音</strong></li>
-<li>如果p后紧跟某些辅音，往往嘴巴闭上就基本完成发音国际音标:[p ]，<strong>几乎听不出这个音</strong>，比如: trapdoor, help me, leap year，<strong>无声除阻音</strong> (也称不完全爆破音)</li>
-</ol>
-<p><strong>/ b/<strong>是</strong>浊辅音</strong>，声带振动。</p>
-<ul>
-<li><strong>/t/ /d/</strong></li>
-</ul>
-<p>tip dip、tea deep、test desk、tap dab、bat bad、bet bed</p>
-<ol>
-<li>如果t后有元音，比如:top就是送气音</li>
-<li>如果t紧跟s，比如: stop就是<strong>不送气音</strong></li>
-<li>如果t后紧跟某些辅音，嘴巴闭上就基本完成发音国际音标: [t ]比如: setback, forget me，<strong>无声除阻音</strong>。</li>
-</ol>
-<p>如果想要知道音标的音位变体，见参考“英语兔”视频部分</p>
-<ol>
-<li>在<strong>美式英语</strong>中，元音之间的字母t(尤其是非重读音节中)，读作<strong>闪音</strong>，国际音标:[ɾ]，舌尖在上牙齿上方硬腭处，阻挡气流,轻轻—弹比如: water, better, little，听起来很像发出了/d/ 的声音。在标准英音中仍读作正常t: water, better, little。</li>
-<li>在<strong>美式英语</strong>中，鼻音/n/之前的t往往读作<strong>喉塞音</strong>，国际音标:[ʔ]，声门阻住气流，像是把声音&quot;卡在喉咙&quot;里一样比如: certain, important, button，在标准英音中仍读作正常t : certain, important, button</li>
-<li>在<strong>美式英语</strong>中，鼻音/n/之后的t往往基本听不见，比如: winter≈winner， interview≈innerview，甚至有的词中, t前后都有鼻音，比如: mountain，在标准英音中仍读作正常t: winter, interview, mountain</li>
-<li>/ d/是浊辅音，声带振动。在美音中，/d /和/t/一样会有<strong>闪音</strong>的读法: metal约等于medal，鼻音也会影响/d/的读音: abandon.</li>
-</ol>
-<ul>
-<li><strong>/k/ /g/</strong></li>
-</ul>
-<p>kit git、kate gate、cup gut、anchor anger、pick pig、peck keg</p>
-<ol>
-<li>如果k后有元音比如:kite，就是送气音</li>
-<li>如果k紧跟s比如: sky，不送气音普通话&quot;该&quot;的声母</li>
-<li>如果k后紧跟某些辅音嘴巴闭上就基本完成发音国际音标: [k ]，比如: dogtor, backdoor, make dinner，<strong>无声除阻音</strong>。</li>
-</ol>
-<ul>
-<li><strong>/m/ /n/ /ŋ/</strong></li>
-</ul>
-<p>map nap、met net、meet neat、room noon、tom run、lime line、sin sing、on long、sun sung</p>
-<ol>
-<li>/m/在元音之前，和普通话&quot;妈&quot;的声母(汉语拼音m)相似。在元音之后，发音方式相似，但只是双唇闭拢发鼻音。</li>
-<li>/n/在元音之前，和普通话&quot;拿&quot;的声母(汉语拼音n)相似/n/要比/m/的舌位高，尤其是舌端部分。在元音之后,发音方式相似，轻微通过鼻子出气。</li>
-<li>/ŋ/和/n/相似,但舌后端抵住软腭，而不像/n/一样舌前端抵住上齿龈。</li>
-</ol>
-<p>普通话中的后鼻音往往没有英语中那么清晰明显</p>
-<ul>
-<li><strong>/f/ /v/</strong></li>
-</ul>
-<p>fat valley、fit visit、ferry very、fest vest、life drive、leaf leave</p>
-<p>/f/和普通话&quot;夫&quot;的声母，基本一样/v/是&quot;声带振动版&quot;的/f/</p>
-<ul>
-<li><strong>/s/ /z/</strong></li>
-</ul>
-<p>sip zip、soon zoom、soup zoo、lesson reason、once lose、peace please</p>
-<p>英语的/s/，/z/都属于所谓<strong>摩擦音</strong>，不同于爆破音，/s/和普通话&quot;斯&quot;的声母(汉语拼音s)一样，/z/和/s/很像，区别就在于/z/发音时<strong>声带振动</strong>。</p>
-<ul>
-<li><strong>/θ/ /ð/</strong></li>
-</ul>
-<p>three there、thin that、thank those、thigh the、bath bathe、breath breathe</p>
-<p>和/s//z/一样，属于摩擦音，不同在于舌尖不在上下牙齿后方，而是在上下齿之间，被轻轻咬住，/θ/ /ð/区别在于/ð/需要<strong>声带振动</strong>。</p>
-<ul>
-<li><strong>/ʃ/ /ʒ/</strong></li>
-</ul>
-<p>mesh measure、fresh pleasure、leash decision、attention occasion、shall usual、shame regime</p>
-<p>/ʃ/ /ʒ/属于摩擦音，/ʃ/ /ʒ/区别在于/ʒ/需要声带振动。</p>
-<ul>
-<li><strong>/tʃ/ /dʒ/</strong></li>
-</ul>
-<p>chuck jug、chop job、choke joke、cheap jeep、catch page、pitch college</p>
-<p>/tʃ/可以理解为由/t/和/ʃ/构成,爆破音/t/和摩擦音/ʃ/同时发出，声带不振动。</p>
-<p>/dʒ/可以理解为由/d /和/ʒ/构成,爆破音/d/和摩擦音/ʒ/同时发出，声带振动，所以也被称作破擦音。</p>
-<ul>
-<li><strong>/h/</strong></li>
-</ul>
-<p>hat、hot、high、home、house、him</p>
-<p>舌面后部抬起接近软腭，形成缝隙,让气流向外通过,声带不振动。</p>
-<ul>
-<li><strong>/w/</strong></li>
-</ul>
-<p>was、why、wide、wet、we、wood</p>
-<p>双唇圈起，向外凸出，气流冲出发音，声带震动，/w/往往听上去像元音/u:/或/ʊ/,所以又被称作半元音，英语w开头的单词基本都是/w/开始。</p>
-<ul>
-<li><strong>/r/</strong></li>
-</ul>
-<p>rat、red、read、rice、right、room、car、her、ear、bore、tour、pure</p>
-<ol>
-<li>英音中，当字母r出现在元音<strong>之前</strong>，双唇突出并<strong>圆唇</strong>,舌尖上扬，气流从舌面上方滑出,声带振动。发英语/r/的音时，舌尖指向上齿龈。</li>
-<li>英音中，当字母r出现在元音<strong>之后</strong>，—般不发音或读作中央元音/ə/</li>
-<li>如果r出现在单词<strong>末尾</strong>，而下一个单词以元音开头,则连读时一般读出，比如:bear it、fear us、gear up</li>
-<li>美音和英音的区别在于:当字母r出现在元音之后，字母r往往会让<strong>元音r化</strong>，而在英音中则一般不发音或读作中央元音/ə/</li>
-</ol>
-<ul>
-<li><strong>/j/</strong></li>
-</ul>
-<p>yes、yard、yellow、young、yoga、use</p>
-<p>舌端往上抬向硬腭，与元音/i:/的舌位相似，但是更高一些。气流从舌面和硬腭之间通过，产生摩擦出声，声带振动。/j/往往听上去像元音/i:/或/ɪ/，所以又被称作半元音。但是/j/的舌端和硬腭靠得更近，有摩擦的感觉。</p>
-<ol>
-<li><strong>/j/的省略：<strong>在</strong>美式英语</strong>中,有些辅音(如/t/，/d/，/n/)后的/j/经常被<strong>省略</strong>，这个被称作yod-dropping(yod就是/j/)</li>
-<li><strong>/j/的融合</strong>：和之前的辅音经常&quot;合在一起读&quot;,这个被称作yod-coalescence，在口语中(尤其是英音口语中)常见, &quot;标准&quot;英语一般尽量避免。有的词中,yod-coalescence已成为标准音，如: educate /'edʒukeɪt/、issue / 'ɪʃu:/ 、azure /'æʒə/</li>
-<li>yod-coalescence也适用于单词之间，比如:Nice to meet you! Would you do it?</li>
-</ol>
-<ul>
-<li><strong>/l/</strong></li>
-</ul>
-<p>清晰L：lack lake like look lose leak、模糊L：help mile all girl school full</p>
-<ol>
-<li>如果l后有元音：舌尖抵住上牙齿后方，让气流从舌两边(两侧)滑出，同时舌尖离开上牙齿后，声带振动，所以/l/被叫做&quot;舌边音&quot;或&quot;舌侧音&quot;（清晰舌边音）</li>
-<li>如果l后没有元音：舌位和元音前的/l/一致，但是舌尖不离开上牙齿，声带振动（模糊舌边音）模糊L要发到位，否则导致连读时不顺畅，或者没法连读。</li>
-<li>字母|还有一个版本:不发音，英语中不少单词中的l都是不发音的，比如:calm、palm、salmon、colonel、folk</li>
-<li>英音美音发音区别:有的包含l的词在英式英语和<strong>美式英语</strong>中发音不同，比如:英音: million, billion, value美音: million, billion, value</li>
-</ol>
-<ul>
-<li><strong>/ts/ /dz/</strong></li>
-</ul>
-<p>bats bands、dates deeds、kites kids、fights friends、hats hands、lots leads</p>
-<ol>
-<li>/ts/可以理解为由/t/和/s/构成。爆破音/t/和摩擦音/s/同时发出，声带不振动。</li>
-<li>/dz/可以理解为由/d/和/z/构成，爆破音/d/和摩擦音/z/同时发出，声带振动。</li>
-</ol>
-<p>所以这两个音被归类为所谓破擦音(爆破＋摩擦)</p>
-<ul>
-<li><strong>/tr/ /dr/</strong></li>
-</ul>
-<p>trip drip、true drew、tree dream、try dry、country laundry、pantry hundred</p>
-<ol>
-<li>/tr/可以理解为由/t/和/r/构成。爆破音/t/和摩擦音/r/同时发出，声带不振动。</li>
-<li>/dr/可以理解为由/d/和/r/构成。爆破音/d/和摩擦音/r/同时发出，声带振动。</li>
-</ol>
-<p>所以这两个音被归类为所谓破擦音(爆破＋摩擦)</p>
-<h1 id="英语发音技巧">英语发音技巧</h1>
-<blockquote>
-<p>这些发音技巧能够让你的发音更加地道，同时也能很大程度上提升你的英语听力</p>
-</blockquote>
-<h2 id="连音">连音</h2>
-<p>单词(辅音结尾)+单词(元音开头)如：not at all.(“闹太套”),中文不习惯连读，我们读“我爱天安门”不会像外国人那样连读成“外天门”。这就是英语听不准确的重要口语习惯和原因。也就是说，<strong>辅音单词结尾的辅音要发到位，不加上不存在的元音</strong>，然后自然读下一个单词就能“连读”。</p>
-<p>💡连读不是创造一个音，而是两个音结合产生的结果。试着平滑地读I am，你就会感受到/j/的发音，这就是<strong>连音的本质</strong>。如果<strong>你的发音不标准，就不会自然而然地读出连音</strong>。</p>
-<p><strong>加音规则</strong></p>
-<p>注意是先有加音现象，再总结出规律。</p>
-<ol>
-<li>元音+元音：元音与元音连读容易糊，加上一个之前不存在的“过渡音”使得加音连贯。
-<ul>
-<li>/u:/, <strong>/ʊ/</strong>,<strong>/aʊ/</strong>, <strong>/əʊ/</strong>+元音:+/w/。如：just do it.</li>
-<li>/i:/,<strong>/ɪ/</strong>,<strong>/eɪ/</strong>,<strong>/aɪ/</strong>,<strong>/ɔɪ/</strong>+元音:+/j/。如： I am.</li>
-<li><strong>/ə/</strong>,<strong>/ɑ:/</strong>,<strong>/ɔ:/</strong>+元音:+/r/。主要是英式英语用，美式英语很少。如 the idea of；美式英语主要是字母r+元音，如bear it.连读但是不加音。</li>
-</ul>
-</li>
-<li>辅音+元音(词尾辅音 + 词首元音）： travel agency</li>
-</ol>
-<h2 id="同化">同化</h2>
-<ol>
-<li>逆行同化(前面的音受到后一个音的影响)
-<ol>
-<li>无声除阻(不完全爆破)：/k/ /t/ /d/+辅音，爆破音不发音 如:look back</li>
-<li>浊音变清音：如 have to :直接变成/f/+/t/,这样比原来的浊音更好发音。</li>
-<li>双唇化：如in person.受到p这个要闭唇的音印象，读起来变成了 im person。</li>
-</ol>
-</li>
-<li>顺行同化(后面音受到前面影响)
-<ol>
-<li>复数词尾：如books 一般会读成ks而不是kz。</li>
-</ol>
-</li>
-<li>互相同化：
-<ol>
-<li>融合发音:/s/+/j/ = <strong>/ʃ/</strong>;例如:God bless you;/z/+/j/ =  <strong>/ʒ/</strong>;例如as you wish;/t/+/j/ = <strong>/tʃ/</strong> ;例如Nice to me you;/d/+/j/ = <strong>/dʒ/</strong>;例如Did you do it?</li>
-<li>辅音延长：当前面一个音和后面一个音是同一个音时。只发一个音(这里的音是指<strong>音标</strong>不是字母)，但是要延长：如fish shop.这里前后都是sh</li>
-</ol>
-</li>
-<li>完全失爆（词尾爆破音( p b t d k g)+ 词首爆破音( p b t d k g)：
-<ol>
-<li>good question</li>
-</ol>
-</li>
-</ol>
-<h2 id="异化">异化</h2>
-<p>常见于/s/+/t/、/s/+/k/、/s/+/p/的组合。<strong>严格来说不是浊化</strong>，而是将这些音变成不送气的音，但是只是发音的话就是不用考虑这些</p>
-<ol>
-<li>r使前面的元音r化：如door 使前一个r消失，如surprise变成su®prise.</li>
-<li>具体例子sp+元音：
-<ol>
-<li>How do you spend your leisure time?</li>
-<li>sk+元音：i’m so scared</li>
-<li>st + 元音：Stand up and study hard.</li>
-<li>str+ 元音:  He struck me with a stick</li>
-</ol>
-</li>
-</ol>
-<h2 id="省音">省音</h2>
-<ol>
-<li>偷懒不读某一个或者是一些音：如interesting,这类往往可省可不省，省多少看个人说话习惯。</li>
-<li>必须省音。如debt\subtle\know\knee\write\wrong……这些词中b\k\w都是省略不读的。</li>
-<li>词与词之间省略：比如last year就只读las year.t直接省略。</li>
-<li>还有/t/、/d/等(词尾)爆破音也经常省略。如：have 的/h/(这被称为<strong>h击穿</strong>)。ing中的/g/，比如 Are you listenin’?这里打‘就说明省去了g</li>
-</ol>
-<h2 id="缩读">缩读</h2>
-<p>缩写表示可以缩读：如 I am=I’m,I have=I’ve 这些词往往在英语听力的时候读的很快不容易听到或者是听完整。比如wanna=want to, going to=gonna,because='cause还有许多缩写形式的单词或者短语都是这种形式。还有很多类似的都是，比如don’t know=dunno、give me=gimme、would have would’ve/would’a、you and I=you 'n’l、come on =c’mon</p>
-<h2 id="弱读">弱读</h2>
-<p>弱读非常重要，是中国人听不清英语的关键。<br>
-弱读不是声音变小，而是将元音改变了,这样能够让语句发音更轻松自然，不至于像中文那样“字正腔圆”导致读起来上气不接下气。</p>
-<p>例句：What <strong>do</strong> you want <strong>to do</strong>?<strong>From</strong> <strong>what</strong> I <strong>can</strong> tell,you <strong>must</strong> be tired <strong>of</strong> it,<strong>but</strong> I’m not,so <strong>would</strong> you like me <strong>to do</strong> it <strong>for</strong> you?<br>
-/d<strong>ə</strong> t<strong>ə</strong> fr<strong>ə</strong>m w<strong>ə</strong>t k<strong>ə</strong>n m<strong>ə</strong>st <strong>ə</strong>v b<strong>ə</strong>t w<strong>ə</strong>d f<strong>ə</strong>/</p>
-<blockquote>
-<p>弱读时，单词的中间的元音一般会变成中央元音/<strong>ə/</strong></p>
-</blockquote>
-<h2 id="节奏">节奏</h2>
-<p>💡英语是重音等时语言</p>
-<p><strong>英语语句中重读音节之间的时长基本相等</strong>，也就是说英语句中词语所花时间是由重读音节数量决定的。举例：Rabbits | eat | carrots.\A rabbit is | eating some | carrots.\The <strong>rabbit</strong> has been | <strong>eating</strong> some of the | <strong>carrots</strong>.分成三个音节，加粗部分为重读音节<br>
-也就是说，这是三个音节之间时长相等，根据之间的单词个数决定要不要快速读或者是连读，这样其实也体现了中央元音/ə/的重要性，就是为了和重读音节相对应的。</p>
-<p>总而言之记住一句话：英语句子中的非重读音节数量远远大于重读音节数量。</p>
-<h2 id="语调">语调</h2>
-<p>💡语调基于节奏</p>
-<p>语调就是英语句子声调在哪里升高哪里降低。但是不是中文的四声或者五度标记法。<br>
-语调就是表达说话人的情感，不需要死记(不一定升调就是提问，降调就是丧气)，多听多说就能理解。</p>
-<h3 id="升调">升调</h3>
-<p>这里用☑表示升调，放在哪个单词后哪个单词就升调，一般用来表达态度/情感/陈述/疑问/强调等</p>
-<p>举例</p>
-<ol>
-<li>一般疑问句：Are you kidding me☑ ？</li>
-<li>陈述形式的提问：Rabbits eat carrot☑ ?</li>
-<li>反义疑问词中的附加问句：you are right,are not you☑ ?</li>
-<li>列举中最后一个元素之前的元素：Are rabbits red☑，yellow☑，blue☑，green☑,or white?</li>
-<li>礼貌请求:Tell me,please☑</li>
-<li>句子中未完成的部分：The rabbit ate a carrot☑ and then slept.</li>
-</ol>
-<h3 id="降调">降调</h3>
-<p>用[\]表示降调</p>
-<ol>
-<li>特殊疑问句(非yes/no问题)：what is your name[\]?</li>
-<li>陈述事实或者回答问题： I see a white rabbit[\].</li>
-<li>感叹：what a beautiful leaf[\]!</li>
-<li>命令：put the girl down[\]!</li>
-<li>列举中最后一个元素：反义疑问句前一部分：Rabbits like to eat,play,sleep and run[\].</li>
-<li>反义疑问句前面一部分：Rabbit eat carrots[\],don’t they?</li>
-<li>作为回答/附和/确认的问句形式：The rabbit ate all the carrots. Did it[\]?</li>
-<li>已经知道提问的答案：can you call me at 6[\].</li>
-<li>问句形式表礼貌，并非真的在问问题：Would you pass me the salt[\]?</li>
-<li>不满、愤怒：Is that what you think[\]?</li>
-</ol>
-<p>参考音节</p>
-<p>TU表示重读，tu表示弱读。同样适用于句子和词组。</p>
-<ol>
-<li>单音节 TU：如two!two?</li>
-<li>双音节 TU tu： 如rabbit!rabbit?</li>
-<li>双音节 tu TU：如sit down!sit down?</li>
-<li>三音节 TU tu tu：如possible!possible?</li>
-<li>三音节 tu TU tu：如computer!computer?</li>
-<li>三音节 tu tu TU：如engineer!engineer?</li>
-</ol>
-<h1 id="自然拼读-Phonics">自然拼读(Phonics)</h1>
-<p>就是看字母，<strong>猜读音</strong>。这部分内容属于技巧向，对英语口语与听力有帮助。</p>
-<p>以下内容主要讨论一般情况，特殊情况请参考词典。</p>
-<h2 id="开音节与闭音节">开音节与闭音节</h2>
-<p><strong>概念解析</strong>：</p>
-<p>音节：由音素组合成的<strong>最小</strong>最自然的语音单位，比如rabbit的音节分别是rab和bit。</p>
-<p>闭音节：以辅音结尾的音节。比如baby中的by音节。注意这里的辅音不是指字母而是指音标。</p>
-<p>开音节：以元音结尾的音节。比如baby中的ba音节。</p>
-<p>重读音节：被强调的音节就是重读音节，往往声音更大，元音也被拉长。比如rabbit.其音标为/‘ræbɪt/ 这里的’就是用来标记重读音节的，所以rab音量较大，元音也延长。ˌ为次重读音节，在重读与非重读之间。比如accidental，其音标为/ˌ æksɪ’dentl/</p>
-<p>非重读音节：与重读音节相反。</p>
-<p>相对开音节：以不发音的元音字母e结尾的闭音节。</p>
-<h2 id="单个字母">单个字母</h2>
-<blockquote>
-<p>以下图都是从英语兔公众号下载而来</p>
-</blockquote>
-<p>辅音字母</p>
-<p><img src="https://files.seeusercontent.com/2026/09/13/zc0M/__001__01_001.png" alt="英语系列（二）英语口语（英语兔版）_单个字母_001_字母发音_01_001"></p>
-<p>元音字母</p>
-<p><strong>单个元音字母在重读开音节里读元音字母本身的读音</strong></p>
-<p><img src="https://files.seeusercontent.com/2026/09/13/w5wK/__001__02_002.png" alt="英语系列（二）英语口语（英语兔版）_单个字母_001_字母发音_02_002"></p>
-<p><strong>单个元音字母在相对开音节里读元音字母本身的读音</strong> 比如bate</p>
-<h2 id="字母组合">字母组合</h2>
-<p>辅音组合</p>
-<p><img src="https://files.seeusercontent.com/2026/09/13/r0Vq/__001__03_001.png" alt="英语系列（二）英语口语（英语兔版）_字母组合_001_字母发音_03_001"></p>
-<p>元音组合</p>
-<p><img src="https://files.seeusercontent.com/2026/09/13/Ta5o/__001__04_002.png" alt="英语系列（二）英语口语（英语兔版）_字母组合_001_字母发音_04_002"></p>
-<p>以上这些只是技巧向，真正要学好英语口语还是要大量的输入与输出。</p>
-<h1 id="参考资料">参考资料</h1>
-<ol>
-<li><a href="https://www.jiwake.com/yinbiaofayin/">英语音标发音表-英语48个音标在线读 (jiwake.com)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/457728471">【笔记】英语兔的DJ音标整理 - 知乎 (zhihu.com)</a></li>
-<li><a href="https://www.bilibili.com/video/BV1iV411z7Nj?p=28&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">全网最适合中国人的免费音标课(纯干货, 超详细!)</a></li>
-<li><a href="https://www.bilibili.com/video/BV1SZ4y1K7Lr?p=7&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">你必须知道的英语发音技巧(让你的口语更纯正, 更地道!)</a></li>
-<li><a href="https://www.bilibili.com/video/BV14841117gz?p=4&amp;vd_source=bb8dacb993f11c0e39f8147c98a2894c">英语自然拼读极简教程（免费、简洁、高效 | 半小时内打牢基础</a></li>
 </ol>
 ]]></content>
       <categories>
